@@ -1,0 +1,14 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "policy-rule.schema.json",
+  "type": "object",
+  "required": [
+    "policy_id",
+    "description",
+    "severity",
+    "condition",
+    "evidence",
+    "remediation"
+  ],
+  "additionalProperties": true
+}

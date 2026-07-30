@@ -1,0 +1,13 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "deployment-preflight-report.schema.json",
+  "type": "object",
+  "required": [
+    "from_version",
+    "to_version",
+    "package",
+    "checks",
+    "outcome"
+  ],
+  "additionalProperties": true
+}

@@ -1,7 +1,7 @@
 # Files to Replace
 
-- `.claude/registry.json`
-- `.claude/runtime.yaml`
+- `CLAUDE-DIRECTORY/registry.json` → `.claude/registry.json`
+- `CLAUDE-DIRECTORY/runtime.yaml` → `.claude/runtime.yaml`
 - `CHANGELOG.md`
 - `README.md`
 - `VERSION`

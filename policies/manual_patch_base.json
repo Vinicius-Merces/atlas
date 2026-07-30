@@ -1,0 +1,11 @@
+{
+  "policy_id": "atlas.patch.base-version",
+  "description": "An incremental patch must be applied only to its declared base.",
+  "severity": "blocking",
+  "condition": "installed VERSION equals from_version",
+  "evidence": [
+    "VERSION",
+    "PATCH-MANIFEST.json"
+  ],
+  "remediation": "Apply missing intermediate patches or use a cumulative package."
+}

@@ -1,0 +1,12 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "policy-evaluation-report.schema.json",
+  "type": "object",
+  "required": [
+    "framework_version",
+    "generated_at",
+    "results",
+    "summary"
+  ],
+  "additionalProperties": true
+}

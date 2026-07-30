@@ -1,0 +1,16 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "policy-exception.schema.json",
+  "type": "object",
+  "required": [
+    "exception_id",
+    "policy_id",
+    "scope",
+    "reason",
+    "owner",
+    "expires_at",
+    "compensating_controls",
+    "status"
+  ],
+  "additionalProperties": true
+}

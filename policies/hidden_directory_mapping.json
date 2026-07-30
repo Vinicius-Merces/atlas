@@ -1,0 +1,10 @@
+{
+  "policy_id": "atlas.package.hidden-directory-mapping",
+  "description": "Manual packages must expose .claude updates through CLAUDE-DIRECTORY.",
+  "severity": "blocking",
+  "condition": "all .claude target files use CLAUDE-DIRECTORY package paths",
+  "evidence": [
+    "PATCH-MANIFEST.json"
+  ],
+  "remediation": "Rebuild the incremental package with visible mappings."
+}

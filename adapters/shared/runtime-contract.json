@@ -1,5 +1,5 @@
 {
-  "version": "0.1.0-beta.10",
+  "version": "0.1.0-beta.11",
   "contract": "atlas-universal-runtime",
   "required_capabilities": [
     "read-files",
@@ -33,7 +33,11 @@
     "map-change-provenance",
     "record-manual-deployments",
     "build-audit-bundles",
-    "verify-evidence-integrity"
+    "verify-evidence-integrity",
+    "evaluate-policies",
+    "validate-version-transitions",
+    "preflight-manual-deployments",
+    "manage-policy-exceptions"
   ],
   "shared_sources": {
     "contracts": ".claude/contracts/",
@@ -60,5 +64,8 @@
   "source_of_truth_manifest": "adapters/shared/source-of-truth-manifest.json",
   "evidence_record_schema": "schemas/evidence-record.schema.json",
   "deployment_receipt_schema": "schemas/manual-deployment-receipt.schema.json",
-  "audit_bundle_schema": "schemas/audit-bundle-manifest.schema.json"
+  "audit_bundle_schema": "schemas/audit-bundle-manifest.schema.json",
+  "policy_rule_schema": "schemas/policy-rule.schema.json",
+  "policy_report_schema": "schemas/policy-evaluation-report.schema.json",
+  "deployment_preflight_schema": "schemas/deployment-preflight-report.schema.json"
 }

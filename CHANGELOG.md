@@ -1,5 +1,45 @@
 # Changelog
 
+## 0.1.0-beta.11
+
+### Added
+
+- Policy Enforcement Architect agent
+- Manual Deployment Safety Engineer agent
+- Policy Exception Reviewer agent
+- Policy rule design skill
+- Manual deployment preflight skill
+- Version transition validation skill
+- Policy exception handling skill
+- Policy evaluation workflow
+- Manual deployment preflight workflow
+- Policy exception workflow
+- Policy compliance review gate
+- Manual deployment safety review gate
+- Policy exception review gate
+- `/atlas-policy-check`, `/atlas-deploy-preflight`, and `/atlas-policy-exception`
+- Policy rule schema
+- Policy evaluation report schema
+- Policy exception schema
+- Deployment preflight report schema
+- Policy evaluator
+- Manual deployment preflight tool
+- Version transition validator
+- Policy report builder
+- Policy conformance tests
+- Policy enforcement model
+- Manual deployment safety model
+- Policy exception model
+- Version transition model
+- Visible `CLAUDE-DIRECTORY` package mapping
+
+### Changed
+
+- Version promoted to `0.1.0-beta.11`
+- Incremental packages now expose `.claude` updates through `CLAUDE-DIRECTORY`
+- Universal runtime contract includes policy evaluation capabilities
+- Claude Code and Codex declarations include deployment preflight support
+
 ## 0.1.0-beta.10
 
 ### Added

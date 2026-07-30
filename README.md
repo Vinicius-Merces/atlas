@@ -1,58 +1,46 @@
 # ATLAS AI Engineering Framework
 
-**Version:** `0.1.0-beta.10`  
-**Status:** Beta / Provenance, Evidence Ledger and Auditability
+**Version:** `0.1.0-beta.11`  
+**Status:** Beta / Policy Enforcement and Manual Deployment Safety
 
 ATLAS coordinates software engineering through shared memory, specialized
-agents, workflows, review gates, runtime contracts, resumable tasks, portable
-continuity, conflict-safe execution, and auditable evidence.
+agents, workflows, review gates, runtime contracts, portable continuity,
+parallel execution, auditability, and policy enforcement.
 
-## Beta.10 milestone
+## Beta.11 milestone
 
-Every meaningful task can now leave a traceable evidence chain from request to
-manual deployment.
+Policies can now be evaluated before execution, review, release, and manual
+deployment.
 
 ### New capabilities
 
-- Task evidence ledger
-- Change provenance
-- Decision-to-code traceability
-- Validation evidence records
-- Manual deployment receipts
-- Runtime attribution
-- Audit bundle generation
-- Evidence integrity verification
+- Machine-readable policy rules
+- Policy evaluation
+- Manual deployment preflight
+- Required-file checks
+- Forbidden-path checks
+- Version transition validation
+- Policy exceptions
+- Deployment safety reports
+- Visible `CLAUDE-DIRECTORY` packaging
 
-## Evidence chain
+## Manual package convention
+
+Updates intended for `.claude` are delivered inside:
 
 ```text
-Request
-  ↓
-Task envelope
-  ↓
-Context and decisions
-  ↓
-Execution plan
-  ↓
-Changed files
-  ↓
-Validation and reviews
-  ↓
-Checkpoint or result
-  ↓
-Manual deployment receipt
-  ↓
-Audit bundle
+CLAUDE-DIRECTORY/
 ```
+
+During manual deployment, copy its contents into `.claude/` in the repository.
 
 ## Commands
 
 ```bash
-python scripts/create_evidence_record.py --task-id task-001 --runtime codex
-python scripts/record_manual_deploy.py --from-version 0.1.0-beta.9 --to-version 0.1.0-beta.10
-python scripts/build_audit_bundle.py
-python scripts/verify_evidence_integrity.py
+python scripts/evaluate_policies.py
+python scripts/manual_deploy_preflight.py --patch-root .
+python scripts/validate_version_transition.py --from-version 0.1.0-beta.10 --to-version 0.1.0-beta.11
+python scripts/build_policy_report.py
 ```
 
-All updates remain compatible with manual extraction and file-by-file
-deployment.
+Validation scripts remain optional. The package can still be applied manually.

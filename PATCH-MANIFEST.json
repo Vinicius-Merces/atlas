@@ -1,298 +1,405 @@
 {
   "package_type": "incremental",
   "deployment_mode": "manual-copy-supported",
-  "from_version": "0.1.0-beta.9",
-  "to_version": "0.1.0-beta.10",
-  "added_count": 41,
+  "from_version": "0.1.0-beta.10",
+  "to_version": "0.1.0-beta.11",
+  "directory_mappings": {
+    "CLAUDE-DIRECTORY": ".claude"
+  },
+  "added_count": 40,
   "modified_count": 13,
   "deleted_count": 0,
   "files": [
     {
-      "path": ".claude/agents/audit-bundle-reviewer.md",
+      "path": ".claude/agents/manual-deployment-safety-engineer.md",
+      "target_path": ".claude/agents/manual-deployment-safety-engineer.md",
+      "package_path": "CLAUDE-DIRECTORY/agents/manual-deployment-safety-engineer.md",
       "operation": "add",
-      "sha256": "2f5bafbcb066c09ecbc43a62c8852f8892ab83493338b7349575d4ed094b555a"
+      "sha256": "728c7f44b44fde9762db2b43177b3e1bffa03f771cd2a38f3b64940b3de01b33"
     },
     {
-      "path": ".claude/agents/change-provenance-engineer.md",
+      "path": ".claude/agents/policy-enforcement-architect.md",
+      "target_path": ".claude/agents/policy-enforcement-architect.md",
+      "package_path": "CLAUDE-DIRECTORY/agents/policy-enforcement-architect.md",
       "operation": "add",
-      "sha256": "cb0de7593ca926bb73b5aef02fb29e0b42ea8af6d2770cc526e446cf802accb2"
+      "sha256": "9c04ebf8025bec5c23536cee82b1b30aafd689113d8eb5b8532e53ba364b8a12"
     },
     {
-      "path": ".claude/agents/evidence-ledger-architect.md",
+      "path": ".claude/agents/policy-exception-reviewer.md",
+      "target_path": ".claude/agents/policy-exception-reviewer.md",
+      "package_path": "CLAUDE-DIRECTORY/agents/policy-exception-reviewer.md",
       "operation": "add",
-      "sha256": "f5934e6973a063d392def6e8958d0af00d4d91b7d9e574de0a833e6887a61854"
+      "sha256": "29b5a2cae710d4b3468596c3f823349e5808b57ba4c58ceac590c73e34dcbb1f"
     },
     {
-      "path": ".claude/agents/manual-deployment-auditor.md",
+      "path": ".claude/commands/atlas-deploy-preflight.md",
+      "target_path": ".claude/commands/atlas-deploy-preflight.md",
+      "package_path": "CLAUDE-DIRECTORY/commands/atlas-deploy-preflight.md",
       "operation": "add",
-      "sha256": "2ed360037b67c2628e0a45af5724fdf120fac88b82c79fdbe075cf365031830f"
+      "sha256": "7c1ec749d47f4659662df94c3cb135abbf4ddcd63561235f4656b42090f5e955"
     },
     {
-      "path": ".claude/commands/atlas-audit-bundle.md",
+      "path": ".claude/commands/atlas-policy-check.md",
+      "target_path": ".claude/commands/atlas-policy-check.md",
+      "package_path": "CLAUDE-DIRECTORY/commands/atlas-policy-check.md",
       "operation": "add",
-      "sha256": "41a89aa581d087dcea6adb647f70903e71081e8d3e03cc959e0a3c2e3b5b4a6f"
+      "sha256": "2f0252ee75fd0cf624b49c9c1ade0e7dd80d4cefb858d55c4596bbd3aac00a74"
     },
     {
-      "path": ".claude/commands/atlas-deploy-receipt.md",
+      "path": ".claude/commands/atlas-policy-exception.md",
+      "target_path": ".claude/commands/atlas-policy-exception.md",
+      "package_path": "CLAUDE-DIRECTORY/commands/atlas-policy-exception.md",
       "operation": "add",
-      "sha256": "01470da9c20246675a19fae2d6c7346116eb39dd827937ecf61e61cd82d717b1"
+      "sha256": "17e4d55496eb0a7d3ddaa3f4ca34276663dc848107de7b993354f31c37157f5c"
     },
     {
-      "path": ".claude/commands/atlas-evidence.md",
+      "path": ".claude/reviews/manual-deployment-safety-review.md",
+      "target_path": ".claude/reviews/manual-deployment-safety-review.md",
+      "package_path": "CLAUDE-DIRECTORY/reviews/manual-deployment-safety-review.md",
       "operation": "add",
-      "sha256": "2ffd9ef7ffbd8fd5cba20f21655d1b3514c9c07e3f4ef91157bb87742534e5a9"
+      "sha256": "e52b68eb1f33606261fbdd7ceaa75ca99d2aff37c4a0aafd5ad663f781e834ac"
     },
     {
-      "path": ".claude/commands/atlas-provenance.md",
+      "path": ".claude/reviews/policy-compliance-review.md",
+      "target_path": ".claude/reviews/policy-compliance-review.md",
+      "package_path": "CLAUDE-DIRECTORY/reviews/policy-compliance-review.md",
       "operation": "add",
-      "sha256": "c0f59371d13454b1a691cdaea672c36079d4af51b66086f6ebd750a0faf4af16"
+      "sha256": "4ca2a0dd69366785b65e6337b1cc01cc9fd08b7a58525190f5712f88b2bfe0be"
     },
     {
-      "path": ".claude/reviews/evidence-integrity-review.md",
+      "path": ".claude/reviews/policy-exception-review.md",
+      "target_path": ".claude/reviews/policy-exception-review.md",
+      "package_path": "CLAUDE-DIRECTORY/reviews/policy-exception-review.md",
       "operation": "add",
-      "sha256": "5b7c7d052cd54f82fde5ca4cef72b704a4392c6261f17a734aabdfa2388677d0"
+      "sha256": "5d9ff728fa92460933ae98bfb706b6f39bad7e329be2aaf4b04290acadd8a018"
     },
     {
-      "path": ".claude/reviews/manual-deployment-review.md",
+      "path": ".claude/skills/runtime/manual-deployment-preflight.md",
+      "target_path": ".claude/skills/runtime/manual-deployment-preflight.md",
+      "package_path": "CLAUDE-DIRECTORY/skills/runtime/manual-deployment-preflight.md",
       "operation": "add",
-      "sha256": "9fd49bce45cafa7f149844dfd7c91ccdd0647df9e548ce43aa0c3371d41a8949"
+      "sha256": "046bee9780ebd943205657d95b39aae98762e7cc9eb31afbc1c8d17035ef1f3b"
     },
     {
-      "path": ".claude/reviews/provenance-review.md",
+      "path": ".claude/skills/runtime/policy-exception-handling.md",
+      "target_path": ".claude/skills/runtime/policy-exception-handling.md",
+      "package_path": "CLAUDE-DIRECTORY/skills/runtime/policy-exception-handling.md",
       "operation": "add",
-      "sha256": "8110b6a027f037ce8c74308d35c40fe509a3936c2be98fc00740889829d3fa27"
+      "sha256": "1cd1569f5f8dd88c85bf6158443a1446872a1023f416a89d827ad35aeeba5711"
     },
     {
-      "path": ".claude/skills/runtime/audit-bundle-assembly.md",
+      "path": ".claude/skills/runtime/policy-rule-design.md",
+      "target_path": ".claude/skills/runtime/policy-rule-design.md",
+      "package_path": "CLAUDE-DIRECTORY/skills/runtime/policy-rule-design.md",
       "operation": "add",
-      "sha256": "fd221b72a35e11d47767dfff73ab2f11dacce6bd56dc05b1455086c8bb42f50d"
+      "sha256": "2b71432edb338176775a6576d66938ed8e281cfb22fa3f7c60b9d3c9590b0a4b"
     },
     {
-      "path": ".claude/skills/runtime/change-provenance-mapping.md",
+      "path": ".claude/skills/runtime/version-transition-validation.md",
+      "target_path": ".claude/skills/runtime/version-transition-validation.md",
+      "package_path": "CLAUDE-DIRECTORY/skills/runtime/version-transition-validation.md",
       "operation": "add",
-      "sha256": "792601aa821984e6c54e7cd066814c20672847c4dc0c359c72cab29f0209b84f"
+      "sha256": "be9896af5dab1a3e262336a171342cb2e23fa2e19e83d355761a3572f7e63edc"
     },
     {
-      "path": ".claude/skills/runtime/evidence-record-design.md",
+      "path": ".claude/workflows/manual-deployment-preflight.md",
+      "target_path": ".claude/workflows/manual-deployment-preflight.md",
+      "package_path": "CLAUDE-DIRECTORY/workflows/manual-deployment-preflight.md",
       "operation": "add",
-      "sha256": "0ad3a94af73d68b7b362a6402fd916a5afef007ba736e47003216942dbcc48b7"
+      "sha256": "a135f2e591bce53cc60b964348969db2115c20305ecd54d7ce71e7b40d8bb26d"
     },
     {
-      "path": ".claude/skills/runtime/manual-deployment-receipt.md",
+      "path": ".claude/workflows/policy-evaluation.md",
+      "target_path": ".claude/workflows/policy-evaluation.md",
+      "package_path": "CLAUDE-DIRECTORY/workflows/policy-evaluation.md",
       "operation": "add",
-      "sha256": "c00a52e1a8c61ac89d76780fdb376fd840ed41c9fd03eb9217c0a99329b7bf5a"
+      "sha256": "920c9d331e8f108baa77c24b6434723707ff8f34b41eec697fb7451769f04f97"
     },
     {
-      "path": ".claude/workflows/audit-bundle.md",
+      "path": ".claude/workflows/policy-exception.md",
+      "target_path": ".claude/workflows/policy-exception.md",
+      "package_path": "CLAUDE-DIRECTORY/workflows/policy-exception.md",
       "operation": "add",
-      "sha256": "e61a08108796468fa10a0c4138897fe19375696a31edae8d540ff7f8a414f962"
+      "sha256": "d9bed620d626c5ac92b66e4e579072adb7bbd95c6f8ad8ce4f169267c36f07fc"
     },
     {
-      "path": ".claude/workflows/evidence-capture.md",
+      "path": "adapters/shared/policy-enforcement-protocol.md",
+      "target_path": "adapters/shared/policy-enforcement-protocol.md",
+      "package_path": "adapters/shared/policy-enforcement-protocol.md",
       "operation": "add",
-      "sha256": "fb9551a242ed404efbc7a9cbfc1268a8cfcf504e9157035c16d5aa28e3255558"
+      "sha256": "4508468d26a40b762ad8d3eb35eaea11b63ba3264393372a10f0bee178c49d55"
     },
     {
-      "path": ".claude/workflows/manual-deployment-audit.md",
+      "path": "docs/manual-deployment-preflight-guide.md",
+      "target_path": "docs/manual-deployment-preflight-guide.md",
+      "package_path": "docs/manual-deployment-preflight-guide.md",
       "operation": "add",
-      "sha256": "af04fa24176d084cec13431fd86f22b181f41384ae0da9ac9f1f2958310e0d18"
+      "sha256": "a639345af5969bdd193f647b65b2d43cefacc20b7fa7064e1c2cf6072ac85cdb"
     },
     {
-      "path": ".claude/workflows/provenance-reconciliation.md",
+      "path": "docs/policy-enforcement-guide.md",
+      "target_path": "docs/policy-enforcement-guide.md",
+      "package_path": "docs/policy-enforcement-guide.md",
       "operation": "add",
-      "sha256": "e38fcdadc71c33db0952e035b958ae50276d12cda032aabda24150a49d8a4e89"
+      "sha256": "cb60baad54ac5597aeb7f4348203c33b39e18e3fadaff3d161d029979c9628d0"
     },
     {
-      "path": "adapters/shared/evidence-protocol.md",
+      "path": "framework/manual-deployment-safety-model.md",
+      "target_path": "framework/manual-deployment-safety-model.md",
+      "package_path": "framework/manual-deployment-safety-model.md",
       "operation": "add",
-      "sha256": "90be903316181d64207154e12850a1f5bce9c4bd8df177fabfb2d065f1bb0ea4"
+      "sha256": "7d923e98a66226b7c04eccba71d4aea8a82a4ffe72f879c5a23705fb7a60db62"
     },
     {
-      "path": "docs/audit-bundle-guide.md",
+      "path": "framework/policy-enforcement-model.md",
+      "target_path": "framework/policy-enforcement-model.md",
+      "package_path": "framework/policy-enforcement-model.md",
       "operation": "add",
-      "sha256": "216d6478e4c446866560b373f4eeaf5266d4ab73a60a97645648b2121893091c"
+      "sha256": "55d4b427184d17e5ed6dc5cd5332c248883a530afa6c3d7561d700c0df7d0830"
     },
     {
-      "path": "docs/evidence-ledger-guide.md",
+      "path": "framework/policy-exception-model.md",
+      "target_path": "framework/policy-exception-model.md",
+      "package_path": "framework/policy-exception-model.md",
       "operation": "add",
-      "sha256": "c8a7f5cccdb0eeb8b4fb64a91989bf1def853f950d6380e2536b08f9510f21d9"
+      "sha256": "f7ea878535773b16c158b5b61783a8db224437bafc609c87a5413054ccd67094"
     },
     {
-      "path": "docs/manual-deployment-receipt-guide.md",
+      "path": "framework/version-transition-model.md",
+      "target_path": "framework/version-transition-model.md",
+      "package_path": "framework/version-transition-model.md",
       "operation": "add",
-      "sha256": "564dc55e756563e53a0592f4107d8051ddaca3d037324b31466300e6702b5a95"
+      "sha256": "5c66d8a21d8ae11f747d14d73d55b468183b14f311be715fe8e6cdf02dab303d"
     },
     {
-      "path": "framework/audit-bundle-model.md",
+      "path": "policies/framework_version_consistency.json",
+      "target_path": "policies/framework_version_consistency.json",
+      "package_path": "policies/framework_version_consistency.json",
       "operation": "add",
-      "sha256": "a435731292d41d35b9b9bf443fca7ba1d17e8d3de57dfee26641cd85cfa9b871"
+      "sha256": "f29979d4ddb53665559d810bacbfe496b60a954ee3352c84c3154004b0904d71"
     },
     {
-      "path": "framework/change-provenance-model.md",
+      "path": "policies/hidden_directory_mapping.json",
+      "target_path": "policies/hidden_directory_mapping.json",
+      "package_path": "policies/hidden_directory_mapping.json",
       "operation": "add",
-      "sha256": "c0bc6bdfe109975d9790cf4e58a4dd8ab5fb984b77d385253d0e35971944b102"
+      "sha256": "f43cbc43266d90ba45c90828424aa202b7947a52488eca52d815e60aaab42832"
     },
     {
-      "path": "framework/evidence-ledger-model.md",
+      "path": "policies/manual_patch_base.json",
+      "target_path": "policies/manual_patch_base.json",
+      "package_path": "policies/manual_patch_base.json",
       "operation": "add",
-      "sha256": "63d075c178b2e8fb7008c370cbc9749a2bf1c156e06f92b06b24689e14ccf43f"
+      "sha256": "fa029390d8f9770e68fe7a3f594f5932c91fe854c9c48d743ce86866615401b7"
     },
     {
-      "path": "framework/manual-deployment-receipt-model.md",
+      "path": "release/BETA-11-MIGRATION.md",
+      "target_path": "release/BETA-11-MIGRATION.md",
+      "package_path": "release/BETA-11-MIGRATION.md",
       "operation": "add",
-      "sha256": "550b59e263888420698eac6a7b8d0b92b4a87b78728ef69a8b590e9618ec0e85"
+      "sha256": "efdb0a0b42667406793b293ecab10f0572850f3572ca93eec0168b0cbe39a1d7"
     },
     {
-      "path": "release/BETA-10-MIGRATION.md",
+      "path": "release/BETA-11-RELEASE-NOTES.md",
+      "target_path": "release/BETA-11-RELEASE-NOTES.md",
+      "package_path": "release/BETA-11-RELEASE-NOTES.md",
       "operation": "add",
-      "sha256": "966ed6460ce88d21c0ad6b4d62c9c737f9d97997d958b6d72206ab144e5f7506"
+      "sha256": "ecd0cb392a8ea677ad8568a27bc516c16984329f90ec414540830abdc71374a1"
     },
     {
-      "path": "release/BETA-10-RELEASE-NOTES.md",
+      "path": "release/beta.11.manifest.json",
+      "target_path": "release/beta.11.manifest.json",
+      "package_path": "release/beta.11.manifest.json",
       "operation": "add",
-      "sha256": "a2fbb2e9aa4a751d7b66080eb48ffa6ab979ffc3a6dd9d6957400cd6892eae79"
+      "sha256": "5b6d1ed3f10efcec74fc29dda1795c94ef8ba2acc022c5288b7f98aeff604da8"
     },
     {
-      "path": "release/beta.10.manifest.json",
+      "path": "schemas/deployment-preflight-report.schema.json",
+      "target_path": "schemas/deployment-preflight-report.schema.json",
+      "package_path": "schemas/deployment-preflight-report.schema.json",
       "operation": "add",
-      "sha256": "57c8e598fbf643ea165ab009678a59877c95c1642474af3a59f3642cdb2d4ed8"
+      "sha256": "96e564b2be8929769101386236b25a1ebee182a99a26d9bed2fb11fc9baf79a1"
     },
     {
-      "path": "schemas/audit-bundle-manifest.schema.json",
+      "path": "schemas/policy-evaluation-report.schema.json",
+      "target_path": "schemas/policy-evaluation-report.schema.json",
+      "package_path": "schemas/policy-evaluation-report.schema.json",
       "operation": "add",
-      "sha256": "16e6e0efe6daec474543fef385512ac3746fef2147201559e73e7a98506334a8"
+      "sha256": "73fd7b2f20af9b3334b4c04d9188beae228bed7cd3063ba4c3209e42550820a3"
     },
     {
-      "path": "schemas/change-provenance.schema.json",
+      "path": "schemas/policy-exception.schema.json",
+      "target_path": "schemas/policy-exception.schema.json",
+      "package_path": "schemas/policy-exception.schema.json",
       "operation": "add",
-      "sha256": "d3d7b27f11bf0ad2cfd83dbe6e4a464702f615ce65c5a24cb9d3aabc47ff7c99"
+      "sha256": "07a1e37b4fa40b0c0725d81e3e090e379c87c507ac86f1805ef7540c270c90a1"
     },
     {
-      "path": "schemas/evidence-record.schema.json",
+      "path": "schemas/policy-rule.schema.json",
+      "target_path": "schemas/policy-rule.schema.json",
+      "package_path": "schemas/policy-rule.schema.json",
       "operation": "add",
-      "sha256": "7ef047b3d27641a4c25810a4c79917b93ef207d75507f974f2b73109f3835e05"
+      "sha256": "1f58168ae73e3c30fedf3c4f9e659d502796cf40ee5cd34d32277d30cf3eed30"
     },
     {
-      "path": "schemas/manual-deployment-receipt.schema.json",
+      "path": "scripts/build_policy_report.py",
+      "target_path": "scripts/build_policy_report.py",
+      "package_path": "scripts/build_policy_report.py",
       "operation": "add",
-      "sha256": "802d08f47a29f6d5e818f1072cbe6731a318ee8f58a4ab4fcd3aca79052c9387"
+      "sha256": "77d4cbed328f34144a98c108f6629ffa52e64314e2683a17ddc8205387557a02"
     },
     {
-      "path": "scripts/build_audit_bundle.py",
+      "path": "scripts/evaluate_policies.py",
+      "target_path": "scripts/evaluate_policies.py",
+      "package_path": "scripts/evaluate_policies.py",
       "operation": "add",
-      "sha256": "2996f6b6d57661686d61eebdb60197b7b3c27d3528424a14f4e97cabe0e9d4b6"
+      "sha256": "f103d550e5f2ccb2ef8b5ba6285dde4c75edf924e69ef1b339846756099b067d"
     },
     {
-      "path": "scripts/create_evidence_record.py",
+      "path": "scripts/manual_deploy_preflight.py",
+      "target_path": "scripts/manual_deploy_preflight.py",
+      "package_path": "scripts/manual_deploy_preflight.py",
       "operation": "add",
-      "sha256": "57d7d98ede8edacd3a3b6dcfbabee3f9146b051f435b955fdad9b7e6ad845d87"
+      "sha256": "46e8abae9dd7ccd08774bf918adbe7db49a667856aaa4934037fee980194286a"
     },
     {
-      "path": "scripts/record_manual_deploy.py",
+      "path": "scripts/validate_version_transition.py",
+      "target_path": "scripts/validate_version_transition.py",
+      "package_path": "scripts/validate_version_transition.py",
       "operation": "add",
-      "sha256": "167014fa901e98be0f8f24998b591eeff17c607c928f19b0ac6775ed5c6abbf9"
+      "sha256": "218acfa6005d6768142f7e22b7c3f5342bcda67720589fdbc90f42db18adc8c2"
     },
     {
-      "path": "scripts/verify_evidence_integrity.py",
+      "path": "templates/deployment-preflight-report.json",
+      "target_path": "templates/deployment-preflight-report.json",
+      "package_path": "templates/deployment-preflight-report.json",
       "operation": "add",
-      "sha256": "10848e7bec1cc023de2a7cb33907157b2b9e18c763ce9f31b4aaba101456dc58"
+      "sha256": "e8f32a9cc48f9238da6e8ed8c4054f444271a563696ebc47d5a052156409d903"
     },
     {
-      "path": "templates/evidence-record.json",
+      "path": "templates/policy-exception.json",
+      "target_path": "templates/policy-exception.json",
+      "package_path": "templates/policy-exception.json",
       "operation": "add",
-      "sha256": "3487d5453fc277234be209163629c716d7fa2c87d8a8cc2d1df3119052a1cd9d"
+      "sha256": "43e3e7b19019011768907e090ace6f997d5843f79e6711c5b8761b0db1915ca9"
     },
     {
-      "path": "templates/manual-deployment-receipt.json",
+      "path": "tests/conformance/test_policy_enforcement.py",
+      "target_path": "tests/conformance/test_policy_enforcement.py",
+      "package_path": "tests/conformance/test_policy_enforcement.py",
       "operation": "add",
-      "sha256": "45c539f8d214d68f44f050484adbae648879f724238d3a9ea346891b2378be89"
-    },
-    {
-      "path": "tests/conformance/test_evidence_provenance.py",
-      "operation": "add",
-      "sha256": "b108edf6be74662244803c5ce7ce95202cb68a6fd962fee0928d763f29bd11a9"
+      "sha256": "43702320dc16798f0ae88322e97388c72980e36e2bab0faf46a0194213979c14"
     },
     {
       "path": ".claude/registry.json",
+      "target_path": ".claude/registry.json",
+      "package_path": "CLAUDE-DIRECTORY/registry.json",
       "operation": "replace",
-      "sha256": "eda2e8a4e4796afe6e22068e098639087fb08c16dc751f9dd462a4cef90df049"
+      "sha256": "6a5b7cbb3b5b4ceaabb867bc5a6b84907d409c4615ff049b0f1b6dd3ecdea32e"
     },
     {
       "path": ".claude/runtime.yaml",
+      "target_path": ".claude/runtime.yaml",
+      "package_path": "CLAUDE-DIRECTORY/runtime.yaml",
       "operation": "replace",
-      "sha256": "259d00891588ebab771e928e8a13afc24c9f1b11028fd5fa2b37216be7c7beb8"
+      "sha256": "5af2aa3fef56d1fdffde4bcca7b03aa57d115be14ec2b81dd54037b8df086656"
     },
     {
       "path": "CHANGELOG.md",
+      "target_path": "CHANGELOG.md",
+      "package_path": "CHANGELOG.md",
       "operation": "replace",
-      "sha256": "d438fa0539c555ed72d519d0d286964aef713185774d21dc1dfe226e9bf07829"
+      "sha256": "93ffe7514df2e0c8bfb7535aba976f6876e86c1ccc4c13b9a097a72f5140bb52"
     },
     {
       "path": "README.md",
+      "target_path": "README.md",
+      "package_path": "README.md",
       "operation": "replace",
-      "sha256": "84c2910428ea617b9abb97d213a69d42ab1648221adfb63b0f1244e7b4357177"
+      "sha256": "d08f8c59a72bb2fd7df82a041315b645f53dee7975f3cadfc476b6a88e2f0214"
     },
     {
       "path": "VERSION",
+      "target_path": "VERSION",
+      "package_path": "VERSION",
       "operation": "replace",
-      "sha256": "12ac4d875efc9d099c8d3f3a3e34232ddc68e43bbc8bd31394873f1f0102ad1a"
+      "sha256": "ed8b20b1f52d99ca5611cd01601188dbcc43b1eecb6639c23f5a1c030ac86849"
     },
     {
       "path": "adapters/claude/runtime-declaration.json",
+      "target_path": "adapters/claude/runtime-declaration.json",
+      "package_path": "adapters/claude/runtime-declaration.json",
       "operation": "replace",
-      "sha256": "4c440ed78fd3ce5b8c80224efacbc8a6953b18fb9bf06c9ab51143e3702ae2a2"
+      "sha256": "f85649167945a45a758f3504e9592bb8a1526738f3bddee60028d1469be4880c"
     },
     {
       "path": "adapters/codex/generated/catalog-manifest.json",
+      "target_path": "adapters/codex/generated/catalog-manifest.json",
+      "package_path": "adapters/codex/generated/catalog-manifest.json",
       "operation": "replace",
-      "sha256": "23735d7d7bf1c557945e7d8784084e4b3b358fdf71cee4ba2e19fbbcdf192a37"
+      "sha256": "686a979a5a0b3442fd2ecbc282c00ef8b3672a3384e54bac558c3b74262a9181"
     },
     {
       "path": "adapters/codex/runtime-declaration.json",
+      "target_path": "adapters/codex/runtime-declaration.json",
+      "package_path": "adapters/codex/runtime-declaration.json",
       "operation": "replace",
-      "sha256": "925e7f0314ed5eb6e00117c712e9babb86d6b7b696eebebb6c1eae8c6fb55e7b"
+      "sha256": "6401f1d1fdbab3af546beba1a8589376f616a5a0b7f16e96e3daa92e0d029c8c"
     },
     {
       "path": "adapters/codex/runtime-manifest.json",
+      "target_path": "adapters/codex/runtime-manifest.json",
+      "package_path": "adapters/codex/runtime-manifest.json",
       "operation": "replace",
-      "sha256": "e0f6033672fb32fe9feda350e5d8bbc9593979986caf7af7760c7b0c65c0a67f"
+      "sha256": "c3a756dbb7fe93690778f54d9e02f42da453e1c4bea93c8887319e1949e91661"
     },
     {
       "path": "adapters/codex/runtime-map.yaml",
+      "target_path": "adapters/codex/runtime-map.yaml",
+      "package_path": "adapters/codex/runtime-map.yaml",
       "operation": "replace",
-      "sha256": "6ecc8f8e94ff850f9cb5e0f5a4c4b9e5d4c7dce27dd30d5cc122d6b1edc6b9ff"
+      "sha256": "7e29c09cc5670fd69612588e85635381d4464b13410b371e605853543d7c5a36"
     },
     {
       "path": "adapters/shared/runtime-contract.json",
+      "target_path": "adapters/shared/runtime-contract.json",
+      "package_path": "adapters/shared/runtime-contract.json",
       "operation": "replace",
-      "sha256": "4ab55020f73b5e5bcf396c853d29424905699004c1ed09350ed4a3210aa7df3d"
+      "sha256": "50e708668befdd4faa2dfdbc0e000ae66b8cd76b0aebeaaca3e5924fdaae99eb"
     },
     {
       "path": "compatibility/core-contracts.json",
+      "target_path": "compatibility/core-contracts.json",
+      "package_path": "compatibility/core-contracts.json",
       "operation": "replace",
-      "sha256": "37182c56dbab372da7152077c395a5fe8b05a9ad642aa25d99a906639204a62a"
+      "sha256": "a408100c84e44e5a713ac73f0fd270d61022398fe1b96369f960f230d70358fe"
     },
     {
       "path": "compatibility/deprecations.json",
+      "target_path": "compatibility/deprecations.json",
+      "package_path": "compatibility/deprecations.json",
       "operation": "replace",
-      "sha256": "32bcf70a63d84fd5e5a0634d2cdf4c10fe3d6b43f6a3972fae2761b91266aa03"
+      "sha256": "7a0d9969f93f968339a0d28e73e1d7a013c28bf917577c34528d94218aea5e5e"
     }
   ],
   "deleted_files": [],
   "manual_steps": [
-    "Confirm the installed VERSION is 0.1.0-beta.9.",
+    "Confirm the installed VERSION is 0.1.0-beta.10.",
     "Extract this package.",
-    "Copy all included folders and files over the repository root.",
+    "Copy normal folders and files over the repository root.",
+    "Copy CLAUDE-DIRECTORY contents into the repository .claude directory.",
     "Allow replacement of existing files.",
     "Delete only paths listed in FILES-TO-DELETE.md.",
-    "Confirm VERSION is 0.1.0-beta.10."
+    "Confirm VERSION is 0.1.0-beta.11."
   ],
   "optional_post_apply_validation": [
     "python scripts/validate_registry.py",
     "python scripts/validate_package.py",
     "python scripts/validate_runtime_contract.py",
     "python scripts/validate_conformance.py",
-    "python scripts/build_audit_bundle.py",
-    "python scripts/verify_evidence_integrity.py"
+    "python scripts/evaluate_policies.py"
+  ],
+  "package_only_files": [
+    "CLAUDE-DIRECTORY/COPY-INTO-DOT-CLAUDE.md"
   ]
 }

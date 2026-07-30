@@ -1,0 +1,14 @@
+{
+  "policy_id": "atlas.version.consistency",
+  "description": "All runtime declarations and manifests must match VERSION.",
+  "severity": "blocking",
+  "condition": "version-bearing files equal VERSION",
+  "evidence": [
+    "VERSION",
+    ".claude/registry.json",
+    "adapters/shared/runtime-contract.json",
+    "adapters/claude/runtime-declaration.json",
+    "adapters/codex/runtime-declaration.json"
+  ],
+  "remediation": "Update version-bearing files before release."
+}

@@ -1,6 +1,6 @@
 {
   "runtime": "claude-code",
-  "version": "0.1.0-beta.10",
+  "version": "0.1.0-beta.11",
   "support": "beta-supported",
   "canonical": true,
   "contract": "../shared/runtime-contract.json",
@@ -36,7 +36,11 @@
     "map-change-provenance",
     "record-manual-deployments",
     "build-audit-bundles",
-    "verify-evidence-integrity"
+    "verify-evidence-integrity",
+    "evaluate-policies",
+    "validate-version-transitions",
+    "preflight-manual-deployments",
+    "manage-policy-exceptions"
   ],
   "implementation": ".claude/",
   "limitations": []

@@ -1,0 +1,10 @@
+{
+  "exception_id": "exception-example",
+  "policy_id": "",
+  "scope": "",
+  "reason": "",
+  "owner": "",
+  "expires_at": "",
+  "compensating_controls": [],
+  "status": "proposed"
+}

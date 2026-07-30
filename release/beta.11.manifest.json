@@ -1,0 +1,21 @@
+{
+  "version": "0.1.0-beta.11",
+  "channel": "beta",
+  "delivery_modes": [
+    "incremental",
+    "cumulative"
+  ],
+  "manual_deployment_supported": true,
+  "hidden_directory_package_mapping": {
+    "CLAUDE-DIRECTORY": ".claude"
+  },
+  "supported_runtimes": [
+    "claude-code",
+    "codex"
+  ],
+  "policy_enforcement": {
+    "rules": "policies/",
+    "evaluation": "scripts/evaluate_policies.py",
+    "preflight": "scripts/manual_deploy_preflight.py"
+  }
+}

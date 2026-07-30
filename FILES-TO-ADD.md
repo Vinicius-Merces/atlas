@@ -1,43 +1,42 @@
 # Files to Add
 
-- `.claude/agents/audit-bundle-reviewer.md`
-- `.claude/agents/change-provenance-engineer.md`
-- `.claude/agents/evidence-ledger-architect.md`
-- `.claude/agents/manual-deployment-auditor.md`
-- `.claude/commands/atlas-audit-bundle.md`
-- `.claude/commands/atlas-deploy-receipt.md`
-- `.claude/commands/atlas-evidence.md`
-- `.claude/commands/atlas-provenance.md`
-- `.claude/reviews/evidence-integrity-review.md`
-- `.claude/reviews/manual-deployment-review.md`
-- `.claude/reviews/provenance-review.md`
-- `.claude/skills/runtime/audit-bundle-assembly.md`
-- `.claude/skills/runtime/change-provenance-mapping.md`
-- `.claude/skills/runtime/evidence-record-design.md`
-- `.claude/skills/runtime/manual-deployment-receipt.md`
-- `.claude/workflows/audit-bundle.md`
-- `.claude/workflows/evidence-capture.md`
-- `.claude/workflows/manual-deployment-audit.md`
-- `.claude/workflows/provenance-reconciliation.md`
-- `adapters/shared/evidence-protocol.md`
-- `docs/audit-bundle-guide.md`
-- `docs/evidence-ledger-guide.md`
-- `docs/manual-deployment-receipt-guide.md`
-- `framework/audit-bundle-model.md`
-- `framework/change-provenance-model.md`
-- `framework/evidence-ledger-model.md`
-- `framework/manual-deployment-receipt-model.md`
-- `release/BETA-10-MIGRATION.md`
-- `release/BETA-10-RELEASE-NOTES.md`
-- `release/beta.10.manifest.json`
-- `schemas/audit-bundle-manifest.schema.json`
-- `schemas/change-provenance.schema.json`
-- `schemas/evidence-record.schema.json`
-- `schemas/manual-deployment-receipt.schema.json`
-- `scripts/build_audit_bundle.py`
-- `scripts/create_evidence_record.py`
-- `scripts/record_manual_deploy.py`
-- `scripts/verify_evidence_integrity.py`
-- `templates/evidence-record.json`
-- `templates/manual-deployment-receipt.json`
-- `tests/conformance/test_evidence_provenance.py`
+- `CLAUDE-DIRECTORY/agents/manual-deployment-safety-engineer.md` → `.claude/agents/manual-deployment-safety-engineer.md`
+- `CLAUDE-DIRECTORY/agents/policy-enforcement-architect.md` → `.claude/agents/policy-enforcement-architect.md`
+- `CLAUDE-DIRECTORY/agents/policy-exception-reviewer.md` → `.claude/agents/policy-exception-reviewer.md`
+- `CLAUDE-DIRECTORY/commands/atlas-deploy-preflight.md` → `.claude/commands/atlas-deploy-preflight.md`
+- `CLAUDE-DIRECTORY/commands/atlas-policy-check.md` → `.claude/commands/atlas-policy-check.md`
+- `CLAUDE-DIRECTORY/commands/atlas-policy-exception.md` → `.claude/commands/atlas-policy-exception.md`
+- `CLAUDE-DIRECTORY/reviews/manual-deployment-safety-review.md` → `.claude/reviews/manual-deployment-safety-review.md`
+- `CLAUDE-DIRECTORY/reviews/policy-compliance-review.md` → `.claude/reviews/policy-compliance-review.md`
+- `CLAUDE-DIRECTORY/reviews/policy-exception-review.md` → `.claude/reviews/policy-exception-review.md`
+- `CLAUDE-DIRECTORY/skills/runtime/manual-deployment-preflight.md` → `.claude/skills/runtime/manual-deployment-preflight.md`
+- `CLAUDE-DIRECTORY/skills/runtime/policy-exception-handling.md` → `.claude/skills/runtime/policy-exception-handling.md`
+- `CLAUDE-DIRECTORY/skills/runtime/policy-rule-design.md` → `.claude/skills/runtime/policy-rule-design.md`
+- `CLAUDE-DIRECTORY/skills/runtime/version-transition-validation.md` → `.claude/skills/runtime/version-transition-validation.md`
+- `CLAUDE-DIRECTORY/workflows/manual-deployment-preflight.md` → `.claude/workflows/manual-deployment-preflight.md`
+- `CLAUDE-DIRECTORY/workflows/policy-evaluation.md` → `.claude/workflows/policy-evaluation.md`
+- `CLAUDE-DIRECTORY/workflows/policy-exception.md` → `.claude/workflows/policy-exception.md`
+- `adapters/shared/policy-enforcement-protocol.md`
+- `docs/manual-deployment-preflight-guide.md`
+- `docs/policy-enforcement-guide.md`
+- `framework/manual-deployment-safety-model.md`
+- `framework/policy-enforcement-model.md`
+- `framework/policy-exception-model.md`
+- `framework/version-transition-model.md`
+- `policies/framework_version_consistency.json`
+- `policies/hidden_directory_mapping.json`
+- `policies/manual_patch_base.json`
+- `release/BETA-11-MIGRATION.md`
+- `release/BETA-11-RELEASE-NOTES.md`
+- `release/beta.11.manifest.json`
+- `schemas/deployment-preflight-report.schema.json`
+- `schemas/policy-evaluation-report.schema.json`
+- `schemas/policy-exception.schema.json`
+- `schemas/policy-rule.schema.json`
+- `scripts/build_policy_report.py`
+- `scripts/evaluate_policies.py`
+- `scripts/manual_deploy_preflight.py`
+- `scripts/validate_version_transition.py`
+- `templates/deployment-preflight-report.json`
+- `templates/policy-exception.json`
+- `tests/conformance/test_policy_enforcement.py`
