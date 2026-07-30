@@ -1,0 +1,17 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "execution-result.schema.json",
+  "type": "object",
+  "required": [
+    "task_id",
+    "runtime",
+    "status",
+    "summary",
+    "changed_files",
+    "validation",
+    "reviews",
+    "assumptions",
+    "remaining_risks"
+  ],
+  "additionalProperties": true
+}

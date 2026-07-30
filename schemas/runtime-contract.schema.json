@@ -1,0 +1,12 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "runtime-contract.schema.json",
+  "type": "object",
+  "required": [
+    "version",
+    "contract",
+    "required_capabilities",
+    "shared_sources"
+  ],
+  "additionalProperties": true
+}

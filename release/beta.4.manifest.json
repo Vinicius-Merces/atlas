@@ -1,0 +1,11 @@
+{
+  "version": "0.1.0-beta.4",
+  "channel": "beta",
+  "canonical_runtime": "claude-code",
+  "supported_runtimes": [
+    "claude-code",
+    "codex"
+  ],
+  "universal_runtime_contract": "adapters/shared/runtime-contract.json",
+  "conformance_tests": "tests/conformance/"
+}

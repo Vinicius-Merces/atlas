@@ -1,0 +1,16 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "runtime-capability.schema.json",
+  "type": "object",
+  "required": [
+    "runtime",
+    "version",
+    "support",
+    "canonical",
+    "contract",
+    "capabilities",
+    "implementation",
+    "limitations"
+  ],
+  "additionalProperties": true
+}
