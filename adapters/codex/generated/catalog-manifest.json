@@ -1,0 +1,11 @@
+{
+  "version": "0.1.0-beta.3",
+  "generated_from": ".claude/registry.json",
+  "collections": {
+    "agents": 60,
+    "commands": 45,
+    "skills": 59,
+    "workflows": 52,
+    "reviews": 45
+  }
+}

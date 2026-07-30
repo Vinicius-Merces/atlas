@@ -1,0 +1,51 @@
+# Codex Reviews Catalog
+
+> Generated from `.claude/registry.json`. Do not edit manually.
+
+Total: **45**
+
+- `adapter-drift-review` → `.claude/reviews/adapter-drift-review.md`
+- `adoption-review` → `.claude/reviews/adoption-review.md`
+- `ai-system-review` → `.claude/reviews/ai-system-review.md`
+- `analytics-review` → `.claude/reviews/analytics-review.md`
+- `architecture-review` → `.claude/reviews/architecture-review.md`
+- `automation-review` → `.claude/reviews/automation-review.md`
+- `beta-readiness-review` → `.claude/reviews/beta-readiness-review.md`
+- `blueprint-review` → `.claude/reviews/blueprint-review.md`
+- `codex-runtime-review` → `.claude/reviews/codex-runtime-review.md`
+- `compatibility-review` → `.claude/reviews/compatibility-review.md`
+- `compliance-review` → `.claude/reviews/compliance-review.md`
+- `content-review` → `.claude/reviews/content-review.md`
+- `contract-compatibility-review` → `.claude/reviews/contract-compatibility-review.md`
+- `debt-governance-review` → `.claude/reviews/debt-governance-review.md`
+- `deprecation-review` → `.claude/reviews/deprecation-review.md`
+- `design-system-review` → `.claude/reviews/design-system-review.md`
+- `documentation-review` → `.claude/reviews/documentation-review.md`
+- `enterprise-architecture-review` → `.claude/reviews/enterprise-architecture-review.md`
+- `finops-review` → `.claude/reviews/finops-review.md`
+- `governance-review` → `.claude/reviews/governance-review.md`
+- `integration-review` → `.claude/reviews/integration-review.md`
+- `knowledge-review` → `.claude/reviews/knowledge-review.md`
+- `localization-review` → `.claude/reviews/localization-review.md`
+- `migration-review` → `.claude/reviews/migration-review.md`
+- `operations-review` → `.claude/reviews/operations-review.md`
+- `package-integrity-review` → `.claude/reviews/package-integrity-review.md`
+- `performance-review` → `.claude/reviews/performance-review.md`
+- `platform-review` → `.claude/reviews/platform-review.md`
+- `policy-review` → `.claude/reviews/policy-review.md`
+- `privacy-review` → `.claude/reviews/privacy-review.md`
+- `product-review` → `.claude/reviews/product-review.md`
+- `project-health-review` → `.claude/reviews/project-health-review.md`
+- `qa-review` → `.claude/reviews/qa-review.md`
+- `reference-implementation-review` → `.claude/reviews/reference-implementation-review.md`
+- `repository-review` → `.claude/reviews/repository-review.md`
+- `runtime-adapter-review` → `.claude/reviews/runtime-adapter-review.md`
+- `runtime-parity-review` → `.claude/reviews/runtime-parity-review.md`
+- `runtime-synchronization-review` → `.claude/reviews/runtime-synchronization-review.md`
+- `security-review` → `.claude/reviews/security-review.md`
+- `stability-review` → `.claude/reviews/stability-review.md`
+- `support-policy-review` → `.claude/reviews/support-policy-review.md`
+- `technical-audit-review` → `.claude/reviews/technical-audit-review.md`
+- `test-automation-review` → `.claude/reviews/test-automation-review.md`
+- `threat-model-review` → `.claude/reviews/threat-model-review.md`
+- `ux-review` → `.claude/reviews/ux-review.md`
