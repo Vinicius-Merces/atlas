@@ -1,7 +1,7 @@
 # ATLAS AI Engineering Framework
 
-**Version:** `0.1.0-alpha.13`  
-**Status:** Foundation / Health, Audit and Migration Runtime
+**Version:** `0.1.0-alpha.14`  
+**Status:** Foundation / Compatibility, Documentation and Beta Readiness Runtime
 
 ATLAS is an AI engineering framework for coordinating software development
 through specialized agents, persistent memory, reusable skills, explicit
@@ -13,7 +13,7 @@ multi-runtime distribution.
 ```text
 Project state
     ↓
-Health and audit assessment
+Health, compatibility and documentation assessment
     ↓
 Context and memory resolution
     ↓
@@ -21,38 +21,40 @@ Orchestrator
     ↓
 Specialist agents + skills
     ↓
-Delivery, validation and governance
+Validation, smoke tests and review gates
     ↓
-Debt, risk and migration tracking
+Release integrity and compatibility checks
     ↓
-Knowledge synchronization
+Migration and knowledge synchronization
 ```
 
-## What alpha.13 adds
+## What alpha.14 adds
 
-- Technical Auditor agent
-- Technical Debt Steward agent
-- Migration Architect agent
-- Project Health Analyst agent
-- Project health assessment skill
-- Technical debt classification skill
-- Architecture audit skill
-- Version migration planning skill
-- Project health workflow
-- Technical audit workflow
-- Debt reduction workflow
-- Framework upgrade workflow
-- Health, audit, debt and migration review gates
-- Project health and audit commands
-- Upgrade and debt commands
-- Health scorecard template
-- Technical audit report template
-- Debt register template
-- Framework migration guide template
-- Project health model
-- Technical debt model
-- Framework evolution model
-- Beta readiness checklist
+- Documentation Architect agent
+- Compatibility Engineer agent
+- Deprecation Manager agent
+- Beta Release Coordinator agent
+- Documentation information architecture skill
+- Compatibility matrix analysis skill
+- Deprecation planning skill
+- Smoke-test design skill
+- Documentation consolidation workflow
+- Compatibility validation workflow
+- Deprecation lifecycle workflow
+- Beta release preparation workflow
+- Documentation, compatibility, deprecation and beta-readiness review gates
+- Runtime compatibility matrix
+- Deprecation registry
+- Documentation index
+- Smoke tests
+- Beta release notes template
+- Compatibility report template
+- Deprecation notice template
+- Documentation audit template
+- Compatibility model
+- Deprecation model
+- Documentation architecture model
+- Beta release candidate checklist
 
 ## Runtime layers
 
@@ -69,4 +71,5 @@ Knowledge synchronization
 - **Enterprise:** portfolio architecture, economics, governance, roadmaps, controls
 - **Distribution:** runtime adapters, release artifacts, package integrity
 - **Adoption:** blueprints, starter kits, reference projects, migration paths
-- **Assurance:** health assessment, audits, technical debt, framework upgrades
+- **Assurance:** health assessment, audits, debt, upgrades
+- **Stability:** compatibility, deprecation, documentation integrity, beta readiness

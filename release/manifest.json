@@ -1,0 +1,12 @@
+{
+  "version": "0.1.0-alpha.14",
+  "file_count": 407,
+  "canonical_runtime": "claude-code",
+  "experimental_adapters": [
+    "codex",
+    "gemini",
+    "cursor"
+  ],
+  "smoke_tests": "tests/smoke/",
+  "documentation_index": "docs/INDEX.md"
+}
