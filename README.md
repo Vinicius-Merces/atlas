@@ -1,7 +1,7 @@
 # ATLAS AI Engineering Framework
 
-**Version:** `0.1.0-alpha.11`  
-**Status:** Foundation / Automation, Validation and Multi-Runtime Runtime
+**Version:** `0.1.0-alpha.12`  
+**Status:** Foundation / Adoption, Blueprints and Reference Runtime
 
 ATLAS is an AI engineering framework for coordinating software development
 through specialized agents, persistent memory, reusable skills, explicit
@@ -10,43 +10,49 @@ workflows, review gates, operational controls, and architecture governance.
 ## Core flow
 
 ```text
-Strategic intent
+Project intent
     ↓
-Repository and knowledge mapping
+Blueprint selection
+    ↓
+Repository bootstrap
+    ↓
+Memory and context initialization
     ↓
 Orchestrator
     ↓
 Specialist agents + skills
     ↓
-Automated policy and schema validation
+Validation and reviews
     ↓
-Human review gates
-    ↓
-Release integrity checks
-    ↓
-Runtime adapter delivery
+Release and knowledge synchronization
 ```
 
-## What alpha.11 adds
+## What alpha.12 adds
 
-- Automation Engineer agent
-- Policy Engineer agent
-- Release Integrity Engineer agent
-- Runtime Adapter Engineer agent
-- Policy-as-code design skill
-- Framework package validation skill
-- Release integrity verification skill
-- Runtime adapter mapping skill
-- CI governance workflow
-- Package validation workflow
-- Runtime adapter workflow
-- Release artifact workflow
-- Automation, policy, package, and adapter review gates
-- GitHub Actions workflows
-- JSON schemas for registry and agent metadata
-- Validation scripts
-- Codex, Gemini, and Cursor adapter foundations
-- Distribution and validation templates
+- Adoption Architect agent
+- Solution Blueprint Engineer agent
+- Reference Implementation Reviewer agent
+- Project adoption assessment skill
+- Blueprint selection skill
+- Reference implementation review skill
+- Framework adoption workflow
+- Blueprint instantiation workflow
+- Reference project review workflow
+- Adoption, blueprint and reference review gates
+- Starter blueprints for:
+  - Landing pages
+  - SaaS products
+  - API services
+  - AI/RAG systems
+  - Mobile apps
+  - Enterprise systems
+- Example project memory
+- Example ADRs
+- Example workflows
+- Adoption guide
+- Blueprint guide
+- Reference implementation guide
+- New commands and templates for practical adoption
 
 ## Runtime layers
 
@@ -62,3 +68,4 @@ Runtime adapter delivery
 - **Platform:** repositories, cloud, integrations, monorepos, shared infrastructure
 - **Enterprise:** portfolio architecture, economics, governance, roadmaps, controls
 - **Distribution:** runtime adapters, release artifacts, package integrity
+- **Adoption:** blueprints, starter kits, reference projects, migration paths
