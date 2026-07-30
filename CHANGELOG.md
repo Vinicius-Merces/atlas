@@ -2,61 +2,61 @@
 
 All notable changes to ATLAS are documented here.
 
+## 0.1.0-alpha.8
+
+### Added
+
+- Product Manager agent
+- Analytics Engineer agent
+- Design System Engineer agent
+- Content Designer agent
+- Localization Engineer agent
+- Developer Experience Engineer agent
+- Experimentation Analyst agent
+- Product requirement decomposition skill
+- Event taxonomy design skill
+- Design token architecture skill
+- Content quality review skill
+- Localization readiness assessment skill
+- Developer onboarding assessment skill
+- Experiment design skill
+- Product discovery workflow
+- Analytics implementation workflow
+- Design system contribution workflow
+- Localization delivery workflow
+- Experiment rollout workflow
+- Product review gate
+- Analytics review gate
+- Design system review gate
+- Content review gate
+- Localization review gate
+- `/atlas-product`, `/atlas-analytics`, `/atlas-experiment`, and `/atlas-design-system`
+- Product requirements document template
+- Event tracking plan template
+- Design system proposal template
+- Localization plan template
+- Experiment brief template
+- Product operating model
+- Analytics model
+- Design system model
+
+### Changed
+
+- Runtime registry expanded with product, analytics, design, localization, and experimentation capabilities
+- README updated for the product and measurement runtime
+- Package remains cumulative
+
 ## 0.1.0-alpha.7
 
 ### Added
 
-- AI Engineer agent
-- Mobile Engineer agent
-- Privacy Engineer agent
-- Compliance Analyst agent
-- Test Automation Engineer agent
-- Release Manager agent
-- AI system design skill
-- Prompt and model evaluation skill
-- Mobile architecture assessment skill
-- Privacy impact assessment skill
-- Test strategy design skill
-- Compliance evidence mapping skill
-- AI feature delivery workflow
-- Mobile feature workflow
-- Privacy review workflow
-- Test automation workflow
-- Release governance workflow
-- AI system review gate
-- Privacy review gate
-- Compliance review gate
-- Test automation review gate
-- `/atlas-test`, `/atlas-privacy`, `/atlas-ai-review`, and `/atlas-govern-release`
-- AI system specification template
-- Privacy impact assessment template
-- Test strategy template
-- Compliance evidence matrix template
-- Release governance checklist
-- Trust model and testing model
-
-### Changed
-
-- Runtime registry expanded with trust, testing, mobile, and AI capabilities
-- README updated for the trust and intelligent systems runtime
-- Package remains cumulative
+- AI, Mobile, Privacy, Compliance, Test Automation, and Release agents
+- AI and privacy skills
+- Trust, testing, and intelligent systems workflows
+- AI, privacy, compliance, and test review gates
 
 ## 0.1.0-alpha.6
 
 ### Added
 
-- DevOps, Data, Performance, Reliability, and Dependency agents
-- Operations and infrastructure skills
-- Incident, migration, and dependency workflows
-- Performance and operations review gates
-- Reliability and observability models
-
-## 0.1.0-alpha.5
-
-### Added
-
-- Memory Engine
-- Memory taxonomy and lifecycle
-- Memory conflict policies
-- Reusable skill library
-- Refactoring and release workflows
+- Operations, data, performance, reliability, and dependency capabilities

@@ -1,7 +1,7 @@
 # ATLAS AI Engineering Framework
 
-**Version:** `0.1.0-alpha.7`  
-**Status:** Foundation / Trust, Testing and Intelligent Systems Runtime
+**Version:** `0.1.0-alpha.8`  
+**Status:** Foundation / Product, Experience and Measurement Runtime
 
 ATLAS is an AI engineering framework for coordinating software development
 through specialized agents, persistent memory, reusable skills, explicit
@@ -12,13 +12,15 @@ workflows, review gates, operational controls, and architecture governance.
 ```text
 User request
     ↓
-Context and memory resolution
+Product and context interpretation
+    ↓
+Memory resolution
     ↓
 Orchestrator
     ↓
 Specialist agents + skills
     ↓
-Testing, trust and review gates
+Experience, analytics and experiment validation
     ↓
 Operations and observability
     ↓
@@ -27,33 +29,37 @@ Documentation
 Delivery
 ```
 
-## What alpha.7 adds
+## What alpha.8 adds
 
-- AI Engineer agent
-- Mobile Engineer agent
-- Privacy Engineer agent
-- Compliance Analyst agent
-- Test Automation Engineer agent
-- Release Manager agent
-- AI system design skill
-- Prompt and model evaluation skill
-- Mobile architecture assessment skill
-- Privacy impact assessment skill
-- Test strategy design skill
-- Compliance evidence mapping skill
-- AI feature delivery workflow
-- Mobile feature workflow
-- Privacy review workflow
-- Test automation workflow
-- Release governance workflow
-- Privacy, compliance, AI and test review gates
-- New operational commands and templates
+- Product Manager agent
+- Analytics Engineer agent
+- Design System Engineer agent
+- Content Designer agent
+- Localization Engineer agent
+- Developer Experience Engineer agent
+- Experimentation Analyst agent
+- Product requirement decomposition skill
+- Event taxonomy design skill
+- Design token architecture skill
+- Content quality review skill
+- Localization readiness assessment skill
+- Developer onboarding assessment skill
+- Experiment design skill
+- Product discovery workflow
+- Analytics implementation workflow
+- Design system contribution workflow
+- Localization delivery workflow
+- Experiment rollout workflow
+- Product, analytics, design system, content and localization review gates
+- New planning and governance templates
 
 ## Runtime layers
 
-- **Knowledge:** memory, ADRs, project documentation
+- **Knowledge:** memory, ADRs, product context, documentation
 - **Capability:** skills and tools
 - **Execution:** agents, workflows, commands
 - **Governance:** rules, contracts, reviews, quality gates
 - **Operations:** deployment, observability, incident response, recovery
 - **Trust:** security, privacy, compliance, testing, AI evaluation
+- **Experience:** product, design systems, content, localization, developer experience
+- **Measurement:** analytics, experiments, product outcomes
