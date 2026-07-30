@@ -1,5 +1,28 @@
 # Changelog
 
+## 0.1.0-beta.4
+
+### Added
+
+- Universal Runtime Architect agent
+- Task Routing Engineer agent
+- Context Pack Engineer agent
+- Runtime Conformance Auditor agent
+- Universal runtime contract, routing, context pack, and conformance skills
+- Task routing, context pack, and runtime conformance workflows
+- Universal runtime, routing, context, and conformance review gates
+- `/atlas-route`, `/atlas-context-pack`, and `/atlas-conformance`
+- Provider-neutral runtime contract
+- Claude Code and Codex runtime declarations
+- Task envelope and execution-result schemas
+- Runtime conformance scripts and tests
+- Universal runtime, task routing, context pack, and conformance models
+
+### Changed
+
+- Version promoted to `0.1.0-beta.4`
+- Claude Code and Codex now declare support against one universal contract
+
 All notable changes to ATLAS are documented here.
 
 ## 0.1.0-beta.3
