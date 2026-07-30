@@ -2,55 +2,58 @@
 
 All notable changes to ATLAS are documented here.
 
+## 0.1.0-alpha.6
+
+### Added
+
+- DevOps Engineer agent
+- Data Engineer agent
+- Performance Engineer agent
+- Reliability Engineer agent
+- Dependency Manager agent
+- Infrastructure change assessment skill
+- Database migration analysis skill
+- Performance budget analysis skill
+- Observability design skill
+- Incident triage skill
+- Dependency impact analysis skill
+- Incident response workflow
+- Dependency upgrade workflow
+- Database migration workflow
+- Performance review gate
+- Operations review gate
+- `/atlas-incident` and `/atlas-migrate` command definitions
+- Incident report template
+- Operational runbook template
+- Migration plan template
+- Reliability model
+- Observability model
+
+### Changed
+
+- Runtime registry expanded with operations, reliability, data, and performance capabilities
+- README updated for the operations and reliability runtime
+- Package remains cumulative
+
 ## 0.1.0-alpha.5
 
 ### Added
 
 - Memory Engine specification
-- Memory taxonomy
-- Memory lifecycle
+- Memory taxonomy and lifecycle
 - Memory staleness and conflict policy
-- Business, architecture, integration, brand, and security memory templates
-- Architecture assessment skill
-- Component reuse assessment skill
-- API contract analysis skill
-- Regression risk analysis skill
-- Accessibility audit skill
-- Refactoring workflow
-- Release workflow
-- Security review gate
-- UX review gate
-- `/atlas-plan`, `/atlas-review`, and `/atlas-release` command definitions
-- Memory operations guide
-
-### Changed
-
-- Runtime registry expanded with memory, skills, reviews, and commands
-- README updated for the memory and skills runtime
-- Package remains cumulative
+- Project memory templates
+- Reusable skill library
+- Refactoring and release workflows
+- Security and UX review gates
+- Reusable commands
 
 ## 0.1.0-alpha.4
 
 ### Added
 
-- Product Architect agent
-- Frontend Engineer agent
-- Backend Engineer agent
-- UX Director agent
-- QA Engineer agent
-- Security Engineer agent
-- Documentation Engineer agent
+- First specialist agents
 - Skill, review, and command contracts
 - Feature delivery and bug-fix workflows
 - Architecture and QA review gates
 - Agent registry and runtime manifest
-
-## 0.1.0-alpha.3
-
-### Added
-
-- Orchestrator agent foundation
-- Agent, memory, and workflow contracts
-- Context engine
-- Project lifecycle model
-- ADR-001
