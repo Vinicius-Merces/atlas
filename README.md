@@ -1,26 +1,24 @@
 # ATLAS AI Engineering Framework
 
-**Version:** `0.1.0-alpha.6`  
-**Status:** Foundation / Operations and Reliability Runtime
+**Version:** `0.1.0-alpha.7`  
+**Status:** Foundation / Trust, Testing and Intelligent Systems Runtime
 
 ATLAS is an AI engineering framework for coordinating software development
 through specialized agents, persistent memory, reusable skills, explicit
-workflows, review gates, and architecture governance.
+workflows, review gates, operational controls, and architecture governance.
 
 ## Core flow
 
 ```text
 User request
     ↓
-Context engine
-    ↓
-Memory resolution
+Context and memory resolution
     ↓
 Orchestrator
     ↓
 Specialist agents + skills
     ↓
-Reviews and quality gates
+Testing, trust and review gates
     ↓
 Operations and observability
     ↓
@@ -29,23 +27,27 @@ Documentation
 Delivery
 ```
 
-## What alpha.6 adds
+## What alpha.7 adds
 
-- DevOps Engineer agent
-- Data Engineer agent
-- Performance Engineer agent
-- Reliability Engineer agent
-- Dependency Manager agent
-- Infrastructure and operations skills
-- Database migration analysis
-- Performance budget analysis
-- Observability design
-- Incident response workflow
-- Dependency upgrade workflow
-- Database migration workflow
-- Performance review gate
-- Operations review gate
-- Incident and operational runbook templates
+- AI Engineer agent
+- Mobile Engineer agent
+- Privacy Engineer agent
+- Compliance Analyst agent
+- Test Automation Engineer agent
+- Release Manager agent
+- AI system design skill
+- Prompt and model evaluation skill
+- Mobile architecture assessment skill
+- Privacy impact assessment skill
+- Test strategy design skill
+- Compliance evidence mapping skill
+- AI feature delivery workflow
+- Mobile feature workflow
+- Privacy review workflow
+- Test automation workflow
+- Release governance workflow
+- Privacy, compliance, AI and test review gates
+- New operational commands and templates
 
 ## Runtime layers
 
@@ -54,3 +56,4 @@ Delivery
 - **Execution:** agents, workflows, commands
 - **Governance:** rules, contracts, reviews, quality gates
 - **Operations:** deployment, observability, incident response, recovery
+- **Trust:** security, privacy, compliance, testing, AI evaluation
