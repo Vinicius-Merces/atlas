@@ -2,7 +2,7 @@
 
 > Generated from `.claude/registry.json`. Do not edit manually.
 
-Total: **60**
+Total: **64**
 
 - `adapter-drift-auditor` → `.claude/agents/adapter-drift-auditor.md`
 - `adoption-architect` → `.claude/agents/adoption-architect.md`
@@ -16,6 +16,7 @@ Total: **60**
 - `compatibility-engineer` → `.claude/agents/compatibility-engineer.md`
 - `compliance-analyst` → `.claude/agents/compliance-analyst.md`
 - `content-designer` → `.claude/agents/content-designer.md`
+- `context-pack-engineer` → `.claude/agents/context-pack-engineer.md`
 - `contract-test-engineer` → `.claude/agents/contract-test-engineer.md`
 - `data-engineer` → `.claude/agents/data-engineer.md`
 - `dependency-manager` → `.claude/agents/dependency-manager.md`
@@ -51,6 +52,7 @@ Total: **60**
 - `runtime-adapter-engineer` → `.claude/agents/runtime-adapter-engineer.md`
 - `runtime-capability-mapper` → `.claude/agents/runtime-capability-mapper.md`
 - `runtime-catalog-maintainer` → `.claude/agents/runtime-catalog-maintainer.md`
+- `runtime-conformance-auditor` → `.claude/agents/runtime-conformance-auditor.md`
 - `runtime-parity-reviewer` → `.claude/agents/runtime-parity-reviewer.md`
 - `runtime-synchronization-engineer` → `.claude/agents/runtime-synchronization-engineer.md`
 - `search-retrieval-engineer` → `.claude/agents/search-retrieval-engineer.md`
@@ -58,9 +60,11 @@ Total: **60**
 - `solution-blueprint-engineer` → `.claude/agents/solution-blueprint-engineer.md`
 - `stability-engineer` → `.claude/agents/stability-engineer.md`
 - `support-policy-maintainer` → `.claude/agents/support-policy-maintainer.md`
+- `task-routing-engineer` → `.claude/agents/task-routing-engineer.md`
 - `technical-auditor` → `.claude/agents/technical-auditor.md`
 - `technical-debt-steward` → `.claude/agents/technical-debt-steward.md`
 - `technical-program-manager` → `.claude/agents/technical-program-manager.md`
 - `test-automation-engineer` → `.claude/agents/test-automation-engineer.md`
 - `threat-modeling-engineer` → `.claude/agents/threat-modeling-engineer.md`
+- `universal-runtime-architect` → `.claude/agents/universal-runtime-architect.md`
 - `ux-director` → `.claude/agents/ux-director.md`

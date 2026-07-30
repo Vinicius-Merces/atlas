@@ -1,0 +1,43 @@
+{
+  "version": "0.1.0-beta.4",
+  "routes": [
+    {
+      "task_type": "feature",
+      "primary_role": "product-architect",
+      "workflow": "feature-delivery",
+      "reviews": [
+        "architecture-review",
+        "qa-review"
+      ]
+    },
+    {
+      "task_type": "bug",
+      "primary_role": "qa-engineer",
+      "workflow": "bug-fix",
+      "reviews": [
+        "qa-review"
+      ]
+    },
+    {
+      "task_type": "security",
+      "primary_role": "security-engineer",
+      "workflow": "threat-modeling",
+      "reviews": [
+        "security-review"
+      ]
+    },
+    {
+      "task_type": "release",
+      "primary_role": "release-manager",
+      "workflow": "release-governance",
+      "reviews": [
+        "package-integrity-review",
+        "stability-review"
+      ]
+    }
+  ],
+  "fallback": {
+    "primary_role": "orchestrator",
+    "workflow": "project-lifecycle"
+  }
+}

@@ -2,7 +2,7 @@
 
 > Generated from `.claude/registry.json`. Do not edit manually.
 
-Total: **52**
+Total: **55**
 
 - `adapter-drift-audit` → `.claude/workflows/adapter-drift-audit.md`
 - `ai-feature-delivery` → `.claude/workflows/ai-feature-delivery.md`
@@ -15,6 +15,7 @@ Total: **52**
 - `ci-governance` → `.claude/workflows/ci-governance.md`
 - `codex-synchronization` → `.claude/workflows/codex-synchronization.md`
 - `compatibility-validation` → `.claude/workflows/compatibility-validation.md`
+- `context-pack` → `.claude/workflows/context-pack.md`
 - `contract-testing` → `.claude/workflows/contract-testing.md`
 - `database-migration` → `.claude/workflows/database-migration.md`
 - `debt-reduction` → `.claude/workflows/debt-reduction.md`
@@ -48,10 +49,12 @@ Total: **52**
 - `release-governance` → `.claude/workflows/release-governance.md`
 - `runtime-adapter` → `.claude/workflows/runtime-adapter.md`
 - `runtime-catalog-publication` → `.claude/workflows/runtime-catalog-publication.md`
+- `runtime-conformance` → `.claude/workflows/runtime-conformance.md`
 - `runtime-parity` → `.claude/workflows/runtime-parity.md`
 - `runtime-synchronization` → `.claude/workflows/runtime-synchronization.md`
 - `support-policy` → `.claude/workflows/support-policy.md`
 - `system-modernization` → `.claude/workflows/system-modernization.md`
+- `task-routing` → `.claude/workflows/task-routing.md`
 - `technical-audit` → `.claude/workflows/technical-audit.md`
 - `technical-program` → `.claude/workflows/technical-program.md`
 - `test-automation` → `.claude/workflows/test-automation.md`

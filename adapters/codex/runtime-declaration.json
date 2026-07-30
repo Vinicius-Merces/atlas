@@ -1,0 +1,21 @@
+{
+  "runtime": "codex",
+  "version": "0.1.0-beta.4",
+  "support": "beta-supported",
+  "canonical": false,
+  "contract": "../shared/runtime-contract.json",
+  "capabilities": [
+    "read-files",
+    "inspect-repository",
+    "read-memory",
+    "apply-scoped-edits",
+    "run-or-report-validation",
+    "follow-workflows",
+    "perform-reviews",
+    "report-execution-evidence"
+  ],
+  "implementation": "adapters/codex/",
+  "limitations": [
+    "Tool names and invocation differ from Claude Code."
+  ]
+}

@@ -2,7 +2,7 @@
 
 > Generated from `.claude/registry.json`. Do not edit manually.
 
-Total: **59**
+Total: **63**
 
 - `accessibility-audit` → `.claude/skills/accessibility-audit.md`
 - `adapter-drift-detection` → `.claude/skills/adapter-drift-detection.md`
@@ -20,6 +20,7 @@ Total: **59**
 - `compliance-evidence-mapping` → `.claude/skills/compliance-evidence-mapping.md`
 - `component-reuse-assessment` → `.claude/skills/component-reuse-assessment.md`
 - `content-quality-review` → `.claude/skills/content-quality-review.md`
+- `context-pack-composition` → `.claude/skills/context-pack-composition.md`
 - `control-design` → `.claude/skills/control-design.md`
 - `core-contract-stabilization` → `.claude/skills/core-contract-stabilization.md`
 - `database-migration-analysis` → `.claude/skills/database-migration-analysis.md`
@@ -54,12 +55,15 @@ Total: **59**
 - `release-integrity-verification` → `.claude/skills/release-integrity-verification.md`
 - `repository-mapping` → `.claude/skills/repository-mapping.md`
 - `runtime-adapter-mapping` → `.claude/skills/runtime-adapter-mapping.md`
+- `runtime-conformance-testing` → `.claude/skills/runtime-conformance-testing.md`
 - `runtime-semantic-parity` → `.claude/skills/runtime-semantic-parity.md`
 - `semantic-compatibility-verification` → `.claude/skills/semantic-compatibility-verification.md`
 - `smoke-test-design` → `.claude/skills/smoke-test-design.md`
 - `support-classification` → `.claude/skills/support-classification.md`
+- `task-routing-policy` → `.claude/skills/task-routing-policy.md`
 - `technical-debt-classification` → `.claude/skills/technical-debt-classification.md`
 - `technical-roadmap-synthesis` → `.claude/skills/technical-roadmap-synthesis.md`
 - `test-strategy-design` → `.claude/skills/test-strategy-design.md`
 - `threat-modeling` → `.claude/skills/threat-modeling.md`
+- `universal-runtime-contract-design` → `.claude/skills/universal-runtime-contract-design.md`
 - `version-migration-planning` → `.claude/skills/version-migration-planning.md`

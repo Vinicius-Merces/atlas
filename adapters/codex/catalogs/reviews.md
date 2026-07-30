@@ -2,7 +2,7 @@
 
 > Generated from `.claude/registry.json`. Do not edit manually.
 
-Total: **45**
+Total: **49**
 
 - `adapter-drift-review` → `.claude/reviews/adapter-drift-review.md`
 - `adoption-review` → `.claude/reviews/adoption-review.md`
@@ -16,6 +16,7 @@ Total: **45**
 - `compatibility-review` → `.claude/reviews/compatibility-review.md`
 - `compliance-review` → `.claude/reviews/compliance-review.md`
 - `content-review` → `.claude/reviews/content-review.md`
+- `context-pack-review` → `.claude/reviews/context-pack-review.md`
 - `contract-compatibility-review` → `.claude/reviews/contract-compatibility-review.md`
 - `debt-governance-review` → `.claude/reviews/debt-governance-review.md`
 - `deprecation-review` → `.claude/reviews/deprecation-review.md`
@@ -40,12 +41,15 @@ Total: **45**
 - `reference-implementation-review` → `.claude/reviews/reference-implementation-review.md`
 - `repository-review` → `.claude/reviews/repository-review.md`
 - `runtime-adapter-review` → `.claude/reviews/runtime-adapter-review.md`
+- `runtime-conformance-review` → `.claude/reviews/runtime-conformance-review.md`
 - `runtime-parity-review` → `.claude/reviews/runtime-parity-review.md`
 - `runtime-synchronization-review` → `.claude/reviews/runtime-synchronization-review.md`
 - `security-review` → `.claude/reviews/security-review.md`
 - `stability-review` → `.claude/reviews/stability-review.md`
 - `support-policy-review` → `.claude/reviews/support-policy-review.md`
+- `task-routing-review` → `.claude/reviews/task-routing-review.md`
 - `technical-audit-review` → `.claude/reviews/technical-audit-review.md`
 - `test-automation-review` → `.claude/reviews/test-automation-review.md`
 - `threat-model-review` → `.claude/reviews/threat-model-review.md`
+- `universal-runtime-contract-review` → `.claude/reviews/universal-runtime-contract-review.md`
 - `ux-review` → `.claude/reviews/ux-review.md`

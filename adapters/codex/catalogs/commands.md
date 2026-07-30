@@ -2,7 +2,7 @@
 
 > Generated from `.claude/registry.json`. Do not edit manually.
 
-Total: **45**
+Total: **48**
 
 - `atlas-adapt-runtime` → `.claude/commands/atlas-adapt-runtime.md`
 - `atlas-adopt` → `.claude/commands/atlas-adopt.md`
@@ -14,6 +14,8 @@ Total: **45**
 - `atlas-bootstrap` → `.claude/commands/atlas-bootstrap.md`
 - `atlas-codex-sync` → `.claude/commands/atlas-codex-sync.md`
 - `atlas-compatibility` → `.claude/commands/atlas-compatibility.md`
+- `atlas-conformance` → `.claude/commands/atlas-conformance.md`
+- `atlas-context-pack` → `.claude/commands/atlas-context-pack.md`
 - `atlas-contract-test` → `.claude/commands/atlas-contract-test.md`
 - `atlas-cost` → `.claude/commands/atlas-cost.md`
 - `atlas-debt` → `.claude/commands/atlas-debt.md`
@@ -39,6 +41,7 @@ Total: **45**
 - `atlas-release` → `.claude/commands/atlas-release.md`
 - `atlas-review` → `.claude/commands/atlas-review.md`
 - `atlas-roadmap` → `.claude/commands/atlas-roadmap.md`
+- `atlas-route` → `.claude/commands/atlas-route.md`
 - `atlas-runtime-catalog` → `.claude/commands/atlas-runtime-catalog.md`
 - `atlas-runtime-drift` → `.claude/commands/atlas-runtime-drift.md`
 - `atlas-runtime-parity` → `.claude/commands/atlas-runtime-parity.md`

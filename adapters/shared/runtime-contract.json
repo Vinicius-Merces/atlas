@@ -1,0 +1,23 @@
+{
+  "version": "0.1.0-beta.4",
+  "contract": "atlas-universal-runtime",
+  "required_capabilities": [
+    "read-files",
+    "inspect-repository",
+    "read-memory",
+    "apply-scoped-edits",
+    "run-or-report-validation",
+    "follow-workflows",
+    "perform-reviews",
+    "report-execution-evidence"
+  ],
+  "shared_sources": {
+    "contracts": ".claude/contracts/",
+    "memory": ".claude/memory/",
+    "framework": "framework/",
+    "documentation": "docs/",
+    "templates": "templates/"
+  },
+  "task_envelope_schema": "schemas/task-envelope.schema.json",
+  "execution_result_schema": "schemas/execution-result.schema.json"
+}
