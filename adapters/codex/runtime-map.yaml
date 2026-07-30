@@ -1,0 +1,14 @@
+runtime: codex
+status: foundation
+canonical_source: ../../
+
+mapping:
+  agents: role-instructions
+  skills: reusable-guidance
+  workflows: task-procedures
+  contracts: execution-constraints
+  reviews: verification-passes
+
+limitations:
+  - Tool names may require manual mapping.
+  - Runtime-specific command syntax is not yet generated automatically.

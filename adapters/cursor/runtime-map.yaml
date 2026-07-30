@@ -1,0 +1,13 @@
+runtime: cursor
+status: foundation
+canonical_source: ../../
+
+mapping:
+  rules: cursor-rules
+  agents: role-rules
+  memory: project-docs
+  workflows: reusable-prompts
+  reviews: verification-checklists
+
+limitations:
+  - Exact rule file format depends on the target Cursor version.

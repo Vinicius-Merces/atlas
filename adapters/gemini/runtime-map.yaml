@@ -1,0 +1,13 @@
+runtime: gemini
+status: foundation
+canonical_source: ../../
+
+mapping:
+  agents: context-roles
+  skills: reference-modules
+  workflows: execution-sequences
+  contracts: mandatory-constraints
+  reviews: quality-passes
+
+limitations:
+  - Runtime tool declarations require target-specific validation.
