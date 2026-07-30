@@ -1,0 +1,16 @@
+{
+  "framework_version": "0.1.0-beta.9",
+  "contradictions": [
+    {
+      "id": "contradiction-example",
+      "topic": "",
+      "sources": [],
+      "claims": [],
+      "impact": "",
+      "confidence": "unknown",
+      "owner": "",
+      "proposed_resolution": "",
+      "status": "open"
+    }
+  ]
+}

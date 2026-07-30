@@ -1,0 +1,33 @@
+{
+  "framework_version": "0.1.0-beta.9",
+  "domains": {
+    "framework_version": {
+      "source": "VERSION",
+      "type": "file"
+    },
+    "runtime_registry": {
+      "source": ".claude/registry.json",
+      "type": "json"
+    },
+    "runtime_contract": {
+      "source": "adapters/shared/runtime-contract.json",
+      "type": "json"
+    },
+    "architecture_decisions": {
+      "source": "docs/adr/",
+      "type": "directory",
+      "fallbacks": [
+        "examples/adr/"
+      ]
+    },
+    "project_memory": {
+      "source": ".claude/memory/",
+      "type": "directory"
+    },
+    "continuity": {
+      "source": ".atlas/continuity/",
+      "type": "directory",
+      "optional": true
+    }
+  }
+}

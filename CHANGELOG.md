@@ -1,5 +1,45 @@
 # Changelog
 
+## 0.1.0-beta.9
+
+### Added
+
+- Memory Governance Architect agent
+- Project State Reconciler agent
+- Knowledge Contradiction Reviewer agent
+- Memory drift analysis skill
+- Source-of-truth validation skill
+- Continuity reconciliation skill
+- Memory update proposal skill
+- Memory drift audit workflow
+- Project-state reconciliation workflow
+- Continuity refresh workflow
+- Memory governance review gate
+- Contradiction review gate
+- Source-of-truth review gate
+- `/atlas-memory-drift`, `/atlas-reconcile-memory`, and `/atlas-refresh-continuity`
+- Memory drift report schema
+- Contradiction register schema
+- Reconciliation proposal schema
+- Source-of-truth manifest schema
+- Memory drift auditor
+- Source-of-truth validator
+- Reconciliation proposal builder
+- Continuity refresh tool
+- Memory governance conformance tests
+- Memory governance model
+- Project-state reconciliation model
+- Contradiction management model
+- Source-of-truth model
+- Manual continuity refresh guide
+
+### Changed
+
+- Version promoted to `0.1.0-beta.9`
+- Portable memory now includes drift and contradiction governance
+- Claude Code and Codex declarations include project-state reconciliation capabilities
+- Incremental package instructions explicitly prioritize manual deployment
+
 ## 0.1.0-beta.8
 
 ### Added

@@ -1,0 +1,13 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "reconciliation-proposal.schema.json",
+  "type": "object",
+  "required": [
+    "framework_version",
+    "drift_report",
+    "proposed_updates",
+    "manual_review",
+    "status"
+  ],
+  "additionalProperties": true
+}

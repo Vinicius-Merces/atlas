@@ -1,0 +1,10 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "source-of-truth-manifest.schema.json",
+  "type": "object",
+  "required": [
+    "framework_version",
+    "domains"
+  ],
+  "additionalProperties": true
+}

@@ -1,289 +1,283 @@
 {
   "package_type": "incremental",
-  "from_version": "0.1.0-beta.7",
-  "to_version": "0.1.0-beta.8",
-  "added_count": 41,
+  "deployment_mode": "manual-copy-supported",
+  "from_version": "0.1.0-beta.8",
+  "to_version": "0.1.0-beta.9",
+  "added_count": 38,
   "modified_count": 13,
   "deleted_count": 0,
   "files": [
     {
-      "path": ".claude/agents/project-memory-curator.md",
+      "path": ".claude/agents/knowledge-contradiction-reviewer.md",
       "operation": "add",
-      "sha256": "55fc4fec440e61218beb95a603ded44a25cb881a658fcb93041a6345837c591e"
+      "sha256": "b3eb3c8c3cdb23acde9c6ca49cfcf72c477e2b37836f62446cd86e504b57610c"
     },
     {
-      "path": ".claude/agents/resume-packet-reviewer.md",
+      "path": ".claude/agents/memory-governance-architect.md",
       "operation": "add",
-      "sha256": "bd6a12459f63fcb7390df4e9a177dcb3dca3b6c0d9b596fc54097c9021355e92"
+      "sha256": "0d30dd66f70561f6297429dd9d20bac484ac8e027fe13f00c20b9adb7a232ea1"
     },
     {
-      "path": ".claude/agents/session-continuity-engineer.md",
+      "path": ".claude/agents/project-state-reconciler.md",
       "operation": "add",
-      "sha256": "3aeabb543b66ef464562d7ab81dcb8b1a59d57fd430a6ca4a8f4d31ee64ff6b9"
+      "sha256": "6b54df8a9322b3e7cd0302b7072fb549b73e3cf14d330c67077e3526cdeb915d"
     },
     {
-      "path": ".claude/commands/atlas-brief.md",
+      "path": ".claude/commands/atlas-memory-drift.md",
       "operation": "add",
-      "sha256": "c76d8363a5ac7107838ba29500adb4c20cc29a7f2e61f361021c617ca1ec7131"
+      "sha256": "ae8b7f1a4e67bedf6314fe68ba5c3c45f8ecc1f20fda2f38127ce27eb347084e"
     },
     {
-      "path": ".claude/commands/atlas-close-session.md",
+      "path": ".claude/commands/atlas-reconcile-memory.md",
       "operation": "add",
-      "sha256": "8fc806b7e529ae6b0db4bd8c15a411ab4cdcfc5e16361fd97d9f52671f68df4b"
+      "sha256": "c7567f7e330b890a79baa765f3a2cce4e8addf7c3bb8276e92a83737614c4152"
     },
     {
-      "path": ".claude/commands/atlas-memory-freshness.md",
+      "path": ".claude/commands/atlas-refresh-continuity.md",
       "operation": "add",
-      "sha256": "712669deaf4869b21f2460ec5fcc0d74b7f58972476c9e07fcbefba173886746"
+      "sha256": "44e58b0946c50d1949651cc7f16a363512afdf7a4ab52483daedb6653f95477c"
     },
     {
-      "path": ".claude/commands/atlas-resume-packet.md",
+      "path": ".claude/reviews/contradiction-review.md",
       "operation": "add",
-      "sha256": "2a060ece65b4e333941a687c2def40662f36293bcc23377fa91daf483cf3f576"
+      "sha256": "5fd8c87b6a9235dd5ea562b060690b9fae02c68fc740fedcf0ad750daf2210a0"
     },
     {
-      "path": ".claude/reviews/project-memory-review.md",
+      "path": ".claude/reviews/memory-governance-review.md",
       "operation": "add",
-      "sha256": "c2f10d2a38d039f48ee15481261ce238ced7737eeb26e54bc663e5f7338d13c1"
+      "sha256": "a50b8452ca41f546c5bb57a6497ce31dfb2e9815ded5f09ede5cde8bbc4fcf89"
     },
     {
-      "path": ".claude/reviews/resume-packet-review.md",
+      "path": ".claude/reviews/source-of-truth-review.md",
       "operation": "add",
-      "sha256": "5789d4d7ab5c2c96c3d2af4869958c1593470202a866f9f5d4356cd39a45ecd3"
+      "sha256": "71cb2bce499bff7262c1cabc891123fe6161b7567b400597280a63f0c0d5ca99"
     },
     {
-      "path": ".claude/reviews/session-continuity-review.md",
+      "path": ".claude/skills/runtime/continuity-reconciliation.md",
       "operation": "add",
-      "sha256": "8d8bb215eb444558fb86fc4a6f78f6b481b16248eaf6255f062446d3799379d7"
+      "sha256": "571debc4d20f959cdeb606798dbebe9ecd026a1a0c7779123922d7996833dae0"
     },
     {
-      "path": ".claude/skills/runtime/memory-freshness-audit.md",
+      "path": ".claude/skills/runtime/memory-drift-analysis.md",
       "operation": "add",
-      "sha256": "65169438dff46e077d69f08462aefc8a7660856beea73211ebd39384180a9960"
+      "sha256": "ff21173ecfe1203bf95fa6aa621603f31448971a8a55769e19d08b7fdb7d9460"
     },
     {
-      "path": ".claude/skills/runtime/project-brief-synthesis.md",
+      "path": ".claude/skills/runtime/memory-update-proposal.md",
       "operation": "add",
-      "sha256": "5d95066e7eb27df6540bf9e6ef70b4c9a2a0292c7a60308cde7fe35f7d0ebd47"
+      "sha256": "28561b01b8f8500c831549ad2ab223b3a5156b6b3a439a492a7d22a570e9ab08"
     },
     {
-      "path": ".claude/skills/runtime/resume-packet-assembly.md",
+      "path": ".claude/skills/runtime/source-of-truth-validation.md",
       "operation": "add",
-      "sha256": "a58d468002407443f05456f28ecfc03b10a280f41771c3379655786a7fce2136"
+      "sha256": "5e95d311af8c87240b631249d89c37c61094c0915d4e80fb43338da478800aff"
     },
     {
-      "path": ".claude/skills/runtime/session-closeout.md",
+      "path": ".claude/workflows/continuity-refresh.md",
       "operation": "add",
-      "sha256": "00560a49f212dcc34e12469797d1ce0012254067b8af4695de750339093a5476"
+      "sha256": "d4a66f5d57144da9307e521b7f4295d956d2dc4e79572b10cbbc5ce2fa60d0b8"
     },
     {
-      "path": ".claude/workflows/cross-session-recovery.md",
+      "path": ".claude/workflows/memory-drift-audit.md",
       "operation": "add",
-      "sha256": "6aa4222bda74380c00954c3f80d00facc9cba1e47dfae7c2d7c37e381c01b732"
+      "sha256": "91dcaaa705557522f3a36cadefac4d15cf1f36b5e7b93ec49d75c3cfb6b19d36"
     },
     {
-      "path": ".claude/workflows/session-bootstrap.md",
+      "path": ".claude/workflows/project-state-reconciliation.md",
       "operation": "add",
-      "sha256": "5c426dfcca191ac9c41618e6d94d3c7b5d0046072c35f8117c3ed169d177ba80"
+      "sha256": "dc1249220015a83c4aba347b323e325ebdf57be9b757b2919c3251000b5f5f00"
     },
     {
-      "path": ".claude/workflows/session-closeout.md",
+      "path": "adapters/shared/memory-governance-protocol.md",
       "operation": "add",
-      "sha256": "1301ff6bdc9e9f5f53dc243b3e094b4ab775d3ae5aa3c2deecca5524c48aaebe"
+      "sha256": "1722e958ecee80831f1d24ef33e7796cef54f7ba25e18c1d9196337cea22d119"
     },
     {
-      "path": "adapters/claude/SESSION-BOOTSTRAP.md",
+      "path": "adapters/shared/source-of-truth-manifest.json",
       "operation": "add",
-      "sha256": "368ee509d389711c771d0e848d2672ef087f5cc3fb7112c24d5ddc08f6aa568e"
+      "sha256": "c4759d3036d3fef9628db0857083d58c6d71331b5f7dfc1c9d6573ce164bbe0b"
     },
     {
-      "path": "adapters/codex/instructions/session-bootstrap.md",
+      "path": "docs/manual-continuity-refresh-guide.md",
       "operation": "add",
-      "sha256": "9342360589dd6103924ba6b82c4334967c85c7b23f141adb8fd33ead0e046528"
+      "sha256": "70caa60718021f16002bf24f6cf3deb2b36e415df6ac60ba8a8b0bbb1cfa9feb"
     },
     {
-      "path": "adapters/shared/session-continuity-protocol.md",
+      "path": "docs/memory-governance-guide.md",
       "operation": "add",
-      "sha256": "672198ff1938b4811c2d19b0df1472903094ee4d2c10a625034bf072800d4971"
+      "sha256": "1a3dafe120d4bc0753225aed9cdf7f854e9117d3fadcb677fb98cec1ff1295a8"
     },
     {
-      "path": "docs/claude-code-bootstrap-guide.md",
+      "path": "framework/contradiction-management-model.md",
       "operation": "add",
-      "sha256": "e9bbbd12404618c980fcf432028f457b7d4e0d10c6c4a111fe2d2cb0f45769c9"
+      "sha256": "c8d9e3472ee57eb48643888ddbc3b9751017ff84ad515bf5b18e5990e6d3f980"
     },
     {
-      "path": "docs/codex-vscode-bootstrap-guide.md",
+      "path": "framework/memory-governance-model.md",
       "operation": "add",
-      "sha256": "a1196ee98468026c87381260304da14162b70b2da70d3d0da50c363704967986"
+      "sha256": "4d101e454cb9002b49d1ca80652204bcde8cd6e031650e80e43bd7416b7a126a"
     },
     {
-      "path": "docs/cross-session-continuity-guide.md",
+      "path": "framework/project-state-reconciliation-model.md",
       "operation": "add",
-      "sha256": "67ba4d7d9a6f8538dbfe135bf53866719842d971e50abefe9098fdb99e96787f"
+      "sha256": "996d9eb0332ed304852a6fa46de743389824fec7ab0aa752047733075b9a4c0d"
     },
     {
-      "path": "framework/memory-freshness-model.md",
+      "path": "framework/source-of-truth-model.md",
       "operation": "add",
-      "sha256": "b4ec78b3f95329dc403864067e9e5a5680b90650d077370f02bb75beacfcf9e7"
+      "sha256": "c21f7bedfb2b82529802c486fd4c1bf94548a2bf78a094f1c925ffda74db318f"
     },
     {
-      "path": "framework/project-continuity-model.md",
+      "path": "release/BETA-9-MIGRATION.md",
       "operation": "add",
-      "sha256": "11a658c8884a4d9ff17edfbb5e061fadd4252fd48bd5e455fd637b903be5e894"
+      "sha256": "c5e259d9fb898ecb7ee98e6821027f54130a5f768bde879c5f299e70efe967e0"
     },
     {
-      "path": "framework/resume-packet-model.md",
+      "path": "release/BETA-9-RELEASE-NOTES.md",
       "operation": "add",
-      "sha256": "babe1699e6a8021e64a2c9d8ff3295124f5525b0bbd8c903a2ef368c0a04c085"
+      "sha256": "1c6c96ecb0b220ece1fe0e47eed89710a236c9c0c3606f6904c2a60a229de158"
     },
     {
-      "path": "framework/session-brief-model.md",
+      "path": "release/beta.9.manifest.json",
       "operation": "add",
-      "sha256": "a3859ae80961bce1ed69c2b84a2d1a059fb1fc4fb8535b38d8ba96c6b11a8f84"
+      "sha256": "31480d78fbf6c03d430a6f7be429e174b877e890d70d68a8db32d5be5a4bc944"
     },
     {
-      "path": "release/BETA-8-MIGRATION.md",
+      "path": "schemas/contradiction-register.schema.json",
       "operation": "add",
-      "sha256": "b9d51c11b4a0ea55be50509b6a9209dc5b38e0d37682948c0fa81e4987d49bca"
+      "sha256": "0d7af1d8a7b26d1ec03df7bc150fabff6a2e6178734c256b818935a36658291f"
     },
     {
-      "path": "release/BETA-8-RELEASE-NOTES.md",
+      "path": "schemas/memory-drift-report.schema.json",
       "operation": "add",
-      "sha256": "74975bac59b5fe34926fd59ae921a7464b45d9364c89f2339634df3be935d61c"
+      "sha256": "97506bc0712fe981615f1bedcba572ff775637231e35db31454a8c5cad46d963"
     },
     {
-      "path": "release/beta.8.manifest.json",
+      "path": "schemas/reconciliation-proposal.schema.json",
       "operation": "add",
-      "sha256": "1881dca771b5eaeaee085cc1785da02632db1388c258863115bd27ede9b1f557"
+      "sha256": "0013fc07dcc42b06720971ef6dc678f4a78ad08d115274bf2c56706c69327041"
     },
     {
-      "path": "schemas/project-brief.schema.json",
+      "path": "schemas/source-of-truth-manifest.schema.json",
       "operation": "add",
-      "sha256": "c1377ae49933097bce267e3f7dcc2e55bb81a8f0d542b0b678c186fbe77ee1ac"
+      "sha256": "1b3af5c3ace218a2b9c6e9bc1d5af9217c03cd291dc8a21a0a6e0d9c08ddab50"
     },
     {
-      "path": "schemas/resume-packet.schema.json",
+      "path": "scripts/audit_memory_drift.py",
       "operation": "add",
-      "sha256": "9a38585732799e2cc61865322e289b26a217a700e332ef5c45d89c80229c72c8"
+      "sha256": "e52d3ac42f2ce29ef8770dbcd8c101694c53d7cdfa2af9a04a6673523060ffc9"
     },
     {
-      "path": "schemas/session-brief.schema.json",
+      "path": "scripts/build_reconciliation_proposal.py",
       "operation": "add",
-      "sha256": "c8d8c672d754288b87260d52a8993cdcbb7bdbd7a3f0ef30cd9884a95ac40d14"
+      "sha256": "efd5e5b7c2e5327634279dc50c59fb522496234992a9b6d4a24524387b28c3b4"
     },
     {
-      "path": "scripts/build_project_brief.py",
+      "path": "scripts/refresh_continuity_artifacts.py",
       "operation": "add",
-      "sha256": "19a83989a964136a5ca464fda8ce34f2a2c958c6eb47f798ab94bbcadd27c5fa"
+      "sha256": "bae62611717371b46579bb1ef939c5b3234b33f27d05c098fb042c8c2fb042a7"
     },
     {
-      "path": "scripts/build_resume_packet.py",
+      "path": "scripts/validate_source_of_truth.py",
       "operation": "add",
-      "sha256": "ff221ecae63b06627d6974fb45c95bbd4563f56fa13e3f7fb046a8dae3b2bd99"
+      "sha256": "698a9e475d648ad4782e95836c594b14915c395133ceb01d95983287fe3d6b61"
     },
     {
-      "path": "scripts/create_session_brief.py",
+      "path": "templates/contradiction-register.json",
       "operation": "add",
-      "sha256": "3841e971718d54d93661135209c00b844f3dfb1ec4297043ac97075632541c71"
+      "sha256": "84296de3d0b13e2f6aab09e8f30cc158dcff48d787b2ef07e36b850b805302cc"
     },
     {
-      "path": "scripts/validate_memory_freshness.py",
+      "path": "templates/reconciliation-proposal.json",
       "operation": "add",
-      "sha256": "7aa44117b8902868ac8c743fbc3075ad9ac811be405f3cf21c7de10538ab19bb"
+      "sha256": "1ac126b1ad3bd08f9da342cc086118aee8d6e36b7d745637c24565a1640cc02c"
     },
     {
-      "path": "templates/project-brief.json",
+      "path": "tests/conformance/test_memory_governance.py",
       "operation": "add",
-      "sha256": "9cde8116c2e6150f04225ebd39727a6b55da4d042491052d11a1a04b7d96c553"
-    },
-    {
-      "path": "templates/resume-packet.json",
-      "operation": "add",
-      "sha256": "90de1e1beb609238386e12fc98c47ddb269a316b5162e7274e79caf846da389d"
-    },
-    {
-      "path": "templates/session-brief.json",
-      "operation": "add",
-      "sha256": "83b25476b2629936bdeac6696a9e5063d01c2705ee9087aa2061bafa988dc1b1"
-    },
-    {
-      "path": "tests/conformance/test_portable_memory.py",
-      "operation": "add",
-      "sha256": "cf6909c10f62bde6b82ce0ec739721351ebda81d2b65c07e6eee1e4303a9f5d4"
+      "sha256": "18ffd4bb9256fbd65e7ce242de2b78c18933c0c95b070da0c4dbff2bc70b8b3d"
     },
     {
       "path": ".claude/registry.json",
       "operation": "replace",
-      "sha256": "2f28e8d5637ed026f4f7fe0b15e3ee59b92590d0a2f51a47d4565ee85e994c30"
+      "sha256": "3ef246b1224d2b2453d9434408676d55fcbf7e3c4d5becfe0266dcae885ddde6"
     },
     {
       "path": ".claude/runtime.yaml",
       "operation": "replace",
-      "sha256": "e4558c0a8da6a3ea27809760488c4047ed2be47238f4fc2f68b1fa84afec4df6"
+      "sha256": "546c8a9cd22ccfb21bf979e5d7a570680eed60d9b8623744854c538fa992a5cd"
     },
     {
       "path": "CHANGELOG.md",
       "operation": "replace",
-      "sha256": "0d98c3b72c2bbbc00f6096c6bbfdfb78160f859f8860ed5ce33b84446e13677e"
+      "sha256": "967bd7e16afbbb9d473671a375f6f4b879bfe3dfee66af5c555ff297b4afa04f"
     },
     {
       "path": "README.md",
       "operation": "replace",
-      "sha256": "442ce3bd4e1718f31700c9b810ea29daa5d430e45ad7b1496caa984feb939f55"
+      "sha256": "8e0e33d6941d3926cd48a0b7fac6f6248c3a51f74044f744419d147b083c3960"
     },
     {
       "path": "VERSION",
       "operation": "replace",
-      "sha256": "37330b4663a72f15944dd24d638c66b57f20a55ba3c06174a8cd86789b507193"
+      "sha256": "70f2f4cbbc17ec5992db14957524945b27caa8e5b75a83df6a7cbaa307cfe8fa"
     },
     {
       "path": "adapters/claude/runtime-declaration.json",
       "operation": "replace",
-      "sha256": "95588b23f123d81954f8af57fae8c3eb142ed86d47087675a3dfa8e8440bd930"
+      "sha256": "5983c02bb0aa10a271537e679fcc80f91a1113e17bac0d64126007624a5b0e91"
     },
     {
       "path": "adapters/codex/generated/catalog-manifest.json",
       "operation": "replace",
-      "sha256": "68b404d92f7c872c898faea6860661939986f76ec4447eeb6c8951577a68d3d9"
+      "sha256": "069abc9caf30c7536ca78eb453b2a8afe4ca6c977c1e4bbd0ac05f0a11eedb56"
     },
     {
       "path": "adapters/codex/runtime-declaration.json",
       "operation": "replace",
-      "sha256": "546eeac29289e66e314ac896aee4222996d6e2513077190927adc5a085a17045"
+      "sha256": "88b4e03044e312c65719c6982e572de58d493ebb9d77d7efdb0dcce22621caea"
     },
     {
       "path": "adapters/codex/runtime-manifest.json",
       "operation": "replace",
-      "sha256": "bd773c8f9c5ac5106e961ae5dd80c3e06d930a335f0f24e06b0b325cae1128ee"
+      "sha256": "7bd3f9af5fdb96b96c4caec458a224081798c6c55f014e9e15ebc8319ac4815a"
     },
     {
       "path": "adapters/codex/runtime-map.yaml",
       "operation": "replace",
-      "sha256": "b83f8daf1ceef4ca40dc23c8d389c204a597505ca80486ce68e1d1c59c4b9c01"
+      "sha256": "e8793e6105f7f8ff4e0cec93847d054b4fc2b9a2adf27e6d80f94b5b5fcb8d1c"
     },
     {
       "path": "adapters/shared/runtime-contract.json",
       "operation": "replace",
-      "sha256": "f4407a94da89e992c54208c10916bfb339b3b23683e0f318c143026aeccf87f4"
+      "sha256": "fac87cbe4cd6c5270a13480b193243afe31a5c6986eb97eb19379a98f83e97ef"
     },
     {
       "path": "compatibility/core-contracts.json",
       "operation": "replace",
-      "sha256": "638fda55e56c7c29140e066ad0ba5c16f25bb1bb331b53bdc8cfea6706e89e70"
+      "sha256": "bd491b2833f83b6861c8d536ec43d5c13510878fa2ba82dbeea01e4b3b649347"
     },
     {
       "path": "compatibility/deprecations.json",
       "operation": "replace",
-      "sha256": "253b1d2248195b8258c83a88af7686cbfa70aa98166b68298615900b1fec67a1"
+      "sha256": "52ac42bbcae6b35c56eef64667a7b70230807ecb10177bf329e72ec6733162b2"
     }
   ],
   "deleted_files": [],
-  "post_apply_validation": [
+  "manual_steps": [
+    "Confirm the installed VERSION is 0.1.0-beta.8.",
+    "Extract this package.",
+    "Copy all included folders and files over the repository root.",
+    "Allow replacement of existing files.",
+    "Delete only paths listed in FILES-TO-DELETE.md.",
+    "Confirm VERSION is 0.1.0-beta.9."
+  ],
+  "optional_post_apply_validation": [
     "python scripts/validate_registry.py",
     "python scripts/validate_package.py",
     "python scripts/validate_runtime_contract.py",
     "python scripts/validate_conformance.py",
-    "python scripts/run_conformance_tests.py",
-    "python scripts/validate_memory_freshness.py"
+    "python scripts/validate_source_of_truth.py",
+    "python scripts/audit_memory_drift.py"
   ]
 }

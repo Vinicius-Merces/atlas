@@ -1,0 +1,18 @@
+{
+  "version": "0.1.0-beta.9",
+  "channel": "beta",
+  "delivery_modes": [
+    "incremental",
+    "cumulative"
+  ],
+  "manual_deployment_supported": true,
+  "supported_runtimes": [
+    "claude-code",
+    "codex"
+  ],
+  "memory_governance": {
+    "source_manifest": "adapters/shared/source-of-truth-manifest.json",
+    "drift_report": "schemas/memory-drift-report.schema.json",
+    "reconciliation": "schemas/reconciliation-proposal.schema.json"
+  }
+}

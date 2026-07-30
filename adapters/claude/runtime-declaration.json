@@ -1,6 +1,6 @@
 {
   "runtime": "claude-code",
-  "version": "0.1.0-beta.8",
+  "version": "0.1.0-beta.9",
   "support": "beta-supported",
   "canonical": true,
   "contract": "../shared/runtime-contract.json",
@@ -27,7 +27,11 @@
     "build-project-briefs",
     "create-session-briefs",
     "audit-memory-freshness",
-    "build-resume-packets"
+    "build-resume-packets",
+    "audit-memory-drift",
+    "validate-sources-of-truth",
+    "build-reconciliation-proposals",
+    "refresh-continuity-artifacts"
   ],
   "implementation": ".claude/",
   "limitations": []

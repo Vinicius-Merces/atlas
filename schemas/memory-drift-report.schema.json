@@ -1,0 +1,13 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "memory-drift-report.schema.json",
+  "type": "object",
+  "required": [
+    "framework_version",
+    "generated_at",
+    "sources_checked",
+    "findings",
+    "summary"
+  ],
+  "additionalProperties": true
+}
