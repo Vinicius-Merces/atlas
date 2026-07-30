@@ -1,0 +1,13 @@
+{
+  "task_id": "task-0001",
+  "runtime": "claude-code",
+  "status": "completed",
+  "summary": "Describe completed work",
+  "changed_files": [],
+  "validation": [],
+  "reviews": [],
+  "findings": [],
+  "assumptions": [],
+  "remaining_risks": [],
+  "knowledge_updates": []
+}

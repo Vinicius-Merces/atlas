@@ -1,0 +1,17 @@
+{
+  "id": "task-0001",
+  "task_type": "feature",
+  "summary": "Describe the outcome",
+  "primary_role": "product-architect",
+  "supporting_roles": [],
+  "workflow": "feature-delivery",
+  "skills": [],
+  "reviews": [
+    "architecture-review",
+    "qa-review"
+  ],
+  "validation": [
+    "tests"
+  ],
+  "context_pack": "context-packs/task-0001.md"
+}
