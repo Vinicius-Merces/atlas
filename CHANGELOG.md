@@ -1,5 +1,46 @@
 # Changelog
 
+## 0.1.0-beta.8
+
+### Added
+
+- Project Memory Curator agent
+- Session Continuity Engineer agent
+- Resume Packet Reviewer agent
+- Project brief synthesis skill
+- Session closeout skill
+- Memory freshness audit skill
+- Resume packet assembly skill
+- Session bootstrap workflow
+- Session closeout workflow
+- Cross-session recovery workflow
+- Project memory review gate
+- Session continuity review gate
+- Resume packet review gate
+- `/atlas-brief`, `/atlas-close-session`, `/atlas-resume-packet`, and `/atlas-memory-freshness`
+- Project brief schema
+- Session brief schema
+- Resume packet schema
+- Project brief builder
+- Session brief creator
+- Memory freshness validator
+- Resume packet builder
+- Portable memory tests
+- Project continuity model
+- Session brief model
+- Memory freshness model
+- Resume packet model
+- VS Code Codex bootstrap guide
+- Claude Code bootstrap guide
+- Cross-session continuity guide
+
+### Changed
+
+- Version promoted to `0.1.0-beta.8`
+- Universal runtime contract now includes portable project-memory capabilities
+- Claude Code and Codex declarations now include session bootstrap and resume support
+- Incremental delivery remains the default package format
+
 ## 0.1.0-beta.7
 
 ### Added

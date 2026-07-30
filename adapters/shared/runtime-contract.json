@@ -1,5 +1,5 @@
 {
-  "version": "0.1.0-beta.7",
+  "version": "0.1.0-beta.8",
   "contract": "atlas-universal-runtime",
   "required_capabilities": [
     "read-files",
@@ -20,7 +20,11 @@
     "decompose-workstreams",
     "claim-resources",
     "detect-workstream-conflicts",
-    "reconcile-results"
+    "reconcile-results",
+    "build-project-briefs",
+    "create-session-briefs",
+    "audit-memory-freshness",
+    "build-resume-packets"
   ],
   "shared_sources": {
     "contracts": ".claude/contracts/",
@@ -38,5 +42,8 @@
   "continuation_schema": "schemas/continuation-plan.schema.json",
   "workstream_schema": "schemas/workstream.schema.json",
   "resource_claim_schema": "schemas/resource-claim.schema.json",
-  "parallel_manifest_schema": "schemas/parallel-execution-manifest.schema.json"
+  "parallel_manifest_schema": "schemas/parallel-execution-manifest.schema.json",
+  "project_brief_schema": "schemas/project-brief.schema.json",
+  "session_brief_schema": "schemas/session-brief.schema.json",
+  "resume_packet_schema": "schemas/resume-packet.schema.json"
 }

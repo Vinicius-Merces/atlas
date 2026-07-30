@@ -1,57 +1,55 @@
 # ATLAS AI Engineering Framework
 
-**Version:** `0.1.0-beta.7`  
-**Status:** Beta / Parallel Workstreams and Conflict-Safe Execution
+**Version:** `0.1.0-beta.8`  
+**Status:** Beta / Portable Project Memory and Session Continuity
 
 ATLAS coordinates software engineering through shared memory, specialized
-agents, reusable skills, workflows, review gates, runtime contracts, portable
-execution evidence, resumable tasks, and conflict-safe parallel execution.
+agents, workflows, review gates, runtime contracts, resumable tasks, parallel
+workstreams, and portable project continuity.
 
-## Beta.7 milestone
+## Beta.8 milestone
 
-Claude Code and Codex can now work on parallel task branches while protecting
-shared files, dependencies, and canonical knowledge.
+Project context can now travel with the repository instead of depending on one
+chat session or one model.
 
 ### New capabilities
 
-- Workstream decomposition
-- File and resource leases
-- Conflict prediction
-- Parallel execution manifests
-- Merge readiness checks
-- Cross-runtime result reconciliation
-- Shared-state protection
-- Workstream completion reports
+- Portable project brief
+- Session bootstrap
+- Session closeout
+- Resume packet generation
+- Memory freshness checks
+- Decision and progress snapshots
+- Codex and Claude startup instructions
+- Cross-session continuity validation
+- Repository-native project context
 
-## Parallel execution flow
+## Portable memory flow
 
 ```text
-Task envelope
+Project work
   ↓
-Workstream decomposition
+Memory and decision updates
   ↓
-Resource claims and conflict analysis
+Session closeout
   ↓
-Claude Code and Codex execute independently
+Portable resume packet
   ↓
-Workstream checkpoints
+Repository clone
   ↓
-Merge readiness validation
+Codex or Claude Code bootstrap
   ↓
-Result reconciliation
-  ↓
-Final reviews and execution result
+Continue from current project state
 ```
 
 ## Commands
 
 ```bash
-python scripts/create_workstreams.py --task-envelope task.json
-python scripts/claim_resources.py --workstream workstream.json
-python scripts/detect_workstream_conflicts.py --manifest parallel-manifest.json
-python scripts/validate_merge_readiness.py --manifest parallel-manifest.json
+python scripts/build_project_brief.py
+python scripts/create_session_brief.py --summary "Current project state"
+python scripts/validate_memory_freshness.py
+python scripts/build_resume_packet.py
 ```
 
-Claude Code remains canonical. Codex remains synchronized and beta-supported.
-Both runtimes use the same workstream, resource claim, checkpoint, and evidence
-formats.
+The repository remains the durable project brain. Runtime chat history is
+helpful, but never the sole source of truth.

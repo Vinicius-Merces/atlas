@@ -1,0 +1,19 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "resume-packet.schema.json",
+  "type": "object",
+  "required": [
+    "framework_version",
+    "generated_at",
+    "project_brief",
+    "latest_session",
+    "memory_sources",
+    "open_tasks",
+    "checkpoints",
+    "handoffs",
+    "workstreams",
+    "risks",
+    "next_actions"
+  ],
+  "additionalProperties": true
+}

@@ -1,0 +1,18 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "project-brief.schema.json",
+  "type": "object",
+  "required": [
+    "framework_version",
+    "project_name",
+    "purpose",
+    "architecture",
+    "current_state",
+    "active_work",
+    "decisions",
+    "risks",
+    "next_actions",
+    "sources"
+  ],
+  "additionalProperties": true
+}

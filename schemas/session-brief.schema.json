@@ -1,0 +1,19 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "session-brief.schema.json",
+  "type": "object",
+  "required": [
+    "session_id",
+    "framework_version",
+    "runtime",
+    "summary",
+    "completed_work",
+    "changed_files",
+    "validation",
+    "decisions",
+    "pending_work",
+    "risks",
+    "next_action"
+  ],
+  "additionalProperties": true
+}
