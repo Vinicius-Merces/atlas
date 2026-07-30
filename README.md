@@ -1,7 +1,7 @@
 # ATLAS AI Engineering Framework
 
-**Version:** `0.1.0-alpha.8`  
-**Status:** Foundation / Product, Experience and Measurement Runtime
+**Version:** `0.1.0-alpha.9`  
+**Status:** Foundation / Platform, Knowledge and Integration Runtime
 
 ATLAS is an AI engineering framework for coordinating software development
 through specialized agents, persistent memory, reusable skills, explicit
@@ -12,54 +12,54 @@ workflows, review gates, operational controls, and architecture governance.
 ```text
 User request
     ↓
-Product and context interpretation
+Repository and knowledge mapping
     ↓
-Memory resolution
+Context and memory resolution
     ↓
 Orchestrator
     ↓
 Specialist agents + skills
     ↓
-Experience, analytics and experiment validation
+Architecture, integration and platform validation
     ↓
 Operations and observability
     ↓
-Documentation
+Knowledge synchronization
     ↓
 Delivery
 ```
 
-## What alpha.8 adds
+## What alpha.9 adds
 
-- Product Manager agent
-- Analytics Engineer agent
-- Design System Engineer agent
-- Content Designer agent
-- Localization Engineer agent
-- Developer Experience Engineer agent
-- Experimentation Analyst agent
-- Product requirement decomposition skill
-- Event taxonomy design skill
-- Design token architecture skill
-- Content quality review skill
-- Localization readiness assessment skill
-- Developer onboarding assessment skill
-- Experiment design skill
-- Product discovery workflow
-- Analytics implementation workflow
-- Design system contribution workflow
-- Localization delivery workflow
-- Experiment rollout workflow
-- Product, analytics, design system, content and localization review gates
-- New planning and governance templates
+- Platform Engineer agent
+- Integration Engineer agent
+- Cloud Architect agent
+- Knowledge Engineer agent
+- Search and Retrieval Engineer agent
+- Monorepo Maintainer agent
+- Repository mapping skill
+- Dependency graph analysis skill
+- Integration contract mapping skill
+- ADR authoring skill
+- Knowledge graph synthesis skill
+- RAG architecture assessment skill
+- Project bootstrap workflow
+- System modernization workflow
+- Integration onboarding workflow
+- Knowledge synchronization workflow
+- Monorepo change workflow
+- Platform, integration, knowledge and repository review gates
+- Obsidian-compatible knowledge vault structure
+- New architecture and integration templates
 
 ## Runtime layers
 
-- **Knowledge:** memory, ADRs, product context, documentation
-- **Capability:** skills and tools
+- **Knowledge:** memory, ADRs, Obsidian vault, project documentation
+- **Capability:** skills, tools, retrieval and integration adapters
 - **Execution:** agents, workflows, commands
 - **Governance:** rules, contracts, reviews, quality gates
 - **Operations:** deployment, observability, incident response, recovery
 - **Trust:** security, privacy, compliance, testing, AI evaluation
 - **Experience:** product, design systems, content, localization, developer experience
 - **Measurement:** analytics, experiments, product outcomes
+- **Platform:** repositories, cloud, integrations, monorepos, shared infrastructure
