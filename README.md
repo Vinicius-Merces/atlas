@@ -1,19 +1,46 @@
 # ATLAS AI Engineering Framework
 
-**Version:** `0.1.0-alpha.14`  
-**Status:** Foundation / Compatibility, Documentation and Beta Readiness Runtime
+**Version:** `0.1.0-beta.1`  
+**Status:** First Public Beta / Contract Stabilization
 
 ATLAS is an AI engineering framework for coordinating software development
 through specialized agents, persistent memory, reusable skills, explicit
 workflows, review gates, operational controls, architecture governance, and
 multi-runtime distribution.
 
+## Beta milestone
+
+This release marks the first beta of ATLAS.
+
+The framework now includes:
+
+- Stable core contracts
+- A canonical Claude Code runtime
+- Experimental Codex, Gemini, and Cursor adapters
+- Automated package validation
+- Smoke and contract tests
+- Compatibility and deprecation policies
+- Adoption blueprints
+- Project health and migration workflows
+- Enterprise architecture and operational governance
+
+## Stability commitment
+
+During the `0.1.0-beta.x` line:
+
+- Core contract semantics are treated as stable.
+- Breaking changes require explicit migration guidance.
+- Canonical paths should remain stable.
+- Experimental adapters may continue to evolve.
+- Deprecated assets must follow the deprecation lifecycle.
+- Package validation and contract tests must pass before release.
+
 ## Core flow
 
 ```text
-Project state
+Project intent
     ↓
-Health, compatibility and documentation assessment
+Blueprint or adoption path
     ↓
 Context and memory resolution
     ↓
@@ -21,55 +48,32 @@ Orchestrator
     ↓
 Specialist agents + skills
     ↓
-Validation, smoke tests and review gates
+Automated contract and package validation
     ↓
-Release integrity and compatibility checks
+Independent review gates
     ↓
-Migration and knowledge synchronization
+Release, operations and knowledge synchronization
 ```
 
-## What alpha.14 adds
+## Supported runtime
 
-- Documentation Architect agent
-- Compatibility Engineer agent
-- Deprecation Manager agent
-- Beta Release Coordinator agent
-- Documentation information architecture skill
-- Compatibility matrix analysis skill
-- Deprecation planning skill
-- Smoke-test design skill
-- Documentation consolidation workflow
-- Compatibility validation workflow
-- Deprecation lifecycle workflow
-- Beta release preparation workflow
-- Documentation, compatibility, deprecation and beta-readiness review gates
-- Runtime compatibility matrix
-- Deprecation registry
-- Documentation index
-- Smoke tests
-- Beta release notes template
-- Compatibility report template
-- Deprecation notice template
-- Documentation audit template
-- Compatibility model
-- Deprecation model
-- Documentation architecture model
-- Beta release candidate checklist
+| Runtime | Support |
+|---|---|
+| Claude Code | Beta-supported canonical runtime |
+| Codex | Experimental adapter |
+| Gemini | Experimental adapter |
+| Cursor | Experimental adapter |
 
-## Runtime layers
+## Quick start
 
-- **Knowledge:** memory, ADRs, Obsidian vault, documentation
-- **Capability:** skills, tools, retrieval and integration adapters
-- **Execution:** agents, workflows, commands
-- **Governance:** rules, contracts, controls, reviews, quality gates
-- **Automation:** policy-as-code, schemas, CI, package validation
-- **Operations:** deployment, observability, incident response, recovery
-- **Trust:** security, privacy, compliance, testing, AI evaluation
-- **Experience:** product, design systems, content, localization, developer experience
-- **Measurement:** analytics, experiments, product outcomes
-- **Platform:** repositories, cloud, integrations, monorepos, shared infrastructure
-- **Enterprise:** portfolio architecture, economics, governance, roadmaps, controls
-- **Distribution:** runtime adapters, release artifacts, package integrity
-- **Adoption:** blueprints, starter kits, reference projects, migration paths
-- **Assurance:** health assessment, audits, debt, upgrades
-- **Stability:** compatibility, deprecation, documentation integrity, beta readiness
+1. Copy the cumulative package into the repository.
+2. Preserve project-specific memory and ADRs.
+3. Run `python scripts/validate_registry.py`.
+4. Run `python scripts/validate_package.py`.
+5. Run `python scripts/run_smoke_tests.py`.
+6. Review `docs/INDEX.md`.
+7. Use `/atlas-bootstrap` or the relevant project blueprint.
+
+## Guiding principle
+
+> Stable contracts create freedom above them.
