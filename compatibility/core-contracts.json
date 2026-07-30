@@ -1,0 +1,49 @@
+{
+  "version": "0.1.0-beta.1",
+  "stability": "beta",
+  "canonical_runtime": "claude-code",
+  "contracts": [
+    {
+      "name": "agent-contract",
+      "path": ".claude/contracts/agent-contract.md",
+      "status": "stable-beta"
+    },
+    {
+      "name": "memory-contract",
+      "path": ".claude/contracts/memory-contract.md",
+      "status": "stable-beta"
+    },
+    {
+      "name": "workflow-contract",
+      "path": ".claude/contracts/workflow-contract.md",
+      "status": "stable-beta"
+    },
+    {
+      "name": "skill-contract",
+      "path": ".claude/contracts/skill-contract.md",
+      "status": "stable-beta"
+    },
+    {
+      "name": "review-contract",
+      "path": ".claude/contracts/review-contract.md",
+      "status": "stable-beta"
+    },
+    {
+      "name": "command-contract",
+      "path": ".claude/contracts/command-contract.md",
+      "status": "stable-beta"
+    }
+  ],
+  "canonical_paths": [
+    ".claude/agents/",
+    ".claude/contracts/",
+    ".claude/memory/",
+    ".claude/reviews/",
+    ".claude/rules/",
+    ".claude/skills/",
+    ".claude/workflows/",
+    "framework/",
+    "docs/",
+    "templates/"
+  ]
+}
