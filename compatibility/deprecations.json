@@ -1,0 +1,9 @@
+{
+  "version": "0.1.0-alpha.14",
+  "deprecations": [],
+  "policy": {
+    "require_replacement_or_reason": true,
+    "require_migration_guidance": true,
+    "require_removal_version": true
+  }
+}
