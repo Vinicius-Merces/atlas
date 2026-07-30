@@ -2,68 +2,59 @@
 
 All notable changes to ATLAS are documented here.
 
-## 0.1.0-beta.1
+## 0.1.0-beta.2
 
-### Beta milestone
+### Runtime milestone
 
-- Promoted ATLAS from alpha to the first beta release
-- Declared core contract semantics stable for the beta line
-- Declared Claude Code the canonical beta-supported runtime
-- Kept Codex, Gemini, and Cursor adapters experimental
+- Promoted Codex to beta-supported compatibility runtime
+- Established dual-runtime validation for Claude Code and Codex
+- Preserved Claude Code as canonical source runtime
 
 ### Added
 
-- Stability Engineer agent
-- Contract Test Engineer agent
-- Support Policy Maintainer agent
-- Core contract stabilization skill
-- Semantic compatibility verification skill
-- Support classification skill
-- Beta stabilization workflow
-- Contract test workflow
-- Support policy workflow
-- Stability review gate
-- Contract compatibility review gate
-- Support policy review gate
-- `/atlas-stabilize`, `/atlas-contract-test`, and `/atlas-support`
-- Core contract manifest
-- Support policy
-- Stability policy
-- Semantic version compatibility matrix
-- Contract tests
-- Contract manifest validation script
-- Beta release manifest
-- Beta migration notes
-- Beta support guide
-- Beta feedback template
-- Stable contract model
-- Support lifecycle model
-- Release confidence model
+- Codex Runtime Engineer agent
+- Runtime Parity Reviewer agent
+- Runtime Capability Mapper agent
+- Codex runtime generation skill
+- Runtime semantic parity skill
+- Dual-runtime validation skill
+- Codex synchronization workflow
+- Runtime parity workflow
+- Dual-runtime release workflow
+- Codex runtime review gate
+- Runtime parity review gate
+- `/atlas-codex-sync`, `/atlas-runtime-parity`, and `/atlas-dual-release`
+- Functional Codex adapter directory
+- Codex agent mappings
+- Codex skill mappings
+- Codex workflow mappings
+- Codex review mappings
+- Codex command mappings
+- Codex runtime manifest
+- Claude-to-Codex capability matrix
+- Codex adapter validation script
+- Codex test runner
+- Codex compatibility tests
+- Dual-runtime usage guide
+- Codex migration guide
+- Runtime parity model
+- Runtime translation model
+- Codex support policy
 
 ### Changed
 
-- Version promoted to `0.1.0-beta.1`
-- README rewritten for beta adoption
-- Runtime registry promoted to beta
-- Runtime metadata promoted to beta
-- Compatibility and deprecation registries updated
-- Release known limitations updated
+- Version promoted to `0.1.0-beta.2`
+- Codex support moved from experimental to beta-supported
+- Compatibility matrix updated
+- Support policy updated
+- Release manifest expanded with dual-runtime evidence
 
-## 0.1.0-alpha.14
-
-### Added
-
-- Documentation architecture
-- Compatibility management
-- Deprecation lifecycle
-- Smoke tests
-- Beta-readiness preparation
-
-## 0.1.0-alpha.13
+## 0.1.0-beta.1
 
 ### Added
 
-- Project health
-- Technical audits
-- Technical debt
-- Version migration
+- First public beta
+- Stable core contracts
+- Contract tests
+- Support policy
+- Beta migration and release notes
