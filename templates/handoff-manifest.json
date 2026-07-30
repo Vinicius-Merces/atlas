@@ -1,0 +1,15 @@
+{
+  "handoff_id": "handoff-example",
+  "task_id": "task-example",
+  "from_runtime": "codex",
+  "to_runtime": "claude-code",
+  "checkpoint": "checkpoint-example.json",
+  "context_pack": "context-pack.md",
+  "completed_steps": [],
+  "pending_steps": [],
+  "changed_files": [],
+  "validation": [],
+  "reviews": [],
+  "assumptions": [],
+  "remaining_risks": []
+}

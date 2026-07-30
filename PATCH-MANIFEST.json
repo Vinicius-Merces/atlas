@@ -1,218 +1,248 @@
 {
   "package_type": "incremental",
-  "from_version": "0.1.0-beta.4",
-  "to_version": "0.1.0-beta.5",
-  "added_count": 27,
+  "from_version": "0.1.0-beta.5",
+  "to_version": "0.1.0-beta.6",
+  "added_count": 33,
   "modified_count": 13,
   "deleted_count": 0,
   "files": [
     {
-      "path": ".claude/agents/patch-integrity-engineer.md",
+      "path": ".claude/agents/checkpoint-integrity-reviewer.md",
       "operation": "add",
-      "sha256": "cbdf925cad3744b83589deedc140c4216b09a6fa22e841c5e2e787defde23658"
+      "sha256": "1f1e2dfd6e34d201b8f04dd81d45e9a06ec66d304d2f67aad81b3ad1f47c3773"
     },
     {
-      "path": ".claude/agents/runtime-execution-planner.md",
+      "path": ".claude/agents/execution-continuity-engineer.md",
       "operation": "add",
-      "sha256": "fb0d4b257b8a6e4a4a9dd4254b3cb20f3d4cfa654e045cd643103512e4fc1221"
+      "sha256": "3e0e5ac8421631202b119d6709779ed05822b2c589443ac38b7205ab2ebd6e45"
     },
     {
-      "path": ".claude/commands/atlas-execute-plan.md",
+      "path": ".claude/agents/runtime-handoff-coordinator.md",
       "operation": "add",
-      "sha256": "069ff7327ec7d8d439d415791e0cca5d74dfc2808a1f19c362d1baffda7346b0"
+      "sha256": "bd45cb5ce15fd0182c5ea5a9d2541a150598ddff9ba531acfbd531573f301f3b"
     },
     {
-      "path": ".claude/commands/atlas-patch-check.md",
+      "path": ".claude/commands/atlas-checkpoint.md",
       "operation": "add",
-      "sha256": "f251ec7ba9bb125dc488cbf5dcc0d593f91d60c147b4f37a6eaa72d13055db81"
+      "sha256": "bfcc2e3fa37c63ec1bc20780583a55db55f01c10773e42e1d0cc4f12d8e5ef2b"
     },
     {
-      "path": ".claude/reviews/context-assembly-review.md",
+      "path": ".claude/commands/atlas-handoff.md",
       "operation": "add",
-      "sha256": "cf4341b80852f750f5eb15072d07bdb3d3af597a7e06888c41e2d68f77bcc484"
+      "sha256": "87bc8069acf25206083f7b3b2da883f8f94e749d32cb56932036a0ea456eaa82"
     },
     {
-      "path": ".claude/reviews/execution-planning-review.md",
+      "path": ".claude/commands/atlas-resume.md",
       "operation": "add",
-      "sha256": "5e74d6cc6586c3d254219ff9fbd453be0d73f5e02bff514cc7e21769f41c1dba"
+      "sha256": "9833bc72402c77fbcd5dc83d0bc668723c173daab1c9ea06b0131f509d1a317d"
     },
     {
-      "path": ".claude/skills/runtime/incremental-patch-verification.md",
+      "path": ".claude/reviews/checkpoint-integrity-review.md",
       "operation": "add",
-      "sha256": "f0c50da60236795634f256d95b3594fdd32ecae449429b682becbc8847767979"
+      "sha256": "26fe74b0ef6a91ac0290961883e1f4c388ad4816b3fe5ed92afc814d81ce7ca1"
     },
     {
-      "path": ".claude/skills/runtime/runtime-execution-planning.md",
+      "path": ".claude/reviews/runtime-handoff-review.md",
       "operation": "add",
-      "sha256": "1a06fd7c08408d10970836190b2865acce14e096fc966fe65276a08de4f0371a"
+      "sha256": "feb45649aaeaf2d24cf43a5274c6b3aba378b13886c67d57a9ec27e5cb4cabad"
     },
     {
-      "path": ".claude/workflows/runtime-execution.md",
+      "path": ".claude/skills/runtime/continuation-planning.md",
       "operation": "add",
-      "sha256": "543b88ded2dfc3672f937b24ca712723d5c9cedb1d44f81b052da1943fe1bd6e"
+      "sha256": "1a604aecba9607a68e89ef8b927a84f8422da501fa1b41a063af9d431e48041d"
     },
     {
-      "path": ".claude/workflows/task-envelope-lifecycle.md",
+      "path": ".claude/skills/runtime/execution-checkpointing.md",
       "operation": "add",
-      "sha256": "4b9802e07bf7cb205d74aef27ead7071641719c31c9ff6b13b5698f238bc25ef"
+      "sha256": "c1444133a74f071a31b04b78700223fdce49b5fdf094a6b78202ef570fb7d19e"
     },
     {
-      "path": "docs/incremental-patch-guide.md",
+      "path": ".claude/skills/runtime/runtime-handoff-design.md",
       "operation": "add",
-      "sha256": "be89b568c8d859f320adc731127be44c5c68f5bbc1681004d6d769d650325083"
+      "sha256": "342159d902ed419dde0db687c712b7d5459bedfcfe4fbca1098d6e976dd9a092"
     },
     {
-      "path": "docs/runtime-execution-guide.md",
+      "path": ".claude/workflows/continuation-planning.md",
       "operation": "add",
-      "sha256": "41f2cd1b4b6c0f286849b0f15f330035a4a75efd43d0330ced8d918708ca11a7"
+      "sha256": "0af0ba6ac7cb0130fdc42c135123401b6f70e375bc48e85f4bdbcab61e8b30ec"
     },
     {
-      "path": "examples/runtime/task-envelope.json",
+      "path": ".claude/workflows/interrupted-task-recovery.md",
       "operation": "add",
-      "sha256": "45347842fc4871729ab8045e463243ecc7e80834e3ad337a93ba4fe88ad2f5be"
+      "sha256": "936e2e7af6d2e0a765d43013ff6cc9f3eaac1150bd813fcccf2c072af65dd069"
     },
     {
-      "path": "framework/context-resolution-model.md",
+      "path": ".claude/workflows/runtime-handoff.md",
       "operation": "add",
-      "sha256": "3a4230456279533ee56cffeb530b1d4c5ad8461b9912f942dc31d97a4a981a8a"
+      "sha256": "5c2eb20426c488f05af41df79d91f81376f66364f965bfbac520d2d6211cb58d"
     },
     {
-      "path": "framework/incremental-delivery-model.md",
+      "path": "adapters/shared/handoff-protocol.md",
       "operation": "add",
-      "sha256": "d4af7550ffeba1c61b22b72b78c18f440d664d3258be06afea5e9198ba92939c"
+      "sha256": "cba12a10196fb174c78c814cbd21728e2887aeed20b229e1e7980d2746611490"
     },
     {
-      "path": "framework/task-envelope-lifecycle-model.md",
+      "path": "docs/runtime-handoff-guide.md",
       "operation": "add",
-      "sha256": "4245dd938a37c200f44f0384f4e36eb4b7572ee26e1f516c497ef6488a589345"
+      "sha256": "025fe6b5f079a46767e7b8667ab901f8f309ce3e60250aaa15be5def059d1afd"
     },
     {
-      "path": "release/BETA-5-MIGRATION.md",
+      "path": "docs/task-recovery-guide.md",
       "operation": "add",
-      "sha256": "fd874307d969eb2777697665df7cb24b78235769680d0957ddf71e434cb5a067"
+      "sha256": "3cdbf1556a4fc0e866c8f5da686beaf144426b656b52e3cd827a5bed2a6a48db"
     },
     {
-      "path": "release/BETA-5-RELEASE-NOTES.md",
+      "path": "framework/checkpoint-model.md",
       "operation": "add",
-      "sha256": "c42b7c93877f5105ae0d246924498de8051e61030b6a97cd401b3f51e8bcdff0"
+      "sha256": "1c26c9df4fc1fb128970ba88ea444ecbb2538d8696d55a19ff7c1b5e2511df66"
     },
     {
-      "path": "release/beta.5.manifest.json",
+      "path": "framework/execution-continuity-model.md",
       "operation": "add",
-      "sha256": "f2b5d446cde415e72f22f5bbae488c764f2ed6b5d460f66571ee5c3c20d7f6d0"
+      "sha256": "e37fb0db70b218b86b921ae56ae3107dad989afb370fdeb3766dc4568ecf4459"
     },
     {
-      "path": "schemas/context-pack-manifest.schema.json",
+      "path": "framework/runtime-handoff-model.md",
       "operation": "add",
-      "sha256": "d101c9439742bf91b22cd36f360a4828d088a69270d08a29a5c76a6e6228abd1"
+      "sha256": "9a4e51351480455b8e59d3471d7042efd2951261cce99ae3d4ac0d271c160a4d"
     },
     {
-      "path": "schemas/runtime-execution-plan.schema.json",
+      "path": "release/BETA-6-MIGRATION.md",
       "operation": "add",
-      "sha256": "5edb12f4ae7a41fe9badd95eca64ff36d051c8cd0c0c34d021913821b6e6039a"
+      "sha256": "c67de11e932f8c246b9f43c4cff95b21200e13eaa5fbdee78d0a4b9d010d32ce"
     },
     {
-      "path": "scripts/atlas_route.py",
+      "path": "release/BETA-6-RELEASE-NOTES.md",
       "operation": "add",
-      "sha256": "ec12277586a85bf40653fbdda4b2849aa7d689873e3a48c660a8ccfee015b20b"
+      "sha256": "08f7f5933d6fb9984b092f10161f06c3f9ddbe46f28c6b1f9b1212d3f3664322"
     },
     {
-      "path": "scripts/build_context_pack.py",
+      "path": "release/beta.6.manifest.json",
       "operation": "add",
-      "sha256": "f139364f9ea801ca8c34a151a234e1fa45aad1ef7da105ed1c7b62145143a94c"
+      "sha256": "b985d0fd988ea28a7f722848afcdebb998a384fe61e44b1c86ca522d750f4cb1"
     },
     {
-      "path": "scripts/build_execution_plan.py",
+      "path": "schemas/checkpoint.schema.json",
       "operation": "add",
-      "sha256": "89b959f4680d593088a2e40c7d29f79ab05d536bf276b024bba6c2f55edad3c9"
+      "sha256": "53d15f72bd12447fe07a07a32513f06c706831f9bb2c6e576a61b705145d9acd"
     },
     {
-      "path": "scripts/validate_execution_result.py",
+      "path": "schemas/continuation-plan.schema.json",
       "operation": "add",
-      "sha256": "ef7741c92d6acfe6dc558df00b5803893ae1266ee0e2debfb41cc50491f664f4"
+      "sha256": "45da4cc2efefe807a3c10183a9616913ccbf5f9e77ae121de522ed1959c7efec"
     },
     {
-      "path": "scripts/validate_incremental_patch.py",
+      "path": "schemas/handoff-manifest.schema.json",
       "operation": "add",
-      "sha256": "1d16866208148a9e6e92a22cdef706139097d8868c91dc4d16e94bd59c16a25e"
+      "sha256": "e37f056b899c5bad51115a600941c246373a8a4cee7c15388a8ee938a67abe87"
     },
     {
-      "path": "scripts/validate_task_envelope.py",
+      "path": "scripts/build_continuation_plan.py",
       "operation": "add",
-      "sha256": "34aec7ce4686021b20c73a0f2e2ae4d82b96418402a8495b31ace05c87078372"
+      "sha256": "5a97df4e74723a19adb7905dd08d142a3de6519cd4d82a274dc840732f8c1761"
+    },
+    {
+      "path": "scripts/create_checkpoint.py",
+      "operation": "add",
+      "sha256": "21cc7c08154aebd1dad1dc4419b2bc4e6733ccd607c69c664c7fe18964562f03"
+    },
+    {
+      "path": "scripts/create_handoff.py",
+      "operation": "add",
+      "sha256": "e7a80bbaa26e06d314452e7e0246bbbb721415094843a4c315d2af318fa6ccac"
+    },
+    {
+      "path": "scripts/validate_handoff.py",
+      "operation": "add",
+      "sha256": "98258658b70735e0ea3fcd849699733ea0347197684d11285921210dafd03b0d"
+    },
+    {
+      "path": "templates/checkpoint.json",
+      "operation": "add",
+      "sha256": "8589048894997f3971d5a86d763147681c65a385095ca8ba17031ddaed076e78"
+    },
+    {
+      "path": "templates/handoff-manifest.json",
+      "operation": "add",
+      "sha256": "4cbae25843d6936654c6d38b2131bb692d7362bfd5f9d8a22175fea98979bf3b"
+    },
+    {
+      "path": "tests/conformance/test_runtime_handoff.py",
+      "operation": "add",
+      "sha256": "6969fd5c7e4cf8ef7f679001e9164de8c9f6bbd6483c310d89c2ec4fef70f39f"
     },
     {
       "path": ".claude/registry.json",
       "operation": "replace",
-      "sha256": "c02b98f92e72c0f99ac2e7b3e624064e70291dd86fa2977c15172bea2a6cb270"
+      "sha256": "0d2cfb5a578baeb8fdda7b01fbe7db685cda7c2a925bc73b6c7b0b1cdd4fd6e0"
     },
     {
       "path": ".claude/runtime.yaml",
       "operation": "replace",
-      "sha256": "434bfa6aa13d1e736f749ddf88b5d85a5197840faf33d25cec81c4967f7a5617"
+      "sha256": "a68f1be399ff6c848b3adbd3fa0a28e3f3b4a476a2d2d33cf758b01473a257db"
     },
     {
       "path": "CHANGELOG.md",
       "operation": "replace",
-      "sha256": "e4b51d7e62aec2611d9c0d82ca13c58289f9b057b03588359eeffda29df82258"
+      "sha256": "e9d2fd9619abb28c97f8684709ec5ec9fcfc995b6f23a71c3f21f0dc090609a4"
     },
     {
       "path": "README.md",
       "operation": "replace",
-      "sha256": "4a74930c054799d9cbd20199b963ed764e569ea68e177fedb651cb8441c08e03"
+      "sha256": "7d84794fdb3f8f2a9be2046c6c68e2e73f8afb4b2bf416abaca3c0acdb9991a8"
     },
     {
       "path": "VERSION",
       "operation": "replace",
-      "sha256": "e3da5d8a391cbe7d0438d0d1250a740fc2f2b1bdc1160b20fd234c230b1fee56"
+      "sha256": "a9d9f9ca047ff3c2752ea15d284690307c73d0adf24bd90277385be9faa25e64"
     },
     {
       "path": "adapters/claude/runtime-declaration.json",
       "operation": "replace",
-      "sha256": "c7dcb0571811d113ae9b2fd99d25eb73e824bd25e4cc24fe41a6c793a60f4967"
+      "sha256": "f71c92abe71576e85c73afdaefdde0198c32ee974a97d5cd219c5b3d46f2b174"
     },
     {
       "path": "adapters/codex/generated/catalog-manifest.json",
       "operation": "replace",
-      "sha256": "edc697991bee7fce29edfd06afbfb80bd2de62cddb20982d1fbfdc1de5cbef35"
+      "sha256": "b0ca15e7ced47296c2a5343eb03732cd405bf73934ed6edc1d92727424ed45e3"
     },
     {
       "path": "adapters/codex/runtime-declaration.json",
       "operation": "replace",
-      "sha256": "962def0d8f4a460ab49adf46fdcc87b0a21a2b8ef15c3a8e431785dbb5fde960"
+      "sha256": "f7ff9a48392a4174ff0685e3fb7d0ab49d27e01841f6c8f53416d1b1ddee10a5"
     },
     {
       "path": "adapters/codex/runtime-manifest.json",
       "operation": "replace",
-      "sha256": "39d1155a2831a2fba3e6f968cc567f1dcf834366ead48eadae8a5e94a03aef2b"
+      "sha256": "d2d1c42d1ba3cb5bc6d7c53e05d727a6d9892689e2e58a7fedd73ca95560d677"
     },
     {
       "path": "adapters/codex/runtime-map.yaml",
       "operation": "replace",
-      "sha256": "738fb70590b9410d58044b0a22a7e8434eddfeecf82341e839c3e49652e943fd"
+      "sha256": "2e2b0714edcaeb76bd5daefba1553e380127f8ef6278d195cc5aba08e082ae83"
     },
     {
       "path": "adapters/shared/runtime-contract.json",
       "operation": "replace",
-      "sha256": "556c0a1a107ed0c1c75f09caf253891b827be2f9f3aaf3017687987380595ed8"
+      "sha256": "8801ae47b437da9f2eafd8d097994f3dae524750a30fba080e9e7476e3e4116c"
     },
     {
       "path": "compatibility/core-contracts.json",
       "operation": "replace",
-      "sha256": "082ca31d096db7c95e0ed11ac9dfdda25593824ddd373177a75ae4cb8fbf5499"
+      "sha256": "0a87d212c45fc39daac98bdda70012d0e14217f8cd3d34b006452d0afddde90a"
     },
     {
       "path": "compatibility/deprecations.json",
       "operation": "replace",
-      "sha256": "80b249e21643c938e988be0d7399fd9b7d726fa148c951872164ad48b06be3f2"
+      "sha256": "f0804c8786e0b22a6604cd04477fb0079c9690ce845033f9323b04312435f53a"
     }
   ],
   "deleted_files": [],
   "post_apply_validation": [
     "python scripts/validate_registry.py",
     "python scripts/validate_package.py",
-    "python scripts/validate_contracts.py",
     "python scripts/validate_runtime_contract.py",
-    "python scripts/validate_conformance.py"
+    "python scripts/validate_conformance.py",
+    "python scripts/run_conformance_tests.py"
   ]
 }

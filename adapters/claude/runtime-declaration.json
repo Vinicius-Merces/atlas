@@ -1,6 +1,6 @@
 {
   "runtime": "claude-code",
-  "version": "0.1.0-beta.5",
+  "version": "0.1.0-beta.6",
   "support": "beta-supported",
   "canonical": true,
   "contract": "../shared/runtime-contract.json",
@@ -16,7 +16,10 @@
     "route-tasks",
     "build-context-packs",
     "validate-task-envelopes",
-    "validate-execution-results"
+    "validate-execution-results",
+    "create-checkpoints",
+    "handoff-tasks",
+    "resume-execution"
   ],
   "implementation": ".claude/",
   "limitations": []

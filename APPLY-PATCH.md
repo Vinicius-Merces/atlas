@@ -2,23 +2,21 @@
 
 ## Required base
 
-`0.1.0-beta.4`
+`0.1.0-beta.5`
 
 ## Target
 
-`0.1.0-beta.5`
+`0.1.0-beta.6`
 
-## Procedure
-
-1. Confirm the repository `VERSION` is `0.1.0-beta.4`.
-2. Copy all patch files over the repository root.
-3. Allow listed files to be replaced.
-4. Add the new files.
-5. Delete only paths listed in `FILES-TO-DELETE.md`.
-6. Run the validation commands from `PATCH-MANIFEST.json`.
+1. Confirm the repository version.
+2. Copy this patch over the repository root.
+3. Replace listed files.
+4. Add listed files.
+5. Delete only files explicitly listed.
+6. Run the validation commands in `PATCH-MANIFEST.json`.
 
 ## Summary
 
-- Added: 27
+- Added: 33
 - Replaced: 13
 - Deleted: 0

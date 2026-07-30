@@ -1,0 +1,19 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "ATLAS Execution Checkpoint",
+  "type": "object",
+  "required": [
+    "checkpoint_id",
+    "task_id",
+    "runtime",
+    "state",
+    "completed_steps",
+    "pending_steps",
+    "changed_files",
+    "validation",
+    "reviews",
+    "assumptions",
+    "remaining_risks"
+  ],
+  "additionalProperties": true
+}

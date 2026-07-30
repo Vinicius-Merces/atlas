@@ -1,0 +1,15 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "ATLAS Continuation Plan",
+  "type": "object",
+  "required": [
+    "task_id",
+    "runtime",
+    "handoff",
+    "preserved_steps",
+    "next_steps",
+    "required_validation",
+    "required_reviews"
+  ],
+  "additionalProperties": true
+}

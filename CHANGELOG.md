@@ -1,5 +1,41 @@
 # Changelog
 
+## 0.1.0-beta.6
+
+### Added
+
+- Runtime Handoff Coordinator agent
+- Execution Continuity Engineer agent
+- Checkpoint Integrity Reviewer agent
+- Runtime handoff design skill
+- Execution checkpoint skill
+- Continuation planning skill
+- Runtime handoff workflow
+- Interrupted-task recovery workflow
+- Continuation planning workflow
+- Handoff review gate
+- Checkpoint integrity review gate
+- `/atlas-checkpoint`, `/atlas-handoff`, and `/atlas-resume`
+- Checkpoint schema
+- Handoff manifest schema
+- Continuation plan schema
+- Checkpoint creation script
+- Handoff creation script
+- Handoff validator
+- Continuation-plan builder
+- Cross-runtime handoff tests
+- Runtime handoff model
+- Execution continuity model
+- Checkpoint model
+- Handoff and recovery guides
+
+### Changed
+
+- Version promoted to `0.1.0-beta.6`
+- Universal runtime contract now requires checkpoint and handoff support
+- Claude Code and Codex declarations now include resumable execution capabilities
+- Incremental delivery remains the default package format
+
 ## 0.1.0-beta.5
 
 ### Added

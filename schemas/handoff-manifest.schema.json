@@ -1,0 +1,20 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "ATLAS Runtime Handoff Manifest",
+  "type": "object",
+  "required": [
+    "handoff_id",
+    "task_id",
+    "from_runtime",
+    "to_runtime",
+    "checkpoint",
+    "context_pack",
+    "completed_steps",
+    "pending_steps",
+    "validation",
+    "reviews",
+    "assumptions",
+    "remaining_risks"
+  ],
+  "additionalProperties": true
+}
