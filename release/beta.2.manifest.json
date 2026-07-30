@@ -1,0 +1,24 @@
+{
+  "version": "0.1.0-beta.2",
+  "channel": "beta",
+  "file_count": 489,
+  "canonical_runtime": "claude-code",
+  "supported_runtimes": [
+    "claude-code",
+    "codex"
+  ],
+  "experimental_adapters": [
+    "gemini",
+    "cursor"
+  ],
+  "validation": {
+    "registry": "scripts/validate_registry.py",
+    "package": "scripts/validate_package.py",
+    "contracts": "scripts/validate_contracts.py",
+    "codex_adapter": "scripts/validate_codex_adapter.py",
+    "smoke_tests": "tests/smoke/",
+    "contract_tests": "tests/contract/",
+    "codex_tests": "tests/codex/"
+  },
+  "runtime_parity": "compatibility/claude-codex-capability-matrix.md"
+}
