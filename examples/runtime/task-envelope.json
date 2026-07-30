@@ -1,0 +1,22 @@
+{
+  "id": "task-example-feature",
+  "task_type": "feature",
+  "summary": "Add an export action to the account dashboard",
+  "primary_role": "product-architect",
+  "supporting_roles": [
+    "frontend-engineer",
+    "backend-engineer"
+  ],
+  "workflow": "feature-delivery",
+  "skills": [],
+  "reviews": [
+    "architecture-review",
+    "qa-review"
+  ],
+  "validation": [
+    "unit-tests",
+    "integration-tests"
+  ],
+  "context_pack": "examples/runtime/task-envelope.context.md",
+  "state": "routed"
+}

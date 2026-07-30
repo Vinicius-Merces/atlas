@@ -1,0 +1,18 @@
+{
+  "version": "0.1.0-beta.5",
+  "channel": "beta",
+  "canonical_runtime": "claude-code",
+  "supported_runtimes": [
+    "claude-code",
+    "codex"
+  ],
+  "delivery_modes": [
+    "incremental",
+    "cumulative"
+  ],
+  "runtime_tools": {
+    "route": "scripts/atlas_route.py",
+    "context": "scripts/build_context_pack.py",
+    "plan": "scripts/build_execution_plan.py"
+  }
+}

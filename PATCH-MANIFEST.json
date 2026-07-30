@@ -1,0 +1,218 @@
+{
+  "package_type": "incremental",
+  "from_version": "0.1.0-beta.4",
+  "to_version": "0.1.0-beta.5",
+  "added_count": 27,
+  "modified_count": 13,
+  "deleted_count": 0,
+  "files": [
+    {
+      "path": ".claude/agents/patch-integrity-engineer.md",
+      "operation": "add",
+      "sha256": "cbdf925cad3744b83589deedc140c4216b09a6fa22e841c5e2e787defde23658"
+    },
+    {
+      "path": ".claude/agents/runtime-execution-planner.md",
+      "operation": "add",
+      "sha256": "fb0d4b257b8a6e4a4a9dd4254b3cb20f3d4cfa654e045cd643103512e4fc1221"
+    },
+    {
+      "path": ".claude/commands/atlas-execute-plan.md",
+      "operation": "add",
+      "sha256": "069ff7327ec7d8d439d415791e0cca5d74dfc2808a1f19c362d1baffda7346b0"
+    },
+    {
+      "path": ".claude/commands/atlas-patch-check.md",
+      "operation": "add",
+      "sha256": "f251ec7ba9bb125dc488cbf5dcc0d593f91d60c147b4f37a6eaa72d13055db81"
+    },
+    {
+      "path": ".claude/reviews/context-assembly-review.md",
+      "operation": "add",
+      "sha256": "cf4341b80852f750f5eb15072d07bdb3d3af597a7e06888c41e2d68f77bcc484"
+    },
+    {
+      "path": ".claude/reviews/execution-planning-review.md",
+      "operation": "add",
+      "sha256": "5e74d6cc6586c3d254219ff9fbd453be0d73f5e02bff514cc7e21769f41c1dba"
+    },
+    {
+      "path": ".claude/skills/runtime/incremental-patch-verification.md",
+      "operation": "add",
+      "sha256": "f0c50da60236795634f256d95b3594fdd32ecae449429b682becbc8847767979"
+    },
+    {
+      "path": ".claude/skills/runtime/runtime-execution-planning.md",
+      "operation": "add",
+      "sha256": "1a06fd7c08408d10970836190b2865acce14e096fc966fe65276a08de4f0371a"
+    },
+    {
+      "path": ".claude/workflows/runtime-execution.md",
+      "operation": "add",
+      "sha256": "543b88ded2dfc3672f937b24ca712723d5c9cedb1d44f81b052da1943fe1bd6e"
+    },
+    {
+      "path": ".claude/workflows/task-envelope-lifecycle.md",
+      "operation": "add",
+      "sha256": "4b9802e07bf7cb205d74aef27ead7071641719c31c9ff6b13b5698f238bc25ef"
+    },
+    {
+      "path": "docs/incremental-patch-guide.md",
+      "operation": "add",
+      "sha256": "be89b568c8d859f320adc731127be44c5c68f5bbc1681004d6d769d650325083"
+    },
+    {
+      "path": "docs/runtime-execution-guide.md",
+      "operation": "add",
+      "sha256": "41f2cd1b4b6c0f286849b0f15f330035a4a75efd43d0330ced8d918708ca11a7"
+    },
+    {
+      "path": "examples/runtime/task-envelope.json",
+      "operation": "add",
+      "sha256": "45347842fc4871729ab8045e463243ecc7e80834e3ad337a93ba4fe88ad2f5be"
+    },
+    {
+      "path": "framework/context-resolution-model.md",
+      "operation": "add",
+      "sha256": "3a4230456279533ee56cffeb530b1d4c5ad8461b9912f942dc31d97a4a981a8a"
+    },
+    {
+      "path": "framework/incremental-delivery-model.md",
+      "operation": "add",
+      "sha256": "d4af7550ffeba1c61b22b72b78c18f440d664d3258be06afea5e9198ba92939c"
+    },
+    {
+      "path": "framework/task-envelope-lifecycle-model.md",
+      "operation": "add",
+      "sha256": "4245dd938a37c200f44f0384f4e36eb4b7572ee26e1f516c497ef6488a589345"
+    },
+    {
+      "path": "release/BETA-5-MIGRATION.md",
+      "operation": "add",
+      "sha256": "fd874307d969eb2777697665df7cb24b78235769680d0957ddf71e434cb5a067"
+    },
+    {
+      "path": "release/BETA-5-RELEASE-NOTES.md",
+      "operation": "add",
+      "sha256": "c42b7c93877f5105ae0d246924498de8051e61030b6a97cd401b3f51e8bcdff0"
+    },
+    {
+      "path": "release/beta.5.manifest.json",
+      "operation": "add",
+      "sha256": "f2b5d446cde415e72f22f5bbae488c764f2ed6b5d460f66571ee5c3c20d7f6d0"
+    },
+    {
+      "path": "schemas/context-pack-manifest.schema.json",
+      "operation": "add",
+      "sha256": "d101c9439742bf91b22cd36f360a4828d088a69270d08a29a5c76a6e6228abd1"
+    },
+    {
+      "path": "schemas/runtime-execution-plan.schema.json",
+      "operation": "add",
+      "sha256": "5edb12f4ae7a41fe9badd95eca64ff36d051c8cd0c0c34d021913821b6e6039a"
+    },
+    {
+      "path": "scripts/atlas_route.py",
+      "operation": "add",
+      "sha256": "ec12277586a85bf40653fbdda4b2849aa7d689873e3a48c660a8ccfee015b20b"
+    },
+    {
+      "path": "scripts/build_context_pack.py",
+      "operation": "add",
+      "sha256": "f139364f9ea801ca8c34a151a234e1fa45aad1ef7da105ed1c7b62145143a94c"
+    },
+    {
+      "path": "scripts/build_execution_plan.py",
+      "operation": "add",
+      "sha256": "89b959f4680d593088a2e40c7d29f79ab05d536bf276b024bba6c2f55edad3c9"
+    },
+    {
+      "path": "scripts/validate_execution_result.py",
+      "operation": "add",
+      "sha256": "ef7741c92d6acfe6dc558df00b5803893ae1266ee0e2debfb41cc50491f664f4"
+    },
+    {
+      "path": "scripts/validate_incremental_patch.py",
+      "operation": "add",
+      "sha256": "1d16866208148a9e6e92a22cdef706139097d8868c91dc4d16e94bd59c16a25e"
+    },
+    {
+      "path": "scripts/validate_task_envelope.py",
+      "operation": "add",
+      "sha256": "34aec7ce4686021b20c73a0f2e2ae4d82b96418402a8495b31ace05c87078372"
+    },
+    {
+      "path": ".claude/registry.json",
+      "operation": "replace",
+      "sha256": "c02b98f92e72c0f99ac2e7b3e624064e70291dd86fa2977c15172bea2a6cb270"
+    },
+    {
+      "path": ".claude/runtime.yaml",
+      "operation": "replace",
+      "sha256": "434bfa6aa13d1e736f749ddf88b5d85a5197840faf33d25cec81c4967f7a5617"
+    },
+    {
+      "path": "CHANGELOG.md",
+      "operation": "replace",
+      "sha256": "e4b51d7e62aec2611d9c0d82ca13c58289f9b057b03588359eeffda29df82258"
+    },
+    {
+      "path": "README.md",
+      "operation": "replace",
+      "sha256": "4a74930c054799d9cbd20199b963ed764e569ea68e177fedb651cb8441c08e03"
+    },
+    {
+      "path": "VERSION",
+      "operation": "replace",
+      "sha256": "e3da5d8a391cbe7d0438d0d1250a740fc2f2b1bdc1160b20fd234c230b1fee56"
+    },
+    {
+      "path": "adapters/claude/runtime-declaration.json",
+      "operation": "replace",
+      "sha256": "c7dcb0571811d113ae9b2fd99d25eb73e824bd25e4cc24fe41a6c793a60f4967"
+    },
+    {
+      "path": "adapters/codex/generated/catalog-manifest.json",
+      "operation": "replace",
+      "sha256": "edc697991bee7fce29edfd06afbfb80bd2de62cddb20982d1fbfdc1de5cbef35"
+    },
+    {
+      "path": "adapters/codex/runtime-declaration.json",
+      "operation": "replace",
+      "sha256": "962def0d8f4a460ab49adf46fdcc87b0a21a2b8ef15c3a8e431785dbb5fde960"
+    },
+    {
+      "path": "adapters/codex/runtime-manifest.json",
+      "operation": "replace",
+      "sha256": "39d1155a2831a2fba3e6f968cc567f1dcf834366ead48eadae8a5e94a03aef2b"
+    },
+    {
+      "path": "adapters/codex/runtime-map.yaml",
+      "operation": "replace",
+      "sha256": "738fb70590b9410d58044b0a22a7e8434eddfeecf82341e839c3e49652e943fd"
+    },
+    {
+      "path": "adapters/shared/runtime-contract.json",
+      "operation": "replace",
+      "sha256": "556c0a1a107ed0c1c75f09caf253891b827be2f9f3aaf3017687987380595ed8"
+    },
+    {
+      "path": "compatibility/core-contracts.json",
+      "operation": "replace",
+      "sha256": "082ca31d096db7c95e0ed11ac9dfdda25593824ddd373177a75ae4cb8fbf5499"
+    },
+    {
+      "path": "compatibility/deprecations.json",
+      "operation": "replace",
+      "sha256": "80b249e21643c938e988be0d7399fd9b7d726fa148c951872164ad48b06be3f2"
+    }
+  ],
+  "deleted_files": [],
+  "post_apply_validation": [
+    "python scripts/validate_registry.py",
+    "python scripts/validate_package.py",
+    "python scripts/validate_contracts.py",
+    "python scripts/validate_runtime_contract.py",
+    "python scripts/validate_conformance.py"
+  ]
+}

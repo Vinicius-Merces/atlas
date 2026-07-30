@@ -1,14 +1,27 @@
 # ATLAS AI Engineering Framework
 
-**Version:** `0.1.0-beta.4`  
-**Status:** Beta / Universal Runtime Contract and Conformance
+**Version:** `0.1.0-beta.5`  
+**Status:** Beta / Executable Routing and Context Runtime
 
-ATLAS coordinates software engineering through shared memory, specialized agents,
-reusable skills, workflows, review gates, validation, and runtime adapters.
+ATLAS coordinates software engineering through shared memory, specialized
+agents, reusable skills, workflows, review gates, validation, and portable
+runtime contracts.
 
-## Beta.4 milestone
+## Beta.5 milestone
 
-Claude Code and Codex now implement one provider-neutral runtime contract.
+The provider-neutral runtime introduced in beta.4 is now executable.
+
+### New runtime utilities
+
+- Deterministic task routing
+- Machine-readable task envelopes
+- Context pack generation
+- Envelope and result validation
+- Runtime execution planning
+- Incremental package manifests
+- Patch preflight verification
+
+## Supported runtimes
 
 | Runtime | Support |
 |---|---|
@@ -17,24 +30,32 @@ Claude Code and Codex now implement one provider-neutral runtime contract.
 | Gemini | Experimental |
 | Cursor | Experimental |
 
-## Added in beta.4
-
-- Universal Runtime Contract
-- Runtime declarations for Claude Code and Codex
-- Machine-readable task routing
-- Context packs
-- Shared task and execution-result envelopes
-- Runtime conformance validation
-- Cross-runtime conformance tests
-- Runtime-neutral evidence protocol
-
-## Validation
+## Core commands
 
 ```bash
-python scripts/validate_runtime_contract.py
-python scripts/validate_conformance.py
-python scripts/run_conformance_tests.py
+python scripts/atlas_route.py --task-type feature --summary "Add account export"
+python scripts/build_context_pack.py --task-envelope .atlas/tasks/task.json
+python scripts/validate_task_envelope.py .atlas/tasks/task.json
+python scripts/validate_execution_result.py .atlas/results/task.json
 ```
 
-Runtimes may differ in syntax and tools, but not silently in responsibility,
-memory, governance, validation, or evidence.
+## Runtime flow
+
+```text
+Request
+  ↓
+Task router
+  ↓
+Task envelope
+  ↓
+Context pack
+  ↓
+Claude Code or Codex
+  ↓
+Execution result
+  ↓
+Validation and review evidence
+```
+
+Claude Code remains the canonical implementation. Codex consumes the same
+contracts, memory, routing policy, context format, and evidence model.

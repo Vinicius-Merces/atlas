@@ -1,5 +1,37 @@
 # Changelog
 
+## 0.1.0-beta.5
+
+### Added
+
+- Executable task router
+- Context pack generator
+- Task envelope validator
+- Execution result validator
+- Runtime execution planner
+- Patch preflight validator
+- Task routing examples
+- Runtime execution plan schema
+- Context pack manifest schema
+- Runtime execution workflow
+- Task envelope lifecycle workflow
+- Context assembly review gate
+- Execution planning review gate
+- `/atlas-execute-plan` and `/atlas-patch-check`
+- Incremental package specification
+- Patch application guide
+- Runtime execution guide
+- Task envelope lifecycle model
+- Context resolution model
+- Incremental delivery model
+
+### Changed
+
+- Version promoted to `0.1.0-beta.5`
+- Universal runtime contract now references executable routing and context tools
+- Claude Code and Codex declarations include task-routing and context-pack capabilities
+- Release packaging now supports verifiable incremental patches
+
 ## 0.1.0-beta.4
 
 ### Added
@@ -8,7 +40,7 @@
 - Task Routing Engineer agent
 - Context Pack Engineer agent
 - Runtime Conformance Auditor agent
-- Universal runtime contract, routing, context pack, and conformance skills
+- Universal runtime contract, task routing, context pack, and conformance skills
 - Task routing, context pack, and runtime conformance workflows
 - Universal runtime, routing, context, and conformance review gates
 - `/atlas-route`, `/atlas-context-pack`, and `/atlas-conformance`

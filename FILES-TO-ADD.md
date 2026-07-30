@@ -1,0 +1,29 @@
+# Files to Add
+
+- `.claude/agents/patch-integrity-engineer.md`
+- `.claude/agents/runtime-execution-planner.md`
+- `.claude/commands/atlas-execute-plan.md`
+- `.claude/commands/atlas-patch-check.md`
+- `.claude/reviews/context-assembly-review.md`
+- `.claude/reviews/execution-planning-review.md`
+- `.claude/skills/runtime/incremental-patch-verification.md`
+- `.claude/skills/runtime/runtime-execution-planning.md`
+- `.claude/workflows/runtime-execution.md`
+- `.claude/workflows/task-envelope-lifecycle.md`
+- `docs/incremental-patch-guide.md`
+- `docs/runtime-execution-guide.md`
+- `examples/runtime/task-envelope.json`
+- `framework/context-resolution-model.md`
+- `framework/incremental-delivery-model.md`
+- `framework/task-envelope-lifecycle-model.md`
+- `release/BETA-5-MIGRATION.md`
+- `release/BETA-5-RELEASE-NOTES.md`
+- `release/beta.5.manifest.json`
+- `schemas/context-pack-manifest.schema.json`
+- `schemas/runtime-execution-plan.schema.json`
+- `scripts/atlas_route.py`
+- `scripts/build_context_pack.py`
+- `scripts/build_execution_plan.py`
+- `scripts/validate_execution_result.py`
+- `scripts/validate_incremental_patch.py`
+- `scripts/validate_task_envelope.py`

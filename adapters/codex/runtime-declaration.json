@@ -1,6 +1,6 @@
 {
   "runtime": "codex",
-  "version": "0.1.0-beta.4",
+  "version": "0.1.0-beta.5",
   "support": "beta-supported",
   "canonical": false,
   "contract": "../shared/runtime-contract.json",
@@ -12,7 +12,11 @@
     "run-or-report-validation",
     "follow-workflows",
     "perform-reviews",
-    "report-execution-evidence"
+    "report-execution-evidence",
+    "route-tasks",
+    "build-context-packs",
+    "validate-task-envelopes",
+    "validate-execution-results"
   ],
   "implementation": "adapters/codex/",
   "limitations": [

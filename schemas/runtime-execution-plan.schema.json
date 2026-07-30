@@ -1,0 +1,15 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "ATLAS Runtime Execution Plan",
+  "type": "object",
+  "required": [
+    "task_id",
+    "runtime",
+    "primary_role",
+    "workflow",
+    "reviews",
+    "validation",
+    "steps"
+  ],
+  "additionalProperties": true
+}

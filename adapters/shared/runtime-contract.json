@@ -1,5 +1,5 @@
 {
-  "version": "0.1.0-beta.4",
+  "version": "0.1.0-beta.5",
   "contract": "atlas-universal-runtime",
   "required_capabilities": [
     "read-files",
@@ -9,7 +9,11 @@
     "run-or-report-validation",
     "follow-workflows",
     "perform-reviews",
-    "report-execution-evidence"
+    "report-execution-evidence",
+    "route-tasks",
+    "build-context-packs",
+    "validate-task-envelopes",
+    "validate-execution-results"
   ],
   "shared_sources": {
     "contracts": ".claude/contracts/",
@@ -19,5 +23,7 @@
     "templates": "templates/"
   },
   "task_envelope_schema": "schemas/task-envelope.schema.json",
-  "execution_result_schema": "schemas/execution-result.schema.json"
+  "execution_result_schema": "schemas/execution-result.schema.json",
+  "routing_tool": "scripts/atlas_route.py",
+  "context_tool": "scripts/build_context_pack.py"
 }
