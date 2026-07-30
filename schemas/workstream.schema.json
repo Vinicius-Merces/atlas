@@ -1,0 +1,17 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "workstream.schema.json",
+  "type": "object",
+  "required": [
+    "workstream_id",
+    "task_id",
+    "summary",
+    "runtime",
+    "dependencies",
+    "resource_claims",
+    "validation",
+    "reviews",
+    "completion_criteria"
+  ],
+  "additionalProperties": true
+}

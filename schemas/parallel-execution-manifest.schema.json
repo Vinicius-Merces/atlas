@@ -1,0 +1,13 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "parallel-execution-manifest.schema.json",
+  "type": "object",
+  "required": [
+    "task_id",
+    "workstreams",
+    "claims",
+    "dependencies",
+    "status"
+  ],
+  "additionalProperties": true
+}

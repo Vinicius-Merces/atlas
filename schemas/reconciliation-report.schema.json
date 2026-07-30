@@ -1,0 +1,16 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "reconciliation-report.schema.json",
+  "type": "object",
+  "required": [
+    "task_id",
+    "workstreams",
+    "changed_files",
+    "combined_validation",
+    "combined_reviews",
+    "conflicts",
+    "remaining_risks",
+    "outcome"
+  ],
+  "additionalProperties": true
+}

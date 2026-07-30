@@ -1,0 +1,13 @@
+{
+  "workstream_id": "ws-example",
+  "task_id": "task-example",
+  "summary": "Implement one independent slice",
+  "runtime": "codex",
+  "owner_role": "backend-engineer",
+  "dependencies": [],
+  "resource_claims": [],
+  "validation": [],
+  "reviews": [],
+  "completion_criteria": [],
+  "status": "planned"
+}

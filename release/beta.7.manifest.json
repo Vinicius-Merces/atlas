@@ -1,0 +1,18 @@
+{
+  "version": "0.1.0-beta.7",
+  "channel": "beta",
+  "delivery_modes": [
+    "incremental",
+    "cumulative"
+  ],
+  "supported_runtimes": [
+    "claude-code",
+    "codex"
+  ],
+  "parallel_execution": {
+    "workstreams": "schemas/workstream.schema.json",
+    "claims": "schemas/resource-claim.schema.json",
+    "manifest": "schemas/parallel-execution-manifest.schema.json",
+    "reconciliation": "schemas/reconciliation-report.schema.json"
+  }
+}

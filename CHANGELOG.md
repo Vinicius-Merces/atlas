@@ -1,5 +1,47 @@
 # Changelog
 
+## 0.1.0-beta.7
+
+### Added
+
+- Parallel Execution Architect agent
+- Workstream Coordinator agent
+- Conflict Resolution Engineer agent
+- Merge Readiness Reviewer agent
+- Workstream decomposition skill
+- Resource claim design skill
+- Conflict prediction skill
+- Result reconciliation skill
+- Parallel execution workflow
+- Workstream merge workflow
+- Shared-state protection workflow
+- Parallel execution review gate
+- Resource claim review gate
+- Merge readiness review gate
+- `/atlas-parallelize`, `/atlas-claim`, `/atlas-merge-ready`, and `/atlas-reconcile`
+- Workstream schema
+- Resource claim schema
+- Parallel execution manifest schema
+- Reconciliation report schema
+- Workstream generator
+- Resource claim tool
+- Conflict detector
+- Merge readiness validator
+- Reconciliation report builder
+- Parallel execution conformance tests
+- Parallel execution model
+- Resource claim model
+- Conflict model
+- Result reconciliation model
+- Parallel execution and merge guides
+
+### Changed
+
+- Version promoted to `0.1.0-beta.7`
+- Universal runtime contract now includes workstream and conflict-safe execution capabilities
+- Claude Code and Codex runtime declarations include parallel execution support
+- Incremental delivery remains the default package format
+
 ## 0.1.0-beta.6
 
 ### Added

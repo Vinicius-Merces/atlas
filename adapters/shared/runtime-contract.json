@@ -1,5 +1,5 @@
 {
-  "version": "0.1.0-beta.6",
+  "version": "0.1.0-beta.7",
   "contract": "atlas-universal-runtime",
   "required_capabilities": [
     "read-files",
@@ -16,7 +16,11 @@
     "validate-execution-results",
     "create-checkpoints",
     "handoff-tasks",
-    "resume-execution"
+    "resume-execution",
+    "decompose-workstreams",
+    "claim-resources",
+    "detect-workstream-conflicts",
+    "reconcile-results"
   ],
   "shared_sources": {
     "contracts": ".claude/contracts/",
@@ -31,5 +35,8 @@
   "context_tool": "scripts/build_context_pack.py",
   "checkpoint_schema": "schemas/checkpoint.schema.json",
   "handoff_schema": "schemas/handoff-manifest.schema.json",
-  "continuation_schema": "schemas/continuation-plan.schema.json"
+  "continuation_schema": "schemas/continuation-plan.schema.json",
+  "workstream_schema": "schemas/workstream.schema.json",
+  "resource_claim_schema": "schemas/resource-claim.schema.json",
+  "parallel_manifest_schema": "schemas/parallel-execution-manifest.schema.json"
 }

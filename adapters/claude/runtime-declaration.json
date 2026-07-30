@@ -1,6 +1,6 @@
 {
   "runtime": "claude-code",
-  "version": "0.1.0-beta.6",
+  "version": "0.1.0-beta.7",
   "support": "beta-supported",
   "canonical": true,
   "contract": "../shared/runtime-contract.json",
@@ -19,7 +19,11 @@
     "validate-execution-results",
     "create-checkpoints",
     "handoff-tasks",
-    "resume-execution"
+    "resume-execution",
+    "decompose-workstreams",
+    "claim-resources",
+    "detect-workstream-conflicts",
+    "reconcile-results"
   ],
   "implementation": ".claude/",
   "limitations": []

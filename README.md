@@ -1,55 +1,57 @@
 # ATLAS AI Engineering Framework
 
-**Version:** `0.1.0-beta.6`  
-**Status:** Beta / Cross-Runtime Handoff and Resumable Execution
+**Version:** `0.1.0-beta.7`  
+**Status:** Beta / Parallel Workstreams and Conflict-Safe Execution
 
 ATLAS coordinates software engineering through shared memory, specialized
-agents, reusable skills, workflows, review gates, validation, runtime
-contracts, and portable execution evidence.
+agents, reusable skills, workflows, review gates, runtime contracts, portable
+execution evidence, resumable tasks, and conflict-safe parallel execution.
 
-## Beta.6 milestone
+## Beta.7 milestone
 
-Claude Code and Codex can now hand off work through one shared, validated task
-state.
+Claude Code and Codex can now work on parallel task branches while protecting
+shared files, dependencies, and canonical knowledge.
 
 ### New capabilities
 
-- Cross-runtime task handoff
-- Execution checkpoints
-- Resumable task state
-- Handoff manifests
-- Checkpoint validation
-- Runtime continuation planning
-- Portable execution evidence
-- Interrupted-task recovery
+- Workstream decomposition
+- File and resource leases
+- Conflict prediction
+- Parallel execution manifests
+- Merge readiness checks
+- Cross-runtime result reconciliation
+- Shared-state protection
+- Workstream completion reports
 
-## Runtime flow
+## Parallel execution flow
 
 ```text
 Task envelope
   ↓
-Context pack
+Workstream decomposition
   ↓
-Runtime A
+Resource claims and conflict analysis
   ↓
-Checkpoint + handoff manifest
+Claude Code and Codex execute independently
   ↓
-Runtime B
+Workstream checkpoints
   ↓
-Continuation plan
+Merge readiness validation
   ↓
-Validated execution result
+Result reconciliation
+  ↓
+Final reviews and execution result
 ```
 
 ## Commands
 
 ```bash
-python scripts/create_checkpoint.py --task-envelope task.json --runtime codex
-python scripts/create_handoff.py --checkpoint checkpoint.json --to-runtime claude-code
-python scripts/validate_handoff.py handoff.json
-python scripts/build_continuation_plan.py --handoff handoff.json
+python scripts/create_workstreams.py --task-envelope task.json
+python scripts/claim_resources.py --workstream workstream.json
+python scripts/detect_workstream_conflicts.py --manifest parallel-manifest.json
+python scripts/validate_merge_readiness.py --manifest parallel-manifest.json
 ```
 
 Claude Code remains canonical. Codex remains synchronized and beta-supported.
-Both runtimes share the same contracts, memory, routing, evidence, and handoff
+Both runtimes use the same workstream, resource claim, checkpoint, and evidence
 formats.

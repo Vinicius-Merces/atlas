@@ -1,0 +1,13 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "resource-claim.schema.json",
+  "type": "object",
+  "required": [
+    "claim_id",
+    "workstream_id",
+    "mode",
+    "resources",
+    "reason"
+  ],
+  "additionalProperties": true
+}

@@ -1,0 +1,9 @@
+{
+  "claim_id": "claim-example",
+  "workstream_id": "ws-example",
+  "mode": "exclusive",
+  "resources": [
+    "src/example.py"
+  ],
+  "reason": "planned implementation"
+}
