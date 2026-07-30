@@ -1,20 +1,43 @@
-# ATLAS Codex Adapter
+# ATLAS Codex Runtime
 
-This adapter maps canonical ATLAS concepts to a Codex-oriented workflow.
+**Support:** Beta-supported compatibility runtime  
+**Canonical source:** Claude Code implementation and shared ATLAS framework
 
-## Mapping
+This adapter provides a functional Codex-oriented representation of ATLAS.
 
-- Canonical agents become role instructions.
-- Workflows become reusable task procedures.
-- Contracts become execution constraints.
-- Skills become reusable reference modules.
-- Reviews become explicit verification passes.
+## Structure
 
-## Status
+- `agents/` role definitions
+- `commands/` task entry points
+- `skills/` reusable capability mappings
+- `workflows/` execution procedures
+- `reviews/` verification gates
+- `runtime-manifest.json` support and mapping metadata
+- `runtime-map.yaml` capability translation
 
-Foundation adapter. Runtime-specific automation will expand in later releases.
+## Shared canonical assets
 
-## Semantic rule
+Codex uses the same:
 
-The adapter must preserve the scope and responsibilities defined in canonical
-ATLAS files.
+- Framework models
+- Contracts
+- Memory
+- ADRs
+- Documentation
+- Templates
+- Blueprints
+- Compatibility policies
+
+## Validation
+
+Run:
+
+```bash
+python scripts/validate_codex_adapter.py
+python scripts/run_codex_tests.py
+```
+
+## Limitations
+
+Runtime tool invocation may differ from Claude Code. These differences must not
+change semantic responsibility.

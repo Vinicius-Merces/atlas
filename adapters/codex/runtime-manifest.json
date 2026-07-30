@@ -1,0 +1,25 @@
+{
+  "runtime": "codex",
+  "version": "0.1.0-beta.2",
+  "support": "beta-supported",
+  "canonical_runtime": false,
+  "canonical_source": "../../",
+  "collections": {
+    "agents": "agents/",
+    "commands": "commands/",
+    "skills": "skills/",
+    "workflows": "workflows/",
+    "reviews": "reviews/"
+  },
+  "shared": {
+    "contracts": "../../.claude/contracts/",
+    "memory": "../../.claude/memory/",
+    "framework": "../../framework/",
+    "docs": "../../docs/",
+    "templates": "../../templates/"
+  },
+  "limitations": [
+    "Runtime tool invocation differs from Claude Code.",
+    "Codex-specific execution may require manual orchestration."
+  ]
+}

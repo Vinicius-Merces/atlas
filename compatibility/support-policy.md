@@ -1,38 +1,34 @@
 # ATLAS Support Policy
 
-## Beta-supported
+## Beta-supported runtimes
 
-### Claude Code runtime
+### Claude Code
 
-The `.claude/` implementation is the canonical beta-supported runtime.
+The `.claude/` implementation remains the canonical source runtime.
+
+### Codex
+
+The `adapters/codex/` implementation is a beta-supported compatibility runtime.
 
 Support includes:
 
-- Core agents
-- Contracts
-- Workflows
-- Reviews
-- Commands
-- Registry
-- Runtime metadata
-- Package validation
-- Smoke and contract tests
+- Core role mappings
+- Command mappings
+- Workflow mappings
+- Review mappings
+- Shared contracts
+- Shared memory
+- Runtime manifest
+- Runtime-specific validation
 
-## Experimental
+## Experimental runtimes
 
-### Codex adapter
-### Gemini adapter
-### Cursor adapter
+### Gemini
+### Cursor
 
-Experimental adapters provide structural mappings but may require manual
-runtime-specific adjustments.
+Experimental adapters may require manual adjustments.
 
-## Framework support
+## Framework compatibility
 
-The `0.1.0-beta.x` line preserves core contract semantics and canonical paths
-unless a breaking change is explicitly documented with migration guidance.
-
-## Support exclusions
-
-ATLAS does not guarantee compatibility with undocumented project modifications,
-unsupported runtime versions, or removed third-party tools.
+The `0.1.0-beta.x` line preserves core contract semantics and canonical paths.
+Runtime-specific syntax may differ without changing semantic responsibility.

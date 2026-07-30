@@ -1,14 +1,25 @@
 runtime: codex
-status: foundation
+support: beta-supported
 canonical_source: ../../
+version: 0.1.0-beta.2
 
 mapping:
-  agents: role-instructions
-  skills: reusable-guidance
-  workflows: task-procedures
-  contracts: execution-constraints
-  reviews: verification-passes
+  agents: agents/
+  commands: commands/
+  skills: skills/
+  workflows: workflows/
+  reviews: reviews/
+  contracts: ../../.claude/contracts/
+  memory: ../../.claude/memory/
+  framework: ../../framework/
+  documentation: ../../docs/
+
+principles:
+  - preserve-semantic-responsibility
+  - preserve-governance
+  - preserve-memory
+  - document-capability-gaps
 
 limitations:
-  - Tool names may require manual mapping.
-  - Runtime-specific command syntax is not yet generated automatically.
+  - Runtime tool names may differ.
+  - Some invocation patterns require Codex-specific orchestration.
