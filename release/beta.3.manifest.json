@@ -1,0 +1,30 @@
+{
+  "version": "0.1.0-beta.3",
+  "channel": "beta",
+  "file_count": 531,
+  "canonical_runtime": "claude-code",
+  "supported_runtimes": [
+    "claude-code",
+    "codex"
+  ],
+  "experimental_adapters": [
+    "gemini",
+    "cursor"
+  ],
+  "codex_sync": {
+    "mode": "generated-catalogs",
+    "source": ".claude/registry.json",
+    "check": "scripts/sync_codex_adapter.py --check",
+    "drift": "scripts/detect_runtime_drift.py"
+  },
+  "validation": {
+    "registry": "scripts/validate_registry.py",
+    "package": "scripts/validate_package.py",
+    "contracts": "scripts/validate_contracts.py",
+    "codex_adapter": "scripts/validate_codex_adapter.py",
+    "runtime_drift": "scripts/detect_runtime_drift.py",
+    "smoke_tests": "tests/smoke/",
+    "contract_tests": "tests/contract/",
+    "codex_tests": "tests/codex/"
+  }
+}
