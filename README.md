@@ -1,85 +1,61 @@
 # ATLAS AI Engineering Framework
 
-**Version:** `0.1.0-beta.2`  
-**Status:** Beta / Claude Code + Codex Runtime Parity
+**Version:** `0.1.0-beta.3`  
+**Status:** Beta / Claude Code + Codex Synchronization Runtime
 
 ATLAS is an AI engineering framework for coordinating software development
 through specialized agents, persistent memory, reusable skills, explicit
 workflows, review gates, operational controls, architecture governance, and
 multi-runtime distribution.
 
-## Beta.2 milestone
+## Beta.3 milestone
 
-This release promotes Codex from a foundation adapter to an actively validated
-beta runtime alongside Claude Code.
+This release moves the Codex adapter from manual mapping toward a synchronized
+runtime generated from the canonical ATLAS registry.
 
 ## Runtime support
 
 | Runtime | Support |
 |---|---|
 | Claude Code | Beta-supported canonical runtime |
-| Codex | Beta-supported compatibility runtime |
+| Codex | Beta-supported synchronized runtime |
 | Gemini | Experimental adapter |
 | Cursor | Experimental adapter |
 
-## Runtime architecture
+## What beta.3 adds
 
-```text
-Canonical ATLAS definitions
-├── agents
-├── contracts
-├── skills
-├── workflows
-├── reviews
-├── commands
-├── memory
-└── governance
-        ↓
-   ┌───────────────┬───────────────┐
-   │               │               │
-Claude Code      Codex          Experimental
-runtime          runtime        adapters
-```
+- Runtime Synchronization Engineer agent
+- Runtime Catalog Maintainer agent
+- Adapter Drift Auditor agent
+- Registry-to-runtime generation skill
+- Adapter drift detection skill
+- Command catalog synthesis skill
+- Runtime synchronization workflow
+- Adapter drift audit workflow
+- Runtime catalog publication workflow
+- Runtime synchronization review gate
+- Adapter drift review gate
+- Full Codex catalogs generated from the registry
+- Root `AGENTS.md` for Codex-compatible project guidance
+- Generated Codex indexes for agents, commands, skills, workflows, and reviews
+- Runtime synchronization scripts
+- Drift detection scripts
+- Full parity tests against canonical registry collections
+- Codex task protocol
+- Shared execution evidence format
+- Dual-runtime maintenance guide
 
-## What beta.2 adds
-
-- Codex Runtime Engineer agent
-- Runtime Parity Reviewer agent
-- Runtime Capability Mapper agent
-- Codex runtime generation skill
-- Runtime semantic parity skill
-- Dual-runtime validation skill
-- Codex synchronization workflow
-- Runtime parity workflow
-- Dual-runtime release workflow
-- Codex runtime review gate
-- Runtime parity review gate
-- Codex-specific commands
-- Functional Codex adapter structure
-- Agent, skill, workflow, review, and command mappings
-- Codex runtime manifest
-- Claude-to-Codex capability matrix
-- Codex validation scripts
-- Codex compatibility tests
-- Dual-runtime migration and usage guides
-
-## Quick validation
+## Validation
 
 ```bash
-python scripts/validate_registry.py
-python scripts/validate_package.py
-python scripts/validate_contracts.py
+python scripts/sync_codex_adapter.py --check
 python scripts/validate_codex_adapter.py
-python scripts/run_smoke_tests.py
-python scripts/run_contract_tests.py
+python scripts/detect_runtime_drift.py
 python scripts/run_codex_tests.py
 ```
 
-## Stability commitment
+## Runtime principle
 
-During the `0.1.0-beta.x` line:
-
-- Core contract semantics remain stable.
-- Claude Code and Codex compatibility are validated independently.
-- Breaking changes require migration guidance.
-- Experimental adapters may evolve more rapidly.
+Claude Code remains the canonical implementation source. Codex receives a
+generated and validated compatibility layer that preserves the same semantics,
+memory, contracts, and governance.
