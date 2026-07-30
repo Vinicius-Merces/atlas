@@ -1,0 +1,28 @@
+version: 0.1.0-beta.10
+runtime: claude-code
+
+orchestrator: orchestrator
+
+context:
+  priority:
+    - user-request
+    - project-requirements
+    - memory
+    - accepted-adrs
+    - global-rules
+    - agent-contracts
+    - skills
+    - defaults
+
+quality_gates:
+  - architecture
+  - implementation
+  - security
+  - ux
+  - qa
+  - documentation
+
+delivery:
+  require_validation_summary: true
+  require_risk_disclosure: true
+  require_documentation_for_architecture_changes: true
