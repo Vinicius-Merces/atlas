@@ -1,7 +1,7 @@
 # ATLAS AI Engineering Framework
 
-**Version:** `0.1.0-alpha.10`  
-**Status:** Foundation / Enterprise Governance and Economics Runtime
+**Version:** `0.1.0-alpha.11`  
+**Status:** Foundation / Automation, Validation and Multi-Runtime Runtime
 
 ATLAS is an AI engineering framework for coordinating software development
 through specialized agents, persistent memory, reusable skills, explicit
@@ -12,45 +12,41 @@ workflows, review gates, operational controls, and architecture governance.
 ```text
 Strategic intent
     ↓
-Portfolio and economic context
-    ↓
 Repository and knowledge mapping
     ↓
 Orchestrator
     ↓
 Specialist agents + skills
     ↓
-Architecture, security, cost and governance validation
+Automated policy and schema validation
     ↓
-Operations and measurement
+Human review gates
     ↓
-Knowledge synchronization
+Release integrity checks
     ↓
-Delivery
+Runtime adapter delivery
 ```
 
-## What alpha.10 adds
+## What alpha.11 adds
 
-- Enterprise Architect agent
-- FinOps Engineer agent
-- Threat Modeling Engineer agent
-- Technical Program Manager agent
-- Governance Steward agent
-- Architecture portfolio assessment skill
-- Cloud cost analysis skill
-- Threat modeling skill
-- Control design skill
-- Technical roadmap synthesis skill
-- Decision governance workflow
-- FinOps optimization workflow
-- Threat modeling workflow
-- Technical program workflow
-- Architecture portfolio workflow
-- Enterprise architecture, FinOps, threat model and governance review gates
-- New strategic commands and enterprise templates
-- Architecture maturity model
-- Engineering economics model
-- Governance operating model
+- Automation Engineer agent
+- Policy Engineer agent
+- Release Integrity Engineer agent
+- Runtime Adapter Engineer agent
+- Policy-as-code design skill
+- Framework package validation skill
+- Release integrity verification skill
+- Runtime adapter mapping skill
+- CI governance workflow
+- Package validation workflow
+- Runtime adapter workflow
+- Release artifact workflow
+- Automation, policy, package, and adapter review gates
+- GitHub Actions workflows
+- JSON schemas for registry and agent metadata
+- Validation scripts
+- Codex, Gemini, and Cursor adapter foundations
+- Distribution and validation templates
 
 ## Runtime layers
 
@@ -58,9 +54,11 @@ Delivery
 - **Capability:** skills, tools, retrieval and integration adapters
 - **Execution:** agents, workflows, commands
 - **Governance:** rules, contracts, controls, reviews, quality gates
+- **Automation:** policy-as-code, schemas, CI, package validation
 - **Operations:** deployment, observability, incident response, recovery
 - **Trust:** security, privacy, compliance, testing, AI evaluation
 - **Experience:** product, design systems, content, localization, developer experience
 - **Measurement:** analytics, experiments, product outcomes
 - **Platform:** repositories, cloud, integrations, monorepos, shared infrastructure
 - **Enterprise:** portfolio architecture, economics, governance, roadmaps, controls
+- **Distribution:** runtime adapters, release artifacts, package integrity

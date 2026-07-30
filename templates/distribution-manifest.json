@@ -1,0 +1,14 @@
+{
+  "version": "0.0.0",
+  "artifact": "atlas-framework-0.0.0.zip",
+  "canonical": true,
+  "adapters": [],
+  "file_count": 0,
+  "sha256": "",
+  "validated_at": "",
+  "validation": {
+    "registry": "pending",
+    "package": "pending",
+    "adapters": "pending"
+  }
+}

@@ -2,55 +2,63 @@
 
 All notable changes to ATLAS are documented here.
 
+## 0.1.0-alpha.11
+
+### Added
+
+- Automation Engineer agent
+- Policy Engineer agent
+- Release Integrity Engineer agent
+- Runtime Adapter Engineer agent
+- Policy-as-code design skill
+- Framework package validation skill
+- Release integrity verification skill
+- Runtime adapter mapping skill
+- CI governance workflow
+- Package validation workflow
+- Runtime adapter workflow
+- Release artifact workflow
+- Automation review gate
+- Policy review gate
+- Package integrity review gate
+- Runtime adapter review gate
+- `/atlas-validate`, `/atlas-policy`, `/atlas-adapt-runtime`, and `/atlas-package`
+- GitHub Actions validation workflow
+- GitHub Actions package workflow
+- Registry JSON schema
+- Agent metadata JSON schema
+- Package validation script
+- Registry validation script
+- Codex adapter foundation
+- Gemini adapter foundation
+- Cursor adapter foundation
+- Distribution manifest template
+- Runtime adapter specification template
+- Policy specification template
+- Release artifact checklist
+- Automation model
+- Distribution model
+- Policy-as-code model
+
+### Changed
+
+- Runtime registry expanded with automation, policy, package integrity, and runtime adapter capabilities
+- README updated for automation and multi-runtime distribution
+- Package remains cumulative
+
 ## 0.1.0-alpha.10
 
 ### Added
 
-- Enterprise Architect agent
-- FinOps Engineer agent
-- Threat Modeling Engineer agent
-- Technical Program Manager agent
-- Governance Steward agent
-- Architecture portfolio assessment skill
-- Cloud cost analysis skill
-- Threat modeling skill
-- Control design skill
-- Technical roadmap synthesis skill
-- Decision governance workflow
-- FinOps optimization workflow
-- Threat modeling workflow
-- Technical program workflow
-- Architecture portfolio workflow
-- Enterprise architecture review gate
-- FinOps review gate
-- Threat model review gate
-- Governance review gate
-- `/atlas-roadmap`, `/atlas-cost`, `/atlas-threat-model`, and `/atlas-govern`
-- Enterprise architecture assessment template
-- Cost optimization plan template
-- Threat model template
-- Technical roadmap template
-- Governance decision record template
-- Architecture maturity model
-- Engineering economics model
-- Governance operating model
-
-### Changed
-
-- Runtime registry expanded with enterprise architecture, economics, governance, and threat-modeling capabilities
-- README updated for the enterprise governance runtime
-- Package remains cumulative
+- Enterprise architecture
+- FinOps
+- Threat modeling
+- Governance
+- Technical program management
+- Strategic roadmaps
 
 ## 0.1.0-alpha.9
 
 ### Added
 
-- Platform, cloud, integration, knowledge, retrieval, and monorepo capabilities
-- Obsidian-compatible knowledge vault
-- Bootstrap, modernization, integration, and knowledge synchronization workflows
-
-## 0.1.0-alpha.8
-
-### Added
-
-- Product, analytics, design system, content, localization, experimentation, and developer experience capabilities
+- Platform, integration, knowledge, RAG, monorepo, and Obsidian capabilities
