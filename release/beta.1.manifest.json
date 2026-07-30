@@ -1,0 +1,23 @@
+{
+  "version": "0.1.0-beta.1",
+  "channel": "beta",
+  "file_count": 443,
+  "canonical_runtime": "claude-code",
+  "supported_runtimes": [
+    "claude-code"
+  ],
+  "experimental_adapters": [
+    "codex",
+    "gemini",
+    "cursor"
+  ],
+  "contract_manifest": "compatibility/core-contracts.json",
+  "support_policy": "compatibility/support-policy.md",
+  "validation": {
+    "registry": "scripts/validate_registry.py",
+    "package": "scripts/validate_package.py",
+    "contracts": "scripts/validate_contracts.py",
+    "smoke_tests": "tests/smoke/",
+    "contract_tests": "tests/contract/"
+  }
+}
