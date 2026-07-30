@@ -1,58 +1,58 @@
 # ATLAS AI Engineering Framework
 
-**Version:** `0.1.0-alpha.12`  
-**Status:** Foundation / Adoption, Blueprints and Reference Runtime
+**Version:** `0.1.0-alpha.13`  
+**Status:** Foundation / Health, Audit and Migration Runtime
 
 ATLAS is an AI engineering framework for coordinating software development
 through specialized agents, persistent memory, reusable skills, explicit
-workflows, review gates, operational controls, and architecture governance.
+workflows, review gates, operational controls, architecture governance, and
+multi-runtime distribution.
 
 ## Core flow
 
 ```text
-Project intent
+Project state
     ↓
-Blueprint selection
+Health and audit assessment
     ↓
-Repository bootstrap
-    ↓
-Memory and context initialization
+Context and memory resolution
     ↓
 Orchestrator
     ↓
 Specialist agents + skills
     ↓
-Validation and reviews
+Delivery, validation and governance
     ↓
-Release and knowledge synchronization
+Debt, risk and migration tracking
+    ↓
+Knowledge synchronization
 ```
 
-## What alpha.12 adds
+## What alpha.13 adds
 
-- Adoption Architect agent
-- Solution Blueprint Engineer agent
-- Reference Implementation Reviewer agent
-- Project adoption assessment skill
-- Blueprint selection skill
-- Reference implementation review skill
-- Framework adoption workflow
-- Blueprint instantiation workflow
-- Reference project review workflow
-- Adoption, blueprint and reference review gates
-- Starter blueprints for:
-  - Landing pages
-  - SaaS products
-  - API services
-  - AI/RAG systems
-  - Mobile apps
-  - Enterprise systems
-- Example project memory
-- Example ADRs
-- Example workflows
-- Adoption guide
-- Blueprint guide
-- Reference implementation guide
-- New commands and templates for practical adoption
+- Technical Auditor agent
+- Technical Debt Steward agent
+- Migration Architect agent
+- Project Health Analyst agent
+- Project health assessment skill
+- Technical debt classification skill
+- Architecture audit skill
+- Version migration planning skill
+- Project health workflow
+- Technical audit workflow
+- Debt reduction workflow
+- Framework upgrade workflow
+- Health, audit, debt and migration review gates
+- Project health and audit commands
+- Upgrade and debt commands
+- Health scorecard template
+- Technical audit report template
+- Debt register template
+- Framework migration guide template
+- Project health model
+- Technical debt model
+- Framework evolution model
+- Beta readiness checklist
 
 ## Runtime layers
 
@@ -69,3 +69,4 @@ Release and knowledge synchronization
 - **Enterprise:** portfolio architecture, economics, governance, roadmaps, controls
 - **Distribution:** runtime adapters, release artifacts, package integrity
 - **Adoption:** blueprints, starter kits, reference projects, migration paths
+- **Assurance:** health assessment, audits, technical debt, framework upgrades
