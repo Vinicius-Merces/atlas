@@ -1,5 +1,5 @@
 {
-  "version": "0.1.0-beta.9",
+  "version": "0.1.0-beta.10",
   "contract": "atlas-universal-runtime",
   "required_capabilities": [
     "read-files",
@@ -28,7 +28,12 @@
     "audit-memory-drift",
     "validate-sources-of-truth",
     "build-reconciliation-proposals",
-    "refresh-continuity-artifacts"
+    "refresh-continuity-artifacts",
+    "create-evidence-records",
+    "map-change-provenance",
+    "record-manual-deployments",
+    "build-audit-bundles",
+    "verify-evidence-integrity"
   ],
   "shared_sources": {
     "contracts": ".claude/contracts/",
@@ -52,5 +57,8 @@
   "resume_packet_schema": "schemas/resume-packet.schema.json",
   "memory_drift_schema": "schemas/memory-drift-report.schema.json",
   "reconciliation_schema": "schemas/reconciliation-proposal.schema.json",
-  "source_of_truth_manifest": "adapters/shared/source-of-truth-manifest.json"
+  "source_of_truth_manifest": "adapters/shared/source-of-truth-manifest.json",
+  "evidence_record_schema": "schemas/evidence-record.schema.json",
+  "deployment_receipt_schema": "schemas/manual-deployment-receipt.schema.json",
+  "audit_bundle_schema": "schemas/audit-bundle-manifest.schema.json"
 }

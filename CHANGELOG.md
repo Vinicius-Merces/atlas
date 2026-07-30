@@ -1,5 +1,47 @@
 # Changelog
 
+## 0.1.0-beta.10
+
+### Added
+
+- Evidence Ledger Architect agent
+- Change Provenance Engineer agent
+- Audit Bundle Reviewer agent
+- Manual Deployment Auditor agent
+- Evidence record design skill
+- Change provenance mapping skill
+- Audit bundle assembly skill
+- Manual deployment receipt skill
+- Evidence capture workflow
+- Provenance reconciliation workflow
+- Audit bundle workflow
+- Manual deployment audit workflow
+- Evidence integrity review gate
+- Provenance review gate
+- Manual deployment review gate
+- `/atlas-evidence`, `/atlas-provenance`, `/atlas-audit-bundle`, and `/atlas-deploy-receipt`
+- Evidence record schema
+- Change provenance schema
+- Manual deployment receipt schema
+- Audit bundle manifest schema
+- Evidence record creator
+- Manual deployment receipt creator
+- Audit bundle builder
+- Evidence integrity verifier
+- Provenance conformance tests
+- Evidence ledger model
+- Change provenance model
+- Manual deployment receipt model
+- Audit bundle model
+- Auditability and manual deployment guides
+
+### Changed
+
+- Version promoted to `0.1.0-beta.10`
+- Universal runtime contract now requires evidence and provenance capabilities
+- Claude Code and Codex declarations include auditability support
+- Incremental package instructions include manual deployment receipt guidance
+
 ## 0.1.0-beta.9
 
 ### Added

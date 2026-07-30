@@ -1,0 +1,20 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "evidence-record.schema.json",
+  "type": "object",
+  "required": [
+    "evidence_id",
+    "task_id",
+    "framework_version",
+    "runtime",
+    "created_at",
+    "sources",
+    "changed_files",
+    "validation",
+    "reviews",
+    "assumptions",
+    "remaining_risks",
+    "status"
+  ],
+  "additionalProperties": true
+}

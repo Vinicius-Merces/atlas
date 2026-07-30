@@ -1,0 +1,18 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "manual-deployment-receipt.schema.json",
+  "type": "object",
+  "required": [
+    "receipt_id",
+    "from_version",
+    "to_version",
+    "patch",
+    "applied_at",
+    "files_added",
+    "files_replaced",
+    "files_deleted",
+    "validation",
+    "status"
+  ],
+  "additionalProperties": true
+}

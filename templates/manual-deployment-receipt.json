@@ -1,0 +1,13 @@
+{
+  "receipt_id": "deploy-example",
+  "from_version": "0.1.0-beta.9",
+  "to_version": "0.1.0-beta.10",
+  "patch": "atlas-framework-v0.1.0-beta.10-incremental.zip",
+  "applied_at": "",
+  "files_added": [],
+  "files_replaced": [],
+  "files_deleted": [],
+  "validation": [],
+  "operator_notes": [],
+  "status": "applied"
+}

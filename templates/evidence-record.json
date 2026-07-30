@@ -1,0 +1,15 @@
+{
+  "evidence_id": "evidence-example",
+  "task_id": "task-example",
+  "framework_version": "0.1.0-beta.10",
+  "runtime": "codex",
+  "created_at": "",
+  "sources": [],
+  "decisions": [],
+  "changed_files": [],
+  "validation": [],
+  "reviews": [],
+  "assumptions": [],
+  "remaining_risks": [],
+  "status": "in-progress"
+}

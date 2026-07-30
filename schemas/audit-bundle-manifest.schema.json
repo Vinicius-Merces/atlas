@@ -1,0 +1,14 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "audit-bundle-manifest.schema.json",
+  "type": "object",
+  "required": [
+    "bundle_id",
+    "framework_version",
+    "generated_at",
+    "scope",
+    "records",
+    "integrity"
+  ],
+  "additionalProperties": true
+}

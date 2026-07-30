@@ -1,57 +1,58 @@
 # ATLAS AI Engineering Framework
 
-**Version:** `0.1.0-beta.9`  
-**Status:** Beta / Memory Governance and Project-State Reconciliation
+**Version:** `0.1.0-beta.10`  
+**Status:** Beta / Provenance, Evidence Ledger and Auditability
 
 ATLAS coordinates software engineering through shared memory, specialized
 agents, workflows, review gates, runtime contracts, resumable tasks, portable
-continuity, and conflict-safe execution.
+continuity, conflict-safe execution, and auditable evidence.
 
-## Beta.9 milestone
+## Beta.10 milestone
 
-Project memory can now be compared against repository evidence to detect stale,
-contradictory, duplicated, or orphaned knowledge before Claude Code or Codex
-continues work.
+Every meaningful task can now leave a traceable evidence chain from request to
+manual deployment.
 
 ### New capabilities
 
-- Memory drift detection
-- Project-state reconciliation
-- Contradiction register
-- Source-of-truth validation
-- Orphaned decision detection
-- Memory update proposals
-- Safe continuity refresh
-- Manual-deploy friendly patch instructions
+- Task evidence ledger
+- Change provenance
+- Decision-to-code traceability
+- Validation evidence records
+- Manual deployment receipts
+- Runtime attribution
+- Audit bundle generation
+- Evidence integrity verification
 
-## Reconciliation flow
+## Evidence chain
 
 ```text
-Repository state
-  + Memory
-  + ADRs
-  + Session briefs
-  + Resume packet
-        ↓
-Memory drift analysis
-        ↓
-Contradiction and staleness report
-        ↓
-Reconciliation proposal
-        ↓
-Human or governed approval
-        ↓
-Updated portable project context
+Request
+  ↓
+Task envelope
+  ↓
+Context and decisions
+  ↓
+Execution plan
+  ↓
+Changed files
+  ↓
+Validation and reviews
+  ↓
+Checkpoint or result
+  ↓
+Manual deployment receipt
+  ↓
+Audit bundle
 ```
 
 ## Commands
 
 ```bash
-python scripts/audit_memory_drift.py
-python scripts/build_reconciliation_proposal.py
-python scripts/validate_source_of_truth.py
-python scripts/refresh_continuity_artifacts.py
+python scripts/create_evidence_record.py --task-id task-001 --runtime codex
+python scripts/record_manual_deploy.py --from-version 0.1.0-beta.9 --to-version 0.1.0-beta.10
+python scripts/build_audit_bundle.py
+python scripts/verify_evidence_integrity.py
 ```
 
-All patch files remain directly copyable for manual deployment. Validation
-scripts are optional post-deploy checks.
+All updates remain compatible with manual extraction and file-by-file
+deployment.

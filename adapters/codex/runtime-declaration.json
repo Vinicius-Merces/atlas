@@ -1,6 +1,6 @@
 {
   "runtime": "codex",
-  "version": "0.1.0-beta.9",
+  "version": "0.1.0-beta.10",
   "support": "beta-supported",
   "canonical": false,
   "contract": "../shared/runtime-contract.json",
@@ -31,7 +31,12 @@
     "audit-memory-drift",
     "validate-sources-of-truth",
     "build-reconciliation-proposals",
-    "refresh-continuity-artifacts"
+    "refresh-continuity-artifacts",
+    "create-evidence-records",
+    "map-change-provenance",
+    "record-manual-deployments",
+    "build-audit-bundles",
+    "verify-evidence-integrity"
   ],
   "implementation": "adapters/codex/",
   "limitations": [

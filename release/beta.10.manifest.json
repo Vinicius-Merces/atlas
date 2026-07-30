@@ -1,0 +1,19 @@
+{
+  "version": "0.1.0-beta.10",
+  "channel": "beta",
+  "delivery_modes": [
+    "incremental",
+    "cumulative"
+  ],
+  "manual_deployment_supported": true,
+  "supported_runtimes": [
+    "claude-code",
+    "codex"
+  ],
+  "auditability": {
+    "evidence": "schemas/evidence-record.schema.json",
+    "provenance": "schemas/change-provenance.schema.json",
+    "deployment_receipt": "schemas/manual-deployment-receipt.schema.json",
+    "audit_bundle": "schemas/audit-bundle-manifest.schema.json"
+  }
+}

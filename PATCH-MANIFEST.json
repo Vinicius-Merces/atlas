@@ -1,283 +1,298 @@
 {
   "package_type": "incremental",
   "deployment_mode": "manual-copy-supported",
-  "from_version": "0.1.0-beta.8",
-  "to_version": "0.1.0-beta.9",
-  "added_count": 38,
+  "from_version": "0.1.0-beta.9",
+  "to_version": "0.1.0-beta.10",
+  "added_count": 41,
   "modified_count": 13,
   "deleted_count": 0,
   "files": [
     {
-      "path": ".claude/agents/knowledge-contradiction-reviewer.md",
+      "path": ".claude/agents/audit-bundle-reviewer.md",
       "operation": "add",
-      "sha256": "b3eb3c8c3cdb23acde9c6ca49cfcf72c477e2b37836f62446cd86e504b57610c"
+      "sha256": "2f5bafbcb066c09ecbc43a62c8852f8892ab83493338b7349575d4ed094b555a"
     },
     {
-      "path": ".claude/agents/memory-governance-architect.md",
+      "path": ".claude/agents/change-provenance-engineer.md",
       "operation": "add",
-      "sha256": "0d30dd66f70561f6297429dd9d20bac484ac8e027fe13f00c20b9adb7a232ea1"
+      "sha256": "cb0de7593ca926bb73b5aef02fb29e0b42ea8af6d2770cc526e446cf802accb2"
     },
     {
-      "path": ".claude/agents/project-state-reconciler.md",
+      "path": ".claude/agents/evidence-ledger-architect.md",
       "operation": "add",
-      "sha256": "6b54df8a9322b3e7cd0302b7072fb549b73e3cf14d330c67077e3526cdeb915d"
+      "sha256": "f5934e6973a063d392def6e8958d0af00d4d91b7d9e574de0a833e6887a61854"
     },
     {
-      "path": ".claude/commands/atlas-memory-drift.md",
+      "path": ".claude/agents/manual-deployment-auditor.md",
       "operation": "add",
-      "sha256": "ae8b7f1a4e67bedf6314fe68ba5c3c45f8ecc1f20fda2f38127ce27eb347084e"
+      "sha256": "2ed360037b67c2628e0a45af5724fdf120fac88b82c79fdbe075cf365031830f"
     },
     {
-      "path": ".claude/commands/atlas-reconcile-memory.md",
+      "path": ".claude/commands/atlas-audit-bundle.md",
       "operation": "add",
-      "sha256": "c7567f7e330b890a79baa765f3a2cce4e8addf7c3bb8276e92a83737614c4152"
+      "sha256": "41a89aa581d087dcea6adb647f70903e71081e8d3e03cc959e0a3c2e3b5b4a6f"
     },
     {
-      "path": ".claude/commands/atlas-refresh-continuity.md",
+      "path": ".claude/commands/atlas-deploy-receipt.md",
       "operation": "add",
-      "sha256": "44e58b0946c50d1949651cc7f16a363512afdf7a4ab52483daedb6653f95477c"
+      "sha256": "01470da9c20246675a19fae2d6c7346116eb39dd827937ecf61e61cd82d717b1"
     },
     {
-      "path": ".claude/reviews/contradiction-review.md",
+      "path": ".claude/commands/atlas-evidence.md",
       "operation": "add",
-      "sha256": "5fd8c87b6a9235dd5ea562b060690b9fae02c68fc740fedcf0ad750daf2210a0"
+      "sha256": "2ffd9ef7ffbd8fd5cba20f21655d1b3514c9c07e3f4ef91157bb87742534e5a9"
     },
     {
-      "path": ".claude/reviews/memory-governance-review.md",
+      "path": ".claude/commands/atlas-provenance.md",
       "operation": "add",
-      "sha256": "a50b8452ca41f546c5bb57a6497ce31dfb2e9815ded5f09ede5cde8bbc4fcf89"
+      "sha256": "c0f59371d13454b1a691cdaea672c36079d4af51b66086f6ebd750a0faf4af16"
     },
     {
-      "path": ".claude/reviews/source-of-truth-review.md",
+      "path": ".claude/reviews/evidence-integrity-review.md",
       "operation": "add",
-      "sha256": "71cb2bce499bff7262c1cabc891123fe6161b7567b400597280a63f0c0d5ca99"
+      "sha256": "5b7c7d052cd54f82fde5ca4cef72b704a4392c6261f17a734aabdfa2388677d0"
     },
     {
-      "path": ".claude/skills/runtime/continuity-reconciliation.md",
+      "path": ".claude/reviews/manual-deployment-review.md",
       "operation": "add",
-      "sha256": "571debc4d20f959cdeb606798dbebe9ecd026a1a0c7779123922d7996833dae0"
+      "sha256": "9fd49bce45cafa7f149844dfd7c91ccdd0647df9e548ce43aa0c3371d41a8949"
     },
     {
-      "path": ".claude/skills/runtime/memory-drift-analysis.md",
+      "path": ".claude/reviews/provenance-review.md",
       "operation": "add",
-      "sha256": "ff21173ecfe1203bf95fa6aa621603f31448971a8a55769e19d08b7fdb7d9460"
+      "sha256": "8110b6a027f037ce8c74308d35c40fe509a3936c2be98fc00740889829d3fa27"
     },
     {
-      "path": ".claude/skills/runtime/memory-update-proposal.md",
+      "path": ".claude/skills/runtime/audit-bundle-assembly.md",
       "operation": "add",
-      "sha256": "28561b01b8f8500c831549ad2ab223b3a5156b6b3a439a492a7d22a570e9ab08"
+      "sha256": "fd221b72a35e11d47767dfff73ab2f11dacce6bd56dc05b1455086c8bb42f50d"
     },
     {
-      "path": ".claude/skills/runtime/source-of-truth-validation.md",
+      "path": ".claude/skills/runtime/change-provenance-mapping.md",
       "operation": "add",
-      "sha256": "5e95d311af8c87240b631249d89c37c61094c0915d4e80fb43338da478800aff"
+      "sha256": "792601aa821984e6c54e7cd066814c20672847c4dc0c359c72cab29f0209b84f"
     },
     {
-      "path": ".claude/workflows/continuity-refresh.md",
+      "path": ".claude/skills/runtime/evidence-record-design.md",
       "operation": "add",
-      "sha256": "d4a66f5d57144da9307e521b7f4295d956d2dc4e79572b10cbbc5ce2fa60d0b8"
+      "sha256": "0ad3a94af73d68b7b362a6402fd916a5afef007ba736e47003216942dbcc48b7"
     },
     {
-      "path": ".claude/workflows/memory-drift-audit.md",
+      "path": ".claude/skills/runtime/manual-deployment-receipt.md",
       "operation": "add",
-      "sha256": "91dcaaa705557522f3a36cadefac4d15cf1f36b5e7b93ec49d75c3cfb6b19d36"
+      "sha256": "c00a52e1a8c61ac89d76780fdb376fd840ed41c9fd03eb9217c0a99329b7bf5a"
     },
     {
-      "path": ".claude/workflows/project-state-reconciliation.md",
+      "path": ".claude/workflows/audit-bundle.md",
       "operation": "add",
-      "sha256": "dc1249220015a83c4aba347b323e325ebdf57be9b757b2919c3251000b5f5f00"
+      "sha256": "e61a08108796468fa10a0c4138897fe19375696a31edae8d540ff7f8a414f962"
     },
     {
-      "path": "adapters/shared/memory-governance-protocol.md",
+      "path": ".claude/workflows/evidence-capture.md",
       "operation": "add",
-      "sha256": "1722e958ecee80831f1d24ef33e7796cef54f7ba25e18c1d9196337cea22d119"
+      "sha256": "fb9551a242ed404efbc7a9cbfc1268a8cfcf504e9157035c16d5aa28e3255558"
     },
     {
-      "path": "adapters/shared/source-of-truth-manifest.json",
+      "path": ".claude/workflows/manual-deployment-audit.md",
       "operation": "add",
-      "sha256": "c4759d3036d3fef9628db0857083d58c6d71331b5f7dfc1c9d6573ce164bbe0b"
+      "sha256": "af04fa24176d084cec13431fd86f22b181f41384ae0da9ac9f1f2958310e0d18"
     },
     {
-      "path": "docs/manual-continuity-refresh-guide.md",
+      "path": ".claude/workflows/provenance-reconciliation.md",
       "operation": "add",
-      "sha256": "70caa60718021f16002bf24f6cf3deb2b36e415df6ac60ba8a8b0bbb1cfa9feb"
+      "sha256": "e38fcdadc71c33db0952e035b958ae50276d12cda032aabda24150a49d8a4e89"
     },
     {
-      "path": "docs/memory-governance-guide.md",
+      "path": "adapters/shared/evidence-protocol.md",
       "operation": "add",
-      "sha256": "1a3dafe120d4bc0753225aed9cdf7f854e9117d3fadcb677fb98cec1ff1295a8"
+      "sha256": "90be903316181d64207154e12850a1f5bce9c4bd8df177fabfb2d065f1bb0ea4"
     },
     {
-      "path": "framework/contradiction-management-model.md",
+      "path": "docs/audit-bundle-guide.md",
       "operation": "add",
-      "sha256": "c8d9e3472ee57eb48643888ddbc3b9751017ff84ad515bf5b18e5990e6d3f980"
+      "sha256": "216d6478e4c446866560b373f4eeaf5266d4ab73a60a97645648b2121893091c"
     },
     {
-      "path": "framework/memory-governance-model.md",
+      "path": "docs/evidence-ledger-guide.md",
       "operation": "add",
-      "sha256": "4d101e454cb9002b49d1ca80652204bcde8cd6e031650e80e43bd7416b7a126a"
+      "sha256": "c8a7f5cccdb0eeb8b4fb64a91989bf1def853f950d6380e2536b08f9510f21d9"
     },
     {
-      "path": "framework/project-state-reconciliation-model.md",
+      "path": "docs/manual-deployment-receipt-guide.md",
       "operation": "add",
-      "sha256": "996d9eb0332ed304852a6fa46de743389824fec7ab0aa752047733075b9a4c0d"
+      "sha256": "564dc55e756563e53a0592f4107d8051ddaca3d037324b31466300e6702b5a95"
     },
     {
-      "path": "framework/source-of-truth-model.md",
+      "path": "framework/audit-bundle-model.md",
       "operation": "add",
-      "sha256": "c21f7bedfb2b82529802c486fd4c1bf94548a2bf78a094f1c925ffda74db318f"
+      "sha256": "a435731292d41d35b9b9bf443fca7ba1d17e8d3de57dfee26641cd85cfa9b871"
     },
     {
-      "path": "release/BETA-9-MIGRATION.md",
+      "path": "framework/change-provenance-model.md",
       "operation": "add",
-      "sha256": "c5e259d9fb898ecb7ee98e6821027f54130a5f768bde879c5f299e70efe967e0"
+      "sha256": "c0bc6bdfe109975d9790cf4e58a4dd8ab5fb984b77d385253d0e35971944b102"
     },
     {
-      "path": "release/BETA-9-RELEASE-NOTES.md",
+      "path": "framework/evidence-ledger-model.md",
       "operation": "add",
-      "sha256": "1c6c96ecb0b220ece1fe0e47eed89710a236c9c0c3606f6904c2a60a229de158"
+      "sha256": "63d075c178b2e8fb7008c370cbc9749a2bf1c156e06f92b06b24689e14ccf43f"
     },
     {
-      "path": "release/beta.9.manifest.json",
+      "path": "framework/manual-deployment-receipt-model.md",
       "operation": "add",
-      "sha256": "31480d78fbf6c03d430a6f7be429e174b877e890d70d68a8db32d5be5a4bc944"
+      "sha256": "550b59e263888420698eac6a7b8d0b92b4a87b78728ef69a8b590e9618ec0e85"
     },
     {
-      "path": "schemas/contradiction-register.schema.json",
+      "path": "release/BETA-10-MIGRATION.md",
       "operation": "add",
-      "sha256": "0d7af1d8a7b26d1ec03df7bc150fabff6a2e6178734c256b818935a36658291f"
+      "sha256": "966ed6460ce88d21c0ad6b4d62c9c737f9d97997d958b6d72206ab144e5f7506"
     },
     {
-      "path": "schemas/memory-drift-report.schema.json",
+      "path": "release/BETA-10-RELEASE-NOTES.md",
       "operation": "add",
-      "sha256": "97506bc0712fe981615f1bedcba572ff775637231e35db31454a8c5cad46d963"
+      "sha256": "a2fbb2e9aa4a751d7b66080eb48ffa6ab979ffc3a6dd9d6957400cd6892eae79"
     },
     {
-      "path": "schemas/reconciliation-proposal.schema.json",
+      "path": "release/beta.10.manifest.json",
       "operation": "add",
-      "sha256": "0013fc07dcc42b06720971ef6dc678f4a78ad08d115274bf2c56706c69327041"
+      "sha256": "57c8e598fbf643ea165ab009678a59877c95c1642474af3a59f3642cdb2d4ed8"
     },
     {
-      "path": "schemas/source-of-truth-manifest.schema.json",
+      "path": "schemas/audit-bundle-manifest.schema.json",
       "operation": "add",
-      "sha256": "1b3af5c3ace218a2b9c6e9bc1d5af9217c03cd291dc8a21a0a6e0d9c08ddab50"
+      "sha256": "16e6e0efe6daec474543fef385512ac3746fef2147201559e73e7a98506334a8"
     },
     {
-      "path": "scripts/audit_memory_drift.py",
+      "path": "schemas/change-provenance.schema.json",
       "operation": "add",
-      "sha256": "e52d3ac42f2ce29ef8770dbcd8c101694c53d7cdfa2af9a04a6673523060ffc9"
+      "sha256": "d3d7b27f11bf0ad2cfd83dbe6e4a464702f615ce65c5a24cb9d3aabc47ff7c99"
     },
     {
-      "path": "scripts/build_reconciliation_proposal.py",
+      "path": "schemas/evidence-record.schema.json",
       "operation": "add",
-      "sha256": "efd5e5b7c2e5327634279dc50c59fb522496234992a9b6d4a24524387b28c3b4"
+      "sha256": "7ef047b3d27641a4c25810a4c79917b93ef207d75507f974f2b73109f3835e05"
     },
     {
-      "path": "scripts/refresh_continuity_artifacts.py",
+      "path": "schemas/manual-deployment-receipt.schema.json",
       "operation": "add",
-      "sha256": "bae62611717371b46579bb1ef939c5b3234b33f27d05c098fb042c8c2fb042a7"
+      "sha256": "802d08f47a29f6d5e818f1072cbe6731a318ee8f58a4ab4fcd3aca79052c9387"
     },
     {
-      "path": "scripts/validate_source_of_truth.py",
+      "path": "scripts/build_audit_bundle.py",
       "operation": "add",
-      "sha256": "698a9e475d648ad4782e95836c594b14915c395133ceb01d95983287fe3d6b61"
+      "sha256": "2996f6b6d57661686d61eebdb60197b7b3c27d3528424a14f4e97cabe0e9d4b6"
     },
     {
-      "path": "templates/contradiction-register.json",
+      "path": "scripts/create_evidence_record.py",
       "operation": "add",
-      "sha256": "84296de3d0b13e2f6aab09e8f30cc158dcff48d787b2ef07e36b850b805302cc"
+      "sha256": "57d7d98ede8edacd3a3b6dcfbabee3f9146b051f435b955fdad9b7e6ad845d87"
     },
     {
-      "path": "templates/reconciliation-proposal.json",
+      "path": "scripts/record_manual_deploy.py",
       "operation": "add",
-      "sha256": "1ac126b1ad3bd08f9da342cc086118aee8d6e36b7d745637c24565a1640cc02c"
+      "sha256": "167014fa901e98be0f8f24998b591eeff17c607c928f19b0ac6775ed5c6abbf9"
     },
     {
-      "path": "tests/conformance/test_memory_governance.py",
+      "path": "scripts/verify_evidence_integrity.py",
       "operation": "add",
-      "sha256": "18ffd4bb9256fbd65e7ce242de2b78c18933c0c95b070da0c4dbff2bc70b8b3d"
+      "sha256": "10848e7bec1cc023de2a7cb33907157b2b9e18c763ce9f31b4aaba101456dc58"
+    },
+    {
+      "path": "templates/evidence-record.json",
+      "operation": "add",
+      "sha256": "3487d5453fc277234be209163629c716d7fa2c87d8a8cc2d1df3119052a1cd9d"
+    },
+    {
+      "path": "templates/manual-deployment-receipt.json",
+      "operation": "add",
+      "sha256": "45c539f8d214d68f44f050484adbae648879f724238d3a9ea346891b2378be89"
+    },
+    {
+      "path": "tests/conformance/test_evidence_provenance.py",
+      "operation": "add",
+      "sha256": "b108edf6be74662244803c5ce7ce95202cb68a6fd962fee0928d763f29bd11a9"
     },
     {
       "path": ".claude/registry.json",
       "operation": "replace",
-      "sha256": "3ef246b1224d2b2453d9434408676d55fcbf7e3c4d5becfe0266dcae885ddde6"
+      "sha256": "eda2e8a4e4796afe6e22068e098639087fb08c16dc751f9dd462a4cef90df049"
     },
     {
       "path": ".claude/runtime.yaml",
       "operation": "replace",
-      "sha256": "546c8a9cd22ccfb21bf979e5d7a570680eed60d9b8623744854c538fa992a5cd"
+      "sha256": "259d00891588ebab771e928e8a13afc24c9f1b11028fd5fa2b37216be7c7beb8"
     },
     {
       "path": "CHANGELOG.md",
       "operation": "replace",
-      "sha256": "967bd7e16afbbb9d473671a375f6f4b879bfe3dfee66af5c555ff297b4afa04f"
+      "sha256": "d438fa0539c555ed72d519d0d286964aef713185774d21dc1dfe226e9bf07829"
     },
     {
       "path": "README.md",
       "operation": "replace",
-      "sha256": "8e0e33d6941d3926cd48a0b7fac6f6248c3a51f74044f744419d147b083c3960"
+      "sha256": "84c2910428ea617b9abb97d213a69d42ab1648221adfb63b0f1244e7b4357177"
     },
     {
       "path": "VERSION",
       "operation": "replace",
-      "sha256": "70f2f4cbbc17ec5992db14957524945b27caa8e5b75a83df6a7cbaa307cfe8fa"
+      "sha256": "12ac4d875efc9d099c8d3f3a3e34232ddc68e43bbc8bd31394873f1f0102ad1a"
     },
     {
       "path": "adapters/claude/runtime-declaration.json",
       "operation": "replace",
-      "sha256": "5983c02bb0aa10a271537e679fcc80f91a1113e17bac0d64126007624a5b0e91"
+      "sha256": "4c440ed78fd3ce5b8c80224efacbc8a6953b18fb9bf06c9ab51143e3702ae2a2"
     },
     {
       "path": "adapters/codex/generated/catalog-manifest.json",
       "operation": "replace",
-      "sha256": "069abc9caf30c7536ca78eb453b2a8afe4ca6c977c1e4bbd0ac05f0a11eedb56"
+      "sha256": "23735d7d7bf1c557945e7d8784084e4b3b358fdf71cee4ba2e19fbbcdf192a37"
     },
     {
       "path": "adapters/codex/runtime-declaration.json",
       "operation": "replace",
-      "sha256": "88b4e03044e312c65719c6982e572de58d493ebb9d77d7efdb0dcce22621caea"
+      "sha256": "925e7f0314ed5eb6e00117c712e9babb86d6b7b696eebebb6c1eae8c6fb55e7b"
     },
     {
       "path": "adapters/codex/runtime-manifest.json",
       "operation": "replace",
-      "sha256": "7bd3f9af5fdb96b96c4caec458a224081798c6c55f014e9e15ebc8319ac4815a"
+      "sha256": "e0f6033672fb32fe9feda350e5d8bbc9593979986caf7af7760c7b0c65c0a67f"
     },
     {
       "path": "adapters/codex/runtime-map.yaml",
       "operation": "replace",
-      "sha256": "e8793e6105f7f8ff4e0cec93847d054b4fc2b9a2adf27e6d80f94b5b5fcb8d1c"
+      "sha256": "6ecc8f8e94ff850f9cb5e0f5a4c4b9e5d4c7dce27dd30d5cc122d6b1edc6b9ff"
     },
     {
       "path": "adapters/shared/runtime-contract.json",
       "operation": "replace",
-      "sha256": "fac87cbe4cd6c5270a13480b193243afe31a5c6986eb97eb19379a98f83e97ef"
+      "sha256": "4ab55020f73b5e5bcf396c853d29424905699004c1ed09350ed4a3210aa7df3d"
     },
     {
       "path": "compatibility/core-contracts.json",
       "operation": "replace",
-      "sha256": "bd491b2833f83b6861c8d536ec43d5c13510878fa2ba82dbeea01e4b3b649347"
+      "sha256": "37182c56dbab372da7152077c395a5fe8b05a9ad642aa25d99a906639204a62a"
     },
     {
       "path": "compatibility/deprecations.json",
       "operation": "replace",
-      "sha256": "52ac42bbcae6b35c56eef64667a7b70230807ecb10177bf329e72ec6733162b2"
+      "sha256": "32bcf70a63d84fd5e5a0634d2cdf4c10fe3d6b43f6a3972fae2761b91266aa03"
     }
   ],
   "deleted_files": [],
   "manual_steps": [
-    "Confirm the installed VERSION is 0.1.0-beta.8.",
+    "Confirm the installed VERSION is 0.1.0-beta.9.",
     "Extract this package.",
     "Copy all included folders and files over the repository root.",
     "Allow replacement of existing files.",
     "Delete only paths listed in FILES-TO-DELETE.md.",
-    "Confirm VERSION is 0.1.0-beta.9."
+    "Confirm VERSION is 0.1.0-beta.10."
   ],
   "optional_post_apply_validation": [
     "python scripts/validate_registry.py",
     "python scripts/validate_package.py",
     "python scripts/validate_runtime_contract.py",
     "python scripts/validate_conformance.py",
-    "python scripts/validate_source_of_truth.py",
-    "python scripts/audit_memory_drift.py"
+    "python scripts/build_audit_bundle.py",
+    "python scripts/verify_evidence_integrity.py"
   ]
 }
