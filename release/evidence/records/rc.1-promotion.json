@@ -1,0 +1,53 @@
+{
+  "evidence_id": "evidence-18bc8c550106",
+  "task_id": "atlas-rc1-promotion",
+  "framework_version": "0.1.0-rc.1",
+  "runtime": "codex",
+  "created_at": "2026-07-31T02:01:20.746694+00:00",
+  "sources": [
+    "https://github.com/Vinicius-Merces/atlas/pull/1",
+    "release/RC-RELEASE-CHECKLIST.md",
+    "release/RC-1-VALIDATION.md",
+    "release/BETA-12-VALIDATION.md",
+    ".claude/workflows/release.md",
+    ".claude/memory/operations.md"
+  ],
+  "decisions": [
+    "Promote the merged and externally reviewed beta.12 hardening source to 0.1.0-rc.1.",
+    "Freeze core contract semantics under the stable-rc classification.",
+    "Keep stable promotion blocked until the RC is exercised without blockers.",
+    "Use the merged beta.12 main commit as the exact incremental base."
+  ],
+  "changed_files": [
+    "VERSION",
+    "CHANGELOG.md",
+    "README.md",
+    "compatibility/",
+    "release/",
+    "schemas/core-contracts.schema.json",
+    "tests/contract/"
+  ],
+  "validation": [
+    "All repository validators passed for 0.1.0-rc.1.",
+    "31 schemas and fixtures, 110 JSON files, and 5 YAML files passed.",
+    "Policy evaluation passed 14 policies with zero warnings, approvals, or blocks.",
+    "Smoke 5/5, contract 12/12, Codex 16/16, conformance 26/26, and full suite 63/63 passed locally.",
+    "Cumulative, incremental, and recovery artifacts validated and rebuilt reproducibly."
+  ],
+  "reviews": [
+    "Pull request #1 independent review was reported as passed by the repository owner.",
+    "Pull request #1 GitHub-hosted CI was reported as passed by the repository owner.",
+    "Merge commit 6f8d82dc3241a923ea0ee0f81e1e02e50b45c521 and PR refs were verified through Git.",
+    "Local RC compatibility, package-integrity, deletion-safety, and release review completed."
+  ],
+  "assumptions": [
+    "The repository owner's report accurately represents the private GitHub check and review state.",
+    "Merge commit 6f8d82dc3241a923ea0ee0f81e1e02e50b45c521 is the immutable 0.1.0-beta.12 RC promotion base."
+  ],
+  "remaining_risks": [
+    "The RC must be exercised in real projects before stable promotion.",
+    "Gemini and Cursor remain experimental.",
+    "No stable support SLA applies before 0.1.0."
+  ],
+  "status": "passed"
+}

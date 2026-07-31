@@ -1,5 +1,35 @@
 # Changelog
 
+## 0.1.0-rc.1
+
+### Added
+
+- Release-candidate manifests, migration guidance, validation evidence, and
+  reproducible distribution artifacts
+- Explicit `rc` contract-stability classification
+
+### Changed
+
+- Version channel promoted from `0.1.0-beta.12` to `0.1.0-rc.1`
+- Core contract status promoted from `stable-beta` to `stable-rc`
+- The support matrix now documents beta-to-RC and RC-to-stable transitions
+- Release metadata now identifies the `rc` channel
+
+### Fixed
+
+- Removed user-local `.vscode/extensions.json` from version control while
+  preserving it outside release payloads
+- Corrected stale known-limitations text that classified Codex as experimental
+- Normalized release-document EOF formatting
+
+### Promotion evidence
+
+- GitHub pull request #1 merged as
+  `6f8d82dc3241a923ea0ee0f81e1e02e50b45c521`
+- GitHub-hosted CI and independent review were reported as passed before merge
+- The merge contains the finalized beta.12 source at
+  `5fa430968011216c265c05add647ff14cf1858d0`
+
 ## 0.1.0-beta.12
 
 ### Added

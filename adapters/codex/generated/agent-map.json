@@ -1,5 +1,5 @@
 {
-  "version": "0.1.0-beta.12",
+  "version": "0.1.0-rc.1",
   "generated_from": ".claude/registry.json",
   "collection": "agents",
   "entries": [
@@ -10,7 +10,7 @@
       "parity_type": "canonical-reference",
       "status": "mapped",
       "notes": "Resolved through the generated catalog to the canonical source.",
-      "version": "0.1.0-beta.12"
+      "version": "0.1.0-rc.1"
     },
     {
       "canonical_name": "adoption-architect",
@@ -19,7 +19,7 @@
       "parity_type": "canonical-reference",
       "status": "mapped",
       "notes": "Resolved through the generated catalog to the canonical source.",
-      "version": "0.1.0-beta.12"
+      "version": "0.1.0-rc.1"
     },
     {
       "canonical_name": "ai-engineer",
@@ -28,7 +28,7 @@
       "parity_type": "canonical-reference",
       "status": "mapped",
       "notes": "Resolved through the generated catalog to the canonical source.",
-      "version": "0.1.0-beta.12"
+      "version": "0.1.0-rc.1"
     },
     {
       "canonical_name": "analytics-engineer",
@@ -37,7 +37,7 @@
       "parity_type": "canonical-reference",
       "status": "mapped",
       "notes": "Resolved through the generated catalog to the canonical source.",
-      "version": "0.1.0-beta.12"
+      "version": "0.1.0-rc.1"
     },
     {
       "canonical_name": "audit-bundle-reviewer",
@@ -46,7 +46,7 @@
       "parity_type": "canonical-reference",
       "status": "mapped",
       "notes": "Resolved through the generated catalog to the canonical source.",
-      "version": "0.1.0-beta.12"
+      "version": "0.1.0-rc.1"
     },
     {
       "canonical_name": "automation-engineer",
@@ -55,7 +55,7 @@
       "parity_type": "canonical-reference",
       "status": "mapped",
       "notes": "Resolved through the generated catalog to the canonical source.",
-      "version": "0.1.0-beta.12"
+      "version": "0.1.0-rc.1"
     },
     {
       "canonical_name": "backend-engineer",
@@ -64,7 +64,7 @@
       "parity_type": "canonical-reference",
       "status": "mapped",
       "notes": "Resolved through the generated catalog to the canonical source.",
-      "version": "0.1.0-beta.12"
+      "version": "0.1.0-rc.1"
     },
     {
       "canonical_name": "beta-release-coordinator",
@@ -73,7 +73,7 @@
       "parity_type": "canonical-reference",
       "status": "mapped",
       "notes": "Resolved through the generated catalog to the canonical source.",
-      "version": "0.1.0-beta.12"
+      "version": "0.1.0-rc.1"
     },
     {
       "canonical_name": "change-provenance-engineer",
@@ -82,7 +82,7 @@
       "parity_type": "canonical-reference",
       "status": "mapped",
       "notes": "Resolved through the generated catalog to the canonical source.",
-      "version": "0.1.0-beta.12"
+      "version": "0.1.0-rc.1"
     },
     {
       "canonical_name": "checkpoint-integrity-reviewer",
@@ -91,7 +91,7 @@
       "parity_type": "canonical-reference",
       "status": "mapped",
       "notes": "Resolved through the generated catalog to the canonical source.",
-      "version": "0.1.0-beta.12"
+      "version": "0.1.0-rc.1"
     },
     {
       "canonical_name": "cloud-architect",
@@ -100,7 +100,7 @@
       "parity_type": "canonical-reference",
       "status": "mapped",
       "notes": "Resolved through the generated catalog to the canonical source.",
-      "version": "0.1.0-beta.12"
+      "version": "0.1.0-rc.1"
     },
     {
       "canonical_name": "codex-runtime-engineer",
@@ -109,7 +109,7 @@
       "parity_type": "canonical-reference",
       "status": "mapped",
       "notes": "Resolved through the generated catalog to the canonical source.",
-      "version": "0.1.0-beta.12"
+      "version": "0.1.0-rc.1"
     },
     {
       "canonical_name": "compatibility-engineer",
@@ -118,7 +118,7 @@
       "parity_type": "canonical-reference",
       "status": "mapped",
       "notes": "Resolved through the generated catalog to the canonical source.",
-      "version": "0.1.0-beta.12"
+      "version": "0.1.0-rc.1"
     },
     {
       "canonical_name": "compliance-analyst",
@@ -127,7 +127,7 @@
       "parity_type": "canonical-reference",
       "status": "mapped",
       "notes": "Resolved through the generated catalog to the canonical source.",
-      "version": "0.1.0-beta.12"
+      "version": "0.1.0-rc.1"
     },
     {
       "canonical_name": "conflict-resolution-engineer",
@@ -136,7 +136,7 @@
       "parity_type": "canonical-reference",
       "status": "mapped",
       "notes": "Resolved through the generated catalog to the canonical source.",
-      "version": "0.1.0-beta.12"
+      "version": "0.1.0-rc.1"
     },
     {
       "canonical_name": "content-designer",
@@ -145,7 +145,7 @@
       "parity_type": "canonical-reference",
       "status": "mapped",
       "notes": "Resolved through the generated catalog to the canonical source.",
-      "version": "0.1.0-beta.12"
+      "version": "0.1.0-rc.1"
     },
     {
       "canonical_name": "context-pack-engineer",
@@ -154,7 +154,7 @@
       "parity_type": "canonical-reference",
       "status": "mapped",
       "notes": "Resolved through the generated catalog to the canonical source.",
-      "version": "0.1.0-beta.12"
+      "version": "0.1.0-rc.1"
     },
     {
       "canonical_name": "contract-test-engineer",
@@ -163,7 +163,7 @@
       "parity_type": "canonical-reference",
       "status": "mapped",
       "notes": "Resolved through the generated catalog to the canonical source.",
-      "version": "0.1.0-beta.12"
+      "version": "0.1.0-rc.1"
     },
     {
       "canonical_name": "data-engineer",
@@ -172,7 +172,7 @@
       "parity_type": "canonical-reference",
       "status": "mapped",
       "notes": "Resolved through the generated catalog to the canonical source.",
-      "version": "0.1.0-beta.12"
+      "version": "0.1.0-rc.1"
     },
     {
       "canonical_name": "dependency-manager",
@@ -181,7 +181,7 @@
       "parity_type": "canonical-reference",
       "status": "mapped",
       "notes": "Resolved through the generated catalog to the canonical source.",
-      "version": "0.1.0-beta.12"
+      "version": "0.1.0-rc.1"
     },
     {
       "canonical_name": "deprecation-manager",
@@ -190,7 +190,7 @@
       "parity_type": "canonical-reference",
       "status": "mapped",
       "notes": "Resolved through the generated catalog to the canonical source.",
-      "version": "0.1.0-beta.12"
+      "version": "0.1.0-rc.1"
     },
     {
       "canonical_name": "design-system-engineer",
@@ -199,7 +199,7 @@
       "parity_type": "canonical-reference",
       "status": "mapped",
       "notes": "Resolved through the generated catalog to the canonical source.",
-      "version": "0.1.0-beta.12"
+      "version": "0.1.0-rc.1"
     },
     {
       "canonical_name": "developer-experience-engineer",
@@ -208,7 +208,7 @@
       "parity_type": "canonical-reference",
       "status": "mapped",
       "notes": "Resolved through the generated catalog to the canonical source.",
-      "version": "0.1.0-beta.12"
+      "version": "0.1.0-rc.1"
     },
     {
       "canonical_name": "devops-engineer",
@@ -217,7 +217,7 @@
       "parity_type": "canonical-reference",
       "status": "mapped",
       "notes": "Resolved through the generated catalog to the canonical source.",
-      "version": "0.1.0-beta.12"
+      "version": "0.1.0-rc.1"
     },
     {
       "canonical_name": "documentation-architect",
@@ -226,7 +226,7 @@
       "parity_type": "canonical-reference",
       "status": "mapped",
       "notes": "Resolved through the generated catalog to the canonical source.",
-      "version": "0.1.0-beta.12"
+      "version": "0.1.0-rc.1"
     },
     {
       "canonical_name": "documentation-engineer",
@@ -235,7 +235,7 @@
       "parity_type": "canonical-reference",
       "status": "mapped",
       "notes": "Resolved through the generated catalog to the canonical source.",
-      "version": "0.1.0-beta.12"
+      "version": "0.1.0-rc.1"
     },
     {
       "canonical_name": "enterprise-architect",
@@ -244,7 +244,7 @@
       "parity_type": "canonical-reference",
       "status": "mapped",
       "notes": "Resolved through the generated catalog to the canonical source.",
-      "version": "0.1.0-beta.12"
+      "version": "0.1.0-rc.1"
     },
     {
       "canonical_name": "evidence-ledger-architect",
@@ -253,7 +253,7 @@
       "parity_type": "canonical-reference",
       "status": "mapped",
       "notes": "Resolved through the generated catalog to the canonical source.",
-      "version": "0.1.0-beta.12"
+      "version": "0.1.0-rc.1"
     },
     {
       "canonical_name": "execution-continuity-engineer",
@@ -262,7 +262,7 @@
       "parity_type": "canonical-reference",
       "status": "mapped",
       "notes": "Resolved through the generated catalog to the canonical source.",
-      "version": "0.1.0-beta.12"
+      "version": "0.1.0-rc.1"
     },
     {
       "canonical_name": "experimentation-analyst",
@@ -271,7 +271,7 @@
       "parity_type": "canonical-reference",
       "status": "mapped",
       "notes": "Resolved through the generated catalog to the canonical source.",
-      "version": "0.1.0-beta.12"
+      "version": "0.1.0-rc.1"
     },
     {
       "canonical_name": "finops-engineer",
@@ -280,7 +280,7 @@
       "parity_type": "canonical-reference",
       "status": "mapped",
       "notes": "Resolved through the generated catalog to the canonical source.",
-      "version": "0.1.0-beta.12"
+      "version": "0.1.0-rc.1"
     },
     {
       "canonical_name": "frontend-engineer",
@@ -289,7 +289,7 @@
       "parity_type": "canonical-reference",
       "status": "mapped",
       "notes": "Resolved through the generated catalog to the canonical source.",
-      "version": "0.1.0-beta.12"
+      "version": "0.1.0-rc.1"
     },
     {
       "canonical_name": "governance-steward",
@@ -298,7 +298,7 @@
       "parity_type": "canonical-reference",
       "status": "mapped",
       "notes": "Resolved through the generated catalog to the canonical source.",
-      "version": "0.1.0-beta.12"
+      "version": "0.1.0-rc.1"
     },
     {
       "canonical_name": "integration-engineer",
@@ -307,7 +307,7 @@
       "parity_type": "canonical-reference",
       "status": "mapped",
       "notes": "Resolved through the generated catalog to the canonical source.",
-      "version": "0.1.0-beta.12"
+      "version": "0.1.0-rc.1"
     },
     {
       "canonical_name": "knowledge-contradiction-reviewer",
@@ -316,7 +316,7 @@
       "parity_type": "canonical-reference",
       "status": "mapped",
       "notes": "Resolved through the generated catalog to the canonical source.",
-      "version": "0.1.0-beta.12"
+      "version": "0.1.0-rc.1"
     },
     {
       "canonical_name": "knowledge-engineer",
@@ -325,7 +325,7 @@
       "parity_type": "canonical-reference",
       "status": "mapped",
       "notes": "Resolved through the generated catalog to the canonical source.",
-      "version": "0.1.0-beta.12"
+      "version": "0.1.0-rc.1"
     },
     {
       "canonical_name": "localization-engineer",
@@ -334,7 +334,7 @@
       "parity_type": "canonical-reference",
       "status": "mapped",
       "notes": "Resolved through the generated catalog to the canonical source.",
-      "version": "0.1.0-beta.12"
+      "version": "0.1.0-rc.1"
     },
     {
       "canonical_name": "manual-deployment-auditor",
@@ -343,7 +343,7 @@
       "parity_type": "canonical-reference",
       "status": "mapped",
       "notes": "Resolved through the generated catalog to the canonical source.",
-      "version": "0.1.0-beta.12"
+      "version": "0.1.0-rc.1"
     },
     {
       "canonical_name": "manual-deployment-safety-engineer",
@@ -352,7 +352,7 @@
       "parity_type": "canonical-reference",
       "status": "mapped",
       "notes": "Resolved through the generated catalog to the canonical source.",
-      "version": "0.1.0-beta.12"
+      "version": "0.1.0-rc.1"
     },
     {
       "canonical_name": "memory-governance-architect",
@@ -361,7 +361,7 @@
       "parity_type": "canonical-reference",
       "status": "mapped",
       "notes": "Resolved through the generated catalog to the canonical source.",
-      "version": "0.1.0-beta.12"
+      "version": "0.1.0-rc.1"
     },
     {
       "canonical_name": "merge-readiness-reviewer",
@@ -370,7 +370,7 @@
       "parity_type": "canonical-reference",
       "status": "mapped",
       "notes": "Resolved through the generated catalog to the canonical source.",
-      "version": "0.1.0-beta.12"
+      "version": "0.1.0-rc.1"
     },
     {
       "canonical_name": "migration-architect",
@@ -379,7 +379,7 @@
       "parity_type": "canonical-reference",
       "status": "mapped",
       "notes": "Resolved through the generated catalog to the canonical source.",
-      "version": "0.1.0-beta.12"
+      "version": "0.1.0-rc.1"
     },
     {
       "canonical_name": "mobile-engineer",
@@ -388,7 +388,7 @@
       "parity_type": "canonical-reference",
       "status": "mapped",
       "notes": "Resolved through the generated catalog to the canonical source.",
-      "version": "0.1.0-beta.12"
+      "version": "0.1.0-rc.1"
     },
     {
       "canonical_name": "monorepo-maintainer",
@@ -397,7 +397,7 @@
       "parity_type": "canonical-reference",
       "status": "mapped",
       "notes": "Resolved through the generated catalog to the canonical source.",
-      "version": "0.1.0-beta.12"
+      "version": "0.1.0-rc.1"
     },
     {
       "canonical_name": "parallel-execution-architect",
@@ -406,7 +406,7 @@
       "parity_type": "canonical-reference",
       "status": "mapped",
       "notes": "Resolved through the generated catalog to the canonical source.",
-      "version": "0.1.0-beta.12"
+      "version": "0.1.0-rc.1"
     },
     {
       "canonical_name": "patch-integrity-engineer",
@@ -415,7 +415,7 @@
       "parity_type": "canonical-reference",
       "status": "mapped",
       "notes": "Resolved through the generated catalog to the canonical source.",
-      "version": "0.1.0-beta.12"
+      "version": "0.1.0-rc.1"
     },
     {
       "canonical_name": "performance-engineer",
@@ -424,7 +424,7 @@
       "parity_type": "canonical-reference",
       "status": "mapped",
       "notes": "Resolved through the generated catalog to the canonical source.",
-      "version": "0.1.0-beta.12"
+      "version": "0.1.0-rc.1"
     },
     {
       "canonical_name": "platform-engineer",
@@ -433,7 +433,7 @@
       "parity_type": "canonical-reference",
       "status": "mapped",
       "notes": "Resolved through the generated catalog to the canonical source.",
-      "version": "0.1.0-beta.12"
+      "version": "0.1.0-rc.1"
     },
     {
       "canonical_name": "policy-enforcement-architect",
@@ -442,7 +442,7 @@
       "parity_type": "canonical-reference",
       "status": "mapped",
       "notes": "Resolved through the generated catalog to the canonical source.",
-      "version": "0.1.0-beta.12"
+      "version": "0.1.0-rc.1"
     },
     {
       "canonical_name": "policy-engineer",
@@ -451,7 +451,7 @@
       "parity_type": "canonical-reference",
       "status": "mapped",
       "notes": "Resolved through the generated catalog to the canonical source.",
-      "version": "0.1.0-beta.12"
+      "version": "0.1.0-rc.1"
     },
     {
       "canonical_name": "policy-exception-reviewer",
@@ -460,7 +460,7 @@
       "parity_type": "canonical-reference",
       "status": "mapped",
       "notes": "Resolved through the generated catalog to the canonical source.",
-      "version": "0.1.0-beta.12"
+      "version": "0.1.0-rc.1"
     },
     {
       "canonical_name": "privacy-engineer",
@@ -469,7 +469,7 @@
       "parity_type": "canonical-reference",
       "status": "mapped",
       "notes": "Resolved through the generated catalog to the canonical source.",
-      "version": "0.1.0-beta.12"
+      "version": "0.1.0-rc.1"
     },
     {
       "canonical_name": "product-architect",
@@ -478,7 +478,7 @@
       "parity_type": "canonical-reference",
       "status": "mapped",
       "notes": "Resolved through the generated catalog to the canonical source.",
-      "version": "0.1.0-beta.12"
+      "version": "0.1.0-rc.1"
     },
     {
       "canonical_name": "product-manager",
@@ -487,7 +487,7 @@
       "parity_type": "canonical-reference",
       "status": "mapped",
       "notes": "Resolved through the generated catalog to the canonical source.",
-      "version": "0.1.0-beta.12"
+      "version": "0.1.0-rc.1"
     },
     {
       "canonical_name": "project-health-analyst",
@@ -496,7 +496,7 @@
       "parity_type": "canonical-reference",
       "status": "mapped",
       "notes": "Resolved through the generated catalog to the canonical source.",
-      "version": "0.1.0-beta.12"
+      "version": "0.1.0-rc.1"
     },
     {
       "canonical_name": "project-memory-curator",
@@ -505,7 +505,7 @@
       "parity_type": "canonical-reference",
       "status": "mapped",
       "notes": "Resolved through the generated catalog to the canonical source.",
-      "version": "0.1.0-beta.12"
+      "version": "0.1.0-rc.1"
     },
     {
       "canonical_name": "project-state-reconciler",
@@ -514,7 +514,7 @@
       "parity_type": "canonical-reference",
       "status": "mapped",
       "notes": "Resolved through the generated catalog to the canonical source.",
-      "version": "0.1.0-beta.12"
+      "version": "0.1.0-rc.1"
     },
     {
       "canonical_name": "qa-engineer",
@@ -523,7 +523,7 @@
       "parity_type": "canonical-reference",
       "status": "mapped",
       "notes": "Resolved through the generated catalog to the canonical source.",
-      "version": "0.1.0-beta.12"
+      "version": "0.1.0-rc.1"
     },
     {
       "canonical_name": "reference-implementation-reviewer",
@@ -532,7 +532,7 @@
       "parity_type": "canonical-reference",
       "status": "mapped",
       "notes": "Resolved through the generated catalog to the canonical source.",
-      "version": "0.1.0-beta.12"
+      "version": "0.1.0-rc.1"
     },
     {
       "canonical_name": "release-integrity-engineer",
@@ -541,7 +541,7 @@
       "parity_type": "canonical-reference",
       "status": "mapped",
       "notes": "Resolved through the generated catalog to the canonical source.",
-      "version": "0.1.0-beta.12"
+      "version": "0.1.0-rc.1"
     },
     {
       "canonical_name": "release-manager",
@@ -550,7 +550,7 @@
       "parity_type": "canonical-reference",
       "status": "mapped",
       "notes": "Resolved through the generated catalog to the canonical source.",
-      "version": "0.1.0-beta.12"
+      "version": "0.1.0-rc.1"
     },
     {
       "canonical_name": "reliability-engineer",
@@ -559,7 +559,7 @@
       "parity_type": "canonical-reference",
       "status": "mapped",
       "notes": "Resolved through the generated catalog to the canonical source.",
-      "version": "0.1.0-beta.12"
+      "version": "0.1.0-rc.1"
     },
     {
       "canonical_name": "resume-packet-reviewer",
@@ -568,7 +568,7 @@
       "parity_type": "canonical-reference",
       "status": "mapped",
       "notes": "Resolved through the generated catalog to the canonical source.",
-      "version": "0.1.0-beta.12"
+      "version": "0.1.0-rc.1"
     },
     {
       "canonical_name": "runtime-adapter-engineer",
@@ -577,7 +577,7 @@
       "parity_type": "canonical-reference",
       "status": "mapped",
       "notes": "Resolved through the generated catalog to the canonical source.",
-      "version": "0.1.0-beta.12"
+      "version": "0.1.0-rc.1"
     },
     {
       "canonical_name": "runtime-capability-mapper",
@@ -586,7 +586,7 @@
       "parity_type": "canonical-reference",
       "status": "mapped",
       "notes": "Resolved through the generated catalog to the canonical source.",
-      "version": "0.1.0-beta.12"
+      "version": "0.1.0-rc.1"
     },
     {
       "canonical_name": "runtime-catalog-maintainer",
@@ -595,7 +595,7 @@
       "parity_type": "canonical-reference",
       "status": "mapped",
       "notes": "Resolved through the generated catalog to the canonical source.",
-      "version": "0.1.0-beta.12"
+      "version": "0.1.0-rc.1"
     },
     {
       "canonical_name": "runtime-conformance-auditor",
@@ -604,7 +604,7 @@
       "parity_type": "canonical-reference",
       "status": "mapped",
       "notes": "Resolved through the generated catalog to the canonical source.",
-      "version": "0.1.0-beta.12"
+      "version": "0.1.0-rc.1"
     },
     {
       "canonical_name": "runtime-execution-planner",
@@ -613,7 +613,7 @@
       "parity_type": "canonical-reference",
       "status": "mapped",
       "notes": "Resolved through the generated catalog to the canonical source.",
-      "version": "0.1.0-beta.12"
+      "version": "0.1.0-rc.1"
     },
     {
       "canonical_name": "runtime-handoff-coordinator",
@@ -622,7 +622,7 @@
       "parity_type": "canonical-reference",
       "status": "mapped",
       "notes": "Resolved through the generated catalog to the canonical source.",
-      "version": "0.1.0-beta.12"
+      "version": "0.1.0-rc.1"
     },
     {
       "canonical_name": "runtime-parity-reviewer",
@@ -631,7 +631,7 @@
       "parity_type": "canonical-reference",
       "status": "mapped",
       "notes": "Resolved through the generated catalog to the canonical source.",
-      "version": "0.1.0-beta.12"
+      "version": "0.1.0-rc.1"
     },
     {
       "canonical_name": "runtime-synchronization-engineer",
@@ -640,7 +640,7 @@
       "parity_type": "canonical-reference",
       "status": "mapped",
       "notes": "Resolved through the generated catalog to the canonical source.",
-      "version": "0.1.0-beta.12"
+      "version": "0.1.0-rc.1"
     },
     {
       "canonical_name": "search-retrieval-engineer",
@@ -649,7 +649,7 @@
       "parity_type": "canonical-reference",
       "status": "mapped",
       "notes": "Resolved through the generated catalog to the canonical source.",
-      "version": "0.1.0-beta.12"
+      "version": "0.1.0-rc.1"
     },
     {
       "canonical_name": "security-engineer",
@@ -658,7 +658,7 @@
       "parity_type": "canonical-reference",
       "status": "mapped",
       "notes": "Resolved through the generated catalog to the canonical source.",
-      "version": "0.1.0-beta.12"
+      "version": "0.1.0-rc.1"
     },
     {
       "canonical_name": "session-continuity-engineer",
@@ -667,7 +667,7 @@
       "parity_type": "canonical-reference",
       "status": "mapped",
       "notes": "Resolved through the generated catalog to the canonical source.",
-      "version": "0.1.0-beta.12"
+      "version": "0.1.0-rc.1"
     },
     {
       "canonical_name": "solution-blueprint-engineer",
@@ -676,7 +676,7 @@
       "parity_type": "canonical-reference",
       "status": "mapped",
       "notes": "Resolved through the generated catalog to the canonical source.",
-      "version": "0.1.0-beta.12"
+      "version": "0.1.0-rc.1"
     },
     {
       "canonical_name": "stability-engineer",
@@ -685,7 +685,7 @@
       "parity_type": "canonical-reference",
       "status": "mapped",
       "notes": "Resolved through the generated catalog to the canonical source.",
-      "version": "0.1.0-beta.12"
+      "version": "0.1.0-rc.1"
     },
     {
       "canonical_name": "support-policy-maintainer",
@@ -694,7 +694,7 @@
       "parity_type": "canonical-reference",
       "status": "mapped",
       "notes": "Resolved through the generated catalog to the canonical source.",
-      "version": "0.1.0-beta.12"
+      "version": "0.1.0-rc.1"
     },
     {
       "canonical_name": "task-routing-engineer",
@@ -703,7 +703,7 @@
       "parity_type": "canonical-reference",
       "status": "mapped",
       "notes": "Resolved through the generated catalog to the canonical source.",
-      "version": "0.1.0-beta.12"
+      "version": "0.1.0-rc.1"
     },
     {
       "canonical_name": "technical-auditor",
@@ -712,7 +712,7 @@
       "parity_type": "canonical-reference",
       "status": "mapped",
       "notes": "Resolved through the generated catalog to the canonical source.",
-      "version": "0.1.0-beta.12"
+      "version": "0.1.0-rc.1"
     },
     {
       "canonical_name": "technical-debt-steward",
@@ -721,7 +721,7 @@
       "parity_type": "canonical-reference",
       "status": "mapped",
       "notes": "Resolved through the generated catalog to the canonical source.",
-      "version": "0.1.0-beta.12"
+      "version": "0.1.0-rc.1"
     },
     {
       "canonical_name": "technical-program-manager",
@@ -730,7 +730,7 @@
       "parity_type": "canonical-reference",
       "status": "mapped",
       "notes": "Resolved through the generated catalog to the canonical source.",
-      "version": "0.1.0-beta.12"
+      "version": "0.1.0-rc.1"
     },
     {
       "canonical_name": "test-automation-engineer",
@@ -739,7 +739,7 @@
       "parity_type": "canonical-reference",
       "status": "mapped",
       "notes": "Resolved through the generated catalog to the canonical source.",
-      "version": "0.1.0-beta.12"
+      "version": "0.1.0-rc.1"
     },
     {
       "canonical_name": "threat-modeling-engineer",
@@ -748,7 +748,7 @@
       "parity_type": "canonical-reference",
       "status": "mapped",
       "notes": "Resolved through the generated catalog to the canonical source.",
-      "version": "0.1.0-beta.12"
+      "version": "0.1.0-rc.1"
     },
     {
       "canonical_name": "universal-runtime-architect",
@@ -757,7 +757,7 @@
       "parity_type": "canonical-reference",
       "status": "mapped",
       "notes": "Resolved through the generated catalog to the canonical source.",
-      "version": "0.1.0-beta.12"
+      "version": "0.1.0-rc.1"
     },
     {
       "canonical_name": "ux-director",
@@ -766,7 +766,7 @@
       "parity_type": "canonical-reference",
       "status": "mapped",
       "notes": "Resolved through the generated catalog to the canonical source.",
-      "version": "0.1.0-beta.12"
+      "version": "0.1.0-rc.1"
     },
     {
       "canonical_name": "workstream-coordinator",
@@ -775,7 +775,7 @@
       "parity_type": "canonical-reference",
       "status": "mapped",
       "notes": "Resolved through the generated catalog to the canonical source.",
-      "version": "0.1.0-beta.12"
+      "version": "0.1.0-rc.1"
     }
   ]
 }

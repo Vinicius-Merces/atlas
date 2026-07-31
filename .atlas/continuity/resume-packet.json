@@ -1,6 +1,6 @@
 {
-  "framework_version": "0.1.0-beta.12",
-  "generated_at": "2026-07-30T23:58:15.535734+00:00",
+  "framework_version": "0.1.0-rc.1",
+  "generated_at": "2026-07-31T02:14:51.044336+00:00",
   "project_brief": ".atlas/continuity/project-brief.json",
   "latest_session": ".atlas/continuity/latest-session.json",
   "memory_sources": [
