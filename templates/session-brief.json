@@ -1,13 +1,14 @@
 {
   "session_id": "session-example",
-  "framework_version": "0.1.0",
+  "framework_version": "0.1.1",
   "runtime": "codex",
-  "summary": "",
+  "created_at": "2026-01-01T00:00:00Z",
+  "summary": "Example session boundary with explicit continuation state.",
   "completed_work": [],
   "changed_files": [],
   "validation": [],
   "decisions": [],
   "pending_work": [],
   "risks": [],
-  "next_action": ""
+  "next_action": "Review repository state and continue the recorded work."
 }

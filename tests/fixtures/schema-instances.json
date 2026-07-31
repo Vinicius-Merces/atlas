@@ -13,14 +13,32 @@
       "generated_at": "2026-07-30T00:00:00Z",
       "scope": "fixture",
       "records": [],
-      "integrity": {}
+      "integrity": {
+        "algorithm": "sha256",
+        "record_count": 0
+      }
     }
   },
   "change-provenance.schema.json": {
     "instance": {
       "framework_version": "0.1.0-beta.11",
       "task_id": "task-example",
-      "changes": []
+      "changes": [
+        {
+          "path": "schemas/change-provenance.schema.json",
+          "operation": "modify",
+          "reason": "Stabilize the machine-readable provenance contract.",
+          "runtime": "codex",
+          "decision_refs": [],
+          "requirement_refs": [
+            "task-example"
+          ],
+          "validation": [
+            "python scripts/validate_schemas.py"
+          ],
+          "reviews": []
+        }
+      ]
     }
   },
   "checkpoint.schema.json": {
@@ -71,7 +89,12 @@
       "generated_at": "2026-07-30T00:00:00Z",
       "sources_checked": [],
       "findings": [],
-      "summary": {}
+      "summary": {
+        "total": 0,
+        "blocking": 0,
+        "high": 0,
+        "warning": 0
+      }
     }
   },
   "parallel-execution-manifest.schema.json": {
@@ -88,7 +111,12 @@
       "framework_version": "0.1.0-beta.11",
       "generated_at": "2026-07-30T00:00:00Z",
       "results": [],
-      "summary": {}
+      "summary": {
+        "passed": 0,
+        "warning": 0,
+        "approval": 0,
+        "blocked": 0
+      }
     }
   },
   "policy-exception.schema.json": {
@@ -138,7 +166,9 @@
       "workflow": "default",
       "reviews": [],
       "validation": [],
-      "steps": []
+      "steps": [
+        "validate-task-envelope"
+      ]
     }
   },
   "session-brief.schema.json": {

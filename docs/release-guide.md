@@ -21,6 +21,30 @@ python scripts/build_release.py --kind recovery
 python scripts/build_incremental_release.py --base <directory-or-git-ref>
 ```
 
+## Source payload
+
+When the source root is a Git worktree root, official builders enumerate:
+
+- every tracked file, including its current worktree content;
+- every untracked file that is not ignored by Git.
+
+Release exclusions still remove local evidence, reports, caches, editor state,
+secrets, `dist/`, and `.git/`. Ignored untracked files are not silently added.
+Because modified tracked files and non-ignored untracked files are eligible,
+inspect `git status` and make the intended source state explicit before
+building.
+
+The builder rejects an enumerated symlink instead of following or serializing
+it. Replace the symlink with an approved regular-file payload or remove it from
+the release source before retrying. Outside a Git worktree root, the builder
+falls back to recursive enumeration with the same release exclusions and
+symlink rejection.
+
+Incremental packages compare the current payload with the selected directory
+or Git reference. Every `replace` and `delete` operation records the prior
+content as `base_sha256`; an `add` operation must not carry a base hash. Those
+values are enforced by manual deployment preflight.
+
 ## Integrity model
 
 Every archive contains `CONTENT-MANIFEST.json` with one SHA-256 hash per
@@ -33,6 +57,20 @@ hash is calculated.
 Builders sort paths, normalize archive metadata, use a fixed ZIP timestamp, and
 exclude caches, local runtime evidence, reports, editor state, `.git/`, secrets,
 and `dist/`. Rebuilding identical source must produce the same archive hash.
+
+## Audit evidence
+
+After validation and installation simulation, assemble and verify the audit
+bundle:
+
+```bash
+python scripts/build_audit_bundle.py
+python scripts/verify_evidence_integrity.py
+```
+
+The bundle records repository provenance and hashes its record index. The
+verifier checks the bundle schema, record paths and hashes, JSON syntax, and
+recognized evidence schemas. See the [Audit Bundle Guide](audit-bundle-guide.md).
 
 ## Approval boundary
 

@@ -2,6 +2,74 @@
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "title": "evidence-record.schema.json",
   "type": "object",
+  "$defs": {
+    "stringArray": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    }
+  },
+  "properties": {
+    "evidence_id": {
+      "type": "string",
+      "pattern": "^evidence-[A-Za-z0-9._-]+$"
+    },
+    "task_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "framework_version": {
+      "type": "string",
+      "pattern": "^\\d+\\.\\d+\\.\\d+(?:-[0-9A-Za-z.-]+)?$"
+    },
+    "runtime": {
+      "type": "string",
+      "minLength": 1
+    },
+    "created_at": {
+      "type": "string",
+      "anyOf": [
+        {
+          "const": ""
+        },
+        {
+          "format": "date-time"
+        }
+      ]
+    },
+    "sources": {
+      "$ref": "#/$defs/stringArray"
+    },
+    "decisions": {
+      "$ref": "#/$defs/stringArray"
+    },
+    "changed_files": {
+      "$ref": "#/$defs/stringArray"
+    },
+    "validation": {
+      "$ref": "#/$defs/stringArray"
+    },
+    "reviews": {
+      "$ref": "#/$defs/stringArray"
+    },
+    "assumptions": {
+      "$ref": "#/$defs/stringArray"
+    },
+    "remaining_risks": {
+      "$ref": "#/$defs/stringArray"
+    },
+    "status": {
+      "enum": [
+        "in-progress",
+        "passed",
+        "completed",
+        "partial",
+        "blocked",
+        "failed"
+      ]
+    }
+  },
   "required": [
     "evidence_id",
     "task_id",
@@ -16,5 +84,5 @@
     "remaining_risks",
     "status"
   ],
-  "additionalProperties": true
+  "additionalProperties": false
 }

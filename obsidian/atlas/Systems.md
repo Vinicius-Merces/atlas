@@ -11,7 +11,7 @@ ATLAS runtime architecture is maintained in the canonical
 ## Runtime systems
 
 - Claude Code: canonical implementation in `.claude/`
-- Codex: beta-supported adapter in `adapters/codex/`
+- Codex: supported compatibility adapter in `adapters/codex/`
 - Gemini and Cursor: experimental adapters
 
 See [[Agents]], [[Skills]], and [[Workflows]] for capability indexes.

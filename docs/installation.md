@@ -10,18 +10,48 @@
 - Use a **dedicated framework repository** when maintaining ATLAS centrally and
   distributing validated packages to projects.
 
-## Clean installation from a cumulative package
+## Clean installation into an empty or dedicated repository
 
 1. Verify the external `.sha256` file against the final ZIP.
 2. Extract the archive.
 3. Open its single versioned root, such as
    `atlas-framework-0.1.0/`.
-4. Copy the contents into the target repository root.
+4. Confirm the target is empty or dedicated to ATLAS, then copy the contents
+   into its root.
 5. Confirm `.claude/registry.json`, `VERSION`, `README.md`, and `LICENSE` exist.
 6. Optionally run the validators documented in the README.
 
 The cumulative archive contains the canonical hidden `.claude/` directory. It
 does not use `CLAUDE-DIRECTORY/`.
+
+Do not use direct cumulative copying to adopt ATLAS into an existing product
+repository. A cumulative package contains project-level files such as
+`README.md`, `LICENSE`, `AGENTS.md`, `CLAUDE.md`, `VERSION`, `.gitignore`, and
+`.github/`; overwriting them in bulk can destroy project-owned behavior.
+
+## Safe adoption into an existing project
+
+From an ATLAS source or extracted cumulative root, build a read-only collision
+plan:
+
+```bash
+python scripts/plan_project_adoption.py --target-root <existing-project> --output adoption-plan.json --markdown-output adoption-plan.md
+```
+
+The planner never writes to the target repository. Exit code `2` means it found
+collisions requiring merge or review; it is a safety result, not an instruction
+to overwrite them.
+
+Review every operation before copying. Merge, rather than replace:
+
+- `README.md`, `LICENSE`, `AGENTS.md`, `CLAUDE.md`, `VERSION`, and `.gitignore`;
+- existing `.github/` workflows and configuration;
+- existing `.claude/memory/` project knowledge.
+
+Review any other occupied path individually. Never copy the full cumulative
+tree over an existing project in one operation. After the merge, inspect the
+complete diff, preserve the project's build/test/release commands, and run the
+relevant ATLAS and project validators.
 
 ## Project-local installation
 
@@ -40,6 +70,7 @@ project/
 ├── templates/
 ├── tests/
 ├── AGENTS.md
+├── CLAUDE.md
 └── VERSION
 ```
 
@@ -65,7 +96,8 @@ same canonical contracts and knowledge.
 7. Confirm the resulting `VERSION` equals `to_version`.
 
 Absence from the package is never a deletion instruction. Applying the patch
-does not require a script.
+is still a manual file operation, but the supported process requires a passed
+preflight report before copying.
 
 ## Windows and hidden directories
 
@@ -89,13 +121,24 @@ When uploading through GitHub's web interface:
 Package instructions and manifests remain at the patch root. A
 `CLAUDE-DIRECTORY/` payload must contain only files whose target is `.claude/`.
 
-## Optional validation
+## Required incremental preflight
 
 ```bash
 python scripts/manual_deploy_preflight.py \
   --installed-root <installed-repository> \
-  --patch-root <extracted-patch>
+  --patch-root <extracted-patch> \
+  --output <preflight-report.json>
+```
 
+Stop when the report is blocked. An `add` target must not already exist, and
+every `replace` or `delete` target must exist with the exact declared
+`base_sha256`; otherwise merge deliberately or rebuild the patch rather than
+overwriting local work. See the
+[Deployment Preflight Guide](manual-deployment-preflight-guide.md).
+
+Installation simulation is an additional check:
+
+```bash
 python scripts/simulate_incremental_install.py \
   --installed-root <installed-repository> \
   --patch-root <extracted-patch> \

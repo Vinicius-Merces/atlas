@@ -1,6 +1,6 @@
 {
-  "framework_version": "0.1.0",
-  "drift_report": "",
+  "framework_version": "0.1.1",
+  "drift_report": ".atlas/continuity/memory-drift-report.json",
   "proposed_updates": [],
   "manual_review": true,
   "status": "proposed"

@@ -2,6 +2,7 @@ from __future__ import annotations
 
 import hashlib
 import json
+import subprocess
 from pathlib import Path, PurePosixPath
 from zipfile import ZIP_DEFLATED, ZipFile, ZipInfo
 
@@ -65,9 +66,54 @@ def is_release_path(relative: PurePosixPath) -> bool:
     return True
 
 
+def git_worktree_paths(root: Path) -> list[Path] | None:
+    """Return tracked and non-ignored untracked files for a Git worktree."""
+    top_level = subprocess.run(
+        ["git", "rev-parse", "--show-toplevel"],
+        cwd=root,
+        capture_output=True,
+        text=True,
+    )
+    if top_level.returncode:
+        return None
+    try:
+        repository_root = Path(top_level.stdout.strip()).resolve()
+    except OSError:
+        return None
+    if repository_root != root.resolve():
+        return None
+    listed = subprocess.run(
+        [
+            "git",
+            "ls-files",
+            "-z",
+            "--cached",
+            "--others",
+            "--exclude-standard",
+        ],
+        cwd=root,
+        capture_output=True,
+    )
+    if listed.returncode:
+        message = listed.stderr.decode("utf-8", errors="replace").strip()
+        raise ValueError(message or "Unable to enumerate Git release files")
+    return [
+        root / raw.decode("utf-8")
+        for raw in listed.stdout.split(b"\0")
+        if raw
+    ]
+
+
 def source_payload(root: Path) -> dict[str, bytes]:
+    root = root.resolve()
     payload: dict[str, bytes] = {}
-    for path in sorted(root.rglob("*")):
+    candidates = git_worktree_paths(root)
+    if candidates is None:
+        candidates = sorted(root.rglob("*"))
+    for path in sorted(candidates):
+        if path.is_symlink():
+            relative = path.relative_to(root).as_posix()
+            raise ValueError(f"Release payload cannot contain symlink: {relative}")
         if not path.is_file():
             continue
         relative = PurePosixPath(path.relative_to(root).as_posix())

@@ -19,6 +19,19 @@ Stable promotion is blocked until every item is checked with linked evidence.
 
 ## Evidence
 
+### Current 0.1.1 patch
+
+- `release/0.1.1-VALIDATION.md`
+- `release/0.1.1-MIGRATION.md`
+- `release/0.1.1-RELEASE-NOTES.md`
+- `release/0.1.1.manifest.json`
+- `reports/ATLAS-PRODUCTION-READINESS-0.1.1.md`
+
+Hosted CI, merge, tag, release URL, artifacts, and verified hashes are recorded
+in the production-readiness report after publication.
+
+### Original 0.1.0 stable promotion
+
 - `release/0.1.0-VALIDATION.md`
 - `release/0.1.0-MIGRATION.md`
 - `release/0.1.0-RELEASE-NOTES.md`

@@ -1,6 +1,6 @@
 # ATLAS AI Engineering Framework
 
-**Version:** `0.1.0`
+**Version:** `0.1.1`
 **Status:** Stable
 
 ATLAS is a repository-native engineering operating framework for teams that
@@ -40,19 +40,39 @@ Claude Code is the canonical runtime. Codex is a supported compatibility
 runtime under `adapters/codex/`. Gemini and Cursor remain experimental.
 Adapters translate runtime form; they do not fork memory or contract meaning.
 
+## How execution works
+
+ATLAS governs an AI coding runtime; it is not a standalone autonomous executor.
+Claude Code can discover the root bootstrap, command prompts, rules, agent
+definitions, and native skills. Markdown workflows, contracts, and review gates
+are repository procedures that the selected runtime loads and interprets.
+Python tools create and validate task, continuity, evidence, policy, and
+release artifacts, but generated scaffolding must be reviewed and completed
+with results that actually occurred.
+
+See the [Daily Quickstart](docs/daily-quickstart.md) for one complete work cycle
+and the [Operations Guide](docs/operations-guide.md) for the operating model.
+For a disposable demonstration of the complete artifact lifecycle, use
+`scripts/build_golden_path.py`; it does not execute product implementation.
+
 ## Install
 
-For a clean installation, extract the cumulative archive and copy the contents
-of its versioned root into the target repository. The canonical hidden
-directory remains `.claude/`.
+For an empty or dedicated repository, extract the cumulative archive and copy
+the contents of its versioned root into the target root. For an existing
+project, do not bulk-overwrite files: run
+`scripts/plan_project_adoption.py`, review every collision, and merge
+project-owned files deliberately. The canonical hidden directory remains
+`.claude/`.
 
 For project-local, dedicated-repository, Windows, GitHub manual upload, and
 incremental installation instructions, see [Installation](docs/installation.md).
 
 ## Use with Claude Code
 
-Start with `AGENTS.md`, `.claude/registry.json`, relevant project memory, and
-the closest command under `.claude/commands/`. See the
+Claude Code loads `CLAUDE.md`, which imports the shared `AGENTS.md`
+instructions. Start from the repository root, validate the continuity packet
+and repository state, then use the closest command under `.claude/commands/`.
+See the
 [Claude Code Bootstrap Guide](docs/claude-code-bootstrap-guide.md).
 
 ## Use with Codex
@@ -60,7 +80,9 @@ the closest command under `.claude/commands/`. See the
 Codex follows `AGENTS.md` and uses the adapter entry points under
 `adapters/codex/commands/`. Generated catalogs and machine-readable maps point
 back to the same canonical agents, skills, workflows, reviews, contracts, and
-memory. See the [Codex Adoption Guide](docs/codex-adoption-guide.md).
+memory. Mappings preserve responsibility but still require Codex to interpret
+the selected procedures. See the
+[Codex Adoption Guide](docs/codex-adoption-guide.md).
 
 ## Validate
 
@@ -70,23 +92,17 @@ Install declared test dependencies:
 python -m pip install --requirement requirements-test.txt
 ```
 
-Run the primary gates:
+Use the portable validation runner. The quick profile checks foundational
+structure; the full profile also checks runtime parity, native skill sync,
+policies, documentation, and the complete test suite:
 
 ```bash
-python scripts/manage_version.py
-python scripts/validate_registry.py
-python scripts/validate_package.py
-python scripts/validate_contracts.py
-python scripts/validate_schemas.py
-python scripts/validate_codex_adapter.py
-python scripts/detect_runtime_drift.py
-python scripts/validate_source_of_truth.py
-python scripts/validate_memory_freshness.py --strict
-python scripts/evaluate_policies.py
-python -m pytest tests -q
+python scripts/validate_all.py --profile quick
+python scripts/validate_all.py --profile full
 ```
 
-The GitHub Actions workflow runs the full validation chain on Python 3.12.
+Policy results are printed without rewriting the repository by default. The
+GitHub Actions workflow runs the release validation profile on Python 3.12.
 
 ## Update manually
 
@@ -98,8 +114,10 @@ CLAUDE-DIRECTORY/
 
 Copy those paths into `.claude/` in the installed repository. Apply only the
 additions and replacements listed by the package, and remove only paths
-explicitly named in `FILES-TO-DELETE.md`. No script is required to apply a
-patch; validators and simulators are optional safety tools.
+explicitly named in `FILES-TO-DELETE.md`. Copying remains manual, but the
+supported deployment process requires `scripts/manual_deploy_preflight.py`
+before any add, replace, or delete. A conflict or `base_sha256` mismatch blocks
+the patch and requires an explicit merge or a rebuilt package.
 
 See the [Manual Deployment Guide](docs/manual-deployment-guide.md) and
 [Framework Upgrade Guide](docs/framework-upgrade-guide.md).
@@ -114,7 +132,11 @@ python scripts/validate_release_artifacts.py --archive <archive.zip>
 ```
 
 Archives contain an internal content manifest. The final ZIP is verified by an
-external checksum generated only after the archive is closed.
+external checksum generated only after the archive is closed. In a Git
+worktree, builders package tracked files plus untracked files that are not
+ignored, subject to release exclusions; inspect `git status` because current
+worktree content is authoritative. A symlink in the enumerated payload blocks
+the build.
 
 ## Contribute
 

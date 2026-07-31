@@ -2,6 +2,120 @@
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "title": "task-envelope.schema.json",
   "type": "object",
+  "properties": {
+    "id": {
+      "type": "string",
+      "pattern": "^task-[A-Za-z0-9._-]+$"
+    },
+    "task_type": {
+      "type": "string",
+      "minLength": 1
+    },
+    "summary": {
+      "type": "string",
+      "minLength": 1
+    },
+    "risk": {
+      "enum": [
+        "low",
+        "medium",
+        "high"
+      ]
+    },
+    "runtime": {
+      "enum": [
+        "",
+        "claude-code",
+        "codex"
+      ]
+    },
+    "route_source": {
+      "enum": [
+        "matched",
+        "fallback",
+        "manual"
+      ]
+    },
+    "primary_role": {
+      "type": "string",
+      "minLength": 1
+    },
+    "supporting_roles": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      },
+      "uniqueItems": true
+    },
+    "workflow": {
+      "type": "string",
+      "minLength": 1
+    },
+    "skills": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      },
+      "uniqueItems": true
+    },
+    "reviews": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      },
+      "uniqueItems": true
+    },
+    "validation": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      }
+    },
+    "affected_paths": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      },
+      "uniqueItems": true
+    },
+    "acceptance_criteria": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      }
+    },
+    "constraints": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      }
+    },
+    "context_pack": {
+      "type": "string"
+    },
+    "context_manifest": {
+      "type": "string"
+    },
+    "state": {
+      "enum": [
+        "draft",
+        "routed",
+        "context-ready",
+        "executing",
+        "completed",
+        "partial",
+        "blocked",
+        "failed"
+      ]
+    }
+  },
   "required": [
     "id",
     "task_type",
@@ -11,5 +125,5 @@
     "reviews",
     "validation"
   ],
-  "additionalProperties": true
+  "additionalProperties": false
 }

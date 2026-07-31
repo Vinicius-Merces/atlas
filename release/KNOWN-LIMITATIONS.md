@@ -7,8 +7,10 @@ validated semantic parity. Gemini and Cursor remain experimental.
 
 ## Contract automation
 
-Core contracts are validated structurally, but semantic review still requires
-human or agent judgment.
+All registered capability assets are structurally conformant with their
+canonical contracts. Validators prove declared fields and controlled values;
+they cannot prove the truth or quality of domain-specific reasoning. Semantic
+review still requires a capable runtime or human reviewer.
 
 ## Reference implementations
 
@@ -22,6 +24,15 @@ availability and semantic accuracy still require review.
 ## Runtime-specific tool mapping
 
 Target runtimes may expose different tools, permissions, or invocation models.
+Repository tests validate structure and semantic mappings, but do not launch a
+live Claude Code or Codex process.
+
+## Evidence trust
+
+Audit bundles validate schemas, canonical SHA-256 hashes, source commit
+metadata, and record-index integrity. They are not cryptographically signed;
+publish their external hashes with a trusted Git commit or release when
+independent non-repudiation is required.
 
 ## Stable scope
 

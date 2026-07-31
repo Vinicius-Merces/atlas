@@ -2,6 +2,146 @@
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "title": "ATLAS Runtime Execution Plan",
   "type": "object",
+  "properties": {
+    "task_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "runtime": {
+      "enum": [
+        "claude-code",
+        "codex"
+      ]
+    },
+    "execution_mode": {
+      "enum": [
+        "ai-or-human-interpreted"
+      ]
+    },
+    "requires_external_execution": {
+      "type": "boolean"
+    },
+    "risk": {
+      "enum": [
+        "unspecified",
+        "low",
+        "medium",
+        "high"
+      ]
+    },
+    "primary_role": {
+      "type": "string",
+      "minLength": 1
+    },
+    "supporting_roles": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      },
+      "uniqueItems": true
+    },
+    "workflow": {
+      "type": "string",
+      "minLength": 1
+    },
+    "skills": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      },
+      "uniqueItems": true
+    },
+    "reviews": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      },
+      "uniqueItems": true
+    },
+    "validation": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      }
+    },
+    "acceptance_criteria": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      }
+    },
+    "constraints": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      }
+    },
+    "affected_paths": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      },
+      "uniqueItems": true
+    },
+    "context_pack": {
+      "type": "string"
+    },
+    "context_available": {
+      "type": "boolean"
+    },
+    "capability_sources": {
+      "type": "object",
+      "properties": {
+        "agents": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "workflow": {
+          "type": "string",
+          "minLength": 1
+        },
+        "skills": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "reviews": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        }
+      },
+      "required": [
+        "agents",
+        "workflow",
+        "skills",
+        "reviews"
+      ],
+      "additionalProperties": false
+    },
+    "steps": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      },
+      "minItems": 1
+    }
+  },
   "required": [
     "task_id",
     "runtime",
@@ -11,5 +151,5 @@
     "validation",
     "steps"
   ],
-  "additionalProperties": true
+  "additionalProperties": false
 }

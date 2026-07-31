@@ -1,5 +1,5 @@
 {
-  "version": "0.1.0",
+  "version": "0.1.1",
   "orchestrator": "orchestrator",
   "agents": [
     "adapter-drift-auditor",
@@ -467,8 +467,9 @@
     "deprecation_registry": "compatibility/deprecations.json",
     "documentation_index": "docs/INDEX.md"
   },
-  "beta": {
-    "status": "beta-supported",
+  "runtime_support": {
+    "release_channel": "stable",
+    "status": "supported",
     "canonical_runtime": "claude-code",
     "supported_runtimes": [
       "claude-code",

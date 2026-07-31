@@ -16,6 +16,12 @@ COLLECTION_ROOTS = {
 }
 
 
+def canonical_name(field: str, path: Path) -> str:
+    if field == "skills" and path.name == "SKILL.md":
+        return path.parent.name
+    return path.stem
+
+
 def fail(message: str) -> None:
     print(f"ERROR: {message}")
     raise SystemExit(1)
@@ -56,7 +62,9 @@ def main() -> None:
         candidates: dict[str, list[Path]] = {}
         for relative_root in COLLECTION_ROOTS[field]:
             for path in (ROOT / relative_root).rglob("*.md"):
-                candidates.setdefault(path.stem, []).append(path)
+                if field == "skills" and path.name != "SKILL.md":
+                    continue
+                candidates.setdefault(canonical_name(field, path), []).append(path)
         for item in values:
             matches = candidates.get(item, [])
             if not matches:

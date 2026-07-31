@@ -1,23 +1,29 @@
 from __future__ import annotations
 
 import argparse
-import hashlib
 import json
 import re
 from pathlib import Path, PurePosixPath
 
+from release_utils import canonical_release_bytes, sha256_bytes
+
+
+SHA256 = re.compile(r"^[0-9a-f]{64}$")
+
 
 def sha256(path: Path) -> str:
-    digest = hashlib.sha256()
-    with path.open("rb") as handle:
-        for chunk in iter(lambda: handle.read(1024 * 1024), b""):
-            digest.update(chunk)
-    return digest.hexdigest()
+    return sha256_bytes(canonical_release_bytes(path.read_bytes()))
 
 
 def safe_relative(value: str) -> bool:
     path = PurePosixPath(value.replace("\\", "/"))
-    return bool(value) and not path.is_absolute() and ".." not in path.parts
+    return (
+        bool(value)
+        and "\\" not in value
+        and not path.is_absolute()
+        and ".." not in path.parts
+        and not re.match(r"^[A-Za-z]:", value)
+    )
 
 
 def listed_paths(path: Path) -> set[str]:
@@ -53,7 +59,13 @@ def main() -> None:
     invalid_mapping = []
     invalid_paths = []
     invalid_operations = []
+    installed_conflicts = []
     declared_payloads: set[str] = set()
+    declared_targets: set[str] = set()
+    declared_targets_folded: set[str] = set()
+    duplicate_targets: set[str] = set()
+    duplicate_payloads: set[str] = set()
+    declared_payloads_folded: set[str] = set()
     operation_paths = {"add": set(), "replace": set(), "delete": set()}
 
     for item in manifest.get("files", []):
@@ -63,10 +75,21 @@ def main() -> None:
         if operation not in operation_paths:
             invalid_operations.append(f"{operation}: {target}")
             continue
+        target_key = target.casefold()
+        if target_key in declared_targets_folded:
+            duplicate_targets.add(target)
+        declared_targets.add(target)
+        declared_targets_folded.add(target_key)
         if not safe_relative(target):
             invalid_paths.append(f"target_path: {target}")
         if operation != "delete" and not safe_relative(package_path):
             invalid_paths.append(f"package_path: {package_path}")
+        if operation != "delete":
+            package_key = package_path.casefold()
+            if package_key in declared_payloads_folded:
+                duplicate_payloads.add(package_path)
+            declared_payloads.add(package_path)
+            declared_payloads_folded.add(package_key)
         operation_paths[operation].add(
             target if operation == "delete" else package_path
         )
@@ -74,28 +97,62 @@ def main() -> None:
         if operation == "delete":
             if item.get("sha256"):
                 invalid_operations.append(f"delete carries sha256: {target}")
-            continue
+        else:
+            path = (patch / package_path).resolve()
+            try:
+                path.relative_to(patch)
+            except ValueError:
+                invalid_paths.append(f"package escapes patch root: {package_path}")
+                continue
+            if path.is_symlink():
+                invalid_paths.append(f"package symlink: {package_path}")
+                continue
+            if not path.is_file():
+                missing.append(package_path)
+                continue
+            if sha256(path) != item.get("sha256"):
+                invalid_hash.append(package_path)
+            if target.startswith(".claude/") and not package_path.startswith(
+                "CLAUDE-DIRECTORY/"
+            ):
+                invalid_mapping.append(f"{package_path} -> {target}")
+            if package_path.startswith(
+                "CLAUDE-DIRECTORY/"
+            ) and not target.startswith(".claude/"):
+                invalid_mapping.append(f"{package_path} -> {target}")
 
-        declared_payloads.add(package_path)
-        path = (patch / package_path).resolve()
-        try:
-            path.relative_to(patch)
-        except ValueError:
-            invalid_paths.append(f"package escapes patch root: {package_path}")
-            continue
-        if not path.is_file():
-            missing.append(package_path)
-            continue
-        if sha256(path) != item.get("sha256"):
-            invalid_hash.append(package_path)
-        if target.startswith(".claude/") and not package_path.startswith(
-            "CLAUDE-DIRECTORY/"
+        base_hash = item.get("base_sha256")
+        if operation in {"replace", "delete"} and not (
+            isinstance(base_hash, str) and SHA256.fullmatch(base_hash)
         ):
-            invalid_mapping.append(f"{package_path} -> {target}")
-        if package_path.startswith("CLAUDE-DIRECTORY/") and not target.startswith(
-            ".claude/"
-        ):
-            invalid_mapping.append(f"{package_path} -> {target}")
+            invalid_operations.append(f"{operation} missing base_sha256: {target}")
+        if operation == "add" and base_hash is not None:
+            invalid_operations.append(f"add carries base_sha256: {target}")
+
+        if args.installed_root and safe_relative(target):
+            installed_target = (installed / Path(*PurePosixPath(
+                target.replace("\\", "/")
+            ).parts)).resolve()
+            try:
+                installed_target.relative_to(installed)
+            except ValueError:
+                invalid_paths.append(f"target escapes installed root: {target}")
+                continue
+            if installed_target.is_symlink():
+                installed_conflicts.append(f"symlink target: {target}")
+            elif operation == "add" and installed_target.exists():
+                installed_conflicts.append(f"add target already exists: {target}")
+            elif operation in {"replace", "delete"}:
+                if not installed_target.is_file():
+                    installed_conflicts.append(
+                        f"{operation} target is missing or not a file: {target}"
+                    )
+                elif isinstance(base_hash, str) and sha256(
+                    installed_target
+                ) != base_hash:
+                    installed_conflicts.append(
+                        f"{operation} target differs from declared base: {target}"
+                    )
 
     visible_root = patch / "CLAUDE-DIRECTORY"
     visible_payloads = {
@@ -136,8 +193,21 @@ def main() -> None:
         {"check": "safe-paths", "passed": not invalid_paths, "findings": invalid_paths},
         {
             "check": "operations",
-            "passed": not invalid_operations,
-            "findings": invalid_operations,
+            "passed": (
+                not invalid_operations
+                and not duplicate_targets
+                and not duplicate_payloads
+            ),
+            "findings": {
+                "invalid": invalid_operations,
+                "duplicate_targets": sorted(duplicate_targets),
+                "duplicate_payloads": sorted(duplicate_payloads),
+            },
+        },
+        {
+            "check": "installed-state",
+            "passed": not installed_conflicts,
+            "findings": installed_conflicts,
         },
         {
             "check": "visible-payload-only",

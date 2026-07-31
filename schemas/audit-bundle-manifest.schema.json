@@ -1,7 +1,79 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "title": "audit-bundle-manifest.schema.json",
+  "title": "ATLAS Audit Bundle Manifest",
   "type": "object",
+  "properties": {
+    "bundle_id": {
+      "type": "string",
+      "pattern": "^audit-[A-Za-z0-9._-]+$"
+    },
+    "framework_version": {
+      "type": "string",
+      "pattern": "^\\d+\\.\\d+\\.\\d+(?:-[0-9A-Za-z.-]+)?$"
+    },
+    "generated_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "scope": {
+      "type": "string",
+      "minLength": 1
+    },
+    "source_commit": {
+      "type": "string",
+      "pattern": "^(?:|[0-9a-f]{40})$"
+    },
+    "repository_state": {
+      "enum": [
+        "clean",
+        "dirty",
+        "not-git",
+        "unknown"
+      ]
+    },
+    "records": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "path": {
+            "type": "string",
+            "minLength": 1
+          },
+          "sha256": {
+            "type": "string",
+            "pattern": "^[0-9a-f]{64}$"
+          }
+        },
+        "required": [
+          "path",
+          "sha256"
+        ],
+        "additionalProperties": false
+      }
+    },
+    "integrity": {
+      "type": "object",
+      "properties": {
+        "algorithm": {
+          "const": "sha256"
+        },
+        "record_count": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "records_sha256": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{64}$"
+        }
+      },
+      "required": [
+        "algorithm",
+        "record_count"
+      ],
+      "additionalProperties": false
+    }
+  },
   "required": [
     "bundle_id",
     "framework_version",
@@ -10,5 +82,5 @@
     "records",
     "integrity"
   ],
-  "additionalProperties": true
+  "additionalProperties": false
 }

@@ -13,6 +13,17 @@ from typing import Any, Callable
 ROOT = Path(__file__).resolve().parents[1]
 
 
+def patch_policy_not_applicable() -> dict[str, Any]:
+    return {
+        "applicable": False,
+        "evaluation_scope": "extracted-incremental-package",
+        "enforced_by": [
+            "scripts/validate_release_artifacts.py",
+            "scripts/manual_deploy_preflight.py",
+        ],
+    }
+
+
 def command_check(root: Path, script: str, *args: str) -> tuple[bool, Any, list[str]]:
     result = subprocess.run(
         [sys.executable, str(root / "scripts" / script), *args],
@@ -76,23 +87,64 @@ def ci_integrity(root: Path) -> tuple[bool, Any, list[str]]:
         findings.append("jobs.validate.steps must be an array")
         steps = []
     rendered = json.dumps(steps)
-    for required in [
-        "actions/checkout@",
-        "actions/setup-python@",
-        "validate_registry.py",
-        "validate_codex_adapter.py",
-        "evaluate_policies.py",
-        "pytest tests -q",
-    ]:
+    for required in ["actions/checkout@", "actions/setup-python@"]:
         if required not in rendered:
             findings.append(f"CI is missing required step content: {required}")
-    return not findings, {"path": path.relative_to(root).as_posix()}, findings
+
+    runner_profile = None
+    for step in steps:
+        if not isinstance(step, dict):
+            continue
+        command = step.get("run", "")
+        if not isinstance(command, str) or "scripts/validate_all.py" not in command:
+            continue
+        match = re.search(r"--profile(?:=|\s+)(quick|full|release)\b", command)
+        if match:
+            runner_profile = match.group(1)
+            break
+
+    required_runner_keys = {
+        "compile-scripts",
+        "validate-json",
+        "validate-yaml",
+        "registry",
+        "contracts",
+        "codex-adapter",
+        "native-skills-sync",
+        "policies",
+        "smoke-tests",
+        "contract-tests",
+        "codex-tests",
+        "conformance-tests",
+        "full-tests",
+    }
+    if runner_profile in {"full", "release"}:
+        try:
+            from validate_all import full_steps
+        except ModuleNotFoundError:
+            from scripts.validate_all import full_steps
+
+        runner_keys = {step.key for step in full_steps(root)}
+        missing_keys = sorted(required_runner_keys - runner_keys)
+        if missing_keys:
+            findings.append(
+                "Validation runner is missing required gates: "
+                + ", ".join(missing_keys)
+            )
+    else:
+        findings.append(
+            "CI must run scripts/validate_all.py with the full or release profile"
+        )
+    return not findings, {
+        "path": path.relative_to(root).as_posix(),
+        "validation_profile": runner_profile,
+    }, findings
 
 
 def hidden_directory_mapping(root: Path) -> tuple[bool, Any, list[str]]:
     path = root / "PATCH-MANIFEST.json"
     if not path.is_file():
-        return True, {"applicable": False}, []
+        return True, patch_policy_not_applicable(), []
     manifest = json.loads(path.read_text(encoding="utf-8"))
     findings: list[str] = []
     mappings = manifest.get("directory_mappings", {})
@@ -123,7 +175,7 @@ def deletion_safety(root: Path) -> tuple[bool, Any, list[str]]:
     manifest_path = root / "PATCH-MANIFEST.json"
     list_path = root / "FILES-TO-DELETE.md"
     if not manifest_path.is_file():
-        return True, {"applicable": False}, []
+        return True, patch_policy_not_applicable(), []
     manifest = json.loads(manifest_path.read_text(encoding="utf-8"))
     manifest_deletions = {
         item.get("target_path", item.get("path", ""))
@@ -151,7 +203,7 @@ def deletion_safety(root: Path) -> tuple[bool, Any, list[str]]:
 def manual_patch_base(root: Path) -> tuple[bool, Any, list[str]]:
     path = root / "PATCH-MANIFEST.json"
     if not path.is_file():
-        return True, {"applicable": False}, []
+        return True, patch_policy_not_applicable(), []
     manifest = json.loads(path.read_text(encoding="utf-8"))
     source = manifest.get("from_version")
     target = manifest.get("to_version")
@@ -267,6 +319,28 @@ def stable_release_gate(root: Path) -> tuple[bool, Any, list[str]]:
     changelog = (root / "CHANGELOG.md").read_text(encoding="utf-8")
     if f"## {version}" not in changelog:
         findings.append("Stable version is missing from CHANGELOG.md")
+    version_documents = [
+        root / "release" / f"{version}-MIGRATION.md",
+        root / "release" / f"{version}-RELEASE-NOTES.md",
+        root / "release" / f"{version}-VALIDATION.md",
+        root / "release" / f"{version}.manifest.json",
+    ]
+    for path in version_documents:
+        if not path.is_file():
+            findings.append(
+                f"Stable release evidence is missing: "
+                f"{path.relative_to(root).as_posix()}"
+            )
+    version_manifest = root / "release" / f"{version}.manifest.json"
+    if version_manifest.is_file():
+        data = json.loads(version_manifest.read_text(encoding="utf-8"))
+        if data.get("version") != version:
+            findings.append("Version-specific stable manifest is stale")
+    if checklist.is_file() and (
+        f"release/{version}-VALIDATION.md"
+        not in checklist.read_text(encoding="utf-8")
+    ):
+        findings.append("Stable checklist does not reference current validation")
     return not findings, {"applicable": True, "version": version}, findings
 
 
@@ -378,16 +452,19 @@ def main() -> None:
         "results": results,
         "summary": summary,
     }
-    output = (
-        Path(args.output)
-        if args.output
-        else root / ".atlas" / "policy" / "policy-report.json"
-    )
-    if not output.is_absolute():
-        output = root / output
-    output.parent.mkdir(parents=True, exist_ok=True)
-    output.write_text(json.dumps(report, indent=2) + "\n", encoding="utf-8")
-    print(output)
+    if args.output == "-":
+        print(json.dumps(report, indent=2))
+    else:
+        output = (
+            Path(args.output)
+            if args.output
+            else root / ".atlas" / "policy" / "policy-report.json"
+        )
+        if not output.is_absolute():
+            output = root / output
+        output.parent.mkdir(parents=True, exist_ok=True)
+        output.write_text(json.dumps(report, indent=2) + "\n", encoding="utf-8")
+        print(output)
     print(
         "Policy summary: "
         + ", ".join(f"{key}={value}" for key, value in summary.items())

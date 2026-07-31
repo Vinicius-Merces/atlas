@@ -1,15 +1,21 @@
 {
-  "framework_version": "0.1.0",
+  "framework_version": "0.1.1",
   "contradictions": [
     {
       "id": "contradiction-example",
-      "topic": "",
-      "sources": [],
-      "claims": [],
-      "impact": "",
+      "topic": "Example sources make incompatible claims about one project fact.",
+      "sources": [
+        "docs/example-source-a.md",
+        "docs/example-source-b.md"
+      ],
+      "claims": [
+        "The first source identifies one canonical owner.",
+        "The second source identifies a different canonical owner."
+      ],
+      "impact": "Unresolved ownership could produce inconsistent changes.",
       "confidence": "unknown",
-      "owner": "",
-      "proposed_resolution": "",
+      "owner": "governance-steward",
+      "proposed_resolution": "Review both sources and designate the authoritative claim.",
       "status": "open"
     }
   ]

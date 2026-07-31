@@ -1,6 +1,6 @@
 {
   "runtime": "claude-code",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "support": "supported",
   "canonical": true,
   "contract": "../shared/runtime-contract.json",

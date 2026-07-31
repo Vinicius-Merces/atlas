@@ -237,6 +237,23 @@ def test_complete_runtime_and_evidence_lifecycle(tmp_path: Path) -> None:
     (patch / "FILES-TO-DELETE.md").write_text(
         "# Files to delete\n\n", encoding="utf-8"
     )
+    write(
+        patch / "PATCH-MANIFEST.json",
+        {
+            "from_version": "0.1.0-beta.10",
+            "to_version": version,
+            "files": [
+                {
+                    "operation": "add",
+                    "target_path": "new-file.txt",
+                },
+                {
+                    "operation": "replace",
+                    "target_path": "VERSION",
+                },
+            ],
+        },
+    )
     receipt = deployments / "receipt.json"
     run(
         "record_manual_deploy.py",

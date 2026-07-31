@@ -5,25 +5,28 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[2]
 
 
-def current_release() -> tuple[str, str | None]:
+def current_release() -> tuple[str, str, str | None]:
     version = (ROOT / "VERSION").read_text(encoding="utf-8").strip()
-    match = re.fullmatch(r"0\.1\.0(?:-(beta|rc)\.(\d+))?", version)
+    match = re.fullmatch(
+        r"\d+\.\d+\.\d+(?:-(beta|rc)\.(\d+))?",
+        version,
+    )
     assert match, version
-    return match.group(1) or "stable", match.group(2)
+    return version, match.group(1) or "stable", match.group(2)
 
 
 def test_version_is_supported_release() -> None:
-    channel, _ = current_release()
+    _, channel, _ = current_release()
     assert channel in {"beta", "rc", "stable"}
 
 
 def test_current_release_documents_exist() -> None:
-    channel, number = current_release()
+    version, channel, number = current_release()
     if channel == "stable":
         release_documents = [
-            "release/0.1.0-MIGRATION.md",
-            "release/0.1.0-RELEASE-NOTES.md",
-            "release/0.1.0.manifest.json",
+            f"release/{version}-MIGRATION.md",
+            f"release/{version}-RELEASE-NOTES.md",
+            f"release/{version}.manifest.json",
         ]
     else:
         prefix = channel.upper()

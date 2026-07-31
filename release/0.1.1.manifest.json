@@ -1,0 +1,32 @@
+{
+  "version": "0.1.1",
+  "channel": "stable",
+  "release_type": "backward-compatible-production-hardening",
+  "previous_version": "0.1.0",
+  "incremental_base": "v0.1.0",
+  "incremental_base_commit": "ce18265b0ece839a862240bb1a170e7532c7b7bd",
+  "contract_conformance": {
+    "assets": 394,
+    "known_violations": 0,
+    "status": "fully-conformant"
+  },
+  "delivery_modes": [
+    "cumulative",
+    "incremental",
+    "recovery"
+  ],
+  "supported_runtimes": [
+    "claude-code",
+    "codex"
+  ],
+  "experimental_runtimes": [
+    "gemini",
+    "cursor"
+  ],
+  "manual_deployment_supported": true,
+  "hidden_directory_package_mapping": {
+    "CLAUDE-DIRECTORY": ".claude"
+  },
+  "local_customization_protection": "base-sha256-preflight-blocking",
+  "rollback": "validated-recovery-package-or-preserved-base"
+}

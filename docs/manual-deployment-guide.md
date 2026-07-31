@@ -9,6 +9,11 @@ ATLAS treats manual deployment as a supported operating mode, not a fallback.
 - Preserve the installed repository or a cumulative recovery package.
 - Review additions, replacements, and deletions separately.
 - Stop if the installed `VERSION` does not match the required base.
+- Run `scripts/manual_deploy_preflight.py` against the extracted patch and
+  installed root before copying. A passed report is mandatory.
+- Stop on any existing add target, missing replace/delete target, symlink, or
+  `base_sha256` mismatch; merge project-owned changes explicitly or rebuild the
+  patch from the correct base.
 
 ## Copy rules
 
@@ -24,8 +29,9 @@ ATLAS treats manual deployment as a supported operating mode, not a fallback.
 - Confirm `VERSION`.
 - Confirm no permanent `CLAUDE-DIRECTORY/` remains.
 - Review project-specific memory and intentional customizations.
-- Optionally run preflight, validators, tests, and runtime drift detection.
-- Record a deployment receipt for significant updates.
+- Run validators, tests, and runtime drift detection when Python is available.
+- Record a deployment receipt. The default is `pending`; claim `applied` or
+  `simulated` only with the passed preflight report and concrete validation.
 
 ## Rollback
 
@@ -33,5 +39,7 @@ Restore the preserved repository or use the validated recovery package. Do not
 attempt rollback by deleting files that merely appear absent from another ZIP.
 
 See [Installation](installation.md),
+[Deployment Preflight Guide](manual-deployment-preflight-guide.md),
+[Deployment Receipt Guide](manual-deployment-receipt-guide.md),
 [Framework Upgrade Guide](framework-upgrade-guide.md), and
 [Troubleshooting](troubleshooting.md).

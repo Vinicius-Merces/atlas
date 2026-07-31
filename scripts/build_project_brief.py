@@ -1,18 +1,27 @@
 from __future__ import annotations
+
+import argparse
 import json
+from fnmatch import fnmatchcase
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
-EXCLUDED_ROOTS = {".git", ".atlas", "dist", "reports"}
+CANONICAL_ADR_ROOTS = ("framework/adr",)
 
 
 def project_paths(pattern: str) -> list[Path]:
-    return [
-        path
-        for path in ROOT.rglob(pattern)
-        if path.is_file()
-        and path.relative_to(ROOT).parts[0] not in EXCLUDED_ROOTS
-    ]
+    paths = []
+    for relative_root in CANONICAL_ADR_ROOTS:
+        canonical_root = ROOT / relative_root
+        if not canonical_root.is_dir():
+            continue
+        paths.extend(
+            path
+            for path in canonical_root.rglob("*")
+            if path.is_file() and fnmatchcase(path.name, pattern)
+        )
+    return sorted(paths)
+
 
 def read_optional(relative: str, limit: int = 6000) -> str:
     path = ROOT / relative
@@ -20,7 +29,13 @@ def read_optional(relative: str, limit: int = 6000) -> str:
         return ""
     return path.read_text(encoding="utf-8")[:limit].strip()
 
-def main() -> None:
+
+def main(argv: list[str] | None = None) -> None:
+    parser = argparse.ArgumentParser(
+        description="Build the repository-native ATLAS project brief."
+    )
+    parser.parse_args(argv)
+
     version = (ROOT / "VERSION").read_text(encoding="utf-8").strip()
     brief = {
         "framework_version": version,

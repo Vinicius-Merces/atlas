@@ -25,8 +25,19 @@ INCREMENTAL_METADATA = {
 
 
 def safe_path(value: str) -> bool:
-    path = PurePosixPath(value)
-    return bool(value) and not path.is_absolute() and ".." not in path.parts
+    normalized = value.replace("\\", "/")
+    path = PurePosixPath(normalized)
+    return (
+        bool(value)
+        and "\\" not in value
+        and not path.is_absolute()
+        and ".." not in path.parts
+        and not re.match(r"^[A-Za-z]:", normalized)
+    )
+
+
+def valid_sha256(value: object) -> bool:
+    return isinstance(value, str) and bool(re.fullmatch(r"[0-9a-f]{64}", value))
 
 
 def markdown_paths(content: bytes) -> set[str]:
@@ -68,6 +79,8 @@ def main() -> None:
         names = [info.filename for info in infos if not info.is_dir()]
         if len(names) != len(set(names)):
             failures.append("Archive contains duplicate paths")
+        if len(names) != len({name.casefold() for name in names}):
+            failures.append("Archive contains case-colliding paths")
         for info in infos:
             if info.date_time != FIXED_TIMESTAMP:
                 failures.append(f"Non-deterministic timestamp: {info.filename}")
@@ -120,8 +133,15 @@ def main() -> None:
 
     package_type = external.get("package_type")
     version = external.get("version")
-    if version and version not in root_name:
-        failures.append("Versioned archive root does not match external manifest")
+    expected_root = (
+        f"atlas-framework-{version}-incremental"
+        if package_type == "incremental"
+        else f"atlas-framework-{version}"
+    )
+    if root_name != expected_root:
+        failures.append(
+            "Versioned archive root does not exactly match external manifest"
+        )
 
     if package_type in {"cumulative", "recovery"}:
         required = {
@@ -160,8 +180,13 @@ def main() -> None:
                 failures.append("Incremental base version mismatch")
             if patch.get("to_version") != version:
                 failures.append("Incremental target version mismatch")
+            if not valid_sha256(patch.get("base_content_manifest_sha256")):
+                failures.append("Incremental base content manifest hash is invalid")
 
             declared_payloads = set()
+            declared_payloads_folded = set()
+            declared_targets = set()
+            declared_targets_folded = set()
             operations = {"add": set(), "replace": set(), "delete": set()}
             for item in patch.get("files", []):
                 operation = item.get("operation")
@@ -170,6 +195,11 @@ def main() -> None:
                 if operation not in operations:
                     failures.append(f"Invalid operation: {operation}")
                     continue
+                target_key = target.casefold()
+                if target_key in declared_targets_folded:
+                    failures.append(f"Duplicate target operation: {target}")
+                declared_targets.add(target)
+                declared_targets_folded.add(target_key)
                 operations[operation].add(
                     target if operation == "delete" else packaged
                 )
@@ -178,16 +208,28 @@ def main() -> None:
                 if operation == "delete":
                     if item.get("sha256"):
                         failures.append(f"Delete has payload hash: {target}")
+                    if not valid_sha256(item.get("base_sha256")):
+                        failures.append(f"Delete has no valid base hash: {target}")
                     continue
                 if not safe_path(packaged):
                     failures.append(f"Unsafe package path: {packaged}")
                     continue
+                packaged_key = packaged.casefold()
+                if packaged_key in declared_payloads_folded:
+                    failures.append(f"Duplicate package payload: {packaged}")
                 declared_payloads.add(packaged)
+                declared_payloads_folded.add(packaged_key)
                 content = contents.get(packaged)
                 if content is None:
                     failures.append(f"Missing incremental payload: {packaged}")
                 elif item.get("sha256") != sha256_bytes(content):
                     failures.append(f"Incremental payload hash mismatch: {packaged}")
+                if operation == "replace" and not valid_sha256(
+                    item.get("base_sha256")
+                ):
+                    failures.append(f"Replace has no valid base hash: {target}")
+                if operation == "add" and item.get("base_sha256") is not None:
+                    failures.append(f"Add unexpectedly has a base hash: {target}")
                 if target.startswith(".claude/") and not packaged.startswith(
                     "CLAUDE-DIRECTORY/"
                 ):
@@ -210,6 +252,14 @@ def main() -> None:
                 failures.append("FILES-TO-REPLACE.md does not match manifest")
             if markdown_paths(contents["FILES-TO-DELETE.md"]) != operations["delete"]:
                 failures.append("FILES-TO-DELETE.md does not match manifest")
+            expected_counts = {
+                "added_count": len(operations["add"]),
+                "modified_count": len(operations["replace"]),
+                "deleted_count": len(operations["delete"]),
+            }
+            for field, expected_count in expected_counts.items():
+                if patch.get(field) != expected_count:
+                    failures.append(f"Incremental {field} mismatch")
     else:
         failures.append(f"Unknown package type: {package_type}")
 

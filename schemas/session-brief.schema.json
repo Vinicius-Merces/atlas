@@ -2,10 +2,64 @@
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "title": "session-brief.schema.json",
   "type": "object",
+  "$defs": {
+    "stringArray": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      }
+    }
+  },
+  "properties": {
+    "session_id": {
+      "type": "string",
+      "pattern": "^session-[A-Za-z0-9._-]+$"
+    },
+    "framework_version": {
+      "type": "string",
+      "pattern": "^\\d+\\.\\d+\\.\\d+(?:-[0-9A-Za-z.-]+)?$"
+    },
+    "runtime": {
+      "type": "string",
+      "pattern": "^[A-Za-z0-9][A-Za-z0-9._-]*$"
+    },
+    "created_at": {
+      "type": "string",
+      "pattern": "^\\d{4}-\\d{2}-\\d{2}T\\d{2}:\\d{2}:\\d{2}(?:\\.\\d+)?(?:Z|[+-]\\d{2}:\\d{2})$"
+    },
+    "summary": {
+      "type": "string",
+      "minLength": 1
+    },
+    "completed_work": {
+      "$ref": "#/$defs/stringArray"
+    },
+    "changed_files": {
+      "$ref": "#/$defs/stringArray"
+    },
+    "validation": {
+      "$ref": "#/$defs/stringArray"
+    },
+    "decisions": {
+      "$ref": "#/$defs/stringArray"
+    },
+    "pending_work": {
+      "$ref": "#/$defs/stringArray"
+    },
+    "risks": {
+      "$ref": "#/$defs/stringArray"
+    },
+    "next_action": {
+      "type": "string",
+      "minLength": 1
+    }
+  },
   "required": [
     "session_id",
     "framework_version",
     "runtime",
+    "created_at",
     "summary",
     "completed_work",
     "changed_files",
@@ -15,5 +69,5 @@
     "risks",
     "next_action"
   ],
-  "additionalProperties": true
+  "additionalProperties": false
 }

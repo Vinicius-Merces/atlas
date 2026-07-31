@@ -39,7 +39,13 @@ def resolve_registered_paths(
     candidates: dict[str, list[Path]] = {}
     for canonical_root in canonical_roots:
         for path in (ROOT / canonical_root).rglob("*.md"):
-            candidates.setdefault(path.stem, []).append(path)
+            if collection == "skills":
+                if path.name != "SKILL.md":
+                    continue
+                name = path.parent.name
+            else:
+                name = path.stem
+            candidates.setdefault(name, []).append(path)
 
     resolved: dict[str, Path] = {}
     errors: list[str] = []
@@ -59,6 +65,9 @@ def resolve_registered_paths(
 
 
 def resolve_adapter_path(collection: str, item: str) -> Path | None:
+    if collection == "skills":
+        native = ROOT / ".agents" / "skills" / item / "SKILL.md"
+        return native if native.is_file() else None
     matches = [
         path
         for path in (CODEX / collection).rglob("*.md")

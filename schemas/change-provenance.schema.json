@@ -2,10 +2,106 @@
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "title": "change-provenance.schema.json",
   "type": "object",
+  "$defs": {
+    "stringArray": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      }
+    },
+    "change": {
+      "type": "object",
+      "properties": {
+        "path": {
+          "type": "string",
+          "minLength": 1
+        },
+        "operation": {
+          "enum": [
+            "add",
+            "modify",
+            "delete",
+            "rename"
+          ]
+        },
+        "previous_path": {
+          "type": "string",
+          "minLength": 1
+        },
+        "reason": {
+          "type": "string",
+          "minLength": 1
+        },
+        "runtime": {
+          "type": "string",
+          "minLength": 1
+        },
+        "decision_refs": {
+          "$ref": "#/$defs/stringArray"
+        },
+        "requirement_refs": {
+          "$ref": "#/$defs/stringArray"
+        },
+        "validation": {
+          "$ref": "#/$defs/stringArray"
+        },
+        "reviews": {
+          "$ref": "#/$defs/stringArray"
+        }
+      },
+      "required": [
+        "path",
+        "operation",
+        "reason",
+        "runtime",
+        "decision_refs",
+        "requirement_refs",
+        "validation",
+        "reviews"
+      ],
+      "allOf": [
+        {
+          "if": {
+            "properties": {
+              "operation": {
+                "const": "rename"
+              }
+            },
+            "required": [
+              "operation"
+            ]
+          },
+          "then": {
+            "required": [
+              "previous_path"
+            ]
+          }
+        }
+      ],
+      "additionalProperties": false
+    }
+  },
+  "properties": {
+    "framework_version": {
+      "type": "string",
+      "pattern": "^\\d+\\.\\d+\\.\\d+(?:-[0-9A-Za-z.-]+)?$"
+    },
+    "task_id": {
+      "type": "string",
+      "pattern": "^task-[A-Za-z0-9._-]+$"
+    },
+    "changes": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/change"
+      }
+    }
+  },
   "required": [
     "framework_version",
     "task_id",
     "changes"
   ],
-  "additionalProperties": true
+  "additionalProperties": false
 }
