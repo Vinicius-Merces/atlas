@@ -1,0 +1,12 @@
+{
+  "policy_id": "atlas.policy.exception-validity",
+  "evaluator": "policy_exceptions",
+  "description": "Policy exceptions must be scoped, approved, compensated, and unexpired.",
+  "severity": "blocking",
+  "condition": "all policy exception records are valid",
+  "evidence": [
+    ".atlas/policy/exceptions/",
+    "scripts/validate_policy_exceptions.py"
+  ],
+  "remediation": "Reject, renew, or repair invalid and expired exceptions."
+}

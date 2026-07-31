@@ -1,0 +1,53 @@
+{
+  "session_id": "session-94c7b756ae75",
+  "framework_version": "0.1.0-beta.12",
+  "runtime": "codex",
+  "created_at": "2026-07-30T23:57:42.387444+00:00",
+  "summary": "Finalized ATLAS 0.1.0-beta.12 hardening, runtime parity, executable gates, deterministic release engineering, documentation, and validated distribution artifacts.",
+  "completed_work": [
+    "Closed source-of-truth, registry, support-policy, Codex parity, and runtime-drift blockers.",
+    "Centralized versioning and schema fixtures.",
+    "Moved canonical agents into .claude/agents/.",
+    "Implemented durable memory and full runtime lifecycle coverage.",
+    "Implemented executable policies and safe manual preflight.",
+    "Built deterministic cumulative, incremental, and recovery release engineering.",
+    "Completed user, contributor, runtime, deployment, release, and troubleshooting documentation.",
+    "Promoted controlled version surfaces to 0.1.0-beta.12 and validated final artifacts."
+  ],
+  "changed_files": [
+    ".claude/",
+    ".github/workflows/validate.yml",
+    "adapters/",
+    "compatibility/",
+    "docs/",
+    "obsidian/",
+    "policies/",
+    "release/",
+    "scripts/",
+    "tests/"
+  ],
+  "validation": [
+    "63 full-suite tests passed.",
+    "14 policies passed with no warnings, approvals, or blocks.",
+    "31 schemas and fixtures passed; 106 JSON and 5 YAML files parsed.",
+    "Claude/Codex sync, drift, contract, and conformance gates passed.",
+    "All three final archives validated, rebuilt reproducibly, and passed install simulations.",
+    "Incremental beta.11 upgrade applied 142 adds, 64 replacements, and 84 explicit deletes."
+  ],
+  "decisions": [
+    "Release beta.12 rather than claim RC while external gates remain pending.",
+    "Normalize packaged UTF-8 text to LF for cross-platform reproducibility.",
+    "Prune only empty ancestors of explicitly deleted files during simulation."
+  ],
+  "pending_work": [
+    "Publish the branch and observe GitHub-hosted CI.",
+    "Obtain independent release review and approval.",
+    "Promote to 0.1.0-rc.1 only after both external gates pass."
+  ],
+  "risks": [
+    "GitHub-hosted CI has not run for the unpublished workspace state.",
+    "Independent RC approval is pending.",
+    "The user-owned untracked .vscode/extensions.json remains intentionally untouched."
+  ],
+  "next_action": "Publish the branch, run GitHub-hosted CI, and obtain independent review before promoting to 0.1.0-rc.1."
+}

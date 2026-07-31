@@ -2,12 +2,13 @@
 
 > Generated from `.claude/registry.json`. Do not edit manually.
 
-Total: **55**
+Total: **76**
 
 - `adapter-drift-audit` → `.claude/workflows/adapter-drift-audit.md`
 - `ai-feature-delivery` → `.claude/workflows/ai-feature-delivery.md`
 - `analytics-implementation` → `.claude/workflows/analytics-implementation.md`
 - `architecture-portfolio` → `.claude/workflows/architecture-portfolio.md`
+- `audit-bundle` → `.claude/workflows/audit-bundle.md`
 - `beta-release-preparation` → `.claude/workflows/beta-release-preparation.md`
 - `beta-stabilization` → `.claude/workflows/beta-stabilization.md`
 - `blueprint-instantiation` → `.claude/workflows/blueprint-instantiation.md`
@@ -16,7 +17,10 @@ Total: **55**
 - `codex-synchronization` → `.claude/workflows/codex-synchronization.md`
 - `compatibility-validation` → `.claude/workflows/compatibility-validation.md`
 - `context-pack` → `.claude/workflows/context-pack.md`
+- `continuation-planning` → `.claude/workflows/continuation-planning.md`
+- `continuity-refresh` → `.claude/workflows/continuity-refresh.md`
 - `contract-testing` → `.claude/workflows/contract-testing.md`
+- `cross-session-recovery` → `.claude/workflows/cross-session-recovery.md`
 - `database-migration` → `.claude/workflows/database-migration.md`
 - `debt-reduction` → `.claude/workflows/debt-reduction.md`
 - `decision-governance` → `.claude/workflows/decision-governance.md`
@@ -26,6 +30,7 @@ Total: **55**
 - `design-system-contribution` → `.claude/workflows/design-system-contribution.md`
 - `documentation-consolidation` → `.claude/workflows/documentation-consolidation.md`
 - `dual-runtime-release` → `.claude/workflows/dual-runtime-release.md`
+- `evidence-capture` → `.claude/workflows/evidence-capture.md`
 - `experiment-rollout` → `.claude/workflows/experiment-rollout.md`
 - `feature-delivery` → `.claude/workflows/feature-delivery.md`
 - `finops-optimization` → `.claude/workflows/finops-optimization.md`
@@ -33,15 +38,24 @@ Total: **55**
 - `framework-upgrade` → `.claude/workflows/framework-upgrade.md`
 - `incident-response` → `.claude/workflows/incident-response.md`
 - `integration-onboarding` → `.claude/workflows/integration-onboarding.md`
+- `interrupted-task-recovery` → `.claude/workflows/interrupted-task-recovery.md`
 - `knowledge-synchronization` → `.claude/workflows/knowledge-synchronization.md`
 - `localization-delivery` → `.claude/workflows/localization-delivery.md`
+- `manual-deployment-audit` → `.claude/workflows/manual-deployment-audit.md`
+- `manual-deployment-preflight` → `.claude/workflows/manual-deployment-preflight.md`
+- `memory-drift-audit` → `.claude/workflows/memory-drift-audit.md`
 - `mobile-feature` → `.claude/workflows/mobile-feature.md`
 - `monorepo-change` → `.claude/workflows/monorepo-change.md`
 - `package-validation` → `.claude/workflows/package-validation.md`
+- `parallel-execution` → `.claude/workflows/parallel-execution.md`
+- `policy-evaluation` → `.claude/workflows/policy-evaluation.md`
+- `policy-exception` → `.claude/workflows/policy-exception.md`
 - `privacy-review` → `.claude/workflows/privacy-review.md`
 - `product-discovery` → `.claude/workflows/product-discovery.md`
 - `project-bootstrap` → `.claude/workflows/project-bootstrap.md`
 - `project-health` → `.claude/workflows/project-health.md`
+- `project-state-reconciliation` → `.claude/workflows/project-state-reconciliation.md`
+- `provenance-reconciliation` → `.claude/workflows/provenance-reconciliation.md`
 - `refactoring` → `.claude/workflows/refactoring.md`
 - `reference-project-review` → `.claude/workflows/reference-project-review.md`
 - `release` → `.claude/workflows/release.md`
@@ -50,12 +64,19 @@ Total: **55**
 - `runtime-adapter` → `.claude/workflows/runtime-adapter.md`
 - `runtime-catalog-publication` → `.claude/workflows/runtime-catalog-publication.md`
 - `runtime-conformance` → `.claude/workflows/runtime-conformance.md`
+- `runtime-execution` → `.claude/workflows/runtime-execution.md`
+- `runtime-handoff` → `.claude/workflows/runtime-handoff.md`
 - `runtime-parity` → `.claude/workflows/runtime-parity.md`
 - `runtime-synchronization` → `.claude/workflows/runtime-synchronization.md`
+- `session-bootstrap` → `.claude/workflows/session-bootstrap.md`
+- `session-closeout` → `.claude/workflows/session-closeout.md`
+- `shared-state-protection` → `.claude/workflows/shared-state-protection.md`
 - `support-policy` → `.claude/workflows/support-policy.md`
 - `system-modernization` → `.claude/workflows/system-modernization.md`
+- `task-envelope-lifecycle` → `.claude/workflows/task-envelope-lifecycle.md`
 - `task-routing` → `.claude/workflows/task-routing.md`
 - `technical-audit` → `.claude/workflows/technical-audit.md`
 - `technical-program` → `.claude/workflows/technical-program.md`
 - `test-automation` → `.claude/workflows/test-automation.md`
 - `threat-modeling` → `.claude/workflows/threat-modeling.md`
+- `workstream-merge` → `.claude/workflows/workstream-merge.md`

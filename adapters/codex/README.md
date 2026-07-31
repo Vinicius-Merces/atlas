@@ -14,6 +14,8 @@ This adapter provides a functional Codex-oriented representation of ATLAS.
 - `reviews/` verification gates
 - `runtime-manifest.json` support and mapping metadata
 - `runtime-map.yaml` capability translation
+- `catalogs/` generated human-readable capability catalogs
+- `generated/*-map.json` machine-readable canonical-to-adapter maps
 
 ## Shared canonical assets
 
@@ -34,6 +36,8 @@ Run:
 
 ```bash
 python scripts/validate_codex_adapter.py
+python scripts/sync_codex_adapter.py --check
+python scripts/detect_runtime_drift.py
 python scripts/run_codex_tests.py
 ```
 

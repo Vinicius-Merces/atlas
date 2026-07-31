@@ -5,6 +5,7 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 CONTINUITY = ROOT / ".atlas" / "continuity"
+LAST_REVIEWED = re.compile(r"Last reviewed:\*{0,2}\s*\d{4}-\d{2}-\d{2}", re.I)
 
 def main() -> None:
     version = (ROOT / "VERSION").read_text(encoding="utf-8").strip()
@@ -40,11 +41,16 @@ def main() -> None:
                 "message": f"Source does not declare framework version {version}."
             })
 
-    for path in sorted((ROOT / ".claude" / "memory").rglob("*.md")):
-        relative = str(path.relative_to(ROOT))
+    memory_paths = [
+        path
+        for path in sorted((ROOT / ".claude" / "memory").glob("*.md"))
+        if path.name not in {"README.md", "index.md"}
+    ]
+    for path in memory_paths:
+        relative = path.relative_to(ROOT).as_posix()
         sources_checked.append(relative)
         text = path.read_text(encoding="utf-8")
-        if "Last reviewed:" not in text:
+        if not LAST_REVIEWED.search(text):
             findings.append({
                 "type": "unknown-freshness",
                 "severity": "warning",
@@ -54,13 +60,13 @@ def main() -> None:
 
     resume = CONTINUITY / "resume-packet.json"
     if resume.is_file():
-        sources_checked.append(str(resume.relative_to(ROOT)))
+        sources_checked.append(resume.relative_to(ROOT).as_posix())
         data = json.loads(resume.read_text(encoding="utf-8"))
         if data.get("framework_version") != version:
             findings.append({
                 "type": "continuity-version-drift",
                 "severity": "high",
-                "source": str(resume.relative_to(ROOT)),
+                "source": resume.relative_to(ROOT).as_posix(),
                 "message": "Resume packet was generated for another framework version."
             })
 
@@ -70,7 +76,7 @@ def main() -> None:
                 findings.append({
                     "type": "orphaned-reference",
                     "severity": "high",
-                    "source": str(resume.relative_to(ROOT)),
+                    "source": resume.relative_to(ROOT).as_posix(),
                     "message": f"Missing referenced artifact: {relative}"
                 })
 

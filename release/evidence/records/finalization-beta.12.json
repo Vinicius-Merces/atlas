@@ -1,0 +1,55 @@
+{
+  "evidence_id": "evidence-4829707b7115",
+  "task_id": "atlas-finalization-beta12",
+  "framework_version": "0.1.0-beta.12",
+  "runtime": "codex",
+  "created_at": "2026-07-30T23:44:11.690146+00:00",
+  "sources": [
+    "CODEX-ATLAS-FINALIZATION-BRIEF.md",
+    "AGENTS.md",
+    "framework/",
+    ".claude/contracts/",
+    ".claude/memory/",
+    "adapters/codex/",
+    "release/RC-RELEASE-CHECKLIST.md"
+  ],
+  "decisions": [
+    "Promote the validated hardening release to beta.12 rather than claiming RC approval.",
+    "Keep Claude Code and Codex beta-supported while Gemini and Cursor remain experimental.",
+    "Consolidate canonical agents under .claude/agents/ and represent manual-package hidden paths through CLAUDE-DIRECTORY/.",
+    "Require exact explicit file operations and reject inferred recursive deletions."
+  ],
+  "changed_files": [
+    ".claude/agents/",
+    ".claude/memory/",
+    ".github/workflows/validate.yml",
+    "adapters/codex/generated/",
+    "docs/",
+    "policies/",
+    "release/",
+    "scripts/",
+    "tests/"
+  ],
+  "validation": [
+    "Version consistency passed for 0.1.0-beta.12.",
+    "Registry, package, contracts, schemas, documentation, memory, and knowledge links passed.",
+    "Codex synchronization, runtime drift, runtime contract, conformance, and source-of-truth checks passed.",
+    "Policy evaluation passed 14 policies with zero warnings, approvals, or blocks.",
+    "Smoke 5/5, contract 12/12, Codex 16/16, conformance 26/26, and full suite 63/63 passed locally."
+  ],
+  "reviews": [
+    "Automated contract, conformance, policy, package-integrity, and end-to-end gates passed.",
+    "Local Codex review checked scope, architecture, documentation, and deletion safety.",
+    "Independent human or agent release approval remains pending."
+  ],
+  "assumptions": [
+    "The immutable incremental base is git commit 7393c2962a98c0dbd13c328bd27ef8a7fd4d0bd1 with VERSION 0.1.0-beta.11.",
+    "The pre-existing untracked .vscode/extensions.json is user-owned and excluded from release payloads."
+  ],
+  "remaining_risks": [
+    "GitHub-hosted CI has not run against this unpublished workspace state.",
+    "Independent RC review and approval are pending.",
+    "No RC or stable promotion is authorized by this evidence record."
+  ],
+  "status": "passed"
+}

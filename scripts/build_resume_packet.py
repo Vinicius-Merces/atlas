@@ -8,7 +8,7 @@ CONTINUITY = ROOT / ".atlas" / "continuity"
 
 def existing(pattern: str) -> list[str]:
     return sorted(
-        str(path.relative_to(ROOT))
+        path.relative_to(ROOT).as_posix()
         for path in ROOT.rglob(pattern)
         if path.is_file()
     )
@@ -21,8 +21,8 @@ def main() -> None:
     packet = {
         "framework_version": version,
         "generated_at": datetime.now(timezone.utc).isoformat(),
-        "project_brief": str(project_brief.relative_to(ROOT)) if project_brief.exists() else "",
-        "latest_session": str(latest_session.relative_to(ROOT)) if latest_session.exists() else "",
+        "project_brief": project_brief.relative_to(ROOT).as_posix() if project_brief.exists() else "",
+        "latest_session": latest_session.relative_to(ROOT).as_posix() if latest_session.exists() else "",
         "memory_sources": existing(".claude/memory/*.md"),
         "open_tasks": existing("*.task.json"),
         "checkpoints": existing("checkpoint-*.json"),

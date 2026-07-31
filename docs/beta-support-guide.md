@@ -4,15 +4,23 @@
 
 Claude Code is the canonical beta-supported runtime.
 
+## Beta-supported compatibility runtime
+
+Codex is beta-supported. Its adapter is independently validated and shares
+canonical contracts and memory with Claude Code.
+
 ## Experimental adapters
 
-Codex, Gemini, and Cursor mappings are available for evaluation but may require
-manual adjustment.
+Gemini and Cursor mappings are available for evaluation and may require manual
+translation.
 
 ## Stability boundary
 
 Core contracts and canonical paths receive compatibility protection during the
 beta line.
+
+Release candidates preserve this boundary and may tighten validation without
+changing established semantics.
 
 ## Reporting issues
 

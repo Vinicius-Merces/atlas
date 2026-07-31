@@ -1,0 +1,23 @@
+{
+  "framework_version": "0.1.0-beta.12",
+  "generated_at": "2026-07-30T23:58:17.075518+00:00",
+  "sources_checked": [
+    ".atlas/continuity/resume-packet.json",
+    ".claude/memory/architecture.md",
+    ".claude/memory/business.md",
+    ".claude/memory/contradictions.md",
+    ".claude/memory/operations.md",
+    ".claude/registry.json",
+    "VERSION",
+    "adapters/claude/runtime-declaration.json",
+    "adapters/codex/runtime-declaration.json",
+    "adapters/shared/runtime-contract.json"
+  ],
+  "findings": [],
+  "summary": {
+    "total": 0,
+    "blocking": 0,
+    "high": 0,
+    "warning": 0
+  }
+}

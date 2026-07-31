@@ -1,11 +1,18 @@
 {
-  "version": "0.1.0-beta.11",
+  "version": "0.1.0-beta.12",
   "generated_from": ".claude/registry.json",
   "collections": {
-    "agents": 64,
-    "commands": 48,
-    "skills": 63,
-    "workflows": 55,
-    "reviews": 49
+    "agents": 86,
+    "commands": 71,
+    "skills": 88,
+    "workflows": 76,
+    "reviews": 68
+  },
+  "maps": {
+    "agents": "agent-map.json",
+    "commands": "command-map.json",
+    "skills": "skill-map.json",
+    "workflows": "workflow-map.json",
+    "reviews": "review-map.json"
   }
 }

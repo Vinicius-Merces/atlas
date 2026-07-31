@@ -3,6 +3,8 @@ from __future__ import annotations
 import json
 from pathlib import Path
 
+from release_utils import source_payload
+
 
 ROOT = Path(__file__).resolve().parents[1]
 
@@ -20,11 +22,17 @@ def main() -> None:
         version_path,
         changelog_path,
         ROOT / "LICENSE",
+        ROOT / ".gitignore",
+        ROOT / ".github" / "workflows" / "validate.yml",
+        ROOT / "requirements-test.txt",
         registry_path,
         ROOT / "framework",
         ROOT / ".claude" / "agents",
         ROOT / ".claude" / "contracts",
         ROOT / ".claude" / "workflows",
+        ROOT / "scripts" / "build_release.py",
+        ROOT / "scripts" / "build_incremental_release.py",
+        ROOT / "scripts" / "validate_release_artifacts.py",
     ]
 
     for path in required_paths:
@@ -46,13 +54,18 @@ def main() -> None:
         except json.JSONDecodeError as exc:
             errors.append(f"Invalid registry JSON: {exc}")
 
-    markdown_files = list(ROOT.rglob("*.md"))
+    release_files = source_payload(ROOT)
+    markdown_files = [
+        ROOT / relative
+        for relative in release_files
+        if relative.endswith(".md")
+    ]
     empty_markdown = [p for p in markdown_files if not p.read_text(encoding="utf-8").strip()]
     for path in empty_markdown:
         warnings.append(f"Empty markdown file: {path.relative_to(ROOT)}")
 
     print(f"ATLAS package version: {version or 'unknown'}")
-    print(f"Files inspected: {sum(1 for p in ROOT.rglob('*') if p.is_file())}")
+    print(f"Release-source files inspected: {len(release_files)}")
 
     for warning in warnings:
         print(f"WARNING: {warning}")

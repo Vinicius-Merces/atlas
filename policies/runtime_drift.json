@@ -1,0 +1,13 @@
+{
+  "policy_id": "atlas.runtime.no-drift",
+  "evaluator": "runtime_drift",
+  "description": "Supported runtime declarations and generated artifacts must not drift.",
+  "severity": "blocking",
+  "condition": "runtime drift detection passes",
+  "evidence": [
+    "scripts/detect_runtime_drift.py",
+    "adapters/claude/runtime-declaration.json",
+    "adapters/codex/runtime-declaration.json"
+  ],
+  "remediation": "Reconcile declarations and generated runtime artifacts."
+}

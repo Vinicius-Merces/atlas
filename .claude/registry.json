@@ -1,5 +1,5 @@
 {
-  "version": "0.1.0-beta.11",
+  "version": "0.1.0-beta.12",
   "orchestrator": "orchestrator",
   "agents": [
     "adapter-drift-auditor",
@@ -537,5 +537,13 @@
     "manual_preflight": "scripts/manual_deploy_preflight.py",
     "version_transition": "scripts/validate_version_transition.py",
     "package_claude_mapping": "CLAUDE-DIRECTORY -> .claude"
+  },
+  "release_engineering": {
+    "cumulative_builder": "scripts/build_release.py",
+    "incremental_builder": "scripts/build_incremental_release.py",
+    "artifact_validation": "scripts/validate_release_artifacts.py",
+    "incremental_preflight": "scripts/manual_deploy_preflight.py",
+    "cumulative_install_simulation": "scripts/simulate_cumulative_install.py",
+    "incremental_install_simulation": "scripts/simulate_incremental_install.py"
   }
 }

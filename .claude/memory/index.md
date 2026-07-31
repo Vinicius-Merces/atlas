@@ -2,17 +2,17 @@
 
 Use this index to locate canonical project knowledge.
 
-## Categories
+## Active canonical memory
 
-- `business.md`
-- `architecture.md`
-- `integrations.md`
-- `brand.md`
-- `security.md`
-- `operations.md`
+- [Business](business.md)
+- [Architecture](architecture.md)
+- [Operations](operations.md)
+- [Contradiction register](contradictions.md)
 
-## Status
+## Optional project categories
 
-Templates are available under `.claude/memory/templates/`.
+Integration, brand, and security memory should be instantiated only when a
+project has stable knowledge for those domains.
 
-Project teams should copy and complete only the categories they need.
+Templates are available under [templates](templates/). Do not treat template
+placeholders as reviewed project memory.

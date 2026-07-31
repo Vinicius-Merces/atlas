@@ -1,0 +1,162 @@
+name: Validate ATLAS
+
+on:
+  push:
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+          cache-dependency-path: requirements-test.txt
+
+      - name: Install test dependencies
+        run: python -m pip install --requirement requirements-test.txt
+
+      - name: Compile scripts
+        run: python -m compileall -q scripts
+
+      - name: Validate JSON
+        shell: bash
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+
+          errors = []
+          paths = sorted(
+              path
+              for path in Path(".").rglob("*.json")
+              if ".git" not in path.parts
+          )
+          for path in paths:
+              try:
+                  json.loads(path.read_text(encoding="utf-8"))
+              except Exception as exc:
+                  errors.append((path, exc))
+          for path, error in errors:
+              print(f"{path}: {error}")
+          if errors:
+              raise SystemExit(1)
+          print(f"JSON validation passed: {len(paths)} files")
+          PY
+
+      - name: Validate YAML
+        shell: bash
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          import yaml
+
+          errors = []
+          paths = sorted(
+              path
+              for path in Path(".").rglob("*")
+              if path.suffix in {".yml", ".yaml"}
+              and ".git" not in path.parts
+          )
+          for path in paths:
+              try:
+                  yaml.safe_load(path.read_text(encoding="utf-8"))
+              except Exception as exc:
+                  errors.append((path, exc))
+          for path, error in errors:
+              print(f"{path}: {error}")
+          if errors:
+              raise SystemExit(1)
+          print(f"YAML validation passed: {len(paths)} files")
+          PY
+
+      - name: Validate version consistency
+        run: python scripts/manage_version.py
+
+      - name: Validate schemas and fixtures
+        run: python scripts/validate_schemas.py
+
+      - name: Validate registry
+        run: python scripts/validate_registry.py
+
+      - name: Validate package
+        run: python scripts/validate_package.py
+
+      - name: Validate contracts
+        run: python scripts/validate_contracts.py
+
+      - name: Validate Codex adapter
+        run: python scripts/validate_codex_adapter.py
+
+      - name: Check Codex synchronization
+        run: python scripts/sync_codex_adapter.py --check
+
+      - name: Detect runtime drift
+        run: python scripts/detect_runtime_drift.py
+
+      - name: Validate runtime contract
+        run: python scripts/validate_runtime_contract.py
+
+      - name: Validate runtime conformance
+        run: python scripts/validate_conformance.py
+
+      - name: Validate sources of truth
+        run: python scripts/validate_source_of_truth.py
+
+      - name: Validate memory freshness
+        run: python scripts/validate_memory_freshness.py --strict
+
+      - name: Validate memory and Obsidian links
+        run: python scripts/validate_knowledge_links.py
+
+      - name: Validate documentation
+        run: python scripts/validate_documentation.py
+
+      - name: Validate policy exceptions
+        run: python scripts/validate_policy_exceptions.py
+
+      - name: Evaluate policies
+        run: python scripts/evaluate_policies.py
+
+      - name: Run smoke tests
+        run: python scripts/run_smoke_tests.py
+
+      - name: Run contract tests
+        run: python scripts/run_contract_tests.py
+
+      - name: Run Codex tests
+        run: python scripts/run_codex_tests.py
+
+      - name: Run conformance tests
+        run: python scripts/run_conformance_tests.py
+
+      - name: Run full test suite
+        run: python -m pytest tests -q
+
+      - name: Build cumulative release dry-run
+        run: python scripts/build_release.py
+
+      - name: Validate cumulative release dry-run
+        shell: bash
+        run: |
+          version="$(cat VERSION)"
+          python scripts/validate_release_artifacts.py \
+            --archive "dist/atlas-framework-${version}-cumulative.zip"
+
+      - name: Build and validate recovery package
+        shell: bash
+        run: |
+          version="$(cat VERSION)"
+          python scripts/build_release.py --kind recovery
+          python scripts/validate_release_artifacts.py \
+            --archive "dist/atlas-framework-${version}-recovery.zip"

@@ -20,7 +20,7 @@ def main() -> None:
         "current_state": read_optional("CHANGELOG.md", 3000),
         "active_work": [],
         "decisions": sorted(
-            str(path.relative_to(ROOT))
+            path.relative_to(ROOT).as_posix()
             for path in ROOT.rglob("ADR-*.md")
         )[-20:],
         "risks": [],

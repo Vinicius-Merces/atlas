@@ -1,0 +1,12 @@
+{
+  "policy_id": "atlas.knowledge.source-of-truth",
+  "evaluator": "source_of_truth",
+  "description": "Canonical knowledge sources must exist and match the framework version.",
+  "severity": "blocking",
+  "condition": "source-of-truth validation passes",
+  "evidence": [
+    "adapters/shared/source-of-truth-manifest.json",
+    "scripts/validate_source_of_truth.py"
+  ],
+  "remediation": "Restore canonical sources or update the controlled manifest."
+}

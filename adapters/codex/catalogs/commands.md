@@ -2,16 +2,21 @@
 
 > Generated from `.claude/registry.json`. Do not edit manually.
 
-Total: **48**
+Total: **71**
 
 - `atlas-adapt-runtime` → `.claude/commands/atlas-adapt-runtime.md`
 - `atlas-adopt` → `.claude/commands/atlas-adopt.md`
 - `atlas-ai-review` → `.claude/commands/atlas-ai-review.md`
 - `atlas-analytics` → `.claude/commands/atlas-analytics.md`
 - `atlas-audit` → `.claude/commands/atlas-audit.md`
+- `atlas-audit-bundle` → `.claude/commands/atlas-audit-bundle.md`
 - `atlas-beta-ready` → `.claude/commands/atlas-beta-ready.md`
 - `atlas-blueprint` → `.claude/commands/atlas-blueprint.md`
 - `atlas-bootstrap` → `.claude/commands/atlas-bootstrap.md`
+- `atlas-brief` → `.claude/commands/atlas-brief.md`
+- `atlas-checkpoint` → `.claude/commands/atlas-checkpoint.md`
+- `atlas-claim` → `.claude/commands/atlas-claim.md`
+- `atlas-close-session` → `.claude/commands/atlas-close-session.md`
 - `atlas-codex-sync` → `.claude/commands/atlas-codex-sync.md`
 - `atlas-compatibility` → `.claude/commands/atlas-compatibility.md`
 - `atlas-conformance` → `.claude/commands/atlas-conformance.md`
@@ -19,26 +24,44 @@ Total: **48**
 - `atlas-contract-test` → `.claude/commands/atlas-contract-test.md`
 - `atlas-cost` → `.claude/commands/atlas-cost.md`
 - `atlas-debt` → `.claude/commands/atlas-debt.md`
+- `atlas-deploy-preflight` → `.claude/commands/atlas-deploy-preflight.md`
+- `atlas-deploy-receipt` → `.claude/commands/atlas-deploy-receipt.md`
 - `atlas-deprecate` → `.claude/commands/atlas-deprecate.md`
 - `atlas-design-system` → `.claude/commands/atlas-design-system.md`
 - `atlas-docs` → `.claude/commands/atlas-docs.md`
 - `atlas-dual-release` → `.claude/commands/atlas-dual-release.md`
+- `atlas-evidence` → `.claude/commands/atlas-evidence.md`
+- `atlas-execute-plan` → `.claude/commands/atlas-execute-plan.md`
 - `atlas-experiment` → `.claude/commands/atlas-experiment.md`
 - `atlas-govern` → `.claude/commands/atlas-govern.md`
 - `atlas-govern-release` → `.claude/commands/atlas-govern-release.md`
+- `atlas-handoff` → `.claude/commands/atlas-handoff.md`
 - `atlas-health` → `.claude/commands/atlas-health.md`
 - `atlas-incident` → `.claude/commands/atlas-incident.md`
 - `atlas-integrate` → `.claude/commands/atlas-integrate.md`
 - `atlas-knowledge-sync` → `.claude/commands/atlas-knowledge-sync.md`
 - `atlas-map-repo` → `.claude/commands/atlas-map-repo.md`
+- `atlas-memory-drift` → `.claude/commands/atlas-memory-drift.md`
+- `atlas-memory-freshness` → `.claude/commands/atlas-memory-freshness.md`
+- `atlas-merge-ready` → `.claude/commands/atlas-merge-ready.md`
 - `atlas-migrate` → `.claude/commands/atlas-migrate.md`
 - `atlas-package` → `.claude/commands/atlas-package.md`
+- `atlas-parallelize` → `.claude/commands/atlas-parallelize.md`
+- `atlas-patch-check` → `.claude/commands/atlas-patch-check.md`
 - `atlas-plan` → `.claude/commands/atlas-plan.md`
 - `atlas-policy` → `.claude/commands/atlas-policy.md`
+- `atlas-policy-check` → `.claude/commands/atlas-policy-check.md`
+- `atlas-policy-exception` → `.claude/commands/atlas-policy-exception.md`
 - `atlas-privacy` → `.claude/commands/atlas-privacy.md`
 - `atlas-product` → `.claude/commands/atlas-product.md`
+- `atlas-provenance` → `.claude/commands/atlas-provenance.md`
+- `atlas-reconcile` → `.claude/commands/atlas-reconcile.md`
+- `atlas-reconcile-memory` → `.claude/commands/atlas-reconcile-memory.md`
 - `atlas-reference-review` → `.claude/commands/atlas-reference-review.md`
+- `atlas-refresh-continuity` → `.claude/commands/atlas-refresh-continuity.md`
 - `atlas-release` → `.claude/commands/atlas-release.md`
+- `atlas-resume` → `.claude/commands/atlas-resume.md`
+- `atlas-resume-packet` → `.claude/commands/atlas-resume-packet.md`
 - `atlas-review` → `.claude/commands/atlas-review.md`
 - `atlas-roadmap` → `.claude/commands/atlas-roadmap.md`
 - `atlas-route` → `.claude/commands/atlas-route.md`

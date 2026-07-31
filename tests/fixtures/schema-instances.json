@@ -1,0 +1,156 @@
+{
+  "agent-metadata.schema.json": {
+    "instance": {
+      "name": "example-agent",
+      "description": "Schema validation fixture",
+      "model": "inherit"
+    }
+  },
+  "audit-bundle-manifest.schema.json": {
+    "instance": {
+      "bundle_id": "audit-example",
+      "framework_version": "0.1.0-beta.11",
+      "generated_at": "2026-07-30T00:00:00Z",
+      "scope": "fixture",
+      "records": [],
+      "integrity": {}
+    }
+  },
+  "change-provenance.schema.json": {
+    "instance": {
+      "framework_version": "0.1.0-beta.11",
+      "task_id": "task-example",
+      "changes": []
+    }
+  },
+  "checkpoint.schema.json": {
+    "path": "templates/checkpoint.json"
+  },
+  "context-pack-manifest.schema.json": {
+    "instance": {
+      "task_id": "task-example",
+      "context_pack": "context-pack.md",
+      "sources": []
+    }
+  },
+  "continuation-plan.schema.json": {
+    "instance": {
+      "task_id": "task-example",
+      "runtime": "codex",
+      "handoff": "handoff.json",
+      "preserved_steps": [],
+      "next_steps": [],
+      "required_validation": [],
+      "required_reviews": []
+    }
+  },
+  "contradiction-register.schema.json": {
+    "path": "templates/contradiction-register.json"
+  },
+  "core-contracts.schema.json": {
+    "path": "compatibility/core-contracts.json"
+  },
+  "deployment-preflight-report.schema.json": {
+    "path": "templates/deployment-preflight-report.json"
+  },
+  "evidence-record.schema.json": {
+    "path": "templates/evidence-record.json"
+  },
+  "execution-result.schema.json": {
+    "path": "templates/execution-result.json"
+  },
+  "handoff-manifest.schema.json": {
+    "path": "templates/handoff-manifest.json"
+  },
+  "manual-deployment-receipt.schema.json": {
+    "path": "templates/manual-deployment-receipt.json"
+  },
+  "memory-drift-report.schema.json": {
+    "instance": {
+      "framework_version": "0.1.0-beta.11",
+      "generated_at": "2026-07-30T00:00:00Z",
+      "sources_checked": [],
+      "findings": [],
+      "summary": {}
+    }
+  },
+  "parallel-execution-manifest.schema.json": {
+    "instance": {
+      "task_id": "task-example",
+      "workstreams": [],
+      "claims": [],
+      "dependencies": [],
+      "status": "planned"
+    }
+  },
+  "policy-evaluation-report.schema.json": {
+    "instance": {
+      "framework_version": "0.1.0-beta.11",
+      "generated_at": "2026-07-30T00:00:00Z",
+      "results": [],
+      "summary": {}
+    }
+  },
+  "policy-exception.schema.json": {
+    "path": "templates/policy-exception.json"
+  },
+  "policy-rule.schema.json": {
+    "path": "policies/framework_version_consistency.json"
+  },
+  "project-brief.schema.json": {
+    "path": "templates/project-brief.json"
+  },
+  "reconciliation-proposal.schema.json": {
+    "path": "templates/reconciliation-proposal.json"
+  },
+  "reconciliation-report.schema.json": {
+    "instance": {
+      "task_id": "task-example",
+      "workstreams": [],
+      "changed_files": [],
+      "combined_validation": [],
+      "combined_reviews": [],
+      "conflicts": [],
+      "remaining_risks": [],
+      "outcome": "ready"
+    }
+  },
+  "registry.schema.json": {
+    "path": ".claude/registry.json"
+  },
+  "resource-claim.schema.json": {
+    "path": "templates/resource-claim.json"
+  },
+  "resume-packet.schema.json": {
+    "path": "templates/resume-packet.json"
+  },
+  "runtime-capability.schema.json": {
+    "path": "adapters/codex/runtime-declaration.json"
+  },
+  "runtime-contract.schema.json": {
+    "path": "adapters/shared/runtime-contract.json"
+  },
+  "runtime-execution-plan.schema.json": {
+    "instance": {
+      "task_id": "task-example",
+      "runtime": "codex",
+      "primary_role": "orchestrator",
+      "workflow": "default",
+      "reviews": [],
+      "validation": [],
+      "steps": []
+    }
+  },
+  "session-brief.schema.json": {
+    "path": "templates/session-brief.json"
+  },
+  "source-of-truth-manifest.schema.json": {
+    "path": "adapters/shared/source-of-truth-manifest.json"
+  },
+  "task-envelope.schema.json": {
+    "path": "templates/task-envelope.json"
+  },
+  "workstream.schema.json": {
+    "path": "templates/workstream.json"
+  }
+}

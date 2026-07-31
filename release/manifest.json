@@ -1,12 +1,34 @@
 {
-  "version": "0.1.0-alpha.14",
-  "file_count": 407,
+  "version": "0.1.0-beta.12",
+  "channel": "beta",
   "canonical_runtime": "claude-code",
+  "supported_runtimes": [
+    "claude-code",
+    "codex"
+  ],
   "experimental_adapters": [
-    "codex",
     "gemini",
     "cursor"
   ],
+  "delivery_modes": [
+    "cumulative",
+    "incremental",
+    "recovery"
+  ],
+  "manual_deployment_supported": true,
+  "hidden_directory_package_mapping": {
+    "CLAUDE-DIRECTORY": ".claude"
+  },
+  "builders": {
+    "cumulative_and_recovery": "scripts/build_release.py",
+    "incremental": "scripts/build_incremental_release.py"
+  },
+  "validation": {
+    "repository": "scripts/validate_package.py",
+    "artifacts": "scripts/validate_release_artifacts.py",
+    "manual_preflight": "scripts/manual_deploy_preflight.py",
+    "policies": "scripts/evaluate_policies.py"
+  },
   "smoke_tests": "tests/smoke/",
   "documentation_index": "docs/INDEX.md"
 }

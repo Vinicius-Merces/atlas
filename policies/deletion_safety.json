@@ -1,0 +1,12 @@
+{
+  "policy_id": "atlas.patch.deletion-safety",
+  "evaluator": "deletion_safety",
+  "description": "Incremental packages may delete only explicitly listed target paths.",
+  "severity": "blocking",
+  "condition": "manifest delete operations exactly match FILES-TO-DELETE.md",
+  "evidence": [
+    "PATCH-MANIFEST.json",
+    "FILES-TO-DELETE.md"
+  ],
+  "remediation": "Make every deletion explicit in both the manifest and deletion list."
+}

@@ -1,0 +1,28 @@
+{
+  "framework_version": "0.1.0-beta.12",
+  "generated_at": "2026-07-30T23:58:15.535734+00:00",
+  "project_brief": ".atlas/continuity/project-brief.json",
+  "latest_session": ".atlas/continuity/latest-session.json",
+  "memory_sources": [
+    ".claude/memory/README.md",
+    ".claude/memory/architecture.md",
+    ".claude/memory/business.md",
+    ".claude/memory/contradictions.md",
+    ".claude/memory/index.md",
+    ".claude/memory/operations.md"
+  ],
+  "open_tasks": [],
+  "checkpoints": [],
+  "handoffs": [
+    "schemas/handoff-manifest.schema.json",
+    "templates/handoff-manifest.json"
+  ],
+  "workstreams": [],
+  "risks": [],
+  "next_actions": [
+    "Read AGENTS.md.",
+    "Read the project brief and latest session.",
+    "Validate memory freshness.",
+    "Inspect Git status and pending task artifacts."
+  ]
+}

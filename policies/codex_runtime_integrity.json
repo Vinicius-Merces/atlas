@@ -1,0 +1,13 @@
+{
+  "policy_id": "atlas.runtime.codex-integrity",
+  "evaluator": "codex_integrity",
+  "description": "Codex catalogs, maps, shared sources, and runtime declarations must be current and resolvable.",
+  "severity": "blocking",
+  "condition": "Codex adapter validation and synchronization pass",
+  "evidence": [
+    "adapters/codex/",
+    ".claude/registry.json",
+    "scripts/validate_codex_adapter.py"
+  ],
+  "remediation": "Regenerate Codex artifacts and repair invalid mappings."
+}

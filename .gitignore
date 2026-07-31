@@ -1,0 +1,24 @@
+# Python execution artifacts
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+
+# Local Python environments
+.venv/
+venv/
+
+# Built release artifacts
+dist/
+
+# Generated local ATLAS runtime evidence
+.atlas/policy/policy-report.json
+.atlas/audit/
+.atlas/evidence/
+.atlas/deployments/
+
+# `.atlas/continuity/` is intentionally not ignored: curated handoff artifacts
+# may be versioned when a project needs cross-session continuity.

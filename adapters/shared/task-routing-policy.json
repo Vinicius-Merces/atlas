@@ -1,5 +1,5 @@
 {
-  "version": "0.1.0-beta.4",
+  "version": "0.1.0-beta.12",
   "routes": [
     {
       "task_type": "feature",
@@ -38,6 +38,6 @@
   ],
   "fallback": {
     "primary_role": "orchestrator",
-    "workflow": "project-lifecycle"
+    "workflow": "default"
   }
 }

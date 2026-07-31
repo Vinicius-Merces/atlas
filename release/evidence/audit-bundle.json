@@ -1,0 +1,20 @@
+{
+  "bundle_id": "audit-3f7b8f1a421b",
+  "framework_version": "0.1.0-beta.12",
+  "generated_at": "2026-07-31T00:00:05.523505+00:00",
+  "scope": "repository",
+  "records": [
+    {
+      "path": "release/evidence/records/finalization-beta.12.json",
+      "sha256": "5295779b9dbecb11875d1fdd491a56f04a3950cec02226b461893acba07c64e2"
+    },
+    {
+      "path": "release/evidence/records/manual-deployment-beta.12.json",
+      "sha256": "dd73f6a5964f4d67a673f8d7da40207fe7254bdf2edd969d7e892cf84242c797"
+    }
+  ],
+  "integrity": {
+    "algorithm": "sha256",
+    "record_count": 2
+  }
+}

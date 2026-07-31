@@ -5,6 +5,7 @@ This repository uses ATLAS as its engineering operating framework.
 ## Canonical sources
 
 - Framework: `framework/`
+- Registry: `.claude/registry.json`
 - Contracts: `.claude/contracts/`
 - Memory: `.claude/memory/`
 - Agents: `.claude/agents/`
@@ -13,6 +14,7 @@ This repository uses ATLAS as its engineering operating framework.
 - Reviews: `.claude/reviews/`
 - Commands: `.claude/commands/`
 - Codex adapter: `adapters/codex/`
+- Operating guide: `docs/operations-guide.md`
 
 ## Codex behavior
 
@@ -23,6 +25,11 @@ This repository uses ATLAS as its engineering operating framework.
 5. Report execution evidence using `adapters/codex/instructions/execution-evidence.md`.
 6. Do not fork project knowledge by runtime.
 7. Record runtime limitations explicitly.
+
+## Validation and evidence
+
+- Run the repository validators and `python -m pytest tests -q`.
+- Record results with `adapters/codex/instructions/execution-evidence.md`.
 
 ## Preferred entry points
 

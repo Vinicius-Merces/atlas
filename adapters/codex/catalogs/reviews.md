@@ -2,7 +2,7 @@
 
 > Generated from `.claude/registry.json`. Do not edit manually.
 
-Total: **49**
+Total: **68**
 
 - `adapter-drift-review` → `.claude/reviews/adapter-drift-review.md`
 - `adoption-review` → `.claude/reviews/adoption-review.md`
@@ -12,39 +12,58 @@ Total: **49**
 - `automation-review` → `.claude/reviews/automation-review.md`
 - `beta-readiness-review` → `.claude/reviews/beta-readiness-review.md`
 - `blueprint-review` → `.claude/reviews/blueprint-review.md`
+- `checkpoint-integrity-review` → `.claude/reviews/checkpoint-integrity-review.md`
 - `codex-runtime-review` → `.claude/reviews/codex-runtime-review.md`
 - `compatibility-review` → `.claude/reviews/compatibility-review.md`
 - `compliance-review` → `.claude/reviews/compliance-review.md`
 - `content-review` → `.claude/reviews/content-review.md`
+- `context-assembly-review` → `.claude/reviews/context-assembly-review.md`
 - `context-pack-review` → `.claude/reviews/context-pack-review.md`
 - `contract-compatibility-review` → `.claude/reviews/contract-compatibility-review.md`
+- `contradiction-review` → `.claude/reviews/contradiction-review.md`
 - `debt-governance-review` → `.claude/reviews/debt-governance-review.md`
 - `deprecation-review` → `.claude/reviews/deprecation-review.md`
 - `design-system-review` → `.claude/reviews/design-system-review.md`
 - `documentation-review` → `.claude/reviews/documentation-review.md`
 - `enterprise-architecture-review` → `.claude/reviews/enterprise-architecture-review.md`
+- `evidence-integrity-review` → `.claude/reviews/evidence-integrity-review.md`
+- `execution-planning-review` → `.claude/reviews/execution-planning-review.md`
 - `finops-review` → `.claude/reviews/finops-review.md`
 - `governance-review` → `.claude/reviews/governance-review.md`
 - `integration-review` → `.claude/reviews/integration-review.md`
 - `knowledge-review` → `.claude/reviews/knowledge-review.md`
 - `localization-review` → `.claude/reviews/localization-review.md`
+- `manual-deployment-review` → `.claude/reviews/manual-deployment-review.md`
+- `manual-deployment-safety-review` → `.claude/reviews/manual-deployment-safety-review.md`
+- `memory-governance-review` → `.claude/reviews/memory-governance-review.md`
+- `merge-readiness-review` → `.claude/reviews/merge-readiness-review.md`
 - `migration-review` → `.claude/reviews/migration-review.md`
 - `operations-review` → `.claude/reviews/operations-review.md`
 - `package-integrity-review` → `.claude/reviews/package-integrity-review.md`
+- `parallel-execution-review` → `.claude/reviews/parallel-execution-review.md`
 - `performance-review` → `.claude/reviews/performance-review.md`
 - `platform-review` → `.claude/reviews/platform-review.md`
+- `policy-compliance-review` → `.claude/reviews/policy-compliance-review.md`
+- `policy-exception-review` → `.claude/reviews/policy-exception-review.md`
 - `policy-review` → `.claude/reviews/policy-review.md`
 - `privacy-review` → `.claude/reviews/privacy-review.md`
 - `product-review` → `.claude/reviews/product-review.md`
 - `project-health-review` → `.claude/reviews/project-health-review.md`
+- `project-memory-review` → `.claude/reviews/project-memory-review.md`
+- `provenance-review` → `.claude/reviews/provenance-review.md`
 - `qa-review` → `.claude/reviews/qa-review.md`
 - `reference-implementation-review` → `.claude/reviews/reference-implementation-review.md`
 - `repository-review` → `.claude/reviews/repository-review.md`
+- `resource-claim-review` → `.claude/reviews/resource-claim-review.md`
+- `resume-packet-review` → `.claude/reviews/resume-packet-review.md`
 - `runtime-adapter-review` → `.claude/reviews/runtime-adapter-review.md`
 - `runtime-conformance-review` → `.claude/reviews/runtime-conformance-review.md`
+- `runtime-handoff-review` → `.claude/reviews/runtime-handoff-review.md`
 - `runtime-parity-review` → `.claude/reviews/runtime-parity-review.md`
 - `runtime-synchronization-review` → `.claude/reviews/runtime-synchronization-review.md`
 - `security-review` → `.claude/reviews/security-review.md`
+- `session-continuity-review` → `.claude/reviews/session-continuity-review.md`
+- `source-of-truth-review` → `.claude/reviews/source-of-truth-review.md`
 - `stability-review` → `.claude/reviews/stability-review.md`
 - `support-policy-review` → `.claude/reviews/support-policy-review.md`
 - `task-routing-review` → `.claude/reviews/task-routing-review.md`

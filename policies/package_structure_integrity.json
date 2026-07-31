@@ -1,0 +1,11 @@
+{
+  "policy_id": "atlas.package.repository-structure",
+  "evaluator": "package_structure",
+  "description": "Required repository and package paths must remain present and consistent.",
+  "severity": "blocking",
+  "condition": "package validation passes",
+  "evidence": [
+    "scripts/validate_package.py"
+  ],
+  "remediation": "Restore required paths and align registry, version, and changelog."
+}
