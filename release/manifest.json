@@ -1,5 +1,5 @@
 {
-  "version": "0.1.0",
+  "version": "0.1.1",
   "channel": "stable",
   "canonical_runtime": "claude-code",
   "supported_runtimes": [

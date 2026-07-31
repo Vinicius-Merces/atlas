@@ -2,6 +2,75 @@
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "title": "reconciliation-proposal.schema.json",
   "type": "object",
+  "$defs": {
+    "proposedUpdate": {
+      "type": "object",
+      "properties": {
+        "source": {
+          "type": "string",
+          "minLength": 1
+        },
+        "finding_type": {
+          "enum": [
+            "missing-source",
+            "version-drift",
+            "unknown-freshness",
+            "continuity-version-drift",
+            "orphaned-reference"
+          ]
+        },
+        "severity": {
+          "enum": [
+            "blocking",
+            "high",
+            "warning"
+          ]
+        },
+        "proposed_action": {
+          "type": "string",
+          "minLength": 1
+        },
+        "automatic": {
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "source",
+        "finding_type",
+        "severity",
+        "proposed_action",
+        "automatic"
+      ],
+      "additionalProperties": false
+    }
+  },
+  "properties": {
+    "framework_version": {
+      "type": "string",
+      "pattern": "^\\d+\\.\\d+\\.\\d+(?:-[0-9A-Za-z.-]+)?$"
+    },
+    "drift_report": {
+      "type": "string",
+      "minLength": 1
+    },
+    "proposed_updates": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/proposedUpdate"
+      }
+    },
+    "manual_review": {
+      "const": true
+    },
+    "status": {
+      "enum": [
+        "proposed",
+        "approved",
+        "rejected",
+        "applied"
+      ]
+    }
+  },
   "required": [
     "framework_version",
     "drift_report",
@@ -9,5 +78,5 @@
     "manual_review",
     "status"
   ],
-  "additionalProperties": true
+  "additionalProperties": false
 }

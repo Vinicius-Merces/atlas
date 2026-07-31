@@ -5,6 +5,7 @@ import json
 import shutil
 import subprocess
 import sys
+import re
 from pathlib import Path, PurePosixPath
 
 
@@ -13,7 +14,13 @@ ROOT = Path(__file__).resolve().parents[1]
 
 def safe_target(root: Path, relative: str) -> Path:
     pure = PurePosixPath(relative.replace("\\", "/"))
-    if pure.is_absolute() or ".." in pure.parts or not relative:
+    if (
+        pure.is_absolute()
+        or ".." in pure.parts
+        or not relative
+        or "\\" in relative
+        or re.match(r"^[A-Za-z]:", relative)
+    ):
         raise SystemExit(f"Unsafe target path: {relative}")
     target = (root / Path(*pure.parts)).resolve()
     try:

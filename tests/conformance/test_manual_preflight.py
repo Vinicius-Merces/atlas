@@ -11,7 +11,8 @@ ROOT = Path(__file__).resolve().parents[2]
 
 
 def digest(path: Path) -> str:
-    return hashlib.sha256(path.read_bytes()).hexdigest()
+    content = path.read_bytes().replace(b"\r\n", b"\n").replace(b"\r", b"\n")
+    return hashlib.sha256(content).hexdigest()
 
 
 def prepare(tmp_path: Path) -> tuple[Path, Path]:
@@ -100,3 +101,65 @@ def test_wrong_installed_base_blocks_preflight(tmp_path: Path) -> None:
     (installed / "VERSION").write_text("0.1.0-beta.10\n", encoding="utf-8")
     result = run(patch, installed)
     assert result.returncode == 1
+
+
+def test_existing_add_target_blocks_preflight(tmp_path: Path) -> None:
+    patch, installed = prepare(tmp_path)
+    target = installed / ".claude" / "agents" / "example.md"
+    target.parent.mkdir(parents=True)
+    target.write_text("project-owned customization\n", encoding="utf-8")
+
+    result = run(patch, installed)
+
+    assert result.returncode == 1
+    report = json.loads(
+        (patch / "DEPLOY-PREFLIGHT-REPORT.json").read_text(encoding="utf-8")
+    )
+    check = next(
+        item for item in report["checks"] if item["check"] == "installed-state"
+    )
+    assert check["passed"] is False
+    assert "add target already exists" in check["findings"][0]
+
+
+def test_changed_replace_target_blocks_preflight(tmp_path: Path) -> None:
+    patch, installed = prepare(tmp_path)
+    source = installed / ".claude" / "agents" / "existing.md"
+    source.parent.mkdir(parents=True)
+    source.write_text("base\n", encoding="utf-8")
+    payload = patch / "CLAUDE-DIRECTORY" / "agents" / "existing.md"
+    payload.write_text("updated\n", encoding="utf-8")
+    manifest_path = patch / "PATCH-MANIFEST.json"
+    manifest = json.loads(manifest_path.read_text(encoding="utf-8"))
+    manifest["files"] = [
+        {
+            "path": ".claude/agents/existing.md",
+            "target_path": ".claude/agents/existing.md",
+            "package_path": "CLAUDE-DIRECTORY/agents/existing.md",
+            "operation": "replace",
+            "base_sha256": digest(source),
+            "sha256": digest(payload),
+        }
+    ]
+    manifest_path.write_text(json.dumps(manifest), encoding="utf-8")
+    (patch / "FILES-TO-ADD.md").write_text(
+        "# Files to add\n\n", encoding="utf-8"
+    )
+    (patch / "FILES-TO-REPLACE.md").write_text(
+        "# Files to replace\n\n"
+        "- `CLAUDE-DIRECTORY/agents/existing.md`\n",
+        encoding="utf-8",
+    )
+    source.write_text("locally customized\n", encoding="utf-8")
+
+    result = run(patch, installed)
+
+    assert result.returncode == 1
+    report = json.loads(
+        (patch / "DEPLOY-PREFLIGHT-REPORT.json").read_text(encoding="utf-8")
+    )
+    check = next(
+        item for item in report["checks"] if item["check"] == "installed-state"
+    )
+    assert check["passed"] is False
+    assert "differs from declared base" in check["findings"][0]

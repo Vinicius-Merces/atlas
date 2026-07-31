@@ -2,6 +2,49 @@
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "title": "ATLAS Continuation Plan",
   "type": "object",
+  "$defs": {
+    "stringArray": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    }
+  },
+  "properties": {
+    "task_id": {
+      "type": "string",
+      "pattern": "^task-[A-Za-z0-9._-]+$"
+    },
+    "runtime": {
+      "type": "string",
+      "minLength": 1
+    },
+    "handoff": {
+      "type": "string",
+      "minLength": 1
+    },
+    "preserved_steps": {
+      "$ref": "#/$defs/stringArray"
+    },
+    "next_steps": {
+      "$ref": "#/$defs/stringArray"
+    },
+    "required_validation": {
+      "$ref": "#/$defs/stringArray"
+    },
+    "required_reviews": {
+      "$ref": "#/$defs/stringArray"
+    },
+    "assumptions": {
+      "$ref": "#/$defs/stringArray"
+    },
+    "remaining_risks": {
+      "$ref": "#/$defs/stringArray"
+    },
+    "instructions": {
+      "$ref": "#/$defs/stringArray"
+    }
+  },
   "required": [
     "task_id",
     "runtime",
@@ -11,5 +54,5 @@
     "required_validation",
     "required_reviews"
   ],
-  "additionalProperties": true
+  "additionalProperties": false
 }

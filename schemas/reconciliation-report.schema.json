@@ -2,6 +2,77 @@
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "title": "reconciliation-report.schema.json",
   "type": "object",
+  "$defs": {
+    "stringArray": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      }
+    }
+  },
+  "properties": {
+    "task_id": {
+      "type": "string",
+      "pattern": "^task-[A-Za-z0-9._-]+$"
+    },
+    "workstreams": {
+      "$ref": "#/$defs/stringArray"
+    },
+    "changed_files": {
+      "$ref": "#/$defs/stringArray"
+    },
+    "combined_validation": {
+      "$ref": "#/$defs/stringArray"
+    },
+    "combined_reviews": {
+      "$ref": "#/$defs/stringArray"
+    },
+    "conflicts": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "left_claim": {
+            "type": "string",
+            "pattern": "^claim-[A-Za-z0-9._-]+$"
+          },
+          "right_claim": {
+            "type": "string",
+            "pattern": "^claim-[A-Za-z0-9._-]+$"
+          },
+          "resource_left": {
+            "type": "string",
+            "minLength": 1
+          },
+          "resource_right": {
+            "type": "string",
+            "minLength": 1
+          },
+          "severity": {
+            "const": "blocking"
+          }
+        },
+        "required": [
+          "left_claim",
+          "right_claim",
+          "resource_left",
+          "resource_right",
+          "severity"
+        ],
+        "additionalProperties": false
+      }
+    },
+    "remaining_risks": {
+      "$ref": "#/$defs/stringArray"
+    },
+    "outcome": {
+      "enum": [
+        "ready",
+        "blocked"
+      ]
+    }
+  },
   "required": [
     "task_id",
     "workstreams",
@@ -12,5 +83,5 @@
     "remaining_risks",
     "outcome"
   ],
-  "additionalProperties": true
+  "additionalProperties": false
 }

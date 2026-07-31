@@ -1,799 +1,799 @@
 {
-  "version": "0.1.0",
+  "version": "0.1.1",
   "generated_from": ".claude/registry.json",
   "collection": "skills",
   "entries": [
     {
       "canonical_name": "accessibility-audit",
-      "canonical_path": ".claude/skills/quality/accessibility-audit.md",
-      "adapter_path": "adapters/codex/catalogs/skills.md",
-      "parity_type": "canonical-reference",
-      "status": "mapped",
-      "notes": "Resolved through the generated catalog to the canonical source.",
-      "version": "0.1.0"
+      "canonical_path": ".claude/skills/accessibility-audit/SKILL.md",
+      "adapter_path": ".agents/skills/accessibility-audit/SKILL.md",
+      "parity_type": "runtime-native",
+      "status": "native",
+      "notes": "Codex-native entry point.",
+      "version": "0.1.1"
     },
     {
       "canonical_name": "adapter-drift-detection",
-      "canonical_path": ".claude/skills/runtime/adapter-drift-detection.md",
-      "adapter_path": "adapters/codex/catalogs/skills.md",
-      "parity_type": "canonical-reference",
-      "status": "mapped",
-      "notes": "Resolved through the generated catalog to the canonical source.",
-      "version": "0.1.0"
+      "canonical_path": ".claude/skills/adapter-drift-detection/SKILL.md",
+      "adapter_path": ".agents/skills/adapter-drift-detection/SKILL.md",
+      "parity_type": "runtime-native",
+      "status": "native",
+      "notes": "Codex-native entry point.",
+      "version": "0.1.1"
     },
     {
       "canonical_name": "adr-authoring",
-      "canonical_path": ".claude/skills/architecture/adr-authoring.md",
-      "adapter_path": "adapters/codex/catalogs/skills.md",
-      "parity_type": "canonical-reference",
-      "status": "mapped",
-      "notes": "Resolved through the generated catalog to the canonical source.",
-      "version": "0.1.0"
+      "canonical_path": ".claude/skills/adr-authoring/SKILL.md",
+      "adapter_path": ".agents/skills/adr-authoring/SKILL.md",
+      "parity_type": "runtime-native",
+      "status": "native",
+      "notes": "Codex-native entry point.",
+      "version": "0.1.1"
     },
     {
       "canonical_name": "ai-system-design",
-      "canonical_path": ".claude/skills/ai/ai-system-design.md",
-      "adapter_path": "adapters/codex/catalogs/skills.md",
-      "parity_type": "canonical-reference",
-      "status": "mapped",
-      "notes": "Resolved through the generated catalog to the canonical source.",
-      "version": "0.1.0"
+      "canonical_path": ".claude/skills/ai-system-design/SKILL.md",
+      "adapter_path": ".agents/skills/ai-system-design/SKILL.md",
+      "parity_type": "runtime-native",
+      "status": "native",
+      "notes": "Codex-native entry point.",
+      "version": "0.1.1"
     },
     {
       "canonical_name": "api-contract-analysis",
-      "canonical_path": ".claude/skills/backend/api-contract-analysis.md",
-      "adapter_path": "adapters/codex/catalogs/skills.md",
-      "parity_type": "canonical-reference",
-      "status": "mapped",
-      "notes": "Resolved through the generated catalog to the canonical source.",
-      "version": "0.1.0"
+      "canonical_path": ".claude/skills/api-contract-analysis/SKILL.md",
+      "adapter_path": ".agents/skills/api-contract-analysis/SKILL.md",
+      "parity_type": "runtime-native",
+      "status": "native",
+      "notes": "Codex-native entry point.",
+      "version": "0.1.1"
     },
     {
       "canonical_name": "architecture-assessment",
-      "canonical_path": ".claude/skills/architecture/architecture-assessment.md",
-      "adapter_path": "adapters/codex/catalogs/skills.md",
-      "parity_type": "canonical-reference",
-      "status": "mapped",
-      "notes": "Resolved through the generated catalog to the canonical source.",
-      "version": "0.1.0"
+      "canonical_path": ".claude/skills/architecture-assessment/SKILL.md",
+      "adapter_path": ".agents/skills/architecture-assessment/SKILL.md",
+      "parity_type": "runtime-native",
+      "status": "native",
+      "notes": "Codex-native entry point.",
+      "version": "0.1.1"
     },
     {
       "canonical_name": "architecture-audit",
-      "canonical_path": ".claude/skills/audit/architecture-audit.md",
-      "adapter_path": "adapters/codex/catalogs/skills.md",
-      "parity_type": "canonical-reference",
-      "status": "mapped",
-      "notes": "Resolved through the generated catalog to the canonical source.",
-      "version": "0.1.0"
+      "canonical_path": ".claude/skills/architecture-audit/SKILL.md",
+      "adapter_path": ".agents/skills/architecture-audit/SKILL.md",
+      "parity_type": "runtime-native",
+      "status": "native",
+      "notes": "Codex-native entry point.",
+      "version": "0.1.1"
     },
     {
       "canonical_name": "architecture-portfolio-assessment",
-      "canonical_path": ".claude/skills/architecture/architecture-portfolio-assessment.md",
-      "adapter_path": "adapters/codex/catalogs/skills.md",
-      "parity_type": "canonical-reference",
-      "status": "mapped",
-      "notes": "Resolved through the generated catalog to the canonical source.",
-      "version": "0.1.0"
+      "canonical_path": ".claude/skills/architecture-portfolio-assessment/SKILL.md",
+      "adapter_path": ".agents/skills/architecture-portfolio-assessment/SKILL.md",
+      "parity_type": "runtime-native",
+      "status": "native",
+      "notes": "Codex-native entry point.",
+      "version": "0.1.1"
     },
     {
       "canonical_name": "audit-bundle-assembly",
-      "canonical_path": ".claude/skills/runtime/audit-bundle-assembly.md",
-      "adapter_path": "adapters/codex/catalogs/skills.md",
-      "parity_type": "canonical-reference",
-      "status": "mapped",
-      "notes": "Resolved through the generated catalog to the canonical source.",
-      "version": "0.1.0"
+      "canonical_path": ".claude/skills/audit-bundle-assembly/SKILL.md",
+      "adapter_path": ".agents/skills/audit-bundle-assembly/SKILL.md",
+      "parity_type": "runtime-native",
+      "status": "native",
+      "notes": "Codex-native entry point.",
+      "version": "0.1.1"
     },
     {
       "canonical_name": "blueprint-selection",
-      "canonical_path": ".claude/skills/blueprints/blueprint-selection.md",
-      "adapter_path": "adapters/codex/catalogs/skills.md",
-      "parity_type": "canonical-reference",
-      "status": "mapped",
-      "notes": "Resolved through the generated catalog to the canonical source.",
-      "version": "0.1.0"
+      "canonical_path": ".claude/skills/blueprint-selection/SKILL.md",
+      "adapter_path": ".agents/skills/blueprint-selection/SKILL.md",
+      "parity_type": "runtime-native",
+      "status": "native",
+      "notes": "Codex-native entry point.",
+      "version": "0.1.1"
     },
     {
       "canonical_name": "change-provenance-mapping",
-      "canonical_path": ".claude/skills/runtime/change-provenance-mapping.md",
-      "adapter_path": "adapters/codex/catalogs/skills.md",
-      "parity_type": "canonical-reference",
-      "status": "mapped",
-      "notes": "Resolved through the generated catalog to the canonical source.",
-      "version": "0.1.0"
+      "canonical_path": ".claude/skills/change-provenance-mapping/SKILL.md",
+      "adapter_path": ".agents/skills/change-provenance-mapping/SKILL.md",
+      "parity_type": "runtime-native",
+      "status": "native",
+      "notes": "Codex-native entry point.",
+      "version": "0.1.1"
     },
     {
       "canonical_name": "cloud-cost-analysis",
-      "canonical_path": ".claude/skills/finops/cloud-cost-analysis.md",
-      "adapter_path": "adapters/codex/catalogs/skills.md",
-      "parity_type": "canonical-reference",
-      "status": "mapped",
-      "notes": "Resolved through the generated catalog to the canonical source.",
-      "version": "0.1.0"
+      "canonical_path": ".claude/skills/cloud-cost-analysis/SKILL.md",
+      "adapter_path": ".agents/skills/cloud-cost-analysis/SKILL.md",
+      "parity_type": "runtime-native",
+      "status": "native",
+      "notes": "Codex-native entry point.",
+      "version": "0.1.1"
     },
     {
       "canonical_name": "codex-runtime-generation",
-      "canonical_path": ".claude/skills/runtime/codex-runtime-generation.md",
-      "adapter_path": "adapters/codex/catalogs/skills.md",
-      "parity_type": "canonical-reference",
-      "status": "mapped",
-      "notes": "Resolved through the generated catalog to the canonical source.",
-      "version": "0.1.0"
+      "canonical_path": ".claude/skills/codex-runtime-generation/SKILL.md",
+      "adapter_path": ".agents/skills/codex-runtime-generation/SKILL.md",
+      "parity_type": "runtime-native",
+      "status": "native",
+      "notes": "Codex-native entry point.",
+      "version": "0.1.1"
     },
     {
       "canonical_name": "command-catalog-synthesis",
-      "canonical_path": ".claude/skills/runtime/command-catalog-synthesis.md",
-      "adapter_path": "adapters/codex/catalogs/skills.md",
-      "parity_type": "canonical-reference",
-      "status": "mapped",
-      "notes": "Resolved through the generated catalog to the canonical source.",
-      "version": "0.1.0"
+      "canonical_path": ".claude/skills/command-catalog-synthesis/SKILL.md",
+      "adapter_path": ".agents/skills/command-catalog-synthesis/SKILL.md",
+      "parity_type": "runtime-native",
+      "status": "native",
+      "notes": "Codex-native entry point.",
+      "version": "0.1.1"
     },
     {
       "canonical_name": "compatibility-matrix-analysis",
-      "canonical_path": ".claude/skills/compatibility/compatibility-matrix-analysis.md",
-      "adapter_path": "adapters/codex/catalogs/skills.md",
-      "parity_type": "canonical-reference",
-      "status": "mapped",
-      "notes": "Resolved through the generated catalog to the canonical source.",
-      "version": "0.1.0"
+      "canonical_path": ".claude/skills/compatibility-matrix-analysis/SKILL.md",
+      "adapter_path": ".agents/skills/compatibility-matrix-analysis/SKILL.md",
+      "parity_type": "runtime-native",
+      "status": "native",
+      "notes": "Codex-native entry point.",
+      "version": "0.1.1"
     },
     {
       "canonical_name": "compliance-evidence-mapping",
-      "canonical_path": ".claude/skills/privacy/compliance-evidence-mapping.md",
-      "adapter_path": "adapters/codex/catalogs/skills.md",
-      "parity_type": "canonical-reference",
-      "status": "mapped",
-      "notes": "Resolved through the generated catalog to the canonical source.",
-      "version": "0.1.0"
+      "canonical_path": ".claude/skills/compliance-evidence-mapping/SKILL.md",
+      "adapter_path": ".agents/skills/compliance-evidence-mapping/SKILL.md",
+      "parity_type": "runtime-native",
+      "status": "native",
+      "notes": "Codex-native entry point.",
+      "version": "0.1.1"
     },
     {
       "canonical_name": "component-reuse-assessment",
-      "canonical_path": ".claude/skills/frontend/component-reuse-assessment.md",
-      "adapter_path": "adapters/codex/catalogs/skills.md",
-      "parity_type": "canonical-reference",
-      "status": "mapped",
-      "notes": "Resolved through the generated catalog to the canonical source.",
-      "version": "0.1.0"
+      "canonical_path": ".claude/skills/component-reuse-assessment/SKILL.md",
+      "adapter_path": ".agents/skills/component-reuse-assessment/SKILL.md",
+      "parity_type": "runtime-native",
+      "status": "native",
+      "notes": "Codex-native entry point.",
+      "version": "0.1.1"
     },
     {
       "canonical_name": "conflict-prediction",
-      "canonical_path": ".claude/skills/runtime/conflict-prediction.md",
-      "adapter_path": "adapters/codex/catalogs/skills.md",
-      "parity_type": "canonical-reference",
-      "status": "mapped",
-      "notes": "Resolved through the generated catalog to the canonical source.",
-      "version": "0.1.0"
+      "canonical_path": ".claude/skills/conflict-prediction/SKILL.md",
+      "adapter_path": ".agents/skills/conflict-prediction/SKILL.md",
+      "parity_type": "runtime-native",
+      "status": "native",
+      "notes": "Codex-native entry point.",
+      "version": "0.1.1"
     },
     {
       "canonical_name": "content-quality-review",
-      "canonical_path": ".claude/skills/content/content-quality-review.md",
-      "adapter_path": "adapters/codex/catalogs/skills.md",
-      "parity_type": "canonical-reference",
-      "status": "mapped",
-      "notes": "Resolved through the generated catalog to the canonical source.",
-      "version": "0.1.0"
+      "canonical_path": ".claude/skills/content-quality-review/SKILL.md",
+      "adapter_path": ".agents/skills/content-quality-review/SKILL.md",
+      "parity_type": "runtime-native",
+      "status": "native",
+      "notes": "Codex-native entry point.",
+      "version": "0.1.1"
     },
     {
       "canonical_name": "context-pack-composition",
-      "canonical_path": ".claude/skills/runtime/context-pack-composition.md",
-      "adapter_path": "adapters/codex/catalogs/skills.md",
-      "parity_type": "canonical-reference",
-      "status": "mapped",
-      "notes": "Resolved through the generated catalog to the canonical source.",
-      "version": "0.1.0"
+      "canonical_path": ".claude/skills/context-pack-composition/SKILL.md",
+      "adapter_path": ".agents/skills/context-pack-composition/SKILL.md",
+      "parity_type": "runtime-native",
+      "status": "native",
+      "notes": "Codex-native entry point.",
+      "version": "0.1.1"
     },
     {
       "canonical_name": "continuation-planning",
-      "canonical_path": ".claude/skills/runtime/continuation-planning.md",
-      "adapter_path": "adapters/codex/catalogs/skills.md",
-      "parity_type": "canonical-reference",
-      "status": "mapped",
-      "notes": "Resolved through the generated catalog to the canonical source.",
-      "version": "0.1.0"
+      "canonical_path": ".claude/skills/continuation-planning/SKILL.md",
+      "adapter_path": ".agents/skills/continuation-planning/SKILL.md",
+      "parity_type": "runtime-native",
+      "status": "native",
+      "notes": "Codex-native entry point.",
+      "version": "0.1.1"
     },
     {
       "canonical_name": "continuity-reconciliation",
-      "canonical_path": ".claude/skills/runtime/continuity-reconciliation.md",
-      "adapter_path": "adapters/codex/catalogs/skills.md",
-      "parity_type": "canonical-reference",
-      "status": "mapped",
-      "notes": "Resolved through the generated catalog to the canonical source.",
-      "version": "0.1.0"
+      "canonical_path": ".claude/skills/continuity-reconciliation/SKILL.md",
+      "adapter_path": ".agents/skills/continuity-reconciliation/SKILL.md",
+      "parity_type": "runtime-native",
+      "status": "native",
+      "notes": "Codex-native entry point.",
+      "version": "0.1.1"
     },
     {
       "canonical_name": "control-design",
-      "canonical_path": ".claude/skills/governance/control-design.md",
-      "adapter_path": "adapters/codex/catalogs/skills.md",
-      "parity_type": "canonical-reference",
-      "status": "mapped",
-      "notes": "Resolved through the generated catalog to the canonical source.",
-      "version": "0.1.0"
+      "canonical_path": ".claude/skills/control-design/SKILL.md",
+      "adapter_path": ".agents/skills/control-design/SKILL.md",
+      "parity_type": "runtime-native",
+      "status": "native",
+      "notes": "Codex-native entry point.",
+      "version": "0.1.1"
     },
     {
       "canonical_name": "core-contract-stabilization",
-      "canonical_path": ".claude/skills/stability/core-contract-stabilization.md",
-      "adapter_path": "adapters/codex/catalogs/skills.md",
-      "parity_type": "canonical-reference",
-      "status": "mapped",
-      "notes": "Resolved through the generated catalog to the canonical source.",
-      "version": "0.1.0"
+      "canonical_path": ".claude/skills/core-contract-stabilization/SKILL.md",
+      "adapter_path": ".agents/skills/core-contract-stabilization/SKILL.md",
+      "parity_type": "runtime-native",
+      "status": "native",
+      "notes": "Codex-native entry point.",
+      "version": "0.1.1"
     },
     {
       "canonical_name": "database-migration-analysis",
-      "canonical_path": ".claude/skills/data/database-migration-analysis.md",
-      "adapter_path": "adapters/codex/catalogs/skills.md",
-      "parity_type": "canonical-reference",
-      "status": "mapped",
-      "notes": "Resolved through the generated catalog to the canonical source.",
-      "version": "0.1.0"
+      "canonical_path": ".claude/skills/database-migration-analysis/SKILL.md",
+      "adapter_path": ".agents/skills/database-migration-analysis/SKILL.md",
+      "parity_type": "runtime-native",
+      "status": "native",
+      "notes": "Codex-native entry point.",
+      "version": "0.1.1"
     },
     {
       "canonical_name": "dependency-graph-analysis",
-      "canonical_path": ".claude/skills/repository/dependency-graph-analysis.md",
-      "adapter_path": "adapters/codex/catalogs/skills.md",
-      "parity_type": "canonical-reference",
-      "status": "mapped",
-      "notes": "Resolved through the generated catalog to the canonical source.",
-      "version": "0.1.0"
+      "canonical_path": ".claude/skills/dependency-graph-analysis/SKILL.md",
+      "adapter_path": ".agents/skills/dependency-graph-analysis/SKILL.md",
+      "parity_type": "runtime-native",
+      "status": "native",
+      "notes": "Codex-native entry point.",
+      "version": "0.1.1"
     },
     {
       "canonical_name": "dependency-impact-analysis",
-      "canonical_path": ".claude/skills/operations/dependency-impact-analysis.md",
-      "adapter_path": "adapters/codex/catalogs/skills.md",
-      "parity_type": "canonical-reference",
-      "status": "mapped",
-      "notes": "Resolved through the generated catalog to the canonical source.",
-      "version": "0.1.0"
+      "canonical_path": ".claude/skills/dependency-impact-analysis/SKILL.md",
+      "adapter_path": ".agents/skills/dependency-impact-analysis/SKILL.md",
+      "parity_type": "runtime-native",
+      "status": "native",
+      "notes": "Codex-native entry point.",
+      "version": "0.1.1"
     },
     {
       "canonical_name": "deprecation-planning",
-      "canonical_path": ".claude/skills/compatibility/deprecation-planning.md",
-      "adapter_path": "adapters/codex/catalogs/skills.md",
-      "parity_type": "canonical-reference",
-      "status": "mapped",
-      "notes": "Resolved through the generated catalog to the canonical source.",
-      "version": "0.1.0"
+      "canonical_path": ".claude/skills/deprecation-planning/SKILL.md",
+      "adapter_path": ".agents/skills/deprecation-planning/SKILL.md",
+      "parity_type": "runtime-native",
+      "status": "native",
+      "notes": "Codex-native entry point.",
+      "version": "0.1.1"
     },
     {
       "canonical_name": "design-token-architecture",
-      "canonical_path": ".claude/skills/design-system/design-token-architecture.md",
-      "adapter_path": "adapters/codex/catalogs/skills.md",
-      "parity_type": "canonical-reference",
-      "status": "mapped",
-      "notes": "Resolved through the generated catalog to the canonical source.",
-      "version": "0.1.0"
+      "canonical_path": ".claude/skills/design-token-architecture/SKILL.md",
+      "adapter_path": ".agents/skills/design-token-architecture/SKILL.md",
+      "parity_type": "runtime-native",
+      "status": "native",
+      "notes": "Codex-native entry point.",
+      "version": "0.1.1"
     },
     {
       "canonical_name": "developer-onboarding-assessment",
-      "canonical_path": ".claude/skills/developer-experience/developer-onboarding-assessment.md",
-      "adapter_path": "adapters/codex/catalogs/skills.md",
-      "parity_type": "canonical-reference",
-      "status": "mapped",
-      "notes": "Resolved through the generated catalog to the canonical source.",
-      "version": "0.1.0"
+      "canonical_path": ".claude/skills/developer-onboarding-assessment/SKILL.md",
+      "adapter_path": ".agents/skills/developer-onboarding-assessment/SKILL.md",
+      "parity_type": "runtime-native",
+      "status": "native",
+      "notes": "Codex-native entry point.",
+      "version": "0.1.1"
     },
     {
       "canonical_name": "documentation-information-architecture",
-      "canonical_path": ".claude/skills/documentation/documentation-information-architecture.md",
-      "adapter_path": "adapters/codex/catalogs/skills.md",
-      "parity_type": "canonical-reference",
-      "status": "mapped",
-      "notes": "Resolved through the generated catalog to the canonical source.",
-      "version": "0.1.0"
+      "canonical_path": ".claude/skills/documentation-information-architecture/SKILL.md",
+      "adapter_path": ".agents/skills/documentation-information-architecture/SKILL.md",
+      "parity_type": "runtime-native",
+      "status": "native",
+      "notes": "Codex-native entry point.",
+      "version": "0.1.1"
     },
     {
       "canonical_name": "dual-runtime-validation",
-      "canonical_path": ".claude/skills/runtime/dual-runtime-validation.md",
-      "adapter_path": "adapters/codex/catalogs/skills.md",
-      "parity_type": "canonical-reference",
-      "status": "mapped",
-      "notes": "Resolved through the generated catalog to the canonical source.",
-      "version": "0.1.0"
+      "canonical_path": ".claude/skills/dual-runtime-validation/SKILL.md",
+      "adapter_path": ".agents/skills/dual-runtime-validation/SKILL.md",
+      "parity_type": "runtime-native",
+      "status": "native",
+      "notes": "Codex-native entry point.",
+      "version": "0.1.1"
     },
     {
       "canonical_name": "event-taxonomy-design",
-      "canonical_path": ".claude/skills/analytics/event-taxonomy-design.md",
-      "adapter_path": "adapters/codex/catalogs/skills.md",
-      "parity_type": "canonical-reference",
-      "status": "mapped",
-      "notes": "Resolved through the generated catalog to the canonical source.",
-      "version": "0.1.0"
+      "canonical_path": ".claude/skills/event-taxonomy-design/SKILL.md",
+      "adapter_path": ".agents/skills/event-taxonomy-design/SKILL.md",
+      "parity_type": "runtime-native",
+      "status": "native",
+      "notes": "Codex-native entry point.",
+      "version": "0.1.1"
     },
     {
       "canonical_name": "evidence-record-design",
-      "canonical_path": ".claude/skills/runtime/evidence-record-design.md",
-      "adapter_path": "adapters/codex/catalogs/skills.md",
-      "parity_type": "canonical-reference",
-      "status": "mapped",
-      "notes": "Resolved through the generated catalog to the canonical source.",
-      "version": "0.1.0"
+      "canonical_path": ".claude/skills/evidence-record-design/SKILL.md",
+      "adapter_path": ".agents/skills/evidence-record-design/SKILL.md",
+      "parity_type": "runtime-native",
+      "status": "native",
+      "notes": "Codex-native entry point.",
+      "version": "0.1.1"
     },
     {
       "canonical_name": "execution-checkpointing",
-      "canonical_path": ".claude/skills/runtime/execution-checkpointing.md",
-      "adapter_path": "adapters/codex/catalogs/skills.md",
-      "parity_type": "canonical-reference",
-      "status": "mapped",
-      "notes": "Resolved through the generated catalog to the canonical source.",
-      "version": "0.1.0"
+      "canonical_path": ".claude/skills/execution-checkpointing/SKILL.md",
+      "adapter_path": ".agents/skills/execution-checkpointing/SKILL.md",
+      "parity_type": "runtime-native",
+      "status": "native",
+      "notes": "Codex-native entry point.",
+      "version": "0.1.1"
     },
     {
       "canonical_name": "experiment-design",
-      "canonical_path": ".claude/skills/experimentation/experiment-design.md",
-      "adapter_path": "adapters/codex/catalogs/skills.md",
-      "parity_type": "canonical-reference",
-      "status": "mapped",
-      "notes": "Resolved through the generated catalog to the canonical source.",
-      "version": "0.1.0"
+      "canonical_path": ".claude/skills/experiment-design/SKILL.md",
+      "adapter_path": ".agents/skills/experiment-design/SKILL.md",
+      "parity_type": "runtime-native",
+      "status": "native",
+      "notes": "Codex-native entry point.",
+      "version": "0.1.1"
     },
     {
       "canonical_name": "framework-package-validation",
-      "canonical_path": ".claude/skills/automation/framework-package-validation.md",
-      "adapter_path": "adapters/codex/catalogs/skills.md",
-      "parity_type": "canonical-reference",
-      "status": "mapped",
-      "notes": "Resolved through the generated catalog to the canonical source.",
-      "version": "0.1.0"
+      "canonical_path": ".claude/skills/framework-package-validation/SKILL.md",
+      "adapter_path": ".agents/skills/framework-package-validation/SKILL.md",
+      "parity_type": "runtime-native",
+      "status": "native",
+      "notes": "Codex-native entry point.",
+      "version": "0.1.1"
     },
     {
       "canonical_name": "incident-triage",
-      "canonical_path": ".claude/skills/operations/incident-triage.md",
-      "adapter_path": "adapters/codex/catalogs/skills.md",
-      "parity_type": "canonical-reference",
-      "status": "mapped",
-      "notes": "Resolved through the generated catalog to the canonical source.",
-      "version": "0.1.0"
+      "canonical_path": ".claude/skills/incident-triage/SKILL.md",
+      "adapter_path": ".agents/skills/incident-triage/SKILL.md",
+      "parity_type": "runtime-native",
+      "status": "native",
+      "notes": "Codex-native entry point.",
+      "version": "0.1.1"
     },
     {
       "canonical_name": "incremental-patch-verification",
-      "canonical_path": ".claude/skills/runtime/incremental-patch-verification.md",
-      "adapter_path": "adapters/codex/catalogs/skills.md",
-      "parity_type": "canonical-reference",
-      "status": "mapped",
-      "notes": "Resolved through the generated catalog to the canonical source.",
-      "version": "0.1.0"
+      "canonical_path": ".claude/skills/incremental-patch-verification/SKILL.md",
+      "adapter_path": ".agents/skills/incremental-patch-verification/SKILL.md",
+      "parity_type": "runtime-native",
+      "status": "native",
+      "notes": "Codex-native entry point.",
+      "version": "0.1.1"
     },
     {
       "canonical_name": "infrastructure-change-assessment",
-      "canonical_path": ".claude/skills/infrastructure/infrastructure-change-assessment.md",
-      "adapter_path": "adapters/codex/catalogs/skills.md",
-      "parity_type": "canonical-reference",
-      "status": "mapped",
-      "notes": "Resolved through the generated catalog to the canonical source.",
-      "version": "0.1.0"
+      "canonical_path": ".claude/skills/infrastructure-change-assessment/SKILL.md",
+      "adapter_path": ".agents/skills/infrastructure-change-assessment/SKILL.md",
+      "parity_type": "runtime-native",
+      "status": "native",
+      "notes": "Codex-native entry point.",
+      "version": "0.1.1"
     },
     {
       "canonical_name": "integration-contract-mapping",
-      "canonical_path": ".claude/skills/integrations/integration-contract-mapping.md",
-      "adapter_path": "adapters/codex/catalogs/skills.md",
-      "parity_type": "canonical-reference",
-      "status": "mapped",
-      "notes": "Resolved through the generated catalog to the canonical source.",
-      "version": "0.1.0"
+      "canonical_path": ".claude/skills/integration-contract-mapping/SKILL.md",
+      "adapter_path": ".agents/skills/integration-contract-mapping/SKILL.md",
+      "parity_type": "runtime-native",
+      "status": "native",
+      "notes": "Codex-native entry point.",
+      "version": "0.1.1"
     },
     {
       "canonical_name": "knowledge-graph-synthesis",
-      "canonical_path": ".claude/skills/knowledge/knowledge-graph-synthesis.md",
-      "adapter_path": "adapters/codex/catalogs/skills.md",
-      "parity_type": "canonical-reference",
-      "status": "mapped",
-      "notes": "Resolved through the generated catalog to the canonical source.",
-      "version": "0.1.0"
+      "canonical_path": ".claude/skills/knowledge-graph-synthesis/SKILL.md",
+      "adapter_path": ".agents/skills/knowledge-graph-synthesis/SKILL.md",
+      "parity_type": "runtime-native",
+      "status": "native",
+      "notes": "Codex-native entry point.",
+      "version": "0.1.1"
     },
     {
       "canonical_name": "localization-readiness-assessment",
-      "canonical_path": ".claude/skills/localization/localization-readiness-assessment.md",
-      "adapter_path": "adapters/codex/catalogs/skills.md",
-      "parity_type": "canonical-reference",
-      "status": "mapped",
-      "notes": "Resolved through the generated catalog to the canonical source.",
-      "version": "0.1.0"
+      "canonical_path": ".claude/skills/localization-readiness-assessment/SKILL.md",
+      "adapter_path": ".agents/skills/localization-readiness-assessment/SKILL.md",
+      "parity_type": "runtime-native",
+      "status": "native",
+      "notes": "Codex-native entry point.",
+      "version": "0.1.1"
     },
     {
       "canonical_name": "manual-deployment-preflight",
-      "canonical_path": ".claude/skills/runtime/manual-deployment-preflight.md",
-      "adapter_path": "adapters/codex/catalogs/skills.md",
-      "parity_type": "canonical-reference",
-      "status": "mapped",
-      "notes": "Resolved through the generated catalog to the canonical source.",
-      "version": "0.1.0"
+      "canonical_path": ".claude/skills/manual-deployment-preflight/SKILL.md",
+      "adapter_path": ".agents/skills/manual-deployment-preflight/SKILL.md",
+      "parity_type": "runtime-native",
+      "status": "native",
+      "notes": "Codex-native entry point.",
+      "version": "0.1.1"
     },
     {
       "canonical_name": "manual-deployment-receipt",
-      "canonical_path": ".claude/skills/runtime/manual-deployment-receipt.md",
-      "adapter_path": "adapters/codex/catalogs/skills.md",
-      "parity_type": "canonical-reference",
-      "status": "mapped",
-      "notes": "Resolved through the generated catalog to the canonical source.",
-      "version": "0.1.0"
+      "canonical_path": ".claude/skills/manual-deployment-receipt/SKILL.md",
+      "adapter_path": ".agents/skills/manual-deployment-receipt/SKILL.md",
+      "parity_type": "runtime-native",
+      "status": "native",
+      "notes": "Codex-native entry point.",
+      "version": "0.1.1"
     },
     {
       "canonical_name": "memory-drift-analysis",
-      "canonical_path": ".claude/skills/runtime/memory-drift-analysis.md",
-      "adapter_path": "adapters/codex/catalogs/skills.md",
-      "parity_type": "canonical-reference",
-      "status": "mapped",
-      "notes": "Resolved through the generated catalog to the canonical source.",
-      "version": "0.1.0"
+      "canonical_path": ".claude/skills/memory-drift-analysis/SKILL.md",
+      "adapter_path": ".agents/skills/memory-drift-analysis/SKILL.md",
+      "parity_type": "runtime-native",
+      "status": "native",
+      "notes": "Codex-native entry point.",
+      "version": "0.1.1"
     },
     {
       "canonical_name": "memory-freshness-audit",
-      "canonical_path": ".claude/skills/runtime/memory-freshness-audit.md",
-      "adapter_path": "adapters/codex/catalogs/skills.md",
-      "parity_type": "canonical-reference",
-      "status": "mapped",
-      "notes": "Resolved through the generated catalog to the canonical source.",
-      "version": "0.1.0"
+      "canonical_path": ".claude/skills/memory-freshness-audit/SKILL.md",
+      "adapter_path": ".agents/skills/memory-freshness-audit/SKILL.md",
+      "parity_type": "runtime-native",
+      "status": "native",
+      "notes": "Codex-native entry point.",
+      "version": "0.1.1"
     },
     {
       "canonical_name": "memory-update-proposal",
-      "canonical_path": ".claude/skills/runtime/memory-update-proposal.md",
-      "adapter_path": "adapters/codex/catalogs/skills.md",
-      "parity_type": "canonical-reference",
-      "status": "mapped",
-      "notes": "Resolved through the generated catalog to the canonical source.",
-      "version": "0.1.0"
+      "canonical_path": ".claude/skills/memory-update-proposal/SKILL.md",
+      "adapter_path": ".agents/skills/memory-update-proposal/SKILL.md",
+      "parity_type": "runtime-native",
+      "status": "native",
+      "notes": "Codex-native entry point.",
+      "version": "0.1.1"
     },
     {
       "canonical_name": "mobile-architecture-assessment",
-      "canonical_path": ".claude/skills/mobile/mobile-architecture-assessment.md",
-      "adapter_path": "adapters/codex/catalogs/skills.md",
-      "parity_type": "canonical-reference",
-      "status": "mapped",
-      "notes": "Resolved through the generated catalog to the canonical source.",
-      "version": "0.1.0"
+      "canonical_path": ".claude/skills/mobile-architecture-assessment/SKILL.md",
+      "adapter_path": ".agents/skills/mobile-architecture-assessment/SKILL.md",
+      "parity_type": "runtime-native",
+      "status": "native",
+      "notes": "Codex-native entry point.",
+      "version": "0.1.1"
     },
     {
       "canonical_name": "observability-design",
-      "canonical_path": ".claude/skills/operations/observability-design.md",
-      "adapter_path": "adapters/codex/catalogs/skills.md",
-      "parity_type": "canonical-reference",
-      "status": "mapped",
-      "notes": "Resolved through the generated catalog to the canonical source.",
-      "version": "0.1.0"
+      "canonical_path": ".claude/skills/observability-design/SKILL.md",
+      "adapter_path": ".agents/skills/observability-design/SKILL.md",
+      "parity_type": "runtime-native",
+      "status": "native",
+      "notes": "Codex-native entry point.",
+      "version": "0.1.1"
     },
     {
       "canonical_name": "performance-budget-analysis",
-      "canonical_path": ".claude/skills/performance/performance-budget-analysis.md",
-      "adapter_path": "adapters/codex/catalogs/skills.md",
-      "parity_type": "canonical-reference",
-      "status": "mapped",
-      "notes": "Resolved through the generated catalog to the canonical source.",
-      "version": "0.1.0"
+      "canonical_path": ".claude/skills/performance-budget-analysis/SKILL.md",
+      "adapter_path": ".agents/skills/performance-budget-analysis/SKILL.md",
+      "parity_type": "runtime-native",
+      "status": "native",
+      "notes": "Codex-native entry point.",
+      "version": "0.1.1"
     },
     {
       "canonical_name": "policy-as-code-design",
-      "canonical_path": ".claude/skills/policy/policy-as-code-design.md",
-      "adapter_path": "adapters/codex/catalogs/skills.md",
-      "parity_type": "canonical-reference",
-      "status": "mapped",
-      "notes": "Resolved through the generated catalog to the canonical source.",
-      "version": "0.1.0"
+      "canonical_path": ".claude/skills/policy-as-code-design/SKILL.md",
+      "adapter_path": ".agents/skills/policy-as-code-design/SKILL.md",
+      "parity_type": "runtime-native",
+      "status": "native",
+      "notes": "Codex-native entry point.",
+      "version": "0.1.1"
     },
     {
       "canonical_name": "policy-exception-handling",
-      "canonical_path": ".claude/skills/runtime/policy-exception-handling.md",
-      "adapter_path": "adapters/codex/catalogs/skills.md",
-      "parity_type": "canonical-reference",
-      "status": "mapped",
-      "notes": "Resolved through the generated catalog to the canonical source.",
-      "version": "0.1.0"
+      "canonical_path": ".claude/skills/policy-exception-handling/SKILL.md",
+      "adapter_path": ".agents/skills/policy-exception-handling/SKILL.md",
+      "parity_type": "runtime-native",
+      "status": "native",
+      "notes": "Codex-native entry point.",
+      "version": "0.1.1"
     },
     {
       "canonical_name": "policy-rule-design",
-      "canonical_path": ".claude/skills/runtime/policy-rule-design.md",
-      "adapter_path": "adapters/codex/catalogs/skills.md",
-      "parity_type": "canonical-reference",
-      "status": "mapped",
-      "notes": "Resolved through the generated catalog to the canonical source.",
-      "version": "0.1.0"
+      "canonical_path": ".claude/skills/policy-rule-design/SKILL.md",
+      "adapter_path": ".agents/skills/policy-rule-design/SKILL.md",
+      "parity_type": "runtime-native",
+      "status": "native",
+      "notes": "Codex-native entry point.",
+      "version": "0.1.1"
     },
     {
       "canonical_name": "privacy-impact-assessment",
-      "canonical_path": ".claude/skills/privacy/privacy-impact-assessment.md",
-      "adapter_path": "adapters/codex/catalogs/skills.md",
-      "parity_type": "canonical-reference",
-      "status": "mapped",
-      "notes": "Resolved through the generated catalog to the canonical source.",
-      "version": "0.1.0"
+      "canonical_path": ".claude/skills/privacy-impact-assessment/SKILL.md",
+      "adapter_path": ".agents/skills/privacy-impact-assessment/SKILL.md",
+      "parity_type": "runtime-native",
+      "status": "native",
+      "notes": "Codex-native entry point.",
+      "version": "0.1.1"
     },
     {
       "canonical_name": "product-requirement-decomposition",
-      "canonical_path": ".claude/skills/content/product-requirement-decomposition.md",
-      "adapter_path": "adapters/codex/catalogs/skills.md",
-      "parity_type": "canonical-reference",
-      "status": "mapped",
-      "notes": "Resolved through the generated catalog to the canonical source.",
-      "version": "0.1.0"
+      "canonical_path": ".claude/skills/product-requirement-decomposition/SKILL.md",
+      "adapter_path": ".agents/skills/product-requirement-decomposition/SKILL.md",
+      "parity_type": "runtime-native",
+      "status": "native",
+      "notes": "Codex-native entry point.",
+      "version": "0.1.1"
     },
     {
       "canonical_name": "project-adoption-assessment",
-      "canonical_path": ".claude/skills/adoption/project-adoption-assessment.md",
-      "adapter_path": "adapters/codex/catalogs/skills.md",
-      "parity_type": "canonical-reference",
-      "status": "mapped",
-      "notes": "Resolved through the generated catalog to the canonical source.",
-      "version": "0.1.0"
+      "canonical_path": ".claude/skills/project-adoption-assessment/SKILL.md",
+      "adapter_path": ".agents/skills/project-adoption-assessment/SKILL.md",
+      "parity_type": "runtime-native",
+      "status": "native",
+      "notes": "Codex-native entry point.",
+      "version": "0.1.1"
     },
     {
       "canonical_name": "project-brief-synthesis",
-      "canonical_path": ".claude/skills/runtime/project-brief-synthesis.md",
-      "adapter_path": "adapters/codex/catalogs/skills.md",
-      "parity_type": "canonical-reference",
-      "status": "mapped",
-      "notes": "Resolved through the generated catalog to the canonical source.",
-      "version": "0.1.0"
+      "canonical_path": ".claude/skills/project-brief-synthesis/SKILL.md",
+      "adapter_path": ".agents/skills/project-brief-synthesis/SKILL.md",
+      "parity_type": "runtime-native",
+      "status": "native",
+      "notes": "Codex-native entry point.",
+      "version": "0.1.1"
     },
     {
       "canonical_name": "project-health-assessment",
-      "canonical_path": ".claude/skills/health/project-health-assessment.md",
-      "adapter_path": "adapters/codex/catalogs/skills.md",
-      "parity_type": "canonical-reference",
-      "status": "mapped",
-      "notes": "Resolved through the generated catalog to the canonical source.",
-      "version": "0.1.0"
+      "canonical_path": ".claude/skills/project-health-assessment/SKILL.md",
+      "adapter_path": ".agents/skills/project-health-assessment/SKILL.md",
+      "parity_type": "runtime-native",
+      "status": "native",
+      "notes": "Codex-native entry point.",
+      "version": "0.1.1"
     },
     {
       "canonical_name": "prompt-model-evaluation",
-      "canonical_path": ".claude/skills/ai/prompt-model-evaluation.md",
-      "adapter_path": "adapters/codex/catalogs/skills.md",
-      "parity_type": "canonical-reference",
-      "status": "mapped",
-      "notes": "Resolved through the generated catalog to the canonical source.",
-      "version": "0.1.0"
+      "canonical_path": ".claude/skills/prompt-model-evaluation/SKILL.md",
+      "adapter_path": ".agents/skills/prompt-model-evaluation/SKILL.md",
+      "parity_type": "runtime-native",
+      "status": "native",
+      "notes": "Codex-native entry point.",
+      "version": "0.1.1"
     },
     {
       "canonical_name": "rag-architecture-assessment",
-      "canonical_path": ".claude/skills/knowledge/rag-architecture-assessment.md",
-      "adapter_path": "adapters/codex/catalogs/skills.md",
-      "parity_type": "canonical-reference",
-      "status": "mapped",
-      "notes": "Resolved through the generated catalog to the canonical source.",
-      "version": "0.1.0"
+      "canonical_path": ".claude/skills/rag-architecture-assessment/SKILL.md",
+      "adapter_path": ".agents/skills/rag-architecture-assessment/SKILL.md",
+      "parity_type": "runtime-native",
+      "status": "native",
+      "notes": "Codex-native entry point.",
+      "version": "0.1.1"
     },
     {
       "canonical_name": "reference-implementation-review",
-      "canonical_path": ".claude/skills/adoption/reference-implementation-review.md",
-      "adapter_path": "adapters/codex/catalogs/skills.md",
-      "parity_type": "canonical-reference",
-      "status": "mapped",
-      "notes": "Resolved through the generated catalog to the canonical source.",
-      "version": "0.1.0"
+      "canonical_path": ".claude/skills/reference-implementation-review/SKILL.md",
+      "adapter_path": ".agents/skills/reference-implementation-review/SKILL.md",
+      "parity_type": "runtime-native",
+      "status": "native",
+      "notes": "Codex-native entry point.",
+      "version": "0.1.1"
     },
     {
       "canonical_name": "registry-to-runtime-generation",
-      "canonical_path": ".claude/skills/runtime/registry-to-runtime-generation.md",
-      "adapter_path": "adapters/codex/catalogs/skills.md",
-      "parity_type": "canonical-reference",
-      "status": "mapped",
-      "notes": "Resolved through the generated catalog to the canonical source.",
-      "version": "0.1.0"
+      "canonical_path": ".claude/skills/registry-to-runtime-generation/SKILL.md",
+      "adapter_path": ".agents/skills/registry-to-runtime-generation/SKILL.md",
+      "parity_type": "runtime-native",
+      "status": "native",
+      "notes": "Codex-native entry point.",
+      "version": "0.1.1"
     },
     {
       "canonical_name": "regression-risk-analysis",
-      "canonical_path": ".claude/skills/quality/regression-risk-analysis.md",
-      "adapter_path": "adapters/codex/catalogs/skills.md",
-      "parity_type": "canonical-reference",
-      "status": "mapped",
-      "notes": "Resolved through the generated catalog to the canonical source.",
-      "version": "0.1.0"
+      "canonical_path": ".claude/skills/regression-risk-analysis/SKILL.md",
+      "adapter_path": ".agents/skills/regression-risk-analysis/SKILL.md",
+      "parity_type": "runtime-native",
+      "status": "native",
+      "notes": "Codex-native entry point.",
+      "version": "0.1.1"
     },
     {
       "canonical_name": "release-integrity-verification",
-      "canonical_path": ".claude/skills/release/release-integrity-verification.md",
-      "adapter_path": "adapters/codex/catalogs/skills.md",
-      "parity_type": "canonical-reference",
-      "status": "mapped",
-      "notes": "Resolved through the generated catalog to the canonical source.",
-      "version": "0.1.0"
+      "canonical_path": ".claude/skills/release-integrity-verification/SKILL.md",
+      "adapter_path": ".agents/skills/release-integrity-verification/SKILL.md",
+      "parity_type": "runtime-native",
+      "status": "native",
+      "notes": "Codex-native entry point.",
+      "version": "0.1.1"
     },
     {
       "canonical_name": "repository-mapping",
-      "canonical_path": ".claude/skills/repository/repository-mapping.md",
-      "adapter_path": "adapters/codex/catalogs/skills.md",
-      "parity_type": "canonical-reference",
-      "status": "mapped",
-      "notes": "Resolved through the generated catalog to the canonical source.",
-      "version": "0.1.0"
+      "canonical_path": ".claude/skills/repository-mapping/SKILL.md",
+      "adapter_path": ".agents/skills/repository-mapping/SKILL.md",
+      "parity_type": "runtime-native",
+      "status": "native",
+      "notes": "Codex-native entry point.",
+      "version": "0.1.1"
     },
     {
       "canonical_name": "resource-claim-design",
-      "canonical_path": ".claude/skills/runtime/resource-claim-design.md",
-      "adapter_path": "adapters/codex/catalogs/skills.md",
-      "parity_type": "canonical-reference",
-      "status": "mapped",
-      "notes": "Resolved through the generated catalog to the canonical source.",
-      "version": "0.1.0"
+      "canonical_path": ".claude/skills/resource-claim-design/SKILL.md",
+      "adapter_path": ".agents/skills/resource-claim-design/SKILL.md",
+      "parity_type": "runtime-native",
+      "status": "native",
+      "notes": "Codex-native entry point.",
+      "version": "0.1.1"
     },
     {
       "canonical_name": "result-reconciliation",
-      "canonical_path": ".claude/skills/runtime/result-reconciliation.md",
-      "adapter_path": "adapters/codex/catalogs/skills.md",
-      "parity_type": "canonical-reference",
-      "status": "mapped",
-      "notes": "Resolved through the generated catalog to the canonical source.",
-      "version": "0.1.0"
+      "canonical_path": ".claude/skills/result-reconciliation/SKILL.md",
+      "adapter_path": ".agents/skills/result-reconciliation/SKILL.md",
+      "parity_type": "runtime-native",
+      "status": "native",
+      "notes": "Codex-native entry point.",
+      "version": "0.1.1"
     },
     {
       "canonical_name": "resume-packet-assembly",
-      "canonical_path": ".claude/skills/runtime/resume-packet-assembly.md",
-      "adapter_path": "adapters/codex/catalogs/skills.md",
-      "parity_type": "canonical-reference",
-      "status": "mapped",
-      "notes": "Resolved through the generated catalog to the canonical source.",
-      "version": "0.1.0"
+      "canonical_path": ".claude/skills/resume-packet-assembly/SKILL.md",
+      "adapter_path": ".agents/skills/resume-packet-assembly/SKILL.md",
+      "parity_type": "runtime-native",
+      "status": "native",
+      "notes": "Codex-native entry point.",
+      "version": "0.1.1"
     },
     {
       "canonical_name": "runtime-adapter-mapping",
-      "canonical_path": ".claude/skills/automation/runtime-adapter-mapping.md",
-      "adapter_path": "adapters/codex/catalogs/skills.md",
-      "parity_type": "canonical-reference",
-      "status": "mapped",
-      "notes": "Resolved through the generated catalog to the canonical source.",
-      "version": "0.1.0"
+      "canonical_path": ".claude/skills/runtime-adapter-mapping/SKILL.md",
+      "adapter_path": ".agents/skills/runtime-adapter-mapping/SKILL.md",
+      "parity_type": "runtime-native",
+      "status": "native",
+      "notes": "Codex-native entry point.",
+      "version": "0.1.1"
     },
     {
       "canonical_name": "runtime-conformance-testing",
-      "canonical_path": ".claude/skills/runtime/runtime-conformance-testing.md",
-      "adapter_path": "adapters/codex/catalogs/skills.md",
-      "parity_type": "canonical-reference",
-      "status": "mapped",
-      "notes": "Resolved through the generated catalog to the canonical source.",
-      "version": "0.1.0"
+      "canonical_path": ".claude/skills/runtime-conformance-testing/SKILL.md",
+      "adapter_path": ".agents/skills/runtime-conformance-testing/SKILL.md",
+      "parity_type": "runtime-native",
+      "status": "native",
+      "notes": "Codex-native entry point.",
+      "version": "0.1.1"
     },
     {
       "canonical_name": "runtime-execution-planning",
-      "canonical_path": ".claude/skills/runtime/runtime-execution-planning.md",
-      "adapter_path": "adapters/codex/catalogs/skills.md",
-      "parity_type": "canonical-reference",
-      "status": "mapped",
-      "notes": "Resolved through the generated catalog to the canonical source.",
-      "version": "0.1.0"
+      "canonical_path": ".claude/skills/runtime-execution-planning/SKILL.md",
+      "adapter_path": ".agents/skills/runtime-execution-planning/SKILL.md",
+      "parity_type": "runtime-native",
+      "status": "native",
+      "notes": "Codex-native entry point.",
+      "version": "0.1.1"
     },
     {
       "canonical_name": "runtime-handoff-design",
-      "canonical_path": ".claude/skills/runtime/runtime-handoff-design.md",
-      "adapter_path": "adapters/codex/catalogs/skills.md",
-      "parity_type": "canonical-reference",
-      "status": "mapped",
-      "notes": "Resolved through the generated catalog to the canonical source.",
-      "version": "0.1.0"
+      "canonical_path": ".claude/skills/runtime-handoff-design/SKILL.md",
+      "adapter_path": ".agents/skills/runtime-handoff-design/SKILL.md",
+      "parity_type": "runtime-native",
+      "status": "native",
+      "notes": "Codex-native entry point.",
+      "version": "0.1.1"
     },
     {
       "canonical_name": "runtime-semantic-parity",
-      "canonical_path": ".claude/skills/runtime/runtime-semantic-parity.md",
-      "adapter_path": "adapters/codex/catalogs/skills.md",
-      "parity_type": "canonical-reference",
-      "status": "mapped",
-      "notes": "Resolved through the generated catalog to the canonical source.",
-      "version": "0.1.0"
+      "canonical_path": ".claude/skills/runtime-semantic-parity/SKILL.md",
+      "adapter_path": ".agents/skills/runtime-semantic-parity/SKILL.md",
+      "parity_type": "runtime-native",
+      "status": "native",
+      "notes": "Codex-native entry point.",
+      "version": "0.1.1"
     },
     {
       "canonical_name": "semantic-compatibility-verification",
-      "canonical_path": ".claude/skills/stability/semantic-compatibility-verification.md",
-      "adapter_path": "adapters/codex/catalogs/skills.md",
-      "parity_type": "canonical-reference",
-      "status": "mapped",
-      "notes": "Resolved through the generated catalog to the canonical source.",
-      "version": "0.1.0"
+      "canonical_path": ".claude/skills/semantic-compatibility-verification/SKILL.md",
+      "adapter_path": ".agents/skills/semantic-compatibility-verification/SKILL.md",
+      "parity_type": "runtime-native",
+      "status": "native",
+      "notes": "Codex-native entry point.",
+      "version": "0.1.1"
     },
     {
       "canonical_name": "session-closeout",
-      "canonical_path": ".claude/skills/runtime/session-closeout.md",
-      "adapter_path": "adapters/codex/catalogs/skills.md",
-      "parity_type": "canonical-reference",
-      "status": "mapped",
-      "notes": "Resolved through the generated catalog to the canonical source.",
-      "version": "0.1.0"
+      "canonical_path": ".claude/skills/session-closeout/SKILL.md",
+      "adapter_path": ".agents/skills/session-closeout/SKILL.md",
+      "parity_type": "runtime-native",
+      "status": "native",
+      "notes": "Codex-native entry point.",
+      "version": "0.1.1"
     },
     {
       "canonical_name": "smoke-test-design",
-      "canonical_path": ".claude/skills/release/smoke-test-design.md",
-      "adapter_path": "adapters/codex/catalogs/skills.md",
-      "parity_type": "canonical-reference",
-      "status": "mapped",
-      "notes": "Resolved through the generated catalog to the canonical source.",
-      "version": "0.1.0"
+      "canonical_path": ".claude/skills/smoke-test-design/SKILL.md",
+      "adapter_path": ".agents/skills/smoke-test-design/SKILL.md",
+      "parity_type": "runtime-native",
+      "status": "native",
+      "notes": "Codex-native entry point.",
+      "version": "0.1.1"
     },
     {
       "canonical_name": "source-of-truth-validation",
-      "canonical_path": ".claude/skills/runtime/source-of-truth-validation.md",
-      "adapter_path": "adapters/codex/catalogs/skills.md",
-      "parity_type": "canonical-reference",
-      "status": "mapped",
-      "notes": "Resolved through the generated catalog to the canonical source.",
-      "version": "0.1.0"
+      "canonical_path": ".claude/skills/source-of-truth-validation/SKILL.md",
+      "adapter_path": ".agents/skills/source-of-truth-validation/SKILL.md",
+      "parity_type": "runtime-native",
+      "status": "native",
+      "notes": "Codex-native entry point.",
+      "version": "0.1.1"
     },
     {
       "canonical_name": "support-classification",
-      "canonical_path": ".claude/skills/stability/support-classification.md",
-      "adapter_path": "adapters/codex/catalogs/skills.md",
-      "parity_type": "canonical-reference",
-      "status": "mapped",
-      "notes": "Resolved through the generated catalog to the canonical source.",
-      "version": "0.1.0"
+      "canonical_path": ".claude/skills/support-classification/SKILL.md",
+      "adapter_path": ".agents/skills/support-classification/SKILL.md",
+      "parity_type": "runtime-native",
+      "status": "native",
+      "notes": "Codex-native entry point.",
+      "version": "0.1.1"
     },
     {
       "canonical_name": "task-routing-policy",
-      "canonical_path": ".claude/skills/runtime/task-routing-policy.md",
-      "adapter_path": "adapters/codex/catalogs/skills.md",
-      "parity_type": "canonical-reference",
-      "status": "mapped",
-      "notes": "Resolved through the generated catalog to the canonical source.",
-      "version": "0.1.0"
+      "canonical_path": ".claude/skills/task-routing-policy/SKILL.md",
+      "adapter_path": ".agents/skills/task-routing-policy/SKILL.md",
+      "parity_type": "runtime-native",
+      "status": "native",
+      "notes": "Codex-native entry point.",
+      "version": "0.1.1"
     },
     {
       "canonical_name": "technical-debt-classification",
-      "canonical_path": ".claude/skills/debt/technical-debt-classification.md",
-      "adapter_path": "adapters/codex/catalogs/skills.md",
-      "parity_type": "canonical-reference",
-      "status": "mapped",
-      "notes": "Resolved through the generated catalog to the canonical source.",
-      "version": "0.1.0"
+      "canonical_path": ".claude/skills/technical-debt-classification/SKILL.md",
+      "adapter_path": ".agents/skills/technical-debt-classification/SKILL.md",
+      "parity_type": "runtime-native",
+      "status": "native",
+      "notes": "Codex-native entry point.",
+      "version": "0.1.1"
     },
     {
       "canonical_name": "technical-roadmap-synthesis",
-      "canonical_path": ".claude/skills/strategy/technical-roadmap-synthesis.md",
-      "adapter_path": "adapters/codex/catalogs/skills.md",
-      "parity_type": "canonical-reference",
-      "status": "mapped",
-      "notes": "Resolved through the generated catalog to the canonical source.",
-      "version": "0.1.0"
+      "canonical_path": ".claude/skills/technical-roadmap-synthesis/SKILL.md",
+      "adapter_path": ".agents/skills/technical-roadmap-synthesis/SKILL.md",
+      "parity_type": "runtime-native",
+      "status": "native",
+      "notes": "Codex-native entry point.",
+      "version": "0.1.1"
     },
     {
       "canonical_name": "test-strategy-design",
-      "canonical_path": ".claude/skills/testing/test-strategy-design.md",
-      "adapter_path": "adapters/codex/catalogs/skills.md",
-      "parity_type": "canonical-reference",
-      "status": "mapped",
-      "notes": "Resolved through the generated catalog to the canonical source.",
-      "version": "0.1.0"
+      "canonical_path": ".claude/skills/test-strategy-design/SKILL.md",
+      "adapter_path": ".agents/skills/test-strategy-design/SKILL.md",
+      "parity_type": "runtime-native",
+      "status": "native",
+      "notes": "Codex-native entry point.",
+      "version": "0.1.1"
     },
     {
       "canonical_name": "threat-modeling",
-      "canonical_path": ".claude/skills/security/threat-modeling.md",
-      "adapter_path": "adapters/codex/catalogs/skills.md",
-      "parity_type": "canonical-reference",
-      "status": "mapped",
-      "notes": "Resolved through the generated catalog to the canonical source.",
-      "version": "0.1.0"
+      "canonical_path": ".claude/skills/threat-modeling/SKILL.md",
+      "adapter_path": ".agents/skills/threat-modeling/SKILL.md",
+      "parity_type": "runtime-native",
+      "status": "native",
+      "notes": "Codex-native entry point.",
+      "version": "0.1.1"
     },
     {
       "canonical_name": "universal-runtime-contract-design",
-      "canonical_path": ".claude/skills/runtime/universal-runtime-contract-design.md",
-      "adapter_path": "adapters/codex/catalogs/skills.md",
-      "parity_type": "canonical-reference",
-      "status": "mapped",
-      "notes": "Resolved through the generated catalog to the canonical source.",
-      "version": "0.1.0"
+      "canonical_path": ".claude/skills/universal-runtime-contract-design/SKILL.md",
+      "adapter_path": ".agents/skills/universal-runtime-contract-design/SKILL.md",
+      "parity_type": "runtime-native",
+      "status": "native",
+      "notes": "Codex-native entry point.",
+      "version": "0.1.1"
     },
     {
       "canonical_name": "version-migration-planning",
-      "canonical_path": ".claude/skills/migration/version-migration-planning.md",
-      "adapter_path": "adapters/codex/catalogs/skills.md",
-      "parity_type": "canonical-reference",
-      "status": "mapped",
-      "notes": "Resolved through the generated catalog to the canonical source.",
-      "version": "0.1.0"
+      "canonical_path": ".claude/skills/version-migration-planning/SKILL.md",
+      "adapter_path": ".agents/skills/version-migration-planning/SKILL.md",
+      "parity_type": "runtime-native",
+      "status": "native",
+      "notes": "Codex-native entry point.",
+      "version": "0.1.1"
     },
     {
       "canonical_name": "version-transition-validation",
-      "canonical_path": ".claude/skills/runtime/version-transition-validation.md",
-      "adapter_path": "adapters/codex/catalogs/skills.md",
-      "parity_type": "canonical-reference",
-      "status": "mapped",
-      "notes": "Resolved through the generated catalog to the canonical source.",
-      "version": "0.1.0"
+      "canonical_path": ".claude/skills/version-transition-validation/SKILL.md",
+      "adapter_path": ".agents/skills/version-transition-validation/SKILL.md",
+      "parity_type": "runtime-native",
+      "status": "native",
+      "notes": "Codex-native entry point.",
+      "version": "0.1.1"
     },
     {
       "canonical_name": "workstream-decomposition",
-      "canonical_path": ".claude/skills/runtime/workstream-decomposition.md",
-      "adapter_path": "adapters/codex/catalogs/skills.md",
-      "parity_type": "canonical-reference",
-      "status": "mapped",
-      "notes": "Resolved through the generated catalog to the canonical source.",
-      "version": "0.1.0"
+      "canonical_path": ".claude/skills/workstream-decomposition/SKILL.md",
+      "adapter_path": ".agents/skills/workstream-decomposition/SKILL.md",
+      "parity_type": "runtime-native",
+      "status": "native",
+      "notes": "Codex-native entry point.",
+      "version": "0.1.1"
     }
   ]
 }

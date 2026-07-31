@@ -2,13 +2,18 @@ from __future__ import annotations
 
 import hashlib
 import json
+import os
 import subprocess
 import sys
 from pathlib import Path
 from zipfile import ZipFile
 
+import pytest
 
 ROOT = Path(__file__).resolve().parents[2]
+sys.path.insert(0, str(ROOT / "scripts"))
+
+from validate_release_artifacts import safe_path
 
 
 def run(script: str, *args: str, expected: int = 0) -> subprocess.CompletedProcess[str]:
@@ -171,3 +176,109 @@ def test_external_checksum_tampering_is_detected(tmp_path: Path) -> None:
         str(archive),
         expected=1,
     )
+
+
+def test_incremental_manifest_protects_replace_and_delete_bases(
+    tmp_path: Path,
+) -> None:
+    base, current = prepare_incremental_roots(tmp_path)
+    output = tmp_path / "dist"
+    archive = output / "atlas-framework-0.1.0-rc.1-incremental.zip"
+    run(
+        "build_incremental_release.py",
+        "--base",
+        str(base),
+        "--source-root",
+        str(current),
+        "--output-dir",
+        str(output),
+    )
+    with ZipFile(archive) as package:
+        root = package.namelist()[0].split("/", 1)[0]
+        manifest = json.loads(
+            package.read(f"{root}/PATCH-MANIFEST.json").decode("utf-8")
+        )
+
+    protected = [
+        item
+        for item in manifest["files"]
+        if item["operation"] in {"replace", "delete"}
+    ]
+    assert protected
+    assert all(len(item["base_sha256"]) == 64 for item in protected)
+    assert len(manifest["base_content_manifest_sha256"]) == 64
+
+
+def test_git_ignored_files_are_excluded_from_release_source(
+    tmp_path: Path,
+) -> None:
+    source = tmp_path / "source"
+    source.mkdir()
+    subprocess.run(["git", "init", "-q"], cwd=source, check=True)
+    (source / "VERSION").write_text("1.0.0\n", encoding="utf-8")
+    (source / "README.md").write_text("# Example\n", encoding="utf-8")
+    (source / ".gitignore").write_text("local-only.txt\n", encoding="utf-8")
+    (source / "local-only.txt").write_text("secret local state\n", encoding="utf-8")
+    output = tmp_path / "dist"
+
+    run(
+        "build_release.py",
+        "--source-root",
+        str(source),
+        "--output-dir",
+        str(output),
+    )
+
+    archive = output / "atlas-framework-1.0.0-cumulative.zip"
+    with ZipFile(archive) as package:
+        assert not any(
+            name.endswith("/local-only.txt") for name in package.namelist()
+        )
+
+
+def test_release_source_rejects_symlinks(tmp_path: Path) -> None:
+    source = tmp_path / "source"
+    source.mkdir()
+    subprocess.run(["git", "init", "-q"], cwd=source, check=True)
+    (source / "VERSION").write_text("1.0.0\n", encoding="utf-8")
+    target = source / "target.txt"
+    target.write_text("target\n", encoding="utf-8")
+    link = source / "link.txt"
+    try:
+        os.symlink(target, link)
+    except (OSError, NotImplementedError):
+        pytest.skip("Symlinks are unavailable in this environment")
+
+    result = subprocess.run(
+        [
+            sys.executable,
+            str(ROOT / "scripts" / "build_release.py"),
+            "--source-root",
+            str(source),
+            "--output-dir",
+            str(tmp_path / "dist"),
+        ],
+        cwd=ROOT,
+        capture_output=True,
+        text=True,
+    )
+
+    assert result.returncode != 0
+    assert "cannot contain symlink" in result.stdout + result.stderr
+
+
+@pytest.mark.parametrize(
+    "value",
+    [
+        "../escape",
+        "..\\escape",
+        "/absolute",
+        "\\\\server\\share",
+        "C:\\absolute",
+        "directory\\file.txt",
+    ],
+)
+def test_release_validator_rejects_cross_platform_unsafe_paths(
+    value: str,
+) -> None:
+    assert safe_path(value) is False

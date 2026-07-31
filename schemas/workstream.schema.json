@@ -2,6 +2,67 @@
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "title": "workstream.schema.json",
   "type": "object",
+  "$defs": {
+    "stringArray": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    }
+  },
+  "properties": {
+    "workstream_id": {
+      "type": "string",
+      "pattern": "^ws-[A-Za-z0-9._-]+$"
+    },
+    "task_id": {
+      "type": "string",
+      "pattern": "^task-[A-Za-z0-9._-]+$"
+    },
+    "summary": {
+      "type": "string",
+      "minLength": 1
+    },
+    "runtime": {
+      "type": "string",
+      "minLength": 1
+    },
+    "owner_role": {
+      "type": "string",
+      "minLength": 1
+    },
+    "dependencies": {
+      "$ref": "#/$defs/stringArray"
+    },
+    "resource_claims": {
+      "$ref": "#/$defs/stringArray"
+    },
+    "validation": {
+      "$ref": "#/$defs/stringArray"
+    },
+    "reviews": {
+      "$ref": "#/$defs/stringArray"
+    },
+    "completion_criteria": {
+      "$ref": "#/$defs/stringArray"
+    },
+    "changed_files": {
+      "$ref": "#/$defs/stringArray"
+    },
+    "remaining_risks": {
+      "$ref": "#/$defs/stringArray"
+    },
+    "status": {
+      "enum": [
+        "planned",
+        "in-progress",
+        "completed",
+        "partial",
+        "blocked",
+        "failed"
+      ]
+    }
+  },
   "required": [
     "workstream_id",
     "task_id",
@@ -13,5 +74,5 @@
     "reviews",
     "completion_criteria"
   ],
-  "additionalProperties": true
+  "additionalProperties": false
 }

@@ -1,43 +1,475 @@
 {
-  "version": "0.1.0",
+  "version": "0.1.1",
   "routes": [
     {
       "task_type": "feature",
       "primary_role": "product-architect",
+      "supporting_roles": [
+        "qa-engineer"
+      ],
       "workflow": "feature-delivery",
+      "skills": [
+        "product-requirement-decomposition",
+        "regression-risk-analysis"
+      ],
       "reviews": [
         "architecture-review",
         "qa-review"
-      ]
+      ],
+      "validation": [
+        "acceptance-criteria",
+        "project-tests"
+      ],
+      "risk": "medium"
     },
     {
       "task_type": "bug",
       "primary_role": "qa-engineer",
       "workflow": "bug-fix",
+      "skills": [
+        "regression-risk-analysis"
+      ],
       "reviews": [
         "qa-review"
-      ]
+      ],
+      "validation": [
+        "reproduction",
+        "regression-tests"
+      ],
+      "risk": "medium"
     },
     {
       "task_type": "security",
       "primary_role": "security-engineer",
       "workflow": "threat-modeling",
+      "skills": [
+        "threat-modeling"
+      ],
       "reviews": [
         "security-review"
-      ]
+      ],
+      "validation": [
+        "security-tests",
+        "residual-risk"
+      ],
+      "risk": "high"
     },
     {
       "task_type": "release",
       "primary_role": "release-manager",
       "workflow": "release-governance",
+      "supporting_roles": [
+        "release-integrity-engineer"
+      ],
+      "skills": [
+        "release-integrity-verification"
+      ],
       "reviews": [
         "package-integrity-review",
         "stability-review"
-      ]
+      ],
+      "validation": [
+        "full-validation",
+        "artifact-integrity",
+        "rollback"
+      ],
+      "risk": "high"
+    },
+    {
+      "task_type": "refactor",
+      "primary_role": "technical-debt-steward",
+      "workflow": "refactoring",
+      "skills": [
+        "technical-debt-classification",
+        "regression-risk-analysis"
+      ],
+      "reviews": [
+        "architecture-review",
+        "qa-review"
+      ],
+      "risk": "medium"
+    },
+    {
+      "task_type": "migration",
+      "primary_role": "migration-architect",
+      "workflow": "database-migration",
+      "skills": [
+        "database-migration-analysis",
+        "version-migration-planning"
+      ],
+      "reviews": [
+        "migration-review",
+        "qa-review"
+      ],
+      "risk": "high"
+    },
+    {
+      "task_type": "dependency",
+      "primary_role": "dependency-manager",
+      "workflow": "dependency-upgrade",
+      "skills": [
+        "dependency-impact-analysis",
+        "dependency-graph-analysis"
+      ],
+      "reviews": [
+        "security-review",
+        "qa-review"
+      ],
+      "risk": "medium"
+    },
+    {
+      "task_type": "documentation",
+      "primary_role": "documentation-architect",
+      "workflow": "documentation-consolidation",
+      "skills": [
+        "documentation-information-architecture"
+      ],
+      "reviews": [
+        "documentation-review"
+      ],
+      "risk": "low"
+    },
+    {
+      "task_type": "architecture",
+      "primary_role": "enterprise-architect",
+      "workflow": "architecture-portfolio",
+      "skills": [
+        "architecture-assessment",
+        "adr-authoring"
+      ],
+      "reviews": [
+        "architecture-review",
+        "governance-review"
+      ],
+      "risk": "high"
+    },
+    {
+      "task_type": "performance",
+      "primary_role": "performance-engineer",
+      "workflow": "system-modernization",
+      "skills": [
+        "performance-budget-analysis"
+      ],
+      "reviews": [
+        "performance-review",
+        "qa-review"
+      ],
+      "risk": "medium"
+    },
+    {
+      "task_type": "data",
+      "primary_role": "data-engineer",
+      "workflow": "database-migration",
+      "skills": [
+        "database-migration-analysis"
+      ],
+      "reviews": [
+        "architecture-review",
+        "privacy-review"
+      ],
+      "risk": "high"
+    },
+    {
+      "task_type": "ai",
+      "primary_role": "ai-engineer",
+      "workflow": "ai-feature-delivery",
+      "skills": [
+        "ai-system-design",
+        "prompt-model-evaluation"
+      ],
+      "reviews": [
+        "ai-system-review",
+        "security-review"
+      ],
+      "risk": "high"
+    },
+    {
+      "task_type": "mobile",
+      "primary_role": "mobile-engineer",
+      "workflow": "mobile-feature",
+      "skills": [
+        "mobile-architecture-assessment"
+      ],
+      "reviews": [
+        "architecture-review",
+        "qa-review"
+      ],
+      "risk": "medium"
+    },
+    {
+      "task_type": "integration",
+      "primary_role": "integration-engineer",
+      "workflow": "integration-onboarding",
+      "skills": [
+        "integration-contract-mapping"
+      ],
+      "reviews": [
+        "integration-review",
+        "security-review"
+      ],
+      "risk": "high"
+    },
+    {
+      "task_type": "privacy",
+      "primary_role": "privacy-engineer",
+      "workflow": "privacy-review",
+      "skills": [
+        "privacy-impact-assessment"
+      ],
+      "reviews": [
+        "privacy-review",
+        "compliance-review"
+      ],
+      "risk": "high"
+    },
+    {
+      "task_type": "incident",
+      "primary_role": "reliability-engineer",
+      "workflow": "incident-response",
+      "skills": [
+        "incident-triage"
+      ],
+      "reviews": [
+        "operations-review",
+        "security-review"
+      ],
+      "risk": "high"
+    },
+    {
+      "task_type": "infrastructure",
+      "primary_role": "devops-engineer",
+      "workflow": "ci-governance",
+      "skills": [
+        "infrastructure-change-assessment"
+      ],
+      "reviews": [
+        "automation-review",
+        "security-review"
+      ],
+      "risk": "high"
+    },
+    {
+      "task_type": "adoption",
+      "primary_role": "adoption-architect",
+      "workflow": "framework-adoption",
+      "skills": [
+        "project-adoption-assessment"
+      ],
+      "reviews": [
+        "adoption-review"
+      ],
+      "risk": "medium"
+    },
+    {
+      "task_type": "audit",
+      "primary_role": "technical-auditor",
+      "workflow": "technical-audit",
+      "skills": [
+        "architecture-audit"
+      ],
+      "reviews": [
+        "technical-audit-review"
+      ],
+      "risk": "medium"
+    },
+    {
+      "task_type": "testing",
+      "primary_role": "test-automation-engineer",
+      "workflow": "test-automation",
+      "skills": [
+        "test-strategy-design",
+        "smoke-test-design"
+      ],
+      "reviews": [
+        "test-automation-review",
+        "qa-review"
+      ],
+      "risk": "medium"
+    },
+    {
+      "task_type": "localization",
+      "primary_role": "localization-engineer",
+      "workflow": "localization-delivery",
+      "skills": [
+        "localization-readiness-assessment"
+      ],
+      "reviews": [
+        "localization-review"
+      ],
+      "risk": "low"
+    },
+    {
+      "task_type": "analytics",
+      "primary_role": "analytics-engineer",
+      "workflow": "analytics-implementation",
+      "skills": [
+        "event-taxonomy-design"
+      ],
+      "reviews": [
+        "analytics-review",
+        "privacy-review"
+      ],
+      "risk": "medium"
+    },
+    {
+      "task_type": "design-system",
+      "primary_role": "design-system-engineer",
+      "workflow": "design-system-contribution",
+      "skills": [
+        "design-token-architecture",
+        "accessibility-audit"
+      ],
+      "reviews": [
+        "design-system-review",
+        "ux-review"
+      ],
+      "risk": "medium"
+    },
+    {
+      "task_type": "cost",
+      "primary_role": "finops-engineer",
+      "workflow": "finops-optimization",
+      "skills": [
+        "cloud-cost-analysis"
+      ],
+      "reviews": [
+        "finops-review"
+      ],
+      "risk": "medium"
+    },
+    {
+      "task_type": "continuity",
+      "primary_role": "session-continuity-engineer",
+      "workflow": "cross-session-recovery",
+      "skills": [
+        "resume-packet-assembly",
+        "continuity-reconciliation"
+      ],
+      "reviews": [
+        "session-continuity-review",
+        "resume-packet-review"
+      ],
+      "risk": "medium"
+    },
+    {
+      "task_type": "parallel",
+      "primary_role": "parallel-execution-architect",
+      "workflow": "parallel-execution",
+      "skills": [
+        "workstream-decomposition",
+        "resource-claim-design"
+      ],
+      "reviews": [
+        "parallel-execution-review",
+        "merge-readiness-review"
+      ],
+      "risk": "high"
+    },
+    {
+      "task_type": "policy",
+      "primary_role": "policy-enforcement-architect",
+      "workflow": "policy-evaluation",
+      "skills": [
+        "policy-rule-design",
+        "policy-exception-handling"
+      ],
+      "reviews": [
+        "policy-compliance-review"
+      ],
+      "risk": "high"
+    },
+    {
+      "task_type": "runtime",
+      "primary_role": "runtime-adapter-engineer",
+      "workflow": "runtime-adapter",
+      "skills": [
+        "runtime-adapter-mapping",
+        "runtime-semantic-parity"
+      ],
+      "reviews": [
+        "runtime-adapter-review",
+        "runtime-parity-review"
+      ],
+      "risk": "high"
+    },
+    {
+      "task_type": "memory",
+      "primary_role": "memory-governance-architect",
+      "workflow": "memory-drift-audit",
+      "skills": [
+        "memory-drift-analysis",
+        "source-of-truth-validation"
+      ],
+      "reviews": [
+        "memory-governance-review",
+        "source-of-truth-review"
+      ],
+      "risk": "medium"
+    },
+    {
+      "task_type": "product",
+      "primary_role": "product-manager",
+      "workflow": "product-discovery",
+      "skills": [
+        "product-requirement-decomposition"
+      ],
+      "reviews": [
+        "product-review",
+        "ux-review"
+      ],
+      "risk": "medium"
+    },
+    {
+      "task_type": "compatibility",
+      "primary_role": "compatibility-engineer",
+      "workflow": "compatibility-validation",
+      "skills": [
+        "compatibility-matrix-analysis",
+        "semantic-compatibility-verification"
+      ],
+      "reviews": [
+        "compatibility-review"
+      ],
+      "risk": "high"
+    },
+    {
+      "task_type": "deprecation",
+      "primary_role": "deprecation-manager",
+      "workflow": "deprecation-lifecycle",
+      "skills": [
+        "deprecation-planning"
+      ],
+      "reviews": [
+        "deprecation-review",
+        "compatibility-review"
+      ],
+      "risk": "high"
+    },
+    {
+      "task_type": "upgrade",
+      "primary_role": "stability-engineer",
+      "workflow": "framework-upgrade",
+      "skills": [
+        "version-transition-validation",
+        "version-migration-planning"
+      ],
+      "reviews": [
+        "stability-review",
+        "migration-review"
+      ],
+      "risk": "high"
     }
   ],
   "fallback": {
+    "task_type": "other",
     "primary_role": "orchestrator",
-    "workflow": "default"
+    "workflow": "default",
+    "reviews": [
+      "repository-review"
+    ],
+    "validation": [
+      "project-appropriate-validation"
+    ],
+    "risk": "medium"
   }
 }

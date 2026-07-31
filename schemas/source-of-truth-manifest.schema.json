@@ -2,9 +2,52 @@
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "title": "source-of-truth-manifest.schema.json",
   "type": "object",
+  "$defs": {
+    "source": {
+      "type": "object",
+      "properties": {
+        "source": {
+          "type": "string",
+          "minLength": 1
+        },
+        "type": {
+          "enum": [
+            "file",
+            "json",
+            "directory"
+          ]
+        },
+        "optional": {
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "source",
+        "type"
+      ],
+      "additionalProperties": false
+    }
+  },
+  "properties": {
+    "framework_version": {
+      "type": "string",
+      "pattern": "^\\d+\\.\\d+\\.\\d+(?:-[0-9A-Za-z.-]+)?$"
+    },
+    "domains": {
+      "type": "object",
+      "description": "Extensible map of authoritative fact domains to controlled source specifications.",
+      "minProperties": 1,
+      "propertyNames": {
+        "pattern": "^[a-z][a-z0-9_]*$"
+      },
+      "additionalProperties": {
+        "$ref": "#/$defs/source"
+      }
+    }
+  },
   "required": [
     "framework_version",
     "domains"
   ],
-  "additionalProperties": true
+  "additionalProperties": false
 }

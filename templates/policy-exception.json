@@ -1,10 +1,12 @@
 {
   "exception_id": "exception-example",
-  "policy_id": "",
-  "scope": "",
-  "reason": "",
-  "owner": "",
-  "expires_at": "",
-  "compensating_controls": [],
+  "policy_id": "atlas.version.consistency",
+  "scope": "example-project",
+  "reason": "A temporary compatibility constraint requires reviewed deviation.",
+  "owner": "governance-steward",
+  "expires_at": "2099-12-31T23:59:59Z",
+  "compensating_controls": [
+    "Run version consistency validation before every merge."
+  ],
   "status": "proposed"
 }

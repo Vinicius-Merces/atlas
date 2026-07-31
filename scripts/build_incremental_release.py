@@ -7,6 +7,7 @@ from pathlib import Path, PurePosixPath
 
 from release_utils import (
     canonical_release_bytes,
+    content_manifest,
     is_release_path,
     sha256_bytes,
     source_payload,
@@ -93,15 +94,18 @@ Target version: `{to_version}`
 
 1. Confirm the installed `VERSION` exactly matches the base version.
 2. Extract this archive without renaming its versioned root.
-3. Copy files listed in `FILES-TO-ADD.md`.
-4. Copy and overwrite files listed in `FILES-TO-REPLACE.md`.
-5. Map every `CLAUDE-DIRECTORY/...` path to `.claude/...`.
-6. Remove only target paths explicitly listed in `FILES-TO-DELETE.md`.
-7. Confirm `VERSION` matches the target version.
-8. Run the documented validators if desired.
+3. Review `PATCH-MANIFEST.json`; stop if an `add` target already exists or the
+   current SHA-256 of a `replace`/`delete` target differs from `base_sha256`.
+4. Copy files listed in `FILES-TO-ADD.md`.
+5. Copy and overwrite files listed in `FILES-TO-REPLACE.md`.
+6. Map every `CLAUDE-DIRECTORY/...` path to `.claude/...`.
+7. Remove only target paths explicitly listed in `FILES-TO-DELETE.md`.
+8. Confirm `VERSION` matches the target version.
+9. Run `manual_deploy_preflight.py` before copying when Python is available.
 
 No script is required to apply this patch. Absence from the archive never
-authorizes deletion.
+authorizes deletion, and a base-content mismatch requires an explicit merge
+instead of overwrite.
 """.encode("utf-8")
 
 
@@ -139,15 +143,16 @@ def main() -> None:
             packaged = package_path(target)
             content = current_payload[target]
             package_payload[packaged] = content
-            operations.append(
-                {
-                    "path": target,
-                    "target_path": target,
-                    "package_path": packaged,
-                    "operation": operation,
-                    "sha256": sha256_bytes(content),
-                }
-            )
+            item = {
+                "path": target,
+                "target_path": target,
+                "package_path": packaged,
+                "operation": operation,
+                "sha256": sha256_bytes(content),
+            }
+            if operation == "replace":
+                item["base_sha256"] = sha256_bytes(base_payload[target])
+            operations.append(item)
     for target in deleted:
         operations.append(
             {
@@ -155,6 +160,7 @@ def main() -> None:
                 "target_path": target,
                 "package_path": "",
                 "operation": "delete",
+                "base_sha256": sha256_bytes(base_payload[target]),
             }
         )
     operations.sort(key=lambda item: (item["target_path"], item["operation"]))
@@ -164,6 +170,9 @@ def main() -> None:
         "deployment_mode": "manual-copy-supported",
         "from_version": from_version,
         "to_version": to_version,
+        "base_content_manifest_sha256": sha256_bytes(
+            content_manifest(base_payload)
+        ),
         "directory_mappings": {"CLAUDE-DIRECTORY": ".claude"},
         "added_count": len(added),
         "modified_count": len(modified),

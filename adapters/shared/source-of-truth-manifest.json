@@ -1,5 +1,5 @@
 {
-  "framework_version": "0.1.0",
+  "framework_version": "0.1.1",
   "domains": {
     "framework_version": {
       "source": "VERSION",
@@ -14,11 +14,8 @@
       "type": "json"
     },
     "architecture_decisions": {
-      "source": "docs/adr/",
-      "type": "directory",
-      "fallbacks": [
-        "examples/adr/"
-      ]
+      "source": "framework/adr/",
+      "type": "directory"
     },
     "project_memory": {
       "source": ".claude/memory/",

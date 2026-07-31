@@ -2,10 +2,47 @@
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "title": "ATLAS Context Pack Manifest",
   "type": "object",
+  "properties": {
+    "task_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "context_pack": {
+      "type": "string",
+      "minLength": 1
+    },
+    "sources": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      },
+      "uniqueItems": true
+    },
+    "source_hashes": {
+      "type": "object",
+      "additionalProperties": {
+        "type": "string",
+        "pattern": "^[a-f0-9]{64}$"
+      }
+    },
+    "missing_sources": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      },
+      "uniqueItems": true
+    },
+    "selection": {
+      "type": "string",
+      "minLength": 1
+    }
+  },
   "required": [
     "task_id",
     "context_pack",
     "sources"
   ],
-  "additionalProperties": true
+  "additionalProperties": false
 }

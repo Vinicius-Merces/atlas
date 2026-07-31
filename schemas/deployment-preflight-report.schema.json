@@ -1,7 +1,50 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "title": "deployment-preflight-report.schema.json",
+  "title": "ATLAS Deployment Preflight Report",
   "type": "object",
+  "properties": {
+    "from_version": {
+      "type": "string",
+      "minLength": 1
+    },
+    "to_version": {
+      "type": "string",
+      "minLength": 1
+    },
+    "package": {
+      "type": "string"
+    },
+    "checks": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "check": {
+            "type": "string",
+            "minLength": 1
+          },
+          "passed": {
+            "type": "boolean"
+          },
+          "expected": {},
+          "actual": {},
+          "findings": {}
+        },
+        "required": [
+          "check",
+          "passed"
+        ],
+        "additionalProperties": false
+      }
+    },
+    "outcome": {
+      "enum": [
+        "pending",
+        "passed",
+        "blocked"
+      ]
+    }
+  },
   "required": [
     "from_version",
     "to_version",
@@ -9,5 +52,5 @@
     "checks",
     "outcome"
   ],
-  "additionalProperties": true
+  "additionalProperties": false
 }

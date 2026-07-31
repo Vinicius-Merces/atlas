@@ -2,6 +2,68 @@
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "title": "ATLAS Execution Checkpoint",
   "type": "object",
+  "$defs": {
+    "stringArray": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    }
+  },
+  "properties": {
+    "checkpoint_id": {
+      "type": "string",
+      "pattern": "^checkpoint-[A-Za-z0-9._-]+$"
+    },
+    "task_id": {
+      "type": "string",
+      "pattern": "^task-[A-Za-z0-9._-]+$"
+    },
+    "runtime": {
+      "type": "string",
+      "minLength": 1
+    },
+    "created_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "state": {
+      "enum": [
+        "draft",
+        "routed",
+        "context-ready",
+        "executing",
+        "completed",
+        "partial",
+        "blocked",
+        "failed"
+      ]
+    },
+    "completed_steps": {
+      "$ref": "#/$defs/stringArray"
+    },
+    "pending_steps": {
+      "$ref": "#/$defs/stringArray"
+    },
+    "changed_files": {
+      "$ref": "#/$defs/stringArray"
+    },
+    "validation": {
+      "$ref": "#/$defs/stringArray"
+    },
+    "reviews": {
+      "$ref": "#/$defs/stringArray"
+    },
+    "assumptions": {
+      "$ref": "#/$defs/stringArray"
+    },
+    "remaining_risks": {
+      "$ref": "#/$defs/stringArray"
+    },
+    "context_pack": {
+      "type": "string"
+    }
+  },
   "required": [
     "checkpoint_id",
     "task_id",
@@ -15,5 +77,5 @@
     "assumptions",
     "remaining_risks"
   ],
-  "additionalProperties": true
+  "additionalProperties": false
 }

@@ -1,5 +1,51 @@
 # Changelog
 
+## 0.1.1
+
+### Added
+
+- Native Claude Code skills under `.claude/skills/*/SKILL.md` and generated
+  Codex-native wrappers under `.agents/skills/*/SKILL.md`
+- Portable `quick`, `full`, and `release` validation profiles
+- Read-only adoption planner for integrating ATLAS into existing repositories
+- Executable runtime golden path and execution-result recorder
+- Full contract-conformance reporting and strict lifecycle schema validation
+- Base-content hashes and local-customization conflict detection for
+  incremental patches
+- Schema-aware deployment receipts and audit-bundle integrity verification
+
+### Changed
+
+- All agents, skills, workflows, reviews, and commands now conform to their
+  canonical contracts
+- Task routing now covers the registered engineering domains instead of four
+  generic routes
+- Context packs and execution plans derive canonical roles, workflows, skills,
+  reviews, runtime declarations, affected paths, and acceptance criteria
+- Claude Code bootstrap now uses root `CLAUDE.md`; Codex retains `AGENTS.md`
+  and receives synchronized native skill wrappers
+- Release source enumeration honors Git ignored state and rejects symlinks
+- CI uses the portable release profile and validates native skill drift
+
+### Fixed
+
+- Canonical ADR resolution and continuity builders no longer accept fallback
+  sources or confuse templates/examples with live task state
+- Schema validators now use Draft 2020-12 with actionable JSON paths
+- Runtime validators cannot be bypassed with optimized Python
+- Incremental preflight blocks overwriting existing additions and modified or
+  missing replacement/deletion targets
+- Archive path validation rejects POSIX, Windows-drive, UNC, backslash, and
+  traversal escapes
+- Manual deployment receipts no longer claim success by default
+
+### Validation
+
+- Strict conformance reports zero violations across all registered assets
+- Full and release profiles, reproducible artifacts, clean installation,
+  incremental upgrade, recovery, conflict, tamper, and cross-platform path
+  simulations are required for publication
+
 ## 0.1.0
 
 ### Added

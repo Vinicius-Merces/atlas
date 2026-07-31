@@ -2,6 +2,64 @@
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "title": "ATLAS Runtime Handoff Manifest",
   "type": "object",
+  "$defs": {
+    "stringArray": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    }
+  },
+  "properties": {
+    "handoff_id": {
+      "type": "string",
+      "pattern": "^handoff-[A-Za-z0-9._-]+$"
+    },
+    "task_id": {
+      "type": "string",
+      "pattern": "^task-[A-Za-z0-9._-]+$"
+    },
+    "from_runtime": {
+      "type": "string",
+      "minLength": 1
+    },
+    "to_runtime": {
+      "type": "string",
+      "minLength": 1
+    },
+    "created_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "checkpoint": {
+      "type": "string",
+      "minLength": 1
+    },
+    "context_pack": {
+      "type": "string"
+    },
+    "completed_steps": {
+      "$ref": "#/$defs/stringArray"
+    },
+    "pending_steps": {
+      "$ref": "#/$defs/stringArray"
+    },
+    "changed_files": {
+      "$ref": "#/$defs/stringArray"
+    },
+    "validation": {
+      "$ref": "#/$defs/stringArray"
+    },
+    "reviews": {
+      "$ref": "#/$defs/stringArray"
+    },
+    "assumptions": {
+      "$ref": "#/$defs/stringArray"
+    },
+    "remaining_risks": {
+      "$ref": "#/$defs/stringArray"
+    }
+  },
   "required": [
     "handoff_id",
     "task_id",
@@ -16,5 +74,5 @@
     "assumptions",
     "remaining_risks"
   ],
-  "additionalProperties": true
+  "additionalProperties": false
 }

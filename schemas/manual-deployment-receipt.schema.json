@@ -1,7 +1,93 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "title": "manual-deployment-receipt.schema.json",
+  "title": "ATLAS Manual Deployment Receipt",
   "type": "object",
+  "$defs": {
+    "stringArray": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "optionalSha256": {
+      "type": "string",
+      "anyOf": [
+        {
+          "const": ""
+        },
+        {
+          "pattern": "^[0-9a-f]{64}$"
+        }
+      ]
+    }
+  },
+  "properties": {
+    "receipt_id": {
+      "type": "string",
+      "pattern": "^deploy-[A-Za-z0-9._-]+$"
+    },
+    "from_version": {
+      "type": "string",
+      "minLength": 1
+    },
+    "to_version": {
+      "type": "string",
+      "minLength": 1
+    },
+    "patch": {
+      "type": "string"
+    },
+    "patch_manifest_sha256": {
+      "$ref": "#/$defs/optionalSha256"
+    },
+    "preflight_report": {
+      "type": "string"
+    },
+    "preflight_sha256": {
+      "$ref": "#/$defs/optionalSha256"
+    },
+    "source_commit": {
+      "type": "string"
+    },
+    "release_url": {
+      "type": "string"
+    },
+    "applied_at": {
+      "type": "string",
+      "anyOf": [
+        {
+          "const": ""
+        },
+        {
+          "format": "date-time"
+        }
+      ]
+    },
+    "files_added": {
+      "$ref": "#/$defs/stringArray"
+    },
+    "files_replaced": {
+      "$ref": "#/$defs/stringArray"
+    },
+    "files_deleted": {
+      "$ref": "#/$defs/stringArray"
+    },
+    "validation": {
+      "$ref": "#/$defs/stringArray"
+    },
+    "operator_notes": {
+      "$ref": "#/$defs/stringArray"
+    },
+    "status": {
+      "enum": [
+        "pending",
+        "applied",
+        "simulated",
+        "failed",
+        "rolled-back"
+      ]
+    }
+  },
   "required": [
     "receipt_id",
     "from_version",
@@ -14,5 +100,5 @@
     "validation",
     "status"
   ],
-  "additionalProperties": true
+  "additionalProperties": false
 }

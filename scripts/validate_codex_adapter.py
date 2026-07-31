@@ -37,6 +37,7 @@ def main() -> None:
         CODEX / "workflows",
         CODEX / "reviews",
         ROOT / "AGENTS.md",
+        ROOT / ".agents" / "skills",
     ]
 
     for path in required:
@@ -86,6 +87,16 @@ def main() -> None:
     if sync.returncode:
         details = sync.stdout.strip() or sync.stderr.strip()
         fail(f"Codex generated artifacts are stale:\n{details}")
+
+    native_skills = subprocess.run(
+        [sys.executable, "scripts/sync_native_skills.py", "--check"],
+        cwd=ROOT,
+        capture_output=True,
+        text=True,
+    )
+    if native_skills.returncode:
+        details = native_skills.stdout.strip() or native_skills.stderr.strip()
+        fail(f"Native runtime skills are stale:\n{details}")
 
     manifest = json.loads(
         (CODEX / "generated" / "catalog-manifest.json").read_text(encoding="utf-8")
@@ -141,6 +152,19 @@ def main() -> None:
     ]:
         if canonical_reference not in agents_text:
             fail(f"AGENTS.md does not reference {canonical_reference}")
+
+    orchestrator_adapter = (
+        CODEX / "agents" / "orchestrator.md"
+    ).read_text(encoding="utf-8")
+    if ".claude/agents/orchestrator.md" not in orchestrator_adapter:
+        fail("Codex orchestrator does not reference the canonical agent")
+    for stale_reference in [
+        ".claude/orchestrator.md",
+        "../../.claude/",
+        "../../framework/",
+    ]:
+        if stale_reference in orchestrator_adapter:
+            fail(f"Codex orchestrator contains stale path: {stale_reference}")
 
     print("Codex adapter validation passed.")
 

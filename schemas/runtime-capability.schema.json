@@ -2,6 +2,52 @@
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "title": "runtime-capability.schema.json",
   "type": "object",
+  "properties": {
+    "runtime": {
+      "type": "string",
+      "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$"
+    },
+    "version": {
+      "type": "string",
+      "pattern": "^\\d+\\.\\d+\\.\\d+(?:-[0-9A-Za-z.-]+)?$"
+    },
+    "support": {
+      "enum": [
+        "experimental",
+        "beta-supported",
+        "supported",
+        "deprecated",
+        "unsupported"
+      ]
+    },
+    "canonical": {
+      "type": "boolean"
+    },
+    "contract": {
+      "type": "string",
+      "minLength": 1
+    },
+    "capabilities": {
+      "type": "array",
+      "minItems": 1,
+      "uniqueItems": true,
+      "items": {
+        "type": "string",
+        "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$"
+      }
+    },
+    "implementation": {
+      "type": "string",
+      "minLength": 1
+    },
+    "limitations": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      }
+    }
+  },
   "required": [
     "runtime",
     "version",
@@ -12,5 +58,5 @@
     "implementation",
     "limitations"
   ],
-  "additionalProperties": true
+  "additionalProperties": false
 }

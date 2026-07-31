@@ -2,11 +2,134 @@
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "title": "runtime-contract.schema.json",
   "type": "object",
+  "$defs": {
+    "path": {
+      "type": "string",
+      "minLength": 1
+    }
+  },
+  "properties": {
+    "version": {
+      "type": "string",
+      "pattern": "^\\d+\\.\\d+\\.\\d+(?:-[0-9A-Za-z.-]+)?$"
+    },
+    "contract": {
+      "const": "atlas-universal-runtime"
+    },
+    "required_capabilities": {
+      "type": "array",
+      "minItems": 1,
+      "uniqueItems": true,
+      "items": {
+        "type": "string",
+        "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$"
+      }
+    },
+    "shared_sources": {
+      "type": "object",
+      "description": "Extensible map of canonical source domains to repository paths.",
+      "minProperties": 1,
+      "propertyNames": {
+        "pattern": "^[a-z][a-z0-9_]*$"
+      },
+      "additionalProperties": {
+        "$ref": "#/$defs/path"
+      }
+    },
+    "task_envelope_schema": {
+      "$ref": "#/$defs/path"
+    },
+    "execution_result_schema": {
+      "$ref": "#/$defs/path"
+    },
+    "routing_tool": {
+      "$ref": "#/$defs/path"
+    },
+    "context_tool": {
+      "$ref": "#/$defs/path"
+    },
+    "checkpoint_schema": {
+      "$ref": "#/$defs/path"
+    },
+    "handoff_schema": {
+      "$ref": "#/$defs/path"
+    },
+    "continuation_schema": {
+      "$ref": "#/$defs/path"
+    },
+    "workstream_schema": {
+      "$ref": "#/$defs/path"
+    },
+    "resource_claim_schema": {
+      "$ref": "#/$defs/path"
+    },
+    "parallel_manifest_schema": {
+      "$ref": "#/$defs/path"
+    },
+    "project_brief_schema": {
+      "$ref": "#/$defs/path"
+    },
+    "session_brief_schema": {
+      "$ref": "#/$defs/path"
+    },
+    "resume_packet_schema": {
+      "$ref": "#/$defs/path"
+    },
+    "memory_drift_schema": {
+      "$ref": "#/$defs/path"
+    },
+    "reconciliation_schema": {
+      "$ref": "#/$defs/path"
+    },
+    "source_of_truth_manifest": {
+      "$ref": "#/$defs/path"
+    },
+    "evidence_record_schema": {
+      "$ref": "#/$defs/path"
+    },
+    "deployment_receipt_schema": {
+      "$ref": "#/$defs/path"
+    },
+    "audit_bundle_schema": {
+      "$ref": "#/$defs/path"
+    },
+    "policy_rule_schema": {
+      "$ref": "#/$defs/path"
+    },
+    "policy_report_schema": {
+      "$ref": "#/$defs/path"
+    },
+    "deployment_preflight_schema": {
+      "$ref": "#/$defs/path"
+    }
+  },
   "required": [
     "version",
     "contract",
     "required_capabilities",
-    "shared_sources"
+    "shared_sources",
+    "task_envelope_schema",
+    "execution_result_schema",
+    "routing_tool",
+    "context_tool",
+    "checkpoint_schema",
+    "handoff_schema",
+    "continuation_schema",
+    "workstream_schema",
+    "resource_claim_schema",
+    "parallel_manifest_schema",
+    "project_brief_schema",
+    "session_brief_schema",
+    "resume_packet_schema",
+    "memory_drift_schema",
+    "reconciliation_schema",
+    "source_of_truth_manifest",
+    "evidence_record_schema",
+    "deployment_receipt_schema",
+    "audit_bundle_schema",
+    "policy_rule_schema",
+    "policy_report_schema",
+    "deployment_preflight_schema"
   ],
-  "additionalProperties": true
+  "additionalProperties": false
 }

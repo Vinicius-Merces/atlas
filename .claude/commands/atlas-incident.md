@@ -4,7 +4,7 @@
 
 Coordinate incident triage, stabilization, recovery, and reporting.
 
-## Inputs
+## Accepted arguments
 
 - Symptoms
 - Impact
@@ -12,7 +12,13 @@ Coordinate incident triage, stabilization, recovery, and reporting.
 - Start time
 - Available telemetry
 
-## Execution
+## Preconditions
+
+- Run from the repository root with `AGENTS.md`, relevant memory, and canonical contracts available.
+- Confirm that referenced tasks, files, artifacts, or runtime state exist when the command depends on them.
+- Inspect repository status and obtain explicit authorization before any destructive or externally visible action.
+
+## Execution workflow
 
 1. Invoke incident triage.
 2. Assign reliability and domain owners.
@@ -21,7 +27,7 @@ Coordinate incident triage, stabilization, recovery, and reporting.
 5. Track recovery evidence.
 6. Prepare incident report and follow-up actions.
 
-## Output
+## Output format
 
 - Severity
 - Impact
@@ -30,3 +36,9 @@ Coordinate incident triage, stabilization, recovery, and reporting.
 - Mitigation
 - Remaining risk
 - Follow-up actions
+
+## Failure behavior
+
+- Stop before mutation when required context, authorization, or a mandatory precondition is missing.
+- Do not hide failed gates or claim completion, approval, deployment, or release without supporting evidence.
+- Report partial completion, the exact blocker, evidence already collected, pending scope, and the next safe action.

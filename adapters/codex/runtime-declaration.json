@@ -1,6 +1,6 @@
 {
   "runtime": "codex",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "support": "supported",
   "canonical": false,
   "contract": "../shared/runtime-contract.json",

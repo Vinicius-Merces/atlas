@@ -2,6 +2,57 @@
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "title": "execution-result.schema.json",
   "type": "object",
+  "$defs": {
+    "stringArray": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    }
+  },
+  "properties": {
+    "task_id": {
+      "type": "string",
+      "pattern": "^task-[A-Za-z0-9._-]+$"
+    },
+    "runtime": {
+      "type": "string",
+      "minLength": 1
+    },
+    "status": {
+      "enum": [
+        "completed",
+        "partial",
+        "blocked",
+        "failed"
+      ]
+    },
+    "summary": {
+      "type": "string",
+      "minLength": 1
+    },
+    "changed_files": {
+      "$ref": "#/$defs/stringArray"
+    },
+    "validation": {
+      "$ref": "#/$defs/stringArray"
+    },
+    "reviews": {
+      "$ref": "#/$defs/stringArray"
+    },
+    "findings": {
+      "$ref": "#/$defs/stringArray"
+    },
+    "assumptions": {
+      "$ref": "#/$defs/stringArray"
+    },
+    "remaining_risks": {
+      "$ref": "#/$defs/stringArray"
+    },
+    "knowledge_updates": {
+      "$ref": "#/$defs/stringArray"
+    }
+  },
   "required": [
     "task_id",
     "runtime",
@@ -13,5 +64,5 @@
     "assumptions",
     "remaining_risks"
   ],
-  "additionalProperties": true
+  "additionalProperties": false
 }

@@ -1,9 +1,11 @@
 # ATLAS Codex Runtime
 
-**Support:** Beta-supported compatibility runtime  
+**Support:** Supported compatibility runtime
 **Canonical source:** Claude Code implementation and shared ATLAS framework
 
 This adapter provides a functional Codex-oriented representation of ATLAS.
+Its generated maps preserve semantic parity; Codex still interprets canonical
+workflows, skills, and review gates through the task protocol.
 
 ## Structure
 

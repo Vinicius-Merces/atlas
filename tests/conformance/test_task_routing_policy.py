@@ -24,5 +24,8 @@ def test_task_routing_policy_resolves_registered_capabilities() -> None:
     valid_roles = set(registry["agents"]) | {registry["orchestrator"]}
     for route in routes:
         assert route["primary_role"] in valid_roles
+        assert set(route.get("supporting_roles", [])) <= valid_roles
         assert route["workflow"] in registry["workflows"]
+        assert set(route.get("skills", [])) <= set(registry["skills"])
         assert set(route.get("reviews", [])) <= set(registry["reviews"])
+        assert route.get("risk") in {"low", "medium", "high"}

@@ -7,10 +7,10 @@ sequence execution, enforce contracts, and synthesize delivery evidence.
 
 ## Shared sources
 
-- `../../.claude/orchestrator.md`
-- `../../.claude/contracts/`
-- `../../.claude/memory/`
-- `../../framework/`
+- `.claude/agents/orchestrator.md`
+- `.claude/contracts/`
+- `.claude/memory/`
+- `framework/`
 
 ## Required behavior
 

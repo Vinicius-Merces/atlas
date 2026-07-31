@@ -6,8 +6,23 @@ import subprocess
 import sys
 from pathlib import Path
 
+from scripts.evaluate_policies import (
+    deletion_safety,
+    hidden_directory_mapping,
+    manual_patch_base,
+)
+
 
 ROOT = Path(__file__).resolve().parents[2]
+LEGACY_ROOT_PACKAGE_FILES = {
+    "APPLY-PATCH.md",
+    "PATCH-MANIFEST.json",
+    "FILES-TO-ADD.md",
+    "FILES-TO-REPLACE.md",
+    "FILES-TO-DELETE.md",
+    "RECOVERY-MANIFEST.json",
+    "README-RECOVERY.md",
+}
 
 
 def prepare(root: Path, deletion_list: str) -> Path:
@@ -65,3 +80,18 @@ def test_explicit_deletion_satisfies_policy(tmp_path: Path) -> None:
     assert result.returncode == 0, result.stdout + result.stderr
     data = json.loads(report.read_text(encoding="utf-8"))
     assert data["summary"]["passed"] == 1
+
+
+def test_source_tree_does_not_embed_a_historical_release_package() -> None:
+    assert not [name for name in LEGACY_ROOT_PACKAGE_FILES if (ROOT / name).exists()]
+
+    for evaluator in (
+        hidden_directory_mapping,
+        deletion_safety,
+        manual_patch_base,
+    ):
+        passed, evidence, findings = evaluator(ROOT)
+        assert passed
+        assert not findings
+        assert evidence["applicable"] is False
+        assert evidence["evaluation_scope"] == "extracted-incremental-package"

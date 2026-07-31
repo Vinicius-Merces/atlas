@@ -2,6 +2,49 @@
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "title": "project-brief.schema.json",
   "type": "object",
+  "$defs": {
+    "stringArray": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      }
+    }
+  },
+  "properties": {
+    "framework_version": {
+      "type": "string",
+      "pattern": "^\\d+\\.\\d+\\.\\d+(?:-[0-9A-Za-z.-]+)?$"
+    },
+    "project_name": {
+      "type": "string",
+      "pattern": "^[A-Za-z0-9][A-Za-z0-9._-]*$"
+    },
+    "purpose": {
+      "type": "string"
+    },
+    "architecture": {
+      "type": "string"
+    },
+    "current_state": {
+      "type": "string"
+    },
+    "active_work": {
+      "$ref": "#/$defs/stringArray"
+    },
+    "decisions": {
+      "$ref": "#/$defs/stringArray"
+    },
+    "risks": {
+      "$ref": "#/$defs/stringArray"
+    },
+    "next_actions": {
+      "$ref": "#/$defs/stringArray"
+    },
+    "sources": {
+      "$ref": "#/$defs/stringArray"
+    }
+  },
   "required": [
     "framework_version",
     "project_name",
@@ -14,5 +57,5 @@
     "next_actions",
     "sources"
   ],
-  "additionalProperties": true
+  "additionalProperties": false
 }

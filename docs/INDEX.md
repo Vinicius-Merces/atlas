@@ -3,6 +3,7 @@
 ## Start here
 
 - [README](../README.md)
+- [Daily Quickstart](daily-quickstart.md)
 - [Installation](installation.md)
 - [Adoption Guide](adoption-guide.md)
 - [Operations Guide](operations-guide.md)
@@ -42,12 +43,13 @@
 - [Runtime Matrix](../compatibility/runtime-matrix.md)
 - [Claude/Codex Capability Matrix](../compatibility/claude-codex-capability-matrix.md)
 - [Support Policy](../compatibility/support-policy.md)
+- [Runtime Support Guide](beta-support-guide.md)
 
 ## Execution and continuity
 
 - [Task Routing](task-routing-guide.md)
 - [Context Packs](context-pack-guide.md)
-- [Runtime Execution](runtime-execution-guide.md)
+- [Runtime Execution and Golden Path](runtime-execution-guide.md)
 - [Runtime Handoff](runtime-handoff-guide.md)
 - [Task Recovery](task-recovery-guide.md)
 - [Cross-Session Continuity](cross-session-continuity-guide.md)
@@ -60,9 +62,9 @@
 - [Contract Stability](contract-stability-guide.md)
 - [Policy Enforcement](policy-enforcement-guide.md)
 - [Evidence Ledger](evidence-ledger-guide.md)
-- [Deployment Receipts](manual-deployment-receipt-guide.md)
-- [Deployment Preflight](manual-deployment-preflight-guide.md)
-- [Audit Bundles](audit-bundle-guide.md)
+- [Deployment Receipts and Status Evidence](manual-deployment-receipt-guide.md)
+- [Mandatory Deployment Preflight](manual-deployment-preflight-guide.md)
+- [Audit Bundles, Provenance, and Integrity](audit-bundle-guide.md)
 - [Project Health](project-health-guide.md)
 - [Technical Debt](technical-debt-guide.md)
 - [Deprecation](deprecation-guide.md)
@@ -74,12 +76,9 @@
 - [Manual Deployment Guide](manual-deployment-guide.md)
 - [Framework Upgrade Guide](framework-upgrade-guide.md)
 - [Release Guide](release-guide.md)
-- [Beta Readiness](beta-readiness-guide.md)
-- [Runtime Support](beta-support-guide.md)
 
 ## Adoption and specialized guides
 
-- [Beta Adoption](beta-adoption-guide.md)
 - [Blueprints](blueprint-guide.md)
 - [Reference Implementations](reference-implementation-guide.md)
 - [Automation](automation-guide.md)
@@ -92,6 +91,14 @@
 - [Enterprise Architecture](enterprise-architecture-guide.md)
 - [FinOps](finops-guide.md)
 - [Threat Modeling](threat-modeling-guide.md)
+
+## Historical prerelease guidance
+
+- [Beta Readiness](beta-readiness-guide.md)
+- [Beta Adoption](beta-adoption-guide.md)
+
+These documents describe the earlier prerelease lifecycle. Current runtime
+support is defined by the support policy and runtime matrix.
 
 ## Canonical reference paths
 
