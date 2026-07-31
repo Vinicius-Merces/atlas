@@ -1,0 +1,24 @@
+{
+  "name": "atlas-marketplace",
+  "owner": {
+    "name": "Vinicius Merces",
+    "url": "https://github.com/Vinicius-Merces/atlas"
+  },
+  "description": "ATLAS engineering operating framework: canonical agents, skills, commands, and review gates for AI-assisted software engineering.",
+  "plugins": [
+    {
+      "name": "atlas",
+      "source": "./.claude",
+      "description": "ATLAS: agents, skills, commands, contracts, and review gates for AI coding runtimes (Claude Code, Codex).",
+      "category": "workflow",
+      "keywords": [
+        "agents",
+        "framework",
+        "workflow",
+        "governance",
+        "multi-runtime"
+      ],
+      "strict": true
+    }
+  ]
+}
