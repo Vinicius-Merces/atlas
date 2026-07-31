@@ -5,6 +5,8 @@
   "promotion_basis": {
     "pull_request": "https://github.com/Vinicius-Merces/atlas/pull/1",
     "merge_commit": "6f8d82dc3241a923ea0ee0f81e1e02e50b45c521",
+    "rc_pull_request": "https://github.com/Vinicius-Merces/atlas/pull/2",
+    "rc_merge_commit": "0c7208a302d536f0ff00c949d5a6bdaa6c6c5a03",
     "hosted_ci": "passed-reported",
     "independent_review": "passed-reported"
   },

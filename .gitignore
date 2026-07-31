@@ -11,6 +11,9 @@ htmlcov/
 .venv/
 venv/
 
+# User-local editor recommendations
+.vscode/extensions.json
+
 # Built release artifacts
 dist/
 

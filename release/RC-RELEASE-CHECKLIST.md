@@ -22,8 +22,11 @@
 - `release/evidence/audit-bundle.json`
 - Pull request #1 and merge commit
   `6f8d82dc3241a923ea0ee0f81e1e02e50b45c521`
+- Pull request #2 and RC merge commit
+  `0c7208a302d536f0ff00c949d5a6bdaa6c6c5a03`
 
 GitHub-hosted CI and independent review for the finalized beta.12 source were
 reported as passed before pull request #1 merged. The RC promotion delta is
 limited to version, maturity, compatibility, release, evidence, and test
-generalization changes and is revalidated locally in full.
+generalization changes, was merged by pull request #2, and is revalidated
+locally in full.

@@ -48,21 +48,21 @@ were used. Pull request #1 supplied the independent external review gate.
 - Smoke: 5 passed
 - Contract: 12 passed
 - Codex: 16 passed
-- Conformance: 26 passed
-- Full suite: 63 passed
+- Conformance: 28 passed
+- Full suite: 65 passed
 - Evidence bundle: 4 records passed integrity verification
-- Incremental operations: 6 additions, 37 replacements, 0 deletions
+- Incremental operations: 7 additions, 40 replacements, 0 deletions
 - Cumulative, incremental, and recovery archives: validated, reproducible, and
   installed successfully
 
 Final archive SHA-256:
 
 - Cumulative:
-  `895c2d0007bde27e4fd8bd9caca56ae85de95ba8597f77e753b14902e33dde45`
+  `ca85cd7d9e82e3e8faacf0a900fb29f631cdeadf2b02a84e1180f4ee0d11fa64`
 - Incremental:
-  `7f40dc7bab539765451a4756526409cb5e9c0248bdecb5696c0fdb0dedfc3949`
+  `3c3bfc4f9b9c0ba80a9d3a19d6b81f87db6115fd6cf53d38c2cf456e96a6d31c`
 - Recovery:
-  `d3403d78390af4a01c09ae27ebae0a0405a93161b3193726f24cfa5a34da42e8`
+  `45bf9f79a2b3253ff6f1a8b244b66992be8250432356c208bc99b005fc6ee222`
 
 ## Reviews completed
 

@@ -1,20 +1,22 @@
 {
-  "receipt_id": "deploy-135c168d1308",
+  "receipt_id": "deploy-187d2625d3f1",
   "from_version": "0.1.0-beta.12",
   "to_version": "0.1.0-rc.1",
   "patch": "atlas-framework-0.1.0-rc.1-incremental.zip",
-  "applied_at": "2026-07-31T02:06:16.447308+00:00",
+  "applied_at": "2026-07-31T03:46:28.818716+00:00",
   "files_added": [
     "release/RC-1-MIGRATION.md",
     "release/RC-1-RELEASE-NOTES.md",
     "release/RC-1-VALIDATION.md",
     "release/evidence/records/manual-deployment-rc.1.json",
     "release/evidence/records/rc.1-promotion.json",
-    "release/rc.1.manifest.json"
+    "release/rc.1.manifest.json",
+    "tests/conformance/test_repository_cleanliness.py"
   ],
   "files_replaced": [
     "CLAUDE-DIRECTORY/registry.json` \u2192 `.claude/registry.json",
     "CLAUDE-DIRECTORY/runtime.yaml` \u2192 `.claude/runtime.yaml",
+    ".gitignore",
     "CHANGELOG.md",
     "README.md",
     "VERSION",
@@ -35,12 +37,14 @@
     "compatibility/deprecations.json",
     "compatibility/semantic-version-matrix.md",
     "compatibility/support-policy.md",
+    "policies/repository_cleanliness.json",
     "release/KNOWN-LIMITATIONS.md",
     "release/RC-RELEASE-CHECKLIST.md",
     "release/evidence/audit-bundle.json",
     "release/manifest.json",
     "release/version-sources.json",
     "schemas/core-contracts.schema.json",
+    "scripts/evaluate_policies.py",
     "templates/contradiction-register.json",
     "templates/evidence-record.json",
     "templates/project-brief.json",
@@ -54,15 +58,16 @@
   "files_deleted": [],
   "validation": [
     "Manual preflight accepted the exact 0.1.0-beta.12 base.",
-    "Simulation applied 6 additions, 37 replacements, and 0 deletions to a copy of the merged base.",
+    "Simulation applied 7 additions, 40 replacements, and 0 deletions to a clean beta.12 installation.",
     "Resulting VERSION is 0.1.0-rc.1.",
     "Canonical .claude/ paths and unrelated base files were preserved.",
-    "All package payload paths and hashes matched the patch manifest."
+    "All package payload paths and hashes matched the patch manifest.",
+    "Release evidence integrity passed after incremental installation."
   ],
   "operator_notes": [
     "Simulation used merge commit 6f8d82dc3241a923ea0ee0f81e1e02e50b45c521 as the immutable base.",
     "CLAUDE-DIRECTORY/ payload paths map to .claude/ in the installed repository.",
-    "The RC migration declares no file deletions."
+    "The corrected RC migration declares no file deletions."
   ],
   "status": "simulated"
 }
