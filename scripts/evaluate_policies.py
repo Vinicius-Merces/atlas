@@ -185,6 +185,7 @@ def repository_cleanliness(root: Path) -> tuple[bool, Any, list[str]]:
         ".atlas/evidence",
         ".atlas/deployments",
         ".atlas/policy/policy-report.json",
+        ".vscode/extensions.json",
     }
     secret_names = {".env", "id_rsa", "id_ed25519"}
     findings = []

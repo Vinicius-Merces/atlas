@@ -11,6 +11,10 @@ Promotion base: `0.1.0-beta.12` at merge commit
 - GitHub-hosted CI was reported as passed before merge
 - Independent review was reported as passed before merge
 - The remote PR head and merge refs were verified through Git
+- Pull request #2 merged the RC promotion as
+  `0c7208a302d536f0ff00c949d5a6bdaa6c6c5a03`
+- Post-merge repository hygiene validation removes user-local VS Code
+  recommendations from source and prevents recurrence
 
 ## Repository gates
 
@@ -31,8 +35,8 @@ Promotion base: `0.1.0-beta.12` at merge commit
 - Smoke: 5 passed
 - Contract: 12 passed
 - Codex: 16 passed
-- Conformance: 26 passed
-- Full repository suite: 63 passed
+- Conformance: 28 passed
+- Full repository suite: 65 passed
 
 ## Distribution gates
 

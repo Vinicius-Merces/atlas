@@ -1,7 +1,7 @@
 {
-  "bundle_id": "audit-3938a8c0fa8d",
+  "bundle_id": "audit-d89af740e951",
   "framework_version": "0.1.0-rc.1",
-  "generated_at": "2026-07-31T02:15:03.606333+00:00",
+  "generated_at": "2026-07-31T03:54:02.107065+00:00",
   "scope": "repository",
   "records": [
     {
@@ -14,7 +14,7 @@
     },
     {
       "path": "release/evidence/records/manual-deployment-rc.1.json",
-      "sha256": "0c34bb950a5d467fd68619d94e4809d3f925665bfdec427356a8e93ed10d42eb"
+      "sha256": "9f37a6560a9a7991de512160b7bea026a921368b881391f6daa76aa72ffb511f"
     },
     {
       "path": "release/evidence/records/rc.1-promotion.json",

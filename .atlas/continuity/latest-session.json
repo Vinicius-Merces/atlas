@@ -1,53 +1,49 @@
 {
-  "session_id": "session-091e64ed0745",
+  "session_id": "session-post-rc-hygiene",
   "framework_version": "0.1.0-rc.1",
   "runtime": "codex",
-  "created_at": "2026-07-31T02:12:10.894398+00:00",
-  "summary": "Promoted merged beta.12 hardening source to ATLAS 0.1.0-rc.1 with RC contract stability, release evidence, and validated deterministic artifacts.",
+  "created_at": "2026-07-31T03:40:12.5731859+00:00",
+  "summary": "Reconciled the merged ATLAS 0.1.0-rc.1 source and hardened repository cleanliness against tracked user-local editor state.",
   "completed_work": [
-    "Verified pull request #1 merge commit and synchronized main.",
-    "Promoted all controlled version surfaces to 0.1.0-rc.1.",
-    "Promoted core contract maturity from stable-beta to stable-rc.",
-    "Generalized prerelease tests and historical version protection for RC.",
-    "Corrected stale runtime and link known-limitations statements.",
-    "Completed RC notes, migration, checklist, validation, evidence, and audit records.",
-    "Built and simulated deterministic cumulative, incremental, and recovery RC artifacts."
+    "Verified pull request #2 merge commit 0c7208a302d536f0ff00c949d5a6bdaa6c6c5a03 and synchronized main.",
+    "Removed .vscode/extensions.json from Git tracking while preserving the local file.",
+    "Added .vscode/extensions.json to repository ignore and cleanliness policy rules.",
+    "Added clean and violating synthetic-repository regression tests.",
+    "Reconciled RC manifest, checklist, validation, and execution evidence with pull request #2.",
+    "Passed all local repository validators, 14 policies, and 65 tests."
   ],
   "changed_files": [
     ".atlas/continuity/",
-    "CHANGELOG.md",
-    "README.md",
-    "VERSION",
-    "adapters/",
-    "compatibility/",
+    ".gitignore",
+    ".vscode/extensions.json",
+    "policies/repository_cleanliness.json",
     "release/",
-    "schemas/core-contracts.schema.json",
-    "templates/",
-    "tests/contract/"
+    "reports/post-rc-hygiene-validation.md",
+    "scripts/evaluate_policies.py",
+    "tests/conformance/test_repository_cleanliness.py"
   ],
   "validation": [
-    "63 full-suite tests passed.",
+    "65 full-suite tests passed.",
     "14 policies passed with no warning, approval, or block.",
-    "31 schemas and fixtures, 110 JSON files, and 5 YAML files passed.",
-    "All repository, runtime, source-of-truth, memory, and documentation gates passed.",
-    "All three RC archives validated and reproduced identical hashes.",
-    "Clean, beta.12 incremental, and recovery simulations passed.",
-    "Four release evidence records passed integrity verification in every installed mode."
+    "All repository, registry, package, contract, schema, Codex, runtime, conformance, source-of-truth, memory, link, documentation, and policy gates passed.",
+    "Repository cleanliness regression tests passed for both tracked and ignored editor state."
   ],
   "decisions": [
-    "Freeze core contract semantics for the RC line.",
-    "Use merge commit 6f8d82dc3241a923ea0ee0f81e1e02e50b45c521 as the incremental base.",
+    "Treat .vscode/extensions.json as user-local state, not project source.",
+    "Preserve the local editor file while removing it from the repository index.",
     "Keep stable promotion blocked until RC exercise evidence completes the stable checklist."
   ],
   "pending_work": [
-    "Publish release/0.1.0-rc.1 and run GitHub-hosted CI on the exact RC source.",
-    "Obtain independent review of the RC promotion delta.",
+    "Publish the post-RC hygiene branch and pass GitHub-hosted CI.",
+    "Obtain independent review and merge the corrective pull request.",
+    "Tag the corrected RC source.",
     "Exercise the RC without blockers before stable promotion."
   ],
   "risks": [
+    "The corrective source is not authoritative until its pull request passes and merges.",
     "Stable readiness requires real-project RC exercise evidence.",
     "Gemini and Cursor remain experimental.",
-    "Private GitHub check details are not directly readable by the current Codex integration."
+    "The GitHub App has no repository installation and no browser is connected in this session."
   ],
-  "next_action": "Publish the RC branch for hosted CI and independent review, then exercise the release candidate before stable promotion."
+  "next_action": "Publish and merge the post-RC hygiene pull request after hosted CI, then tag and exercise the corrected release candidate."
 }

@@ -1,9 +1,9 @@
 {
   "policy_id": "atlas.repository.no-forbidden-artifacts",
   "evaluator": "repository_cleanliness",
-  "description": "Tracked sources must not contain caches, local reports, built archives, or secrets.",
+  "description": "Tracked sources must not contain caches, local reports, editor state, built archives, or secrets.",
   "severity": "blocking",
-  "condition": "no forbidden generated path is tracked",
+  "condition": "no forbidden generated or user-local path is tracked or selected for release",
   "evidence": [
     ".gitignore",
     "git ls-files"
