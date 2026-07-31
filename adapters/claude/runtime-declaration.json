@@ -1,6 +1,6 @@
 {
   "runtime": "claude-code",
-  "version": "0.1.0-beta.11",
+  "version": "0.1.0-beta.12",
   "support": "beta-supported",
   "canonical": true,
   "contract": "../shared/runtime-contract.json",

@@ -1,0 +1,14 @@
+{
+  "policy_id": "atlas.support.integrity",
+  "evaluator": "support_policy",
+  "description": "Runtime support claims must match machine-readable declarations.",
+  "severity": "blocking",
+  "condition": "support policy, compatibility matrix, and runtime declarations agree",
+  "evidence": [
+    "compatibility/support-policy.md",
+    "compatibility/runtime-matrix.md",
+    "adapters/claude/runtime-declaration.json",
+    "adapters/codex/runtime-declaration.json"
+  ],
+  "remediation": "Align runtime declarations, support policy, and compatibility matrix."
+}

@@ -1,26 +1,42 @@
 from __future__ import annotations
-import hashlib, json
+import argparse
+import json
 from pathlib import Path
 
+from release_utils import canonical_release_bytes, sha256_bytes
+
 ROOT = Path(__file__).resolve().parents[1]
-BUNDLE = ROOT / ".atlas" / "audit" / "audit-bundle.json"
 
 def sha256(path: Path) -> str:
-    digest = hashlib.sha256()
-    with path.open("rb") as handle:
-        for chunk in iter(lambda: handle.read(1024 * 1024), b""):
-            digest.update(chunk)
-    return digest.hexdigest()
+    return sha256_bytes(canonical_release_bytes(path.read_bytes()))
 
 def main() -> None:
-    if not BUNDLE.is_file():
+    parser = argparse.ArgumentParser()
+    parser.add_argument("--root", default=str(ROOT))
+    parser.add_argument("--bundle")
+    args = parser.parse_args()
+
+    workspace = Path(args.root).resolve()
+    bundle_path = (
+        Path(args.bundle)
+        if args.bundle
+        else workspace / ".atlas" / "audit" / "audit-bundle.json"
+    )
+    if not bundle_path.is_absolute():
+        bundle_path = workspace / bundle_path
+    if not bundle_path.is_file():
         raise SystemExit("Run scripts/build_audit_bundle.py first")
 
-    bundle = json.loads(BUNDLE.read_text(encoding="utf-8"))
+    bundle = json.loads(bundle_path.read_text(encoding="utf-8"))
     failures = []
 
     for record in bundle["records"]:
-        path = ROOT / record["path"]
+        path = (workspace / record["path"]).resolve()
+        try:
+            path.relative_to(workspace)
+        except ValueError:
+            failures.append(f"Path escapes workspace: {record['path']}")
+            continue
         if not path.is_file():
             failures.append(f"Missing: {record['path']}")
         elif sha256(path) != record["sha256"]:

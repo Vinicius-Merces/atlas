@@ -1,0 +1,619 @@
+{
+  "version": "0.1.0-beta.12",
+  "generated_from": ".claude/registry.json",
+  "collection": "reviews",
+  "entries": [
+    {
+      "canonical_name": "adapter-drift-review",
+      "canonical_path": ".claude/reviews/adapter-drift-review.md",
+      "adapter_path": "adapters/codex/catalogs/reviews.md",
+      "parity_type": "canonical-reference",
+      "status": "mapped",
+      "notes": "Resolved through the generated catalog to the canonical source.",
+      "version": "0.1.0-beta.12"
+    },
+    {
+      "canonical_name": "adoption-review",
+      "canonical_path": ".claude/reviews/adoption-review.md",
+      "adapter_path": "adapters/codex/catalogs/reviews.md",
+      "parity_type": "canonical-reference",
+      "status": "mapped",
+      "notes": "Resolved through the generated catalog to the canonical source.",
+      "version": "0.1.0-beta.12"
+    },
+    {
+      "canonical_name": "ai-system-review",
+      "canonical_path": ".claude/reviews/ai-system-review.md",
+      "adapter_path": "adapters/codex/catalogs/reviews.md",
+      "parity_type": "canonical-reference",
+      "status": "mapped",
+      "notes": "Resolved through the generated catalog to the canonical source.",
+      "version": "0.1.0-beta.12"
+    },
+    {
+      "canonical_name": "analytics-review",
+      "canonical_path": ".claude/reviews/analytics-review.md",
+      "adapter_path": "adapters/codex/catalogs/reviews.md",
+      "parity_type": "canonical-reference",
+      "status": "mapped",
+      "notes": "Resolved through the generated catalog to the canonical source.",
+      "version": "0.1.0-beta.12"
+    },
+    {
+      "canonical_name": "architecture-review",
+      "canonical_path": ".claude/reviews/architecture-review.md",
+      "adapter_path": "adapters/codex/catalogs/reviews.md",
+      "parity_type": "canonical-reference",
+      "status": "mapped",
+      "notes": "Resolved through the generated catalog to the canonical source.",
+      "version": "0.1.0-beta.12"
+    },
+    {
+      "canonical_name": "automation-review",
+      "canonical_path": ".claude/reviews/automation-review.md",
+      "adapter_path": "adapters/codex/catalogs/reviews.md",
+      "parity_type": "canonical-reference",
+      "status": "mapped",
+      "notes": "Resolved through the generated catalog to the canonical source.",
+      "version": "0.1.0-beta.12"
+    },
+    {
+      "canonical_name": "beta-readiness-review",
+      "canonical_path": ".claude/reviews/beta-readiness-review.md",
+      "adapter_path": "adapters/codex/catalogs/reviews.md",
+      "parity_type": "canonical-reference",
+      "status": "mapped",
+      "notes": "Resolved through the generated catalog to the canonical source.",
+      "version": "0.1.0-beta.12"
+    },
+    {
+      "canonical_name": "blueprint-review",
+      "canonical_path": ".claude/reviews/blueprint-review.md",
+      "adapter_path": "adapters/codex/catalogs/reviews.md",
+      "parity_type": "canonical-reference",
+      "status": "mapped",
+      "notes": "Resolved through the generated catalog to the canonical source.",
+      "version": "0.1.0-beta.12"
+    },
+    {
+      "canonical_name": "checkpoint-integrity-review",
+      "canonical_path": ".claude/reviews/checkpoint-integrity-review.md",
+      "adapter_path": "adapters/codex/catalogs/reviews.md",
+      "parity_type": "canonical-reference",
+      "status": "mapped",
+      "notes": "Resolved through the generated catalog to the canonical source.",
+      "version": "0.1.0-beta.12"
+    },
+    {
+      "canonical_name": "codex-runtime-review",
+      "canonical_path": ".claude/reviews/codex-runtime-review.md",
+      "adapter_path": "adapters/codex/catalogs/reviews.md",
+      "parity_type": "canonical-reference",
+      "status": "mapped",
+      "notes": "Resolved through the generated catalog to the canonical source.",
+      "version": "0.1.0-beta.12"
+    },
+    {
+      "canonical_name": "compatibility-review",
+      "canonical_path": ".claude/reviews/compatibility-review.md",
+      "adapter_path": "adapters/codex/catalogs/reviews.md",
+      "parity_type": "canonical-reference",
+      "status": "mapped",
+      "notes": "Resolved through the generated catalog to the canonical source.",
+      "version": "0.1.0-beta.12"
+    },
+    {
+      "canonical_name": "compliance-review",
+      "canonical_path": ".claude/reviews/compliance-review.md",
+      "adapter_path": "adapters/codex/catalogs/reviews.md",
+      "parity_type": "canonical-reference",
+      "status": "mapped",
+      "notes": "Resolved through the generated catalog to the canonical source.",
+      "version": "0.1.0-beta.12"
+    },
+    {
+      "canonical_name": "content-review",
+      "canonical_path": ".claude/reviews/content-review.md",
+      "adapter_path": "adapters/codex/catalogs/reviews.md",
+      "parity_type": "canonical-reference",
+      "status": "mapped",
+      "notes": "Resolved through the generated catalog to the canonical source.",
+      "version": "0.1.0-beta.12"
+    },
+    {
+      "canonical_name": "context-assembly-review",
+      "canonical_path": ".claude/reviews/context-assembly-review.md",
+      "adapter_path": "adapters/codex/catalogs/reviews.md",
+      "parity_type": "canonical-reference",
+      "status": "mapped",
+      "notes": "Resolved through the generated catalog to the canonical source.",
+      "version": "0.1.0-beta.12"
+    },
+    {
+      "canonical_name": "context-pack-review",
+      "canonical_path": ".claude/reviews/context-pack-review.md",
+      "adapter_path": "adapters/codex/catalogs/reviews.md",
+      "parity_type": "canonical-reference",
+      "status": "mapped",
+      "notes": "Resolved through the generated catalog to the canonical source.",
+      "version": "0.1.0-beta.12"
+    },
+    {
+      "canonical_name": "contract-compatibility-review",
+      "canonical_path": ".claude/reviews/contract-compatibility-review.md",
+      "adapter_path": "adapters/codex/catalogs/reviews.md",
+      "parity_type": "canonical-reference",
+      "status": "mapped",
+      "notes": "Resolved through the generated catalog to the canonical source.",
+      "version": "0.1.0-beta.12"
+    },
+    {
+      "canonical_name": "contradiction-review",
+      "canonical_path": ".claude/reviews/contradiction-review.md",
+      "adapter_path": "adapters/codex/catalogs/reviews.md",
+      "parity_type": "canonical-reference",
+      "status": "mapped",
+      "notes": "Resolved through the generated catalog to the canonical source.",
+      "version": "0.1.0-beta.12"
+    },
+    {
+      "canonical_name": "debt-governance-review",
+      "canonical_path": ".claude/reviews/debt-governance-review.md",
+      "adapter_path": "adapters/codex/catalogs/reviews.md",
+      "parity_type": "canonical-reference",
+      "status": "mapped",
+      "notes": "Resolved through the generated catalog to the canonical source.",
+      "version": "0.1.0-beta.12"
+    },
+    {
+      "canonical_name": "deprecation-review",
+      "canonical_path": ".claude/reviews/deprecation-review.md",
+      "adapter_path": "adapters/codex/catalogs/reviews.md",
+      "parity_type": "canonical-reference",
+      "status": "mapped",
+      "notes": "Resolved through the generated catalog to the canonical source.",
+      "version": "0.1.0-beta.12"
+    },
+    {
+      "canonical_name": "design-system-review",
+      "canonical_path": ".claude/reviews/design-system-review.md",
+      "adapter_path": "adapters/codex/catalogs/reviews.md",
+      "parity_type": "canonical-reference",
+      "status": "mapped",
+      "notes": "Resolved through the generated catalog to the canonical source.",
+      "version": "0.1.0-beta.12"
+    },
+    {
+      "canonical_name": "documentation-review",
+      "canonical_path": ".claude/reviews/documentation-review.md",
+      "adapter_path": "adapters/codex/catalogs/reviews.md",
+      "parity_type": "canonical-reference",
+      "status": "mapped",
+      "notes": "Resolved through the generated catalog to the canonical source.",
+      "version": "0.1.0-beta.12"
+    },
+    {
+      "canonical_name": "enterprise-architecture-review",
+      "canonical_path": ".claude/reviews/enterprise-architecture-review.md",
+      "adapter_path": "adapters/codex/catalogs/reviews.md",
+      "parity_type": "canonical-reference",
+      "status": "mapped",
+      "notes": "Resolved through the generated catalog to the canonical source.",
+      "version": "0.1.0-beta.12"
+    },
+    {
+      "canonical_name": "evidence-integrity-review",
+      "canonical_path": ".claude/reviews/evidence-integrity-review.md",
+      "adapter_path": "adapters/codex/catalogs/reviews.md",
+      "parity_type": "canonical-reference",
+      "status": "mapped",
+      "notes": "Resolved through the generated catalog to the canonical source.",
+      "version": "0.1.0-beta.12"
+    },
+    {
+      "canonical_name": "execution-planning-review",
+      "canonical_path": ".claude/reviews/execution-planning-review.md",
+      "adapter_path": "adapters/codex/catalogs/reviews.md",
+      "parity_type": "canonical-reference",
+      "status": "mapped",
+      "notes": "Resolved through the generated catalog to the canonical source.",
+      "version": "0.1.0-beta.12"
+    },
+    {
+      "canonical_name": "finops-review",
+      "canonical_path": ".claude/reviews/finops-review.md",
+      "adapter_path": "adapters/codex/catalogs/reviews.md",
+      "parity_type": "canonical-reference",
+      "status": "mapped",
+      "notes": "Resolved through the generated catalog to the canonical source.",
+      "version": "0.1.0-beta.12"
+    },
+    {
+      "canonical_name": "governance-review",
+      "canonical_path": ".claude/reviews/governance-review.md",
+      "adapter_path": "adapters/codex/catalogs/reviews.md",
+      "parity_type": "canonical-reference",
+      "status": "mapped",
+      "notes": "Resolved through the generated catalog to the canonical source.",
+      "version": "0.1.0-beta.12"
+    },
+    {
+      "canonical_name": "integration-review",
+      "canonical_path": ".claude/reviews/integration-review.md",
+      "adapter_path": "adapters/codex/catalogs/reviews.md",
+      "parity_type": "canonical-reference",
+      "status": "mapped",
+      "notes": "Resolved through the generated catalog to the canonical source.",
+      "version": "0.1.0-beta.12"
+    },
+    {
+      "canonical_name": "knowledge-review",
+      "canonical_path": ".claude/reviews/knowledge-review.md",
+      "adapter_path": "adapters/codex/catalogs/reviews.md",
+      "parity_type": "canonical-reference",
+      "status": "mapped",
+      "notes": "Resolved through the generated catalog to the canonical source.",
+      "version": "0.1.0-beta.12"
+    },
+    {
+      "canonical_name": "localization-review",
+      "canonical_path": ".claude/reviews/localization-review.md",
+      "adapter_path": "adapters/codex/catalogs/reviews.md",
+      "parity_type": "canonical-reference",
+      "status": "mapped",
+      "notes": "Resolved through the generated catalog to the canonical source.",
+      "version": "0.1.0-beta.12"
+    },
+    {
+      "canonical_name": "manual-deployment-review",
+      "canonical_path": ".claude/reviews/manual-deployment-review.md",
+      "adapter_path": "adapters/codex/catalogs/reviews.md",
+      "parity_type": "canonical-reference",
+      "status": "mapped",
+      "notes": "Resolved through the generated catalog to the canonical source.",
+      "version": "0.1.0-beta.12"
+    },
+    {
+      "canonical_name": "manual-deployment-safety-review",
+      "canonical_path": ".claude/reviews/manual-deployment-safety-review.md",
+      "adapter_path": "adapters/codex/catalogs/reviews.md",
+      "parity_type": "canonical-reference",
+      "status": "mapped",
+      "notes": "Resolved through the generated catalog to the canonical source.",
+      "version": "0.1.0-beta.12"
+    },
+    {
+      "canonical_name": "memory-governance-review",
+      "canonical_path": ".claude/reviews/memory-governance-review.md",
+      "adapter_path": "adapters/codex/catalogs/reviews.md",
+      "parity_type": "canonical-reference",
+      "status": "mapped",
+      "notes": "Resolved through the generated catalog to the canonical source.",
+      "version": "0.1.0-beta.12"
+    },
+    {
+      "canonical_name": "merge-readiness-review",
+      "canonical_path": ".claude/reviews/merge-readiness-review.md",
+      "adapter_path": "adapters/codex/catalogs/reviews.md",
+      "parity_type": "canonical-reference",
+      "status": "mapped",
+      "notes": "Resolved through the generated catalog to the canonical source.",
+      "version": "0.1.0-beta.12"
+    },
+    {
+      "canonical_name": "migration-review",
+      "canonical_path": ".claude/reviews/migration-review.md",
+      "adapter_path": "adapters/codex/catalogs/reviews.md",
+      "parity_type": "canonical-reference",
+      "status": "mapped",
+      "notes": "Resolved through the generated catalog to the canonical source.",
+      "version": "0.1.0-beta.12"
+    },
+    {
+      "canonical_name": "operations-review",
+      "canonical_path": ".claude/reviews/operations-review.md",
+      "adapter_path": "adapters/codex/catalogs/reviews.md",
+      "parity_type": "canonical-reference",
+      "status": "mapped",
+      "notes": "Resolved through the generated catalog to the canonical source.",
+      "version": "0.1.0-beta.12"
+    },
+    {
+      "canonical_name": "package-integrity-review",
+      "canonical_path": ".claude/reviews/package-integrity-review.md",
+      "adapter_path": "adapters/codex/catalogs/reviews.md",
+      "parity_type": "canonical-reference",
+      "status": "mapped",
+      "notes": "Resolved through the generated catalog to the canonical source.",
+      "version": "0.1.0-beta.12"
+    },
+    {
+      "canonical_name": "parallel-execution-review",
+      "canonical_path": ".claude/reviews/parallel-execution-review.md",
+      "adapter_path": "adapters/codex/catalogs/reviews.md",
+      "parity_type": "canonical-reference",
+      "status": "mapped",
+      "notes": "Resolved through the generated catalog to the canonical source.",
+      "version": "0.1.0-beta.12"
+    },
+    {
+      "canonical_name": "performance-review",
+      "canonical_path": ".claude/reviews/performance-review.md",
+      "adapter_path": "adapters/codex/catalogs/reviews.md",
+      "parity_type": "canonical-reference",
+      "status": "mapped",
+      "notes": "Resolved through the generated catalog to the canonical source.",
+      "version": "0.1.0-beta.12"
+    },
+    {
+      "canonical_name": "platform-review",
+      "canonical_path": ".claude/reviews/platform-review.md",
+      "adapter_path": "adapters/codex/catalogs/reviews.md",
+      "parity_type": "canonical-reference",
+      "status": "mapped",
+      "notes": "Resolved through the generated catalog to the canonical source.",
+      "version": "0.1.0-beta.12"
+    },
+    {
+      "canonical_name": "policy-compliance-review",
+      "canonical_path": ".claude/reviews/policy-compliance-review.md",
+      "adapter_path": "adapters/codex/catalogs/reviews.md",
+      "parity_type": "canonical-reference",
+      "status": "mapped",
+      "notes": "Resolved through the generated catalog to the canonical source.",
+      "version": "0.1.0-beta.12"
+    },
+    {
+      "canonical_name": "policy-exception-review",
+      "canonical_path": ".claude/reviews/policy-exception-review.md",
+      "adapter_path": "adapters/codex/catalogs/reviews.md",
+      "parity_type": "canonical-reference",
+      "status": "mapped",
+      "notes": "Resolved through the generated catalog to the canonical source.",
+      "version": "0.1.0-beta.12"
+    },
+    {
+      "canonical_name": "policy-review",
+      "canonical_path": ".claude/reviews/policy-review.md",
+      "adapter_path": "adapters/codex/catalogs/reviews.md",
+      "parity_type": "canonical-reference",
+      "status": "mapped",
+      "notes": "Resolved through the generated catalog to the canonical source.",
+      "version": "0.1.0-beta.12"
+    },
+    {
+      "canonical_name": "privacy-review",
+      "canonical_path": ".claude/reviews/privacy-review.md",
+      "adapter_path": "adapters/codex/catalogs/reviews.md",
+      "parity_type": "canonical-reference",
+      "status": "mapped",
+      "notes": "Resolved through the generated catalog to the canonical source.",
+      "version": "0.1.0-beta.12"
+    },
+    {
+      "canonical_name": "product-review",
+      "canonical_path": ".claude/reviews/product-review.md",
+      "adapter_path": "adapters/codex/catalogs/reviews.md",
+      "parity_type": "canonical-reference",
+      "status": "mapped",
+      "notes": "Resolved through the generated catalog to the canonical source.",
+      "version": "0.1.0-beta.12"
+    },
+    {
+      "canonical_name": "project-health-review",
+      "canonical_path": ".claude/reviews/project-health-review.md",
+      "adapter_path": "adapters/codex/catalogs/reviews.md",
+      "parity_type": "canonical-reference",
+      "status": "mapped",
+      "notes": "Resolved through the generated catalog to the canonical source.",
+      "version": "0.1.0-beta.12"
+    },
+    {
+      "canonical_name": "project-memory-review",
+      "canonical_path": ".claude/reviews/project-memory-review.md",
+      "adapter_path": "adapters/codex/catalogs/reviews.md",
+      "parity_type": "canonical-reference",
+      "status": "mapped",
+      "notes": "Resolved through the generated catalog to the canonical source.",
+      "version": "0.1.0-beta.12"
+    },
+    {
+      "canonical_name": "provenance-review",
+      "canonical_path": ".claude/reviews/provenance-review.md",
+      "adapter_path": "adapters/codex/catalogs/reviews.md",
+      "parity_type": "canonical-reference",
+      "status": "mapped",
+      "notes": "Resolved through the generated catalog to the canonical source.",
+      "version": "0.1.0-beta.12"
+    },
+    {
+      "canonical_name": "qa-review",
+      "canonical_path": ".claude/reviews/qa-review.md",
+      "adapter_path": "adapters/codex/catalogs/reviews.md",
+      "parity_type": "canonical-reference",
+      "status": "mapped",
+      "notes": "Resolved through the generated catalog to the canonical source.",
+      "version": "0.1.0-beta.12"
+    },
+    {
+      "canonical_name": "reference-implementation-review",
+      "canonical_path": ".claude/reviews/reference-implementation-review.md",
+      "adapter_path": "adapters/codex/catalogs/reviews.md",
+      "parity_type": "canonical-reference",
+      "status": "mapped",
+      "notes": "Resolved through the generated catalog to the canonical source.",
+      "version": "0.1.0-beta.12"
+    },
+    {
+      "canonical_name": "repository-review",
+      "canonical_path": ".claude/reviews/repository-review.md",
+      "adapter_path": "adapters/codex/catalogs/reviews.md",
+      "parity_type": "canonical-reference",
+      "status": "mapped",
+      "notes": "Resolved through the generated catalog to the canonical source.",
+      "version": "0.1.0-beta.12"
+    },
+    {
+      "canonical_name": "resource-claim-review",
+      "canonical_path": ".claude/reviews/resource-claim-review.md",
+      "adapter_path": "adapters/codex/catalogs/reviews.md",
+      "parity_type": "canonical-reference",
+      "status": "mapped",
+      "notes": "Resolved through the generated catalog to the canonical source.",
+      "version": "0.1.0-beta.12"
+    },
+    {
+      "canonical_name": "resume-packet-review",
+      "canonical_path": ".claude/reviews/resume-packet-review.md",
+      "adapter_path": "adapters/codex/catalogs/reviews.md",
+      "parity_type": "canonical-reference",
+      "status": "mapped",
+      "notes": "Resolved through the generated catalog to the canonical source.",
+      "version": "0.1.0-beta.12"
+    },
+    {
+      "canonical_name": "runtime-adapter-review",
+      "canonical_path": ".claude/reviews/runtime-adapter-review.md",
+      "adapter_path": "adapters/codex/catalogs/reviews.md",
+      "parity_type": "canonical-reference",
+      "status": "mapped",
+      "notes": "Resolved through the generated catalog to the canonical source.",
+      "version": "0.1.0-beta.12"
+    },
+    {
+      "canonical_name": "runtime-conformance-review",
+      "canonical_path": ".claude/reviews/runtime-conformance-review.md",
+      "adapter_path": "adapters/codex/catalogs/reviews.md",
+      "parity_type": "canonical-reference",
+      "status": "mapped",
+      "notes": "Resolved through the generated catalog to the canonical source.",
+      "version": "0.1.0-beta.12"
+    },
+    {
+      "canonical_name": "runtime-handoff-review",
+      "canonical_path": ".claude/reviews/runtime-handoff-review.md",
+      "adapter_path": "adapters/codex/catalogs/reviews.md",
+      "parity_type": "canonical-reference",
+      "status": "mapped",
+      "notes": "Resolved through the generated catalog to the canonical source.",
+      "version": "0.1.0-beta.12"
+    },
+    {
+      "canonical_name": "runtime-parity-review",
+      "canonical_path": ".claude/reviews/runtime-parity-review.md",
+      "adapter_path": "adapters/codex/catalogs/reviews.md",
+      "parity_type": "canonical-reference",
+      "status": "mapped",
+      "notes": "Resolved through the generated catalog to the canonical source.",
+      "version": "0.1.0-beta.12"
+    },
+    {
+      "canonical_name": "runtime-synchronization-review",
+      "canonical_path": ".claude/reviews/runtime-synchronization-review.md",
+      "adapter_path": "adapters/codex/catalogs/reviews.md",
+      "parity_type": "canonical-reference",
+      "status": "mapped",
+      "notes": "Resolved through the generated catalog to the canonical source.",
+      "version": "0.1.0-beta.12"
+    },
+    {
+      "canonical_name": "security-review",
+      "canonical_path": ".claude/reviews/security-review.md",
+      "adapter_path": "adapters/codex/catalogs/reviews.md",
+      "parity_type": "canonical-reference",
+      "status": "mapped",
+      "notes": "Resolved through the generated catalog to the canonical source.",
+      "version": "0.1.0-beta.12"
+    },
+    {
+      "canonical_name": "session-continuity-review",
+      "canonical_path": ".claude/reviews/session-continuity-review.md",
+      "adapter_path": "adapters/codex/catalogs/reviews.md",
+      "parity_type": "canonical-reference",
+      "status": "mapped",
+      "notes": "Resolved through the generated catalog to the canonical source.",
+      "version": "0.1.0-beta.12"
+    },
+    {
+      "canonical_name": "source-of-truth-review",
+      "canonical_path": ".claude/reviews/source-of-truth-review.md",
+      "adapter_path": "adapters/codex/catalogs/reviews.md",
+      "parity_type": "canonical-reference",
+      "status": "mapped",
+      "notes": "Resolved through the generated catalog to the canonical source.",
+      "version": "0.1.0-beta.12"
+    },
+    {
+      "canonical_name": "stability-review",
+      "canonical_path": ".claude/reviews/stability-review.md",
+      "adapter_path": "adapters/codex/catalogs/reviews.md",
+      "parity_type": "canonical-reference",
+      "status": "mapped",
+      "notes": "Resolved through the generated catalog to the canonical source.",
+      "version": "0.1.0-beta.12"
+    },
+    {
+      "canonical_name": "support-policy-review",
+      "canonical_path": ".claude/reviews/support-policy-review.md",
+      "adapter_path": "adapters/codex/catalogs/reviews.md",
+      "parity_type": "canonical-reference",
+      "status": "mapped",
+      "notes": "Resolved through the generated catalog to the canonical source.",
+      "version": "0.1.0-beta.12"
+    },
+    {
+      "canonical_name": "task-routing-review",
+      "canonical_path": ".claude/reviews/task-routing-review.md",
+      "adapter_path": "adapters/codex/catalogs/reviews.md",
+      "parity_type": "canonical-reference",
+      "status": "mapped",
+      "notes": "Resolved through the generated catalog to the canonical source.",
+      "version": "0.1.0-beta.12"
+    },
+    {
+      "canonical_name": "technical-audit-review",
+      "canonical_path": ".claude/reviews/technical-audit-review.md",
+      "adapter_path": "adapters/codex/catalogs/reviews.md",
+      "parity_type": "canonical-reference",
+      "status": "mapped",
+      "notes": "Resolved through the generated catalog to the canonical source.",
+      "version": "0.1.0-beta.12"
+    },
+    {
+      "canonical_name": "test-automation-review",
+      "canonical_path": ".claude/reviews/test-automation-review.md",
+      "adapter_path": "adapters/codex/catalogs/reviews.md",
+      "parity_type": "canonical-reference",
+      "status": "mapped",
+      "notes": "Resolved through the generated catalog to the canonical source.",
+      "version": "0.1.0-beta.12"
+    },
+    {
+      "canonical_name": "threat-model-review",
+      "canonical_path": ".claude/reviews/threat-model-review.md",
+      "adapter_path": "adapters/codex/catalogs/reviews.md",
+      "parity_type": "canonical-reference",
+      "status": "mapped",
+      "notes": "Resolved through the generated catalog to the canonical source.",
+      "version": "0.1.0-beta.12"
+    },
+    {
+      "canonical_name": "universal-runtime-contract-review",
+      "canonical_path": ".claude/reviews/universal-runtime-contract-review.md",
+      "adapter_path": "adapters/codex/catalogs/reviews.md",
+      "parity_type": "canonical-reference",
+      "status": "mapped",
+      "notes": "Resolved through the generated catalog to the canonical source.",
+      "version": "0.1.0-beta.12"
+    },
+    {
+      "canonical_name": "ux-review",
+      "canonical_path": ".claude/reviews/ux-review.md",
+      "adapter_path": "adapters/codex/catalogs/reviews.md",
+      "parity_type": "canonical-reference",
+      "status": "mapped",
+      "notes": "Resolved through the generated catalog to the canonical source.",
+      "version": "0.1.0-beta.12"
+    }
+  ]
+}

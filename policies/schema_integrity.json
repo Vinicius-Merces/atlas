@@ -1,0 +1,13 @@
+{
+  "policy_id": "atlas.schemas.integrity",
+  "evaluator": "schema_integrity",
+  "description": "Every JSON Schema must be valid and covered by a valid fixture.",
+  "severity": "blocking",
+  "condition": "schema and fixture validation passes",
+  "evidence": [
+    "schemas/",
+    "tests/fixtures/schema-instances.json",
+    "scripts/validate_schemas.py"
+  ],
+  "remediation": "Repair the schema or add a representative fixture."
+}

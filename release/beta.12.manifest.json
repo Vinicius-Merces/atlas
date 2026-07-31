@@ -1,0 +1,35 @@
+{
+  "version": "0.1.0-beta.12",
+  "channel": "beta",
+  "incremental_base": "0.1.0-beta.11",
+  "delivery_modes": [
+    "cumulative",
+    "incremental",
+    "recovery"
+  ],
+  "manual_deployment_supported": true,
+  "hidden_directory_package_mapping": {
+    "CLAUDE-DIRECTORY": ".claude"
+  },
+  "supported_runtimes": [
+    "claude-code",
+    "codex"
+  ],
+  "experimental_runtimes": [
+    "gemini",
+    "cursor"
+  ],
+  "release_gates": {
+    "local_validation": "required",
+    "github_hosted_ci_for_rc": "pending",
+    "independent_review_for_rc": "pending"
+  },
+  "architecture_changes": [
+    "canonical agents moved from agents/ to .claude/agents/"
+  ],
+  "known_limitations": [
+    "GitHub-hosted CI has not yet run for this unpublished workspace state",
+    "Independent RC review and approval are pending",
+    "This release does not authorize RC or stable promotion"
+  ]
+}

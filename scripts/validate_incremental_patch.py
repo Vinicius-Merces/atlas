@@ -1,43 +1,43 @@
 from __future__ import annotations
 
-import hashlib
 import json
+import subprocess
 import sys
 from pathlib import Path
 
-def sha256(path: Path) -> str:
-    digest = hashlib.sha256()
-    with path.open("rb") as handle:
-        for chunk in iter(lambda: handle.read(1024 * 1024), b""):
-            digest.update(chunk)
-    return digest.hexdigest()
+
+ROOT = Path(__file__).resolve().parents[1]
+
 
 def main() -> None:
     if len(sys.argv) != 3:
         raise SystemExit(
             "Usage: validate_incremental_patch.py <installed-root> <patch-root>"
         )
-    installed = Path(sys.argv[1])
-    patch = Path(sys.argv[2])
-    manifest = json.loads((patch / "PATCH-MANIFEST.json").read_text(encoding="utf-8"))
+    installed = Path(sys.argv[1]).resolve()
+    patch = Path(sys.argv[2]).resolve()
+    result = subprocess.run(
+        [
+            sys.executable,
+            str(ROOT / "scripts" / "manual_deploy_preflight.py"),
+            "--installed-root",
+            str(installed),
+            "--patch-root",
+            str(patch),
+        ],
+        cwd=ROOT,
+    )
+    if result.returncode:
+        raise SystemExit(result.returncode)
 
-    installed_version = (installed / "VERSION").read_text(encoding="utf-8").strip()
-    if installed_version != manifest["from_version"]:
-        raise SystemExit(
-            f"Expected base {manifest['from_version']}, found {installed_version}"
-        )
-
-    for item in manifest["files"]:
-        path = patch / item["path"]
-        if not path.is_file():
-            raise SystemExit(f"Missing patch file: {item['path']}")
-        if sha256(path) != item["sha256"]:
-            raise SystemExit(f"Hash mismatch: {item['path']}")
-
+    manifest = json.loads(
+        (patch / "PATCH-MANIFEST.json").read_text(encoding="utf-8")
+    )
     print(
         f"Patch valid: {manifest['from_version']} -> {manifest['to_version']} "
-        f"({len(manifest['files'])} files)"
+        f"({len(manifest['files'])} operations)"
     )
+
 
 if __name__ == "__main__":
     main()

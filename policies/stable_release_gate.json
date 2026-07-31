@@ -1,0 +1,13 @@
+{
+  "policy_id": "atlas.release.stable-gate",
+  "evaluator": "stable_release_gate",
+  "description": "Stable versions require explicit stable release evidence and no prerelease marker.",
+  "severity": "blocking",
+  "condition": "stable-only checklist and release manifest are present for stable versions",
+  "evidence": [
+    "VERSION",
+    "release/STABLE-RELEASE-CHECKLIST.md",
+    "release/manifest.json"
+  ],
+  "remediation": "Keep a prerelease version or complete every stable release gate."
+}

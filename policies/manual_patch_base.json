@@ -1,5 +1,6 @@
 {
   "policy_id": "atlas.patch.base-version",
+  "evaluator": "manual_patch_base",
   "description": "An incremental patch must be applied only to its declared base.",
   "severity": "blocking",
   "condition": "installed VERSION equals from_version",

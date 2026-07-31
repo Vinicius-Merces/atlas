@@ -1,0 +1,646 @@
+{
+  "version": "0.1.0-beta.12",
+  "generated_from": ".claude/registry.json",
+  "collection": "commands",
+  "entries": [
+    {
+      "canonical_name": "atlas-adapt-runtime",
+      "canonical_path": ".claude/commands/atlas-adapt-runtime.md",
+      "adapter_path": "adapters/codex/catalogs/commands.md",
+      "parity_type": "canonical-reference",
+      "status": "mapped",
+      "notes": "Resolved through the generated catalog to the canonical source.",
+      "version": "0.1.0-beta.12"
+    },
+    {
+      "canonical_name": "atlas-adopt",
+      "canonical_path": ".claude/commands/atlas-adopt.md",
+      "adapter_path": "adapters/codex/catalogs/commands.md",
+      "parity_type": "canonical-reference",
+      "status": "mapped",
+      "notes": "Resolved through the generated catalog to the canonical source.",
+      "version": "0.1.0-beta.12"
+    },
+    {
+      "canonical_name": "atlas-ai-review",
+      "canonical_path": ".claude/commands/atlas-ai-review.md",
+      "adapter_path": "adapters/codex/catalogs/commands.md",
+      "parity_type": "canonical-reference",
+      "status": "mapped",
+      "notes": "Resolved through the generated catalog to the canonical source.",
+      "version": "0.1.0-beta.12"
+    },
+    {
+      "canonical_name": "atlas-analytics",
+      "canonical_path": ".claude/commands/atlas-analytics.md",
+      "adapter_path": "adapters/codex/catalogs/commands.md",
+      "parity_type": "canonical-reference",
+      "status": "mapped",
+      "notes": "Resolved through the generated catalog to the canonical source.",
+      "version": "0.1.0-beta.12"
+    },
+    {
+      "canonical_name": "atlas-audit",
+      "canonical_path": ".claude/commands/atlas-audit.md",
+      "adapter_path": "adapters/codex/catalogs/commands.md",
+      "parity_type": "canonical-reference",
+      "status": "mapped",
+      "notes": "Resolved through the generated catalog to the canonical source.",
+      "version": "0.1.0-beta.12"
+    },
+    {
+      "canonical_name": "atlas-audit-bundle",
+      "canonical_path": ".claude/commands/atlas-audit-bundle.md",
+      "adapter_path": "adapters/codex/catalogs/commands.md",
+      "parity_type": "canonical-reference",
+      "status": "mapped",
+      "notes": "Resolved through the generated catalog to the canonical source.",
+      "version": "0.1.0-beta.12"
+    },
+    {
+      "canonical_name": "atlas-beta-ready",
+      "canonical_path": ".claude/commands/atlas-beta-ready.md",
+      "adapter_path": "adapters/codex/catalogs/commands.md",
+      "parity_type": "canonical-reference",
+      "status": "mapped",
+      "notes": "Resolved through the generated catalog to the canonical source.",
+      "version": "0.1.0-beta.12"
+    },
+    {
+      "canonical_name": "atlas-blueprint",
+      "canonical_path": ".claude/commands/atlas-blueprint.md",
+      "adapter_path": "adapters/codex/catalogs/commands.md",
+      "parity_type": "canonical-reference",
+      "status": "mapped",
+      "notes": "Resolved through the generated catalog to the canonical source.",
+      "version": "0.1.0-beta.12"
+    },
+    {
+      "canonical_name": "atlas-bootstrap",
+      "canonical_path": ".claude/commands/atlas-bootstrap.md",
+      "adapter_path": "adapters/codex/catalogs/commands.md",
+      "parity_type": "canonical-reference",
+      "status": "mapped",
+      "notes": "Resolved through the generated catalog to the canonical source.",
+      "version": "0.1.0-beta.12"
+    },
+    {
+      "canonical_name": "atlas-brief",
+      "canonical_path": ".claude/commands/atlas-brief.md",
+      "adapter_path": "adapters/codex/catalogs/commands.md",
+      "parity_type": "canonical-reference",
+      "status": "mapped",
+      "notes": "Resolved through the generated catalog to the canonical source.",
+      "version": "0.1.0-beta.12"
+    },
+    {
+      "canonical_name": "atlas-checkpoint",
+      "canonical_path": ".claude/commands/atlas-checkpoint.md",
+      "adapter_path": "adapters/codex/catalogs/commands.md",
+      "parity_type": "canonical-reference",
+      "status": "mapped",
+      "notes": "Resolved through the generated catalog to the canonical source.",
+      "version": "0.1.0-beta.12"
+    },
+    {
+      "canonical_name": "atlas-claim",
+      "canonical_path": ".claude/commands/atlas-claim.md",
+      "adapter_path": "adapters/codex/catalogs/commands.md",
+      "parity_type": "canonical-reference",
+      "status": "mapped",
+      "notes": "Resolved through the generated catalog to the canonical source.",
+      "version": "0.1.0-beta.12"
+    },
+    {
+      "canonical_name": "atlas-close-session",
+      "canonical_path": ".claude/commands/atlas-close-session.md",
+      "adapter_path": "adapters/codex/catalogs/commands.md",
+      "parity_type": "canonical-reference",
+      "status": "mapped",
+      "notes": "Resolved through the generated catalog to the canonical source.",
+      "version": "0.1.0-beta.12"
+    },
+    {
+      "canonical_name": "atlas-codex-sync",
+      "canonical_path": ".claude/commands/atlas-codex-sync.md",
+      "adapter_path": "adapters/codex/catalogs/commands.md",
+      "parity_type": "canonical-reference",
+      "status": "mapped",
+      "notes": "Resolved through the generated catalog to the canonical source.",
+      "version": "0.1.0-beta.12"
+    },
+    {
+      "canonical_name": "atlas-compatibility",
+      "canonical_path": ".claude/commands/atlas-compatibility.md",
+      "adapter_path": "adapters/codex/catalogs/commands.md",
+      "parity_type": "canonical-reference",
+      "status": "mapped",
+      "notes": "Resolved through the generated catalog to the canonical source.",
+      "version": "0.1.0-beta.12"
+    },
+    {
+      "canonical_name": "atlas-conformance",
+      "canonical_path": ".claude/commands/atlas-conformance.md",
+      "adapter_path": "adapters/codex/catalogs/commands.md",
+      "parity_type": "canonical-reference",
+      "status": "mapped",
+      "notes": "Resolved through the generated catalog to the canonical source.",
+      "version": "0.1.0-beta.12"
+    },
+    {
+      "canonical_name": "atlas-context-pack",
+      "canonical_path": ".claude/commands/atlas-context-pack.md",
+      "adapter_path": "adapters/codex/catalogs/commands.md",
+      "parity_type": "canonical-reference",
+      "status": "mapped",
+      "notes": "Resolved through the generated catalog to the canonical source.",
+      "version": "0.1.0-beta.12"
+    },
+    {
+      "canonical_name": "atlas-contract-test",
+      "canonical_path": ".claude/commands/atlas-contract-test.md",
+      "adapter_path": "adapters/codex/catalogs/commands.md",
+      "parity_type": "canonical-reference",
+      "status": "mapped",
+      "notes": "Resolved through the generated catalog to the canonical source.",
+      "version": "0.1.0-beta.12"
+    },
+    {
+      "canonical_name": "atlas-cost",
+      "canonical_path": ".claude/commands/atlas-cost.md",
+      "adapter_path": "adapters/codex/catalogs/commands.md",
+      "parity_type": "canonical-reference",
+      "status": "mapped",
+      "notes": "Resolved through the generated catalog to the canonical source.",
+      "version": "0.1.0-beta.12"
+    },
+    {
+      "canonical_name": "atlas-debt",
+      "canonical_path": ".claude/commands/atlas-debt.md",
+      "adapter_path": "adapters/codex/catalogs/commands.md",
+      "parity_type": "canonical-reference",
+      "status": "mapped",
+      "notes": "Resolved through the generated catalog to the canonical source.",
+      "version": "0.1.0-beta.12"
+    },
+    {
+      "canonical_name": "atlas-deploy-preflight",
+      "canonical_path": ".claude/commands/atlas-deploy-preflight.md",
+      "adapter_path": "adapters/codex/catalogs/commands.md",
+      "parity_type": "canonical-reference",
+      "status": "mapped",
+      "notes": "Resolved through the generated catalog to the canonical source.",
+      "version": "0.1.0-beta.12"
+    },
+    {
+      "canonical_name": "atlas-deploy-receipt",
+      "canonical_path": ".claude/commands/atlas-deploy-receipt.md",
+      "adapter_path": "adapters/codex/catalogs/commands.md",
+      "parity_type": "canonical-reference",
+      "status": "mapped",
+      "notes": "Resolved through the generated catalog to the canonical source.",
+      "version": "0.1.0-beta.12"
+    },
+    {
+      "canonical_name": "atlas-deprecate",
+      "canonical_path": ".claude/commands/atlas-deprecate.md",
+      "adapter_path": "adapters/codex/catalogs/commands.md",
+      "parity_type": "canonical-reference",
+      "status": "mapped",
+      "notes": "Resolved through the generated catalog to the canonical source.",
+      "version": "0.1.0-beta.12"
+    },
+    {
+      "canonical_name": "atlas-design-system",
+      "canonical_path": ".claude/commands/atlas-design-system.md",
+      "adapter_path": "adapters/codex/catalogs/commands.md",
+      "parity_type": "canonical-reference",
+      "status": "mapped",
+      "notes": "Resolved through the generated catalog to the canonical source.",
+      "version": "0.1.0-beta.12"
+    },
+    {
+      "canonical_name": "atlas-docs",
+      "canonical_path": ".claude/commands/atlas-docs.md",
+      "adapter_path": "adapters/codex/catalogs/commands.md",
+      "parity_type": "canonical-reference",
+      "status": "mapped",
+      "notes": "Resolved through the generated catalog to the canonical source.",
+      "version": "0.1.0-beta.12"
+    },
+    {
+      "canonical_name": "atlas-dual-release",
+      "canonical_path": ".claude/commands/atlas-dual-release.md",
+      "adapter_path": "adapters/codex/catalogs/commands.md",
+      "parity_type": "canonical-reference",
+      "status": "mapped",
+      "notes": "Resolved through the generated catalog to the canonical source.",
+      "version": "0.1.0-beta.12"
+    },
+    {
+      "canonical_name": "atlas-evidence",
+      "canonical_path": ".claude/commands/atlas-evidence.md",
+      "adapter_path": "adapters/codex/catalogs/commands.md",
+      "parity_type": "canonical-reference",
+      "status": "mapped",
+      "notes": "Resolved through the generated catalog to the canonical source.",
+      "version": "0.1.0-beta.12"
+    },
+    {
+      "canonical_name": "atlas-execute-plan",
+      "canonical_path": ".claude/commands/atlas-execute-plan.md",
+      "adapter_path": "adapters/codex/catalogs/commands.md",
+      "parity_type": "canonical-reference",
+      "status": "mapped",
+      "notes": "Resolved through the generated catalog to the canonical source.",
+      "version": "0.1.0-beta.12"
+    },
+    {
+      "canonical_name": "atlas-experiment",
+      "canonical_path": ".claude/commands/atlas-experiment.md",
+      "adapter_path": "adapters/codex/catalogs/commands.md",
+      "parity_type": "canonical-reference",
+      "status": "mapped",
+      "notes": "Resolved through the generated catalog to the canonical source.",
+      "version": "0.1.0-beta.12"
+    },
+    {
+      "canonical_name": "atlas-govern",
+      "canonical_path": ".claude/commands/atlas-govern.md",
+      "adapter_path": "adapters/codex/catalogs/commands.md",
+      "parity_type": "canonical-reference",
+      "status": "mapped",
+      "notes": "Resolved through the generated catalog to the canonical source.",
+      "version": "0.1.0-beta.12"
+    },
+    {
+      "canonical_name": "atlas-govern-release",
+      "canonical_path": ".claude/commands/atlas-govern-release.md",
+      "adapter_path": "adapters/codex/catalogs/commands.md",
+      "parity_type": "canonical-reference",
+      "status": "mapped",
+      "notes": "Resolved through the generated catalog to the canonical source.",
+      "version": "0.1.0-beta.12"
+    },
+    {
+      "canonical_name": "atlas-handoff",
+      "canonical_path": ".claude/commands/atlas-handoff.md",
+      "adapter_path": "adapters/codex/catalogs/commands.md",
+      "parity_type": "canonical-reference",
+      "status": "mapped",
+      "notes": "Resolved through the generated catalog to the canonical source.",
+      "version": "0.1.0-beta.12"
+    },
+    {
+      "canonical_name": "atlas-health",
+      "canonical_path": ".claude/commands/atlas-health.md",
+      "adapter_path": "adapters/codex/catalogs/commands.md",
+      "parity_type": "canonical-reference",
+      "status": "mapped",
+      "notes": "Resolved through the generated catalog to the canonical source.",
+      "version": "0.1.0-beta.12"
+    },
+    {
+      "canonical_name": "atlas-incident",
+      "canonical_path": ".claude/commands/atlas-incident.md",
+      "adapter_path": "adapters/codex/catalogs/commands.md",
+      "parity_type": "canonical-reference",
+      "status": "mapped",
+      "notes": "Resolved through the generated catalog to the canonical source.",
+      "version": "0.1.0-beta.12"
+    },
+    {
+      "canonical_name": "atlas-integrate",
+      "canonical_path": ".claude/commands/atlas-integrate.md",
+      "adapter_path": "adapters/codex/catalogs/commands.md",
+      "parity_type": "canonical-reference",
+      "status": "mapped",
+      "notes": "Resolved through the generated catalog to the canonical source.",
+      "version": "0.1.0-beta.12"
+    },
+    {
+      "canonical_name": "atlas-knowledge-sync",
+      "canonical_path": ".claude/commands/atlas-knowledge-sync.md",
+      "adapter_path": "adapters/codex/catalogs/commands.md",
+      "parity_type": "canonical-reference",
+      "status": "mapped",
+      "notes": "Resolved through the generated catalog to the canonical source.",
+      "version": "0.1.0-beta.12"
+    },
+    {
+      "canonical_name": "atlas-map-repo",
+      "canonical_path": ".claude/commands/atlas-map-repo.md",
+      "adapter_path": "adapters/codex/catalogs/commands.md",
+      "parity_type": "canonical-reference",
+      "status": "mapped",
+      "notes": "Resolved through the generated catalog to the canonical source.",
+      "version": "0.1.0-beta.12"
+    },
+    {
+      "canonical_name": "atlas-memory-drift",
+      "canonical_path": ".claude/commands/atlas-memory-drift.md",
+      "adapter_path": "adapters/codex/catalogs/commands.md",
+      "parity_type": "canonical-reference",
+      "status": "mapped",
+      "notes": "Resolved through the generated catalog to the canonical source.",
+      "version": "0.1.0-beta.12"
+    },
+    {
+      "canonical_name": "atlas-memory-freshness",
+      "canonical_path": ".claude/commands/atlas-memory-freshness.md",
+      "adapter_path": "adapters/codex/catalogs/commands.md",
+      "parity_type": "canonical-reference",
+      "status": "mapped",
+      "notes": "Resolved through the generated catalog to the canonical source.",
+      "version": "0.1.0-beta.12"
+    },
+    {
+      "canonical_name": "atlas-merge-ready",
+      "canonical_path": ".claude/commands/atlas-merge-ready.md",
+      "adapter_path": "adapters/codex/catalogs/commands.md",
+      "parity_type": "canonical-reference",
+      "status": "mapped",
+      "notes": "Resolved through the generated catalog to the canonical source.",
+      "version": "0.1.0-beta.12"
+    },
+    {
+      "canonical_name": "atlas-migrate",
+      "canonical_path": ".claude/commands/atlas-migrate.md",
+      "adapter_path": "adapters/codex/catalogs/commands.md",
+      "parity_type": "canonical-reference",
+      "status": "mapped",
+      "notes": "Resolved through the generated catalog to the canonical source.",
+      "version": "0.1.0-beta.12"
+    },
+    {
+      "canonical_name": "atlas-package",
+      "canonical_path": ".claude/commands/atlas-package.md",
+      "adapter_path": "adapters/codex/catalogs/commands.md",
+      "parity_type": "canonical-reference",
+      "status": "mapped",
+      "notes": "Resolved through the generated catalog to the canonical source.",
+      "version": "0.1.0-beta.12"
+    },
+    {
+      "canonical_name": "atlas-parallelize",
+      "canonical_path": ".claude/commands/atlas-parallelize.md",
+      "adapter_path": "adapters/codex/catalogs/commands.md",
+      "parity_type": "canonical-reference",
+      "status": "mapped",
+      "notes": "Resolved through the generated catalog to the canonical source.",
+      "version": "0.1.0-beta.12"
+    },
+    {
+      "canonical_name": "atlas-patch-check",
+      "canonical_path": ".claude/commands/atlas-patch-check.md",
+      "adapter_path": "adapters/codex/catalogs/commands.md",
+      "parity_type": "canonical-reference",
+      "status": "mapped",
+      "notes": "Resolved through the generated catalog to the canonical source.",
+      "version": "0.1.0-beta.12"
+    },
+    {
+      "canonical_name": "atlas-plan",
+      "canonical_path": ".claude/commands/atlas-plan.md",
+      "adapter_path": "adapters/codex/commands/atlas-plan.md",
+      "parity_type": "runtime-native",
+      "status": "native",
+      "notes": "Codex-native entry point.",
+      "version": "0.1.0-beta.12"
+    },
+    {
+      "canonical_name": "atlas-policy",
+      "canonical_path": ".claude/commands/atlas-policy.md",
+      "adapter_path": "adapters/codex/catalogs/commands.md",
+      "parity_type": "canonical-reference",
+      "status": "mapped",
+      "notes": "Resolved through the generated catalog to the canonical source.",
+      "version": "0.1.0-beta.12"
+    },
+    {
+      "canonical_name": "atlas-policy-check",
+      "canonical_path": ".claude/commands/atlas-policy-check.md",
+      "adapter_path": "adapters/codex/catalogs/commands.md",
+      "parity_type": "canonical-reference",
+      "status": "mapped",
+      "notes": "Resolved through the generated catalog to the canonical source.",
+      "version": "0.1.0-beta.12"
+    },
+    {
+      "canonical_name": "atlas-policy-exception",
+      "canonical_path": ".claude/commands/atlas-policy-exception.md",
+      "adapter_path": "adapters/codex/catalogs/commands.md",
+      "parity_type": "canonical-reference",
+      "status": "mapped",
+      "notes": "Resolved through the generated catalog to the canonical source.",
+      "version": "0.1.0-beta.12"
+    },
+    {
+      "canonical_name": "atlas-privacy",
+      "canonical_path": ".claude/commands/atlas-privacy.md",
+      "adapter_path": "adapters/codex/catalogs/commands.md",
+      "parity_type": "canonical-reference",
+      "status": "mapped",
+      "notes": "Resolved through the generated catalog to the canonical source.",
+      "version": "0.1.0-beta.12"
+    },
+    {
+      "canonical_name": "atlas-product",
+      "canonical_path": ".claude/commands/atlas-product.md",
+      "adapter_path": "adapters/codex/catalogs/commands.md",
+      "parity_type": "canonical-reference",
+      "status": "mapped",
+      "notes": "Resolved through the generated catalog to the canonical source.",
+      "version": "0.1.0-beta.12"
+    },
+    {
+      "canonical_name": "atlas-provenance",
+      "canonical_path": ".claude/commands/atlas-provenance.md",
+      "adapter_path": "adapters/codex/catalogs/commands.md",
+      "parity_type": "canonical-reference",
+      "status": "mapped",
+      "notes": "Resolved through the generated catalog to the canonical source.",
+      "version": "0.1.0-beta.12"
+    },
+    {
+      "canonical_name": "atlas-reconcile",
+      "canonical_path": ".claude/commands/atlas-reconcile.md",
+      "adapter_path": "adapters/codex/catalogs/commands.md",
+      "parity_type": "canonical-reference",
+      "status": "mapped",
+      "notes": "Resolved through the generated catalog to the canonical source.",
+      "version": "0.1.0-beta.12"
+    },
+    {
+      "canonical_name": "atlas-reconcile-memory",
+      "canonical_path": ".claude/commands/atlas-reconcile-memory.md",
+      "adapter_path": "adapters/codex/catalogs/commands.md",
+      "parity_type": "canonical-reference",
+      "status": "mapped",
+      "notes": "Resolved through the generated catalog to the canonical source.",
+      "version": "0.1.0-beta.12"
+    },
+    {
+      "canonical_name": "atlas-reference-review",
+      "canonical_path": ".claude/commands/atlas-reference-review.md",
+      "adapter_path": "adapters/codex/catalogs/commands.md",
+      "parity_type": "canonical-reference",
+      "status": "mapped",
+      "notes": "Resolved through the generated catalog to the canonical source.",
+      "version": "0.1.0-beta.12"
+    },
+    {
+      "canonical_name": "atlas-refresh-continuity",
+      "canonical_path": ".claude/commands/atlas-refresh-continuity.md",
+      "adapter_path": "adapters/codex/catalogs/commands.md",
+      "parity_type": "canonical-reference",
+      "status": "mapped",
+      "notes": "Resolved through the generated catalog to the canonical source.",
+      "version": "0.1.0-beta.12"
+    },
+    {
+      "canonical_name": "atlas-release",
+      "canonical_path": ".claude/commands/atlas-release.md",
+      "adapter_path": "adapters/codex/commands/atlas-release.md",
+      "parity_type": "runtime-native",
+      "status": "native",
+      "notes": "Codex-native entry point.",
+      "version": "0.1.0-beta.12"
+    },
+    {
+      "canonical_name": "atlas-resume",
+      "canonical_path": ".claude/commands/atlas-resume.md",
+      "adapter_path": "adapters/codex/catalogs/commands.md",
+      "parity_type": "canonical-reference",
+      "status": "mapped",
+      "notes": "Resolved through the generated catalog to the canonical source.",
+      "version": "0.1.0-beta.12"
+    },
+    {
+      "canonical_name": "atlas-resume-packet",
+      "canonical_path": ".claude/commands/atlas-resume-packet.md",
+      "adapter_path": "adapters/codex/catalogs/commands.md",
+      "parity_type": "canonical-reference",
+      "status": "mapped",
+      "notes": "Resolved through the generated catalog to the canonical source.",
+      "version": "0.1.0-beta.12"
+    },
+    {
+      "canonical_name": "atlas-review",
+      "canonical_path": ".claude/commands/atlas-review.md",
+      "adapter_path": "adapters/codex/commands/atlas-review.md",
+      "parity_type": "runtime-native",
+      "status": "native",
+      "notes": "Codex-native entry point.",
+      "version": "0.1.0-beta.12"
+    },
+    {
+      "canonical_name": "atlas-roadmap",
+      "canonical_path": ".claude/commands/atlas-roadmap.md",
+      "adapter_path": "adapters/codex/catalogs/commands.md",
+      "parity_type": "canonical-reference",
+      "status": "mapped",
+      "notes": "Resolved through the generated catalog to the canonical source.",
+      "version": "0.1.0-beta.12"
+    },
+    {
+      "canonical_name": "atlas-route",
+      "canonical_path": ".claude/commands/atlas-route.md",
+      "adapter_path": "adapters/codex/catalogs/commands.md",
+      "parity_type": "canonical-reference",
+      "status": "mapped",
+      "notes": "Resolved through the generated catalog to the canonical source.",
+      "version": "0.1.0-beta.12"
+    },
+    {
+      "canonical_name": "atlas-runtime-catalog",
+      "canonical_path": ".claude/commands/atlas-runtime-catalog.md",
+      "adapter_path": "adapters/codex/catalogs/commands.md",
+      "parity_type": "canonical-reference",
+      "status": "mapped",
+      "notes": "Resolved through the generated catalog to the canonical source.",
+      "version": "0.1.0-beta.12"
+    },
+    {
+      "canonical_name": "atlas-runtime-drift",
+      "canonical_path": ".claude/commands/atlas-runtime-drift.md",
+      "adapter_path": "adapters/codex/catalogs/commands.md",
+      "parity_type": "canonical-reference",
+      "status": "mapped",
+      "notes": "Resolved through the generated catalog to the canonical source.",
+      "version": "0.1.0-beta.12"
+    },
+    {
+      "canonical_name": "atlas-runtime-parity",
+      "canonical_path": ".claude/commands/atlas-runtime-parity.md",
+      "adapter_path": "adapters/codex/catalogs/commands.md",
+      "parity_type": "canonical-reference",
+      "status": "mapped",
+      "notes": "Resolved through the generated catalog to the canonical source.",
+      "version": "0.1.0-beta.12"
+    },
+    {
+      "canonical_name": "atlas-runtime-sync",
+      "canonical_path": ".claude/commands/atlas-runtime-sync.md",
+      "adapter_path": "adapters/codex/catalogs/commands.md",
+      "parity_type": "canonical-reference",
+      "status": "mapped",
+      "notes": "Resolved through the generated catalog to the canonical source.",
+      "version": "0.1.0-beta.12"
+    },
+    {
+      "canonical_name": "atlas-stabilize",
+      "canonical_path": ".claude/commands/atlas-stabilize.md",
+      "adapter_path": "adapters/codex/catalogs/commands.md",
+      "parity_type": "canonical-reference",
+      "status": "mapped",
+      "notes": "Resolved through the generated catalog to the canonical source.",
+      "version": "0.1.0-beta.12"
+    },
+    {
+      "canonical_name": "atlas-support",
+      "canonical_path": ".claude/commands/atlas-support.md",
+      "adapter_path": "adapters/codex/catalogs/commands.md",
+      "parity_type": "canonical-reference",
+      "status": "mapped",
+      "notes": "Resolved through the generated catalog to the canonical source.",
+      "version": "0.1.0-beta.12"
+    },
+    {
+      "canonical_name": "atlas-test",
+      "canonical_path": ".claude/commands/atlas-test.md",
+      "adapter_path": "adapters/codex/catalogs/commands.md",
+      "parity_type": "canonical-reference",
+      "status": "mapped",
+      "notes": "Resolved through the generated catalog to the canonical source.",
+      "version": "0.1.0-beta.12"
+    },
+    {
+      "canonical_name": "atlas-threat-model",
+      "canonical_path": ".claude/commands/atlas-threat-model.md",
+      "adapter_path": "adapters/codex/catalogs/commands.md",
+      "parity_type": "canonical-reference",
+      "status": "mapped",
+      "notes": "Resolved through the generated catalog to the canonical source.",
+      "version": "0.1.0-beta.12"
+    },
+    {
+      "canonical_name": "atlas-upgrade",
+      "canonical_path": ".claude/commands/atlas-upgrade.md",
+      "adapter_path": "adapters/codex/catalogs/commands.md",
+      "parity_type": "canonical-reference",
+      "status": "mapped",
+      "notes": "Resolved through the generated catalog to the canonical source.",
+      "version": "0.1.0-beta.12"
+    },
+    {
+      "canonical_name": "atlas-validate",
+      "canonical_path": ".claude/commands/atlas-validate.md",
+      "adapter_path": "adapters/codex/catalogs/commands.md",
+      "parity_type": "canonical-reference",
+      "status": "mapped",
+      "notes": "Resolved through the generated catalog to the canonical source.",
+      "version": "0.1.0-beta.12"
+    }
+  ]
+}

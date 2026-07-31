@@ -1,24 +1,29 @@
 from __future__ import annotations
-import hashlib, json, uuid
+import argparse
+import json
+import uuid
 from datetime import datetime, timezone
 from pathlib import Path
+
+from release_utils import canonical_release_bytes, sha256_bytes
 
 ROOT = Path(__file__).resolve().parents[1]
 
 def sha256(path: Path) -> str:
-    digest = hashlib.sha256()
-    with path.open("rb") as handle:
-        for chunk in iter(lambda: handle.read(1024 * 1024), b""):
-            digest.update(chunk)
-    return digest.hexdigest()
+    return sha256_bytes(canonical_release_bytes(path.read_bytes()))
 
-def collect(directory: str) -> list[dict]:
-    root = ROOT / directory
+def collect(workspace: Path, directory: str) -> list[dict]:
+    requested = Path(directory)
+    if requested.is_absolute():
+        raise ValueError(f"Audit include must be workspace-relative: {directory}")
+    root = (workspace / requested).resolve()
+    if not root.is_relative_to(workspace):
+        raise ValueError(f"Audit include escapes workspace: {directory}")
     if not root.exists():
         return []
     return [
         {
-            "path": str(path.relative_to(ROOT)),
+            "path": path.relative_to(workspace).as_posix(),
             "sha256": sha256(path),
         }
         for path in sorted(root.rglob("*.json"))
@@ -26,14 +31,36 @@ def collect(directory: str) -> list[dict]:
     ]
 
 def main() -> None:
-    version = (ROOT / "VERSION").read_text(encoding="utf-8").strip()
+    parser = argparse.ArgumentParser()
+    parser.add_argument("--root", default=str(ROOT))
+    parser.add_argument("--output")
+    parser.add_argument(
+        "--include",
+        action="append",
+        default=[],
+        help=(
+            "Additional workspace-relative JSON record directory. "
+            "May be supplied more than once."
+        ),
+    )
+    parser.add_argument(
+        "--no-default-includes",
+        action="store_true",
+        help="Collect only directories supplied with --include.",
+    )
+    args = parser.parse_args()
+
+    workspace = Path(args.root).resolve()
+    version = (workspace / "VERSION").read_text(encoding="utf-8").strip()
     records = []
-    for directory in [
+    directories = [] if args.no_default_includes else [
         ".atlas/evidence",
         ".atlas/deployments",
         ".atlas/continuity",
-    ]:
-        records.extend(collect(directory))
+    ]
+    directories.extend(args.include)
+    for directory in dict.fromkeys(directories):
+        records.extend(collect(workspace, directory))
 
     manifest = {
         "bundle_id": f"audit-{uuid.uuid4().hex[:12]}",
@@ -47,7 +74,13 @@ def main() -> None:
         },
     }
 
-    output = ROOT / ".atlas" / "audit" / "audit-bundle.json"
+    output = (
+        Path(args.output)
+        if args.output
+        else workspace / ".atlas" / "audit" / "audit-bundle.json"
+    )
+    if not output.is_absolute():
+        output = workspace / output
     output.parent.mkdir(parents=True, exist_ok=True)
     output.write_text(json.dumps(manifest, indent=2) + "\n", encoding="utf-8")
     print(output)

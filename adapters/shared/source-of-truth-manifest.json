@@ -1,5 +1,5 @@
 {
-  "framework_version": "0.1.0-beta.9",
+  "framework_version": "0.1.0-beta.12",
   "domains": {
     "framework_version": {
       "source": "VERSION",

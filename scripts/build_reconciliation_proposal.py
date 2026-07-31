@@ -31,7 +31,7 @@ def main() -> None:
 
     proposal = {
         "framework_version": version,
-        "drift_report": str(drift_path.relative_to(ROOT)),
+        "drift_report": drift_path.relative_to(ROOT).as_posix(),
         "proposed_updates": proposed,
         "manual_review": True,
         "status": "proposed",

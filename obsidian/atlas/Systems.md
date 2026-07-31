@@ -5,12 +5,13 @@ status: active
 
 # Systems
 
-Add links to system notes here.
+ATLAS runtime architecture is maintained in the canonical
+[[../../.claude/memory/architecture|architecture memory]].
 
-## Applications
+## Runtime systems
 
-## Services
+- Claude Code: canonical implementation in `.claude/`
+- Codex: beta-supported adapter in `adapters/codex/`
+- Gemini and Cursor: experimental adapters
 
-## Data platforms
-
-## Shared infrastructure
+See [[Agents]], [[Skills]], and [[Workflows]] for capability indexes.

@@ -1,5 +1,6 @@
 {
   "policy_id": "atlas.version.consistency",
+  "evaluator": "version_consistency",
   "description": "All runtime declarations and manifests must match VERSION.",
   "severity": "blocking",
   "condition": "version-bearing files equal VERSION",

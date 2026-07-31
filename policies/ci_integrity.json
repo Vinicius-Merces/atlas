@@ -1,0 +1,11 @@
+{
+  "policy_id": "atlas.ci.integrity",
+  "evaluator": "ci_integrity",
+  "description": "The GitHub Actions workflow must be valid YAML with an executable validation job.",
+  "severity": "blocking",
+  "condition": "CI YAML parses and contains checkout, Python setup, and validation steps",
+  "evidence": [
+    ".github/workflows/validate.yml"
+  ],
+  "remediation": "Repair the workflow structure and required validation steps."
+}

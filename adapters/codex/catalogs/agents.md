@@ -2,19 +2,23 @@
 
 > Generated from `.claude/registry.json`. Do not edit manually.
 
-Total: **64**
+Total: **86**
 
 - `adapter-drift-auditor` → `.claude/agents/adapter-drift-auditor.md`
 - `adoption-architect` → `.claude/agents/adoption-architect.md`
 - `ai-engineer` → `.claude/agents/ai-engineer.md`
 - `analytics-engineer` → `.claude/agents/analytics-engineer.md`
+- `audit-bundle-reviewer` → `.claude/agents/audit-bundle-reviewer.md`
 - `automation-engineer` → `.claude/agents/automation-engineer.md`
 - `backend-engineer` → `.claude/agents/backend-engineer.md`
 - `beta-release-coordinator` → `.claude/agents/beta-release-coordinator.md`
+- `change-provenance-engineer` → `.claude/agents/change-provenance-engineer.md`
+- `checkpoint-integrity-reviewer` → `.claude/agents/checkpoint-integrity-reviewer.md`
 - `cloud-architect` → `.claude/agents/cloud-architect.md`
 - `codex-runtime-engineer` → `.claude/agents/codex-runtime-engineer.md`
 - `compatibility-engineer` → `.claude/agents/compatibility-engineer.md`
 - `compliance-analyst` → `.claude/agents/compliance-analyst.md`
+- `conflict-resolution-engineer` → `.claude/agents/conflict-resolution-engineer.md`
 - `content-designer` → `.claude/agents/content-designer.md`
 - `context-pack-engineer` → `.claude/agents/context-pack-engineer.md`
 - `contract-test-engineer` → `.claude/agents/contract-test-engineer.md`
@@ -27,36 +31,53 @@ Total: **64**
 - `documentation-architect` → `.claude/agents/documentation-architect.md`
 - `documentation-engineer` → `.claude/agents/documentation-engineer.md`
 - `enterprise-architect` → `.claude/agents/enterprise-architect.md`
+- `evidence-ledger-architect` → `.claude/agents/evidence-ledger-architect.md`
+- `execution-continuity-engineer` → `.claude/agents/execution-continuity-engineer.md`
 - `experimentation-analyst` → `.claude/agents/experimentation-analyst.md`
 - `finops-engineer` → `.claude/agents/finops-engineer.md`
 - `frontend-engineer` → `.claude/agents/frontend-engineer.md`
 - `governance-steward` → `.claude/agents/governance-steward.md`
 - `integration-engineer` → `.claude/agents/integration-engineer.md`
+- `knowledge-contradiction-reviewer` → `.claude/agents/knowledge-contradiction-reviewer.md`
 - `knowledge-engineer` → `.claude/agents/knowledge-engineer.md`
 - `localization-engineer` → `.claude/agents/localization-engineer.md`
+- `manual-deployment-auditor` → `.claude/agents/manual-deployment-auditor.md`
+- `manual-deployment-safety-engineer` → `.claude/agents/manual-deployment-safety-engineer.md`
+- `memory-governance-architect` → `.claude/agents/memory-governance-architect.md`
+- `merge-readiness-reviewer` → `.claude/agents/merge-readiness-reviewer.md`
 - `migration-architect` → `.claude/agents/migration-architect.md`
 - `mobile-engineer` → `.claude/agents/mobile-engineer.md`
 - `monorepo-maintainer` → `.claude/agents/monorepo-maintainer.md`
+- `parallel-execution-architect` → `.claude/agents/parallel-execution-architect.md`
+- `patch-integrity-engineer` → `.claude/agents/patch-integrity-engineer.md`
 - `performance-engineer` → `.claude/agents/performance-engineer.md`
 - `platform-engineer` → `.claude/agents/platform-engineer.md`
+- `policy-enforcement-architect` → `.claude/agents/policy-enforcement-architect.md`
 - `policy-engineer` → `.claude/agents/policy-engineer.md`
+- `policy-exception-reviewer` → `.claude/agents/policy-exception-reviewer.md`
 - `privacy-engineer` → `.claude/agents/privacy-engineer.md`
 - `product-architect` → `.claude/agents/product-architect.md`
 - `product-manager` → `.claude/agents/product-manager.md`
 - `project-health-analyst` → `.claude/agents/project-health-analyst.md`
+- `project-memory-curator` → `.claude/agents/project-memory-curator.md`
+- `project-state-reconciler` → `.claude/agents/project-state-reconciler.md`
 - `qa-engineer` → `.claude/agents/qa-engineer.md`
 - `reference-implementation-reviewer` → `.claude/agents/reference-implementation-reviewer.md`
 - `release-integrity-engineer` → `.claude/agents/release-integrity-engineer.md`
 - `release-manager` → `.claude/agents/release-manager.md`
 - `reliability-engineer` → `.claude/agents/reliability-engineer.md`
+- `resume-packet-reviewer` → `.claude/agents/resume-packet-reviewer.md`
 - `runtime-adapter-engineer` → `.claude/agents/runtime-adapter-engineer.md`
 - `runtime-capability-mapper` → `.claude/agents/runtime-capability-mapper.md`
 - `runtime-catalog-maintainer` → `.claude/agents/runtime-catalog-maintainer.md`
 - `runtime-conformance-auditor` → `.claude/agents/runtime-conformance-auditor.md`
+- `runtime-execution-planner` → `.claude/agents/runtime-execution-planner.md`
+- `runtime-handoff-coordinator` → `.claude/agents/runtime-handoff-coordinator.md`
 - `runtime-parity-reviewer` → `.claude/agents/runtime-parity-reviewer.md`
 - `runtime-synchronization-engineer` → `.claude/agents/runtime-synchronization-engineer.md`
 - `search-retrieval-engineer` → `.claude/agents/search-retrieval-engineer.md`
 - `security-engineer` → `.claude/agents/security-engineer.md`
+- `session-continuity-engineer` → `.claude/agents/session-continuity-engineer.md`
 - `solution-blueprint-engineer` → `.claude/agents/solution-blueprint-engineer.md`
 - `stability-engineer` → `.claude/agents/stability-engineer.md`
 - `support-policy-maintainer` → `.claude/agents/support-policy-maintainer.md`
@@ -68,3 +89,4 @@ Total: **64**
 - `threat-modeling-engineer` → `.claude/agents/threat-modeling-engineer.md`
 - `universal-runtime-architect` → `.claude/agents/universal-runtime-architect.md`
 - `ux-director` → `.claude/agents/ux-director.md`
+- `workstream-coordinator` → `.claude/agents/workstream-coordinator.md`

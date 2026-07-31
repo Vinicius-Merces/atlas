@@ -1,0 +1,781 @@
+{
+  "version": "0.1.0-beta.12",
+  "generated_from": ".claude/registry.json",
+  "collection": "agents",
+  "entries": [
+    {
+      "canonical_name": "adapter-drift-auditor",
+      "canonical_path": ".claude/agents/adapter-drift-auditor.md",
+      "adapter_path": "adapters/codex/catalogs/agents.md",
+      "parity_type": "canonical-reference",
+      "status": "mapped",
+      "notes": "Resolved through the generated catalog to the canonical source.",
+      "version": "0.1.0-beta.12"
+    },
+    {
+      "canonical_name": "adoption-architect",
+      "canonical_path": ".claude/agents/adoption-architect.md",
+      "adapter_path": "adapters/codex/catalogs/agents.md",
+      "parity_type": "canonical-reference",
+      "status": "mapped",
+      "notes": "Resolved through the generated catalog to the canonical source.",
+      "version": "0.1.0-beta.12"
+    },
+    {
+      "canonical_name": "ai-engineer",
+      "canonical_path": ".claude/agents/ai-engineer.md",
+      "adapter_path": "adapters/codex/catalogs/agents.md",
+      "parity_type": "canonical-reference",
+      "status": "mapped",
+      "notes": "Resolved through the generated catalog to the canonical source.",
+      "version": "0.1.0-beta.12"
+    },
+    {
+      "canonical_name": "analytics-engineer",
+      "canonical_path": ".claude/agents/analytics-engineer.md",
+      "adapter_path": "adapters/codex/catalogs/agents.md",
+      "parity_type": "canonical-reference",
+      "status": "mapped",
+      "notes": "Resolved through the generated catalog to the canonical source.",
+      "version": "0.1.0-beta.12"
+    },
+    {
+      "canonical_name": "audit-bundle-reviewer",
+      "canonical_path": ".claude/agents/audit-bundle-reviewer.md",
+      "adapter_path": "adapters/codex/catalogs/agents.md",
+      "parity_type": "canonical-reference",
+      "status": "mapped",
+      "notes": "Resolved through the generated catalog to the canonical source.",
+      "version": "0.1.0-beta.12"
+    },
+    {
+      "canonical_name": "automation-engineer",
+      "canonical_path": ".claude/agents/automation-engineer.md",
+      "adapter_path": "adapters/codex/catalogs/agents.md",
+      "parity_type": "canonical-reference",
+      "status": "mapped",
+      "notes": "Resolved through the generated catalog to the canonical source.",
+      "version": "0.1.0-beta.12"
+    },
+    {
+      "canonical_name": "backend-engineer",
+      "canonical_path": ".claude/agents/backend-engineer.md",
+      "adapter_path": "adapters/codex/catalogs/agents.md",
+      "parity_type": "canonical-reference",
+      "status": "mapped",
+      "notes": "Resolved through the generated catalog to the canonical source.",
+      "version": "0.1.0-beta.12"
+    },
+    {
+      "canonical_name": "beta-release-coordinator",
+      "canonical_path": ".claude/agents/beta-release-coordinator.md",
+      "adapter_path": "adapters/codex/catalogs/agents.md",
+      "parity_type": "canonical-reference",
+      "status": "mapped",
+      "notes": "Resolved through the generated catalog to the canonical source.",
+      "version": "0.1.0-beta.12"
+    },
+    {
+      "canonical_name": "change-provenance-engineer",
+      "canonical_path": ".claude/agents/change-provenance-engineer.md",
+      "adapter_path": "adapters/codex/catalogs/agents.md",
+      "parity_type": "canonical-reference",
+      "status": "mapped",
+      "notes": "Resolved through the generated catalog to the canonical source.",
+      "version": "0.1.0-beta.12"
+    },
+    {
+      "canonical_name": "checkpoint-integrity-reviewer",
+      "canonical_path": ".claude/agents/checkpoint-integrity-reviewer.md",
+      "adapter_path": "adapters/codex/catalogs/agents.md",
+      "parity_type": "canonical-reference",
+      "status": "mapped",
+      "notes": "Resolved through the generated catalog to the canonical source.",
+      "version": "0.1.0-beta.12"
+    },
+    {
+      "canonical_name": "cloud-architect",
+      "canonical_path": ".claude/agents/cloud-architect.md",
+      "adapter_path": "adapters/codex/catalogs/agents.md",
+      "parity_type": "canonical-reference",
+      "status": "mapped",
+      "notes": "Resolved through the generated catalog to the canonical source.",
+      "version": "0.1.0-beta.12"
+    },
+    {
+      "canonical_name": "codex-runtime-engineer",
+      "canonical_path": ".claude/agents/codex-runtime-engineer.md",
+      "adapter_path": "adapters/codex/catalogs/agents.md",
+      "parity_type": "canonical-reference",
+      "status": "mapped",
+      "notes": "Resolved through the generated catalog to the canonical source.",
+      "version": "0.1.0-beta.12"
+    },
+    {
+      "canonical_name": "compatibility-engineer",
+      "canonical_path": ".claude/agents/compatibility-engineer.md",
+      "adapter_path": "adapters/codex/catalogs/agents.md",
+      "parity_type": "canonical-reference",
+      "status": "mapped",
+      "notes": "Resolved through the generated catalog to the canonical source.",
+      "version": "0.1.0-beta.12"
+    },
+    {
+      "canonical_name": "compliance-analyst",
+      "canonical_path": ".claude/agents/compliance-analyst.md",
+      "adapter_path": "adapters/codex/catalogs/agents.md",
+      "parity_type": "canonical-reference",
+      "status": "mapped",
+      "notes": "Resolved through the generated catalog to the canonical source.",
+      "version": "0.1.0-beta.12"
+    },
+    {
+      "canonical_name": "conflict-resolution-engineer",
+      "canonical_path": ".claude/agents/conflict-resolution-engineer.md",
+      "adapter_path": "adapters/codex/catalogs/agents.md",
+      "parity_type": "canonical-reference",
+      "status": "mapped",
+      "notes": "Resolved through the generated catalog to the canonical source.",
+      "version": "0.1.0-beta.12"
+    },
+    {
+      "canonical_name": "content-designer",
+      "canonical_path": ".claude/agents/content-designer.md",
+      "adapter_path": "adapters/codex/catalogs/agents.md",
+      "parity_type": "canonical-reference",
+      "status": "mapped",
+      "notes": "Resolved through the generated catalog to the canonical source.",
+      "version": "0.1.0-beta.12"
+    },
+    {
+      "canonical_name": "context-pack-engineer",
+      "canonical_path": ".claude/agents/context-pack-engineer.md",
+      "adapter_path": "adapters/codex/catalogs/agents.md",
+      "parity_type": "canonical-reference",
+      "status": "mapped",
+      "notes": "Resolved through the generated catalog to the canonical source.",
+      "version": "0.1.0-beta.12"
+    },
+    {
+      "canonical_name": "contract-test-engineer",
+      "canonical_path": ".claude/agents/contract-test-engineer.md",
+      "adapter_path": "adapters/codex/catalogs/agents.md",
+      "parity_type": "canonical-reference",
+      "status": "mapped",
+      "notes": "Resolved through the generated catalog to the canonical source.",
+      "version": "0.1.0-beta.12"
+    },
+    {
+      "canonical_name": "data-engineer",
+      "canonical_path": ".claude/agents/data-engineer.md",
+      "adapter_path": "adapters/codex/catalogs/agents.md",
+      "parity_type": "canonical-reference",
+      "status": "mapped",
+      "notes": "Resolved through the generated catalog to the canonical source.",
+      "version": "0.1.0-beta.12"
+    },
+    {
+      "canonical_name": "dependency-manager",
+      "canonical_path": ".claude/agents/dependency-manager.md",
+      "adapter_path": "adapters/codex/catalogs/agents.md",
+      "parity_type": "canonical-reference",
+      "status": "mapped",
+      "notes": "Resolved through the generated catalog to the canonical source.",
+      "version": "0.1.0-beta.12"
+    },
+    {
+      "canonical_name": "deprecation-manager",
+      "canonical_path": ".claude/agents/deprecation-manager.md",
+      "adapter_path": "adapters/codex/catalogs/agents.md",
+      "parity_type": "canonical-reference",
+      "status": "mapped",
+      "notes": "Resolved through the generated catalog to the canonical source.",
+      "version": "0.1.0-beta.12"
+    },
+    {
+      "canonical_name": "design-system-engineer",
+      "canonical_path": ".claude/agents/design-system-engineer.md",
+      "adapter_path": "adapters/codex/catalogs/agents.md",
+      "parity_type": "canonical-reference",
+      "status": "mapped",
+      "notes": "Resolved through the generated catalog to the canonical source.",
+      "version": "0.1.0-beta.12"
+    },
+    {
+      "canonical_name": "developer-experience-engineer",
+      "canonical_path": ".claude/agents/developer-experience-engineer.md",
+      "adapter_path": "adapters/codex/catalogs/agents.md",
+      "parity_type": "canonical-reference",
+      "status": "mapped",
+      "notes": "Resolved through the generated catalog to the canonical source.",
+      "version": "0.1.0-beta.12"
+    },
+    {
+      "canonical_name": "devops-engineer",
+      "canonical_path": ".claude/agents/devops-engineer.md",
+      "adapter_path": "adapters/codex/catalogs/agents.md",
+      "parity_type": "canonical-reference",
+      "status": "mapped",
+      "notes": "Resolved through the generated catalog to the canonical source.",
+      "version": "0.1.0-beta.12"
+    },
+    {
+      "canonical_name": "documentation-architect",
+      "canonical_path": ".claude/agents/documentation-architect.md",
+      "adapter_path": "adapters/codex/catalogs/agents.md",
+      "parity_type": "canonical-reference",
+      "status": "mapped",
+      "notes": "Resolved through the generated catalog to the canonical source.",
+      "version": "0.1.0-beta.12"
+    },
+    {
+      "canonical_name": "documentation-engineer",
+      "canonical_path": ".claude/agents/documentation-engineer.md",
+      "adapter_path": "adapters/codex/catalogs/agents.md",
+      "parity_type": "canonical-reference",
+      "status": "mapped",
+      "notes": "Resolved through the generated catalog to the canonical source.",
+      "version": "0.1.0-beta.12"
+    },
+    {
+      "canonical_name": "enterprise-architect",
+      "canonical_path": ".claude/agents/enterprise-architect.md",
+      "adapter_path": "adapters/codex/catalogs/agents.md",
+      "parity_type": "canonical-reference",
+      "status": "mapped",
+      "notes": "Resolved through the generated catalog to the canonical source.",
+      "version": "0.1.0-beta.12"
+    },
+    {
+      "canonical_name": "evidence-ledger-architect",
+      "canonical_path": ".claude/agents/evidence-ledger-architect.md",
+      "adapter_path": "adapters/codex/catalogs/agents.md",
+      "parity_type": "canonical-reference",
+      "status": "mapped",
+      "notes": "Resolved through the generated catalog to the canonical source.",
+      "version": "0.1.0-beta.12"
+    },
+    {
+      "canonical_name": "execution-continuity-engineer",
+      "canonical_path": ".claude/agents/execution-continuity-engineer.md",
+      "adapter_path": "adapters/codex/catalogs/agents.md",
+      "parity_type": "canonical-reference",
+      "status": "mapped",
+      "notes": "Resolved through the generated catalog to the canonical source.",
+      "version": "0.1.0-beta.12"
+    },
+    {
+      "canonical_name": "experimentation-analyst",
+      "canonical_path": ".claude/agents/experimentation-analyst.md",
+      "adapter_path": "adapters/codex/catalogs/agents.md",
+      "parity_type": "canonical-reference",
+      "status": "mapped",
+      "notes": "Resolved through the generated catalog to the canonical source.",
+      "version": "0.1.0-beta.12"
+    },
+    {
+      "canonical_name": "finops-engineer",
+      "canonical_path": ".claude/agents/finops-engineer.md",
+      "adapter_path": "adapters/codex/catalogs/agents.md",
+      "parity_type": "canonical-reference",
+      "status": "mapped",
+      "notes": "Resolved through the generated catalog to the canonical source.",
+      "version": "0.1.0-beta.12"
+    },
+    {
+      "canonical_name": "frontend-engineer",
+      "canonical_path": ".claude/agents/frontend-engineer.md",
+      "adapter_path": "adapters/codex/catalogs/agents.md",
+      "parity_type": "canonical-reference",
+      "status": "mapped",
+      "notes": "Resolved through the generated catalog to the canonical source.",
+      "version": "0.1.0-beta.12"
+    },
+    {
+      "canonical_name": "governance-steward",
+      "canonical_path": ".claude/agents/governance-steward.md",
+      "adapter_path": "adapters/codex/catalogs/agents.md",
+      "parity_type": "canonical-reference",
+      "status": "mapped",
+      "notes": "Resolved through the generated catalog to the canonical source.",
+      "version": "0.1.0-beta.12"
+    },
+    {
+      "canonical_name": "integration-engineer",
+      "canonical_path": ".claude/agents/integration-engineer.md",
+      "adapter_path": "adapters/codex/catalogs/agents.md",
+      "parity_type": "canonical-reference",
+      "status": "mapped",
+      "notes": "Resolved through the generated catalog to the canonical source.",
+      "version": "0.1.0-beta.12"
+    },
+    {
+      "canonical_name": "knowledge-contradiction-reviewer",
+      "canonical_path": ".claude/agents/knowledge-contradiction-reviewer.md",
+      "adapter_path": "adapters/codex/catalogs/agents.md",
+      "parity_type": "canonical-reference",
+      "status": "mapped",
+      "notes": "Resolved through the generated catalog to the canonical source.",
+      "version": "0.1.0-beta.12"
+    },
+    {
+      "canonical_name": "knowledge-engineer",
+      "canonical_path": ".claude/agents/knowledge-engineer.md",
+      "adapter_path": "adapters/codex/catalogs/agents.md",
+      "parity_type": "canonical-reference",
+      "status": "mapped",
+      "notes": "Resolved through the generated catalog to the canonical source.",
+      "version": "0.1.0-beta.12"
+    },
+    {
+      "canonical_name": "localization-engineer",
+      "canonical_path": ".claude/agents/localization-engineer.md",
+      "adapter_path": "adapters/codex/catalogs/agents.md",
+      "parity_type": "canonical-reference",
+      "status": "mapped",
+      "notes": "Resolved through the generated catalog to the canonical source.",
+      "version": "0.1.0-beta.12"
+    },
+    {
+      "canonical_name": "manual-deployment-auditor",
+      "canonical_path": ".claude/agents/manual-deployment-auditor.md",
+      "adapter_path": "adapters/codex/catalogs/agents.md",
+      "parity_type": "canonical-reference",
+      "status": "mapped",
+      "notes": "Resolved through the generated catalog to the canonical source.",
+      "version": "0.1.0-beta.12"
+    },
+    {
+      "canonical_name": "manual-deployment-safety-engineer",
+      "canonical_path": ".claude/agents/manual-deployment-safety-engineer.md",
+      "adapter_path": "adapters/codex/catalogs/agents.md",
+      "parity_type": "canonical-reference",
+      "status": "mapped",
+      "notes": "Resolved through the generated catalog to the canonical source.",
+      "version": "0.1.0-beta.12"
+    },
+    {
+      "canonical_name": "memory-governance-architect",
+      "canonical_path": ".claude/agents/memory-governance-architect.md",
+      "adapter_path": "adapters/codex/catalogs/agents.md",
+      "parity_type": "canonical-reference",
+      "status": "mapped",
+      "notes": "Resolved through the generated catalog to the canonical source.",
+      "version": "0.1.0-beta.12"
+    },
+    {
+      "canonical_name": "merge-readiness-reviewer",
+      "canonical_path": ".claude/agents/merge-readiness-reviewer.md",
+      "adapter_path": "adapters/codex/catalogs/agents.md",
+      "parity_type": "canonical-reference",
+      "status": "mapped",
+      "notes": "Resolved through the generated catalog to the canonical source.",
+      "version": "0.1.0-beta.12"
+    },
+    {
+      "canonical_name": "migration-architect",
+      "canonical_path": ".claude/agents/migration-architect.md",
+      "adapter_path": "adapters/codex/catalogs/agents.md",
+      "parity_type": "canonical-reference",
+      "status": "mapped",
+      "notes": "Resolved through the generated catalog to the canonical source.",
+      "version": "0.1.0-beta.12"
+    },
+    {
+      "canonical_name": "mobile-engineer",
+      "canonical_path": ".claude/agents/mobile-engineer.md",
+      "adapter_path": "adapters/codex/catalogs/agents.md",
+      "parity_type": "canonical-reference",
+      "status": "mapped",
+      "notes": "Resolved through the generated catalog to the canonical source.",
+      "version": "0.1.0-beta.12"
+    },
+    {
+      "canonical_name": "monorepo-maintainer",
+      "canonical_path": ".claude/agents/monorepo-maintainer.md",
+      "adapter_path": "adapters/codex/catalogs/agents.md",
+      "parity_type": "canonical-reference",
+      "status": "mapped",
+      "notes": "Resolved through the generated catalog to the canonical source.",
+      "version": "0.1.0-beta.12"
+    },
+    {
+      "canonical_name": "parallel-execution-architect",
+      "canonical_path": ".claude/agents/parallel-execution-architect.md",
+      "adapter_path": "adapters/codex/catalogs/agents.md",
+      "parity_type": "canonical-reference",
+      "status": "mapped",
+      "notes": "Resolved through the generated catalog to the canonical source.",
+      "version": "0.1.0-beta.12"
+    },
+    {
+      "canonical_name": "patch-integrity-engineer",
+      "canonical_path": ".claude/agents/patch-integrity-engineer.md",
+      "adapter_path": "adapters/codex/catalogs/agents.md",
+      "parity_type": "canonical-reference",
+      "status": "mapped",
+      "notes": "Resolved through the generated catalog to the canonical source.",
+      "version": "0.1.0-beta.12"
+    },
+    {
+      "canonical_name": "performance-engineer",
+      "canonical_path": ".claude/agents/performance-engineer.md",
+      "adapter_path": "adapters/codex/catalogs/agents.md",
+      "parity_type": "canonical-reference",
+      "status": "mapped",
+      "notes": "Resolved through the generated catalog to the canonical source.",
+      "version": "0.1.0-beta.12"
+    },
+    {
+      "canonical_name": "platform-engineer",
+      "canonical_path": ".claude/agents/platform-engineer.md",
+      "adapter_path": "adapters/codex/catalogs/agents.md",
+      "parity_type": "canonical-reference",
+      "status": "mapped",
+      "notes": "Resolved through the generated catalog to the canonical source.",
+      "version": "0.1.0-beta.12"
+    },
+    {
+      "canonical_name": "policy-enforcement-architect",
+      "canonical_path": ".claude/agents/policy-enforcement-architect.md",
+      "adapter_path": "adapters/codex/catalogs/agents.md",
+      "parity_type": "canonical-reference",
+      "status": "mapped",
+      "notes": "Resolved through the generated catalog to the canonical source.",
+      "version": "0.1.0-beta.12"
+    },
+    {
+      "canonical_name": "policy-engineer",
+      "canonical_path": ".claude/agents/policy-engineer.md",
+      "adapter_path": "adapters/codex/catalogs/agents.md",
+      "parity_type": "canonical-reference",
+      "status": "mapped",
+      "notes": "Resolved through the generated catalog to the canonical source.",
+      "version": "0.1.0-beta.12"
+    },
+    {
+      "canonical_name": "policy-exception-reviewer",
+      "canonical_path": ".claude/agents/policy-exception-reviewer.md",
+      "adapter_path": "adapters/codex/catalogs/agents.md",
+      "parity_type": "canonical-reference",
+      "status": "mapped",
+      "notes": "Resolved through the generated catalog to the canonical source.",
+      "version": "0.1.0-beta.12"
+    },
+    {
+      "canonical_name": "privacy-engineer",
+      "canonical_path": ".claude/agents/privacy-engineer.md",
+      "adapter_path": "adapters/codex/catalogs/agents.md",
+      "parity_type": "canonical-reference",
+      "status": "mapped",
+      "notes": "Resolved through the generated catalog to the canonical source.",
+      "version": "0.1.0-beta.12"
+    },
+    {
+      "canonical_name": "product-architect",
+      "canonical_path": ".claude/agents/product-architect.md",
+      "adapter_path": "adapters/codex/catalogs/agents.md",
+      "parity_type": "canonical-reference",
+      "status": "mapped",
+      "notes": "Resolved through the generated catalog to the canonical source.",
+      "version": "0.1.0-beta.12"
+    },
+    {
+      "canonical_name": "product-manager",
+      "canonical_path": ".claude/agents/product-manager.md",
+      "adapter_path": "adapters/codex/catalogs/agents.md",
+      "parity_type": "canonical-reference",
+      "status": "mapped",
+      "notes": "Resolved through the generated catalog to the canonical source.",
+      "version": "0.1.0-beta.12"
+    },
+    {
+      "canonical_name": "project-health-analyst",
+      "canonical_path": ".claude/agents/project-health-analyst.md",
+      "adapter_path": "adapters/codex/catalogs/agents.md",
+      "parity_type": "canonical-reference",
+      "status": "mapped",
+      "notes": "Resolved through the generated catalog to the canonical source.",
+      "version": "0.1.0-beta.12"
+    },
+    {
+      "canonical_name": "project-memory-curator",
+      "canonical_path": ".claude/agents/project-memory-curator.md",
+      "adapter_path": "adapters/codex/catalogs/agents.md",
+      "parity_type": "canonical-reference",
+      "status": "mapped",
+      "notes": "Resolved through the generated catalog to the canonical source.",
+      "version": "0.1.0-beta.12"
+    },
+    {
+      "canonical_name": "project-state-reconciler",
+      "canonical_path": ".claude/agents/project-state-reconciler.md",
+      "adapter_path": "adapters/codex/catalogs/agents.md",
+      "parity_type": "canonical-reference",
+      "status": "mapped",
+      "notes": "Resolved through the generated catalog to the canonical source.",
+      "version": "0.1.0-beta.12"
+    },
+    {
+      "canonical_name": "qa-engineer",
+      "canonical_path": ".claude/agents/qa-engineer.md",
+      "adapter_path": "adapters/codex/catalogs/agents.md",
+      "parity_type": "canonical-reference",
+      "status": "mapped",
+      "notes": "Resolved through the generated catalog to the canonical source.",
+      "version": "0.1.0-beta.12"
+    },
+    {
+      "canonical_name": "reference-implementation-reviewer",
+      "canonical_path": ".claude/agents/reference-implementation-reviewer.md",
+      "adapter_path": "adapters/codex/catalogs/agents.md",
+      "parity_type": "canonical-reference",
+      "status": "mapped",
+      "notes": "Resolved through the generated catalog to the canonical source.",
+      "version": "0.1.0-beta.12"
+    },
+    {
+      "canonical_name": "release-integrity-engineer",
+      "canonical_path": ".claude/agents/release-integrity-engineer.md",
+      "adapter_path": "adapters/codex/catalogs/agents.md",
+      "parity_type": "canonical-reference",
+      "status": "mapped",
+      "notes": "Resolved through the generated catalog to the canonical source.",
+      "version": "0.1.0-beta.12"
+    },
+    {
+      "canonical_name": "release-manager",
+      "canonical_path": ".claude/agents/release-manager.md",
+      "adapter_path": "adapters/codex/catalogs/agents.md",
+      "parity_type": "canonical-reference",
+      "status": "mapped",
+      "notes": "Resolved through the generated catalog to the canonical source.",
+      "version": "0.1.0-beta.12"
+    },
+    {
+      "canonical_name": "reliability-engineer",
+      "canonical_path": ".claude/agents/reliability-engineer.md",
+      "adapter_path": "adapters/codex/catalogs/agents.md",
+      "parity_type": "canonical-reference",
+      "status": "mapped",
+      "notes": "Resolved through the generated catalog to the canonical source.",
+      "version": "0.1.0-beta.12"
+    },
+    {
+      "canonical_name": "resume-packet-reviewer",
+      "canonical_path": ".claude/agents/resume-packet-reviewer.md",
+      "adapter_path": "adapters/codex/catalogs/agents.md",
+      "parity_type": "canonical-reference",
+      "status": "mapped",
+      "notes": "Resolved through the generated catalog to the canonical source.",
+      "version": "0.1.0-beta.12"
+    },
+    {
+      "canonical_name": "runtime-adapter-engineer",
+      "canonical_path": ".claude/agents/runtime-adapter-engineer.md",
+      "adapter_path": "adapters/codex/catalogs/agents.md",
+      "parity_type": "canonical-reference",
+      "status": "mapped",
+      "notes": "Resolved through the generated catalog to the canonical source.",
+      "version": "0.1.0-beta.12"
+    },
+    {
+      "canonical_name": "runtime-capability-mapper",
+      "canonical_path": ".claude/agents/runtime-capability-mapper.md",
+      "adapter_path": "adapters/codex/catalogs/agents.md",
+      "parity_type": "canonical-reference",
+      "status": "mapped",
+      "notes": "Resolved through the generated catalog to the canonical source.",
+      "version": "0.1.0-beta.12"
+    },
+    {
+      "canonical_name": "runtime-catalog-maintainer",
+      "canonical_path": ".claude/agents/runtime-catalog-maintainer.md",
+      "adapter_path": "adapters/codex/catalogs/agents.md",
+      "parity_type": "canonical-reference",
+      "status": "mapped",
+      "notes": "Resolved through the generated catalog to the canonical source.",
+      "version": "0.1.0-beta.12"
+    },
+    {
+      "canonical_name": "runtime-conformance-auditor",
+      "canonical_path": ".claude/agents/runtime-conformance-auditor.md",
+      "adapter_path": "adapters/codex/catalogs/agents.md",
+      "parity_type": "canonical-reference",
+      "status": "mapped",
+      "notes": "Resolved through the generated catalog to the canonical source.",
+      "version": "0.1.0-beta.12"
+    },
+    {
+      "canonical_name": "runtime-execution-planner",
+      "canonical_path": ".claude/agents/runtime-execution-planner.md",
+      "adapter_path": "adapters/codex/catalogs/agents.md",
+      "parity_type": "canonical-reference",
+      "status": "mapped",
+      "notes": "Resolved through the generated catalog to the canonical source.",
+      "version": "0.1.0-beta.12"
+    },
+    {
+      "canonical_name": "runtime-handoff-coordinator",
+      "canonical_path": ".claude/agents/runtime-handoff-coordinator.md",
+      "adapter_path": "adapters/codex/catalogs/agents.md",
+      "parity_type": "canonical-reference",
+      "status": "mapped",
+      "notes": "Resolved through the generated catalog to the canonical source.",
+      "version": "0.1.0-beta.12"
+    },
+    {
+      "canonical_name": "runtime-parity-reviewer",
+      "canonical_path": ".claude/agents/runtime-parity-reviewer.md",
+      "adapter_path": "adapters/codex/catalogs/agents.md",
+      "parity_type": "canonical-reference",
+      "status": "mapped",
+      "notes": "Resolved through the generated catalog to the canonical source.",
+      "version": "0.1.0-beta.12"
+    },
+    {
+      "canonical_name": "runtime-synchronization-engineer",
+      "canonical_path": ".claude/agents/runtime-synchronization-engineer.md",
+      "adapter_path": "adapters/codex/catalogs/agents.md",
+      "parity_type": "canonical-reference",
+      "status": "mapped",
+      "notes": "Resolved through the generated catalog to the canonical source.",
+      "version": "0.1.0-beta.12"
+    },
+    {
+      "canonical_name": "search-retrieval-engineer",
+      "canonical_path": ".claude/agents/search-retrieval-engineer.md",
+      "adapter_path": "adapters/codex/catalogs/agents.md",
+      "parity_type": "canonical-reference",
+      "status": "mapped",
+      "notes": "Resolved through the generated catalog to the canonical source.",
+      "version": "0.1.0-beta.12"
+    },
+    {
+      "canonical_name": "security-engineer",
+      "canonical_path": ".claude/agents/security-engineer.md",
+      "adapter_path": "adapters/codex/catalogs/agents.md",
+      "parity_type": "canonical-reference",
+      "status": "mapped",
+      "notes": "Resolved through the generated catalog to the canonical source.",
+      "version": "0.1.0-beta.12"
+    },
+    {
+      "canonical_name": "session-continuity-engineer",
+      "canonical_path": ".claude/agents/session-continuity-engineer.md",
+      "adapter_path": "adapters/codex/catalogs/agents.md",
+      "parity_type": "canonical-reference",
+      "status": "mapped",
+      "notes": "Resolved through the generated catalog to the canonical source.",
+      "version": "0.1.0-beta.12"
+    },
+    {
+      "canonical_name": "solution-blueprint-engineer",
+      "canonical_path": ".claude/agents/solution-blueprint-engineer.md",
+      "adapter_path": "adapters/codex/catalogs/agents.md",
+      "parity_type": "canonical-reference",
+      "status": "mapped",
+      "notes": "Resolved through the generated catalog to the canonical source.",
+      "version": "0.1.0-beta.12"
+    },
+    {
+      "canonical_name": "stability-engineer",
+      "canonical_path": ".claude/agents/stability-engineer.md",
+      "adapter_path": "adapters/codex/catalogs/agents.md",
+      "parity_type": "canonical-reference",
+      "status": "mapped",
+      "notes": "Resolved through the generated catalog to the canonical source.",
+      "version": "0.1.0-beta.12"
+    },
+    {
+      "canonical_name": "support-policy-maintainer",
+      "canonical_path": ".claude/agents/support-policy-maintainer.md",
+      "adapter_path": "adapters/codex/catalogs/agents.md",
+      "parity_type": "canonical-reference",
+      "status": "mapped",
+      "notes": "Resolved through the generated catalog to the canonical source.",
+      "version": "0.1.0-beta.12"
+    },
+    {
+      "canonical_name": "task-routing-engineer",
+      "canonical_path": ".claude/agents/task-routing-engineer.md",
+      "adapter_path": "adapters/codex/catalogs/agents.md",
+      "parity_type": "canonical-reference",
+      "status": "mapped",
+      "notes": "Resolved through the generated catalog to the canonical source.",
+      "version": "0.1.0-beta.12"
+    },
+    {
+      "canonical_name": "technical-auditor",
+      "canonical_path": ".claude/agents/technical-auditor.md",
+      "adapter_path": "adapters/codex/catalogs/agents.md",
+      "parity_type": "canonical-reference",
+      "status": "mapped",
+      "notes": "Resolved through the generated catalog to the canonical source.",
+      "version": "0.1.0-beta.12"
+    },
+    {
+      "canonical_name": "technical-debt-steward",
+      "canonical_path": ".claude/agents/technical-debt-steward.md",
+      "adapter_path": "adapters/codex/catalogs/agents.md",
+      "parity_type": "canonical-reference",
+      "status": "mapped",
+      "notes": "Resolved through the generated catalog to the canonical source.",
+      "version": "0.1.0-beta.12"
+    },
+    {
+      "canonical_name": "technical-program-manager",
+      "canonical_path": ".claude/agents/technical-program-manager.md",
+      "adapter_path": "adapters/codex/catalogs/agents.md",
+      "parity_type": "canonical-reference",
+      "status": "mapped",
+      "notes": "Resolved through the generated catalog to the canonical source.",
+      "version": "0.1.0-beta.12"
+    },
+    {
+      "canonical_name": "test-automation-engineer",
+      "canonical_path": ".claude/agents/test-automation-engineer.md",
+      "adapter_path": "adapters/codex/catalogs/agents.md",
+      "parity_type": "canonical-reference",
+      "status": "mapped",
+      "notes": "Resolved through the generated catalog to the canonical source.",
+      "version": "0.1.0-beta.12"
+    },
+    {
+      "canonical_name": "threat-modeling-engineer",
+      "canonical_path": ".claude/agents/threat-modeling-engineer.md",
+      "adapter_path": "adapters/codex/catalogs/agents.md",
+      "parity_type": "canonical-reference",
+      "status": "mapped",
+      "notes": "Resolved through the generated catalog to the canonical source.",
+      "version": "0.1.0-beta.12"
+    },
+    {
+      "canonical_name": "universal-runtime-architect",
+      "canonical_path": ".claude/agents/universal-runtime-architect.md",
+      "adapter_path": "adapters/codex/catalogs/agents.md",
+      "parity_type": "canonical-reference",
+      "status": "mapped",
+      "notes": "Resolved through the generated catalog to the canonical source.",
+      "version": "0.1.0-beta.12"
+    },
+    {
+      "canonical_name": "ux-director",
+      "canonical_path": ".claude/agents/ux-director.md",
+      "adapter_path": "adapters/codex/catalogs/agents.md",
+      "parity_type": "canonical-reference",
+      "status": "mapped",
+      "notes": "Resolved through the generated catalog to the canonical source.",
+      "version": "0.1.0-beta.12"
+    },
+    {
+      "canonical_name": "workstream-coordinator",
+      "canonical_path": ".claude/agents/workstream-coordinator.md",
+      "adapter_path": "adapters/codex/catalogs/agents.md",
+      "parity_type": "canonical-reference",
+      "status": "mapped",
+      "notes": "Resolved through the generated catalog to the canonical source.",
+      "version": "0.1.0-beta.12"
+    }
+  ]
+}

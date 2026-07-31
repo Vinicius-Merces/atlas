@@ -1,5 +1,54 @@
 # Changelog
 
+## 0.1.0-beta.12
+
+### Added
+
+- Deterministic cumulative, incremental, and recovery release builders
+- Package integrity manifests, checksums, validators, and install simulators
+- Centralized version-source management with historical-artifact protection
+- Schema validation with positive fixtures for every registered schema
+- Generated Codex maps for agents, commands, skills, workflows, and reviews
+- Runtime lifecycle end-to-end coverage, including continuity, conflicts,
+  reconciliation, evidence, deployment receipts, and audit integrity
+- Executable release, runtime, schema, CI, support, source-of-truth, package,
+  deletion, and repository-cleanliness policies
+- Durable architecture, business, operations, and contradiction memories
+- Memory freshness, knowledge-link, documentation, and exception validators
+- Release candidate and stable release checklists
+- Complete installation, runtime, deployment, release, and troubleshooting
+  documentation
+
+### Changed
+
+- Canonical agent definitions now live exclusively under `.claude/agents/`
+- Codex is beta-supported with generated, resolvable parity maps
+- CI installs explicit test dependencies and exercises all release gates
+- Manual incremental packages expose `.claude/` payload through
+  `CLAUDE-DIRECTORY/` and require exact declared operations
+- Package source selection excludes local state, editor settings, reports,
+  caches, secrets, and generated distribution artifacts
+
+### Fixed
+
+- Source-of-truth, Codex synchronization, runtime drift, support-policy, task
+  routing, and registry inconsistencies
+- Fragile policy validation and unsafe or implicit manual deletion behavior
+- Non-deterministic release archives and incomplete artifact integrity checks
+
+### Validation
+
+- All repository validators, policy evaluators, schema checks, and automated
+  tests pass locally
+- Clean install, beta.11 incremental upgrade, recovery, deterministic rebuild,
+  checksum tamper, and audit tamper simulations pass locally
+
+### Known limitations
+
+- GitHub-hosted CI must still execute on the published branch
+- Independent release review and approval are still required before RC
+- RC and stable promotion are intentionally not authorized by this release
+
 ## 0.1.0-beta.11
 
 ### Added

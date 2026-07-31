@@ -1,0 +1,104 @@
+{
+  "source": "VERSION",
+  "json_fields": [
+    {
+      "path": ".claude/registry.json",
+      "field": "version"
+    },
+    {
+      "path": "adapters/shared/runtime-contract.json",
+      "field": "version"
+    },
+    {
+      "path": "adapters/shared/source-of-truth-manifest.json",
+      "field": "framework_version"
+    },
+    {
+      "path": "adapters/shared/task-routing-policy.json",
+      "field": "version"
+    },
+    {
+      "path": "adapters/claude/runtime-declaration.json",
+      "field": "version"
+    },
+    {
+      "path": "adapters/codex/runtime-declaration.json",
+      "field": "version"
+    },
+    {
+      "path": "adapters/codex/runtime-manifest.json",
+      "field": "version"
+    },
+    {
+      "path": "compatibility/core-contracts.json",
+      "field": "version"
+    },
+    {
+      "path": "compatibility/deprecations.json",
+      "field": "version"
+    },
+    {
+      "path": "release/manifest.json",
+      "field": "version"
+    },
+    {
+      "path": "templates/contradiction-register.json",
+      "field": "framework_version"
+    },
+    {
+      "path": "templates/evidence-record.json",
+      "field": "framework_version"
+    },
+    {
+      "path": "templates/project-brief.json",
+      "field": "framework_version"
+    },
+    {
+      "path": "templates/reconciliation-proposal.json",
+      "field": "framework_version"
+    },
+    {
+      "path": "templates/resume-packet.json",
+      "field": "framework_version"
+    },
+    {
+      "path": "templates/session-brief.json",
+      "field": "framework_version"
+    }
+  ],
+  "recursive_json_version_globs": [
+    "adapters/codex/generated/*-map.json",
+    "adapters/codex/generated/catalog-manifest.json"
+  ],
+  "line_fields": [
+    {
+      "path": ".claude/runtime.yaml",
+      "pattern": "^version:\\s*.*$",
+      "replacement": "version: {version}"
+    },
+    {
+      "path": "adapters/codex/runtime-map.yaml",
+      "pattern": "^version:\\s*.*$",
+      "replacement": "version: {version}"
+    },
+    {
+      "path": "README.md",
+      "pattern": "^\\*\\*Version:\\*\\* `[^`]+`\\s*$",
+      "replacement": "**Version:** `{version}`"
+    }
+  ],
+  "historical_globs": [
+    "CHANGELOG.md",
+    "release/BETA-*-MIGRATION.md",
+    "release/BETA-*-RELEASE-NOTES.md",
+    "release/beta.*.manifest.json",
+    "release/*.sha256",
+    "APPLY-PATCH.md",
+    "PATCH-MANIFEST.json",
+    "FILES-TO-ADD.md",
+    "FILES-TO-REPLACE.md",
+    "FILES-TO-DELETE.md",
+    "RECOVERY-MANIFEST.json",
+    "README-RECOVERY.md"
+  ]
+}

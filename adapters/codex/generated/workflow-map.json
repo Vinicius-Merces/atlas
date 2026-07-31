@@ -1,0 +1,691 @@
+{
+  "version": "0.1.0-beta.12",
+  "generated_from": ".claude/registry.json",
+  "collection": "workflows",
+  "entries": [
+    {
+      "canonical_name": "adapter-drift-audit",
+      "canonical_path": ".claude/workflows/adapter-drift-audit.md",
+      "adapter_path": "adapters/codex/catalogs/workflows.md",
+      "parity_type": "canonical-reference",
+      "status": "mapped",
+      "notes": "Resolved through the generated catalog to the canonical source.",
+      "version": "0.1.0-beta.12"
+    },
+    {
+      "canonical_name": "ai-feature-delivery",
+      "canonical_path": ".claude/workflows/ai-feature-delivery.md",
+      "adapter_path": "adapters/codex/catalogs/workflows.md",
+      "parity_type": "canonical-reference",
+      "status": "mapped",
+      "notes": "Resolved through the generated catalog to the canonical source.",
+      "version": "0.1.0-beta.12"
+    },
+    {
+      "canonical_name": "analytics-implementation",
+      "canonical_path": ".claude/workflows/analytics-implementation.md",
+      "adapter_path": "adapters/codex/catalogs/workflows.md",
+      "parity_type": "canonical-reference",
+      "status": "mapped",
+      "notes": "Resolved through the generated catalog to the canonical source.",
+      "version": "0.1.0-beta.12"
+    },
+    {
+      "canonical_name": "architecture-portfolio",
+      "canonical_path": ".claude/workflows/architecture-portfolio.md",
+      "adapter_path": "adapters/codex/catalogs/workflows.md",
+      "parity_type": "canonical-reference",
+      "status": "mapped",
+      "notes": "Resolved through the generated catalog to the canonical source.",
+      "version": "0.1.0-beta.12"
+    },
+    {
+      "canonical_name": "audit-bundle",
+      "canonical_path": ".claude/workflows/audit-bundle.md",
+      "adapter_path": "adapters/codex/catalogs/workflows.md",
+      "parity_type": "canonical-reference",
+      "status": "mapped",
+      "notes": "Resolved through the generated catalog to the canonical source.",
+      "version": "0.1.0-beta.12"
+    },
+    {
+      "canonical_name": "beta-release-preparation",
+      "canonical_path": ".claude/workflows/beta-release-preparation.md",
+      "adapter_path": "adapters/codex/catalogs/workflows.md",
+      "parity_type": "canonical-reference",
+      "status": "mapped",
+      "notes": "Resolved through the generated catalog to the canonical source.",
+      "version": "0.1.0-beta.12"
+    },
+    {
+      "canonical_name": "beta-stabilization",
+      "canonical_path": ".claude/workflows/beta-stabilization.md",
+      "adapter_path": "adapters/codex/catalogs/workflows.md",
+      "parity_type": "canonical-reference",
+      "status": "mapped",
+      "notes": "Resolved through the generated catalog to the canonical source.",
+      "version": "0.1.0-beta.12"
+    },
+    {
+      "canonical_name": "blueprint-instantiation",
+      "canonical_path": ".claude/workflows/blueprint-instantiation.md",
+      "adapter_path": "adapters/codex/catalogs/workflows.md",
+      "parity_type": "canonical-reference",
+      "status": "mapped",
+      "notes": "Resolved through the generated catalog to the canonical source.",
+      "version": "0.1.0-beta.12"
+    },
+    {
+      "canonical_name": "bug-fix",
+      "canonical_path": ".claude/workflows/bug-fix.md",
+      "adapter_path": "adapters/codex/workflows/bug-fix.md",
+      "parity_type": "runtime-native",
+      "status": "native",
+      "notes": "Codex-native entry point.",
+      "version": "0.1.0-beta.12"
+    },
+    {
+      "canonical_name": "ci-governance",
+      "canonical_path": ".claude/workflows/ci-governance.md",
+      "adapter_path": "adapters/codex/catalogs/workflows.md",
+      "parity_type": "canonical-reference",
+      "status": "mapped",
+      "notes": "Resolved through the generated catalog to the canonical source.",
+      "version": "0.1.0-beta.12"
+    },
+    {
+      "canonical_name": "codex-synchronization",
+      "canonical_path": ".claude/workflows/codex-synchronization.md",
+      "adapter_path": "adapters/codex/catalogs/workflows.md",
+      "parity_type": "canonical-reference",
+      "status": "mapped",
+      "notes": "Resolved through the generated catalog to the canonical source.",
+      "version": "0.1.0-beta.12"
+    },
+    {
+      "canonical_name": "compatibility-validation",
+      "canonical_path": ".claude/workflows/compatibility-validation.md",
+      "adapter_path": "adapters/codex/catalogs/workflows.md",
+      "parity_type": "canonical-reference",
+      "status": "mapped",
+      "notes": "Resolved through the generated catalog to the canonical source.",
+      "version": "0.1.0-beta.12"
+    },
+    {
+      "canonical_name": "context-pack",
+      "canonical_path": ".claude/workflows/context-pack.md",
+      "adapter_path": "adapters/codex/catalogs/workflows.md",
+      "parity_type": "canonical-reference",
+      "status": "mapped",
+      "notes": "Resolved through the generated catalog to the canonical source.",
+      "version": "0.1.0-beta.12"
+    },
+    {
+      "canonical_name": "continuation-planning",
+      "canonical_path": ".claude/workflows/continuation-planning.md",
+      "adapter_path": "adapters/codex/catalogs/workflows.md",
+      "parity_type": "canonical-reference",
+      "status": "mapped",
+      "notes": "Resolved through the generated catalog to the canonical source.",
+      "version": "0.1.0-beta.12"
+    },
+    {
+      "canonical_name": "continuity-refresh",
+      "canonical_path": ".claude/workflows/continuity-refresh.md",
+      "adapter_path": "adapters/codex/catalogs/workflows.md",
+      "parity_type": "canonical-reference",
+      "status": "mapped",
+      "notes": "Resolved through the generated catalog to the canonical source.",
+      "version": "0.1.0-beta.12"
+    },
+    {
+      "canonical_name": "contract-testing",
+      "canonical_path": ".claude/workflows/contract-testing.md",
+      "adapter_path": "adapters/codex/catalogs/workflows.md",
+      "parity_type": "canonical-reference",
+      "status": "mapped",
+      "notes": "Resolved through the generated catalog to the canonical source.",
+      "version": "0.1.0-beta.12"
+    },
+    {
+      "canonical_name": "cross-session-recovery",
+      "canonical_path": ".claude/workflows/cross-session-recovery.md",
+      "adapter_path": "adapters/codex/catalogs/workflows.md",
+      "parity_type": "canonical-reference",
+      "status": "mapped",
+      "notes": "Resolved through the generated catalog to the canonical source.",
+      "version": "0.1.0-beta.12"
+    },
+    {
+      "canonical_name": "database-migration",
+      "canonical_path": ".claude/workflows/database-migration.md",
+      "adapter_path": "adapters/codex/catalogs/workflows.md",
+      "parity_type": "canonical-reference",
+      "status": "mapped",
+      "notes": "Resolved through the generated catalog to the canonical source.",
+      "version": "0.1.0-beta.12"
+    },
+    {
+      "canonical_name": "debt-reduction",
+      "canonical_path": ".claude/workflows/debt-reduction.md",
+      "adapter_path": "adapters/codex/catalogs/workflows.md",
+      "parity_type": "canonical-reference",
+      "status": "mapped",
+      "notes": "Resolved through the generated catalog to the canonical source.",
+      "version": "0.1.0-beta.12"
+    },
+    {
+      "canonical_name": "decision-governance",
+      "canonical_path": ".claude/workflows/decision-governance.md",
+      "adapter_path": "adapters/codex/catalogs/workflows.md",
+      "parity_type": "canonical-reference",
+      "status": "mapped",
+      "notes": "Resolved through the generated catalog to the canonical source.",
+      "version": "0.1.0-beta.12"
+    },
+    {
+      "canonical_name": "default",
+      "canonical_path": ".claude/workflows/default.md",
+      "adapter_path": "adapters/codex/catalogs/workflows.md",
+      "parity_type": "canonical-reference",
+      "status": "mapped",
+      "notes": "Resolved through the generated catalog to the canonical source.",
+      "version": "0.1.0-beta.12"
+    },
+    {
+      "canonical_name": "dependency-upgrade",
+      "canonical_path": ".claude/workflows/dependency-upgrade.md",
+      "adapter_path": "adapters/codex/catalogs/workflows.md",
+      "parity_type": "canonical-reference",
+      "status": "mapped",
+      "notes": "Resolved through the generated catalog to the canonical source.",
+      "version": "0.1.0-beta.12"
+    },
+    {
+      "canonical_name": "deprecation-lifecycle",
+      "canonical_path": ".claude/workflows/deprecation-lifecycle.md",
+      "adapter_path": "adapters/codex/catalogs/workflows.md",
+      "parity_type": "canonical-reference",
+      "status": "mapped",
+      "notes": "Resolved through the generated catalog to the canonical source.",
+      "version": "0.1.0-beta.12"
+    },
+    {
+      "canonical_name": "design-system-contribution",
+      "canonical_path": ".claude/workflows/design-system-contribution.md",
+      "adapter_path": "adapters/codex/catalogs/workflows.md",
+      "parity_type": "canonical-reference",
+      "status": "mapped",
+      "notes": "Resolved through the generated catalog to the canonical source.",
+      "version": "0.1.0-beta.12"
+    },
+    {
+      "canonical_name": "documentation-consolidation",
+      "canonical_path": ".claude/workflows/documentation-consolidation.md",
+      "adapter_path": "adapters/codex/catalogs/workflows.md",
+      "parity_type": "canonical-reference",
+      "status": "mapped",
+      "notes": "Resolved through the generated catalog to the canonical source.",
+      "version": "0.1.0-beta.12"
+    },
+    {
+      "canonical_name": "dual-runtime-release",
+      "canonical_path": ".claude/workflows/dual-runtime-release.md",
+      "adapter_path": "adapters/codex/catalogs/workflows.md",
+      "parity_type": "canonical-reference",
+      "status": "mapped",
+      "notes": "Resolved through the generated catalog to the canonical source.",
+      "version": "0.1.0-beta.12"
+    },
+    {
+      "canonical_name": "evidence-capture",
+      "canonical_path": ".claude/workflows/evidence-capture.md",
+      "adapter_path": "adapters/codex/catalogs/workflows.md",
+      "parity_type": "canonical-reference",
+      "status": "mapped",
+      "notes": "Resolved through the generated catalog to the canonical source.",
+      "version": "0.1.0-beta.12"
+    },
+    {
+      "canonical_name": "experiment-rollout",
+      "canonical_path": ".claude/workflows/experiment-rollout.md",
+      "adapter_path": "adapters/codex/catalogs/workflows.md",
+      "parity_type": "canonical-reference",
+      "status": "mapped",
+      "notes": "Resolved through the generated catalog to the canonical source.",
+      "version": "0.1.0-beta.12"
+    },
+    {
+      "canonical_name": "feature-delivery",
+      "canonical_path": ".claude/workflows/feature-delivery.md",
+      "adapter_path": "adapters/codex/workflows/feature-delivery.md",
+      "parity_type": "runtime-native",
+      "status": "native",
+      "notes": "Codex-native entry point.",
+      "version": "0.1.0-beta.12"
+    },
+    {
+      "canonical_name": "finops-optimization",
+      "canonical_path": ".claude/workflows/finops-optimization.md",
+      "adapter_path": "adapters/codex/catalogs/workflows.md",
+      "parity_type": "canonical-reference",
+      "status": "mapped",
+      "notes": "Resolved through the generated catalog to the canonical source.",
+      "version": "0.1.0-beta.12"
+    },
+    {
+      "canonical_name": "framework-adoption",
+      "canonical_path": ".claude/workflows/framework-adoption.md",
+      "adapter_path": "adapters/codex/catalogs/workflows.md",
+      "parity_type": "canonical-reference",
+      "status": "mapped",
+      "notes": "Resolved through the generated catalog to the canonical source.",
+      "version": "0.1.0-beta.12"
+    },
+    {
+      "canonical_name": "framework-upgrade",
+      "canonical_path": ".claude/workflows/framework-upgrade.md",
+      "adapter_path": "adapters/codex/catalogs/workflows.md",
+      "parity_type": "canonical-reference",
+      "status": "mapped",
+      "notes": "Resolved through the generated catalog to the canonical source.",
+      "version": "0.1.0-beta.12"
+    },
+    {
+      "canonical_name": "incident-response",
+      "canonical_path": ".claude/workflows/incident-response.md",
+      "adapter_path": "adapters/codex/catalogs/workflows.md",
+      "parity_type": "canonical-reference",
+      "status": "mapped",
+      "notes": "Resolved through the generated catalog to the canonical source.",
+      "version": "0.1.0-beta.12"
+    },
+    {
+      "canonical_name": "integration-onboarding",
+      "canonical_path": ".claude/workflows/integration-onboarding.md",
+      "adapter_path": "adapters/codex/catalogs/workflows.md",
+      "parity_type": "canonical-reference",
+      "status": "mapped",
+      "notes": "Resolved through the generated catalog to the canonical source.",
+      "version": "0.1.0-beta.12"
+    },
+    {
+      "canonical_name": "interrupted-task-recovery",
+      "canonical_path": ".claude/workflows/interrupted-task-recovery.md",
+      "adapter_path": "adapters/codex/catalogs/workflows.md",
+      "parity_type": "canonical-reference",
+      "status": "mapped",
+      "notes": "Resolved through the generated catalog to the canonical source.",
+      "version": "0.1.0-beta.12"
+    },
+    {
+      "canonical_name": "knowledge-synchronization",
+      "canonical_path": ".claude/workflows/knowledge-synchronization.md",
+      "adapter_path": "adapters/codex/catalogs/workflows.md",
+      "parity_type": "canonical-reference",
+      "status": "mapped",
+      "notes": "Resolved through the generated catalog to the canonical source.",
+      "version": "0.1.0-beta.12"
+    },
+    {
+      "canonical_name": "localization-delivery",
+      "canonical_path": ".claude/workflows/localization-delivery.md",
+      "adapter_path": "adapters/codex/catalogs/workflows.md",
+      "parity_type": "canonical-reference",
+      "status": "mapped",
+      "notes": "Resolved through the generated catalog to the canonical source.",
+      "version": "0.1.0-beta.12"
+    },
+    {
+      "canonical_name": "manual-deployment-audit",
+      "canonical_path": ".claude/workflows/manual-deployment-audit.md",
+      "adapter_path": "adapters/codex/catalogs/workflows.md",
+      "parity_type": "canonical-reference",
+      "status": "mapped",
+      "notes": "Resolved through the generated catalog to the canonical source.",
+      "version": "0.1.0-beta.12"
+    },
+    {
+      "canonical_name": "manual-deployment-preflight",
+      "canonical_path": ".claude/workflows/manual-deployment-preflight.md",
+      "adapter_path": "adapters/codex/catalogs/workflows.md",
+      "parity_type": "canonical-reference",
+      "status": "mapped",
+      "notes": "Resolved through the generated catalog to the canonical source.",
+      "version": "0.1.0-beta.12"
+    },
+    {
+      "canonical_name": "memory-drift-audit",
+      "canonical_path": ".claude/workflows/memory-drift-audit.md",
+      "adapter_path": "adapters/codex/catalogs/workflows.md",
+      "parity_type": "canonical-reference",
+      "status": "mapped",
+      "notes": "Resolved through the generated catalog to the canonical source.",
+      "version": "0.1.0-beta.12"
+    },
+    {
+      "canonical_name": "mobile-feature",
+      "canonical_path": ".claude/workflows/mobile-feature.md",
+      "adapter_path": "adapters/codex/catalogs/workflows.md",
+      "parity_type": "canonical-reference",
+      "status": "mapped",
+      "notes": "Resolved through the generated catalog to the canonical source.",
+      "version": "0.1.0-beta.12"
+    },
+    {
+      "canonical_name": "monorepo-change",
+      "canonical_path": ".claude/workflows/monorepo-change.md",
+      "adapter_path": "adapters/codex/catalogs/workflows.md",
+      "parity_type": "canonical-reference",
+      "status": "mapped",
+      "notes": "Resolved through the generated catalog to the canonical source.",
+      "version": "0.1.0-beta.12"
+    },
+    {
+      "canonical_name": "package-validation",
+      "canonical_path": ".claude/workflows/package-validation.md",
+      "adapter_path": "adapters/codex/catalogs/workflows.md",
+      "parity_type": "canonical-reference",
+      "status": "mapped",
+      "notes": "Resolved through the generated catalog to the canonical source.",
+      "version": "0.1.0-beta.12"
+    },
+    {
+      "canonical_name": "parallel-execution",
+      "canonical_path": ".claude/workflows/parallel-execution.md",
+      "adapter_path": "adapters/codex/catalogs/workflows.md",
+      "parity_type": "canonical-reference",
+      "status": "mapped",
+      "notes": "Resolved through the generated catalog to the canonical source.",
+      "version": "0.1.0-beta.12"
+    },
+    {
+      "canonical_name": "policy-evaluation",
+      "canonical_path": ".claude/workflows/policy-evaluation.md",
+      "adapter_path": "adapters/codex/catalogs/workflows.md",
+      "parity_type": "canonical-reference",
+      "status": "mapped",
+      "notes": "Resolved through the generated catalog to the canonical source.",
+      "version": "0.1.0-beta.12"
+    },
+    {
+      "canonical_name": "policy-exception",
+      "canonical_path": ".claude/workflows/policy-exception.md",
+      "adapter_path": "adapters/codex/catalogs/workflows.md",
+      "parity_type": "canonical-reference",
+      "status": "mapped",
+      "notes": "Resolved through the generated catalog to the canonical source.",
+      "version": "0.1.0-beta.12"
+    },
+    {
+      "canonical_name": "privacy-review",
+      "canonical_path": ".claude/workflows/privacy-review.md",
+      "adapter_path": "adapters/codex/catalogs/workflows.md",
+      "parity_type": "canonical-reference",
+      "status": "mapped",
+      "notes": "Resolved through the generated catalog to the canonical source.",
+      "version": "0.1.0-beta.12"
+    },
+    {
+      "canonical_name": "product-discovery",
+      "canonical_path": ".claude/workflows/product-discovery.md",
+      "adapter_path": "adapters/codex/catalogs/workflows.md",
+      "parity_type": "canonical-reference",
+      "status": "mapped",
+      "notes": "Resolved through the generated catalog to the canonical source.",
+      "version": "0.1.0-beta.12"
+    },
+    {
+      "canonical_name": "project-bootstrap",
+      "canonical_path": ".claude/workflows/project-bootstrap.md",
+      "adapter_path": "adapters/codex/catalogs/workflows.md",
+      "parity_type": "canonical-reference",
+      "status": "mapped",
+      "notes": "Resolved through the generated catalog to the canonical source.",
+      "version": "0.1.0-beta.12"
+    },
+    {
+      "canonical_name": "project-health",
+      "canonical_path": ".claude/workflows/project-health.md",
+      "adapter_path": "adapters/codex/catalogs/workflows.md",
+      "parity_type": "canonical-reference",
+      "status": "mapped",
+      "notes": "Resolved through the generated catalog to the canonical source.",
+      "version": "0.1.0-beta.12"
+    },
+    {
+      "canonical_name": "project-state-reconciliation",
+      "canonical_path": ".claude/workflows/project-state-reconciliation.md",
+      "adapter_path": "adapters/codex/catalogs/workflows.md",
+      "parity_type": "canonical-reference",
+      "status": "mapped",
+      "notes": "Resolved through the generated catalog to the canonical source.",
+      "version": "0.1.0-beta.12"
+    },
+    {
+      "canonical_name": "provenance-reconciliation",
+      "canonical_path": ".claude/workflows/provenance-reconciliation.md",
+      "adapter_path": "adapters/codex/catalogs/workflows.md",
+      "parity_type": "canonical-reference",
+      "status": "mapped",
+      "notes": "Resolved through the generated catalog to the canonical source.",
+      "version": "0.1.0-beta.12"
+    },
+    {
+      "canonical_name": "refactoring",
+      "canonical_path": ".claude/workflows/refactoring.md",
+      "adapter_path": "adapters/codex/catalogs/workflows.md",
+      "parity_type": "canonical-reference",
+      "status": "mapped",
+      "notes": "Resolved through the generated catalog to the canonical source.",
+      "version": "0.1.0-beta.12"
+    },
+    {
+      "canonical_name": "reference-project-review",
+      "canonical_path": ".claude/workflows/reference-project-review.md",
+      "adapter_path": "adapters/codex/catalogs/workflows.md",
+      "parity_type": "canonical-reference",
+      "status": "mapped",
+      "notes": "Resolved through the generated catalog to the canonical source.",
+      "version": "0.1.0-beta.12"
+    },
+    {
+      "canonical_name": "release",
+      "canonical_path": ".claude/workflows/release.md",
+      "adapter_path": "adapters/codex/workflows/release.md",
+      "parity_type": "runtime-native",
+      "status": "native",
+      "notes": "Codex-native entry point.",
+      "version": "0.1.0-beta.12"
+    },
+    {
+      "canonical_name": "release-artifact",
+      "canonical_path": ".claude/workflows/release-artifact.md",
+      "adapter_path": "adapters/codex/catalogs/workflows.md",
+      "parity_type": "canonical-reference",
+      "status": "mapped",
+      "notes": "Resolved through the generated catalog to the canonical source.",
+      "version": "0.1.0-beta.12"
+    },
+    {
+      "canonical_name": "release-governance",
+      "canonical_path": ".claude/workflows/release-governance.md",
+      "adapter_path": "adapters/codex/catalogs/workflows.md",
+      "parity_type": "canonical-reference",
+      "status": "mapped",
+      "notes": "Resolved through the generated catalog to the canonical source.",
+      "version": "0.1.0-beta.12"
+    },
+    {
+      "canonical_name": "runtime-adapter",
+      "canonical_path": ".claude/workflows/runtime-adapter.md",
+      "adapter_path": "adapters/codex/catalogs/workflows.md",
+      "parity_type": "canonical-reference",
+      "status": "mapped",
+      "notes": "Resolved through the generated catalog to the canonical source.",
+      "version": "0.1.0-beta.12"
+    },
+    {
+      "canonical_name": "runtime-catalog-publication",
+      "canonical_path": ".claude/workflows/runtime-catalog-publication.md",
+      "adapter_path": "adapters/codex/catalogs/workflows.md",
+      "parity_type": "canonical-reference",
+      "status": "mapped",
+      "notes": "Resolved through the generated catalog to the canonical source.",
+      "version": "0.1.0-beta.12"
+    },
+    {
+      "canonical_name": "runtime-conformance",
+      "canonical_path": ".claude/workflows/runtime-conformance.md",
+      "adapter_path": "adapters/codex/catalogs/workflows.md",
+      "parity_type": "canonical-reference",
+      "status": "mapped",
+      "notes": "Resolved through the generated catalog to the canonical source.",
+      "version": "0.1.0-beta.12"
+    },
+    {
+      "canonical_name": "runtime-execution",
+      "canonical_path": ".claude/workflows/runtime-execution.md",
+      "adapter_path": "adapters/codex/catalogs/workflows.md",
+      "parity_type": "canonical-reference",
+      "status": "mapped",
+      "notes": "Resolved through the generated catalog to the canonical source.",
+      "version": "0.1.0-beta.12"
+    },
+    {
+      "canonical_name": "runtime-handoff",
+      "canonical_path": ".claude/workflows/runtime-handoff.md",
+      "adapter_path": "adapters/codex/catalogs/workflows.md",
+      "parity_type": "canonical-reference",
+      "status": "mapped",
+      "notes": "Resolved through the generated catalog to the canonical source.",
+      "version": "0.1.0-beta.12"
+    },
+    {
+      "canonical_name": "runtime-parity",
+      "canonical_path": ".claude/workflows/runtime-parity.md",
+      "adapter_path": "adapters/codex/catalogs/workflows.md",
+      "parity_type": "canonical-reference",
+      "status": "mapped",
+      "notes": "Resolved through the generated catalog to the canonical source.",
+      "version": "0.1.0-beta.12"
+    },
+    {
+      "canonical_name": "runtime-synchronization",
+      "canonical_path": ".claude/workflows/runtime-synchronization.md",
+      "adapter_path": "adapters/codex/catalogs/workflows.md",
+      "parity_type": "canonical-reference",
+      "status": "mapped",
+      "notes": "Resolved through the generated catalog to the canonical source.",
+      "version": "0.1.0-beta.12"
+    },
+    {
+      "canonical_name": "session-bootstrap",
+      "canonical_path": ".claude/workflows/session-bootstrap.md",
+      "adapter_path": "adapters/codex/catalogs/workflows.md",
+      "parity_type": "canonical-reference",
+      "status": "mapped",
+      "notes": "Resolved through the generated catalog to the canonical source.",
+      "version": "0.1.0-beta.12"
+    },
+    {
+      "canonical_name": "session-closeout",
+      "canonical_path": ".claude/workflows/session-closeout.md",
+      "adapter_path": "adapters/codex/catalogs/workflows.md",
+      "parity_type": "canonical-reference",
+      "status": "mapped",
+      "notes": "Resolved through the generated catalog to the canonical source.",
+      "version": "0.1.0-beta.12"
+    },
+    {
+      "canonical_name": "shared-state-protection",
+      "canonical_path": ".claude/workflows/shared-state-protection.md",
+      "adapter_path": "adapters/codex/catalogs/workflows.md",
+      "parity_type": "canonical-reference",
+      "status": "mapped",
+      "notes": "Resolved through the generated catalog to the canonical source.",
+      "version": "0.1.0-beta.12"
+    },
+    {
+      "canonical_name": "support-policy",
+      "canonical_path": ".claude/workflows/support-policy.md",
+      "adapter_path": "adapters/codex/catalogs/workflows.md",
+      "parity_type": "canonical-reference",
+      "status": "mapped",
+      "notes": "Resolved through the generated catalog to the canonical source.",
+      "version": "0.1.0-beta.12"
+    },
+    {
+      "canonical_name": "system-modernization",
+      "canonical_path": ".claude/workflows/system-modernization.md",
+      "adapter_path": "adapters/codex/catalogs/workflows.md",
+      "parity_type": "canonical-reference",
+      "status": "mapped",
+      "notes": "Resolved through the generated catalog to the canonical source.",
+      "version": "0.1.0-beta.12"
+    },
+    {
+      "canonical_name": "task-envelope-lifecycle",
+      "canonical_path": ".claude/workflows/task-envelope-lifecycle.md",
+      "adapter_path": "adapters/codex/catalogs/workflows.md",
+      "parity_type": "canonical-reference",
+      "status": "mapped",
+      "notes": "Resolved through the generated catalog to the canonical source.",
+      "version": "0.1.0-beta.12"
+    },
+    {
+      "canonical_name": "task-routing",
+      "canonical_path": ".claude/workflows/task-routing.md",
+      "adapter_path": "adapters/codex/catalogs/workflows.md",
+      "parity_type": "canonical-reference",
+      "status": "mapped",
+      "notes": "Resolved through the generated catalog to the canonical source.",
+      "version": "0.1.0-beta.12"
+    },
+    {
+      "canonical_name": "technical-audit",
+      "canonical_path": ".claude/workflows/technical-audit.md",
+      "adapter_path": "adapters/codex/catalogs/workflows.md",
+      "parity_type": "canonical-reference",
+      "status": "mapped",
+      "notes": "Resolved through the generated catalog to the canonical source.",
+      "version": "0.1.0-beta.12"
+    },
+    {
+      "canonical_name": "technical-program",
+      "canonical_path": ".claude/workflows/technical-program.md",
+      "adapter_path": "adapters/codex/catalogs/workflows.md",
+      "parity_type": "canonical-reference",
+      "status": "mapped",
+      "notes": "Resolved through the generated catalog to the canonical source.",
+      "version": "0.1.0-beta.12"
+    },
+    {
+      "canonical_name": "test-automation",
+      "canonical_path": ".claude/workflows/test-automation.md",
+      "adapter_path": "adapters/codex/catalogs/workflows.md",
+      "parity_type": "canonical-reference",
+      "status": "mapped",
+      "notes": "Resolved through the generated catalog to the canonical source.",
+      "version": "0.1.0-beta.12"
+    },
+    {
+      "canonical_name": "threat-modeling",
+      "canonical_path": ".claude/workflows/threat-modeling.md",
+      "adapter_path": "adapters/codex/catalogs/workflows.md",
+      "parity_type": "canonical-reference",
+      "status": "mapped",
+      "notes": "Resolved through the generated catalog to the canonical source.",
+      "version": "0.1.0-beta.12"
+    },
+    {
+      "canonical_name": "workstream-merge",
+      "canonical_path": ".claude/workflows/workstream-merge.md",
+      "adapter_path": "adapters/codex/catalogs/workflows.md",
+      "parity_type": "canonical-reference",
+      "status": "mapped",
+      "notes": "Resolved through the generated catalog to the canonical source.",
+      "version": "0.1.0-beta.12"
+    }
+  ]
+}
