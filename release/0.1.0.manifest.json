@@ -1,0 +1,33 @@
+{
+  "version": "0.1.0",
+  "channel": "stable",
+  "incremental_base": "0.1.0-beta.11",
+  "incremental_base_commit": "7393c29",
+  "release_candidate": {
+    "tag": "v0.1.0-rc.1",
+    "commit": "5671e55ace0dad2e6e3f1fe3995f4d5e8f595fc8",
+    "exercise_status": "passed"
+  },
+  "promotion_evidence": {
+    "pull_request": "https://github.com/Vinicius-Merces/atlas/pull/3",
+    "hosted_ci": "passed",
+    "independent_support_review": "passed-reported-on-pull-request-1"
+  },
+  "delivery_modes": [
+    "cumulative",
+    "incremental",
+    "recovery"
+  ],
+  "supported_runtimes": [
+    "claude-code",
+    "codex"
+  ],
+  "experimental_runtimes": [
+    "gemini",
+    "cursor"
+  ],
+  "manual_deployment_supported": true,
+  "hidden_directory_package_mapping": {
+    "CLAUDE-DIRECTORY": ".claude"
+  }
+}

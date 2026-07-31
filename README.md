@@ -1,7 +1,7 @@
 # ATLAS AI Engineering Framework
 
-**Version:** `0.1.0-rc.1`
-**Status:** Release candidate; stabilization monitoring before 0.1.0 stable
+**Version:** `0.1.0`
+**Status:** Stable
 
 ATLAS is a repository-native engineering operating framework for teams that
 use AI coding runtimes. It keeps durable project knowledge, contracts,
@@ -36,7 +36,7 @@ Execution    .claude/agents, workflows, commands, task artifacts
 Governance   contracts, reviews, policies, tests, evidence
 ```
 
-Claude Code is the canonical runtime. Codex is a beta-supported compatibility
+Claude Code is the canonical runtime. Codex is a supported compatibility
 runtime under `adapters/codex/`. Gemini and Cursor remain experimental.
 Adapters translate runtime form; they do not fork memory or contract meaning.
 
@@ -126,12 +126,13 @@ built archives.
 
 ## Support and limitations
 
-- Claude Code: canonical, beta-supported.
-- Codex: compatibility runtime, beta-supported.
+- Claude Code: canonical, supported.
+- Codex: compatibility runtime, supported.
 - Gemini and Cursor: experimental.
 - Runtime tool names and invocation differ by design.
 - Local validation does not prove that GitHub-hosted CI has executed.
-- Stable `0.1.0` is not authorized until the RC and stable checklists pass.
+- Stable releases follow the support, compatibility, deprecation, audit, and
+  rollback policies documented in this repository.
 
 See [Support Policy](compatibility/support-policy.md),
 [Runtime Matrix](compatibility/runtime-matrix.md), and

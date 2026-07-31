@@ -1,0 +1,40 @@
+{
+  "evidence_id": "evidence-rc1-exercise-20260731",
+  "task_id": "atlas-rc1-exercise",
+  "framework_version": "0.1.0",
+  "runtime": "codex",
+  "created_at": "2026-07-31T04:12:53.4025045+00:00",
+  "sources": [
+    "https://github.com/Vinicius-Merces/atlas/pull/3",
+    "https://github.com/Vinicius-Merces/atlas/actions/runs/30603269177/job/91070246024",
+    "https://github.com/Vinicius-Merces/atlas/actions/runs/30603248853/job/91070185886",
+    "reports/post-rc-hygiene-validation.md",
+    "release/RC-1-VALIDATION.md"
+  ],
+  "decisions": [
+    "Treat the corrected and tagged RC source as the stable exercise candidate.",
+    "Require both hosted validation runs and all local installation modes to pass.",
+    "Promote only after the stable checklist and exact stable source validation pass."
+  ],
+  "changed_files": [],
+  "validation": [
+    "Two GitHub-hosted validate checks passed on commit 915f32a8996a6ddb2fafd00af08b725712f57c1c.",
+    "Pull request #3 merged as 5671e55ace0dad2e6e3f1fe3995f4d5e8f595fc8.",
+    "Tag v0.1.0-rc.1 points to the corrected merge commit.",
+    "Clean RC install, beta.12 upgrade, recovery, deterministic rebuild, and audit integrity passed.",
+    "No blocking regression remains on the tagged RC source."
+  ],
+  "reviews": [
+    "GitHub-hosted validation passed twice on the corrective RC source.",
+    "Independent Claude Code and Codex support review was reported as passed on pull request #1.",
+    "Local release, compatibility, package-integrity, policy, and rollback review passed."
+  ],
+  "assumptions": [
+    "The repository owner's report accurately represents the independent review state of pull request #1."
+  ],
+  "remaining_risks": [
+    "Gemini and Cursor remain experimental.",
+    "Runtime-specific tool invocation remains intentionally different."
+  ],
+  "status": "passed"
+}

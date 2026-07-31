@@ -1,49 +1,59 @@
 {
-  "session_id": "session-post-rc-hygiene",
-  "framework_version": "0.1.0-rc.1",
+  "session_id": "session-stable-0.1.0",
+  "framework_version": "0.1.0",
   "runtime": "codex",
-  "created_at": "2026-07-31T03:40:12.5731859+00:00",
-  "summary": "Reconciled the merged ATLAS 0.1.0-rc.1 source and hardened repository cleanliness against tracked user-local editor state.",
+  "created_at": "2026-07-31T04:27:40.9175648+00:00",
+  "summary": "Promoted the corrected and exercised ATLAS release candidate to stable 0.1.0 with supported Claude Code and Codex runtimes and direct beta.11 migration.",
   "completed_work": [
-    "Verified pull request #2 merge commit 0c7208a302d536f0ff00c949d5a6bdaa6c6c5a03 and synchronized main.",
-    "Removed .vscode/extensions.json from Git tracking while preserving the local file.",
-    "Added .vscode/extensions.json to repository ignore and cleanliness policy rules.",
-    "Added clean and violating synthetic-repository regression tests.",
-    "Reconciled RC manifest, checklist, validation, and execution evidence with pull request #2.",
-    "Passed all local repository validators, 14 policies, and 65 tests."
+    "Created and merged pull request #3 after two hosted validation checks passed.",
+    "Tagged corrected commit 5671e55ace0dad2e6e3f1fe3995f4d5e8f595fc8 as v0.1.0-rc.1.",
+    "Recorded RC exercise evidence with no remaining blocker on the tagged source.",
+    "Promoted controlled version surfaces and core contract classification to stable 0.1.0.",
+    "Graduated Claude Code and Codex declarations from beta-supported to supported.",
+    "Completed stable notes, beta.11 migration, manifest, validation, checklist, deployment receipt, and audit evidence.",
+    "Passed all local validators, 14 policies, and 67 tests.",
+    "Built and simulated deterministic cumulative, beta.11 incremental, and recovery artifacts."
   ],
   "changed_files": [
     ".atlas/continuity/",
-    ".gitignore",
-    ".vscode/extensions.json",
-    "policies/repository_cleanliness.json",
+    ".claude/memory/",
+    "CHANGELOG.md",
+    "README.md",
+    "VERSION",
+    "adapters/",
+    "compatibility/",
+    "docs/",
+    "framework/",
     "release/",
-    "reports/post-rc-hygiene-validation.md",
-    "scripts/evaluate_policies.py",
-    "tests/conformance/test_repository_cleanliness.py"
+    "reports/stable-promotion-validation.md",
+    "scripts/",
+    "templates/",
+    "tests/"
   ],
   "validation": [
-    "65 full-suite tests passed.",
+    "67 full-suite tests passed.",
     "14 policies passed with no warning, approval, or block.",
-    "All repository, registry, package, contract, schema, Codex, runtime, conformance, source-of-truth, memory, link, documentation, and policy gates passed.",
-    "Repository cleanliness regression tests passed for both tracked and ignored editor state."
+    "31 schemas and fixtures, 112 JSON files before the deployment receipt, and 5 YAML files passed.",
+    "All repository, registry, package, contract, Codex, runtime, conformance, source-of-truth, memory, link, documentation, and policy gates passed.",
+    "Cumulative, beta.11 incremental, and recovery artifacts reproduced identically.",
+    "Clean stable install, beta.11 upgrade with 157 additions, 74 replacements, and 84 explicit legacy-agent deletions, and recovery simulations passed.",
+    "Seven release evidence records passed integrity verification in source and all installed modes."
   ],
   "decisions": [
-    "Treat .vscode/extensions.json as user-local state, not project source.",
-    "Preserve the local editor file while removing it from the repository index.",
-    "Keep stable promotion blocked until RC exercise evidence completes the stable checklist."
+    "Promote core contracts from stable-rc to stable without changing semantic responsibility.",
+    "Graduate Claude Code and Codex support claims while keeping Gemini and Cursor experimental.",
+    "Use beta.11 as the stable incremental base and preserve the RC path through cumulative installation.",
+    "Keep every legacy-agent deletion explicit and paired with its canonical .claude replacement."
   ],
   "pending_work": [
-    "Publish the post-RC hygiene branch and pass GitHub-hosted CI.",
-    "Obtain independent review and merge the corrective pull request.",
-    "Tag the corrected RC source.",
-    "Exercise the RC without blockers before stable promotion."
+    "Publish release/0.1.0 and pass GitHub-hosted CI on the exact stable source.",
+    "Merge the stable promotion pull request after required checks pass.",
+    "Tag the merged stable commit as v0.1.0."
   ],
   "risks": [
-    "The corrective source is not authoritative until its pull request passes and merges.",
-    "Stable readiness requires real-project RC exercise evidence.",
     "Gemini and Cursor remain experimental.",
-    "The GitHub App has no repository installation and no browser is connected in this session."
+    "Runtime tool names and invocation remain intentionally runtime-specific.",
+    "Stable publication remains pending until the exact stable pull request passes and merges."
   ],
-  "next_action": "Publish and merge the post-RC hygiene pull request after hosted CI, then tag and exercise the corrected release candidate."
+  "next_action": "Publish and merge the stable 0.1.0 pull request after hosted CI, then tag the merged commit."
 }

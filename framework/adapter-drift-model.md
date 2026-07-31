@@ -34,4 +34,4 @@ Runtime guidance describes obsolete behavior.
 
 ## Drift invariant
 
-A beta-supported runtime may not ship with blocking inventory or path drift.
+A supported runtime may not ship with blocking inventory or path drift.

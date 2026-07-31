@@ -1,5 +1,29 @@
 # Changelog
 
+## 0.1.0
+
+### Added
+
+- Stable release manifest, migration, validation, exercise evidence, and
+  reproducible distribution artifacts
+- Direct beta.11-to-stable incremental upgrade path
+
+### Changed
+
+- Version channel promoted from `0.1.0-rc.1` to stable `0.1.0`
+- Claude Code and Codex support graduated from beta-supported to supported
+- Core contract classification promoted from `stable-rc` to `stable`
+- Stable support, compatibility, deprecation, rollback, and known-limitations
+  commitments activated
+
+### Validation
+
+- Tagged RC source passed two GitHub-hosted validation runs
+- Post-RC hygiene exercise completed without blockers on the corrected source
+- Full local validation, deterministic package reproduction, beta.11 upgrade,
+  clean installation, recovery, and audit-integrity gates are required by the
+  stable checklist
+
 ## 0.1.0-rc.1
 
 ### Added

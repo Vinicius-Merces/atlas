@@ -17,5 +17,5 @@
 
 ## Current status
 
-Parity is considered **beta-supported with documented runtime-specific
-differences**.
+Parity is considered **supported with documented runtime-specific
+differences** for ATLAS `0.1.0`.

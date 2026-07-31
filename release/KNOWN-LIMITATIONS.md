@@ -2,9 +2,8 @@
 
 ## Runtime adapters
 
-Claude Code is the canonical runtime and Codex is supported for the
-prerelease line through validated semantic parity. Gemini and Cursor remain
-experimental.
+Claude Code is the canonical supported runtime and Codex is supported through
+validated semantic parity. Gemini and Cursor remain experimental.
 
 ## Contract automation
 
@@ -24,8 +23,7 @@ availability and semantic accuracy still require review.
 
 Target runtimes may expose different tools, permissions, or invocation models.
 
-## Release-candidate expectation
+## Stable scope
 
-The RC line freezes core contracts while collecting real-project feedback.
-Experimental adapters and non-core integrations may still evolve before
-stable.
+The `0.1.x` line protects core contracts and canonical paths. Experimental
+adapters and non-core integrations may still evolve without stable guarantees.

@@ -5,12 +5,14 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 CONTINUITY = ROOT / ".atlas" / "continuity"
+EXCLUDED_ROOTS = {".git", ".atlas", "dist", "reports"}
 
 def existing(pattern: str) -> list[str]:
     return sorted(
         path.relative_to(ROOT).as_posix()
         for path in ROOT.rglob(pattern)
         if path.is_file()
+        and path.relative_to(ROOT).parts[0] not in EXCLUDED_ROOTS
     )
 
 def main() -> None:

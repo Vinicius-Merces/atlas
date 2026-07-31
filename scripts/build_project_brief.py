@@ -3,6 +3,16 @@ import json
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
+EXCLUDED_ROOTS = {".git", ".atlas", "dist", "reports"}
+
+
+def project_paths(pattern: str) -> list[Path]:
+    return [
+        path
+        for path in ROOT.rglob(pattern)
+        if path.is_file()
+        and path.relative_to(ROOT).parts[0] not in EXCLUDED_ROOTS
+    ]
 
 def read_optional(relative: str, limit: int = 6000) -> str:
     path = ROOT / relative
@@ -21,7 +31,7 @@ def main() -> None:
         "active_work": [],
         "decisions": sorted(
             path.relative_to(ROOT).as_posix()
-            for path in ROOT.rglob("ADR-*.md")
+            for path in project_paths("ADR-*.md")
         )[-20:],
         "risks": [],
         "next_actions": [

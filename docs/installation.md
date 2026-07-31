@@ -15,7 +15,7 @@
 1. Verify the external `.sha256` file against the final ZIP.
 2. Extract the archive.
 3. Open its single versioned root, such as
-   `atlas-framework-0.1.0-rc.1/`.
+   `atlas-framework-0.1.0/`.
 4. Copy the contents into the target repository root.
 5. Confirm `.claude/registry.json`, `VERSION`, `README.md`, and `LICENSE` exist.
 6. Optionally run the validators documented in the README.

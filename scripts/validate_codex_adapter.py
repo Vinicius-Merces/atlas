@@ -49,6 +49,7 @@ def main() -> None:
     )
     registry = json.loads(REGISTRY.read_text(encoding="utf-8"))
     version = (ROOT / "VERSION").read_text(encoding="utf-8").strip()
+    expected_support = "supported" if "-" not in version else "beta-supported"
 
     if data.get("version") != version:
         fail(
@@ -56,13 +57,13 @@ def main() -> None:
             f"does not match framework version {version}"
         )
 
-    if data.get("support") != "beta-supported":
-        fail("Codex adapter is not marked beta-supported")
+    if data.get("support") != expected_support:
+        fail(f"Codex adapter is not marked {expected_support}")
 
     if declaration.get("version") != version:
         fail("Codex runtime declaration version does not match VERSION")
-    if declaration.get("support") != "beta-supported":
-        fail("Codex runtime declaration is not beta-supported")
+    if declaration.get("support") != expected_support:
+        fail(f"Codex runtime declaration is not {expected_support}")
     if declaration.get("canonical") is not False:
         fail("Codex runtime declaration must not claim canonical status")
 

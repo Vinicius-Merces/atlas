@@ -1,5 +1,5 @@
 {
-  "version": "0.1.0-rc.1",
+  "version": "0.1.0",
   "contract": "atlas-universal-runtime",
   "required_capabilities": [
     "read-files",

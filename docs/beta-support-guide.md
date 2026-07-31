@@ -1,12 +1,12 @@
-# Beta Support Guide
+# Runtime Support Guide
 
 ## Canonical runtime
 
-Claude Code is the canonical beta-supported runtime.
+Claude Code is the canonical supported runtime.
 
-## Beta-supported compatibility runtime
+## Supported compatibility runtime
 
-Codex is beta-supported. Its adapter is independently validated and shares
+Codex is supported. Its adapter is independently validated and shares
 canonical contracts and memory with Claude Code.
 
 ## Experimental adapters
@@ -16,11 +16,8 @@ translation.
 
 ## Stability boundary
 
-Core contracts and canonical paths receive compatibility protection during the
-beta line.
-
-Release candidates preserve this boundary and may tighten validation without
-changing established semantics.
+Core contracts and canonical paths receive compatibility protection throughout
+the stable `0.1.x` line.
 
 ## Reporting issues
 

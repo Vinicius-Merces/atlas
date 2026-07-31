@@ -2,7 +2,7 @@
 
 ## Authority
 
-Claude Code is the canonical runtime. Codex is beta-supported through
+Claude Code is the canonical supported runtime. Codex is supported through
 `adapters/codex/`. Gemini and Cursor are experimental.
 
 ## Shared sources

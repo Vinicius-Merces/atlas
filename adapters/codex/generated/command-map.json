@@ -1,5 +1,5 @@
 {
-  "version": "0.1.0-rc.1",
+  "version": "0.1.0",
   "generated_from": ".claude/registry.json",
   "collection": "commands",
   "entries": [
@@ -10,7 +10,7 @@
       "parity_type": "canonical-reference",
       "status": "mapped",
       "notes": "Resolved through the generated catalog to the canonical source.",
-      "version": "0.1.0-rc.1"
+      "version": "0.1.0"
     },
     {
       "canonical_name": "atlas-adopt",
@@ -19,7 +19,7 @@
       "parity_type": "canonical-reference",
       "status": "mapped",
       "notes": "Resolved through the generated catalog to the canonical source.",
-      "version": "0.1.0-rc.1"
+      "version": "0.1.0"
     },
     {
       "canonical_name": "atlas-ai-review",
@@ -28,7 +28,7 @@
       "parity_type": "canonical-reference",
       "status": "mapped",
       "notes": "Resolved through the generated catalog to the canonical source.",
-      "version": "0.1.0-rc.1"
+      "version": "0.1.0"
     },
     {
       "canonical_name": "atlas-analytics",
@@ -37,7 +37,7 @@
       "parity_type": "canonical-reference",
       "status": "mapped",
       "notes": "Resolved through the generated catalog to the canonical source.",
-      "version": "0.1.0-rc.1"
+      "version": "0.1.0"
     },
     {
       "canonical_name": "atlas-audit",
@@ -46,7 +46,7 @@
       "parity_type": "canonical-reference",
       "status": "mapped",
       "notes": "Resolved through the generated catalog to the canonical source.",
-      "version": "0.1.0-rc.1"
+      "version": "0.1.0"
     },
     {
       "canonical_name": "atlas-audit-bundle",
@@ -55,7 +55,7 @@
       "parity_type": "canonical-reference",
       "status": "mapped",
       "notes": "Resolved through the generated catalog to the canonical source.",
-      "version": "0.1.0-rc.1"
+      "version": "0.1.0"
     },
     {
       "canonical_name": "atlas-beta-ready",
@@ -64,7 +64,7 @@
       "parity_type": "canonical-reference",
       "status": "mapped",
       "notes": "Resolved through the generated catalog to the canonical source.",
-      "version": "0.1.0-rc.1"
+      "version": "0.1.0"
     },
     {
       "canonical_name": "atlas-blueprint",
@@ -73,7 +73,7 @@
       "parity_type": "canonical-reference",
       "status": "mapped",
       "notes": "Resolved through the generated catalog to the canonical source.",
-      "version": "0.1.0-rc.1"
+      "version": "0.1.0"
     },
     {
       "canonical_name": "atlas-bootstrap",
@@ -82,7 +82,7 @@
       "parity_type": "canonical-reference",
       "status": "mapped",
       "notes": "Resolved through the generated catalog to the canonical source.",
-      "version": "0.1.0-rc.1"
+      "version": "0.1.0"
     },
     {
       "canonical_name": "atlas-brief",
@@ -91,7 +91,7 @@
       "parity_type": "canonical-reference",
       "status": "mapped",
       "notes": "Resolved through the generated catalog to the canonical source.",
-      "version": "0.1.0-rc.1"
+      "version": "0.1.0"
     },
     {
       "canonical_name": "atlas-checkpoint",
@@ -100,7 +100,7 @@
       "parity_type": "canonical-reference",
       "status": "mapped",
       "notes": "Resolved through the generated catalog to the canonical source.",
-      "version": "0.1.0-rc.1"
+      "version": "0.1.0"
     },
     {
       "canonical_name": "atlas-claim",
@@ -109,7 +109,7 @@
       "parity_type": "canonical-reference",
       "status": "mapped",
       "notes": "Resolved through the generated catalog to the canonical source.",
-      "version": "0.1.0-rc.1"
+      "version": "0.1.0"
     },
     {
       "canonical_name": "atlas-close-session",
@@ -118,7 +118,7 @@
       "parity_type": "canonical-reference",
       "status": "mapped",
       "notes": "Resolved through the generated catalog to the canonical source.",
-      "version": "0.1.0-rc.1"
+      "version": "0.1.0"
     },
     {
       "canonical_name": "atlas-codex-sync",
@@ -127,7 +127,7 @@
       "parity_type": "canonical-reference",
       "status": "mapped",
       "notes": "Resolved through the generated catalog to the canonical source.",
-      "version": "0.1.0-rc.1"
+      "version": "0.1.0"
     },
     {
       "canonical_name": "atlas-compatibility",
@@ -136,7 +136,7 @@
       "parity_type": "canonical-reference",
       "status": "mapped",
       "notes": "Resolved through the generated catalog to the canonical source.",
-      "version": "0.1.0-rc.1"
+      "version": "0.1.0"
     },
     {
       "canonical_name": "atlas-conformance",
@@ -145,7 +145,7 @@
       "parity_type": "canonical-reference",
       "status": "mapped",
       "notes": "Resolved through the generated catalog to the canonical source.",
-      "version": "0.1.0-rc.1"
+      "version": "0.1.0"
     },
     {
       "canonical_name": "atlas-context-pack",
@@ -154,7 +154,7 @@
       "parity_type": "canonical-reference",
       "status": "mapped",
       "notes": "Resolved through the generated catalog to the canonical source.",
-      "version": "0.1.0-rc.1"
+      "version": "0.1.0"
     },
     {
       "canonical_name": "atlas-contract-test",
@@ -163,7 +163,7 @@
       "parity_type": "canonical-reference",
       "status": "mapped",
       "notes": "Resolved through the generated catalog to the canonical source.",
-      "version": "0.1.0-rc.1"
+      "version": "0.1.0"
     },
     {
       "canonical_name": "atlas-cost",
@@ -172,7 +172,7 @@
       "parity_type": "canonical-reference",
       "status": "mapped",
       "notes": "Resolved through the generated catalog to the canonical source.",
-      "version": "0.1.0-rc.1"
+      "version": "0.1.0"
     },
     {
       "canonical_name": "atlas-debt",
@@ -181,7 +181,7 @@
       "parity_type": "canonical-reference",
       "status": "mapped",
       "notes": "Resolved through the generated catalog to the canonical source.",
-      "version": "0.1.0-rc.1"
+      "version": "0.1.0"
     },
     {
       "canonical_name": "atlas-deploy-preflight",
@@ -190,7 +190,7 @@
       "parity_type": "canonical-reference",
       "status": "mapped",
       "notes": "Resolved through the generated catalog to the canonical source.",
-      "version": "0.1.0-rc.1"
+      "version": "0.1.0"
     },
     {
       "canonical_name": "atlas-deploy-receipt",
@@ -199,7 +199,7 @@
       "parity_type": "canonical-reference",
       "status": "mapped",
       "notes": "Resolved through the generated catalog to the canonical source.",
-      "version": "0.1.0-rc.1"
+      "version": "0.1.0"
     },
     {
       "canonical_name": "atlas-deprecate",
@@ -208,7 +208,7 @@
       "parity_type": "canonical-reference",
       "status": "mapped",
       "notes": "Resolved through the generated catalog to the canonical source.",
-      "version": "0.1.0-rc.1"
+      "version": "0.1.0"
     },
     {
       "canonical_name": "atlas-design-system",
@@ -217,7 +217,7 @@
       "parity_type": "canonical-reference",
       "status": "mapped",
       "notes": "Resolved through the generated catalog to the canonical source.",
-      "version": "0.1.0-rc.1"
+      "version": "0.1.0"
     },
     {
       "canonical_name": "atlas-docs",
@@ -226,7 +226,7 @@
       "parity_type": "canonical-reference",
       "status": "mapped",
       "notes": "Resolved through the generated catalog to the canonical source.",
-      "version": "0.1.0-rc.1"
+      "version": "0.1.0"
     },
     {
       "canonical_name": "atlas-dual-release",
@@ -235,7 +235,7 @@
       "parity_type": "canonical-reference",
       "status": "mapped",
       "notes": "Resolved through the generated catalog to the canonical source.",
-      "version": "0.1.0-rc.1"
+      "version": "0.1.0"
     },
     {
       "canonical_name": "atlas-evidence",
@@ -244,7 +244,7 @@
       "parity_type": "canonical-reference",
       "status": "mapped",
       "notes": "Resolved through the generated catalog to the canonical source.",
-      "version": "0.1.0-rc.1"
+      "version": "0.1.0"
     },
     {
       "canonical_name": "atlas-execute-plan",
@@ -253,7 +253,7 @@
       "parity_type": "canonical-reference",
       "status": "mapped",
       "notes": "Resolved through the generated catalog to the canonical source.",
-      "version": "0.1.0-rc.1"
+      "version": "0.1.0"
     },
     {
       "canonical_name": "atlas-experiment",
@@ -262,7 +262,7 @@
       "parity_type": "canonical-reference",
       "status": "mapped",
       "notes": "Resolved through the generated catalog to the canonical source.",
-      "version": "0.1.0-rc.1"
+      "version": "0.1.0"
     },
     {
       "canonical_name": "atlas-govern",
@@ -271,7 +271,7 @@
       "parity_type": "canonical-reference",
       "status": "mapped",
       "notes": "Resolved through the generated catalog to the canonical source.",
-      "version": "0.1.0-rc.1"
+      "version": "0.1.0"
     },
     {
       "canonical_name": "atlas-govern-release",
@@ -280,7 +280,7 @@
       "parity_type": "canonical-reference",
       "status": "mapped",
       "notes": "Resolved through the generated catalog to the canonical source.",
-      "version": "0.1.0-rc.1"
+      "version": "0.1.0"
     },
     {
       "canonical_name": "atlas-handoff",
@@ -289,7 +289,7 @@
       "parity_type": "canonical-reference",
       "status": "mapped",
       "notes": "Resolved through the generated catalog to the canonical source.",
-      "version": "0.1.0-rc.1"
+      "version": "0.1.0"
     },
     {
       "canonical_name": "atlas-health",
@@ -298,7 +298,7 @@
       "parity_type": "canonical-reference",
       "status": "mapped",
       "notes": "Resolved through the generated catalog to the canonical source.",
-      "version": "0.1.0-rc.1"
+      "version": "0.1.0"
     },
     {
       "canonical_name": "atlas-incident",
@@ -307,7 +307,7 @@
       "parity_type": "canonical-reference",
       "status": "mapped",
       "notes": "Resolved through the generated catalog to the canonical source.",
-      "version": "0.1.0-rc.1"
+      "version": "0.1.0"
     },
     {
       "canonical_name": "atlas-integrate",
@@ -316,7 +316,7 @@
       "parity_type": "canonical-reference",
       "status": "mapped",
       "notes": "Resolved through the generated catalog to the canonical source.",
-      "version": "0.1.0-rc.1"
+      "version": "0.1.0"
     },
     {
       "canonical_name": "atlas-knowledge-sync",
@@ -325,7 +325,7 @@
       "parity_type": "canonical-reference",
       "status": "mapped",
       "notes": "Resolved through the generated catalog to the canonical source.",
-      "version": "0.1.0-rc.1"
+      "version": "0.1.0"
     },
     {
       "canonical_name": "atlas-map-repo",
@@ -334,7 +334,7 @@
       "parity_type": "canonical-reference",
       "status": "mapped",
       "notes": "Resolved through the generated catalog to the canonical source.",
-      "version": "0.1.0-rc.1"
+      "version": "0.1.0"
     },
     {
       "canonical_name": "atlas-memory-drift",
@@ -343,7 +343,7 @@
       "parity_type": "canonical-reference",
       "status": "mapped",
       "notes": "Resolved through the generated catalog to the canonical source.",
-      "version": "0.1.0-rc.1"
+      "version": "0.1.0"
     },
     {
       "canonical_name": "atlas-memory-freshness",
@@ -352,7 +352,7 @@
       "parity_type": "canonical-reference",
       "status": "mapped",
       "notes": "Resolved through the generated catalog to the canonical source.",
-      "version": "0.1.0-rc.1"
+      "version": "0.1.0"
     },
     {
       "canonical_name": "atlas-merge-ready",
@@ -361,7 +361,7 @@
       "parity_type": "canonical-reference",
       "status": "mapped",
       "notes": "Resolved through the generated catalog to the canonical source.",
-      "version": "0.1.0-rc.1"
+      "version": "0.1.0"
     },
     {
       "canonical_name": "atlas-migrate",
@@ -370,7 +370,7 @@
       "parity_type": "canonical-reference",
       "status": "mapped",
       "notes": "Resolved through the generated catalog to the canonical source.",
-      "version": "0.1.0-rc.1"
+      "version": "0.1.0"
     },
     {
       "canonical_name": "atlas-package",
@@ -379,7 +379,7 @@
       "parity_type": "canonical-reference",
       "status": "mapped",
       "notes": "Resolved through the generated catalog to the canonical source.",
-      "version": "0.1.0-rc.1"
+      "version": "0.1.0"
     },
     {
       "canonical_name": "atlas-parallelize",
@@ -388,7 +388,7 @@
       "parity_type": "canonical-reference",
       "status": "mapped",
       "notes": "Resolved through the generated catalog to the canonical source.",
-      "version": "0.1.0-rc.1"
+      "version": "0.1.0"
     },
     {
       "canonical_name": "atlas-patch-check",
@@ -397,7 +397,7 @@
       "parity_type": "canonical-reference",
       "status": "mapped",
       "notes": "Resolved through the generated catalog to the canonical source.",
-      "version": "0.1.0-rc.1"
+      "version": "0.1.0"
     },
     {
       "canonical_name": "atlas-plan",
@@ -406,7 +406,7 @@
       "parity_type": "runtime-native",
       "status": "native",
       "notes": "Codex-native entry point.",
-      "version": "0.1.0-rc.1"
+      "version": "0.1.0"
     },
     {
       "canonical_name": "atlas-policy",
@@ -415,7 +415,7 @@
       "parity_type": "canonical-reference",
       "status": "mapped",
       "notes": "Resolved through the generated catalog to the canonical source.",
-      "version": "0.1.0-rc.1"
+      "version": "0.1.0"
     },
     {
       "canonical_name": "atlas-policy-check",
@@ -424,7 +424,7 @@
       "parity_type": "canonical-reference",
       "status": "mapped",
       "notes": "Resolved through the generated catalog to the canonical source.",
-      "version": "0.1.0-rc.1"
+      "version": "0.1.0"
     },
     {
       "canonical_name": "atlas-policy-exception",
@@ -433,7 +433,7 @@
       "parity_type": "canonical-reference",
       "status": "mapped",
       "notes": "Resolved through the generated catalog to the canonical source.",
-      "version": "0.1.0-rc.1"
+      "version": "0.1.0"
     },
     {
       "canonical_name": "atlas-privacy",
@@ -442,7 +442,7 @@
       "parity_type": "canonical-reference",
       "status": "mapped",
       "notes": "Resolved through the generated catalog to the canonical source.",
-      "version": "0.1.0-rc.1"
+      "version": "0.1.0"
     },
     {
       "canonical_name": "atlas-product",
@@ -451,7 +451,7 @@
       "parity_type": "canonical-reference",
       "status": "mapped",
       "notes": "Resolved through the generated catalog to the canonical source.",
-      "version": "0.1.0-rc.1"
+      "version": "0.1.0"
     },
     {
       "canonical_name": "atlas-provenance",
@@ -460,7 +460,7 @@
       "parity_type": "canonical-reference",
       "status": "mapped",
       "notes": "Resolved through the generated catalog to the canonical source.",
-      "version": "0.1.0-rc.1"
+      "version": "0.1.0"
     },
     {
       "canonical_name": "atlas-reconcile",
@@ -469,7 +469,7 @@
       "parity_type": "canonical-reference",
       "status": "mapped",
       "notes": "Resolved through the generated catalog to the canonical source.",
-      "version": "0.1.0-rc.1"
+      "version": "0.1.0"
     },
     {
       "canonical_name": "atlas-reconcile-memory",
@@ -478,7 +478,7 @@
       "parity_type": "canonical-reference",
       "status": "mapped",
       "notes": "Resolved through the generated catalog to the canonical source.",
-      "version": "0.1.0-rc.1"
+      "version": "0.1.0"
     },
     {
       "canonical_name": "atlas-reference-review",
@@ -487,7 +487,7 @@
       "parity_type": "canonical-reference",
       "status": "mapped",
       "notes": "Resolved through the generated catalog to the canonical source.",
-      "version": "0.1.0-rc.1"
+      "version": "0.1.0"
     },
     {
       "canonical_name": "atlas-refresh-continuity",
@@ -496,7 +496,7 @@
       "parity_type": "canonical-reference",
       "status": "mapped",
       "notes": "Resolved through the generated catalog to the canonical source.",
-      "version": "0.1.0-rc.1"
+      "version": "0.1.0"
     },
     {
       "canonical_name": "atlas-release",
@@ -505,7 +505,7 @@
       "parity_type": "runtime-native",
       "status": "native",
       "notes": "Codex-native entry point.",
-      "version": "0.1.0-rc.1"
+      "version": "0.1.0"
     },
     {
       "canonical_name": "atlas-resume",
@@ -514,7 +514,7 @@
       "parity_type": "canonical-reference",
       "status": "mapped",
       "notes": "Resolved through the generated catalog to the canonical source.",
-      "version": "0.1.0-rc.1"
+      "version": "0.1.0"
     },
     {
       "canonical_name": "atlas-resume-packet",
@@ -523,7 +523,7 @@
       "parity_type": "canonical-reference",
       "status": "mapped",
       "notes": "Resolved through the generated catalog to the canonical source.",
-      "version": "0.1.0-rc.1"
+      "version": "0.1.0"
     },
     {
       "canonical_name": "atlas-review",
@@ -532,7 +532,7 @@
       "parity_type": "runtime-native",
       "status": "native",
       "notes": "Codex-native entry point.",
-      "version": "0.1.0-rc.1"
+      "version": "0.1.0"
     },
     {
       "canonical_name": "atlas-roadmap",
@@ -541,7 +541,7 @@
       "parity_type": "canonical-reference",
       "status": "mapped",
       "notes": "Resolved through the generated catalog to the canonical source.",
-      "version": "0.1.0-rc.1"
+      "version": "0.1.0"
     },
     {
       "canonical_name": "atlas-route",
@@ -550,7 +550,7 @@
       "parity_type": "canonical-reference",
       "status": "mapped",
       "notes": "Resolved through the generated catalog to the canonical source.",
-      "version": "0.1.0-rc.1"
+      "version": "0.1.0"
     },
     {
       "canonical_name": "atlas-runtime-catalog",
@@ -559,7 +559,7 @@
       "parity_type": "canonical-reference",
       "status": "mapped",
       "notes": "Resolved through the generated catalog to the canonical source.",
-      "version": "0.1.0-rc.1"
+      "version": "0.1.0"
     },
     {
       "canonical_name": "atlas-runtime-drift",
@@ -568,7 +568,7 @@
       "parity_type": "canonical-reference",
       "status": "mapped",
       "notes": "Resolved through the generated catalog to the canonical source.",
-      "version": "0.1.0-rc.1"
+      "version": "0.1.0"
     },
     {
       "canonical_name": "atlas-runtime-parity",
@@ -577,7 +577,7 @@
       "parity_type": "canonical-reference",
       "status": "mapped",
       "notes": "Resolved through the generated catalog to the canonical source.",
-      "version": "0.1.0-rc.1"
+      "version": "0.1.0"
     },
     {
       "canonical_name": "atlas-runtime-sync",
@@ -586,7 +586,7 @@
       "parity_type": "canonical-reference",
       "status": "mapped",
       "notes": "Resolved through the generated catalog to the canonical source.",
-      "version": "0.1.0-rc.1"
+      "version": "0.1.0"
     },
     {
       "canonical_name": "atlas-stabilize",
@@ -595,7 +595,7 @@
       "parity_type": "canonical-reference",
       "status": "mapped",
       "notes": "Resolved through the generated catalog to the canonical source.",
-      "version": "0.1.0-rc.1"
+      "version": "0.1.0"
     },
     {
       "canonical_name": "atlas-support",
@@ -604,7 +604,7 @@
       "parity_type": "canonical-reference",
       "status": "mapped",
       "notes": "Resolved through the generated catalog to the canonical source.",
-      "version": "0.1.0-rc.1"
+      "version": "0.1.0"
     },
     {
       "canonical_name": "atlas-test",
@@ -613,7 +613,7 @@
       "parity_type": "canonical-reference",
       "status": "mapped",
       "notes": "Resolved through the generated catalog to the canonical source.",
-      "version": "0.1.0-rc.1"
+      "version": "0.1.0"
     },
     {
       "canonical_name": "atlas-threat-model",
@@ -622,7 +622,7 @@
       "parity_type": "canonical-reference",
       "status": "mapped",
       "notes": "Resolved through the generated catalog to the canonical source.",
-      "version": "0.1.0-rc.1"
+      "version": "0.1.0"
     },
     {
       "canonical_name": "atlas-upgrade",
@@ -631,7 +631,7 @@
       "parity_type": "canonical-reference",
       "status": "mapped",
       "notes": "Resolved through the generated catalog to the canonical source.",
-      "version": "0.1.0-rc.1"
+      "version": "0.1.0"
     },
     {
       "canonical_name": "atlas-validate",
@@ -640,7 +640,7 @@
       "parity_type": "canonical-reference",
       "status": "mapped",
       "notes": "Resolved through the generated catalog to the canonical source.",
-      "version": "0.1.0-rc.1"
+      "version": "0.1.0"
     }
   ]
 }

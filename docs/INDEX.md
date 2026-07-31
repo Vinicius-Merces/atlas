@@ -75,7 +75,7 @@
 - [Framework Upgrade Guide](framework-upgrade-guide.md)
 - [Release Guide](release-guide.md)
 - [Beta Readiness](beta-readiness-guide.md)
-- [Beta Support](beta-support-guide.md)
+- [Runtime Support](beta-support-guide.md)
 
 ## Adoption and specialized guides
 
