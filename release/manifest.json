@@ -1,6 +1,6 @@
 {
-  "version": "0.1.0-beta.12",
-  "channel": "beta",
+  "version": "0.1.0-rc.1",
+  "channel": "rc",
   "canonical_runtime": "claude-code",
   "supported_runtimes": [
     "claude-code",

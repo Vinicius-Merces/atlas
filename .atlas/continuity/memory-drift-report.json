@@ -1,6 +1,6 @@
 {
-  "framework_version": "0.1.0-beta.12",
-  "generated_at": "2026-07-30T23:58:17.075518+00:00",
+  "framework_version": "0.1.0-rc.1",
+  "generated_at": "2026-07-31T02:14:55.134353+00:00",
   "sources_checked": [
     ".atlas/continuity/resume-packet.json",
     ".claude/memory/architecture.md",

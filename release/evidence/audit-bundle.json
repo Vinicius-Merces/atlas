@@ -1,7 +1,7 @@
 {
-  "bundle_id": "audit-3f7b8f1a421b",
-  "framework_version": "0.1.0-beta.12",
-  "generated_at": "2026-07-31T00:00:05.523505+00:00",
+  "bundle_id": "audit-3938a8c0fa8d",
+  "framework_version": "0.1.0-rc.1",
+  "generated_at": "2026-07-31T02:15:03.606333+00:00",
   "scope": "repository",
   "records": [
     {
@@ -11,10 +11,18 @@
     {
       "path": "release/evidence/records/manual-deployment-beta.12.json",
       "sha256": "dd73f6a5964f4d67a673f8d7da40207fe7254bdf2edd969d7e892cf84242c797"
+    },
+    {
+      "path": "release/evidence/records/manual-deployment-rc.1.json",
+      "sha256": "0c34bb950a5d467fd68619d94e4809d3f925665bfdec427356a8e93ed10d42eb"
+    },
+    {
+      "path": "release/evidence/records/rc.1-promotion.json",
+      "sha256": "cb9720c323fe134da592f9bc4603894b02fd6edaff8f23e0553909519b6bb6c3"
     }
   ],
   "integrity": {
     "algorithm": "sha256",
-    "record_count": 2
+    "record_count": 4
   }
 }

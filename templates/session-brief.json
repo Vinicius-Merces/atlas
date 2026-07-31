@@ -1,6 +1,6 @@
 {
   "session_id": "session-example",
-  "framework_version": "0.1.0-beta.12",
+  "framework_version": "0.1.0-rc.1",
   "runtime": "codex",
   "summary": "",
   "completed_work": [],

@@ -1,15 +1,29 @@
 # ATLAS Release Candidate Checklist
 
-- [ ] All repository validators pass.
-- [ ] All tests pass.
-- [ ] CI YAML is valid and GitHub-hosted CI status is recorded.
-- [ ] JSON, YAML, and schemas validate.
-- [ ] Version, registry, source-of-truth, Codex, and runtime drift checks pass.
-- [ ] Memory freshness, continuity, and Obsidian links pass.
-- [ ] Policy evaluation has no blocking result.
-- [ ] Cumulative, incremental, and recovery packages validate.
-- [ ] Clean install and beta.11 upgrade simulations pass.
-- [ ] Manual deployment and deletion handling pass.
-- [ ] Release notes, migration, support, compatibility, rollback, and known
+- [x] All repository validators pass.
+- [x] All tests pass.
+- [x] CI YAML is valid and GitHub-hosted CI status is recorded.
+- [x] JSON, YAML, and schemas validate.
+- [x] Version, registry, source-of-truth, Codex, and runtime drift checks pass.
+- [x] Memory freshness, continuity, and Obsidian links pass.
+- [x] Policy evaluation has no blocking result.
+- [x] Cumulative, incremental, and recovery packages validate.
+- [x] Clean install and beta.12 upgrade simulations pass.
+- [x] Manual deployment and deletion handling pass.
+- [x] Release notes, migration, support, compatibility, rollback, and known
       limitations are complete.
-- [ ] Audit evidence and remaining runtime limitations are recorded.
+- [x] Audit evidence and remaining runtime limitations are recorded.
+
+## Evidence
+
+- `release/RC-1-VALIDATION.md`
+- `release/evidence/records/rc.1-promotion.json`
+- `release/evidence/records/manual-deployment-rc.1.json`
+- `release/evidence/audit-bundle.json`
+- Pull request #1 and merge commit
+  `6f8d82dc3241a923ea0ee0f81e1e02e50b45c521`
+
+GitHub-hosted CI and independent review for the finalized beta.12 source were
+reported as passed before pull request #1 merged. The RC promotion delta is
+limited to version, maturity, compatibility, release, evidence, and test
+generalization changes and is revalidated locally in full.

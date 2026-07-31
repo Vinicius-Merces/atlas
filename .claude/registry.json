@@ -1,5 +1,5 @@
 {
-  "version": "0.1.0-beta.12",
+  "version": "0.1.0-rc.1",
   "orchestrator": "orchestrator",
   "agents": [
     "adapter-drift-auditor",

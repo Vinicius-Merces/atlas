@@ -27,6 +27,8 @@ def test_all_canonical_paths_exist() -> None:
         assert (ROOT / relative).exists(), relative
 
 
-def test_beta_contracts_have_beta_status() -> None:
+def test_contract_status_matches_release_stability() -> None:
+    manifest = load_manifest()
+    expected = f"stable-{manifest['stability']}"
     for contract in load_manifest()["contracts"]:
-        assert contract["status"] == "stable-beta"
+        assert contract["status"] == expected

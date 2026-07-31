@@ -1,7 +1,7 @@
 # ATLAS AI Engineering Framework
 
-**Version:** `0.1.0-beta.12`
-**Status:** Beta.12 hardening complete; hosted CI and independent RC approval pending
+**Version:** `0.1.0-rc.1`
+**Status:** Release candidate; stabilization monitoring before 0.1.0 stable
 
 ATLAS is a repository-native engineering operating framework for teams that
 use AI coding runtimes. It keeps durable project knowledge, contracts,

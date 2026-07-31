@@ -32,8 +32,9 @@ Experimental adapters may require manual adjustments.
 
 ## Framework compatibility
 
-The `0.1.0-beta.x` line preserves core contract semantics and canonical paths.
-Runtime-specific syntax may differ without changing semantic responsibility.
+The `0.1.0` beta and release-candidate lines preserve core contract semantics
+and canonical paths. Runtime-specific syntax may differ without changing
+semantic responsibility.
 
 ## Prerelease support window
 

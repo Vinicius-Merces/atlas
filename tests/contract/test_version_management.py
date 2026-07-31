@@ -38,6 +38,9 @@ def test_update_preserves_historical_release_manifests(tmp_path: Path) -> None:
             "release/beta.9.manifest.json",
             "release/BETA-9-MIGRATION.md",
             "release/BETA-9-RELEASE-NOTES.md",
+            "release/rc.1.manifest.json",
+            "release/RC-1-MIGRATION.md",
+            "release/RC-1-RELEASE-NOTES.md",
             "CHANGELOG.md",
         }
     )
@@ -51,7 +54,11 @@ def test_update_preserves_historical_release_manifests(tmp_path: Path) -> None:
     old_manifest = (sandbox / "release/beta.9.manifest.json").read_bytes()
     old_migration = (sandbox / "release/BETA-9-MIGRATION.md").read_bytes()
     old_notes = (sandbox / "release/BETA-9-RELEASE-NOTES.md").read_bytes()
+    old_rc_manifest = (sandbox / "release/rc.1.manifest.json").read_bytes()
+    old_rc_migration = (sandbox / "release/RC-1-MIGRATION.md").read_bytes()
+    old_rc_notes = (sandbox / "release/RC-1-RELEASE-NOTES.md").read_bytes()
     report = sandbox / "reports/update.json"
+    target_version = "0.1.0-rc.2"
 
     result = subprocess.run(
         [
@@ -60,7 +67,7 @@ def test_update_preserves_historical_release_manifests(tmp_path: Path) -> None:
             "--root",
             str(sandbox),
             "--set",
-            "0.1.0-rc.1",
+            target_version,
             "--report",
             str(report),
         ],
@@ -68,11 +75,17 @@ def test_update_preserves_historical_release_manifests(tmp_path: Path) -> None:
         text=True,
     )
     assert result.returncode == 0, result.stdout + result.stderr
-    assert (sandbox / "VERSION").read_text(encoding="utf-8").strip() == "0.1.0-rc.1"
+    assert (
+        sandbox / "VERSION"
+    ).read_text(encoding="utf-8").strip() == target_version
     assert (sandbox / "release/beta.9.manifest.json").read_bytes() == old_manifest
     assert (sandbox / "release/BETA-9-MIGRATION.md").read_bytes() == old_migration
     assert (sandbox / "release/BETA-9-RELEASE-NOTES.md").read_bytes() == old_notes
+    assert (sandbox / "release/rc.1.manifest.json").read_bytes() == old_rc_manifest
+    assert (sandbox / "release/RC-1-MIGRATION.md").read_bytes() == old_rc_migration
+    assert (sandbox / "release/RC-1-RELEASE-NOTES.md").read_bytes() == old_rc_notes
 
     changed = json.loads(report.read_text(encoding="utf-8"))["changed_files"]
     assert "release/manifest.json" in changed
     assert "release/beta.9.manifest.json" not in changed
+    assert "release/rc.1.manifest.json" not in changed

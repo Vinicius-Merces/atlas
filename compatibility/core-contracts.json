@@ -1,37 +1,37 @@
 {
-  "version": "0.1.0-beta.12",
-  "stability": "beta",
+  "version": "0.1.0-rc.1",
+  "stability": "rc",
   "canonical_runtime": "claude-code",
   "contracts": [
     {
       "name": "agent-contract",
       "path": ".claude/contracts/agent-contract.md",
-      "status": "stable-beta"
+      "status": "stable-rc"
     },
     {
       "name": "memory-contract",
       "path": ".claude/contracts/memory-contract.md",
-      "status": "stable-beta"
+      "status": "stable-rc"
     },
     {
       "name": "workflow-contract",
       "path": ".claude/contracts/workflow-contract.md",
-      "status": "stable-beta"
+      "status": "stable-rc"
     },
     {
       "name": "skill-contract",
       "path": ".claude/contracts/skill-contract.md",
-      "status": "stable-beta"
+      "status": "stable-rc"
     },
     {
       "name": "review-contract",
       "path": ".claude/contracts/review-contract.md",
-      "status": "stable-beta"
+      "status": "stable-rc"
     },
     {
       "name": "command-contract",
       "path": ".claude/contracts/command-contract.md",
-      "status": "stable-beta"
+      "status": "stable-rc"
     }
   ],
   "canonical_paths": [
