@@ -28,4 +28,3 @@ Publishable local outcome: `0.1.0-beta.12`.
 
 RC promotion is blocked only by the two external gates above. Stable promotion
 is not eligible and remains governed by `release/STABLE-RELEASE-CHECKLIST.md`.
-

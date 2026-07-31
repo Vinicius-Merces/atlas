@@ -35,4 +35,3 @@ All local repository gates and packaging simulations pass. Promotion to an RC
 still requires a successful GitHub-hosted CI run and independent release
 review. Those external approvals are deliberately not inferred from local
 validation.
-

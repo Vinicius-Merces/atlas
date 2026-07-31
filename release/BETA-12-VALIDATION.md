@@ -45,4 +45,3 @@ Runtime: Codex on Windows, with Python dependencies from
 This record is local execution evidence, not an RC approval. GitHub-hosted CI
 must pass on the published branch and an independent reviewer must approve the
 candidate before changing the channel to RC.
-

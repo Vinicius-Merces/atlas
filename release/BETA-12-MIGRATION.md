@@ -49,4 +49,3 @@ Restore the pre-deployment checkpoint. If that is unavailable, install the
 beta.12 recovery archive into a clean directory and reconcile project-specific
 files manually. The recovery package does not reconstruct unrecorded local
 changes.
-
