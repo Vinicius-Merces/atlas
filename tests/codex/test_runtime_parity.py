@@ -4,11 +4,11 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[2]
 
 
-def test_capability_matrix_declares_beta_parity() -> None:
+def test_capability_matrix_declares_supported_parity() -> None:
     text = (
         ROOT / "compatibility" / "claude-codex-capability-matrix.md"
     ).read_text(encoding="utf-8")
-    assert "beta-supported" in text
+    assert "supported" in text
     assert "Claude Code" in text
     assert "Codex" in text
 

@@ -1,12 +1,16 @@
 {
-  "bundle_id": "audit-d89af740e951",
-  "framework_version": "0.1.0-rc.1",
-  "generated_at": "2026-07-31T03:54:02.107065+00:00",
+  "bundle_id": "audit-7353a355f892",
+  "framework_version": "0.1.0",
+  "generated_at": "2026-07-31T04:39:43.449861+00:00",
   "scope": "repository",
   "records": [
     {
       "path": "release/evidence/records/finalization-beta.12.json",
       "sha256": "5295779b9dbecb11875d1fdd491a56f04a3950cec02226b461893acba07c64e2"
+    },
+    {
+      "path": "release/evidence/records/manual-deployment-0.1.0.json",
+      "sha256": "3b20d9958de6b49a1b19582745345fb464853eeec55bb25f0bef6b3da7e062a6"
     },
     {
       "path": "release/evidence/records/manual-deployment-beta.12.json",
@@ -17,12 +21,20 @@
       "sha256": "9f37a6560a9a7991de512160b7bea026a921368b881391f6daa76aa72ffb511f"
     },
     {
+      "path": "release/evidence/records/rc.1-exercise.json",
+      "sha256": "cc7904216ac9e9b7a9886a9d8ef24a482d92105529d1187fd6b94d5a53ea1cf9"
+    },
+    {
       "path": "release/evidence/records/rc.1-promotion.json",
       "sha256": "cb9720c323fe134da592f9bc4603894b02fd6edaff8f23e0553909519b6bb6c3"
+    },
+    {
+      "path": "release/evidence/records/stable-0.1.0-promotion.json",
+      "sha256": "24e436f882af3b57f200de7ed84dd4175a082017cc4058848d15fec2b2230b64"
     }
   ],
   "integrity": {
     "algorithm": "sha256",
-    "record_count": 4
+    "record_count": 7
   }
 }

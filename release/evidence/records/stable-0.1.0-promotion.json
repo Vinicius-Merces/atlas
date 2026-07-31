@@ -1,0 +1,49 @@
+{
+  "evidence_id": "evidence-stable-010-20260731",
+  "task_id": "atlas-stable-0.1.0-promotion",
+  "framework_version": "0.1.0",
+  "runtime": "codex",
+  "created_at": "2026-07-31T04:12:53.4025045+00:00",
+  "sources": [
+    "release/0.1.0.manifest.json",
+    "release/0.1.0-VALIDATION.md",
+    "release/STABLE-RELEASE-CHECKLIST.md",
+    "release/evidence/records/rc.1-exercise.json",
+    ".claude/workflows/release.md",
+    ".claude/memory/operations.md"
+  ],
+  "decisions": [
+    "Promote the exercised 0.1.0-rc.1 line to stable 0.1.0.",
+    "Graduate Claude Code and Codex support declarations to supported.",
+    "Promote core contract classification from stable-rc to stable.",
+    "Use beta.11 as the direct incremental base required by the stable checklist."
+  ],
+  "changed_files": [
+    "VERSION",
+    "CHANGELOG.md",
+    "README.md",
+    "adapters/",
+    "compatibility/",
+    "release/",
+    "tests/"
+  ],
+  "validation": [
+    "Version, registry, package, contracts, schemas, Codex, runtime, conformance, source-of-truth, memory, links, documentation, and policy validators passed.",
+    "31 schemas and fixtures, 112 JSON files, and 5 YAML files passed before the deployment receipt was generated.",
+    "Policy evaluation passed 14 policies with zero warnings, approvals, or blocks.",
+    "Smoke 5/5, contract 12/12, Codex 16/16, conformance 30/30, and full suite 67/67 passed locally.",
+    "Initial cumulative, beta.11 incremental, and recovery artifacts validated and installed successfully.",
+    "The beta.11 patch explicitly migrated 84 legacy root agent paths to canonical .claude paths."
+  ],
+  "reviews": [
+    "RC exercise evidence reviewed.",
+    "Support, compatibility, deprecation, migration, rollback, and known limitations reviewed."
+  ],
+  "assumptions": [
+    "Pull request #1 independent review remains applicable because stable promotion does not alter Claude Code or Codex semantic responsibilities."
+  ],
+  "remaining_risks": [
+    "Gemini and Cursor remain experimental."
+  ],
+  "status": "passed"
+}

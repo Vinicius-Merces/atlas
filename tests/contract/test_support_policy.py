@@ -14,7 +14,9 @@ def test_support_policy_declares_canonical_runtime() -> None:
     )
     assert "Claude Code" in text
     assert declaration["runtime"] == "claude-code"
-    assert declaration["support"] == "beta-supported"
+    version = (ROOT / "VERSION").read_text(encoding="utf-8").strip()
+    expected = "supported" if "-" not in version else "beta-supported"
+    assert declaration["support"] == expected
     assert declaration["canonical"] is True
 
 

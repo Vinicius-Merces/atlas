@@ -1,5 +1,5 @@
 {
-  "version": "0.1.0-rc.1",
+  "version": "0.1.0",
   "generated_from": ".claude/registry.json",
   "collection": "skills",
   "entries": [
@@ -10,7 +10,7 @@
       "parity_type": "canonical-reference",
       "status": "mapped",
       "notes": "Resolved through the generated catalog to the canonical source.",
-      "version": "0.1.0-rc.1"
+      "version": "0.1.0"
     },
     {
       "canonical_name": "adapter-drift-detection",
@@ -19,7 +19,7 @@
       "parity_type": "canonical-reference",
       "status": "mapped",
       "notes": "Resolved through the generated catalog to the canonical source.",
-      "version": "0.1.0-rc.1"
+      "version": "0.1.0"
     },
     {
       "canonical_name": "adr-authoring",
@@ -28,7 +28,7 @@
       "parity_type": "canonical-reference",
       "status": "mapped",
       "notes": "Resolved through the generated catalog to the canonical source.",
-      "version": "0.1.0-rc.1"
+      "version": "0.1.0"
     },
     {
       "canonical_name": "ai-system-design",
@@ -37,7 +37,7 @@
       "parity_type": "canonical-reference",
       "status": "mapped",
       "notes": "Resolved through the generated catalog to the canonical source.",
-      "version": "0.1.0-rc.1"
+      "version": "0.1.0"
     },
     {
       "canonical_name": "api-contract-analysis",
@@ -46,7 +46,7 @@
       "parity_type": "canonical-reference",
       "status": "mapped",
       "notes": "Resolved through the generated catalog to the canonical source.",
-      "version": "0.1.0-rc.1"
+      "version": "0.1.0"
     },
     {
       "canonical_name": "architecture-assessment",
@@ -55,7 +55,7 @@
       "parity_type": "canonical-reference",
       "status": "mapped",
       "notes": "Resolved through the generated catalog to the canonical source.",
-      "version": "0.1.0-rc.1"
+      "version": "0.1.0"
     },
     {
       "canonical_name": "architecture-audit",
@@ -64,7 +64,7 @@
       "parity_type": "canonical-reference",
       "status": "mapped",
       "notes": "Resolved through the generated catalog to the canonical source.",
-      "version": "0.1.0-rc.1"
+      "version": "0.1.0"
     },
     {
       "canonical_name": "architecture-portfolio-assessment",
@@ -73,7 +73,7 @@
       "parity_type": "canonical-reference",
       "status": "mapped",
       "notes": "Resolved through the generated catalog to the canonical source.",
-      "version": "0.1.0-rc.1"
+      "version": "0.1.0"
     },
     {
       "canonical_name": "audit-bundle-assembly",
@@ -82,7 +82,7 @@
       "parity_type": "canonical-reference",
       "status": "mapped",
       "notes": "Resolved through the generated catalog to the canonical source.",
-      "version": "0.1.0-rc.1"
+      "version": "0.1.0"
     },
     {
       "canonical_name": "blueprint-selection",
@@ -91,7 +91,7 @@
       "parity_type": "canonical-reference",
       "status": "mapped",
       "notes": "Resolved through the generated catalog to the canonical source.",
-      "version": "0.1.0-rc.1"
+      "version": "0.1.0"
     },
     {
       "canonical_name": "change-provenance-mapping",
@@ -100,7 +100,7 @@
       "parity_type": "canonical-reference",
       "status": "mapped",
       "notes": "Resolved through the generated catalog to the canonical source.",
-      "version": "0.1.0-rc.1"
+      "version": "0.1.0"
     },
     {
       "canonical_name": "cloud-cost-analysis",
@@ -109,7 +109,7 @@
       "parity_type": "canonical-reference",
       "status": "mapped",
       "notes": "Resolved through the generated catalog to the canonical source.",
-      "version": "0.1.0-rc.1"
+      "version": "0.1.0"
     },
     {
       "canonical_name": "codex-runtime-generation",
@@ -118,7 +118,7 @@
       "parity_type": "canonical-reference",
       "status": "mapped",
       "notes": "Resolved through the generated catalog to the canonical source.",
-      "version": "0.1.0-rc.1"
+      "version": "0.1.0"
     },
     {
       "canonical_name": "command-catalog-synthesis",
@@ -127,7 +127,7 @@
       "parity_type": "canonical-reference",
       "status": "mapped",
       "notes": "Resolved through the generated catalog to the canonical source.",
-      "version": "0.1.0-rc.1"
+      "version": "0.1.0"
     },
     {
       "canonical_name": "compatibility-matrix-analysis",
@@ -136,7 +136,7 @@
       "parity_type": "canonical-reference",
       "status": "mapped",
       "notes": "Resolved through the generated catalog to the canonical source.",
-      "version": "0.1.0-rc.1"
+      "version": "0.1.0"
     },
     {
       "canonical_name": "compliance-evidence-mapping",
@@ -145,7 +145,7 @@
       "parity_type": "canonical-reference",
       "status": "mapped",
       "notes": "Resolved through the generated catalog to the canonical source.",
-      "version": "0.1.0-rc.1"
+      "version": "0.1.0"
     },
     {
       "canonical_name": "component-reuse-assessment",
@@ -154,7 +154,7 @@
       "parity_type": "canonical-reference",
       "status": "mapped",
       "notes": "Resolved through the generated catalog to the canonical source.",
-      "version": "0.1.0-rc.1"
+      "version": "0.1.0"
     },
     {
       "canonical_name": "conflict-prediction",
@@ -163,7 +163,7 @@
       "parity_type": "canonical-reference",
       "status": "mapped",
       "notes": "Resolved through the generated catalog to the canonical source.",
-      "version": "0.1.0-rc.1"
+      "version": "0.1.0"
     },
     {
       "canonical_name": "content-quality-review",
@@ -172,7 +172,7 @@
       "parity_type": "canonical-reference",
       "status": "mapped",
       "notes": "Resolved through the generated catalog to the canonical source.",
-      "version": "0.1.0-rc.1"
+      "version": "0.1.0"
     },
     {
       "canonical_name": "context-pack-composition",
@@ -181,7 +181,7 @@
       "parity_type": "canonical-reference",
       "status": "mapped",
       "notes": "Resolved through the generated catalog to the canonical source.",
-      "version": "0.1.0-rc.1"
+      "version": "0.1.0"
     },
     {
       "canonical_name": "continuation-planning",
@@ -190,7 +190,7 @@
       "parity_type": "canonical-reference",
       "status": "mapped",
       "notes": "Resolved through the generated catalog to the canonical source.",
-      "version": "0.1.0-rc.1"
+      "version": "0.1.0"
     },
     {
       "canonical_name": "continuity-reconciliation",
@@ -199,7 +199,7 @@
       "parity_type": "canonical-reference",
       "status": "mapped",
       "notes": "Resolved through the generated catalog to the canonical source.",
-      "version": "0.1.0-rc.1"
+      "version": "0.1.0"
     },
     {
       "canonical_name": "control-design",
@@ -208,7 +208,7 @@
       "parity_type": "canonical-reference",
       "status": "mapped",
       "notes": "Resolved through the generated catalog to the canonical source.",
-      "version": "0.1.0-rc.1"
+      "version": "0.1.0"
     },
     {
       "canonical_name": "core-contract-stabilization",
@@ -217,7 +217,7 @@
       "parity_type": "canonical-reference",
       "status": "mapped",
       "notes": "Resolved through the generated catalog to the canonical source.",
-      "version": "0.1.0-rc.1"
+      "version": "0.1.0"
     },
     {
       "canonical_name": "database-migration-analysis",
@@ -226,7 +226,7 @@
       "parity_type": "canonical-reference",
       "status": "mapped",
       "notes": "Resolved through the generated catalog to the canonical source.",
-      "version": "0.1.0-rc.1"
+      "version": "0.1.0"
     },
     {
       "canonical_name": "dependency-graph-analysis",
@@ -235,7 +235,7 @@
       "parity_type": "canonical-reference",
       "status": "mapped",
       "notes": "Resolved through the generated catalog to the canonical source.",
-      "version": "0.1.0-rc.1"
+      "version": "0.1.0"
     },
     {
       "canonical_name": "dependency-impact-analysis",
@@ -244,7 +244,7 @@
       "parity_type": "canonical-reference",
       "status": "mapped",
       "notes": "Resolved through the generated catalog to the canonical source.",
-      "version": "0.1.0-rc.1"
+      "version": "0.1.0"
     },
     {
       "canonical_name": "deprecation-planning",
@@ -253,7 +253,7 @@
       "parity_type": "canonical-reference",
       "status": "mapped",
       "notes": "Resolved through the generated catalog to the canonical source.",
-      "version": "0.1.0-rc.1"
+      "version": "0.1.0"
     },
     {
       "canonical_name": "design-token-architecture",
@@ -262,7 +262,7 @@
       "parity_type": "canonical-reference",
       "status": "mapped",
       "notes": "Resolved through the generated catalog to the canonical source.",
-      "version": "0.1.0-rc.1"
+      "version": "0.1.0"
     },
     {
       "canonical_name": "developer-onboarding-assessment",
@@ -271,7 +271,7 @@
       "parity_type": "canonical-reference",
       "status": "mapped",
       "notes": "Resolved through the generated catalog to the canonical source.",
-      "version": "0.1.0-rc.1"
+      "version": "0.1.0"
     },
     {
       "canonical_name": "documentation-information-architecture",
@@ -280,7 +280,7 @@
       "parity_type": "canonical-reference",
       "status": "mapped",
       "notes": "Resolved through the generated catalog to the canonical source.",
-      "version": "0.1.0-rc.1"
+      "version": "0.1.0"
     },
     {
       "canonical_name": "dual-runtime-validation",
@@ -289,7 +289,7 @@
       "parity_type": "canonical-reference",
       "status": "mapped",
       "notes": "Resolved through the generated catalog to the canonical source.",
-      "version": "0.1.0-rc.1"
+      "version": "0.1.0"
     },
     {
       "canonical_name": "event-taxonomy-design",
@@ -298,7 +298,7 @@
       "parity_type": "canonical-reference",
       "status": "mapped",
       "notes": "Resolved through the generated catalog to the canonical source.",
-      "version": "0.1.0-rc.1"
+      "version": "0.1.0"
     },
     {
       "canonical_name": "evidence-record-design",
@@ -307,7 +307,7 @@
       "parity_type": "canonical-reference",
       "status": "mapped",
       "notes": "Resolved through the generated catalog to the canonical source.",
-      "version": "0.1.0-rc.1"
+      "version": "0.1.0"
     },
     {
       "canonical_name": "execution-checkpointing",
@@ -316,7 +316,7 @@
       "parity_type": "canonical-reference",
       "status": "mapped",
       "notes": "Resolved through the generated catalog to the canonical source.",
-      "version": "0.1.0-rc.1"
+      "version": "0.1.0"
     },
     {
       "canonical_name": "experiment-design",
@@ -325,7 +325,7 @@
       "parity_type": "canonical-reference",
       "status": "mapped",
       "notes": "Resolved through the generated catalog to the canonical source.",
-      "version": "0.1.0-rc.1"
+      "version": "0.1.0"
     },
     {
       "canonical_name": "framework-package-validation",
@@ -334,7 +334,7 @@
       "parity_type": "canonical-reference",
       "status": "mapped",
       "notes": "Resolved through the generated catalog to the canonical source.",
-      "version": "0.1.0-rc.1"
+      "version": "0.1.0"
     },
     {
       "canonical_name": "incident-triage",
@@ -343,7 +343,7 @@
       "parity_type": "canonical-reference",
       "status": "mapped",
       "notes": "Resolved through the generated catalog to the canonical source.",
-      "version": "0.1.0-rc.1"
+      "version": "0.1.0"
     },
     {
       "canonical_name": "incremental-patch-verification",
@@ -352,7 +352,7 @@
       "parity_type": "canonical-reference",
       "status": "mapped",
       "notes": "Resolved through the generated catalog to the canonical source.",
-      "version": "0.1.0-rc.1"
+      "version": "0.1.0"
     },
     {
       "canonical_name": "infrastructure-change-assessment",
@@ -361,7 +361,7 @@
       "parity_type": "canonical-reference",
       "status": "mapped",
       "notes": "Resolved through the generated catalog to the canonical source.",
-      "version": "0.1.0-rc.1"
+      "version": "0.1.0"
     },
     {
       "canonical_name": "integration-contract-mapping",
@@ -370,7 +370,7 @@
       "parity_type": "canonical-reference",
       "status": "mapped",
       "notes": "Resolved through the generated catalog to the canonical source.",
-      "version": "0.1.0-rc.1"
+      "version": "0.1.0"
     },
     {
       "canonical_name": "knowledge-graph-synthesis",
@@ -379,7 +379,7 @@
       "parity_type": "canonical-reference",
       "status": "mapped",
       "notes": "Resolved through the generated catalog to the canonical source.",
-      "version": "0.1.0-rc.1"
+      "version": "0.1.0"
     },
     {
       "canonical_name": "localization-readiness-assessment",
@@ -388,7 +388,7 @@
       "parity_type": "canonical-reference",
       "status": "mapped",
       "notes": "Resolved through the generated catalog to the canonical source.",
-      "version": "0.1.0-rc.1"
+      "version": "0.1.0"
     },
     {
       "canonical_name": "manual-deployment-preflight",
@@ -397,7 +397,7 @@
       "parity_type": "canonical-reference",
       "status": "mapped",
       "notes": "Resolved through the generated catalog to the canonical source.",
-      "version": "0.1.0-rc.1"
+      "version": "0.1.0"
     },
     {
       "canonical_name": "manual-deployment-receipt",
@@ -406,7 +406,7 @@
       "parity_type": "canonical-reference",
       "status": "mapped",
       "notes": "Resolved through the generated catalog to the canonical source.",
-      "version": "0.1.0-rc.1"
+      "version": "0.1.0"
     },
     {
       "canonical_name": "memory-drift-analysis",
@@ -415,7 +415,7 @@
       "parity_type": "canonical-reference",
       "status": "mapped",
       "notes": "Resolved through the generated catalog to the canonical source.",
-      "version": "0.1.0-rc.1"
+      "version": "0.1.0"
     },
     {
       "canonical_name": "memory-freshness-audit",
@@ -424,7 +424,7 @@
       "parity_type": "canonical-reference",
       "status": "mapped",
       "notes": "Resolved through the generated catalog to the canonical source.",
-      "version": "0.1.0-rc.1"
+      "version": "0.1.0"
     },
     {
       "canonical_name": "memory-update-proposal",
@@ -433,7 +433,7 @@
       "parity_type": "canonical-reference",
       "status": "mapped",
       "notes": "Resolved through the generated catalog to the canonical source.",
-      "version": "0.1.0-rc.1"
+      "version": "0.1.0"
     },
     {
       "canonical_name": "mobile-architecture-assessment",
@@ -442,7 +442,7 @@
       "parity_type": "canonical-reference",
       "status": "mapped",
       "notes": "Resolved through the generated catalog to the canonical source.",
-      "version": "0.1.0-rc.1"
+      "version": "0.1.0"
     },
     {
       "canonical_name": "observability-design",
@@ -451,7 +451,7 @@
       "parity_type": "canonical-reference",
       "status": "mapped",
       "notes": "Resolved through the generated catalog to the canonical source.",
-      "version": "0.1.0-rc.1"
+      "version": "0.1.0"
     },
     {
       "canonical_name": "performance-budget-analysis",
@@ -460,7 +460,7 @@
       "parity_type": "canonical-reference",
       "status": "mapped",
       "notes": "Resolved through the generated catalog to the canonical source.",
-      "version": "0.1.0-rc.1"
+      "version": "0.1.0"
     },
     {
       "canonical_name": "policy-as-code-design",
@@ -469,7 +469,7 @@
       "parity_type": "canonical-reference",
       "status": "mapped",
       "notes": "Resolved through the generated catalog to the canonical source.",
-      "version": "0.1.0-rc.1"
+      "version": "0.1.0"
     },
     {
       "canonical_name": "policy-exception-handling",
@@ -478,7 +478,7 @@
       "parity_type": "canonical-reference",
       "status": "mapped",
       "notes": "Resolved through the generated catalog to the canonical source.",
-      "version": "0.1.0-rc.1"
+      "version": "0.1.0"
     },
     {
       "canonical_name": "policy-rule-design",
@@ -487,7 +487,7 @@
       "parity_type": "canonical-reference",
       "status": "mapped",
       "notes": "Resolved through the generated catalog to the canonical source.",
-      "version": "0.1.0-rc.1"
+      "version": "0.1.0"
     },
     {
       "canonical_name": "privacy-impact-assessment",
@@ -496,7 +496,7 @@
       "parity_type": "canonical-reference",
       "status": "mapped",
       "notes": "Resolved through the generated catalog to the canonical source.",
-      "version": "0.1.0-rc.1"
+      "version": "0.1.0"
     },
     {
       "canonical_name": "product-requirement-decomposition",
@@ -505,7 +505,7 @@
       "parity_type": "canonical-reference",
       "status": "mapped",
       "notes": "Resolved through the generated catalog to the canonical source.",
-      "version": "0.1.0-rc.1"
+      "version": "0.1.0"
     },
     {
       "canonical_name": "project-adoption-assessment",
@@ -514,7 +514,7 @@
       "parity_type": "canonical-reference",
       "status": "mapped",
       "notes": "Resolved through the generated catalog to the canonical source.",
-      "version": "0.1.0-rc.1"
+      "version": "0.1.0"
     },
     {
       "canonical_name": "project-brief-synthesis",
@@ -523,7 +523,7 @@
       "parity_type": "canonical-reference",
       "status": "mapped",
       "notes": "Resolved through the generated catalog to the canonical source.",
-      "version": "0.1.0-rc.1"
+      "version": "0.1.0"
     },
     {
       "canonical_name": "project-health-assessment",
@@ -532,7 +532,7 @@
       "parity_type": "canonical-reference",
       "status": "mapped",
       "notes": "Resolved through the generated catalog to the canonical source.",
-      "version": "0.1.0-rc.1"
+      "version": "0.1.0"
     },
     {
       "canonical_name": "prompt-model-evaluation",
@@ -541,7 +541,7 @@
       "parity_type": "canonical-reference",
       "status": "mapped",
       "notes": "Resolved through the generated catalog to the canonical source.",
-      "version": "0.1.0-rc.1"
+      "version": "0.1.0"
     },
     {
       "canonical_name": "rag-architecture-assessment",
@@ -550,7 +550,7 @@
       "parity_type": "canonical-reference",
       "status": "mapped",
       "notes": "Resolved through the generated catalog to the canonical source.",
-      "version": "0.1.0-rc.1"
+      "version": "0.1.0"
     },
     {
       "canonical_name": "reference-implementation-review",
@@ -559,7 +559,7 @@
       "parity_type": "canonical-reference",
       "status": "mapped",
       "notes": "Resolved through the generated catalog to the canonical source.",
-      "version": "0.1.0-rc.1"
+      "version": "0.1.0"
     },
     {
       "canonical_name": "registry-to-runtime-generation",
@@ -568,7 +568,7 @@
       "parity_type": "canonical-reference",
       "status": "mapped",
       "notes": "Resolved through the generated catalog to the canonical source.",
-      "version": "0.1.0-rc.1"
+      "version": "0.1.0"
     },
     {
       "canonical_name": "regression-risk-analysis",
@@ -577,7 +577,7 @@
       "parity_type": "canonical-reference",
       "status": "mapped",
       "notes": "Resolved through the generated catalog to the canonical source.",
-      "version": "0.1.0-rc.1"
+      "version": "0.1.0"
     },
     {
       "canonical_name": "release-integrity-verification",
@@ -586,7 +586,7 @@
       "parity_type": "canonical-reference",
       "status": "mapped",
       "notes": "Resolved through the generated catalog to the canonical source.",
-      "version": "0.1.0-rc.1"
+      "version": "0.1.0"
     },
     {
       "canonical_name": "repository-mapping",
@@ -595,7 +595,7 @@
       "parity_type": "canonical-reference",
       "status": "mapped",
       "notes": "Resolved through the generated catalog to the canonical source.",
-      "version": "0.1.0-rc.1"
+      "version": "0.1.0"
     },
     {
       "canonical_name": "resource-claim-design",
@@ -604,7 +604,7 @@
       "parity_type": "canonical-reference",
       "status": "mapped",
       "notes": "Resolved through the generated catalog to the canonical source.",
-      "version": "0.1.0-rc.1"
+      "version": "0.1.0"
     },
     {
       "canonical_name": "result-reconciliation",
@@ -613,7 +613,7 @@
       "parity_type": "canonical-reference",
       "status": "mapped",
       "notes": "Resolved through the generated catalog to the canonical source.",
-      "version": "0.1.0-rc.1"
+      "version": "0.1.0"
     },
     {
       "canonical_name": "resume-packet-assembly",
@@ -622,7 +622,7 @@
       "parity_type": "canonical-reference",
       "status": "mapped",
       "notes": "Resolved through the generated catalog to the canonical source.",
-      "version": "0.1.0-rc.1"
+      "version": "0.1.0"
     },
     {
       "canonical_name": "runtime-adapter-mapping",
@@ -631,7 +631,7 @@
       "parity_type": "canonical-reference",
       "status": "mapped",
       "notes": "Resolved through the generated catalog to the canonical source.",
-      "version": "0.1.0-rc.1"
+      "version": "0.1.0"
     },
     {
       "canonical_name": "runtime-conformance-testing",
@@ -640,7 +640,7 @@
       "parity_type": "canonical-reference",
       "status": "mapped",
       "notes": "Resolved through the generated catalog to the canonical source.",
-      "version": "0.1.0-rc.1"
+      "version": "0.1.0"
     },
     {
       "canonical_name": "runtime-execution-planning",
@@ -649,7 +649,7 @@
       "parity_type": "canonical-reference",
       "status": "mapped",
       "notes": "Resolved through the generated catalog to the canonical source.",
-      "version": "0.1.0-rc.1"
+      "version": "0.1.0"
     },
     {
       "canonical_name": "runtime-handoff-design",
@@ -658,7 +658,7 @@
       "parity_type": "canonical-reference",
       "status": "mapped",
       "notes": "Resolved through the generated catalog to the canonical source.",
-      "version": "0.1.0-rc.1"
+      "version": "0.1.0"
     },
     {
       "canonical_name": "runtime-semantic-parity",
@@ -667,7 +667,7 @@
       "parity_type": "canonical-reference",
       "status": "mapped",
       "notes": "Resolved through the generated catalog to the canonical source.",
-      "version": "0.1.0-rc.1"
+      "version": "0.1.0"
     },
     {
       "canonical_name": "semantic-compatibility-verification",
@@ -676,7 +676,7 @@
       "parity_type": "canonical-reference",
       "status": "mapped",
       "notes": "Resolved through the generated catalog to the canonical source.",
-      "version": "0.1.0-rc.1"
+      "version": "0.1.0"
     },
     {
       "canonical_name": "session-closeout",
@@ -685,7 +685,7 @@
       "parity_type": "canonical-reference",
       "status": "mapped",
       "notes": "Resolved through the generated catalog to the canonical source.",
-      "version": "0.1.0-rc.1"
+      "version": "0.1.0"
     },
     {
       "canonical_name": "smoke-test-design",
@@ -694,7 +694,7 @@
       "parity_type": "canonical-reference",
       "status": "mapped",
       "notes": "Resolved through the generated catalog to the canonical source.",
-      "version": "0.1.0-rc.1"
+      "version": "0.1.0"
     },
     {
       "canonical_name": "source-of-truth-validation",
@@ -703,7 +703,7 @@
       "parity_type": "canonical-reference",
       "status": "mapped",
       "notes": "Resolved through the generated catalog to the canonical source.",
-      "version": "0.1.0-rc.1"
+      "version": "0.1.0"
     },
     {
       "canonical_name": "support-classification",
@@ -712,7 +712,7 @@
       "parity_type": "canonical-reference",
       "status": "mapped",
       "notes": "Resolved through the generated catalog to the canonical source.",
-      "version": "0.1.0-rc.1"
+      "version": "0.1.0"
     },
     {
       "canonical_name": "task-routing-policy",
@@ -721,7 +721,7 @@
       "parity_type": "canonical-reference",
       "status": "mapped",
       "notes": "Resolved through the generated catalog to the canonical source.",
-      "version": "0.1.0-rc.1"
+      "version": "0.1.0"
     },
     {
       "canonical_name": "technical-debt-classification",
@@ -730,7 +730,7 @@
       "parity_type": "canonical-reference",
       "status": "mapped",
       "notes": "Resolved through the generated catalog to the canonical source.",
-      "version": "0.1.0-rc.1"
+      "version": "0.1.0"
     },
     {
       "canonical_name": "technical-roadmap-synthesis",
@@ -739,7 +739,7 @@
       "parity_type": "canonical-reference",
       "status": "mapped",
       "notes": "Resolved through the generated catalog to the canonical source.",
-      "version": "0.1.0-rc.1"
+      "version": "0.1.0"
     },
     {
       "canonical_name": "test-strategy-design",
@@ -748,7 +748,7 @@
       "parity_type": "canonical-reference",
       "status": "mapped",
       "notes": "Resolved through the generated catalog to the canonical source.",
-      "version": "0.1.0-rc.1"
+      "version": "0.1.0"
     },
     {
       "canonical_name": "threat-modeling",
@@ -757,7 +757,7 @@
       "parity_type": "canonical-reference",
       "status": "mapped",
       "notes": "Resolved through the generated catalog to the canonical source.",
-      "version": "0.1.0-rc.1"
+      "version": "0.1.0"
     },
     {
       "canonical_name": "universal-runtime-contract-design",
@@ -766,7 +766,7 @@
       "parity_type": "canonical-reference",
       "status": "mapped",
       "notes": "Resolved through the generated catalog to the canonical source.",
-      "version": "0.1.0-rc.1"
+      "version": "0.1.0"
     },
     {
       "canonical_name": "version-migration-planning",
@@ -775,7 +775,7 @@
       "parity_type": "canonical-reference",
       "status": "mapped",
       "notes": "Resolved through the generated catalog to the canonical source.",
-      "version": "0.1.0-rc.1"
+      "version": "0.1.0"
     },
     {
       "canonical_name": "version-transition-validation",
@@ -784,7 +784,7 @@
       "parity_type": "canonical-reference",
       "status": "mapped",
       "notes": "Resolved through the generated catalog to the canonical source.",
-      "version": "0.1.0-rc.1"
+      "version": "0.1.0"
     },
     {
       "canonical_name": "workstream-decomposition",
@@ -793,7 +793,7 @@
       "parity_type": "canonical-reference",
       "status": "mapped",
       "notes": "Resolved through the generated catalog to the canonical source.",
-      "version": "0.1.0-rc.1"
+      "version": "0.1.0"
     }
   ]
 }

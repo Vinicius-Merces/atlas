@@ -1,7 +1,7 @@
 {
   "runtime": "codex",
-  "version": "0.1.0-rc.1",
-  "support": "beta-supported",
+  "version": "0.1.0",
+  "support": "supported",
   "canonical": false,
   "contract": "../shared/runtime-contract.json",
   "capabilities": [

@@ -1,7 +1,7 @@
 {
   "evidence_id": "evidence-example",
   "task_id": "task-example",
-  "framework_version": "0.1.0-rc.1",
+  "framework_version": "0.1.0",
   "runtime": "codex",
   "created_at": "",
   "sources": [],

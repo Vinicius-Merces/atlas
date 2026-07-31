@@ -2,7 +2,8 @@
 
 ## Support state
 
-Codex is beta-supported as a compatibility runtime in ATLAS `0.1.0-beta.2`.
+Codex is a supported compatibility runtime in ATLAS `0.1.0`. Its support
+graduated after the beta and release-candidate validation cycles.
 
 ## Supported areas
 
@@ -24,4 +25,4 @@ Codex is beta-supported as a compatibility runtime in ATLAS `0.1.0-beta.2`.
 
 ## Compatibility commitment
 
-Codex mappings will preserve stable ATLAS semantics throughout the beta line.
+Codex mappings preserve stable ATLAS semantics throughout the `0.1.x` line.

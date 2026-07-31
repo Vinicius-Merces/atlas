@@ -201,6 +201,14 @@ def repository_cleanliness(root: Path) -> tuple[bool, Any, list[str]]:
 
 
 def support_policy(root: Path) -> tuple[bool, Any, list[str]]:
+    version = (root / "VERSION").read_text(encoding="utf-8").strip()
+    stable = re.fullmatch(r"\d+\.\d+\.\d+", version) is not None
+    expected_support = "supported" if stable else "beta-supported"
+    canonical_phrase = (
+        "canonical supported runtime"
+        if stable
+        else "canonical beta-supported runtime"
+    )
     claude = json.loads(
         (root / "adapters/claude/runtime-declaration.json").read_text(encoding="utf-8")
     )
@@ -212,16 +220,20 @@ def support_policy(root: Path) -> tuple[bool, Any, list[str]]:
     findings = []
     if not (
         claude.get("canonical") is True
-        and claude.get("support") == "beta-supported"
+        and claude.get("support") == expected_support
     ):
-        findings.append("Claude Code declaration is not canonical beta-supported")
+        findings.append(
+            f"Claude Code declaration is not canonical {expected_support}"
+        )
     if not (
         codex.get("canonical") is False
-        and codex.get("support") == "beta-supported"
+        and codex.get("support") == expected_support
     ):
-        findings.append("Codex declaration is not beta-supported compatibility")
+        findings.append(
+            f"Codex declaration is not {expected_support} compatibility"
+        )
     for phrase in [
-        "canonical beta-supported runtime",
+        canonical_phrase,
         "Codex",
         "Gemini",
         "Cursor",

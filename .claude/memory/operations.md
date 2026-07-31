@@ -4,7 +4,7 @@
 - **Scope:** Build, validation, packaging, installation, upgrade, and recovery.
 - **Owner:** Release manager
 - **Source of truth:** `docs/distribution-guide.md`, `.claude/workflows/release.md`, `release/`, and `policies/`
-- **Last reviewed:** 2026-07-30
+- **Last reviewed:** 2026-07-31
 - **Related contracts or ADRs:** `.claude/contracts/workflow-contract.md`, `.claude/contracts/review-contract.md`
 
 ## Release invariants

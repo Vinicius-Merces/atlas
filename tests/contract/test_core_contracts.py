@@ -29,6 +29,10 @@ def test_all_canonical_paths_exist() -> None:
 
 def test_contract_status_matches_release_stability() -> None:
     manifest = load_manifest()
-    expected = f"stable-{manifest['stability']}"
+    expected = (
+        "stable"
+        if manifest["stability"] == "stable"
+        else f"stable-{manifest['stability']}"
+    )
     for contract in load_manifest()["contracts"]:
         assert contract["status"] == expected

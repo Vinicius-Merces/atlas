@@ -17,8 +17,10 @@ def test_codex_version_matches_framework() -> None:
     assert load_manifest()["version"] == version
 
 
-def test_codex_is_beta_supported() -> None:
-    assert load_manifest()["support"] == "beta-supported"
+def test_codex_support_matches_release_channel() -> None:
+    version = (ROOT / "VERSION").read_text(encoding="utf-8").strip()
+    expected = "supported" if "-" not in version else "beta-supported"
+    assert load_manifest()["support"] == expected
 
 
 def test_codex_collections_exist() -> None:

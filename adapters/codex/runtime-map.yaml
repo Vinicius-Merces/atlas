@@ -1,7 +1,7 @@
 runtime: codex
-support: beta-supported
+support: supported
 canonical_source: ../../
-version: 0.1.0-rc.1
+version: 0.1.0
 
 mapping:
   agents: agents/
