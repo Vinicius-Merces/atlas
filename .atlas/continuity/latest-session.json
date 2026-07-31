@@ -1,9 +1,9 @@
 {
-  "session_id": "session-stable-0.1.0",
+  "session_id": "session-stable-0.1.0-published",
   "framework_version": "0.1.0",
   "runtime": "codex",
-  "created_at": "2026-07-31T04:27:40.9175648+00:00",
-  "summary": "Promoted the corrected and exercised ATLAS release candidate to stable 0.1.0 with supported Claude Code and Codex runtimes and direct beta.11 migration.",
+  "created_at": "2026-07-31T04:57:39.1760701+00:00",
+  "summary": "Published ATLAS 0.1.0 stable after the exact promotion source passed hosted CI, merged, was tagged, and all nine release assets matched their local SHA-256 digests.",
   "completed_work": [
     "Created and merged pull request #3 after two hosted validation checks passed.",
     "Tagged corrected commit 5671e55ace0dad2e6e3f1fe3995f4d5e8f595fc8 as v0.1.0-rc.1.",
@@ -12,7 +12,9 @@
     "Graduated Claude Code and Codex declarations from beta-supported to supported.",
     "Completed stable notes, beta.11 migration, manifest, validation, checklist, deployment receipt, and audit evidence.",
     "Passed all local validators, 14 policies, and 67 tests.",
-    "Built and simulated deterministic cumulative, beta.11 incremental, and recovery artifacts."
+    "Built and simulated deterministic cumulative, beta.11 incremental, and recovery artifacts.",
+    "Merged pull request #4 as ce18265b0ece839a862240bb1a170e7532c7b7bd after two hosted validation checks passed.",
+    "Tagged the stable merge as v0.1.0 and published the GitHub Release with nine verified assets."
   ],
   "changed_files": [
     ".atlas/continuity/",
@@ -25,6 +27,7 @@
     "docs/",
     "framework/",
     "release/",
+    "reports/post-release-validation.md",
     "reports/stable-promotion-validation.md",
     "scripts/",
     "templates/",
@@ -45,15 +48,10 @@
     "Use beta.11 as the stable incremental base and preserve the RC path through cumulative installation.",
     "Keep every legacy-agent deletion explicit and paired with its canonical .claude replacement."
   ],
-  "pending_work": [
-    "Publish release/0.1.0 and pass GitHub-hosted CI on the exact stable source.",
-    "Merge the stable promotion pull request after required checks pass.",
-    "Tag the merged stable commit as v0.1.0."
-  ],
+  "pending_work": [],
   "risks": [
     "Gemini and Cursor remain experimental.",
-    "Runtime tool names and invocation remain intentionally runtime-specific.",
-    "Stable publication remains pending until the exact stable pull request passes and merges."
+    "Runtime tool names and invocation remain intentionally runtime-specific."
   ],
-  "next_action": "Publish and merge the stable 0.1.0 pull request after hosted CI, then tag the merged commit."
+  "next_action": "Monitor stable 0.1.x feedback and apply the documented compatibility and deprecation policies to future changes."
 }
