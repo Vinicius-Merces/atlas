@@ -6,8 +6,10 @@ Every ATLAS agent must define the following.
 
 - Name
 - Mission
-- Domain
 - Authority level
+
+Domain is expressed through Mission; a separate Domain field that restates
+Mission is redundant and must not be added.
 
 ## Scope
 

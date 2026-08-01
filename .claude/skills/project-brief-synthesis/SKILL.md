@@ -18,14 +18,9 @@ Create a compact project brief from canonical memory, architecture, decisions, r
 - Next actions
 - Validation status
 
-## Domain
-
-The skill covers the project and engineering context described by its purpose: Create a compact project brief from canonical memory, architecture, decisions, runtime state, and documentation.
-
 ## Trigger conditions
 
-- Use when an assigned task requires the stated outcome: Create a compact project brief from canonical memory, architecture, decisions, runtime state, and documentation.
-- Trigger only within declared scope and when required evidence is available or its absence can be recorded as a blocker.
+- Trigger within declared scope when required evidence is available, or record its absence as a blocker.
 
 ## Inputs
 
@@ -36,7 +31,7 @@ The skill covers the project and engineering context described by its purpose: C
 ## Dependencies
 
 - Canonical ATLAS contracts, project memory, and the closest mapped workflow.
-- Repository or runtime inspection and validation capabilities required by the procedure.
+- Repository/runtime inspection and validation capabilities the procedure requires.
 
 ## Limitations
 

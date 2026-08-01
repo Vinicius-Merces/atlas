@@ -17,14 +17,9 @@ Create and review scoped, temporary policy exceptions.
 - Remediation
 - Approval requirement
 
-## Domain
-
-The skill covers the project and engineering context described by its purpose: Create and review scoped, temporary policy exceptions.
-
 ## Trigger conditions
 
-- Use when an assigned task requires the stated outcome: Create and review scoped, temporary policy exceptions.
-- Trigger only within declared scope and when required evidence is available or its absence can be recorded as a blocker.
+- Trigger within declared scope when required evidence is available, or record its absence as a blocker.
 
 ## Inputs
 
@@ -35,7 +30,7 @@ The skill covers the project and engineering context described by its purpose: C
 ## Dependencies
 
 - Canonical ATLAS contracts, project memory, and the closest mapped workflow.
-- Repository or runtime inspection and validation capabilities required by the procedure.
+- Repository/runtime inspection and validation capabilities the procedure requires.
 
 ## Limitations
 

@@ -28,14 +28,9 @@ Map canonical ATLAS capabilities to a target AI coding runtime.
 - Unsupported features
 - Validation plan
 
-## Domain
-
-The skill covers the project and engineering context described by its purpose: Map canonical ATLAS capabilities to a target AI coding runtime.
-
 ## Trigger conditions
 
-- Use when an assigned task requires the stated outcome: Map canonical ATLAS capabilities to a target AI coding runtime.
-- Trigger only within declared scope and when required evidence is available or its absence can be recorded as a blocker.
+- Trigger within declared scope when required evidence is available, or record its absence as a blocker.
 
 ## Inputs
 
@@ -46,7 +41,7 @@ The skill covers the project and engineering context described by its purpose: M
 ## Dependencies
 
 - Canonical ATLAS contracts, project memory, and the closest mapped workflow.
-- Repository or runtime inspection and validation capabilities required by the procedure.
+- Repository/runtime inspection and validation capabilities the procedure requires.
 
 ## Limitations
 

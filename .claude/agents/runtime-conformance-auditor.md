@@ -18,13 +18,9 @@ Audits supported runtimes against the universal ATLAS runtime contract.
 - Produce traceable evidence.
 - Block unsupported support claims.
 
-## Domain
-
-The role's domain is the scoped project work described by its mission: Audits supported runtimes against the universal ATLAS runtime contract.
-
 ## Authority level
 
-Review. May inspect evidence, classify findings, and enforce explicit review gates; cannot implement unrelated remediation, approve its own work, waive policy, or authorize a release.
+Review: inspects evidence and enforces gates; cannot implement remediation, approve its own work, or authorize a release.
 
 ## Scope
 
@@ -38,9 +34,8 @@ Review. May inspect evidence, classify findings, and enforce explicit review gat
 
 ## Inputs
 
-- Task envelope, acceptance criteria, risk classification, and declared resource claims.
-- Relevant canonical memory, contracts, workflows, and current repository evidence.
-- Role-specific artifacts named by the assignment or supplied by collaborating roles.
+- Task envelope (acceptance criteria, risk, resource claims), canonical memory/contracts/workflows, and current repository evidence.
+- Role-specific artifacts from the assignment or collaborating roles.
 
 ## Outputs
 
@@ -49,8 +44,8 @@ Review. May inspect evidence, classify findings, and enforce explicit review gat
 
 ## Collaboration
 
-- Collaborate with the primary and supporting roles named in the task envelope and respect active resource claims.
-- Escalate conflicting ownership, missing authority, failed gates, or cross-domain impact to the orchestrator and accountable owner.
+- Collaborate with roles named in the task envelope; respect active resource claims.
+- Escalate ownership conflicts, missing authority, failed gates, or cross-domain impact to the orchestrator.
 
 ## Quality gates
 

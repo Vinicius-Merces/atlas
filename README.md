@@ -40,6 +40,26 @@ Claude Code is the canonical runtime. Codex is a supported compatibility
 runtime under `adapters/codex/`. Gemini and Cursor remain experimental.
 Adapters translate runtime form; they do not fork memory or contract meaning.
 
+## Agents, skills, and commands
+
+ATLAS ships a full specialist roster rather than a single generalist agent, so
+work is routed to the responsibility that actually owns it:
+
+| Component | Count | Location | Catalog |
+| --- | --- | --- | --- |
+| Agents | 87 | `.claude/agents/` | [Agent Catalog](docs/agent-catalog.md) |
+| Skills | 126 | `.claude/skills/` | `.claude/registry.json` |
+| Commands | 71 | `.claude/commands/` | `.claude/registry.json` |
+| Workflows | 76 | `.claude/workflows/` | `.claude/registry.json` |
+| Contracts | 6 | `.claude/contracts/` | `.claude/registry.json` |
+
+Every agent's frontmatter `description` is both its routing signal for the
+orchestrator and the hover/tooltip text Claude Code shows when selecting an
+agent — there is no separate UI layer to maintain. `docs/agent-catalog.md` is
+generated from that same frontmatter and should be regenerated whenever an
+agent is added, renamed, or its description changes, so it never drifts from
+the source of truth in `.claude/agents/`.
+
 ## How execution works
 
 ATLAS governs an AI coding runtime; it is not a standalone autonomous executor.
@@ -66,6 +86,24 @@ project-owned files deliberately. The canonical hidden directory remains
 
 For project-local, dedicated-repository, Windows, GitHub manual upload, and
 incremental installation instructions, see [Installation](docs/installation.md).
+
+### Install as a Claude Code plugin
+
+ATLAS also installs through the Claude Code plugin marketplace, without
+extracting or copying an archive. The repository root exposes
+`.claude-plugin/marketplace.json`, which points to a single plugin (`atlas`)
+sourced from `.claude/` — the same canonical directory used when Claude Code
+is run directly inside this repository, so there is nothing to keep in sync.
+
+```bash
+claude plugin marketplace add <path-or-git-url-to-this-repo>
+claude plugin install atlas@atlas-marketplace
+```
+
+Use `claude plugin details atlas@atlas-marketplace` to confirm the full
+component inventory (agents, skills, commands) loaded. This path is intended
+for making ATLAS available in *other* projects; a repository that already has
+ATLAS under its own `.claude/` does not need to install it as a plugin.
 
 ## Use with Claude Code
 

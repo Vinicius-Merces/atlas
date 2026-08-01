@@ -58,11 +58,6 @@ RULES = (
             Requirement("identity.name", "agent name", ("frontmatter:name", "h1")),
             Requirement("identity.mission", "mission", ("section:mission",)),
             Requirement(
-                "identity.domain",
-                "domain",
-                ("frontmatter:domain", "section:domain"),
-            ),
-            Requirement(
                 "identity.authority",
                 "authority level",
                 (
@@ -187,11 +182,6 @@ RULES = (
         (
             Requirement("name", "skill name", ("frontmatter:name", "h1")),
             Requirement("purpose", "purpose", ("section:purpose",)),
-            Requirement(
-                "domain",
-                "domain",
-                ("frontmatter:domain", "section:domain"),
-            ),
             Requirement(
                 "trigger-conditions",
                 "trigger conditions",
