@@ -47,7 +47,12 @@ def main() -> int:
 
     directory = os.path.dirname(file_path)
     basename = os.path.basename(file_path).lower()
-    is_at_root = os.path.normpath(directory) == os.path.normpath(cwd)
+    # os.path.join(cwd, directory) resolves a relative (including empty)
+    # directory against cwd, while leaving an already-absolute directory
+    # untouched — so both absolute and relative tool_input.file_path values
+    # compare correctly against cwd.
+    resolved_directory = os.path.normpath(os.path.join(cwd, directory))
+    is_at_root = resolved_directory == os.path.normpath(cwd)
 
     if is_at_root and basename not in ROOT_ALLOWLIST:
         reason = (

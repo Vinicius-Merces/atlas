@@ -55,6 +55,27 @@ def test_blocks_stray_root_markdown_file() -> None:
     assert output["hookSpecificOutput"]["permissionDecision"] == "deny"
 
 
+def test_blocks_bare_relative_filename_at_root() -> None:
+    cwd = str(Path("C:/fake-project") if os.name == "nt" else Path("/fake-project"))
+    payload = {"tool_name": "Write", "tool_input": {"file_path": "NOTES.md"}, "cwd": cwd}
+    result = run_hook(BLOCK_STRAY_DOCS, payload)
+    assert result.returncode == 0
+    output = json.loads(result.stdout)
+    assert output["hookSpecificOutput"]["permissionDecision"] == "deny"
+
+
+def test_allows_bare_relative_filename_in_subdirectory() -> None:
+    cwd = str(Path("C:/fake-project") if os.name == "nt" else Path("/fake-project"))
+    payload = {
+        "tool_name": "Write",
+        "tool_input": {"file_path": str(Path("docs") / "guide.md")},
+        "cwd": cwd,
+    }
+    result = run_hook(BLOCK_STRAY_DOCS, payload)
+    assert result.returncode == 0
+    assert result.stdout.strip() == ""
+
+
 def test_allows_markdown_file_in_subdirectory() -> None:
     cwd = str(Path("C:/fake-project") if os.name == "nt" else Path("/fake-project"))
     file_path = str(Path(cwd) / "docs" / "guide.md")
