@@ -1,0 +1,30 @@
+{
+  "hooks": {
+    "PreToolUse": [
+      {
+        "matcher": "Write",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python",
+            "args": ["${CLAUDE_PLUGIN_ROOT}/hooks/scripts/block_stray_docs.py"]
+          }
+        ],
+        "description": "Block creating a new stray .md/.txt file at the project root; files written inside any subdirectory are unaffected."
+      }
+    ],
+    "SessionEnd": [
+      {
+        "matcher": "*",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python",
+            "args": ["${CLAUDE_PLUGIN_ROOT}/hooks/scripts/session_end_reminder.py"]
+          }
+        ],
+        "description": "Advisory reminder to run /atlas-checkpoint or /atlas-close-session before context is lost. Never blocks."
+      }
+    ]
+  }
+}

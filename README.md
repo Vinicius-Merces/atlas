@@ -60,6 +60,28 @@ generated from that same frontmatter and should be regenerated whenever an
 agent is added, renamed, or its description changes, so it never drifts from
 the source of truth in `.claude/agents/`.
 
+## Hooks
+
+`.claude/hooks/hooks.json` mechanically enforces rules that would otherwise
+only live in prose. Status: experimental — see
+[Hook Contract](.claude/contracts/hook-contract.md) for what a hook must
+declare before it ships, and how it differs from the six stable contracts.
+
+Two hooks ship today, both scoped conservatively:
+
+- `PreToolUse` (blocking): denies creating a new `.md`/`.txt` file directly at
+  a project's root unless it's an allowlisted name (README, CLAUDE, AGENTS,
+  CONTRIBUTING, CHANGELOG). Anything written inside a subdirectory —
+  `docs/`, `.claude/`, or any other — is unaffected.
+- `SessionEnd` (advisory, never blocks): reminds you to run
+  `/atlas-checkpoint` or `/atlas-close-session` before a session's context is
+  lost.
+
+Because `.claude/hooks/hooks.json` is one of Claude Code's default plugin
+component paths, both hooks are installed automatically for any project that
+installs ATLAS as a plugin (see below) — not opt-in. To disable, remove or
+edit `.claude/hooks/hooks.json` after installing.
+
 ## How execution works
 
 ATLAS governs an AI coding runtime; it is not a standalone autonomous executor.
@@ -101,9 +123,10 @@ claude plugin install atlas@atlas-marketplace
 ```
 
 Use `claude plugin details atlas@atlas-marketplace` to confirm the full
-component inventory (agents, skills, commands) loaded. This path is intended
-for making ATLAS available in *other* projects; a repository that already has
-ATLAS under its own `.claude/` does not need to install it as a plugin.
+component inventory (agents, skills, commands, hooks) loaded. This path is
+intended for making ATLAS available in *other* projects; a repository that
+already has ATLAS under its own `.claude/` does not need to install it as a
+plugin.
 
 ## Use with Claude Code
 
