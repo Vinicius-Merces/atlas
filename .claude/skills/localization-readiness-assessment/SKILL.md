@@ -32,14 +32,9 @@ locale variation.
 - Content changes
 - QA requirements
 
-## Domain
-
-The skill covers the project and engineering context described by its purpose: Assess whether a product or feature is structurally ready for translation and locale variation.
-
 ## Trigger conditions
 
-- Use when an assigned task requires the stated outcome: Assess whether a product or feature is structurally ready for translation and locale variation.
-- Trigger only within declared scope and when required evidence is available or its absence can be recorded as a blocker.
+- Trigger within declared scope when required evidence is available, or record its absence as a blocker.
 
 ## Inputs
 
@@ -50,7 +45,7 @@ The skill covers the project and engineering context described by its purpose: A
 ## Dependencies
 
 - Canonical ATLAS contracts, project memory, and the closest mapped workflow.
-- Repository or runtime inspection and validation capabilities required by the procedure.
+- Repository/runtime inspection and validation capabilities the procedure requires.
 
 ## Limitations
 

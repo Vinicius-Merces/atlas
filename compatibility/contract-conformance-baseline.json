@@ -1,7 +1,7 @@
 {
   "baseline_version": 1,
   "framework_version": "0.1.1",
-  "ruleset_sha256": "7012709e1322a7cb8956e0e899efb0bb6d475090e92511ecd4fc15ad6c964b80",
+  "ruleset_sha256": "82e9be0917fc4da1f554a7d6132074c0cd8f02023eb773a8fa235ea91bb22ada",
   "known_violation_count": 0,
   "known_violations_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
   "nonconforming_assets_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",

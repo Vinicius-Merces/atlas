@@ -41,14 +41,10 @@ public interfaces, or cross-domain dependencies.
 - Recommendation
 - ADR requirement
 
-## Domain
-
-The skill covers the project and engineering context described by its purpose: Evaluate whether a proposed change fits existing architecture and preserves clear boundaries.
-
 ## Dependencies
 
 - Canonical ATLAS contracts, project memory, and the closest mapped workflow.
-- Repository or runtime inspection and validation capabilities required by the procedure.
+- Repository/runtime inspection and validation capabilities the procedure requires.
 
 ## Limitations
 

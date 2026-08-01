@@ -6,13 +6,17 @@ A skill is reusable expertise or a repeatable technical capability.
 
 - Name
 - Purpose
-- Domain
 - Trigger conditions
 - Inputs
 - Outputs
 - Dependencies
 - Limitations
 - Validation method
+
+Domain is expressed through Purpose; a separate Domain field that restates
+Purpose is redundant and must not be added. Trigger conditions must not
+restate Purpose verbatim; state only the scope/evidence condition for
+firing.
 
 ## Skill responsibilities
 
