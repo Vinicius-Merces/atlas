@@ -1,6 +1,6 @@
 ---
 name: project-health-assessment
-description: "Assess a project\u0027s technical and operational health using consistent evidence."
+description: Assess a project's technical and operational health using consistent evidence.
 ---
 
 # Project Health Assessment Skill
