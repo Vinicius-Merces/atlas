@@ -1,0 +1,24 @@
+{
+  "$schema": "https://json.schemastore.org/claude-code-plugin-manifest.json",
+  "name": "atlas",
+  "displayName": "ATLAS AI Engineering Framework",
+  "version": "0.1.1",
+  "description": "ATLAS: agents, skills, commands, contracts, and review gates for AI coding runtimes (Claude Code, Codex).",
+  "author": {
+    "name": "Vinicius Merces"
+  },
+  "homepage": "https://github.com/Vinicius-Merces/atlas",
+  "repository": "https://github.com/Vinicius-Merces/atlas",
+  "license": "MIT",
+  "keywords": [
+    "agents",
+    "framework",
+    "workflow",
+    "governance",
+    "multi-runtime"
+  ],
+  "skills": "./.claude/skills/",
+  "commands": "./.claude/commands/",
+  "agents": "./.claude/agents/",
+  "hooks": "./.claude/hooks/hooks.json"
+}
