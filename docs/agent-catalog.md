@@ -1,6 +1,8 @@
 # Agent Catalog
 
-Canonical, generated inventory of every agent under `.claude/agents/`. Each entry mirrors the agent's frontmatter `description`, which is also what Claude Code shows as the hover/tooltip text when selecting an agent. Regenerate this file whenever an agent is added, renamed, or its description changes.
+Canonical, generated inventory of every agent under `.claude/agents/`. Each entry mirrors its frontmatter `description`, which is the routing and discovery summary used by AI runtimes.
+
+Regenerate both capability catalogs with `python scripts/generate_capability_catalogs.py`. Use `--check` in validation and CI.
 
 Total: 87 agents.
 
@@ -96,7 +98,7 @@ Total: 87 agents.
 
 `developer-experience-engineer`. Improves setup, tooling, documentation, local workflows, feedback speed, and maintainability for developers.
 
-## Devops Engineer
+## DevOps Engineer
 
 `devops-engineer`. Designs and maintains deployment, infrastructure, environments, automation, and operational safety.
 
@@ -124,7 +126,7 @@ Total: 87 agents.
 
 `experimentation-analyst`. Designs experiments, hypotheses, metrics, segmentation, analysis, and decision rules.
 
-## Finops Engineer
+## FinOps Engineer
 
 `finops-engineer`. Analyzes cloud and platform cost, unit economics, allocation, waste, commitments, and optimization trade-offs.
 
@@ -351,4 +353,3 @@ Total: 87 agents.
 ## Workstream Coordinator
 
 `workstream-coordinator`. Creates, assigns, tracks, and closes independent workstreams.
-
