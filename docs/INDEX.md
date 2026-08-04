@@ -9,6 +9,11 @@
 - [Operations Guide](operations-guide.md)
 - [Troubleshooting](troubleshooting.md)
 
+## Capability catalogs
+
+- [Agent Catalog](agent-catalog.md) — every specialist role and its routing description
+- [Skill Catalog](skill-catalog.md) — every reusable capability and its purpose
+
 ## Framework foundations
 
 - [Principles](../framework/principles.md)
