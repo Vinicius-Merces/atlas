@@ -8,7 +8,7 @@
   "plugins": [
     {
       "name": "atlas",
-      "source": "./.claude",
+      "source": "./",
       "description": "ATLAS: agents, skills, commands, contracts, and review gates for AI coding runtimes (Claude Code, Codex).",
       "category": "workflow",
       "keywords": [
