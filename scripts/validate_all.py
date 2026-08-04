@@ -161,6 +161,13 @@ def quick_steps(root: Path) -> list[ValidationStep]:
         ),
         _python_step(
             root,
+            "capability-catalogs",
+            "Check agent and skill catalogs",
+            "generate_capability_catalogs.py",
+            "--check",
+        ),
+        _python_step(
+            root,
             "package",
             "Validate package source",
             "validate_package.py",
