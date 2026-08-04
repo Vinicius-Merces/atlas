@@ -77,10 +77,10 @@ Two hooks ship today, both scoped conservatively:
   `/atlas-checkpoint` or `/atlas-close-session` before a session's context is
   lost.
 
-Because `.claude/hooks/hooks.json` is one of Claude Code's default plugin
-component paths, both hooks are installed automatically for any project that
-installs ATLAS as a plugin (see below) — not opt-in. To disable, remove or
-edit `.claude/hooks/hooks.json` after installing.
+The root plugin manifest loads `.claude/hooks/plugin-hooks.json`, which
+preserves these hooks for marketplace and ZIP installation while resolving
+their scripts from the repository-root plugin layout. Project-local operation
+continues to use `.claude/hooks/hooks.json`.
 
 ## How execution works
 
@@ -112,10 +112,12 @@ incremental installation instructions, see [Installation](docs/installation.md).
 ### Install as a Claude Code plugin
 
 ATLAS also installs through the Claude Code plugin marketplace, without
-extracting or copying an archive. The repository root exposes
-`.claude-plugin/marketplace.json`, which points to a single plugin (`atlas`)
-sourced from `.claude/` — the same canonical directory used when Claude Code
-is run directly inside this repository, so there is nothing to keep in sync.
+extracting or copying an archive. The repository root exposes both
+`.claude-plugin/marketplace.json` and the single canonical
+`.claude-plugin/plugin.json`. The marketplace points to the repository root,
+while the manifest maps plugin components to `.claude/`. This keeps one
+plugin manifest for Git marketplace installation and ZIP upload without
+duplicating agents, skills, commands, or hook scripts.
 
 ```bash
 claude plugin marketplace add <path-or-git-url-to-this-repo>
