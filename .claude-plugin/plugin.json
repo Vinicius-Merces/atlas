@@ -19,6 +19,5 @@
   ],
   "skills": "./.claude/skills/",
   "commands": "./.claude/commands/",
-  "agents": "./.claude/agents/",
-  "hooks": "./.claude/hooks/hooks.json"
+  "agents": "./.claude/agents/"
 }
