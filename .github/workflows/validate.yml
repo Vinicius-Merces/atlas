@@ -43,4 +43,15 @@ jobs:
           exit "$status"
 
       - name: Run portable release validation profile
-        run: python scripts/validate_all.py --profile release
+        shell: bash
+        run: |
+          set +e
+          output="$(python scripts/validate_all.py --profile release 2>&1)"
+          status=$?
+          printf '%s\n' "$output"
+          if [ "$status" -ne 0 ]; then
+            while IFS= read -r line; do
+              [ -n "$line" ] && printf '::error title=ATLAS release validation::%s\n' "$line"
+            done <<< "$output"
+          fi
+          exit "$status"
