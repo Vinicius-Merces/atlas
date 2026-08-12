@@ -46,6 +46,9 @@ def main() -> None:
         raise SystemExit("ERROR: capability taxonomy has no categories")
 
     registered_agents = set(registry.get("agents", []))
+    orchestrator = registry.get("orchestrator")
+    if isinstance(orchestrator, str) and orchestrator:
+        registered_agents.add(orchestrator)
     registered_skills = set(registry.get("skills", []))
     assigned_agents: list[str] = []
     failures: list[str] = []
