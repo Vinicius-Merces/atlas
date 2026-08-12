@@ -1,0 +1,12 @@
+filters:
+  and:
+    - file.inFolder(".claude/agents")
+    - file.ext == "md"
+views:
+  - type: table
+    name: Agent directory
+    order:
+      - file.name
+      - note.description
+      - note.tools
+      - note.model

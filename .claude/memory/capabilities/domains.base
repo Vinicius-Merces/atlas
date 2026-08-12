@@ -1,0 +1,12 @@
+filters:
+  and:
+    - file.inFolder(".claude/memory/capabilities/domains")
+    - file.ext == "md"
+views:
+  - type: table
+    name: Agent domains and principal skills
+    order:
+      - note.domain
+      - note.purpose
+      - note.agents
+      - note.principal_skills
