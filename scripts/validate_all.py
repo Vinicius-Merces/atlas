@@ -54,10 +54,7 @@ def _repository_files(root: Path, suffixes: set[str]) -> list[Path]:
         for path in root.rglob("*")
         if path.is_file()
         and path.suffix.lower() in suffixes
-        and not (
-            set(path.relative_to(root).parts)
-            & EXCLUDED_SCAN_PARTS
-        )
+        and not (set(path.relative_to(root).parts) & EXCLUDED_SCAN_PARTS)
     )
 
 
@@ -116,49 +113,18 @@ def _python_step(
     return ValidationStep(
         key=key,
         description=description,
-        command=(
-            sys.executable,
-            str(root / "scripts" / script),
-            *arguments,
-        ),
+        command=(sys.executable, str(root / "scripts" / script), *arguments),
     )
 
 
 def quick_steps(root: Path) -> list[ValidationStep]:
     return [
-        ValidationStep(
-            "compile-scripts",
-            "Compile Python scripts",
-            action=compile_scripts,
-        ),
-        ValidationStep(
-            "validate-json",
-            "Parse repository JSON",
-            action=validate_json_files,
-        ),
-        ValidationStep(
-            "validate-yaml",
-            "Parse repository YAML",
-            action=validate_yaml_files,
-        ),
-        _python_step(
-            root,
-            "version",
-            "Validate version consistency",
-            "manage_version.py",
-        ),
-        _python_step(
-            root,
-            "schemas",
-            "Validate schemas and fixtures",
-            "validate_schemas.py",
-        ),
-        _python_step(
-            root,
-            "registry",
-            "Validate registry",
-            "validate_registry.py",
-        ),
+        ValidationStep("compile-scripts", "Compile Python scripts", action=compile_scripts),
+        ValidationStep("validate-json", "Parse repository JSON", action=validate_json_files),
+        ValidationStep("validate-yaml", "Parse repository YAML", action=validate_yaml_files),
+        _python_step(root, "version", "Validate version consistency", "manage_version.py"),
+        _python_step(root, "schemas", "Validate schemas and fixtures", "validate_schemas.py"),
+        _python_step(root, "registry", "Validate registry", "validate_registry.py"),
         _python_step(
             root,
             "capability-taxonomy",
@@ -172,139 +138,34 @@ def quick_steps(root: Path) -> list[ValidationStep]:
             "generate_capability_catalogs.py",
             "--check",
         ),
-        _python_step(
-            root,
-            "package",
-            "Validate package source",
-            "validate_package.py",
-        ),
-        _python_step(
-            root,
-            "contracts",
-            "Validate canonical contracts",
-            "validate_contracts.py",
-        ),
+        _python_step(root, "package", "Validate package source", "validate_package.py"),
+        _python_step(root, "contracts", "Validate canonical contracts", "validate_contracts.py"),
     ]
 
 
-def full_steps(
-    root: Path,
-    *,
-    policy_output: str = "-",
-) -> list[ValidationStep]:
+def full_steps(root: Path, *, policy_output: str = "-") -> list[ValidationStep]:
     return [
         *quick_steps(root),
-        _python_step(
-            root,
-            "codex-adapter",
-            "Validate Codex adapter",
-            "validate_codex_adapter.py",
-        ),
-        _python_step(
-            root,
-            "codex-sync",
-            "Check Codex synchronization",
-            "sync_codex_adapter.py",
-            "--check",
-        ),
-        _python_step(
-            root,
-            "native-skills-sync",
-            "Check native skill synchronization",
-            "sync_native_skills.py",
-            "--check",
-        ),
-        _python_step(
-            root,
-            "runtime-drift",
-            "Detect runtime drift",
-            "detect_runtime_drift.py",
-        ),
-        _python_step(
-            root,
-            "runtime-contract",
-            "Validate universal runtime contract",
-            "validate_runtime_contract.py",
-        ),
-        _python_step(
-            root,
-            "runtime-conformance",
-            "Validate runtime conformance",
-            "validate_conformance.py",
-        ),
-        _python_step(
-            root,
-            "source-of-truth",
-            "Validate canonical sources of truth",
-            "validate_source_of_truth.py",
-        ),
-        _python_step(
-            root,
-            "memory-freshness",
-            "Validate memory freshness",
-            "validate_memory_freshness.py",
-            "--strict",
-        ),
-        _python_step(
-            root,
-            "knowledge-links",
-            "Validate memory and Obsidian links",
-            "validate_knowledge_links.py",
-        ),
-        _python_step(
-            root,
-            "documentation",
-            "Validate documentation",
-            "validate_documentation.py",
-        ),
-        _python_step(
-            root,
-            "policy-exceptions",
-            "Validate policy exceptions",
-            "validate_policy_exceptions.py",
-        ),
-        _python_step(
-            root,
-            "policies",
-            "Evaluate policy rules",
-            "evaluate_policies.py",
-            "--output",
-            policy_output,
-        ),
-        _python_step(
-            root,
-            "smoke-tests",
-            "Run smoke tests",
-            "run_smoke_tests.py",
-        ),
-        _python_step(
-            root,
-            "contract-tests",
-            "Run contract tests",
-            "run_contract_tests.py",
-        ),
-        _python_step(
-            root,
-            "codex-tests",
-            "Run Codex tests",
-            "run_codex_tests.py",
-        ),
-        _python_step(
-            root,
-            "conformance-tests",
-            "Run conformance tests",
-            "run_conformance_tests.py",
-        ),
+        _python_step(root, "codex-adapter", "Validate Codex adapter", "validate_codex_adapter.py"),
+        _python_step(root, "codex-sync", "Check Codex synchronization", "sync_codex_adapter.py", "--check"),
+        _python_step(root, "native-skills-sync", "Check native skill synchronization", "sync_native_skills.py", "--check"),
+        _python_step(root, "runtime-drift", "Detect runtime drift", "detect_runtime_drift.py"),
+        _python_step(root, "runtime-contract", "Validate universal runtime contract", "validate_runtime_contract.py"),
+        _python_step(root, "runtime-conformance", "Validate runtime conformance", "validate_conformance.py"),
+        _python_step(root, "source-of-truth", "Validate canonical sources of truth", "validate_source_of_truth.py"),
+        _python_step(root, "memory-freshness", "Validate memory freshness", "validate_memory_freshness.py", "--strict"),
+        _python_step(root, "knowledge-links", "Validate memory and Obsidian links", "validate_knowledge_links.py"),
+        _python_step(root, "documentation", "Validate documentation", "validate_documentation.py"),
+        _python_step(root, "policy-exceptions", "Validate policy exceptions", "validate_policy_exceptions.py"),
+        _python_step(root, "policies", "Evaluate policy rules", "evaluate_policies.py", "--output", policy_output),
+        _python_step(root, "smoke-tests", "Run smoke tests", "run_smoke_tests.py"),
+        _python_step(root, "contract-tests", "Run contract tests", "run_contract_tests.py"),
+        _python_step(root, "codex-tests", "Run Codex tests", "run_codex_tests.py"),
+        _python_step(root, "conformance-tests", "Run conformance tests", "run_conformance_tests.py"),
         ValidationStep(
             "full-tests",
             "Run the full automated test suite",
-            command=(
-                sys.executable,
-                "-m",
-                "pytest",
-                "tests",
-                "-q",
-            ),
+            command=(sys.executable, "-m", "pytest", "tests", "-q"),
         ),
     ]
 
@@ -335,42 +196,10 @@ def release_steps(
     cumulative = output_dir / f"atlas-framework-{version}-cumulative.zip"
     recovery = output_dir / f"atlas-framework-{version}-recovery.zip"
     steps = [
-        _python_step(
-            root,
-            "build-cumulative",
-            "Build cumulative release dry-run",
-            "build_release.py",
-            "--kind",
-            "cumulative",
-            "--output-dir",
-            str(output_dir),
-        ),
-        _python_step(
-            root,
-            "validate-cumulative",
-            "Validate cumulative release dry-run",
-            "validate_release_artifacts.py",
-            "--archive",
-            str(cumulative),
-        ),
-        _python_step(
-            root,
-            "build-recovery",
-            "Build recovery release dry-run",
-            "build_release.py",
-            "--kind",
-            "recovery",
-            "--output-dir",
-            str(output_dir),
-        ),
-        _python_step(
-            root,
-            "validate-recovery",
-            "Validate recovery release dry-run",
-            "validate_release_artifacts.py",
-            "--archive",
-            str(recovery),
-        ),
+        _python_step(root, "build-cumulative", "Build cumulative release dry-run", "build_release.py", "--kind", "cumulative", "--output-dir", str(output_dir)),
+        _python_step(root, "validate-cumulative", "Validate cumulative release dry-run", "validate_release_artifacts.py", "--archive", str(cumulative)),
+        _python_step(root, "build-recovery", "Build recovery release dry-run", "build_release.py", "--kind", "recovery", "--output-dir", str(output_dir)),
+        _python_step(root, "validate-recovery", "Validate recovery release dry-run", "validate_release_artifacts.py", "--archive", str(recovery)),
     ]
     if skip_incremental:
         return steps
@@ -384,24 +213,8 @@ def release_steps(
     incremental = output_dir / f"atlas-framework-{version}-incremental.zip"
     steps.extend(
         [
-            _python_step(
-                root,
-                "build-incremental",
-                "Build incremental release dry-run",
-                "build_incremental_release.py",
-                "--base",
-                incremental_base,
-                "--output-dir",
-                str(output_dir),
-            ),
-            _python_step(
-                root,
-                "validate-incremental",
-                "Validate incremental release dry-run",
-                "validate_release_artifacts.py",
-                "--archive",
-                str(incremental),
-            ),
+            _python_step(root, "build-incremental", "Build incremental release dry-run", "build_incremental_release.py", "--base", incremental_base, "--output-dir", str(output_dir)),
+            _python_step(root, "validate-incremental", "Validate incremental release dry-run", "validate_release_artifacts.py", "--archive", str(incremental)),
         ]
     )
     return steps
@@ -441,7 +254,16 @@ def _format_command(command: Sequence[str]) -> str:
     return " ".join(command)
 
 
-def _run_step(root: Path, step: ValidationStep) -> StepResult:
+def _default_executor(command: list[str], *, cwd: Path) -> subprocess.CompletedProcess[bytes]:
+    return subprocess.run(command, cwd=cwd, check=False)
+
+
+def _run_step(
+    root: Path,
+    step: ValidationStep,
+    *,
+    executor: Callable[..., object] | None = None,
+) -> StepResult:
     started = time.monotonic()
     print(f"\n==> {step.description}")
     try:
@@ -453,17 +275,30 @@ def _run_step(root: Path, step: ValidationStep) -> StepResult:
         else:
             assert step.command is not None
             print(f"$ {_format_command(step.command)}")
-            completed = subprocess.run(step.command, cwd=root, check=False)
-            returncode = completed.returncode
+            command_executor = executor or _default_executor
+            completed = command_executor(list(step.command), cwd=root)
+            returncode = int(getattr(completed, "returncode"))
     except Exception as exc:
         print(f"ERROR: {exc}")
         returncode = 1
     duration = time.monotonic() - started
-    return StepResult(
-        key=step.key,
-        returncode=returncode,
-        duration_seconds=duration,
-    )
+    return StepResult(step.key, returncode, duration)
+
+
+def run_steps(
+    steps: Sequence[ValidationStep],
+    root: Path,
+    *,
+    executor: Callable[..., object] | None = None,
+) -> list[StepResult]:
+    """Run validation steps in order and stop at the first failure."""
+    results: list[StepResult] = []
+    for step in steps:
+        result = _run_step(root, step, executor=executor)
+        results.append(result)
+        if result.returncode != 0:
+            break
+    return results
 
 
 def _print_summary(results: list[StepResult]) -> None:
@@ -476,30 +311,12 @@ def _print_summary(results: list[StepResult]) -> None:
 
 def parser() -> argparse.ArgumentParser:
     result = argparse.ArgumentParser(description="Run ATLAS validation profiles.")
-    result.add_argument(
-        "--profile",
-        choices=PROFILES,
-        default="full",
-        help="Validation profile to execute",
-    )
-    result.add_argument(
-        "--output-dir",
-        help="Override release dry-run output directory",
-    )
-    result.add_argument(
-        "--incremental-base",
-        help="Override incremental release base commit or reference",
-    )
-    result.add_argument(
-        "--skip-incremental",
-        action="store_true",
-        help="Skip incremental release dry-run in release profile",
-    )
-    result.add_argument(
-        "--policy-output",
-        default="-",
-        help="Policy evaluation output path or '-' for stdout",
-    )
+    result.add_argument("--profile", choices=PROFILES, default="full", help="Validation profile to execute")
+    result.add_argument("--output-dir", help="Override release dry-run output directory")
+    result.add_argument("--incremental-base", help="Override incremental release base commit or reference")
+    result.add_argument("--skip-incremental", action="store_true", help="Skip incremental release dry-run in release profile")
+    result.add_argument("--policy-output", default="-", help="Policy evaluation output path or '-' for stdout")
+    result.add_argument("--list", action="store_true", help="List validation steps for the selected profile and exit")
     return result
 
 
@@ -520,12 +337,12 @@ def main() -> None:
         print(f"ERROR: {exc}")
         raise SystemExit(1) from None
 
-    results: list[StepResult] = []
-    for step in steps:
-        result = _run_step(root, step)
-        results.append(result)
-        if result.returncode != 0:
-            break
+    if args.list:
+        for step in steps:
+            print(f"{step.key}\t{step.description}")
+        return
+
+    results = run_steps(steps, root)
     _print_summary(results)
     if any(result.returncode != 0 for result in results):
         raise SystemExit(1)
