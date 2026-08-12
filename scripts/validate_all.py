@@ -161,6 +161,12 @@ def quick_steps(root: Path) -> list[ValidationStep]:
         ),
         _python_step(
             root,
+            "capability-taxonomy",
+            "Validate agent taxonomy and runtime labels",
+            "validate_capability_taxonomy.py",
+        ),
+        _python_step(
+            root,
             "capability-catalogs",
             "Check agent and skill catalogs",
             "generate_capability_catalogs.py",
@@ -418,121 +424,88 @@ def build_profile(
     if profile == "full":
         return steps
     resolved_base = resolve_incremental_base(root, incremental_base)
+    if output_dir is None:
+        output_dir = root / "dist" / "validation"
     return [
         *steps,
         *release_steps(
             root,
-            output_dir=output_dir or root / "dist",
+            output_dir=output_dir,
             incremental_base=resolved_base,
             skip_incremental=skip_incremental,
         ),
     ]
 
 
-def run_steps(
-    steps: Sequence[ValidationStep],
-    root: Path,
-    *,
-    keep_going: bool = False,
-    executor: Callable[..., subprocess.CompletedProcess[object]] = subprocess.run,
-) -> list[StepResult]:
-    results: list[StepResult] = []
-    for index, step in enumerate(steps, start=1):
-        print(f"[{index}/{len(steps)}] {step.description}", flush=True)
-        started = time.monotonic()
-        returncode = 0
-        try:
-            if step.action is not None:
-                message = step.action(root)
-                if message:
-                    print(message, flush=True)
-            else:
-                if step.command is None:
-                    raise ValidationFailure(
-                        f"Step {step.key} has no command or action"
-                    )
-                completed = executor(list(step.command), cwd=root)
-                returncode = completed.returncode
-        except (OSError, ValidationFailure) as exc:
-            print(f"ERROR: {exc}", flush=True)
-            returncode = 1
-        duration = time.monotonic() - started
-        results.append(
-            StepResult(
-                key=step.key,
-                returncode=returncode,
-                duration_seconds=duration,
-            )
-        )
-        outcome = "passed" if returncode == 0 else "failed"
-        print(f"{step.key}: {outcome} ({duration:.2f}s)", flush=True)
-        if returncode and not keep_going:
-            break
-    return results
+def _format_command(command: Sequence[str]) -> str:
+    return " ".join(command)
+
+
+def _run_step(root: Path, step: ValidationStep) -> StepResult:
+    started = time.monotonic()
+    print(f"\n==> {step.description}")
+    try:
+        if step.action is not None:
+            output = step.action(root)
+            if output:
+                print(output)
+            returncode = 0
+        else:
+            assert step.command is not None
+            print(f"$ {_format_command(step.command)}")
+            completed = subprocess.run(step.command, cwd=root, check=False)
+            returncode = completed.returncode
+    except Exception as exc:
+        print(f"ERROR: {exc}")
+        returncode = 1
+    duration = time.monotonic() - started
+    return StepResult(
+        key=step.key,
+        returncode=returncode,
+        duration_seconds=duration,
+    )
+
+
+def _print_summary(results: list[StepResult]) -> None:
+    print("\nValidation summary")
+    print("------------------")
+    for result in results:
+        status = "PASS" if result.returncode == 0 else "FAIL"
+        print(f"{status:4} {result.key:24} {result.duration_seconds:7.2f}s")
 
 
 def parser() -> argparse.ArgumentParser:
-    result = argparse.ArgumentParser(
-        description=(
-            "Run ATLAS validation through portable quick, full, or release "
-            "profiles without shell-specific orchestration."
-        )
-    )
+    result = argparse.ArgumentParser(description="Run ATLAS validation profiles.")
     result.add_argument(
         "--profile",
         choices=PROFILES,
-        default="quick",
-        help=(
-            "quick runs foundational gates; full adds runtime, policy, and "
-            "test gates; release adds cumulative, recovery, and incremental "
-            "artifact dry-runs"
-        ),
-    )
-    result.add_argument(
-        "--root",
-        default=str(ROOT),
-        help="Repository root to validate (default: the repository containing this script)",
+        default="full",
+        help="Validation profile to execute",
     )
     result.add_argument(
         "--output-dir",
-        help="Release artifact output directory (release profile only)",
+        help="Override release dry-run output directory",
     )
     result.add_argument(
         "--incremental-base",
-        help=(
-            "Directory or Git ref for the incremental release base. When "
-            "omitted, the version-specific release manifest is consulted."
-        ),
+        help="Override incremental release base commit or reference",
     )
     result.add_argument(
         "--skip-incremental",
         action="store_true",
-        help="Explicitly omit incremental packaging from the release profile",
-    )
-    result.add_argument(
-        "--keep-going",
-        action="store_true",
-        help="Run remaining steps after a failure and report all failures",
+        help="Skip incremental release dry-run in release profile",
     )
     result.add_argument(
         "--policy-output",
         default="-",
-        help=(
-            "Policy report path for full/release profiles. The default '-' "
-            "prints the report without modifying the repository."
-        ),
-    )
-    result.add_argument(
-        "--list",
-        action="store_true",
-        help="List the selected profile steps without executing them",
+        help="Policy evaluation output path or '-' for stdout",
     )
     return result
 
 
 def main() -> None:
     args = parser().parse_args()
-    root = Path(args.root).resolve()
+    root = ROOT
     output_dir = Path(args.output_dir).resolve() if args.output_dir else None
     try:
         steps = build_profile(
@@ -543,27 +516,18 @@ def main() -> None:
             skip_incremental=args.skip_incremental,
             policy_output=args.policy_output,
         )
-    except (OSError, ValueError, json.JSONDecodeError, ValidationFailure) as exc:
-        raise SystemExit(f"ERROR: {exc}") from exc
+    except ValidationFailure as exc:
+        print(f"ERROR: {exc}")
+        raise SystemExit(1) from None
 
-    if args.list:
-        for step in steps:
-            print(f"{step.key}: {step.description}")
-        return
-
-    print(
-        f"ATLAS validation profile: {args.profile} ({len(steps)} steps)",
-        flush=True,
-    )
-    results = run_steps(steps, root, keep_going=args.keep_going)
-    failures = [result for result in results if result.returncode]
-    completed = len(results)
-    print(
-        "Validation summary: "
-        f"completed={completed}, passed={completed - len(failures)}, "
-        f"failed={len(failures)}"
-    )
-    if failures:
+    results: list[StepResult] = []
+    for step in steps:
+        result = _run_step(root, step)
+        results.append(result)
+        if result.returncode != 0:
+            break
+    _print_summary(results)
+    if any(result.returncode != 0 for result in results):
         raise SystemExit(1)
 
 
