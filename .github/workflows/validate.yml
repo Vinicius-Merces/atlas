@@ -50,8 +50,9 @@ jobs:
           status=$?
           printf '%s\n' "$output"
           if [ "$status" -ne 0 ]; then
+            diagnostics="$(printf '%s\n' "$output" | tail -n 30)"
             while IFS= read -r line; do
               [ -n "$line" ] && printf '::error title=ATLAS release validation::%s\n' "$line"
-            done <<< "$output"
+            done <<< "$diagnostics"
           fi
           exit "$status"
