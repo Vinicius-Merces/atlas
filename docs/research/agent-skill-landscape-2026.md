@@ -16,6 +16,7 @@ The strongest current ecosystems converge on a few ideas:
 5. Prefer real validation, scripts, browser checks, static analysis, and evidence over prose-only instructions.
 6. Evaluate capability quality and triggering, not only file shape.
 7. Package capabilities in installable domains so large libraries do not flood context or navigation.
+8. Publish machine-readable catalogs and generated marketplace/runtime views when the library becomes large.
 
 ## Sources reviewed
 
@@ -64,6 +65,40 @@ ATLAS adoption:
 
 - Keep `.claude/skills` canonical and `.agents/skills` synchronized for runtime discovery.
 - Add validation for discovery metadata, references, and context size.
+
+### GitHub Awesome Copilot
+
+Repository: `github/awesome-copilot`
+
+Why it matters:
+
+- Provides a broad, actively maintained collection of custom agents, instructions, skills, hooks, workflows, and plugins rather than treating prompts as the only extension primitive.
+- Its skill model follows self-contained skill folders and progressive disclosure.
+- The catalog exposes search/filtering and machine-readable discovery, useful patterns once a capability library becomes large.
+- Plugins group related capabilities into installable workflow-oriented bundles.
+
+ATLAS adoption:
+
+- Preserve distinct primitives for agents, skills, workflows, rules, hooks, and adapters instead of collapsing everything into agents.
+- Add machine-readable capability discovery derived from canonical metadata.
+- Evolve toward bounded installable domain bundles while retaining a global canonical taxonomy.
+- Keep generated marketplace/runtime artifacts reproducible and validation-backed.
+
+### VoltAgent Awesome Agent Skills
+
+Repository: `VoltAgent/awesome-agent-skills`
+
+Why it matters:
+
+- Serves as a wide discovery radar across official and community skills from engineering teams spanning cloud, authentication, databases, testing, security, payments, observability, frontend, AI, and product work.
+- Its scale shows that skill discovery quality becomes more important than raw skill count.
+- The collection emphasizes curated real-world skills and explicit skill-quality standards rather than bulk-generated prompt inventory.
+
+ATLAS adoption:
+
+- Use large catalogs to identify capability gaps, not as direct copy sources.
+- Prefer skills backed by upstream domain expertise when learning patterns for auth, databases, payments, deployment, and testing.
+- Require trigger quality, bounded scope, references, validation evidence, and context discipline before admitting new ATLAS skills.
 
 ### Trail of Bits Skills
 
@@ -203,7 +238,7 @@ The taxonomy can remain global while install/discovery surfaces expose smaller d
 ## Next implementation sequence
 
 1. Formalize canonical runtime labels and capability taxonomy.
-2. Expose agents and domain→skill relationships through Obsidian Bases.
+2. Expose agents and domain-to-skill relationships through Obsidian Bases.
 3. Validate that every registered agent belongs to exactly one domain and every principal skill is registered.
 4. Strengthen skill discovery descriptions in batches.
 5. Implement the P0 web/SaaS skills with deterministic evidence where possible.
