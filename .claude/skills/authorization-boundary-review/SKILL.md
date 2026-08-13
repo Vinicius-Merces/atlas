@@ -21,6 +21,13 @@ Use when a change affects roles, permissions, ownership, tenancy, admin behavior
 - Tenant and ownership model
 - Existing policies, tests, and audit events
 
+## Dependencies
+
+- Explicit product or policy definition for principals, resources, actions, ownership, and tenant boundaries
+- Trusted authentication/session context for authenticated principals
+- `row-level-security-review` when database policy participates in enforcement
+- Direct server/API test access for negative authorization validation
+
 ## Procedure
 
 1. Enumerate protected resources and meaningful actions: read, create, update, delete, export, invite, impersonate, administer, bill, and other domain operations.
