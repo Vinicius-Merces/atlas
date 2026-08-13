@@ -15,6 +15,8 @@ principal_skills:
   - performance-budget-analysis
   - cloud-cost-analysis
   - incident-triage
+  - secret-environment-audit
+  - external-api-resilience-review
 ---
 # Cloud, Platform & Operations
 
