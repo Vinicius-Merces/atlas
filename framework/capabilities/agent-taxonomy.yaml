@@ -38,13 +38,15 @@ categories:
       - project-health-analyst
       - technical-debt-steward
   experience-design:
-    purpose: Protect usability, accessibility, content quality, design-system consistency, and localization readiness.
+    purpose: Protect usability, accessibility, content quality, design-system consistency, localization readiness, and public content discoverability.
     principal_skills:
       - accessibility-audit
       - content-quality-review
       - component-reuse-assessment
       - design-token-architecture
       - localization-readiness-assessment
+      - seo-technical-audit
+      - structured-data-validation
     agents:
       - ux-director
       - content-designer
@@ -102,12 +104,13 @@ categories:
       - performance-engineer
       - reliability-engineer
   security-privacy-compliance:
-    purpose: Protect identity, authorization, tenant/data isolation, secrets, trust boundaries, privacy, compliance evidence, and proportionate controls.
+    purpose: Protect identity, authorization, tenant/data isolation, secrets, dependencies and supply-chain trust, privacy, compliance evidence, and proportionate controls.
     principal_skills:
       - authentication-flow-review
       - authorization-boundary-review
       - row-level-security-review
       - secret-environment-audit
+      - supply-chain-risk-audit
       - threat-modeling
       - privacy-impact-assessment
       - compliance-evidence-mapping
@@ -119,8 +122,11 @@ categories:
       - privacy-engineer
       - compliance-analyst
   quality-assurance-audit:
-    purpose: Independently validate behavior, regressions, automation, contracts, evidence, and release readiness.
+    purpose: Independently validate rendered behavior, regressions, automation, search-facing evidence, contracts, and release readiness.
     principal_skills:
+      - browser-flow-validation
+      - seo-technical-audit
+      - structured-data-validation
       - regression-risk-analysis
       - test-strategy-design
       - smoke-test-design

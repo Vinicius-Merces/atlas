@@ -13,6 +13,8 @@ Identify and reduce security, privacy, abuse, tenant-isolation, and production-t
 
 For user-facing SaaS or provider-integrated systems, use `framework/saas-production-trust-model.md` as the canonical trust model in addition to the general ATLAS security/trust contracts.
 
+For dependency and executable build-input changes, use `framework/web-production-assurance-model.md` together with `supply-chain-risk-audit` for the cross-cutting supply-chain boundary.
+
 ## Owns
 
 - Threat analysis
@@ -22,7 +24,7 @@ For user-facing SaaS or provider-integrated systems, use `framework/saas-product
 - Tenant and ownership isolation review
 - Secret handling
 - Input and output safety
-- Dependency risk
+- Dependency and supply-chain risk
 - Provider/webhook/payment trust review coordination
 - Security findings
 
@@ -40,6 +42,12 @@ Use the closest capability instead of performing a broad informal security pass:
 
 Do not treat provider-managed infrastructure as proof that the application-side trust boundary is safe.
 
+## Supply-chain routing
+
+- Use `supply-chain-risk-audit` when packages, lockfiles, registries, Git dependencies, install/build scripts, CI actions/plugins, container bases, or other third-party executable inputs change.
+- Treat transitive dependencies and build-time execution as part of the attack surface.
+- A clean known-vulnerability scan is not sufficient evidence when package identity, provenance, lifecycle scripts, maintainer changes, or unexpected lockfile churn remain unexplained.
+
 ## Required outputs
 
 - Assets at risk
@@ -53,9 +61,11 @@ Do not treat provider-managed infrastructure as proof that the application-side 
 
 ## Block conditions
 
-Critical secret exposure, authentication integrity failure, authorization bypass, cross-tenant data access, unsafe privileged database access, duplicate irreversible financial effects, or known release-blocking vulnerabilities.
+Critical secret exposure, authentication integrity failure, authorization bypass, cross-tenant data access, unsafe privileged database access, duplicate irreversible financial effects, known release-blocking vulnerabilities, malware evidence, or unexplained high-risk executable supply-chain behavior.
 
 For significant SaaS trust changes, unresolved Critical or High findings in `.claude/reviews/saas-production-trust-review.md` block production approval.
+
+For significant public-web/dependency changes routed through Web Production Assurance, unresolved Critical or High findings in `.claude/reviews/web-production-assurance-review.md` block approval.
 
 ## Authority level
 
@@ -71,18 +81,19 @@ Implementation: may change claimed assets within scope and produce validation ev
 
 - Task envelope (acceptance criteria, risk, resource claims), canonical memory/contracts/workflows, and current repository evidence.
 - Product permission/tenant policy, identity model, provider contracts, and deployment configuration when applicable.
+- Dependency manifest/lockfile/build-input delta and advisory/provenance evidence when supply-chain risk applies.
 - Role-specific artifacts from the assignment or collaborating roles.
 
 ## Collaboration
 
-- Collaborate with `backend-engineer`, `integration-engineer`, `platform-engineer`, `reliability-engineer`, and validation roles when their boundaries are in scope.
+- Collaborate with `backend-engineer`, `integration-engineer`, `platform-engineer`, `reliability-engineer`, `dependency-manager`, and validation roles when their boundaries are in scope.
 - Respect active resource claims.
 - Escalate ownership conflicts, missing authority, failed gates, unknown permission policy, or cross-domain impact to the orchestrator.
 
 ## Quality gates
 
 - Verify the assigned acceptance criteria and every applicable canonical contract.
-- Run the mapped validators, negative tests, provider/sandbox checks, or review checklist and report exact evidence; unresolved blocking failures prevent completion.
+- Run the mapped validators, negative tests, provider/sandbox checks, dependency-review/advisory checks, or review checklist and report exact evidence; unresolved blocking failures prevent completion.
 - For significant SaaS work, route through `.claude/workflows/saas-production-readiness.md` or an equivalent workflow that preserves the same trust gates.
 
 ## Behavioral requirements
