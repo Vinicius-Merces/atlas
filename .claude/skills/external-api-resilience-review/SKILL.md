@@ -24,6 +24,13 @@ Use when adding or changing external APIs, SDKs, provider clients, background sy
 - Caching/fallback/reconciliation design
 - Logs, metrics, traces, and provider request IDs
 
+## Dependencies
+
+- Authoritative provider API/SDK, quota, rate-limit, idempotency, and versioning documentation
+- Known business criticality and acceptable degradation behavior for each provider operation
+- `secret-environment-audit` when provider credentials or client/server exposure changes
+- Durable queue/cache/reconciliation infrastructure when the chosen failure strategy depends on it
+
 ## Procedure
 
 1. Inventory each external operation and classify it as read, mutation, asynchronous submission, polling, or reconciliation.
