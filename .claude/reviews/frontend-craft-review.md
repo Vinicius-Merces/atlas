@@ -99,7 +99,7 @@ Record each finding with:
 - recommended correction
 - verification method
 
-Also record strong authored patterns worth preserving so subsequent work does not erase successful design decisions.
+Also record strong authored patterns worth preserving so subsequent work does not erase successful design decisions. State `No findings` only after all required evidence and review dimensions have been inspected.
 
 ## Severity
 
@@ -113,9 +113,13 @@ Use `.claude/contracts/review-contract.md`:
 
 Unresolved Critical or High findings block approval.
 
+## Required actions
+
+For every finding, identify the correction, decision, or accepted condition required and the evidence that will verify it. Critical or High findings must be resolved or explicitly governed before approval. If required rendered evidence, reduced-motion validation, responsive evidence, or performance evidence is missing, list obtaining that evidence as a required action rather than assuming success.
+
 ## Outcome
 
-Record exactly one outcome:
+Record exactly one outcome after required evidence and mandatory validation are complete:
 
 - Approved
 - Approved with conditions
