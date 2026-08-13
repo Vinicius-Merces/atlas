@@ -1,5 +1,7 @@
 data/leads.json
 data/analytics.jsonl
 data/*.tmp
+data/*.sqlite
+data/*.sqlite-*
+data/test-*
 reports/
-

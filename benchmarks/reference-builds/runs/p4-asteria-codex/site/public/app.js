@@ -7,10 +7,20 @@ if (toggle && nav) {
     const open = toggle.getAttribute("aria-expanded") === "true";
     toggle.setAttribute("aria-expanded", String(!open));
     body.classList.toggle("menu-open", !open);
+    toggle.querySelector(".menu-label").textContent = open ? "Abrir menu" : "Fechar menu";
+  });
+  document.addEventListener("keydown", (event) => {
+    if (event.key === "Escape" && body.classList.contains("menu-open")) {
+      toggle.setAttribute("aria-expanded", "false");
+      toggle.querySelector(".menu-label").textContent = "Abrir menu";
+      body.classList.remove("menu-open");
+      toggle.focus();
+    }
   });
   nav.addEventListener("click", (event) => {
     if (event.target.closest("a")) {
       toggle.setAttribute("aria-expanded", "false");
+      toggle.querySelector(".menu-label").textContent = "Abrir menu";
       body.classList.remove("menu-open");
     }
   });
@@ -27,6 +37,7 @@ track(location.pathname.startsWith("/residencias/") ? "residence_view" : "page_v
 const form = document.querySelector("#visit-form");
 if (form) {
   const status = document.querySelector("#form-status");
+  status.tabIndex = -1;
   const submit = form.querySelector("button[type=submit]");
   let started = false;
   let idempotencyKey = crypto.randomUUID().replaceAll("-", "_");

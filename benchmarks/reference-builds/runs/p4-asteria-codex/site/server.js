@@ -1,9 +1,10 @@
 import { createServer } from "node:http";
-import { readFile, mkdir, rename, writeFile, appendFile } from "node:fs/promises";
-import { existsSync } from "node:fs";
-import { extname, join, resolve } from "node:path";
+import { readFile } from "node:fs/promises";
+import { chmodSync, mkdirSync } from "node:fs";
+import { dirname, extname, join, resolve } from "node:path";
 import { fileURLToPath } from "node:url";
 import crypto from "node:crypto";
+import { DatabaseSync } from "node:sqlite";
 import { renderPage } from "./src/render.js";
 import { absolute, residences, site } from "./src/content.js";
 
@@ -11,11 +12,8 @@ const root = fileURLToPath(new URL(".", import.meta.url));
 const publicRoot = join(root, "public");
 const assetRoot = resolve(root, "../assets");
 const dataRoot = join(root, "data");
-const leadsFile = join(dataRoot, "leads.json");
-const analyticsFile = join(dataRoot, "analytics.jsonl");
 const port = Number(process.env.PORT || 4173);
-const limits = new Map();
-const idempotency = new Map();
+const databasePath = process.env.ASTERIA_DB_PATH || (process.env.NODE_ENV === "test" ? ":memory:" : join(dataRoot, "asteria.sqlite"));
 
 const mime = {
   ".css": "text/css; charset=utf-8",
@@ -91,36 +89,106 @@ export function validateLead(input, now = new Date()) {
   return { data, errors, valid: Object.keys(errors).length === 0 };
 }
 
-function clientIp(req) {
-  return String(req.headers["x-forwarded-for"] || req.socket.remoteAddress || "unknown").split(",")[0].trim();
+export class AsteriaStore {
+  constructor(path = databasePath) {
+    if (path !== ":memory:") mkdirSync(dirname(path), { recursive: true });
+    this.db = new DatabaseSync(path);
+    this.db.exec("PRAGMA journal_mode=WAL; PRAGMA busy_timeout=5000; PRAGMA foreign_keys=ON;");
+    this.db.exec(`
+      CREATE TABLE IF NOT EXISTS leads (
+        id TEXT PRIMARY KEY, name TEXT NOT NULL, email TEXT NOT NULL, phone TEXT NOT NULL,
+        interest TEXT NOT NULL, budget TEXT NOT NULL, visit_date TEXT, consent INTEGER NOT NULL,
+        created_at TEXT NOT NULL, status TEXT NOT NULL, source TEXT NOT NULL
+      );
+      CREATE INDEX IF NOT EXISTS leads_identity_time ON leads(email, phone, created_at DESC);
+      CREATE TABLE IF NOT EXISTS idempotency (
+        key TEXT PRIMARY KEY, result_json TEXT NOT NULL, created_at TEXT NOT NULL
+      );
+      CREATE TABLE IF NOT EXISTS analytics_outbox (
+        id TEXT PRIMARY KEY, event TEXT NOT NULL, properties_json TEXT NOT NULL,
+        created_at TEXT NOT NULL, delivered_at TEXT
+      );
+      CREATE TABLE IF NOT EXISTS rate_events (
+        actor_hash TEXT NOT NULL, scope TEXT NOT NULL, occurred_at INTEGER NOT NULL
+      );
+      CREATE INDEX IF NOT EXISTS rate_window ON rate_events(actor_hash, scope, occurred_at);
+    `);
+    if (path !== ":memory:") chmodSync(path, 0o600);
+  }
+
+  idempotentResult(key) {
+    const row = this.db.prepare("SELECT result_json FROM idempotency WHERE key = ?").get(key);
+    return row ? JSON.parse(row.result_json) : null;
+  }
+
+  rateAllowed(actorHash, scope, maximum, windowMs) {
+    const now = Date.now();
+    const start = now - windowMs;
+    this.db.exec("BEGIN IMMEDIATE");
+    try {
+      this.db.prepare("DELETE FROM rate_events WHERE occurred_at < ?").run(start);
+      const row = this.db.prepare("SELECT COUNT(*) AS count, MIN(occurred_at) AS oldest FROM rate_events WHERE actor_hash = ? AND scope = ? AND occurred_at >= ?").get(actorHash, scope, start);
+      if (Number(row.count) >= maximum) {
+        this.db.exec("COMMIT");
+        return { allowed: false, retryAfter: Math.max(1, Math.ceil((windowMs - (now - Number(row.oldest))) / 1000)) };
+      }
+      this.db.prepare("INSERT INTO rate_events(actor_hash, scope, occurred_at) VALUES (?, ?, ?)").run(actorHash, scope, now);
+      this.db.exec("COMMIT");
+      return { allowed: true, retryAfter: 0 };
+    } catch (error) {
+      this.db.exec("ROLLBACK");
+      throw error;
+    }
+  }
+
+  acceptLead(key, data) {
+    const now = new Date();
+    const createdAt = now.toISOString();
+    const recentBoundary = new Date(now.valueOf() - 86_400_000).toISOString();
+    this.db.exec("BEGIN IMMEDIATE");
+    try {
+      const existingKey = this.db.prepare("SELECT result_json FROM idempotency WHERE key = ?").get(key);
+      if (existingKey) {
+        this.db.exec("COMMIT");
+        return { created: false, result: { ...JSON.parse(existingKey.result_json), duplicate: true } };
+      }
+      const recent = this.db.prepare("SELECT id FROM leads WHERE email = ? AND phone = ? AND created_at >= ? ORDER BY created_at DESC LIMIT 1").get(data.email, data.phone, recentBoundary);
+      if (recent) {
+        const result = { ok: true, leadId: recent.id, status: "received", duplicate: true, message: "Sua solicitação já foi recebida. Usaremos o primeiro registro para entrar em contato." };
+        this.db.prepare("INSERT INTO idempotency(key, result_json, created_at) VALUES (?, ?, ?)").run(key, JSON.stringify(result), createdAt);
+        this.db.exec("COMMIT");
+        return { created: false, result };
+      }
+      const leadId = `ast_${crypto.randomUUID()}`;
+      this.db.prepare("INSERT INTO leads(id,name,email,phone,interest,budget,visit_date,consent,created_at,status,source) VALUES (?,?,?,?,?,?,?,?,?,?,?)")
+        .run(leadId, data.name, data.email, data.phone, data.interest, data.budget, data.visitDate || null, 1, createdAt, "received", "website");
+      const eventId = `evt_${crypto.randomUUID()}`;
+      this.db.prepare("INSERT INTO analytics_outbox(id,event,properties_json,created_at) VALUES (?,?,?,?)")
+        .run(eventId, "lead_authoritative_success", JSON.stringify({ leadId, interest: data.interest, budget: data.budget }), createdAt);
+      const result = { ok: true, leadId, status: "received", message: "Solicitação recebida. Nossa equipe responderá em até um dia útil." };
+      this.db.prepare("INSERT INTO idempotency(key, result_json, created_at) VALUES (?, ?, ?)").run(key, JSON.stringify(result), createdAt);
+      this.db.exec("COMMIT");
+      return { created: true, result };
+    } catch (error) {
+      this.db.exec("ROLLBACK");
+      throw error;
+    }
+  }
+
+  track(event, properties = {}) {
+    this.db.prepare("INSERT INTO analytics_outbox(id,event,properties_json,created_at) VALUES (?,?,?,?)")
+      .run(`evt_${crypto.randomUUID()}`, event, JSON.stringify(properties), new Date().toISOString());
+  }
+
+  close() { this.db.close(); }
 }
 
-function rateAllowed(key) {
-  const now = Date.now();
-  const windowMs = 10 * 60 * 1000;
-  const previous = (limits.get(key) || []).filter((time) => now - time < windowMs);
-  previous.push(now);
-  limits.set(key, previous);
-  return { allowed: previous.length <= 5, retryAfter: Math.ceil((windowMs - (now - previous[0])) / 1000) };
-}
+export const store = new AsteriaStore();
 
-async function loadLeads() {
-  if (!existsSync(leadsFile)) return [];
-  try { return JSON.parse(await readFile(leadsFile, "utf8")); } catch { return []; }
-}
-
-async function persistLead(lead) {
-  await mkdir(dataRoot, { recursive: true });
-  const leads = await loadLeads();
-  leads.push(lead);
-  const temporary = `${leadsFile}.${process.pid}.tmp`;
-  await writeFile(temporary, `${JSON.stringify(leads, null, 2)}\n`, { mode: 0o600 });
-  await rename(temporary, leadsFile);
-}
-
-async function track(event, properties = {}) {
-  await mkdir(dataRoot, { recursive: true });
-  await appendFile(analyticsFile, `${JSON.stringify({ event, properties, at: new Date().toISOString() })}\n`, { mode: 0o600 });
+function actorHash(req) {
+  const forwarded = process.env.TRUST_PROXY === "true" ? String(req.headers["x-forwarded-for"] || "").split(",")[0].trim() : "";
+  const address = forwarded || req.socket.remoteAddress || "unknown";
+  return crypto.createHash("sha256").update(address).digest("hex");
 }
 
 function sameOrigin(req) {
@@ -133,8 +201,9 @@ async function handleLead(req, res) {
   if (!sameOrigin(req)) return json(res, 403, { ok: false, message: "Origem não autorizada." });
   const key = String(req.headers["idempotency-key"] || "");
   if (!/^[a-zA-Z0-9_-]{16,80}$/.test(key)) return json(res, 400, { ok: false, message: "Identificador de envio ausente." });
-  if (idempotency.has(key)) return json(res, 200, { ...idempotency.get(key), duplicate: true });
-  const limit = rateAllowed(clientIp(req));
+  const existing = store.idempotentResult(key);
+  if (existing) return json(res, 200, { ...existing, duplicate: true });
+  const limit = store.rateAllowed(actorHash(req), "lead", 5, 10 * 60 * 1000);
   if (!limit.allowed) return json(res, 429, { ok: false, message: "Muitas tentativas. Aguarde alguns minutos antes de tentar novamente." }, { "retry-after": String(limit.retryAfter) });
   let input;
   try { input = await bodyJson(req); } catch (error) { return json(res, error.status || 400, { ok: false, message: error.message }); }
@@ -143,23 +212,12 @@ async function handleLead(req, res) {
   if (process.env.NODE_ENV !== "production" && validation.data.email.endsWith("@failure.test")) {
     return json(res, 503, { ok: false, code: "PROVIDER_UNAVAILABLE", message: "A agenda está temporariamente indisponível. Seus dados não foram registrados; tente novamente em instantes." }, { "retry-after": "30" });
   }
-  const leads = await loadLeads();
-  const recent = leads.find((lead) => lead.email === validation.data.email && lead.phone === validation.data.phone && Date.now() - new Date(lead.createdAt).valueOf() < 86_400_000);
-  if (recent) {
-    const result = { ok: true, leadId: recent.id, status: "received", duplicate: true, message: "Sua solicitação já foi recebida. Usaremos o primeiro registro para entrar em contato." };
-    idempotency.set(key, result);
-    return json(res, 200, result);
-  }
-  const lead = { id: `ast_${crypto.randomUUID()}`, ...validation.data, company: undefined, createdAt: new Date().toISOString(), status: "received", source: "website" };
   try {
-    await persistLead(lead);
-    await track("lead_authoritative_success", { leadId: lead.id, interest: lead.interest, budget: lead.budget });
+    const accepted = store.acceptLead(key, validation.data);
+    return json(res, accepted.created ? 201 : 200, accepted.result);
   } catch {
     return json(res, 503, { ok: false, code: "PERSISTENCE_FAILURE", message: "Não foi possível confirmar o registro. Seus dados não foram salvos; tente novamente." }, { "retry-after": "30" });
   }
-  const result = { ok: true, leadId: lead.id, status: lead.status, message: "Solicitação recebida. Nossa equipe responderá em até um dia útil." };
-  idempotency.set(key, result);
-  return json(res, 201, result);
 }
 
 function robots() {
@@ -186,13 +244,16 @@ async function staticFile(reqPath, res) {
 
 export const server = createServer(async (req, res) => {
   const url = new URL(req.url || "/", `http://${req.headers.host || `localhost:${port}`}`);
-  if (req.method === "GET" && url.pathname === "/api/health") return json(res, 200, { ok: true, service: "asteria-lead-intake", persistence: "filesystem" });
+  if (req.method === "GET" && url.pathname === "/api/health") return json(res, 200, { ok: true, service: "asteria-lead-intake", persistence: "sqlite" });
   if (req.method === "POST" && url.pathname === "/api/leads") return handleLead(req, res);
   if (req.method === "POST" && url.pathname === "/api/analytics") {
+    if (!sameOrigin(req)) return json(res, 403, { ok: false });
+    const limit = store.rateAllowed(actorHash(req), "analytics", 60, 10 * 60 * 1000);
+    if (!limit.allowed) return json(res, 429, { ok: false }, { "retry-after": String(limit.retryAfter) });
     let input; try { input = await bodyJson(req); } catch { return json(res, 400, { ok: false }); }
     const allowed = new Set(["page_view", "lead_form_start", "residence_view"]);
     if (!allowed.has(input.event)) return json(res, 422, { ok: false });
-    await track(input.event, { path: String(input.path || "").slice(0, 160) });
+    store.track(input.event, { path: String(input.path || "").slice(0, 160) });
     return json(res, 202, { ok: true });
   }
   if (req.method === "GET" && url.pathname === "/robots.txt") return send(res, 200, robots(), "text/plain; charset=utf-8");
