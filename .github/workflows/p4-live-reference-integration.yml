@@ -1,0 +1,37 @@
+name: P4 Live Reference Campaign Integration
+
+on:
+  push:
+    branches: [feat/atlas-p4-live-reference-campaign]
+
+permissions:
+  contents: write
+
+jobs:
+  integrate:
+    if: github.actor != 'github-actions[bot]'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: python -m pip install --requirement requirements-test.txt
+      - run: python scripts/bootstrap_p4_live_campaign.py
+      - run: |
+          python scripts/validate_live_reference_campaign.py
+          python -m pytest tests/contract/test_live_reference_campaign.py -q
+      - run: python scripts/validate_all.py --profile release --skip-incremental
+      - name: Commit synchronized P4 surfaces
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A
+          if git diff --cached --quiet; then
+            echo "No synchronization changes"
+          else
+            git commit -m "chore: integrate P4 live reference campaign"
+            git push
+          fi
