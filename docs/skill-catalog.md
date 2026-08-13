@@ -4,7 +4,7 @@ Canonical, generated inventory of every skill under `.claude/skills/<skill-name>
 
 Regenerate both capability catalogs with `python scripts/generate_capability_catalogs.py`. Use `--check` in validation and CI.
 
-Total: 88 skills.
+Total: 96 skills.
 
 ## Accessibility Audit
 
@@ -154,6 +154,18 @@ Total: 88 skills.
 
 `framework-package-validation`. Verify that an ATLAS distribution is structurally complete and internally consistent.
 
+## Frontend Craft Review
+
+`frontend-craft-review`. Independently review a frontend for visual craft and anti-template quality when implementation is functionally complete but must not look generic, derivative, or AI-default.
+
+## Frontend Stack Selection
+
+`frontend-stack-selection`. Select frontend libraries and rendering tools when a user-facing web change needs implementation or modernization, choosing CSS, Motion, GSAP, React Three Fiber, primitives, and supporting libraries by evidence rather than trend.
+
+## Immersive 3d Experience
+
+`immersive-3d-experience`. Design and review web 3D with Three.js or React Three Fiber when spatial interaction or narrative depth is justified, with strict performance, fallback, and accessibility budgets.
+
 ## Incident Triage
 
 `incident-triage`. Rapidly classify and stabilize a production incident.
@@ -169,6 +181,10 @@ Total: 88 skills.
 ## Integration Contract Mapping
 
 `integration-contract-mapping`. Document the complete behavioral and operational contract of an integration.
+
+## Interface Visual Direction
+
+`interface-visual-direction`. Define a distinctive visual direction before implementation when a user-facing surface needs premium hierarchy, composition, typography, rhythm, imagery, depth, and interaction intent.
 
 ## Knowledge Graph Synthesis
 
@@ -201,6 +217,10 @@ Total: 88 skills.
 ## Mobile Architecture Assessment
 
 `mobile-architecture-assessment`. Evaluate mobile architecture for platform fit, maintainability, offline behavior, performance, and release constraints.
+
+## Motion Choreography
+
+`motion-choreography`. Design and implement purposeful UI motion when a frontend needs transitions, gestures, scroll choreography, or timelines, selecting CSS, Motion, or GSAP by interaction semantics.
 
 ## Observability Design
 
@@ -273,6 +293,10 @@ Total: 88 skills.
 ## Resource Claim Design
 
 `resource-claim-design`. Declare file, directory, schema, service, and knowledge claims for a workstream.
+
+## Responsive Layout Audit
+
+`responsive-layout-audit`. Audit responsive composition across viewport and container sizes when user-facing layouts must remain intentional rather than merely stacking on smaller screens.
 
 ## Result Reconciliation
 
@@ -353,6 +377,14 @@ Total: 88 skills.
 ## Version Transition Validation
 
 `version-transition-validation`. Verify that a patch is applied to the exact required base version.
+
+## Visual Regression Review
+
+`visual-regression-review`. Create and review deterministic browser screenshots when frontend changes need evidence against clipping, overflow, spacing, typography, crop, and layout regressions.
+
+## Web Performance Field Readiness
+
+`web-performance-field-readiness`. Assess user-facing performance before release when images, fonts, animation, WebGL, third-party scripts, or client JavaScript could threaten real-device experience.
 
 ## Workstream Decomposition
 
