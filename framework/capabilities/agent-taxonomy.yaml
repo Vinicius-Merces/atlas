@@ -51,13 +51,16 @@ categories:
       - design-system-engineer
       - localization-engineer
   application-engineering:
-    purpose: Implement and evolve application code while preserving contracts, dependencies, tests, and maintainability.
+    purpose: Implement and evolve application code while preserving contracts, dependencies, tests, maintainability, and provider reliability.
     principal_skills:
       - repository-mapping
       - api-contract-analysis
       - dependency-impact-analysis
       - regression-risk-analysis
       - test-strategy-design
+      - webhook-reliability-review
+      - payment-integration-review
+      - external-api-resilience-review
     agents:
       - frontend-engineer
       - backend-engineer
@@ -89,6 +92,8 @@ categories:
       - performance-budget-analysis
       - cloud-cost-analysis
       - incident-triage
+      - secret-environment-audit
+      - external-api-resilience-review
     agents:
       - cloud-architect
       - platform-engineer
@@ -97,8 +102,12 @@ categories:
       - performance-engineer
       - reliability-engineer
   security-privacy-compliance:
-    purpose: Assess trust boundaries, threats, privacy impact, compliance evidence, and proportionate controls.
+    purpose: Protect identity, authorization, tenant/data isolation, secrets, trust boundaries, privacy, compliance evidence, and proportionate controls.
     principal_skills:
+      - authentication-flow-review
+      - authorization-boundary-review
+      - row-level-security-review
+      - secret-environment-audit
       - threat-modeling
       - privacy-impact-assessment
       - compliance-evidence-mapping
