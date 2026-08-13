@@ -93,6 +93,19 @@ Deliver a production-ready frontend that is technically correct, visually author
 - Whether visual differences are intentional and baseline-worthy or regressions.
 - Whether the implementation feels authored for the product or remains generic/template-like.
 
+## Validation
+
+- Run every mandatory check named in the task envelope, applicable contracts, and the frontend sequence.
+- Validate functional behavior, semantic structure, keyboard/focus behavior, loading/error states, and existing integration contracts.
+- Run `responsive-layout-audit` for significant visual changes and record the tested viewport/height classes.
+- Produce browser-rendered evidence through `visual-regression-review` or the project-equivalent capture path; explain intentional baseline changes.
+- Validate reduced-motion behavior whenever meaningful animation, parallax, scroll choreography, camera movement, or persistent motion exists.
+- Validate GSAP/Motion lifecycle cleanup and interaction behavior when those systems are used.
+- Validate `immersive-3d-experience` admission, fallback, adaptive-quality, and runtime evidence when WebGL/Three.js/R3F is present.
+- Run `web-performance-field-readiness` when media, client JavaScript, third-party scripts, motion, or WebGL create material runtime cost.
+- Complete independent `frontend-craft-review` for significant premium/branded work and record the outcome plus unresolved risks.
+- Record commands, screenshots/artifacts, measured evidence, reviewer outcomes, limitations, and accepted exceptions as execution evidence.
+
 ## Mandatory gates for significant visual changes
 
 - no unresolved critical responsive breakage
@@ -109,6 +122,7 @@ Deliver a production-ready frontend that is technically correct, visually author
 - Do not update screenshot baselines merely to suppress a regression failure.
 - Do not self-approve unresolved Critical or High craft findings.
 - Do not describe a frontend as premium, finished, or release-ready when required rendered evidence is missing.
+- Stop and report failed or blocked when a mandatory test, review, approval, or contract gate fails; do not silently downgrade the gate.
 
 ## Completion criteria
 
@@ -118,3 +132,4 @@ Deliver a production-ready frontend that is technically correct, visually author
 - Accessibility and reduced-motion requirements pass.
 - Performance risk is within accepted budget or explicitly governed.
 - Independent frontend craft review outcome is Approved or Approved with resolved/accepted conditions.
+- Required validation and independent reviews have reproducible evidence recorded; any remaining blocker produces an explicit blocked or failed outcome.
