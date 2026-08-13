@@ -1,0 +1,46 @@
+version: 1
+capability: saas-production-trust
+purpose: >-
+  Make production SaaS trust boundaries explicit across authentication,
+  authorization, tenant/data isolation, secrets, webhooks, payments, external
+  APIs, observability, and recovery.
+canonical_model: framework/saas-production-trust-model.md
+preferred_workflow: saas-production-readiness
+required_review: saas-production-trust-review
+owners:
+  primary:
+    - security-engineer
+  engineering:
+    - backend-engineer
+    - integration-engineer
+    - platform-engineer
+  validation:
+    - qa-engineer
+    - reliability-engineer
+skills:
+  - authentication-flow-review
+  - authorization-boundary-review
+  - row-level-security-review
+  - secret-environment-audit
+  - webhook-reliability-review
+  - payment-integration-review
+  - external-api-resilience-review
+trust_gates:
+  - identity
+  - authorization
+  - data-isolation
+  - secrets
+  - integration-reliability
+  - financial-consistency
+  - observability
+  - recovery
+  - independent-review
+block_conditions:
+  - authentication-integrity-bypass
+  - authorization-bypass
+  - cross-tenant-data-access
+  - exposed-privileged-secret
+  - duplicate-irreversible-webhook-side-effect
+  - duplicate-or-unreconciled-payment-side-effect
+  - client-authoritative-price-role-or-entitlement
+  - unbounded-external-dependency-failure

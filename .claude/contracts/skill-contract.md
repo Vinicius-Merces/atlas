@@ -23,6 +23,12 @@ firing.
 Every `SKILL.md` must define YAML frontmatter `name` and `description` compatible
 with the Agent Skills format used by supported runtimes.
 
+The `description` is the canonical routing and human-facing discovery label for
+the skill. It is the source ATLAS exposes to generated catalogs and to runtime
+picker, recommendation, hover, tooltip, or description surfaces when the runtime
+supports them. ATLAS must not maintain a second free-form hover label that could
+drift from this canonical description.
+
 The `description` is a routing contract, not marketing copy. It must state both:
 
 - what repeatable capability the skill provides; and
@@ -30,7 +36,12 @@ The `description` is a routing contract, not marketing copy. It must state both:
 
 Keep the most important trigger terms near the beginning. Avoid broad descriptions
 that could match unrelated tasks and avoid vague descriptions that make automatic
-discovery unreliable.
+discovery unreliable. Descriptions must remain concise and discriminative enough
+to scan in runtime discovery UI.
+
+Codex-native wrappers under `.agents/skills/` must preserve the canonical `name`
+and `description` exactly. Runtime adapters may translate the description into a
+native display field, but they must not change its meaning.
 
 The main `SKILL.md` should remain focused on the procedure. Large reference
 material, scripts, examples, or reusable assets should live in bounded companion
@@ -62,4 +73,5 @@ approval.
 - No secrets embedded
 - Validation guidance included
 - Concise, discriminative discovery description
+- Canonical description preserved across supported runtime discovery surfaces
 - Companion resources loaded only when required

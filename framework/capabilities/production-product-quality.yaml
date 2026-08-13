@@ -1,0 +1,37 @@
+version: 1
+canonical_model: framework/production-product-quality-model.md
+skills:
+  production_systems:
+    - database-schema-review
+    - saas-multitenancy-review
+    - background-job-reliability
+    - cache-strategy-assessment
+  product_growth:
+    - conversion-funnel-review
+    - analytics-implementation-audit
+    - content-discoverability-review
+preferred_workflow: production-product-quality-readiness
+required_review: production-product-quality-review
+agents:
+  production_systems:
+    - backend-engineer
+    - data-engineer
+    - reliability-engineer
+    - platform-engineer
+    - security-engineer
+  product_growth:
+    - product-manager
+    - ux-director
+    - content-designer
+    - analytics-engineer
+    - experimentation-analyst
+    - frontend-engineer
+policy:
+  no_new_agents_without_overlap_evidence: true
+  database_constraints_are_integrity_controls: true
+  tenant_isolation_extends_beyond_database: true
+  duplicate_background_execution_must_be_safe: true
+  cache_never_overrides_authorization: true
+  conversion_must_not_use_dark_patterns: true
+  analytics_must_match_authoritative_taxonomy: true
+  no_special_ai_discoverability_hacks_without_evidence: true

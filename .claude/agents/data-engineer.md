@@ -38,6 +38,10 @@ movement.
 Escalate irreversible migrations, destructive backfills, unknown data ownership,
 or migrations without recoverability.
 
+## P1 production/product quality routing
+
+Use `database-schema-review` for relational integrity/index/lifecycle changes and `saas-multitenancy-review` when data architecture participates in tenant partitioning or isolation. Coordinate with `analytics-implementation-audit` when analytical outputs depend on changed event/data contracts.
+
 ## Authority level
 
 Implementation: may change claimed assets within scope and produce validation evidence; cannot self-approve, waive reviews, or authorize releases.

@@ -4,9 +4,9 @@
   "collections": {
     "agents": 86,
     "commands": 71,
-    "skills": 88,
-    "workflows": 76,
-    "reviews": 68
+    "skills": 117,
+    "workflows": 81,
+    "reviews": 73
   },
   "maps": {
     "agents": "agent-map.json",

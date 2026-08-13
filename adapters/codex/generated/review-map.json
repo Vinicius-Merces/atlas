@@ -76,6 +76,15 @@
       "version": "0.1.1"
     },
     {
+      "canonical_name": "capability-quality-review",
+      "canonical_path": ".claude/reviews/capability-quality-review.md",
+      "adapter_path": "adapters/codex/catalogs/reviews.md",
+      "parity_type": "canonical-reference",
+      "status": "mapped",
+      "notes": "Resolved through the generated catalog to the canonical source.",
+      "version": "0.1.1"
+    },
+    {
       "canonical_name": "checkpoint-integrity-review",
       "canonical_path": ".claude/reviews/checkpoint-integrity-review.md",
       "adapter_path": "adapters/codex/catalogs/reviews.md",
@@ -222,6 +231,15 @@
     {
       "canonical_name": "finops-review",
       "canonical_path": ".claude/reviews/finops-review.md",
+      "adapter_path": "adapters/codex/catalogs/reviews.md",
+      "parity_type": "canonical-reference",
+      "status": "mapped",
+      "notes": "Resolved through the generated catalog to the canonical source.",
+      "version": "0.1.1"
+    },
+    {
+      "canonical_name": "frontend-craft-review",
+      "canonical_path": ".claude/reviews/frontend-craft-review.md",
       "adapter_path": "adapters/codex/catalogs/reviews.md",
       "parity_type": "canonical-reference",
       "status": "mapped",
@@ -400,6 +418,15 @@
       "version": "0.1.1"
     },
     {
+      "canonical_name": "production-product-quality-review",
+      "canonical_path": ".claude/reviews/production-product-quality-review.md",
+      "adapter_path": "adapters/codex/catalogs/reviews.md",
+      "parity_type": "canonical-reference",
+      "status": "mapped",
+      "notes": "Resolved through the generated catalog to the canonical source.",
+      "version": "0.1.1"
+    },
+    {
       "canonical_name": "project-health-review",
       "canonical_path": ".claude/reviews/project-health-review.md",
       "adapter_path": "adapters/codex/catalogs/reviews.md",
@@ -517,6 +544,15 @@
       "version": "0.1.1"
     },
     {
+      "canonical_name": "saas-production-trust-review",
+      "canonical_path": ".claude/reviews/saas-production-trust-review.md",
+      "adapter_path": "adapters/codex/catalogs/reviews.md",
+      "parity_type": "canonical-reference",
+      "status": "mapped",
+      "notes": "Resolved through the generated catalog to the canonical source.",
+      "version": "0.1.1"
+    },
+    {
       "canonical_name": "security-review",
       "canonical_path": ".claude/reviews/security-review.md",
       "adapter_path": "adapters/codex/catalogs/reviews.md",
@@ -609,6 +645,15 @@
     {
       "canonical_name": "ux-review",
       "canonical_path": ".claude/reviews/ux-review.md",
+      "adapter_path": "adapters/codex/catalogs/reviews.md",
+      "parity_type": "canonical-reference",
+      "status": "mapped",
+      "notes": "Resolved through the generated catalog to the canonical source.",
+      "version": "0.1.1"
+    },
+    {
+      "canonical_name": "web-production-assurance-review",
+      "canonical_path": ".claude/reviews/web-production-assurance-review.md",
       "adapter_path": "adapters/codex/catalogs/reviews.md",
       "parity_type": "canonical-reference",
       "status": "mapped",

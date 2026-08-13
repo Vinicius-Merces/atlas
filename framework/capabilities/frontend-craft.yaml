@@ -1,0 +1,53 @@
+version: 1
+capability: frontend-craft
+purpose: >-
+  Produce distinctive, production-ready user-facing web experiences through deliberate
+  visual direction, evidence-based stack selection, purposeful motion and 3D, responsive
+  composition, visual regression evidence, and independent anti-template craft review.
+canonical_model: framework/frontend-craft-model.md
+preferred_workflow: frontend-feature-delivery
+required_review: frontend-craft-review
+owners:
+  primary:
+    - frontend-engineer
+  design:
+    - ux-director
+    - design-system-engineer
+  validation:
+    - qa-engineer
+    - performance-engineer
+skills:
+  - frontend-stack-selection
+  - interface-visual-direction
+  - motion-choreography
+  - immersive-3d-experience
+  - responsive-layout-audit
+  - visual-regression-review
+  - frontend-craft-review
+  - web-performance-field-readiness
+stack_policy:
+  css: simple local effects and platform-native behavior
+  motion: React-owned gestures, enter-exit, layout and shared-layout transitions
+  gsap: coordinated timelines, ScrollTrigger, pinning, scrubbing and multi-region sequencing
+  react-three-fiber: justified real-time 3D in React with explicit performance and fallback budgets
+  threejs: direct WebGL scene ownership when React integration is not the right abstraction
+quality_gates:
+  - visual_thesis
+  - component_authorship
+  - responsive_authorship
+  - motion_purpose
+  - reduced_motion
+  - visual_regression_evidence
+  - performance_budget
+  - independent_craft_review
+anti_default_patterns:
+  - generic-pill-badge-hero
+  - unjustified-bento-grid
+  - repeated-equal-rounded-cards
+  - generic-glassmorphism-or-neon-glow
+  - icon-in-circle-feature-grid
+  - meaningless-floating-dashboard-fragments
+  - identical-fade-up-everywhere
+  - decorative-parallax-without-spatial-meaning
+  - decorative-3d-without-narrative-purpose
+  - visually-untouched-library-defaults
