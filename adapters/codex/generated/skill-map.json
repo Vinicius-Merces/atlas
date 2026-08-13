@@ -337,6 +337,33 @@
       "version": "0.1.1"
     },
     {
+      "canonical_name": "frontend-craft-review",
+      "canonical_path": ".claude/skills/frontend-craft-review/SKILL.md",
+      "adapter_path": ".agents/skills/frontend-craft-review/SKILL.md",
+      "parity_type": "runtime-native",
+      "status": "native",
+      "notes": "Codex-native entry point.",
+      "version": "0.1.1"
+    },
+    {
+      "canonical_name": "frontend-stack-selection",
+      "canonical_path": ".claude/skills/frontend-stack-selection/SKILL.md",
+      "adapter_path": ".agents/skills/frontend-stack-selection/SKILL.md",
+      "parity_type": "runtime-native",
+      "status": "native",
+      "notes": "Codex-native entry point.",
+      "version": "0.1.1"
+    },
+    {
+      "canonical_name": "immersive-3d-experience",
+      "canonical_path": ".claude/skills/immersive-3d-experience/SKILL.md",
+      "adapter_path": ".agents/skills/immersive-3d-experience/SKILL.md",
+      "parity_type": "runtime-native",
+      "status": "native",
+      "notes": "Codex-native entry point.",
+      "version": "0.1.1"
+    },
+    {
       "canonical_name": "incident-triage",
       "canonical_path": ".claude/skills/incident-triage/SKILL.md",
       "adapter_path": ".agents/skills/incident-triage/SKILL.md",
@@ -367,6 +394,15 @@
       "canonical_name": "integration-contract-mapping",
       "canonical_path": ".claude/skills/integration-contract-mapping/SKILL.md",
       "adapter_path": ".agents/skills/integration-contract-mapping/SKILL.md",
+      "parity_type": "runtime-native",
+      "status": "native",
+      "notes": "Codex-native entry point.",
+      "version": "0.1.1"
+    },
+    {
+      "canonical_name": "interface-visual-direction",
+      "canonical_path": ".claude/skills/interface-visual-direction/SKILL.md",
+      "adapter_path": ".agents/skills/interface-visual-direction/SKILL.md",
       "parity_type": "runtime-native",
       "status": "native",
       "notes": "Codex-native entry point.",
@@ -439,6 +475,15 @@
       "canonical_name": "mobile-architecture-assessment",
       "canonical_path": ".claude/skills/mobile-architecture-assessment/SKILL.md",
       "adapter_path": ".agents/skills/mobile-architecture-assessment/SKILL.md",
+      "parity_type": "runtime-native",
+      "status": "native",
+      "notes": "Codex-native entry point.",
+      "version": "0.1.1"
+    },
+    {
+      "canonical_name": "motion-choreography",
+      "canonical_path": ".claude/skills/motion-choreography/SKILL.md",
+      "adapter_path": ".agents/skills/motion-choreography/SKILL.md",
       "parity_type": "runtime-native",
       "status": "native",
       "notes": "Codex-native entry point.",
@@ -601,6 +646,15 @@
       "canonical_name": "resource-claim-design",
       "canonical_path": ".claude/skills/resource-claim-design/SKILL.md",
       "adapter_path": ".agents/skills/resource-claim-design/SKILL.md",
+      "parity_type": "runtime-native",
+      "status": "native",
+      "notes": "Codex-native entry point.",
+      "version": "0.1.1"
+    },
+    {
+      "canonical_name": "responsive-layout-audit",
+      "canonical_path": ".claude/skills/responsive-layout-audit/SKILL.md",
+      "adapter_path": ".agents/skills/responsive-layout-audit/SKILL.md",
       "parity_type": "runtime-native",
       "status": "native",
       "notes": "Codex-native entry point.",
@@ -781,6 +835,24 @@
       "canonical_name": "version-transition-validation",
       "canonical_path": ".claude/skills/version-transition-validation/SKILL.md",
       "adapter_path": ".agents/skills/version-transition-validation/SKILL.md",
+      "parity_type": "runtime-native",
+      "status": "native",
+      "notes": "Codex-native entry point.",
+      "version": "0.1.1"
+    },
+    {
+      "canonical_name": "visual-regression-review",
+      "canonical_path": ".claude/skills/visual-regression-review/SKILL.md",
+      "adapter_path": ".agents/skills/visual-regression-review/SKILL.md",
+      "parity_type": "runtime-native",
+      "status": "native",
+      "notes": "Codex-native entry point.",
+      "version": "0.1.1"
+    },
+    {
+      "canonical_name": "web-performance-field-readiness",
+      "canonical_path": ".claude/skills/web-performance-field-readiness/SKILL.md",
+      "adapter_path": ".agents/skills/web-performance-field-readiness/SKILL.md",
       "parity_type": "runtime-native",
       "status": "native",
       "notes": "Codex-native entry point.",
