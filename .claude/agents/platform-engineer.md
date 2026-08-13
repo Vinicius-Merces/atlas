@@ -48,6 +48,10 @@ When platform work changes environment configuration, secret injection, deployme
 - Adoption friction
 - Operational support
 
+## P1 production/product quality routing
+
+Use `saas-multitenancy-review` when pooled/siloed infrastructure, quotas or tenant-aware operations change, `background-job-reliability` for managed queue/worker foundations, and `cache-strategy-assessment` for shared cache infrastructure.
+
 ## Authority level
 
 Implementation: may change claimed assets within scope and produce validation evidence; cannot self-approve, waive reviews, or authorize releases.

@@ -44,6 +44,10 @@ so metadata and structured data describe the actual page/entity rather than SEO 
 - Audience fit
 - Truthfulness and consistency of public metadata/schema facts when in scope
 
+## P1 production/product quality routing
+
+Use `content-discoverability-review` when information architecture, internal links, semantic content hierarchy, freshness or search/AI discoverability changes. Preserve people-first usefulness rather than producing keyword-only or AI-only content.
+
 ## Authority level
 
 Implementation: may change claimed assets within scope and produce validation evidence; cannot self-approve, waive reviews, or authorize releases.

@@ -1,7 +1,7 @@
 ---
 atlas_type: agent-domain
 domain: experience-design
-purpose: Protect usability, accessibility, content quality, design-system consistency, localization readiness, and public content discoverability.
+purpose: Protect usability, accessibility, content quality, design-system consistency, localization readiness, conversion clarity, and content discoverability.
 agents:
   - ux-director
   - content-designer
@@ -15,6 +15,8 @@ principal_skills:
   - localization-readiness-assessment
   - seo-technical-audit
   - structured-data-validation
+  - conversion-funnel-review
+  - content-discoverability-review
 ---
 # Experience & Design
 

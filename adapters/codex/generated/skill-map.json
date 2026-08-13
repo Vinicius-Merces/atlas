@@ -31,9 +31,27 @@
       "version": "0.1.1"
     },
     {
+      "canonical_name": "agent-overlap-analysis",
+      "canonical_path": ".claude/skills/agent-overlap-analysis/SKILL.md",
+      "adapter_path": ".agents/skills/agent-overlap-analysis/SKILL.md",
+      "parity_type": "runtime-native",
+      "status": "native",
+      "notes": "Codex-native entry point.",
+      "version": "0.1.1"
+    },
+    {
       "canonical_name": "ai-system-design",
       "canonical_path": ".claude/skills/ai-system-design/SKILL.md",
       "adapter_path": ".agents/skills/ai-system-design/SKILL.md",
+      "parity_type": "runtime-native",
+      "status": "native",
+      "notes": "Codex-native entry point.",
+      "version": "0.1.1"
+    },
+    {
+      "canonical_name": "analytics-implementation-audit",
+      "canonical_path": ".claude/skills/analytics-implementation-audit/SKILL.md",
+      "adapter_path": ".agents/skills/analytics-implementation-audit/SKILL.md",
       "parity_type": "runtime-native",
       "status": "native",
       "notes": "Codex-native entry point.",
@@ -103,6 +121,15 @@
       "version": "0.1.1"
     },
     {
+      "canonical_name": "background-job-reliability",
+      "canonical_path": ".claude/skills/background-job-reliability/SKILL.md",
+      "adapter_path": ".agents/skills/background-job-reliability/SKILL.md",
+      "parity_type": "runtime-native",
+      "status": "native",
+      "notes": "Codex-native entry point.",
+      "version": "0.1.1"
+    },
+    {
       "canonical_name": "blueprint-selection",
       "canonical_path": ".claude/skills/blueprint-selection/SKILL.md",
       "adapter_path": ".agents/skills/blueprint-selection/SKILL.md",
@@ -115,6 +142,15 @@
       "canonical_name": "browser-flow-validation",
       "canonical_path": ".claude/skills/browser-flow-validation/SKILL.md",
       "adapter_path": ".agents/skills/browser-flow-validation/SKILL.md",
+      "parity_type": "runtime-native",
+      "status": "native",
+      "notes": "Codex-native entry point.",
+      "version": "0.1.1"
+    },
+    {
+      "canonical_name": "cache-strategy-assessment",
+      "canonical_path": ".claude/skills/cache-strategy-assessment/SKILL.md",
+      "adapter_path": ".agents/skills/cache-strategy-assessment/SKILL.md",
       "parity_type": "runtime-native",
       "status": "native",
       "notes": "Codex-native entry point.",
@@ -193,6 +229,15 @@
       "version": "0.1.1"
     },
     {
+      "canonical_name": "content-discoverability-review",
+      "canonical_path": ".claude/skills/content-discoverability-review/SKILL.md",
+      "adapter_path": ".agents/skills/content-discoverability-review/SKILL.md",
+      "parity_type": "runtime-native",
+      "status": "native",
+      "notes": "Codex-native entry point.",
+      "version": "0.1.1"
+    },
+    {
       "canonical_name": "content-quality-review",
       "canonical_path": ".claude/skills/content-quality-review/SKILL.md",
       "adapter_path": ".agents/skills/content-quality-review/SKILL.md",
@@ -238,6 +283,15 @@
       "version": "0.1.1"
     },
     {
+      "canonical_name": "conversion-funnel-review",
+      "canonical_path": ".claude/skills/conversion-funnel-review/SKILL.md",
+      "adapter_path": ".agents/skills/conversion-funnel-review/SKILL.md",
+      "parity_type": "runtime-native",
+      "status": "native",
+      "notes": "Codex-native entry point.",
+      "version": "0.1.1"
+    },
+    {
       "canonical_name": "core-contract-stabilization",
       "canonical_path": ".claude/skills/core-contract-stabilization/SKILL.md",
       "adapter_path": ".agents/skills/core-contract-stabilization/SKILL.md",
@@ -250,6 +304,15 @@
       "canonical_name": "database-migration-analysis",
       "canonical_path": ".claude/skills/database-migration-analysis/SKILL.md",
       "adapter_path": ".agents/skills/database-migration-analysis/SKILL.md",
+      "parity_type": "runtime-native",
+      "status": "native",
+      "notes": "Codex-native entry point.",
+      "version": "0.1.1"
+    },
+    {
+      "canonical_name": "database-schema-review",
+      "canonical_path": ".claude/skills/database-schema-review/SKILL.md",
+      "adapter_path": ".agents/skills/database-schema-review/SKILL.md",
       "parity_type": "runtime-native",
       "status": "native",
       "notes": "Codex-native entry point.",
@@ -778,6 +841,15 @@
       "version": "0.1.1"
     },
     {
+      "canonical_name": "saas-multitenancy-review",
+      "canonical_path": ".claude/skills/saas-multitenancy-review/SKILL.md",
+      "adapter_path": ".agents/skills/saas-multitenancy-review/SKILL.md",
+      "parity_type": "runtime-native",
+      "status": "native",
+      "notes": "Codex-native entry point.",
+      "version": "0.1.1"
+    },
+    {
       "canonical_name": "secret-environment-audit",
       "canonical_path": ".claude/skills/secret-environment-audit/SKILL.md",
       "adapter_path": ".agents/skills/secret-environment-audit/SKILL.md",
@@ -808,6 +880,24 @@
       "canonical_name": "session-closeout",
       "canonical_path": ".claude/skills/session-closeout/SKILL.md",
       "adapter_path": ".agents/skills/session-closeout/SKILL.md",
+      "parity_type": "runtime-native",
+      "status": "native",
+      "notes": "Codex-native entry point.",
+      "version": "0.1.1"
+    },
+    {
+      "canonical_name": "skill-quality-evaluation",
+      "canonical_path": ".claude/skills/skill-quality-evaluation/SKILL.md",
+      "adapter_path": ".agents/skills/skill-quality-evaluation/SKILL.md",
+      "parity_type": "runtime-native",
+      "status": "native",
+      "notes": "Codex-native entry point.",
+      "version": "0.1.1"
+    },
+    {
+      "canonical_name": "skill-trigger-evaluation",
+      "canonical_path": ".claude/skills/skill-trigger-evaluation/SKILL.md",
+      "adapter_path": ".agents/skills/skill-trigger-evaluation/SKILL.md",
       "parity_type": "runtime-native",
       "status": "native",
       "notes": "Codex-native entry point.",

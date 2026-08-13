@@ -2,7 +2,7 @@
 
 > Generated from `.claude/registry.json`. Do not edit manually.
 
-Total: **71**
+Total: **73**
 
 - `adapter-drift-review` → `.claude/reviews/adapter-drift-review.md`
 - `adoption-review` → `.claude/reviews/adoption-review.md`
@@ -12,6 +12,7 @@ Total: **71**
 - `automation-review` → `.claude/reviews/automation-review.md`
 - `beta-readiness-review` → `.claude/reviews/beta-readiness-review.md`
 - `blueprint-review` → `.claude/reviews/blueprint-review.md`
+- `capability-quality-review` → `.claude/reviews/capability-quality-review.md`
 - `checkpoint-integrity-review` → `.claude/reviews/checkpoint-integrity-review.md`
 - `codex-runtime-review` → `.claude/reviews/codex-runtime-review.md`
 - `compatibility-review` → `.claude/reviews/compatibility-review.md`
@@ -49,6 +50,7 @@ Total: **71**
 - `policy-review` → `.claude/reviews/policy-review.md`
 - `privacy-review` → `.claude/reviews/privacy-review.md`
 - `product-review` → `.claude/reviews/product-review.md`
+- `production-product-quality-review` → `.claude/reviews/production-product-quality-review.md`
 - `project-health-review` → `.claude/reviews/project-health-review.md`
 - `project-memory-review` → `.claude/reviews/project-memory-review.md`
 - `provenance-review` → `.claude/reviews/provenance-review.md`

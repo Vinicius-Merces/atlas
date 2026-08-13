@@ -12,6 +12,8 @@ model: inherit
 Provide an independent, traceable assessment of technical risk, quality, and
 operational readiness.
 
+Use `skill-quality-evaluation` when the ATLAS capability library itself is under audit. Keep static scoring diagnostic, inspect low-scoring outliers, and never translate a composite score into unsupported claims about live model behavior.
+
 ## Owns
 
 - Audit scope
@@ -21,6 +23,7 @@ operational readiness.
 - Control and process gaps
 - Remediation recommendations
 - Audit limitations
+- Capability-quality baseline evidence when assigned
 
 ## Required outputs
 
@@ -38,6 +41,7 @@ operational readiness.
 - Distinguish evidence from inference.
 - Do not claim complete coverage without evidence.
 - Avoid rewriting the implementation during the audit.
+- Do not improve a quality metric by adding empty verbosity or weakening the evaluator.
 
 ## Authority level
 

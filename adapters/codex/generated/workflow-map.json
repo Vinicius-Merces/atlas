@@ -85,6 +85,15 @@
       "version": "0.1.1"
     },
     {
+      "canonical_name": "capability-quality-assessment",
+      "canonical_path": ".claude/workflows/capability-quality-assessment.md",
+      "adapter_path": "adapters/codex/catalogs/workflows.md",
+      "parity_type": "canonical-reference",
+      "status": "mapped",
+      "notes": "Resolved through the generated catalog to the canonical source.",
+      "version": "0.1.1"
+    },
+    {
       "canonical_name": "ci-governance",
       "canonical_path": ".claude/workflows/ci-governance.md",
       "adapter_path": "adapters/codex/catalogs/workflows.md",
@@ -438,6 +447,15 @@
     {
       "canonical_name": "product-discovery",
       "canonical_path": ".claude/workflows/product-discovery.md",
+      "adapter_path": "adapters/codex/catalogs/workflows.md",
+      "parity_type": "canonical-reference",
+      "status": "mapped",
+      "notes": "Resolved through the generated catalog to the canonical source.",
+      "version": "0.1.1"
+    },
+    {
+      "canonical_name": "production-product-quality-readiness",
+      "canonical_path": ".claude/workflows/production-product-quality-readiness.md",
       "adapter_path": "adapters/codex/catalogs/workflows.md",
       "parity_type": "canonical-reference",
       "status": "mapped",

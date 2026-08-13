@@ -1,7 +1,7 @@
 ---
 atlas_type: agent-domain
 domain: orchestration-delivery
-purpose: Route complex work, decompose it safely, coordinate parallel execution, and reconcile results.
+purpose: Route complex work, decompose it safely, coordinate parallel execution, preserve role boundaries, and reconcile results.
 agents:
   - orchestrator
   - task-routing-engineer
@@ -13,6 +13,7 @@ agents:
   - merge-readiness-reviewer
 principal_skills:
   - task-routing-policy
+  - agent-overlap-analysis
   - workstream-decomposition
   - resource-claim-design
   - result-reconciliation

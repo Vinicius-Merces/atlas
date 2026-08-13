@@ -76,6 +76,15 @@
       "version": "0.1.1"
     },
     {
+      "canonical_name": "capability-quality-review",
+      "canonical_path": ".claude/reviews/capability-quality-review.md",
+      "adapter_path": "adapters/codex/catalogs/reviews.md",
+      "parity_type": "canonical-reference",
+      "status": "mapped",
+      "notes": "Resolved through the generated catalog to the canonical source.",
+      "version": "0.1.1"
+    },
+    {
       "canonical_name": "checkpoint-integrity-review",
       "canonical_path": ".claude/reviews/checkpoint-integrity-review.md",
       "adapter_path": "adapters/codex/catalogs/reviews.md",
@@ -402,6 +411,15 @@
     {
       "canonical_name": "product-review",
       "canonical_path": ".claude/reviews/product-review.md",
+      "adapter_path": "adapters/codex/catalogs/reviews.md",
+      "parity_type": "canonical-reference",
+      "status": "mapped",
+      "notes": "Resolved through the generated catalog to the canonical source.",
+      "version": "0.1.1"
+    },
+    {
+      "canonical_name": "production-product-quality-review",
+      "canonical_path": ".claude/reviews/production-product-quality-review.md",
       "adapter_path": "adapters/codex/catalogs/reviews.md",
       "parity_type": "canonical-reference",
       "status": "mapped",
