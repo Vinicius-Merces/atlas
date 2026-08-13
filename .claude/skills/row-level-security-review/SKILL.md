@@ -21,6 +21,14 @@ Use when PostgreSQL RLS, Supabase Data API access, exposed schemas, tenant isola
 - Client and server database access paths
 - Migration SQL and tests
 
+## Dependencies
+
+- PostgreSQL-compatible schema/policy evidence or provider-equivalent database metadata
+- Explicit ownership and tenant authorization rules
+- Trusted identity/claim semantics used by database policies
+- `authorization-boundary-review` for application/API enforcement outside the database boundary
+- `secret-environment-audit` when service-role or privileged database credentials are in scope
+
 ## Procedure
 
 1. Inventory tables/views reachable by untrusted or user-context clients.
