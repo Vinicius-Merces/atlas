@@ -1,6 +1,6 @@
 ---
 name: rate-limit-abuse-control
-description: "Design abuse and resource-consumption controls for public or expensive operations, covering actor and resource keys, rate and concurrency limits, payload bounds, OTP/recovery abuse, uploads, provider spend, failure responses, bypass identities, and observability."
+description: "Design abuse and resource controls for public or expensive operations using actor-aware rate/concurrency limits, payload bounds, OTP/recovery protections, provider-spend controls, bypass policy, and observability."
 ---
 
 # Rate Limit & Abuse Control

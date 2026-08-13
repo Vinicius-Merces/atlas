@@ -1,6 +1,6 @@
 ---
 name: admin-operations-surface
-description: "Design internal admin and support surfaces for privileged operations, covering role boundaries, tenant context, search, impersonation, dangerous actions, approval/confirmation, audit evidence, support workflows, break-glass access, and prevention of accidental cross-customer impact."
+description: "Design privileged admin/support surfaces with least-privilege roles, explicit tenant context, safe search, impersonation controls, dangerous-action confirmation, audit evidence, and break-glass access."
 ---
 
 # Admin Operations Surface

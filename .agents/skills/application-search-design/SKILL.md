@@ -1,6 +1,6 @@
 ---
 name: application-search-design
-description: "Design application search and filtering when users need discovery across product data or content, covering source of truth, query semantics, ranking, filters, pagination, indexing, authorization, tenant scope, freshness, empty states, and database-versus-search-engine tradeoffs."
+description: "Design product/content search with source-of-truth fields, query semantics, ranking, filters, pagination, indexing, authorization, tenant scope, freshness, failure states, and database-versus-search-engine tradeoffs."
 ---
 
 # ATLAS skill adapter: application-search-design

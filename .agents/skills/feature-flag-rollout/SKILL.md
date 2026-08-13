@@ -1,6 +1,6 @@
 ---
 name: feature-flag-rollout
-description: "Design feature flags and staged rollouts when behavior must vary by environment, user, tenant, cohort, percentage, or operational kill switch, covering authoritative evaluation context, defaults, lifecycle, observability, experiments, failure behavior, and flag removal."
+description: "Design feature flags and staged rollouts by environment, user, tenant, cohort, percentage, or kill switch with trusted evaluation context, safe defaults, metrics, rollback, lifecycle ownership, and flag removal."
 ---
 
 # ATLAS skill adapter: feature-flag-rollout

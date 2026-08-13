@@ -1,6 +1,6 @@
 ---
 name: transactional-email-delivery
-description: "Design transactional email delivery for verification, recovery, invitations, receipts, alerts, and workflow messages, covering authoritative triggers, template data, provider handoff, idempotency, retries, suppression, security, observability, and delivery-state reconciliation."
+description: "Design transactional email for verification, recovery, invitations, receipts, and alerts with authoritative triggers, safe templates, idempotent retries, suppression, security, observability, and reconciliation."
 ---
 
 # ATLAS skill adapter: transactional-email-delivery

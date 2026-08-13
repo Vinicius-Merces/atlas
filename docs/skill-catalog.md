@@ -16,7 +16,7 @@ Total: 128 skills.
 
 ## Admin Operations Surface
 
-`admin-operations-surface`. Design internal admin and support surfaces for privileged operations, covering role boundaries, tenant context, search, impersonation, dangerous actions, approval/confirmation, audit evidence, support workflows, break-glass access, and prevention of accidental cross-customer impact.
+`admin-operations-surface`. Design privileged admin/support surfaces with least-privilege roles, explicit tenant context, safe search, impersonation controls, dangerous-action confirmation, audit evidence, and break-glass access.
 
 ## ADR Authoring
 
@@ -40,7 +40,7 @@ Total: 128 skills.
 
 ## Application Search Design
 
-`application-search-design`. Design application search and filtering when users need discovery across product data or content, covering source of truth, query semantics, ranking, filters, pagination, indexing, authorization, tenant scope, freshness, empty states, and database-versus-search-engine tradeoffs.
+`application-search-design`. Design product/content search with source-of-truth fields, query semantics, ranking, filters, pagination, indexing, authorization, tenant scope, freshness, failure states, and database-versus-search-engine tradeoffs.
 
 ## Architecture Assessment
 
@@ -60,7 +60,7 @@ Total: 128 skills.
 
 ## Audit Log Design
 
-`audit-log-design`. Design security and business audit logs for consequential actions, covering actor, tenant, resource, action, before/after context, request correlation, append-only expectations, sensitive-data minimization, retention, access, export, and investigation usability.
+`audit-log-design`. Design audit logs for consequential actions with actor, tenant, resource, action/result, correlation, sensitive-data minimization, integrity expectations, retention, access control, export, and investigation usability.
 
 ## Authentication Flow Review
 
@@ -96,7 +96,7 @@ Total: 128 skills.
 
 ## Cms Content Modeling
 
-`cms-content-modeling`. Design content models and editorial workflows for websites and content-driven products, covering content types, structured fields, slugs, drafts, preview, localization, media, authorship, publishing lifecycle, references, SEO data, migrations, and frontend rendering contracts.
+`cms-content-modeling`. Design CMS content models and editorial workflows with structured types, slugs, drafts, preview, localization, media, publishing lifecycle, references, SEO fields, migrations, and frontend rendering contracts.
 
 ## Codex Runtime Generation
 
@@ -156,7 +156,7 @@ Total: 128 skills.
 
 ## Data Import Export Workflow
 
-`data-import-export-workflow`. Design bulk data import and export workflows for CSV, spreadsheet, archive, or generated datasets, covering authorization, schema mapping, preview, validation, partial errors, idempotency, background processing, progress, large files, privacy, reconciliation, and downloadable artifact lifecycle.
+`data-import-export-workflow`. Design bulk data import/export with authorization, schema mapping, preview, validation, partial errors, idempotency, background processing, progress, large-file handling, privacy, and secure artifact lifecycle.
 
 ## Database Migration Analysis
 
@@ -216,15 +216,15 @@ Total: 128 skills.
 
 ## Feature Flag Rollout
 
-`feature-flag-rollout`. Design feature flags and staged rollouts when behavior must vary by environment, user, tenant, cohort, percentage, or operational kill switch, covering authoritative evaluation context, defaults, lifecycle, observability, experiments, failure behavior, and flag removal.
+`feature-flag-rollout`. Design feature flags and staged rollouts by environment, user, tenant, cohort, percentage, or kill switch with trusted evaluation context, safe defaults, metrics, rollback, lifecycle ownership, and flag removal.
 
 ## File Upload Storage Design
 
-`file-upload-storage-design`. Design file upload and object-storage flows when users or systems create media or documents, covering ownership, authorization, signed access, type and size validation, object naming, integrity, processing, lifecycle, deletion, and tenant isolation.
+`file-upload-storage-design`. Design file upload and object-storage flows with ownership, authorization, signed access, type/size validation, safe object keys, integrity, processing, retention, deletion, and tenant isolation.
 
 ## Form Mutation Design
 
-`form-mutation-design`. Design and review user-initiated forms and mutations when data is created, edited, deleted, submitted, or transitioned, covering validation, authorization, concurrency, duplicate submission, optimistic UI, failure recovery, and accessible feedback.
+`form-mutation-design`. Design user-initiated forms and state mutations with server validation, authorization, duplicate-submit safety, concurrency, optimistic UI, failure recovery, revalidation, and accessible feedback.
 
 ## Framework Package Validation
 
@@ -300,7 +300,7 @@ Total: 128 skills.
 
 ## Notification System Design
 
-`notification-system-design`. Design multi-channel product notifications when users need in-app, push, email, or provider messages, covering event authority, preferences, deduplication, urgency, read state, fan-out, delivery channels, quieting, retries, and notification-center UX.
+`notification-system-design`. Design in-app, push, email, or provider notifications with trusted recipient rules, preferences, deduplication, urgency, read state, fan-out, retries, quieting, and accessible notification-center UX.
 
 ## Observability Design
 
@@ -356,7 +356,7 @@ Total: 128 skills.
 
 ## Rate Limit Abuse Control
 
-`rate-limit-abuse-control`. Design abuse and resource-consumption controls for public or expensive operations, covering actor and resource keys, rate and concurrency limits, payload bounds, OTP/recovery abuse, uploads, provider spend, failure responses, bypass identities, and observability.
+`rate-limit-abuse-control`. Design abuse and resource controls for public or expensive operations using actor-aware rate/concurrency limits, payload bounds, OTP/recovery protections, provider-spend controls, bypass policy, and observability.
 
 ## Reference Implementation Review
 
@@ -488,7 +488,7 @@ Total: 128 skills.
 
 ## Transactional Email Delivery
 
-`transactional-email-delivery`. Design transactional email delivery for verification, recovery, invitations, receipts, alerts, and workflow messages, covering authoritative triggers, template data, provider handoff, idempotency, retries, suppression, security, observability, and delivery-state reconciliation.
+`transactional-email-delivery`. Design transactional email for verification, recovery, invitations, receipts, and alerts with authoritative triggers, safe templates, idempotent retries, suppression, security, observability, and reconciliation.
 
 ## Universal Runtime Contract Design
 

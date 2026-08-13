@@ -1,6 +1,6 @@
 ---
 name: cms-content-modeling
-description: "Design content models and editorial workflows for websites and content-driven products, covering content types, structured fields, slugs, drafts, preview, localization, media, authorship, publishing lifecycle, references, SEO data, migrations, and frontend rendering contracts."
+description: "Design CMS content models and editorial workflows with structured types, slugs, drafts, preview, localization, media, publishing lifecycle, references, SEO fields, migrations, and frontend rendering contracts."
 ---
 
 # ATLAS skill adapter: cms-content-modeling

@@ -1,6 +1,6 @@
 ---
 name: notification-system-design
-description: "Design multi-channel product notifications when users need in-app, push, email, or provider messages, covering event authority, preferences, deduplication, urgency, read state, fan-out, delivery channels, quieting, retries, and notification-center UX."
+description: "Design in-app, push, email, or provider notifications with trusted recipient rules, preferences, deduplication, urgency, read state, fan-out, retries, quieting, and accessible notification-center UX."
 ---
 
 # ATLAS skill adapter: notification-system-design

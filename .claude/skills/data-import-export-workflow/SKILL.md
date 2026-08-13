@@ -1,6 +1,6 @@
 ---
 name: data-import-export-workflow
-description: "Design bulk data import and export workflows for CSV, spreadsheet, archive, or generated datasets, covering authorization, schema mapping, preview, validation, partial errors, idempotency, background processing, progress, large files, privacy, reconciliation, and downloadable artifact lifecycle."
+description: "Design bulk data import/export with authorization, schema mapping, preview, validation, partial errors, idempotency, background processing, progress, large-file handling, privacy, and secure artifact lifecycle."
 ---
 
 # Data Import & Export Workflow

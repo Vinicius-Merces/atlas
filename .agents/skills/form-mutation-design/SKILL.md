@@ -1,6 +1,6 @@
 ---
 name: form-mutation-design
-description: "Design and review user-initiated forms and mutations when data is created, edited, deleted, submitted, or transitioned, covering validation, authorization, concurrency, duplicate submission, optimistic UI, failure recovery, and accessible feedback."
+description: "Design user-initiated forms and state mutations with server validation, authorization, duplicate-submit safety, concurrency, optimistic UI, failure recovery, revalidation, and accessible feedback."
 ---
 
 # ATLAS skill adapter: form-mutation-design
