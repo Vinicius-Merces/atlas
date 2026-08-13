@@ -72,3 +72,24 @@ cases:
   - id: evidence-release
     query: Verify a release artifact is complete, traceable and consistent with manifests, hashes and source state.
     expected: release-integrity-verification
+  - id: p1-schema-integrity
+    query: Review this PostgreSQL schema change for not-null unique foreign-key and check constraints, indexes, query patterns, migration compatibility and orphan risk.
+    expected: database-schema-review
+  - id: p1-multitenant-resources
+    query: Review tenant isolation across pooled database storage cache queues search exports quotas and noisy-neighbor behavior, not only RLS.
+    expected: saas-multitenancy-review
+  - id: p1-background-duplicates
+    query: Review this worker queue for duplicate execution, idempotency, retries, visibility timeout, scheduling, dead letters, cancellation and replay.
+    expected: background-job-reliability
+  - id: p1-cache-consistency
+    query: Assess our CDN and server cache keys, user and tenant scope, TTL freshness, invalidation, stale responses, authorization safety and stampede control.
+    expected: cache-strategy-assessment
+  - id: p1-conversion-funnel
+    query: Review the landing page to lead-form funnel for evidence-backed friction, validation errors, mobile handoff, downstream lead quality and ethical conversion experiments.
+    expected: conversion-funnel-review
+  - id: p1-analytics-implementation
+    query: Audit GA4 analytics events for taxonomy parity, duplicate client and server purchase events, identity, consent, ecommerce values and destination verification.
+    expected: analytics-implementation-audit
+  - id: p1-content-discoverability
+    query: Review information architecture, internal links, semantic headings, rendered crawlable content, topic consistency and AI/search discoverability without keyword-only pages.
+    expected: content-discoverability-review
