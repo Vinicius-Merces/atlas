@@ -42,6 +42,20 @@ jobs:
           fi
           exit "$status"
 
+      - name: Validate discovery descriptions
+        shell: bash
+        run: |
+          set +e
+          output="$(python scripts/validate_discovery_metadata.py 2>&1)"
+          status=$?
+          printf '%s\n' "$output"
+          if [ "$status" -ne 0 ]; then
+            while IFS= read -r line; do
+              [ -n "$line" ] && printf '::error title=Discovery metadata::%s\n' "$line"
+            done <<< "$output"
+          fi
+          exit "$status"
+
       - name: Run contract tests
         shell: bash
         run: |
