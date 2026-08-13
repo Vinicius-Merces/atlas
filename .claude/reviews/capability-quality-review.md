@@ -1,10 +1,14 @@
 # Capability Quality Review Gate
 
+## Review type
+
+Independent capability-quality and catalog-shape review.
+
 ## Scope
 
 Independently review an ATLAS capability-quality measurement and the catalog decisions derived from it.
 
-## Required evidence
+## Evidence inspected
 
 - Complete skill-quality output
 - Complete skill-routing output
@@ -44,6 +48,18 @@ Independently review an ATLAS capability-quality measurement and the catalog dec
 ## Findings
 
 Record severity, evidence, affected capability, interpretation risk, required action, and verification method.
+
+## Severity
+
+Use the canonical review severity levels:
+
+- Critical
+- High
+- Medium
+- Low
+- Note
+
+A measurement that omits registered capabilities, is non-deterministic, or is presented as live-runtime accuracy without evidence is normally High or Critical depending on the decision it is being used to justify.
 
 ## Required actions
 
