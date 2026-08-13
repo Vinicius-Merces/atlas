@@ -1,0 +1,433 @@
+{
+  "benchmark_version": 1,
+  "spec_id": "premium-marketing-site",
+  "spec_version": 1,
+  "spec_sha256": "e57da062e6223f6ecbea84a64813f6d8e73f9b0954cda065da5edbc680762947",
+  "rubric_sha256": "6463ae7fde36affecc20eff21f0ec73e04e0fb44c920a3cbc9115502a1b56b31",
+  "execution_mode": "live",
+  "run": {
+    "runtime": "chatgpt",
+    "model": "GPT-5.6 Sol",
+    "repository": "Vinicius-Merces/atlas",
+    "commit": "6ad7a1ac5d6146f28ff04a4094f7b19a0557f377",
+    "evidence_root": "reference-builds/asteria-residences/evidence",
+    "environment_notes": "Isolated P4 calibration on localhost Chromium. No public production deployment; not a Codex or Claude Code target result.",
+    "tool_permissions": [
+      "GitHub repository read/write",
+      "GitHub Actions",
+      "Chromium via Playwright"
+    ]
+  },
+  "score": 88.07,
+  "base_outcome": "production-ready",
+  "outcome": "blocked",
+  "claimable": false,
+  "blocking_failures": [
+    "marketing-accessibility",
+    "marketing-production-domain",
+    "marketing-seo-indexing"
+  ],
+  "review": {
+    "reviewer": "same-session-calibration-not-independent",
+    "outcome": "Changes required",
+    "evidence": [
+      "reference-builds/asteria-residences/evidence/browser-summary.json"
+    ],
+    "notes": "Diagnostic only. The implementer does not self-issue independent approval."
+  },
+  "axis_scores": {
+    "brief_fidelity": {
+      "weight": 10.0,
+      "completion_factor": 1.0,
+      "score": 10.0
+    },
+    "architecture_quality": {
+      "weight": 8.0,
+      "completion_factor": 0.8333,
+      "score": 6.67
+    },
+    "capability_routing": {
+      "weight": 8.0,
+      "completion_factor": 1.0,
+      "score": 8.0
+    },
+    "implementation_completeness": {
+      "weight": 14.0,
+      "completion_factor": 1.0,
+      "score": 14.0
+    },
+    "frontend_craft": {
+      "weight": 20.0,
+      "completion_factor": 0.9,
+      "score": 18.0
+    },
+    "security_isolation": {
+      "weight": 5.0,
+      "completion_factor": 1.0,
+      "score": 5.0
+    },
+    "failure_resilience": {
+      "weight": 8.0,
+      "completion_factor": 1.0,
+      "score": 8.0
+    },
+    "browser_reality": {
+      "weight": 10.0,
+      "completion_factor": 1.0,
+      "score": 10.0
+    },
+    "production_readiness": {
+      "weight": 12.0,
+      "completion_factor": 0.7,
+      "score": 8.4
+    },
+    "independent_review": {
+      "weight": 5.0,
+      "completion_factor": 0.0,
+      "score": 0.0
+    }
+  },
+  "checks": [
+    {
+      "id": "marketing-audience-outcome",
+      "axis": "brief_fidelity",
+      "status": "pass",
+      "factor": 1.0,
+      "evidence": [
+        "reference-builds/asteria-residences/evidence/screenshots/home-desktop.png"
+      ],
+      "notes": ""
+    },
+    {
+      "id": "marketing-required-surfaces",
+      "axis": "brief_fidelity",
+      "status": "pass",
+      "factor": 1.0,
+      "evidence": [
+        "reference-builds/asteria-residences/evidence/screenshots/home-desktop.png",
+        "reference-builds/asteria-residences/evidence/screenshots/solis-detail.png"
+      ],
+      "notes": ""
+    },
+    {
+      "id": "marketing-prohibited-shortcuts",
+      "axis": "brief_fidelity",
+      "status": "pass",
+      "factor": 1.0,
+      "evidence": [
+        "reference-builds/asteria-residences/evidence/source-review.txt"
+      ],
+      "notes": ""
+    },
+    {
+      "id": "marketing-content-authority",
+      "axis": "architecture_quality",
+      "status": "partial",
+      "factor": 0.5,
+      "evidence": [
+        "reference-builds/asteria-residences/evidence/source-review.txt"
+      ],
+      "notes": "Content is deliberately code-owned for the fixed fixture; no editor CMS is required for this calibration."
+    },
+    {
+      "id": "marketing-conversion-authority",
+      "axis": "architecture_quality",
+      "status": "pass",
+      "factor": 1.0,
+      "evidence": [
+        "reference-builds/asteria-residences/evidence/browser-summary.json",
+        "reference-builds/asteria-residences/evidence/data/leads.jsonl"
+      ],
+      "notes": ""
+    },
+    {
+      "id": "marketing-stack-fit",
+      "axis": "architecture_quality",
+      "status": "pass",
+      "factor": 1.0,
+      "evidence": [
+        "reference-builds/asteria-residences/evidence/source-review.txt"
+      ],
+      "notes": ""
+    },
+    {
+      "id": "marketing-routing-core",
+      "axis": "capability_routing",
+      "status": "pass",
+      "factor": 1.0,
+      "evidence": [
+        "reference-builds/asteria-residences/evidence/source-review.txt"
+      ],
+      "notes": ""
+    },
+    {
+      "id": "marketing-routing-public-web",
+      "axis": "capability_routing",
+      "status": "pass",
+      "factor": 1.0,
+      "evidence": [
+        "reference-builds/asteria-residences/evidence/browser-summary.json",
+        "reference-builds/asteria-residences/evidence/source-review.txt"
+      ],
+      "notes": ""
+    },
+    {
+      "id": "marketing-routing-no-theater",
+      "axis": "capability_routing",
+      "status": "pass",
+      "factor": 1.0,
+      "evidence": [
+        "reference-builds/asteria-residences/evidence/source-review.txt"
+      ],
+      "notes": ""
+    },
+    {
+      "id": "marketing-navigation-complete",
+      "axis": "implementation_completeness",
+      "status": "pass",
+      "factor": 1.0,
+      "evidence": [
+        "reference-builds/asteria-residences/evidence/browser-summary.json"
+      ],
+      "notes": ""
+    },
+    {
+      "id": "marketing-lead-authoritative",
+      "axis": "implementation_completeness",
+      "status": "pass",
+      "factor": 1.0,
+      "evidence": [
+        "reference-builds/asteria-residences/evidence/browser-summary.json",
+        "reference-builds/asteria-residences/evidence/data/leads.jsonl"
+      ],
+      "notes": ""
+    },
+    {
+      "id": "marketing-content-complete",
+      "axis": "implementation_completeness",
+      "status": "pass",
+      "factor": 1.0,
+      "evidence": [
+        "reference-builds/asteria-residences/evidence/screenshots/solis-detail.png",
+        "reference-builds/asteria-residences/evidence/browser-summary.json"
+      ],
+      "notes": ""
+    },
+    {
+      "id": "marketing-states-complete",
+      "axis": "implementation_completeness",
+      "status": "pass",
+      "factor": 1.0,
+      "evidence": [
+        "reference-builds/asteria-residences/evidence/browser-summary.json"
+      ],
+      "notes": ""
+    },
+    {
+      "id": "marketing-visual-thesis",
+      "axis": "frontend_craft",
+      "status": "pass",
+      "factor": 1.0,
+      "evidence": [
+        "reference-builds/asteria-residences/evidence/screenshots/home-desktop.png",
+        "reference-builds/asteria-residences/evidence/screenshots/home-wide.png"
+      ],
+      "notes": ""
+    },
+    {
+      "id": "marketing-responsive",
+      "axis": "frontend_craft",
+      "status": "pass",
+      "factor": 1.0,
+      "evidence": [
+        "reference-builds/asteria-residences/evidence/screenshots/home-mobile.png",
+        "reference-builds/asteria-residences/evidence/screenshots/home-tablet.png",
+        "reference-builds/asteria-residences/evidence/screenshots/home-desktop.png",
+        "reference-builds/asteria-residences/evidence/screenshots/home-wide.png",
+        "reference-builds/asteria-residences/evidence/browser-summary.json"
+      ],
+      "notes": ""
+    },
+    {
+      "id": "marketing-accessibility",
+      "axis": "frontend_craft",
+      "status": "partial",
+      "factor": 0.5,
+      "evidence": [
+        "reference-builds/asteria-residences/evidence/browser-summary.json"
+      ],
+      "notes": "Keyboard/focus, labels, semantics, reduced-motion implementation and viewport overflow were checked, but no full contrast/assistive-technology audit was performed."
+    },
+    {
+      "id": "marketing-motion-purpose",
+      "axis": "frontend_craft",
+      "status": "pass",
+      "factor": 1.0,
+      "evidence": [
+        "reference-builds/asteria-residences/evidence/source-review.txt"
+      ],
+      "notes": ""
+    },
+    {
+      "id": "marketing-visual-regression",
+      "axis": "frontend_craft",
+      "status": "pass",
+      "factor": 1.0,
+      "evidence": [
+        "reference-builds/asteria-residences/evidence/screenshots/home-desktop.png",
+        "reference-builds/asteria-residences/evidence/screenshots/home-mobile.png",
+        "reference-builds/asteria-residences/evidence/screenshots/solis-detail.png"
+      ],
+      "notes": ""
+    },
+    {
+      "id": "marketing-form-security",
+      "axis": "security_isolation",
+      "status": "pass",
+      "factor": 1.0,
+      "evidence": [
+        "reference-builds/asteria-residences/evidence/unit-tests.txt",
+        "reference-builds/asteria-residences/evidence/source-review.txt"
+      ],
+      "notes": ""
+    },
+    {
+      "id": "marketing-private-data",
+      "axis": "security_isolation",
+      "status": "pass",
+      "factor": 1.0,
+      "evidence": [
+        "reference-builds/asteria-residences/evidence/source-review.txt"
+      ],
+      "notes": ""
+    },
+    {
+      "id": "marketing-provider-failure",
+      "axis": "failure_resilience",
+      "status": "pass",
+      "factor": 1.0,
+      "evidence": [
+        "reference-builds/asteria-residences/evidence/browser-summary.json"
+      ],
+      "notes": ""
+    },
+    {
+      "id": "marketing-duplicate-submit",
+      "axis": "failure_resilience",
+      "status": "pass",
+      "factor": 1.0,
+      "evidence": [
+        "reference-builds/asteria-residences/evidence/browser-summary.json",
+        "reference-builds/asteria-residences/evidence/data/leads.jsonl"
+      ],
+      "notes": ""
+    },
+    {
+      "id": "marketing-degraded-assets",
+      "axis": "failure_resilience",
+      "status": "pass",
+      "factor": 1.0,
+      "evidence": [
+        "reference-builds/asteria-residences/evidence/browser-summary.json"
+      ],
+      "notes": ""
+    },
+    {
+      "id": "marketing-browser-primary-flow",
+      "axis": "browser_reality",
+      "status": "pass",
+      "factor": 1.0,
+      "evidence": [
+        "reference-builds/asteria-residences/evidence/browser-summary.json",
+        "reference-builds/asteria-residences/evidence/screenshots/lead-success.png"
+      ],
+      "notes": ""
+    },
+    {
+      "id": "marketing-browser-negative-flow",
+      "axis": "browser_reality",
+      "status": "pass",
+      "factor": 1.0,
+      "evidence": [
+        "reference-builds/asteria-residences/evidence/browser-summary.json"
+      ],
+      "notes": ""
+    },
+    {
+      "id": "marketing-browser-console-network",
+      "axis": "browser_reality",
+      "status": "pass",
+      "factor": 1.0,
+      "evidence": [
+        "reference-builds/asteria-residences/evidence/browser-summary.json"
+      ],
+      "notes": ""
+    },
+    {
+      "id": "marketing-production-domain",
+      "axis": "production_readiness",
+      "status": "unverified",
+      "factor": 0.0,
+      "evidence": [],
+      "notes": "Calibration is localhost-only; no public production deployment was created."
+    },
+    {
+      "id": "marketing-seo-indexing",
+      "axis": "production_readiness",
+      "status": "partial",
+      "factor": 0.5,
+      "evidence": [
+        "reference-builds/asteria-residences/evidence/browser-summary.json",
+        "reference-builds/asteria-residences/evidence/source-review.txt"
+      ],
+      "notes": "Metadata, robots, sitemap and canonicals are exercised locally; deployed crawl/index behavior cannot be verified without a production domain."
+    },
+    {
+      "id": "marketing-structured-data",
+      "axis": "production_readiness",
+      "status": "pass",
+      "factor": 1.0,
+      "evidence": [
+        "reference-builds/asteria-residences/evidence/browser-summary.json"
+      ],
+      "notes": ""
+    },
+    {
+      "id": "marketing-performance",
+      "axis": "production_readiness",
+      "status": "pass",
+      "factor": 1.0,
+      "evidence": [
+        "reference-builds/asteria-residences/evidence/browser-summary.json"
+      ],
+      "notes": ""
+    },
+    {
+      "id": "marketing-analytics",
+      "axis": "production_readiness",
+      "status": "pass",
+      "factor": 1.0,
+      "evidence": [
+        "reference-builds/asteria-residences/evidence/browser-summary.json"
+      ],
+      "notes": ""
+    },
+    {
+      "id": "marketing-review-frontend",
+      "axis": "independent_review",
+      "status": "unverified",
+      "factor": 0.0,
+      "evidence": [],
+      "notes": "The implementing session cannot perform an independent Frontend Craft review."
+    },
+    {
+      "id": "marketing-review-production",
+      "axis": "independent_review",
+      "status": "unverified",
+      "factor": 0.0,
+      "evidence": [],
+      "notes": "The implementing session cannot perform the required independent production/benchmark review."
+    }
+  ],
+  "warnings": []
+}

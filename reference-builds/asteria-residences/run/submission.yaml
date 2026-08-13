@@ -1,0 +1,177 @@
+benchmark_version: 1
+spec_id: premium-marketing-site
+execution_mode: live
+run:
+  runtime: chatgpt
+  model: GPT-5.6 Sol
+  repository: Vinicius-Merces/atlas
+  commit: 6ad7a1ac5d6146f28ff04a4094f7b19a0557f377
+  evidence_root: reference-builds/asteria-residences/evidence
+  environment_notes: Isolated P4 calibration on localhost Chromium. No public production
+    deployment; not a Codex or Claude Code target result.
+  tool_permissions:
+  - GitHub repository read/write
+  - GitHub Actions
+  - Chromium via Playwright
+review:
+  reviewer: same-session-calibration-not-independent
+  outcome: Changes required
+  evidence:
+  - reference-builds/asteria-residences/evidence/browser-summary.json
+  notes: Diagnostic only. The implementer does not self-issue independent approval.
+checks:
+- id: marketing-audience-outcome
+  status: pass
+  evidence:
+  - reference-builds/asteria-residences/evidence/screenshots/home-desktop.png
+- id: marketing-required-surfaces
+  status: pass
+  evidence:
+  - reference-builds/asteria-residences/evidence/screenshots/home-desktop.png
+  - reference-builds/asteria-residences/evidence/screenshots/solis-detail.png
+- id: marketing-prohibited-shortcuts
+  status: pass
+  evidence:
+  - reference-builds/asteria-residences/evidence/source-review.txt
+- id: marketing-content-authority
+  status: partial
+  evidence:
+  - reference-builds/asteria-residences/evidence/source-review.txt
+  notes: Content is deliberately code-owned for the fixed fixture; no editor CMS is
+    required for this calibration.
+- id: marketing-conversion-authority
+  status: pass
+  evidence:
+  - reference-builds/asteria-residences/evidence/browser-summary.json
+  - reference-builds/asteria-residences/evidence/data/leads.jsonl
+- id: marketing-stack-fit
+  status: pass
+  evidence:
+  - reference-builds/asteria-residences/evidence/source-review.txt
+- id: marketing-routing-core
+  status: pass
+  evidence:
+  - reference-builds/asteria-residences/evidence/source-review.txt
+- id: marketing-routing-public-web
+  status: pass
+  evidence:
+  - reference-builds/asteria-residences/evidence/browser-summary.json
+  - reference-builds/asteria-residences/evidence/source-review.txt
+- id: marketing-routing-no-theater
+  status: pass
+  evidence:
+  - reference-builds/asteria-residences/evidence/source-review.txt
+- id: marketing-navigation-complete
+  status: pass
+  evidence:
+  - reference-builds/asteria-residences/evidence/browser-summary.json
+- id: marketing-lead-authoritative
+  status: pass
+  evidence:
+  - reference-builds/asteria-residences/evidence/browser-summary.json
+  - reference-builds/asteria-residences/evidence/data/leads.jsonl
+- id: marketing-content-complete
+  status: pass
+  evidence:
+  - reference-builds/asteria-residences/evidence/screenshots/solis-detail.png
+  - reference-builds/asteria-residences/evidence/browser-summary.json
+- id: marketing-states-complete
+  status: pass
+  evidence:
+  - reference-builds/asteria-residences/evidence/browser-summary.json
+- id: marketing-visual-thesis
+  status: pass
+  evidence:
+  - reference-builds/asteria-residences/evidence/screenshots/home-desktop.png
+  - reference-builds/asteria-residences/evidence/screenshots/home-wide.png
+- id: marketing-responsive
+  status: pass
+  evidence:
+  - reference-builds/asteria-residences/evidence/screenshots/home-mobile.png
+  - reference-builds/asteria-residences/evidence/screenshots/home-tablet.png
+  - reference-builds/asteria-residences/evidence/screenshots/home-desktop.png
+  - reference-builds/asteria-residences/evidence/screenshots/home-wide.png
+  - reference-builds/asteria-residences/evidence/browser-summary.json
+- id: marketing-accessibility
+  status: partial
+  evidence:
+  - reference-builds/asteria-residences/evidence/browser-summary.json
+  notes: Keyboard/focus, labels, semantics, reduced-motion implementation and viewport
+    overflow were checked, but no full contrast/assistive-technology audit was performed.
+- id: marketing-motion-purpose
+  status: pass
+  evidence:
+  - reference-builds/asteria-residences/evidence/source-review.txt
+- id: marketing-visual-regression
+  status: pass
+  evidence:
+  - reference-builds/asteria-residences/evidence/screenshots/home-desktop.png
+  - reference-builds/asteria-residences/evidence/screenshots/home-mobile.png
+  - reference-builds/asteria-residences/evidence/screenshots/solis-detail.png
+- id: marketing-form-security
+  status: pass
+  evidence:
+  - reference-builds/asteria-residences/evidence/unit-tests.txt
+  - reference-builds/asteria-residences/evidence/source-review.txt
+- id: marketing-private-data
+  status: pass
+  evidence:
+  - reference-builds/asteria-residences/evidence/source-review.txt
+- id: marketing-provider-failure
+  status: pass
+  evidence:
+  - reference-builds/asteria-residences/evidence/browser-summary.json
+- id: marketing-duplicate-submit
+  status: pass
+  evidence:
+  - reference-builds/asteria-residences/evidence/browser-summary.json
+  - reference-builds/asteria-residences/evidence/data/leads.jsonl
+- id: marketing-degraded-assets
+  status: pass
+  evidence:
+  - reference-builds/asteria-residences/evidence/browser-summary.json
+- id: marketing-browser-primary-flow
+  status: pass
+  evidence:
+  - reference-builds/asteria-residences/evidence/browser-summary.json
+  - reference-builds/asteria-residences/evidence/screenshots/lead-success.png
+- id: marketing-browser-negative-flow
+  status: pass
+  evidence:
+  - reference-builds/asteria-residences/evidence/browser-summary.json
+- id: marketing-browser-console-network
+  status: pass
+  evidence:
+  - reference-builds/asteria-residences/evidence/browser-summary.json
+- id: marketing-production-domain
+  status: unverified
+  evidence: []
+  notes: Calibration is localhost-only; no public production deployment was created.
+- id: marketing-seo-indexing
+  status: partial
+  evidence:
+  - reference-builds/asteria-residences/evidence/browser-summary.json
+  - reference-builds/asteria-residences/evidence/source-review.txt
+  notes: Metadata, robots, sitemap and canonicals are exercised locally; deployed
+    crawl/index behavior cannot be verified without a production domain.
+- id: marketing-structured-data
+  status: pass
+  evidence:
+  - reference-builds/asteria-residences/evidence/browser-summary.json
+- id: marketing-performance
+  status: pass
+  evidence:
+  - reference-builds/asteria-residences/evidence/browser-summary.json
+- id: marketing-analytics
+  status: pass
+  evidence:
+  - reference-builds/asteria-residences/evidence/browser-summary.json
+- id: marketing-review-frontend
+  status: unverified
+  evidence: []
+  notes: The implementing session cannot perform an independent Frontend Craft review.
+- id: marketing-review-production
+  status: unverified
+  evidence: []
+  notes: The implementing session cannot perform the required independent production/benchmark
+    review.
