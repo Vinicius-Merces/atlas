@@ -1,9 +1,6 @@
 name: Regenerate capability artifacts
 
 on:
-  push:
-    branches:
-      - feat/atlas-capability-evaluation-pack
   workflow_dispatch:
 
 permissions:
@@ -11,7 +8,6 @@ permissions:
 
 jobs:
   regenerate:
-    if: github.actor != 'github-actions[bot]'
     runs-on: ubuntu-latest
     steps:
       - name: Check out branch
