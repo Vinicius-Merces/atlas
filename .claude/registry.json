@@ -175,6 +175,7 @@
     "technical-program",
     "test-automation",
     "threat-modeling",
+    "web-production-assurance",
     "workstream-merge"
   ],
   "skills": [
@@ -190,6 +191,7 @@
     "authentication-flow-review",
     "authorization-boundary-review",
     "blueprint-selection",
+    "browser-flow-validation",
     "change-provenance-mapping",
     "cloud-cost-analysis",
     "codex-runtime-generation",
@@ -265,9 +267,12 @@
     "runtime-semantic-parity",
     "secret-environment-audit",
     "semantic-compatibility-verification",
+    "seo-technical-audit",
     "session-closeout",
     "smoke-test-design",
     "source-of-truth-validation",
+    "structured-data-validation",
+    "supply-chain-risk-audit",
     "support-classification",
     "task-routing-policy",
     "technical-debt-classification",
@@ -352,7 +357,8 @@
     "test-automation-review",
     "threat-model-review",
     "universal-runtime-contract-review",
-    "ux-review"
+    "ux-review",
+    "web-production-assurance-review"
   ],
   "commands": [
     "atlas-adapt-runtime",
@@ -478,7 +484,8 @@
   "assurance": {
     "project_health_model": "framework/project-health-model.md",
     "technical_debt_model": "framework/technical-debt-model.md",
-    "framework_evolution_model": "framework/framework-evolution-model.md"
+    "framework_evolution_model": "framework/framework-evolution-model.md",
+    "web_production_assurance_model": "framework/web-production-assurance-model.md"
   },
   "stability": {
     "compatibility_model": "framework/compatibility-model.md",
