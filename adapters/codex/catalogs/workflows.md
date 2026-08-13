@@ -2,7 +2,7 @@
 
 > Generated from `.claude/registry.json`. Do not edit manually.
 
-Total: **77**
+Total: **78**
 
 - `adapter-drift-audit` → `.claude/workflows/adapter-drift-audit.md`
 - `ai-feature-delivery` → `.claude/workflows/ai-feature-delivery.md`
@@ -69,6 +69,7 @@ Total: **77**
 - `runtime-handoff` → `.claude/workflows/runtime-handoff.md`
 - `runtime-parity` → `.claude/workflows/runtime-parity.md`
 - `runtime-synchronization` → `.claude/workflows/runtime-synchronization.md`
+- `saas-production-readiness` → `.claude/workflows/saas-production-readiness.md`
 - `session-bootstrap` → `.claude/workflows/session-bootstrap.md`
 - `session-closeout` → `.claude/workflows/session-closeout.md`
 - `shared-state-protection` → `.claude/workflows/shared-state-protection.md`
