@@ -22,6 +22,14 @@ Use when adding or changing webhook endpoints, event destinations, provider call
 - Retry and dead-letter behavior
 - Logs, metrics, dashboards, and replay tooling
 
+## Dependencies
+
+- Authoritative provider event/signature/delivery documentation
+- Stable event or business-operation identity for deduplication/idempotency where available
+- Durable storage or processing boundary when event loss would violate business state
+- `secret-environment-audit` when signing secrets or callback credentials change
+- `authorization-boundary-review` when authenticated events can trigger privileged business actions
+
 ## Procedure
 
 1. Identify sender, receiver, transport, event identity, signature scheme, and trust boundary.
