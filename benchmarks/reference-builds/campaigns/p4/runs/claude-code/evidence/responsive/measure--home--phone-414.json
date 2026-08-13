@@ -1,0 +1,12 @@
+{
+  "route": "home",
+  "viewport": "phone-414",
+  "documentWidth": 414,
+  "viewportWidth": 414,
+  "horizontalOverflow": 0,
+  "overflowingSelectors": [],
+  "smallTapTargets": [],
+  "longestLineChars": 59,
+  "longestSample": "Seven point two metres wide, nineteen deep, stepping in half",
+  "headingSizePx": 48
+}

@@ -1,0 +1,325 @@
+.figure {
+  margin: 0;
+}
+
+/* ---------- ridge section ---------- */
+
+.ridge {
+  aspect-ratio: 1200 / 420;
+}
+
+.datum line {
+  stroke: var(--rule-color-soft);
+  stroke-width: 0.5;
+}
+
+.datum text {
+  font-family: var(--font-annotation);
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  fill: var(--text-annotation);
+}
+
+.ground {
+  stroke: var(--ink);
+  stroke-width: 1.5;
+  stroke-linecap: round;
+}
+
+.groundAnimated {
+  stroke-dasharray: 2600;
+  stroke-dashoffset: 2600;
+  animation: draw var(--motion-draw) var(--motion-ease) forwards;
+}
+
+@keyframes draw {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .groundAnimated {
+    stroke-dasharray: none;
+    stroke-dashoffset: 0;
+    animation: none;
+  }
+}
+
+.baseline {
+  stroke: var(--ink);
+  stroke-width: 1;
+}
+
+.axisLabel {
+  font-family: var(--font-annotation);
+  font-size: 11px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  fill: var(--text-annotation);
+}
+
+.plotStem {
+  stroke: var(--rule-color);
+  stroke-width: 0.5;
+  stroke-dasharray: 3 3;
+}
+
+.plotMark {
+  fill: var(--surface-page);
+  stroke: var(--ink);
+  stroke-width: 1.25;
+  transition: fill var(--motion-quick) var(--motion-ease),
+    stroke var(--motion-quick) var(--motion-ease);
+}
+
+.plotIndex {
+  font-family: var(--font-annotation);
+  font-size: 12px;
+  letter-spacing: 0.06em;
+  fill: var(--ink);
+  font-variant-numeric: tabular-nums;
+}
+
+.plotElev {
+  font-family: var(--font-annotation);
+  font-size: 10px;
+  fill: var(--text-annotation);
+  font-variant-numeric: tabular-nums;
+}
+
+.plotActive .plotMark,
+.plot:hover .plotMark {
+  fill: var(--accent);
+  stroke: var(--accent);
+}
+
+.plotActive .plotIndex,
+.plot:hover .plotIndex {
+  fill: var(--accent);
+}
+
+/* ---------- site plan ---------- */
+
+.plan {
+  aspect-ratio: 1200 / 560;
+}
+
+.planEdge {
+  fill: none;
+  stroke: var(--rule-color);
+  stroke-width: 1;
+}
+
+.planContour {
+  fill: none;
+  stroke: var(--rule-color-soft);
+  stroke-width: 0.75;
+}
+
+.planLink {
+  stroke: var(--limestone-deep);
+  stroke-width: 0.75;
+  stroke-dasharray: 2 4;
+}
+
+.planPathLine {
+  stroke: var(--moss);
+  stroke-width: 1;
+  stroke-dasharray: 8 4;
+  fill: none;
+}
+
+.planNode {
+  fill: var(--surface-page);
+  stroke: var(--ink);
+  stroke-width: 1.25;
+  transition: fill var(--motion-quick) var(--motion-ease),
+    stroke var(--motion-quick) var(--motion-ease);
+}
+
+.planNodeLabel {
+  font-family: var(--font-annotation);
+  font-size: 11px;
+  fill: var(--ink);
+  font-variant-numeric: tabular-nums;
+  pointer-events: none;
+}
+
+.planHits {
+  display: none;
+}
+
+@media (min-width: 48rem) {
+  .planHits {
+    display: block;
+  }
+}
+
+.planHit {
+  cursor: pointer;
+}
+
+.planActive .planNode {
+  fill: var(--accent);
+  stroke: var(--accent);
+}
+
+.planHits a:focus-visible .planHit {
+  outline: none;
+  stroke: var(--accent);
+  stroke-width: 2;
+  stroke-dasharray: 3 3;
+}
+
+.planActive .planNodeLabel {
+  fill: var(--accent);
+}
+
+.planLegend {
+  font-family: var(--font-annotation);
+  font-size: 11px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  fill: var(--text-annotation);
+}
+
+/* ---------- elevation ---------- */
+
+.elevation {
+  aspect-ratio: 3 / 2;
+}
+
+.elevMass {
+  fill: color-mix(in srgb, var(--limestone) 34%, transparent);
+  stroke: var(--ink);
+  stroke-width: 1.25;
+}
+
+.elevOpening {
+  fill: var(--surface-page);
+  stroke: var(--ink);
+  stroke-width: 0.75;
+}
+
+.elevGround {
+  stroke: var(--ink);
+  stroke-width: 1.5;
+  fill: none;
+}
+
+.elevHatch {
+  stroke: var(--rule-color);
+  stroke-width: 0.5;
+}
+
+.elevDim {
+  stroke: var(--slate-soft);
+  stroke-width: 0.5;
+}
+
+.elevDimText {
+  font-family: var(--font-annotation);
+  font-size: 11px;
+  fill: var(--text-annotation);
+  font-variant-numeric: tabular-nums;
+}
+
+/* ---------- floor plan ---------- */
+
+.floor {
+  aspect-ratio: 4 / 3;
+}
+
+.room {
+  fill: var(--surface-page);
+  stroke: var(--ink);
+  stroke-width: 1;
+}
+
+.roomAlt {
+  fill: color-mix(in srgb, var(--limestone) 20%, transparent);
+  stroke: var(--ink);
+  stroke-width: 1;
+}
+
+.roomLabel {
+  font-family: var(--font-annotation);
+  font-size: 10.5px;
+  fill: var(--ink);
+}
+
+.roomArea {
+  font-family: var(--font-annotation);
+  font-size: 10px;
+  fill: var(--text-annotation);
+  font-variant-numeric: tabular-nums;
+}
+
+/* ---------- orientation rose ---------- */
+
+.rose {
+  aspect-ratio: 1;
+  max-width: 190px;
+}
+
+.roseRing {
+  fill: none;
+  stroke: var(--rule-color);
+  stroke-width: 1;
+}
+
+.roseTick {
+  stroke: var(--rule-color);
+  stroke-width: 0.75;
+}
+
+.roseNeedle {
+  stroke: var(--accent);
+  stroke-width: 2;
+}
+
+.roseLetter {
+  font-family: var(--font-annotation);
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  fill: var(--text-annotation);
+}
+
+/* ---------- material swatches ---------- */
+
+.swatches {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: var(--space-s);
+  list-style: none;
+}
+
+.swatch {
+  border: var(--rule-thin) solid var(--rule-color);
+}
+
+.swatchChip {
+  height: 78px;
+  border-bottom: var(--rule-thin) solid var(--rule-color);
+}
+
+.swatchBody {
+  padding: var(--space-2xs) var(--space-xs) var(--space-xs);
+}
+
+.swatchName {
+  font-family: var(--font-annotation);
+  font-size: var(--annotation-size);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--ink);
+  margin: 0 0 0.2rem;
+}
+
+.swatchUse {
+  font-size: var(--step--1);
+  color: var(--text-secondary);
+  line-height: 1.45;
+  margin: 0;
+}

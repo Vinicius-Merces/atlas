@@ -1,0 +1,12 @@
+{
+  "route": "home",
+  "viewport": "tablet-768",
+  "documentWidth": 768,
+  "viewportWidth": 768,
+  "horizontalOverflow": 0,
+  "overflowingSelectors": [],
+  "smallTapTargets": [],
+  "longestLineChars": 80,
+  "longestSample": "At twelve the cut is contained within the three courtyard pl",
+  "headingSizePx": 66
+}

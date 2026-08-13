@@ -1,0 +1,20 @@
+{
+  "normal": {
+    "groundAnimationName": "drawings-module__y8YN_q__draw",
+    "groundAnimationDuration": "0.9s",
+    "groundDashOffset": "824.715px",
+    "buttonTransitionDuration": "0.12s, 0.12s",
+    "scrollBehavior": "smooth",
+    "motionQuickToken": ".12s",
+    "motionDrawToken": ".9s"
+  },
+  "reduced": {
+    "groundAnimationName": "none",
+    "groundAnimationDuration": "1e-06s",
+    "groundDashOffset": "0px",
+    "buttonTransitionDuration": "1e-06s",
+    "scrollBehavior": "auto",
+    "motionQuickToken": "0s",
+    "motionDrawToken": "0s"
+  }
+}

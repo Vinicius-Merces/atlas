@@ -1,0 +1,229 @@
+{
+  "generatedAt": "2026-08-13T20:58:11.139Z",
+  "cases": [
+    {
+      "id": "method-not-allowed",
+      "description": "GET /api/visit-requests",
+      "status": 405,
+      "allow": "POST",
+      "ok": true,
+      "why": "expected 405, got 405"
+    },
+    {
+      "id": "unsupported-media-type",
+      "description": "POST text/plain",
+      "status": 415,
+      "ok": true,
+      "why": "expected 415, got 415"
+    },
+    {
+      "id": "malformed-json",
+      "description": "POST broken JSON",
+      "status": 400,
+      "body": {
+        "ok": false,
+        "error": "malformed_json"
+      },
+      "ok": true,
+      "why": "expected 400, got 400"
+    },
+    {
+      "id": "payload-too-large",
+      "description": "POST 20 KB body",
+      "status": 413,
+      "ok": true,
+      "why": "expected 413, got 413"
+    },
+    {
+      "id": "validation-required-fields",
+      "description": "POST empty object",
+      "status": 422,
+      "fields": {
+        "name": "Invalid input: expected string, received undefined",
+        "email": "Invalid input: expected string, received undefined",
+        "timeframe": "Choose when you are looking to buy.",
+        "context": "Tell us what kind of purchase this is.",
+        "consent": "We need your consent before we can contact you."
+      },
+      "ok": true,
+      "why": "status 422, missing field errors: "
+    },
+    {
+      "id": "validation-unknown-residence",
+      "description": "POST residenceId=A99 vs A11",
+      "unknownStatus": 422,
+      "unknownFields": {
+        "residenceId": "Select a residence from the list."
+      },
+      "knownStatus": 201,
+      "ok": true,
+      "why": "unknown 422 (expect 422), known 201 (expect 201)"
+    },
+    {
+      "id": "validation-consent-false",
+      "description": "POST consent=false",
+      "status": 422,
+      "fields": {
+        "consent": "We need your consent before we can contact you."
+      },
+      "ok": true,
+      "why": "status 422"
+    },
+    {
+      "id": "honeypot-discarded",
+      "description": "POST with honeypot filled",
+      "status": 200,
+      "body": {
+        "ok": true,
+        "reference": "AST-000000",
+        "duplicate": false
+      },
+      "rowsCreated": 0,
+      "ok": true,
+      "why": "status 200, rows +0"
+    },
+    {
+      "id": "too-fast",
+      "description": "POST rendered <2s ago",
+      "status": 429,
+      "ok": true,
+      "why": "expected 429, got 429"
+    },
+    {
+      "id": "idempotent-replay",
+      "description": "same idempotencyKey twice",
+      "firstReference": "AST-WHZHF42X",
+      "secondReference": "AST-WHZHF42X",
+      "secondDuplicate": true,
+      "rowsCreated": 1,
+      "eventsCreated": 1,
+      "ok": true,
+      "why": "refs AST-WHZHF42X/AST-WHZHF42X, rows +1"
+    },
+    {
+      "id": "same-day-dedupe",
+      "description": "same email+residence, new key",
+      "firstReference": "AST-BMC6M07Y",
+      "second": {
+        "ok": true,
+        "duplicate": true,
+        "reason": "same-day",
+        "reference": "AST-BMC6M07Y",
+        "notification": "delivered",
+        "message": "We already have a request from you for this residence today. It has not been recorded twice."
+      },
+      "rowsCreated": 1,
+      "ok": true,
+      "why": "duplicate=true, rows +1"
+    },
+    {
+      "id": "parallel-submit",
+      "description": "8 concurrent identical POSTs",
+      "statuses": [
+        201,
+        200,
+        200,
+        200,
+        200,
+        200,
+        200,
+        200
+      ],
+      "distinctReferences": [
+        "AST-CMH9TMCP"
+      ],
+      "rowsCreated": 1,
+      "eventsCreated": 1,
+      "ok": true,
+      "why": "1 distinct references, rows +1"
+    },
+    {
+      "id": "rate-limit",
+      "description": "7 sequential submits at capacity 5",
+      "statuses": [
+        201,
+        201,
+        201,
+        201,
+        201,
+        429,
+        429
+      ],
+      "accepted": 5,
+      "limited": 2,
+      "retryAfter": "120",
+      "ok": true,
+      "why": "accepted 5 (expect 5), limited 2 (expect 2), retry-after 120"
+    },
+    {
+      "id": "store-failure",
+      "description": "instance with ASTERIA_STORE_MODE=fail",
+      "status": 503,
+      "body": {
+        "ok": false,
+        "error": "not_recorded",
+        "message": "Your request was NOT recorded. Nothing has been sent. Please try again, or telephone +351 210 000 120."
+      },
+      "rowsCreated": 0,
+      "ok": true,
+      "why": "status 503, ok=false, rows +0"
+    },
+    {
+      "id": "broker-failure",
+      "description": "instance with ASTERIA_BROKER_MODE=fail",
+      "status": 201,
+      "notification": "failed",
+      "stored": {
+        "reference": "AST-7N5FAE68",
+        "name": "Contract Case",
+        "email": "contract.858cf0e1@example.com",
+        "phone": null,
+        "residence_id": null,
+        "timeframe": "3-6-months",
+        "context": "primary-home",
+        "preferred_dates": null,
+        "message": null,
+        "status": "received",
+        "notification_status": "failed",
+        "notification_error": "simulated_broker_failure",
+        "notification_attempts": 1,
+        "created_at": "2026-08-13T20:58:11.092Z"
+      },
+      "ok": true,
+      "why": "notification=failed, stored=failed"
+    },
+    {
+      "id": "admin-endpoint-protected",
+      "description": "GET without / with a bad key",
+      "noKeyStatus": 401,
+      "badKeyStatus": 401,
+      "goodKeyStatus": 200,
+      "ok": true,
+      "why": "401/401/200"
+    },
+    {
+      "id": "unknown-reference",
+      "description": "GET an invented reference",
+      "status": 404,
+      "ok": true,
+      "why": "expected 404, got 404"
+    },
+    {
+      "id": "events-conversion-rejected",
+      "description": "POST conversion event from client",
+      "conversionStatus": 422,
+      "funnelStatus": 204,
+      "ok": true,
+      "why": "conversion 422 (expect 422), funnel 204 (expect 204)"
+    },
+    {
+      "id": "conversion-parity",
+      "description": "events == leads on the primary instance",
+      "ok": true,
+      "visitRequests": 4,
+      "conversionEvents": 4,
+      "why": "4 leads vs 4 conversion events"
+    }
+  ],
+  "problems": []
+}

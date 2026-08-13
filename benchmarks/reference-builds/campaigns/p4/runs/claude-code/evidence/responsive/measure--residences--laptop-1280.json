@@ -1,0 +1,12 @@
+{
+  "route": "residences",
+  "viewport": "laptop-1280",
+  "documentWidth": 1280,
+  "viewportWidth": 1280,
+  "horizontalOverflow": 0,
+  "overflowingSelectors": [],
+  "smallTapTargets": [],
+  "longestLineChars": 57,
+  "longestSample": "The middle courtyard house, with a second, smaller service c",
+  "headingSizePx": 62
+}

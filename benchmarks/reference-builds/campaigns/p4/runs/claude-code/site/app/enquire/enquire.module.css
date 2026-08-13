@@ -1,0 +1,91 @@
+.wrap {
+  padding-top: var(--space-xl);
+  padding-bottom: var(--space-2xl);
+}
+
+.layout {
+  display: grid;
+  gap: var(--space-xl);
+  grid-template-columns: 1fr;
+}
+
+@media (min-width: 64rem) {
+  .layout {
+    grid-template-columns: repeat(12, 1fr);
+    gap: var(--gutter);
+    align-items: start;
+  }
+  .formColumn {
+    grid-column: 1 / span 7;
+  }
+  .aside {
+    grid-column: 9 / span 4;
+    position: sticky;
+    top: 116px;
+  }
+}
+
+.title {
+  font-size: var(--step-4);
+}
+
+.serverNotice {
+  border: var(--rule-thin) solid var(--rule-color);
+  border-left: var(--rule-heavy) solid var(--accent);
+  padding: var(--space-s) var(--space-m);
+  margin-bottom: var(--space-l);
+  max-width: 40rem;
+  font-size: var(--step--1);
+  color: var(--text-secondary);
+}
+
+.aside {
+  border-top: var(--rule-heavy) solid var(--ink);
+  padding-top: var(--space-s);
+}
+
+.asideTitle {
+  font-family: var(--font-annotation);
+  font-size: var(--annotation-size);
+  letter-spacing: var(--annotation-tracking);
+  text-transform: uppercase;
+  color: var(--text-annotation);
+  font-weight: 400;
+  margin-bottom: var(--space-s);
+}
+
+.faq {
+  margin: 0;
+}
+
+.faqItem {
+  padding: var(--space-s) 0;
+  border-bottom: var(--rule-hair) solid var(--rule-color);
+}
+
+.faqQuestion {
+  font-family: var(--font-display);
+  font-size: var(--step-1);
+  line-height: 1.25;
+  margin-bottom: 0.3rem;
+}
+
+.faqAnswer {
+  margin: 0;
+  font-size: var(--step--1);
+  color: var(--text-secondary);
+  line-height: 1.6;
+  max-width: 62ch;
+}
+
+.direct {
+  margin-top: var(--space-l);
+  padding-top: var(--space-s);
+  border-top: var(--rule-thin) solid var(--ink);
+}
+
+.directLine {
+  font-family: var(--font-annotation);
+  font-size: var(--step--1);
+  margin: 0.35rem 0;
+}

@@ -1,0 +1,34 @@
+{
+  "residenceCardsListed": 12,
+  "residencePreselected": "A04",
+  "reference": "AST-PCVQ73EZ",
+  "authoritativeRecord": {
+    "reference": "AST-PCVQ73EZ",
+    "name": "Benchmark Buyer",
+    "email": "benchmark.buyer.1786652936631@example.com",
+    "phone": "+351 912 345 678",
+    "residence_id": "A04",
+    "timeframe": "3-6-months",
+    "context": "primary-home",
+    "preferred_dates": "Weekday mornings",
+    "message": "Interested in the covered south terrace and the plateau path.",
+    "status": "received",
+    "notification_status": "delivered",
+    "notification_error": null,
+    "notification_attempts": 1,
+    "created_at": "2026-08-13T20:29:00.395Z"
+  },
+  "diagnostics": {
+    "consoleErrors": [],
+    "consoleWarnings": [],
+    "pageErrors": [],
+    "failedRequests": [],
+    "badResponses": [],
+    "cancelledPrefetches": [
+      "http://localhost:3100/enquire?_rsc=5CB68i4pnAekjehf",
+      "http://localhost:3100/residences?_rsc=tXyZJ52UQVBCVsD3",
+      "http://localhost:3100/enquire?_rsc=tXyZJ52UQVBCVsD3",
+      "http://localhost:3100/residences?_rsc=1eYQJe9tlhCNRfFc"
+    ]
+  }
+}

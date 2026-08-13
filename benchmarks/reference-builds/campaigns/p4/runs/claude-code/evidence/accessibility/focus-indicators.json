@@ -1,0 +1,202 @@
+[
+  {
+    "selector": "a",
+    "outlineWidth": "2px",
+    "outlineColor": "rgb(140, 74, 47)"
+  },
+  {
+    "selector": "a",
+    "outlineWidth": "2px",
+    "outlineColor": "rgb(140, 74, 47)"
+  },
+  {
+    "selector": "a",
+    "outlineWidth": "2px",
+    "outlineColor": "rgb(140, 74, 47)"
+  },
+  {
+    "selector": "a",
+    "outlineWidth": "2px",
+    "outlineColor": "rgb(140, 74, 47)"
+  },
+  {
+    "selector": "a",
+    "outlineWidth": "2px",
+    "outlineColor": "rgb(140, 74, 47)"
+  },
+  {
+    "selector": "a",
+    "outlineWidth": "2px",
+    "outlineColor": "rgb(140, 74, 47)"
+  },
+  {
+    "selector": "a",
+    "outlineWidth": "2px",
+    "outlineColor": "rgb(140, 74, 47)"
+  },
+  {
+    "selector": "input#field-website",
+    "outlineWidth": "2px",
+    "outlineColor": "rgb(140, 74, 47)"
+  },
+  {
+    "selector": "input#field-name",
+    "outlineWidth": "2px",
+    "outlineColor": "rgb(140, 74, 47)"
+  },
+  {
+    "selector": "input#field-email",
+    "outlineWidth": "2px",
+    "outlineColor": "rgb(140, 74, 47)"
+  },
+  {
+    "selector": "input#field-phone",
+    "outlineWidth": "2px",
+    "outlineColor": "rgb(140, 74, 47)"
+  },
+  {
+    "selector": "select#field-residenceId",
+    "outlineWidth": "2px",
+    "outlineColor": "rgb(140, 74, 47)"
+  },
+  {
+    "selector": "select#field-timeframe",
+    "outlineWidth": "2px",
+    "outlineColor": "rgb(140, 74, 47)"
+  },
+  {
+    "selector": "select#field-context",
+    "outlineWidth": "2px",
+    "outlineColor": "rgb(140, 74, 47)"
+  },
+  {
+    "selector": "input#field-preferredDates",
+    "outlineWidth": "2px",
+    "outlineColor": "rgb(140, 74, 47)"
+  },
+  {
+    "selector": "textarea#field-message",
+    "outlineWidth": "2px",
+    "outlineColor": "rgb(140, 74, 47)"
+  },
+  {
+    "selector": "input#field-consent",
+    "outlineWidth": "2px",
+    "outlineColor": "rgb(140, 74, 47)"
+  },
+  {
+    "selector": "a",
+    "outlineWidth": "2px",
+    "outlineColor": "rgb(140, 74, 47)"
+  },
+  {
+    "selector": "button",
+    "outlineWidth": "2px",
+    "outlineColor": "rgb(140, 74, 47)"
+  },
+  {
+    "selector": "a",
+    "outlineWidth": "2px",
+    "outlineColor": "rgb(140, 74, 47)"
+  },
+  {
+    "selector": "a",
+    "outlineWidth": "2px",
+    "outlineColor": "rgb(140, 74, 47)"
+  },
+  {
+    "selector": "a",
+    "outlineWidth": "2px",
+    "outlineColor": "rgb(140, 74, 47)"
+  },
+  {
+    "selector": "a",
+    "outlineWidth": "2px",
+    "outlineColor": "rgb(140, 74, 47)"
+  },
+  {
+    "selector": "a",
+    "outlineWidth": "2px",
+    "outlineColor": "rgb(140, 74, 47)"
+  },
+  {
+    "selector": "a",
+    "outlineWidth": "2px",
+    "outlineColor": "rgb(140, 74, 47)"
+  },
+  {
+    "selector": "a",
+    "outlineWidth": "2px",
+    "outlineColor": "rgb(140, 74, 47)"
+  },
+  {
+    "selector": "a",
+    "outlineWidth": "2px",
+    "outlineColor": "rgb(140, 74, 47)"
+  },
+  {
+    "selector": "a",
+    "outlineWidth": "2px",
+    "outlineColor": "rgb(140, 74, 47)"
+  },
+  {
+    "selector": "a",
+    "outlineWidth": "2px",
+    "outlineColor": "rgb(140, 74, 47)"
+  },
+  {
+    "selector": "a",
+    "outlineWidth": "2px",
+    "outlineColor": "rgb(140, 74, 47)"
+  },
+  {
+    "selector": "a",
+    "outlineWidth": "2px",
+    "outlineColor": "rgb(140, 74, 47)"
+  },
+  {
+    "selector": "a",
+    "outlineWidth": "2px",
+    "outlineColor": "rgb(140, 74, 47)"
+  },
+  {
+    "selector": "a",
+    "outlineWidth": "2px",
+    "outlineColor": "rgb(140, 74, 47)"
+  },
+  {
+    "selector": "a",
+    "outlineWidth": "2px",
+    "outlineColor": "rgb(140, 74, 47)"
+  },
+  {
+    "selector": "a",
+    "outlineWidth": "2px",
+    "outlineColor": "rgb(140, 74, 47)"
+  },
+  {
+    "selector": "a",
+    "outlineWidth": "2px",
+    "outlineColor": "rgb(140, 74, 47)"
+  },
+  {
+    "selector": "a",
+    "outlineWidth": "2px",
+    "outlineColor": "rgb(140, 74, 47)"
+  },
+  {
+    "selector": "a",
+    "outlineWidth": "2px",
+    "outlineColor": "rgb(140, 74, 47)"
+  },
+  {
+    "selector": "a",
+    "outlineWidth": "2px",
+    "outlineColor": "rgb(140, 74, 47)"
+  },
+  {
+    "selector": "a",
+    "outlineWidth": "2px",
+    "outlineColor": "rgb(140, 74, 47)"
+  }
+]

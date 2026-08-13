@@ -1,0 +1,105 @@
+.intro {
+  padding-top: var(--space-xl);
+  padding-bottom: var(--space-l);
+}
+
+.title {
+  font-size: var(--step-4);
+  max-width: 18ch;
+}
+
+.layout {
+  display: grid;
+  gap: var(--space-l);
+  grid-template-columns: 1fr;
+  padding-bottom: var(--space-2xl);
+}
+
+@media (min-width: 62rem) {
+  .layout {
+    grid-template-columns: repeat(12, 1fr);
+    gap: var(--gutter);
+    align-items: start;
+  }
+  .contents {
+    grid-column: 1 / span 3;
+    position: sticky;
+    top: 116px;
+  }
+  .content {
+    grid-column: 5 / span 8;
+  }
+}
+
+.contents {
+  border-top: var(--rule-heavy) solid var(--ink);
+  padding-top: var(--space-s);
+}
+
+.contentsTitle {
+  font-family: var(--font-annotation);
+  font-size: var(--annotation-size);
+  letter-spacing: var(--annotation-tracking);
+  text-transform: uppercase;
+  color: var(--text-annotation);
+  font-weight: 400;
+  margin-bottom: var(--space-2xs);
+}
+
+.contentsList {
+  list-style: none;
+  font-size: var(--step--1);
+  line-height: 1.9;
+}
+
+.contentsList a {
+  text-decoration: none;
+  color: var(--text-secondary);
+}
+
+.contentsList a:hover {
+  color: var(--accent);
+}
+
+.contentsList .num {
+  color: var(--text-annotation);
+  margin-right: 0.4rem;
+}
+
+.district {
+  border-top: var(--rule-thin) solid var(--rule-color);
+  padding-top: var(--space-l);
+  margin-top: var(--space-xl);
+  scroll-margin-top: 116px;
+}
+
+.district:first-child {
+  margin-top: 0;
+  border-top: 0;
+  padding-top: 0;
+}
+
+.districtHead {
+  display: flex;
+  gap: var(--space-s);
+  align-items: baseline;
+  margin-bottom: var(--space-2xs);
+}
+
+.districtTitle {
+  font-size: var(--step-3);
+  max-width: 20ch;
+}
+
+.highlights {
+  list-style: none;
+  margin-top: var(--space-m);
+  border-top: var(--rule-hair) solid var(--rule-color);
+  font-size: var(--step--1);
+  color: var(--text-secondary);
+}
+
+.highlights li {
+  padding: 0.55rem 0;
+  border-bottom: var(--rule-hair) solid var(--rule-color);
+}

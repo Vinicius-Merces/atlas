@@ -1,0 +1,11 @@
+{
+  "route": "/residences",
+  "violations": [],
+  "passes": 42,
+  "incomplete": [
+    {
+      "id": "color-contrast",
+      "nodes": 15
+    }
+  ]
+}

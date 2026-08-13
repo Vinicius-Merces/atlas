@@ -1,0 +1,139 @@
+{
+  "generatedAt": "2026-08-13T21:06:10.716Z",
+  "residences": [
+    {
+      "slug": "ridge-house-01",
+      "name": "Ridge House 01",
+      "grossInteriorSqm": 412,
+      "scheduledSqm": 392,
+      "scheduledRatio": 0.951,
+      "plotSqm": 980,
+      "bedrooms": 4,
+      "hasOffer": false,
+      "elevationM": 148
+    },
+    {
+      "slug": "ridge-house-02",
+      "name": "Ridge House 02",
+      "grossInteriorSqm": 398,
+      "scheduledSqm": 378,
+      "scheduledRatio": 0.95,
+      "plotSqm": 940,
+      "bedrooms": 4,
+      "hasOffer": true,
+      "elevationM": 151
+    },
+    {
+      "slug": "ridge-house-03",
+      "name": "Ridge House 03",
+      "grossInteriorSqm": 386,
+      "scheduledSqm": 334,
+      "scheduledRatio": 0.865,
+      "plotSqm": 910,
+      "bedrooms": 4,
+      "hasOffer": false,
+      "elevationM": 154
+    },
+    {
+      "slug": "ridge-house-04",
+      "name": "Ridge House 04",
+      "grossInteriorSqm": 404,
+      "scheduledSqm": 380,
+      "scheduledRatio": 0.941,
+      "plotSqm": 965,
+      "bedrooms": 4,
+      "hasOffer": true,
+      "elevationM": 157
+    },
+    {
+      "slug": "terrace-house-05",
+      "name": "Terrace House 05",
+      "grossInteriorSqm": 268,
+      "scheduledSqm": 258,
+      "scheduledRatio": 0.963,
+      "plotSqm": 620,
+      "bedrooms": 3,
+      "hasOffer": true,
+      "elevationM": 160
+    },
+    {
+      "slug": "terrace-house-06",
+      "name": "Terrace House 06",
+      "grossInteriorSqm": 262,
+      "scheduledSqm": 251,
+      "scheduledRatio": 0.958,
+      "plotSqm": 605,
+      "bedrooms": 3,
+      "hasOffer": false,
+      "elevationM": 162
+    },
+    {
+      "slug": "terrace-house-07",
+      "name": "Terrace House 07",
+      "grossInteriorSqm": 274,
+      "scheduledSqm": 274,
+      "scheduledRatio": 1,
+      "plotSqm": 640,
+      "bedrooms": 3,
+      "hasOffer": true,
+      "elevationM": 165
+    },
+    {
+      "slug": "terrace-house-08",
+      "name": "Terrace House 08",
+      "grossInteriorSqm": 258,
+      "scheduledSqm": 230,
+      "scheduledRatio": 0.891,
+      "plotSqm": 596,
+      "bedrooms": 3,
+      "hasOffer": true,
+      "elevationM": 167
+    },
+    {
+      "slug": "terrace-house-09",
+      "name": "Terrace House 09",
+      "grossInteriorSqm": 280,
+      "scheduledSqm": 267,
+      "scheduledRatio": 0.954,
+      "plotSqm": 655,
+      "bedrooms": 3,
+      "hasOffer": false,
+      "elevationM": 169
+    },
+    {
+      "slug": "courtyard-house-10",
+      "name": "Courtyard House 10",
+      "grossInteriorSqm": 336,
+      "scheduledSqm": 336,
+      "scheduledRatio": 1,
+      "plotSqm": 780,
+      "bedrooms": 4,
+      "hasOffer": true,
+      "elevationM": 172
+    },
+    {
+      "slug": "courtyard-house-11",
+      "name": "Courtyard House 11",
+      "grossInteriorSqm": 352,
+      "scheduledSqm": 352,
+      "scheduledRatio": 1,
+      "plotSqm": 820,
+      "bedrooms": 4,
+      "hasOffer": true,
+      "elevationM": 175
+    },
+    {
+      "slug": "courtyard-house-12",
+      "name": "Courtyard House 12",
+      "grossInteriorSqm": 368,
+      "scheduledSqm": 368,
+      "scheduledRatio": 1,
+      "plotSqm": 860,
+      "bedrooms": 5,
+      "hasOffer": false,
+      "elevationM": 178
+    }
+  ],
+  "availableCount": 7,
+  "problems": []
+}

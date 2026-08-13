@@ -1,0 +1,19 @@
+{
+  "firstStop": "Skip to content",
+  "sequence": [
+    "a:AsteriaResidences",
+    "a:Residences",
+    "a:Location",
+    "a:Journal",
+    "a:Contact",
+    "a:Request a visit",
+    "a:See the twelve",
+    "a:Request a visit",
+    "a:01Ridge House 01Ridge house4 bed412 m²+1",
+    "a:02Ridge House 02Ridge house4 bed398 m²+1",
+    "a:03Ridge House 03Ridge house4 bed386 m²+1",
+    "a:04Ridge House 04Ridge house4 bed404 m²+1",
+    "a:05Terrace House 05Terrace house3 bed268 ",
+    "a:06Terrace House 06Terrace house3 bed262 "
+  ]
+}

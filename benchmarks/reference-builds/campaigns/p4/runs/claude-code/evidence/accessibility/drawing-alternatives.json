@@ -1,0 +1,50 @@
+[
+  {
+    "role": null,
+    "ariaHidden": "true",
+    "ariaLabel": null,
+    "labelledBy": null,
+    "title": null,
+    "descLength": 0
+  },
+  {
+    "role": "img",
+    "ariaHidden": null,
+    "ariaLabel": null,
+    "labelledBy": "elev-title-A12 elev-desc-A12",
+    "title": "Schematic elevation of Courtyard House 12",
+    "descLength": 201
+  },
+  {
+    "role": "img",
+    "ariaHidden": null,
+    "ariaLabel": "Principal aspect faces east",
+    "labelledBy": null,
+    "title": null,
+    "descLength": 0
+  },
+  {
+    "role": "img",
+    "ariaHidden": null,
+    "ariaLabel": null,
+    "labelledBy": "plan-title-A12-0 plan-desc-A12-0",
+    "title": "Courtyard level plan of Courtyard House 12",
+    "descLength": 486
+  },
+  {
+    "role": "img",
+    "ariaHidden": null,
+    "ariaLabel": null,
+    "labelledBy": "ridge-title ridge-desc",
+    "title": "Measured section through the Alto da Pedra ridge showing all twelve plots",
+    "descLength": 371
+  },
+  {
+    "role": "group",
+    "ariaHidden": null,
+    "ariaLabel": null,
+    "labelledBy": "siteplan-title siteplan-desc",
+    "title": "Site plan of the twelve plots on the Alto da Pedra ridge",
+    "descLength": 917
+  }
+]

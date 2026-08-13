@@ -1,0 +1,12 @@
+{
+  "route": "location",
+  "viewport": "wide-1920",
+  "documentWidth": 1920,
+  "viewportWidth": 1920,
+  "horizontalOverflow": 0,
+  "overflowingSelectors": [],
+  "smallTapTargets": [],
+  "longestLineChars": 80,
+  "longestSample": "The village is the reason the plateau path matters. From Cou",
+  "headingSizePx": 64
+}

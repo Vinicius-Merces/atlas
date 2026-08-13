@@ -1,0 +1,12 @@
+{
+  "route": "journal-entry",
+  "viewport": "phone-414",
+  "documentWidth": 414,
+  "viewportWidth": 414,
+  "horizontalOverflow": 0,
+  "overflowingSelectors": [],
+  "smallTapTargets": [],
+  "longestLineChars": 45,
+  "longestSample": "The excavation number is the one that decided it. Cutting 31",
+  "headingSizePx": 38
+}

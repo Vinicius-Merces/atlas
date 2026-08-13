@@ -1,0 +1,12 @@
+{
+  "route": "residence-detail",
+  "viewport": "tablet-768",
+  "documentWidth": 768,
+  "viewportWidth": 768,
+  "horizontalOverflow": 0,
+  "overflowingSelectors": [],
+  "smallTapTargets": [],
+  "longestLineChars": 78,
+  "longestSample": "An external stair in board-marked concrete drops from the te",
+  "headingSizePx": 48
+}

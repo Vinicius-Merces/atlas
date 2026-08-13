@@ -1,0 +1,12 @@
+{
+  "route": "journal-entry",
+  "viewport": "tablet-768",
+  "documentWidth": 768,
+  "viewportWidth": 768,
+  "horizontalOverflow": 0,
+  "overflowingSelectors": [],
+  "smallTapTargets": [],
+  "longestLineChars": 80,
+  "longestSample": "The consequence for a buyer is straightforward and worth sta",
+  "headingSizePx": 48
+}

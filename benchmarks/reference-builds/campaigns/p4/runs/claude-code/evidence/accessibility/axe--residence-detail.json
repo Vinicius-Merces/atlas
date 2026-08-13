@@ -1,0 +1,11 @@
+{
+  "route": "/residences/ridge-house-04",
+  "violations": [],
+  "passes": 44,
+  "incomplete": [
+    {
+      "id": "color-contrast",
+      "nodes": 71
+    }
+  ]
+}

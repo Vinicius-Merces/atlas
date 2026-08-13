@@ -1,0 +1,12 @@
+{
+  "route": "residences",
+  "viewport": "tablet-768",
+  "documentWidth": 768,
+  "viewportWidth": 768,
+  "horizontalOverflow": 0,
+  "overflowingSelectors": [],
+  "smallTapTargets": [],
+  "longestLineChars": 59,
+  "longestSample": "Four ridge houses cut into the south-west face, five terrace",
+  "headingSizePx": 48
+}

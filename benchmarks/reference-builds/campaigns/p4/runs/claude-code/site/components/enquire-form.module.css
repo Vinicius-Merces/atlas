@@ -1,0 +1,229 @@
+.wrap {
+  display: grid;
+  gap: var(--space-m);
+}
+
+.form {
+  display: grid;
+  gap: var(--space-l);
+  max-width: 40rem;
+}
+
+.fieldset {
+  border: 0;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  gap: var(--space-m);
+}
+
+.fieldset[disabled] {
+  opacity: 0.65;
+}
+
+.legend {
+  font-family: var(--font-annotation);
+  font-size: var(--annotation-size);
+  letter-spacing: var(--annotation-tracking);
+  text-transform: uppercase;
+  color: var(--text-annotation);
+  padding: 0 0 var(--space-2xs);
+  border-bottom: var(--rule-thin) solid var(--ink);
+  width: 100%;
+  margin-bottom: var(--space-2xs);
+}
+
+.field {
+  display: grid;
+  gap: 0.35rem;
+}
+
+.label {
+  font-family: var(--font-annotation);
+  font-size: var(--annotation-size);
+  letter-spacing: var(--annotation-tracking);
+  text-transform: uppercase;
+  color: var(--ink);
+  display: flex;
+  align-items: baseline;
+  gap: 0.4rem;
+}
+
+.required {
+  color: var(--accent);
+}
+
+.optional {
+  color: var(--text-annotation);
+  text-transform: lowercase;
+  letter-spacing: 0.04em;
+}
+
+.input {
+  border: var(--rule-thin) solid var(--rule-color);
+  border-radius: var(--radius-control);
+  background: var(--surface-raised);
+  padding: 0.7rem 0.8rem;
+  font-family: var(--font-body);
+  font-size: var(--step-0);
+  min-height: 48px;
+  width: 100%;
+  transition: border-color var(--motion-quick) var(--motion-ease);
+}
+
+.input:hover {
+  border-color: var(--limestone-deep);
+}
+
+.input:focus-visible {
+  outline: var(--focus-ring);
+  outline-offset: 2px;
+  border-color: var(--accent);
+}
+
+.input[aria-invalid="true"] {
+  border-color: var(--accent);
+  border-left-width: var(--rule-heavy);
+}
+
+.textarea {
+  min-height: 7.5rem;
+  resize: vertical;
+  line-height: 1.6;
+}
+
+.hint {
+  font-size: var(--step--1);
+  color: var(--text-annotation);
+  line-height: 1.5;
+  margin: 0;
+  max-width: 62ch;
+}
+
+.error {
+  font-size: var(--step--1);
+  color: var(--accent-strong);
+  margin: 0;
+  display: flex;
+  gap: 0.4rem;
+  align-items: baseline;
+  font-weight: 500;
+}
+
+.error::before {
+  content: "▲";
+  font-size: 0.7em;
+}
+
+.consentRow {
+  display: flex;
+  gap: var(--space-xs);
+  align-items: flex-start;
+  border-top: var(--rule-hair) solid var(--rule-color);
+  padding-top: var(--space-m);
+}
+
+.checkbox {
+  width: 24px;
+  height: 24px;
+  margin-top: 0.15rem;
+  accent-color: var(--accent);
+  flex: none;
+}
+
+.consentLabel {
+  font-size: var(--step--1);
+  color: var(--ink);
+  display: block;
+  margin-bottom: 0.25rem;
+}
+
+.actions {
+  display: grid;
+  gap: var(--space-2xs);
+  justify-items: start;
+  border-top: var(--rule-thin) solid var(--ink);
+  padding-top: var(--space-m);
+}
+
+.honeypot {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+
+/* ---------- outcome states ---------- */
+
+.status {
+  border: var(--rule-thin) solid var(--rule-color);
+  border-left: var(--rule-heavy) solid var(--limestone-deep);
+  padding: var(--space-m);
+  max-width: 40rem;
+  display: grid;
+  gap: var(--space-2xs);
+  font-size: var(--step--1);
+  color: var(--text-secondary);
+  line-height: 1.6;
+}
+
+.status:focus-visible {
+  outline: var(--focus-ring);
+  outline-offset: 2px;
+}
+
+.statusHeading {
+  font-family: var(--font-display);
+  font-size: var(--step-2);
+  color: var(--ink);
+  line-height: 1.15;
+  margin: 0;
+}
+
+.status--success {
+  border-left-color: var(--moss);
+}
+
+.status--duplicate {
+  border-left-color: var(--limestone-deep);
+}
+
+.status--invalid,
+.status--not_recorded,
+.status--rate_limited,
+.status--ambiguous {
+  border-left-color: var(--accent);
+}
+
+.reference {
+  font-family: var(--font-annotation);
+  font-size: var(--step-2);
+  letter-spacing: 0.08em;
+  color: var(--ink);
+  border-top: var(--rule-hair) solid var(--rule-color);
+  border-bottom: var(--rule-hair) solid var(--rule-color);
+  padding: var(--space-2xs) 0;
+  margin: var(--space-2xs) 0;
+  user-select: all;
+}
+
+.degraded {
+  border-left: var(--rule-heavy) solid var(--accent);
+  padding-left: var(--space-s);
+}
+
+.errorList {
+  list-style: none;
+  display: grid;
+  gap: 0.3rem;
+}
+
+.errorList a {
+  color: var(--accent-strong);
+}
+
+.restart {
+  margin: 0;
+}

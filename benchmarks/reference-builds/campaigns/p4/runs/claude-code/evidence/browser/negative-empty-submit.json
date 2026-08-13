@@ -1,0 +1,27 @@
+{
+  "errorsShown": [
+    "Enter your full name.",
+    "Enter a valid email address.",
+    "Choose when you are looking to buy.",
+    "Tell us what kind of purchase this is.",
+    "We need your consent before we can contact you."
+  ],
+  "diagnostics": {
+    "consoleErrors": [
+      "Failed to load resource: the server responded with a status of 422 (Unprocessable Entity)"
+    ],
+    "consoleWarnings": [],
+    "pageErrors": [],
+    "failedRequests": [],
+    "badResponses": [
+      {
+        "url": "http://localhost:3100/api/visit-requests",
+        "status": 422
+      }
+    ],
+    "cancelledPrefetches": [
+      "http://localhost:3100/residences?_rsc=tPrHoWTfrBcLzX1U",
+      "http://localhost:3100/enquire?_rsc=Q_VpMOe1UT0KvbFk"
+    ]
+  }
+}

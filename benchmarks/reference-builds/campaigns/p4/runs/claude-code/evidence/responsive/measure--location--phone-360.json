@@ -1,0 +1,12 @@
+{
+  "route": "location",
+  "viewport": "phone-360",
+  "documentWidth": 360,
+  "viewportWidth": 360,
+  "horizontalOverflow": 0,
+  "overflowingSelectors": [],
+  "smallTapTargets": [],
+  "longestLineChars": 39,
+  "longestSample": "Alto da Pedra is a single limestone escarpment running rough",
+  "headingSizePx": 37
+}

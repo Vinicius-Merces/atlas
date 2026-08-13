@@ -1,0 +1,366 @@
+/* ---------- hero ---------- */
+
+.hero {
+  padding-top: var(--space-xl);
+  padding-bottom: var(--space-2xl);
+}
+
+.heroGrid {
+  display: grid;
+  gap: var(--space-l);
+  grid-template-columns: 1fr;
+}
+
+@media (min-width: 60rem) {
+  .heroGrid {
+    grid-template-columns: repeat(12, 1fr);
+    align-items: end;
+    gap: var(--gutter);
+  }
+  .heroStatement {
+    grid-column: 1 / span 7;
+  }
+  .heroFacts {
+    grid-column: 9 / span 4;
+    padding-bottom: 0.4rem;
+  }
+}
+
+.heroKicker {
+  display: flex;
+  gap: var(--space-s);
+  align-items: baseline;
+  flex-wrap: wrap;
+  margin-bottom: var(--space-m);
+  padding-bottom: var(--space-2xs);
+  border-bottom: var(--rule-hair) solid var(--rule-color);
+}
+
+.heroTitle {
+  font-size: var(--step-5);
+  letter-spacing: -0.028em;
+  font-weight: 340;
+}
+
+.heroTitle em {
+  font-style: normal;
+  font-variation-settings: "SOFT" 40;
+  color: var(--accent);
+}
+
+.heroLede {
+  margin-top: var(--space-m);
+  font-size: var(--step-1);
+  line-height: 1.5;
+  max-width: 46ch;
+  color: var(--text-secondary);
+}
+
+.heroActions {
+  display: flex;
+  gap: var(--space-s);
+  flex-wrap: wrap;
+  margin-top: var(--space-l);
+}
+
+.heroFacts {
+  list-style: none;
+  border-top: var(--rule-thin) solid var(--ink);
+}
+
+.heroFact {
+  display: flex;
+  justify-content: space-between;
+  gap: var(--space-s);
+  align-items: baseline;
+  padding: 0.6rem 0;
+  border-bottom: var(--rule-hair) solid var(--rule-color);
+}
+
+.heroFactValue {
+  font-family: var(--font-annotation);
+  font-size: var(--step--1);
+  font-variant-numeric: tabular-nums;
+  color: var(--ink);
+  text-align: right;
+}
+
+.heroDrawing {
+  margin-top: var(--space-2xl);
+}
+
+/* ---------- index ---------- */
+
+.indexLayout {
+  display: grid;
+  gap: var(--space-l);
+  grid-template-columns: 1fr;
+}
+
+@media (min-width: 68rem) {
+  .indexLayout {
+    grid-template-columns: repeat(12, 1fr);
+    gap: var(--gutter);
+  }
+  .indexTable {
+    grid-column: 1 / span 7;
+  }
+  .indexPlan {
+    grid-column: 8 / span 5;
+    position: sticky;
+    top: 120px;
+    align-self: start;
+  }
+}
+
+.indexRowLink {
+  text-decoration: none;
+  display: block;
+  color: inherit;
+}
+
+.residenceRow {
+  display: grid;
+  grid-template-columns: 2.6rem 1fr auto;
+  gap: var(--space-xs);
+  align-items: baseline;
+  padding: 0.85rem 0;
+  border-bottom: var(--rule-hair) solid var(--rule-color);
+  transition: background var(--motion-quick) var(--motion-ease);
+}
+
+.residenceRow:hover {
+  background: color-mix(in srgb, var(--limestone) 18%, transparent);
+}
+
+.residenceRow:hover .rowName {
+  color: var(--accent);
+}
+
+.rowIndex {
+  font-family: var(--font-annotation);
+  font-size: var(--annotation-size);
+  color: var(--text-annotation);
+  font-variant-numeric: tabular-nums;
+}
+
+.rowName {
+  font-family: var(--font-display);
+  font-size: var(--step-1);
+  line-height: 1.2;
+  transition: color var(--motion-quick) var(--motion-ease);
+}
+
+.rowMeta {
+  display: flex;
+  gap: var(--space-s);
+  flex-wrap: wrap;
+  margin-top: 0.25rem;
+}
+
+.rowFigures {
+  text-align: right;
+  display: grid;
+  gap: 0.15rem;
+}
+
+.rowPrice {
+  font-family: var(--font-annotation);
+  font-size: var(--step--1);
+  font-variant-numeric: tabular-nums;
+}
+
+/* ---------- thesis ---------- */
+
+.thesisGrid {
+  display: grid;
+  gap: var(--space-l);
+  grid-template-columns: 1fr;
+}
+
+@media (min-width: 60rem) {
+  .thesisGrid {
+    grid-template-columns: repeat(12, 1fr);
+    gap: var(--gutter);
+  }
+  .thesisLead {
+    grid-column: 1 / span 5;
+  }
+  .thesisBody {
+    grid-column: 7 / span 6;
+  }
+}
+
+.thesisHeading {
+  font-size: var(--step-3);
+  max-width: 18ch;
+}
+
+.thesisNote {
+  margin-top: var(--space-m);
+  padding-top: var(--space-s);
+  border-top: var(--rule-hair) solid var(--rule-color);
+}
+
+/* ---------- typology ---------- */
+
+.typologies {
+  display: grid;
+  gap: var(--gutter);
+  grid-template-columns: 1fr;
+  list-style: none;
+}
+
+@media (min-width: 46rem) {
+  .typologies {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.typology {
+  border-top: var(--rule-heavy) solid var(--ink);
+  padding-top: var(--space-s);
+}
+
+.typologyName {
+  font-family: var(--font-display);
+  font-size: var(--step-2);
+  margin-bottom: 0.35rem;
+}
+
+.typologyCount {
+  color: var(--accent);
+}
+
+.typologyBody {
+  font-size: var(--step--1);
+  color: var(--text-secondary);
+  line-height: 1.6;
+  margin-top: var(--space-2xs);
+}
+
+.typologyList {
+  list-style: none;
+  margin-top: var(--space-s);
+  font-size: var(--step--1);
+}
+
+.typologyList li {
+  display: flex;
+  justify-content: space-between;
+  gap: var(--space-2xs);
+  padding: 0.3rem 0;
+  border-bottom: var(--rule-hair) solid var(--rule-color);
+}
+
+/* ---------- location strip ---------- */
+
+.districts {
+  list-style: none;
+  border-top: var(--rule-thin) solid var(--ink);
+}
+
+.district {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0.2rem;
+  padding: var(--space-s) 0;
+  border-bottom: var(--rule-hair) solid var(--rule-color);
+}
+
+@media (min-width: 52rem) {
+  .district {
+    grid-template-columns: 14rem 1fr 9rem;
+    gap: var(--space-m);
+    align-items: baseline;
+  }
+  .districtTiming {
+    text-align: right;
+  }
+}
+
+.districtName {
+  font-family: var(--font-display);
+  font-size: var(--step-1);
+}
+
+.districtSummary {
+  font-size: var(--step--1);
+  color: var(--text-secondary);
+  line-height: 1.6;
+  max-width: 62ch;
+}
+
+/* ---------- journal strip ---------- */
+
+.journalList {
+  list-style: none;
+  display: grid;
+  gap: var(--gutter);
+  grid-template-columns: 1fr;
+}
+
+@media (min-width: 52rem) {
+  .journalList {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.journalItem {
+  border-top: var(--rule-thin) solid var(--ink);
+  padding-top: var(--space-s);
+}
+
+.journalTitle {
+  font-family: var(--font-display);
+  font-size: var(--step-1);
+  line-height: 1.2;
+  margin: 0.4rem 0 0.4rem;
+}
+
+.journalTitle a {
+  text-decoration: none;
+}
+
+.journalTitle a:hover {
+  color: var(--accent);
+}
+
+.journalDeck {
+  font-size: var(--step--1);
+  color: var(--text-secondary);
+  line-height: 1.6;
+  max-width: 62ch;
+}
+
+/* ---------- closing call ---------- */
+
+.closing {
+  border-top: var(--rule-heavy) solid var(--ink);
+  padding-block: var(--space-2xl);
+}
+
+.closingGrid {
+  display: grid;
+  gap: var(--space-l);
+  grid-template-columns: 1fr;
+}
+
+@media (min-width: 60rem) {
+  .closingGrid {
+    grid-template-columns: repeat(12, 1fr);
+    gap: var(--gutter);
+    align-items: start;
+  }
+  .closingLead {
+    grid-column: 1 / span 6;
+  }
+  .closingDetail {
+    grid-column: 8 / span 5;
+  }
+}
+
+.closingHeading {
+  font-size: var(--step-4);
+  max-width: 14ch;
+}

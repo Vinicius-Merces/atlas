@@ -1,0 +1,12 @@
+{
+  "route": "journal-entry",
+  "viewport": "laptop-1280",
+  "documentWidth": 1280,
+  "viewportWidth": 1280,
+  "horizontalOverflow": 0,
+  "overflowingSelectors": [],
+  "smallTapTargets": [],
+  "longestLineChars": 78,
+  "longestSample": "Once the bench is cut, the retained landscape drops from 89 ",
+  "headingSizePx": 62
+}

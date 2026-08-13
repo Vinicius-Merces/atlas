@@ -1,0 +1,12 @@
+{
+  "route": "home",
+  "viewport": "phone-360",
+  "documentWidth": 360,
+  "viewportWidth": 360,
+  "horizontalOverflow": 0,
+  "overflowingSelectors": [],
+  "smallTapTargets": [],
+  "longestLineChars": 51,
+  "longestSample": "The nearest town centre and the Atlantic: supermarkets, inte",
+  "headingSizePx": 46
+}

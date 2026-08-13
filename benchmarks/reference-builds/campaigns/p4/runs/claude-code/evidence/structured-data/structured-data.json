@@ -1,0 +1,1486 @@
+{
+  "base": "http://localhost:3100",
+  "generatedAt": "2026-08-13T20:56:28.752Z",
+  "documents": [
+    {
+      "path": "/",
+      "nodeTypes": [
+        "BreadcrumbList",
+        "ItemList",
+        "RealEstateAgent",
+        "WebSite",
+        "Place"
+      ],
+      "graphs": [
+        {
+          "@context": "https://schema.org",
+          "@graph": [
+            {
+              "@type": "BreadcrumbList",
+              "itemListElement": [
+                {
+                  "@type": "ListItem",
+                  "position": 1,
+                  "name": "Home",
+                  "item": "https://asteria-residences.example/"
+                }
+              ]
+            },
+            {
+              "@type": "ItemList",
+              "name": "Asteria Residences — the twelve houses",
+              "numberOfItems": 12,
+              "itemListElement": [
+                {
+                  "@type": "ListItem",
+                  "position": 1,
+                  "item": {
+                    "@type": "SingleFamilyResidence",
+                    "@id": "https://asteria-residences.example/residences/ridge-house-01#residence",
+                    "name": "Ridge House 01",
+                    "url": "https://asteria-residences.example/residences/ridge-house-01",
+                    "description": "The westernmost house on the ridge, set lowest on the slope and organised around a long south-west living terrace.",
+                    "numberOfRooms": 4,
+                    "numberOfBedrooms": 4,
+                    "numberOfBathroomsTotal": 4,
+                    "numberOfFullBathrooms": 4,
+                    "floorSize": {
+                      "@type": "QuantitativeValue",
+                      "value": 412,
+                      "unitCode": "MTK"
+                    },
+                    "lotSize": {
+                      "@type": "QuantitativeValue",
+                      "value": 980,
+                      "unitCode": "MTK"
+                    },
+                    "address": {
+                      "@type": "PostalAddress",
+                      "addressLocality": "Alto da Pedra",
+                      "addressRegion": "Lisbon District",
+                      "addressCountry": "Portugal"
+                    },
+                    "containedInPlace": {
+                      "@id": "https://asteria-residences.example/#development"
+                    }
+                  }
+                },
+                {
+                  "@type": "ListItem",
+                  "position": 2,
+                  "item": {
+                    "@type": "SingleFamilyResidence",
+                    "@id": "https://asteria-residences.example/residences/ridge-house-02#residence",
+                    "name": "Ridge House 02",
+                    "url": "https://asteria-residences.example/residences/ridge-house-02",
+                    "description": "A west-facing ridge house with a double-height stair hall that carries evening light down into the bedroom level.",
+                    "numberOfRooms": 4,
+                    "numberOfBedrooms": 4,
+                    "numberOfBathroomsTotal": 4,
+                    "numberOfFullBathrooms": 4,
+                    "floorSize": {
+                      "@type": "QuantitativeValue",
+                      "value": 398,
+                      "unitCode": "MTK"
+                    },
+                    "lotSize": {
+                      "@type": "QuantitativeValue",
+                      "value": 940,
+                      "unitCode": "MTK"
+                    },
+                    "address": {
+                      "@type": "PostalAddress",
+                      "addressLocality": "Alto da Pedra",
+                      "addressRegion": "Lisbon District",
+                      "addressCountry": "Portugal"
+                    },
+                    "containedInPlace": {
+                      "@id": "https://asteria-residences.example/#development"
+                    },
+                    "offers": {
+                      "@type": "Offer",
+                      "url": "https://asteria-residences.example/residences/ridge-house-02",
+                      "priceCurrency": "EUR",
+                      "priceSpecification": {
+                        "@type": "PriceSpecification",
+                        "minPrice": 2850000,
+                        "maxPrice": 3100000,
+                        "priceCurrency": "EUR",
+                        "valueAddedTaxIncluded": false
+                      },
+                      "availability": "https://schema.org/PreOrder",
+                      "seller": {
+                        "@id": "https://asteria-residences.example/#organisation"
+                      }
+                    }
+                  }
+                },
+                {
+                  "@type": "ListItem",
+                  "position": 3,
+                  "item": {
+                    "@type": "SingleFamilyResidence",
+                    "@id": "https://asteria-residences.example/residences/ridge-house-03#residence",
+                    "name": "Ridge House 03",
+                    "url": "https://asteria-residences.example/residences/ridge-house-03",
+                    "description": "The most compact of the ridge houses, planned around a single continuous living space that runs the depth of the plan.",
+                    "numberOfRooms": 4,
+                    "numberOfBedrooms": 4,
+                    "numberOfBathroomsTotal": 3,
+                    "numberOfFullBathrooms": 3,
+                    "floorSize": {
+                      "@type": "QuantitativeValue",
+                      "value": 386,
+                      "unitCode": "MTK"
+                    },
+                    "lotSize": {
+                      "@type": "QuantitativeValue",
+                      "value": 910,
+                      "unitCode": "MTK"
+                    },
+                    "address": {
+                      "@type": "PostalAddress",
+                      "addressLocality": "Alto da Pedra",
+                      "addressRegion": "Lisbon District",
+                      "addressCountry": "Portugal"
+                    },
+                    "containedInPlace": {
+                      "@id": "https://asteria-residences.example/#development"
+                    }
+                  }
+                },
+                {
+                  "@type": "ListItem",
+                  "position": 4,
+                  "item": {
+                    "@type": "SingleFamilyResidence",
+                    "@id": "https://asteria-residences.example/residences/ridge-house-04#residence",
+                    "name": "Ridge House 04",
+                    "url": "https://asteria-residences.example/residences/ridge-house-04",
+                    "description": "The last of the ridge houses, with the deepest terrace and the only external stair down to the plateau path.",
+                    "numberOfRooms": 4,
+                    "numberOfBedrooms": 4,
+                    "numberOfBathroomsTotal": 4,
+                    "numberOfFullBathrooms": 4,
+                    "floorSize": {
+                      "@type": "QuantitativeValue",
+                      "value": 404,
+                      "unitCode": "MTK"
+                    },
+                    "lotSize": {
+                      "@type": "QuantitativeValue",
+                      "value": 965,
+                      "unitCode": "MTK"
+                    },
+                    "address": {
+                      "@type": "PostalAddress",
+                      "addressLocality": "Alto da Pedra",
+                      "addressRegion": "Lisbon District",
+                      "addressCountry": "Portugal"
+                    },
+                    "containedInPlace": {
+                      "@id": "https://asteria-residences.example/#development"
+                    },
+                    "offers": {
+                      "@type": "Offer",
+                      "url": "https://asteria-residences.example/residences/ridge-house-04",
+                      "priceCurrency": "EUR",
+                      "priceSpecification": {
+                        "@type": "PriceSpecification",
+                        "minPrice": 2900000,
+                        "maxPrice": 3180000,
+                        "priceCurrency": "EUR",
+                        "valueAddedTaxIncluded": false
+                      },
+                      "availability": "https://schema.org/PreOrder",
+                      "seller": {
+                        "@id": "https://asteria-residences.example/#organisation"
+                      }
+                    }
+                  }
+                },
+                {
+                  "@type": "ListItem",
+                  "position": 5,
+                  "item": {
+                    "@type": "SingleFamilyResidence",
+                    "@id": "https://asteria-residences.example/residences/terrace-house-05#residence",
+                    "name": "Terrace House 05",
+                    "url": "https://asteria-residences.example/residences/terrace-house-05",
+                    "description": "The first of the five terrace houses: a narrow, deep plan stepping down the slope in three half-levels.",
+                    "numberOfRooms": 3,
+                    "numberOfBedrooms": 3,
+                    "numberOfBathroomsTotal": 3,
+                    "numberOfFullBathrooms": 3,
+                    "floorSize": {
+                      "@type": "QuantitativeValue",
+                      "value": 268,
+                      "unitCode": "MTK"
+                    },
+                    "lotSize": {
+                      "@type": "QuantitativeValue",
+                      "value": 620,
+                      "unitCode": "MTK"
+                    },
+                    "address": {
+                      "@type": "PostalAddress",
+                      "addressLocality": "Alto da Pedra",
+                      "addressRegion": "Lisbon District",
+                      "addressCountry": "Portugal"
+                    },
+                    "containedInPlace": {
+                      "@id": "https://asteria-residences.example/#development"
+                    },
+                    "offers": {
+                      "@type": "Offer",
+                      "url": "https://asteria-residences.example/residences/terrace-house-05",
+                      "priceCurrency": "EUR",
+                      "priceSpecification": {
+                        "@type": "PriceSpecification",
+                        "minPrice": 1850000,
+                        "maxPrice": 2020000,
+                        "priceCurrency": "EUR",
+                        "valueAddedTaxIncluded": false
+                      },
+                      "availability": "https://schema.org/PreOrder",
+                      "seller": {
+                        "@id": "https://asteria-residences.example/#organisation"
+                      }
+                    }
+                  }
+                },
+                {
+                  "@type": "ListItem",
+                  "position": 6,
+                  "item": {
+                    "@type": "SingleFamilyResidence",
+                    "@id": "https://asteria-residences.example/residences/terrace-house-06#residence",
+                    "name": "Terrace House 06",
+                    "url": "https://asteria-residences.example/residences/terrace-house-06",
+                    "description": "A mid-row terrace house with the same stepped section and a longer, quieter garden at the rear.",
+                    "numberOfRooms": 3,
+                    "numberOfBedrooms": 3,
+                    "numberOfBathroomsTotal": 3,
+                    "numberOfFullBathrooms": 3,
+                    "floorSize": {
+                      "@type": "QuantitativeValue",
+                      "value": 262,
+                      "unitCode": "MTK"
+                    },
+                    "lotSize": {
+                      "@type": "QuantitativeValue",
+                      "value": 605,
+                      "unitCode": "MTK"
+                    },
+                    "address": {
+                      "@type": "PostalAddress",
+                      "addressLocality": "Alto da Pedra",
+                      "addressRegion": "Lisbon District",
+                      "addressCountry": "Portugal"
+                    },
+                    "containedInPlace": {
+                      "@id": "https://asteria-residences.example/#development"
+                    }
+                  }
+                },
+                {
+                  "@type": "ListItem",
+                  "position": 7,
+                  "item": {
+                    "@type": "SingleFamilyResidence",
+                    "@id": "https://asteria-residences.example/residences/terrace-house-07#residence",
+                    "name": "Terrace House 07",
+                    "url": "https://asteria-residences.example/residences/terrace-house-07",
+                    "description": "The largest terrace house, with a fourth half-level under the roof drawn as a studio rather than a bedroom.",
+                    "numberOfRooms": 3,
+                    "numberOfBedrooms": 3,
+                    "numberOfBathroomsTotal": 3,
+                    "numberOfFullBathrooms": 3,
+                    "floorSize": {
+                      "@type": "QuantitativeValue",
+                      "value": 274,
+                      "unitCode": "MTK"
+                    },
+                    "lotSize": {
+                      "@type": "QuantitativeValue",
+                      "value": 640,
+                      "unitCode": "MTK"
+                    },
+                    "address": {
+                      "@type": "PostalAddress",
+                      "addressLocality": "Alto da Pedra",
+                      "addressRegion": "Lisbon District",
+                      "addressCountry": "Portugal"
+                    },
+                    "containedInPlace": {
+                      "@id": "https://asteria-residences.example/#development"
+                    },
+                    "offers": {
+                      "@type": "Offer",
+                      "url": "https://asteria-residences.example/residences/terrace-house-07",
+                      "priceCurrency": "EUR",
+                      "priceSpecification": {
+                        "@type": "PriceSpecification",
+                        "minPrice": 1920000,
+                        "maxPrice": 2090000,
+                        "priceCurrency": "EUR",
+                        "valueAddedTaxIncluded": false
+                      },
+                      "availability": "https://schema.org/PreOrder",
+                      "seller": {
+                        "@id": "https://asteria-residences.example/#organisation"
+                      }
+                    }
+                  }
+                },
+                {
+                  "@type": "ListItem",
+                  "position": 8,
+                  "item": {
+                    "@type": "SingleFamilyResidence",
+                    "@id": "https://asteria-residences.example/residences/terrace-house-08#residence",
+                    "name": "Terrace House 08",
+                    "url": "https://asteria-residences.example/residences/terrace-house-08",
+                    "description": "The smallest house in the development and the entry point to the ridge, planned for two people who occasionally host four.",
+                    "numberOfRooms": 3,
+                    "numberOfBedrooms": 3,
+                    "numberOfBathroomsTotal": 2,
+                    "numberOfFullBathrooms": 2,
+                    "floorSize": {
+                      "@type": "QuantitativeValue",
+                      "value": 258,
+                      "unitCode": "MTK"
+                    },
+                    "lotSize": {
+                      "@type": "QuantitativeValue",
+                      "value": 596,
+                      "unitCode": "MTK"
+                    },
+                    "address": {
+                      "@type": "PostalAddress",
+                      "addressLocality": "Alto da Pedra",
+                      "addressRegion": "Lisbon District",
+                      "addressCountry": "Portugal"
+                    },
+                    "containedInPlace": {
+                      "@id": "https://asteria-residences.example/#development"
+                    },
+                    "offers": {
+                      "@type": "Offer",
+                      "url": "https://asteria-residences.example/residences/terrace-house-08",
+                      "priceCurrency": "EUR",
+                      "priceSpecification": {
+                        "@type": "PriceSpecification",
+                        "minPrice": 1740000,
+                        "maxPrice": 1880000,
+                        "priceCurrency": "EUR",
+                        "valueAddedTaxIncluded": false
+                      },
+                      "availability": "https://schema.org/PreOrder",
+                      "seller": {
+                        "@id": "https://asteria-residences.example/#organisation"
+                      }
+                    }
+                  }
+                },
+                {
+                  "@type": "ListItem",
+                  "position": 9,
+                  "item": {
+                    "@type": "SingleFamilyResidence",
+                    "@id": "https://asteria-residences.example/residences/terrace-house-09#residence",
+                    "name": "Terrace House 09",
+                    "url": "https://asteria-residences.example/residences/terrace-house-09",
+                    "description": "The end-of-row terrace house, turned to catch the south-west light and given a second parking bay.",
+                    "numberOfRooms": 3,
+                    "numberOfBedrooms": 3,
+                    "numberOfBathroomsTotal": 3,
+                    "numberOfFullBathrooms": 3,
+                    "floorSize": {
+                      "@type": "QuantitativeValue",
+                      "value": 280,
+                      "unitCode": "MTK"
+                    },
+                    "lotSize": {
+                      "@type": "QuantitativeValue",
+                      "value": 655,
+                      "unitCode": "MTK"
+                    },
+                    "address": {
+                      "@type": "PostalAddress",
+                      "addressLocality": "Alto da Pedra",
+                      "addressRegion": "Lisbon District",
+                      "addressCountry": "Portugal"
+                    },
+                    "containedInPlace": {
+                      "@id": "https://asteria-residences.example/#development"
+                    }
+                  }
+                },
+                {
+                  "@type": "ListItem",
+                  "position": 10,
+                  "item": {
+                    "@type": "SingleFamilyResidence",
+                    "@id": "https://asteria-residences.example/residences/courtyard-house-10#residence",
+                    "name": "Courtyard House 10",
+                    "url": "https://asteria-residences.example/residences/courtyard-house-10",
+                    "description": "A single-storey courtyard house on the plateau, where the ridge flattens and the wind decides the plan.",
+                    "numberOfRooms": 4,
+                    "numberOfBedrooms": 4,
+                    "numberOfBathroomsTotal": 4,
+                    "numberOfFullBathrooms": 4,
+                    "floorSize": {
+                      "@type": "QuantitativeValue",
+                      "value": 336,
+                      "unitCode": "MTK"
+                    },
+                    "lotSize": {
+                      "@type": "QuantitativeValue",
+                      "value": 780,
+                      "unitCode": "MTK"
+                    },
+                    "address": {
+                      "@type": "PostalAddress",
+                      "addressLocality": "Alto da Pedra",
+                      "addressRegion": "Lisbon District",
+                      "addressCountry": "Portugal"
+                    },
+                    "containedInPlace": {
+                      "@id": "https://asteria-residences.example/#development"
+                    },
+                    "offers": {
+                      "@type": "Offer",
+                      "url": "https://asteria-residences.example/residences/courtyard-house-10",
+                      "priceCurrency": "EUR",
+                      "priceSpecification": {
+                        "@type": "PriceSpecification",
+                        "minPrice": 2450000,
+                        "maxPrice": 2640000,
+                        "priceCurrency": "EUR",
+                        "valueAddedTaxIncluded": false
+                      },
+                      "availability": "https://schema.org/PreOrder",
+                      "seller": {
+                        "@id": "https://asteria-residences.example/#organisation"
+                      }
+                    }
+                  }
+                },
+                {
+                  "@type": "ListItem",
+                  "position": 11,
+                  "item": {
+                    "@type": "SingleFamilyResidence",
+                    "@id": "https://asteria-residences.example/residences/courtyard-house-11#residence",
+                    "name": "Courtyard House 11",
+                    "url": "https://asteria-residences.example/residences/courtyard-house-11",
+                    "description": "The middle courtyard house, with a second, smaller service court that separates the guest rooms from the family wing.",
+                    "numberOfRooms": 4,
+                    "numberOfBedrooms": 4,
+                    "numberOfBathroomsTotal": 4,
+                    "numberOfFullBathrooms": 4,
+                    "floorSize": {
+                      "@type": "QuantitativeValue",
+                      "value": 352,
+                      "unitCode": "MTK"
+                    },
+                    "lotSize": {
+                      "@type": "QuantitativeValue",
+                      "value": 820,
+                      "unitCode": "MTK"
+                    },
+                    "address": {
+                      "@type": "PostalAddress",
+                      "addressLocality": "Alto da Pedra",
+                      "addressRegion": "Lisbon District",
+                      "addressCountry": "Portugal"
+                    },
+                    "containedInPlace": {
+                      "@id": "https://asteria-residences.example/#development"
+                    },
+                    "offers": {
+                      "@type": "Offer",
+                      "url": "https://asteria-residences.example/residences/courtyard-house-11",
+                      "priceCurrency": "EUR",
+                      "priceSpecification": {
+                        "@type": "PriceSpecification",
+                        "minPrice": 2580000,
+                        "maxPrice": 2790000,
+                        "priceCurrency": "EUR",
+                        "valueAddedTaxIncluded": false
+                      },
+                      "availability": "https://schema.org/PreOrder",
+                      "seller": {
+                        "@id": "https://asteria-residences.example/#organisation"
+                      }
+                    }
+                  }
+                },
+                {
+                  "@type": "ListItem",
+                  "position": 12,
+                  "item": {
+                    "@type": "SingleFamilyResidence",
+                    "@id": "https://asteria-residences.example/residences/courtyard-house-12#residence",
+                    "name": "Courtyard House 12",
+                    "url": "https://asteria-residences.example/residences/courtyard-house-12",
+                    "description": "The highest and largest house, holding the end of the plateau with a five-bedroom plan around a single deep court.",
+                    "numberOfRooms": 5,
+                    "numberOfBedrooms": 5,
+                    "numberOfBathroomsTotal": 4,
+                    "numberOfFullBathrooms": 4,
+                    "floorSize": {
+                      "@type": "QuantitativeValue",
+                      "value": 368,
+                      "unitCode": "MTK"
+                    },
+                    "lotSize": {
+                      "@type": "QuantitativeValue",
+                      "value": 860,
+                      "unitCode": "MTK"
+                    },
+                    "address": {
+                      "@type": "PostalAddress",
+                      "addressLocality": "Alto da Pedra",
+                      "addressRegion": "Lisbon District",
+                      "addressCountry": "Portugal"
+                    },
+                    "containedInPlace": {
+                      "@id": "https://asteria-residences.example/#development"
+                    }
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "@context": "https://schema.org",
+          "@graph": [
+            {
+              "@type": "RealEstateAgent",
+              "@id": "https://asteria-residences.example/#organisation",
+              "name": "Asteria Residences",
+              "legalName": "Asteria Ridge Development, Lda.",
+              "url": "https://asteria-residences.example/",
+              "telephone": "+351 210 000 120",
+              "email": "visits@asteria-residences.example",
+              "address": {
+                "@type": "PostalAddress",
+                "streetAddress": "Rua da Pedreira 12",
+                "addressLocality": "Oeiras",
+                "postalCode": "2780-158",
+                "addressCountry": "Portugal"
+              },
+              "areaServed": "Alto da Pedra, Lisbon District, Portugal",
+              "openingHours": "Mo-Sa 10:00-18:00"
+            },
+            {
+              "@type": "WebSite",
+              "@id": "https://asteria-residences.example/#website",
+              "name": "Asteria Residences",
+              "url": "https://asteria-residences.example/",
+              "inLanguage": "en-GB",
+              "publisher": {
+                "@id": "https://asteria-residences.example/#organisation"
+              }
+            },
+            {
+              "@type": "Place",
+              "@id": "https://asteria-residences.example/#development",
+              "name": "Asteria Residences, Alto da Pedra",
+              "description": "Twelve houses on the Alto da Pedra ridge",
+              "geo": {
+                "@type": "GeoCoordinates",
+                "latitude": 38.7412,
+                "longitude": -9.2986
+              },
+              "address": {
+                "@type": "PostalAddress",
+                "addressLocality": "Alto da Pedra",
+                "addressRegion": "Lisbon District",
+                "addressCountry": "Portugal"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "path": "/residences/ridge-house-04",
+      "nodeTypes": [
+        "BreadcrumbList",
+        "SingleFamilyResidence",
+        "RealEstateAgent",
+        "WebSite",
+        "Place"
+      ],
+      "graphs": [
+        {
+          "@context": "https://schema.org",
+          "@graph": [
+            {
+              "@type": "BreadcrumbList",
+              "itemListElement": [
+                {
+                  "@type": "ListItem",
+                  "position": 1,
+                  "name": "Home",
+                  "item": "https://asteria-residences.example/"
+                },
+                {
+                  "@type": "ListItem",
+                  "position": 2,
+                  "name": "Residences",
+                  "item": "https://asteria-residences.example/residences"
+                },
+                {
+                  "@type": "ListItem",
+                  "position": 3,
+                  "name": "Ridge House 04",
+                  "item": "https://asteria-residences.example/residences/ridge-house-04"
+                }
+              ]
+            },
+            {
+              "@type": "SingleFamilyResidence",
+              "@id": "https://asteria-residences.example/residences/ridge-house-04#residence",
+              "name": "Ridge House 04",
+              "url": "https://asteria-residences.example/residences/ridge-house-04",
+              "description": "The last of the ridge houses, with the deepest terrace and the only external stair down to the plateau path.",
+              "numberOfRooms": 4,
+              "numberOfBedrooms": 4,
+              "numberOfBathroomsTotal": 4,
+              "numberOfFullBathrooms": 4,
+              "floorSize": {
+                "@type": "QuantitativeValue",
+                "value": 404,
+                "unitCode": "MTK"
+              },
+              "lotSize": {
+                "@type": "QuantitativeValue",
+                "value": 965,
+                "unitCode": "MTK"
+              },
+              "address": {
+                "@type": "PostalAddress",
+                "addressLocality": "Alto da Pedra",
+                "addressRegion": "Lisbon District",
+                "addressCountry": "Portugal"
+              },
+              "containedInPlace": {
+                "@id": "https://asteria-residences.example/#development"
+              },
+              "offers": {
+                "@type": "Offer",
+                "url": "https://asteria-residences.example/residences/ridge-house-04",
+                "priceCurrency": "EUR",
+                "priceSpecification": {
+                  "@type": "PriceSpecification",
+                  "minPrice": 2900000,
+                  "maxPrice": 3180000,
+                  "priceCurrency": "EUR",
+                  "valueAddedTaxIncluded": false
+                },
+                "availability": "https://schema.org/PreOrder",
+                "seller": {
+                  "@id": "https://asteria-residences.example/#organisation"
+                }
+              }
+            }
+          ]
+        },
+        {
+          "@context": "https://schema.org",
+          "@graph": [
+            {
+              "@type": "RealEstateAgent",
+              "@id": "https://asteria-residences.example/#organisation",
+              "name": "Asteria Residences",
+              "legalName": "Asteria Ridge Development, Lda.",
+              "url": "https://asteria-residences.example/",
+              "telephone": "+351 210 000 120",
+              "email": "visits@asteria-residences.example",
+              "address": {
+                "@type": "PostalAddress",
+                "streetAddress": "Rua da Pedreira 12",
+                "addressLocality": "Oeiras",
+                "postalCode": "2780-158",
+                "addressCountry": "Portugal"
+              },
+              "areaServed": "Alto da Pedra, Lisbon District, Portugal",
+              "openingHours": "Mo-Sa 10:00-18:00"
+            },
+            {
+              "@type": "WebSite",
+              "@id": "https://asteria-residences.example/#website",
+              "name": "Asteria Residences",
+              "url": "https://asteria-residences.example/",
+              "inLanguage": "en-GB",
+              "publisher": {
+                "@id": "https://asteria-residences.example/#organisation"
+              }
+            },
+            {
+              "@type": "Place",
+              "@id": "https://asteria-residences.example/#development",
+              "name": "Asteria Residences, Alto da Pedra",
+              "description": "Twelve houses on the Alto da Pedra ridge",
+              "geo": {
+                "@type": "GeoCoordinates",
+                "latitude": 38.7412,
+                "longitude": -9.2986
+              },
+              "address": {
+                "@type": "PostalAddress",
+                "addressLocality": "Alto da Pedra",
+                "addressRegion": "Lisbon District",
+                "addressCountry": "Portugal"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "path": "/residences/ridge-house-01",
+      "nodeTypes": [
+        "BreadcrumbList",
+        "SingleFamilyResidence",
+        "RealEstateAgent",
+        "WebSite",
+        "Place"
+      ],
+      "graphs": [
+        {
+          "@context": "https://schema.org",
+          "@graph": [
+            {
+              "@type": "BreadcrumbList",
+              "itemListElement": [
+                {
+                  "@type": "ListItem",
+                  "position": 1,
+                  "name": "Home",
+                  "item": "https://asteria-residences.example/"
+                },
+                {
+                  "@type": "ListItem",
+                  "position": 2,
+                  "name": "Residences",
+                  "item": "https://asteria-residences.example/residences"
+                },
+                {
+                  "@type": "ListItem",
+                  "position": 3,
+                  "name": "Ridge House 01",
+                  "item": "https://asteria-residences.example/residences/ridge-house-01"
+                }
+              ]
+            },
+            {
+              "@type": "SingleFamilyResidence",
+              "@id": "https://asteria-residences.example/residences/ridge-house-01#residence",
+              "name": "Ridge House 01",
+              "url": "https://asteria-residences.example/residences/ridge-house-01",
+              "description": "The westernmost house on the ridge, set lowest on the slope and organised around a long south-west living terrace.",
+              "numberOfRooms": 4,
+              "numberOfBedrooms": 4,
+              "numberOfBathroomsTotal": 4,
+              "numberOfFullBathrooms": 4,
+              "floorSize": {
+                "@type": "QuantitativeValue",
+                "value": 412,
+                "unitCode": "MTK"
+              },
+              "lotSize": {
+                "@type": "QuantitativeValue",
+                "value": 980,
+                "unitCode": "MTK"
+              },
+              "address": {
+                "@type": "PostalAddress",
+                "addressLocality": "Alto da Pedra",
+                "addressRegion": "Lisbon District",
+                "addressCountry": "Portugal"
+              },
+              "containedInPlace": {
+                "@id": "https://asteria-residences.example/#development"
+              }
+            }
+          ]
+        },
+        {
+          "@context": "https://schema.org",
+          "@graph": [
+            {
+              "@type": "RealEstateAgent",
+              "@id": "https://asteria-residences.example/#organisation",
+              "name": "Asteria Residences",
+              "legalName": "Asteria Ridge Development, Lda.",
+              "url": "https://asteria-residences.example/",
+              "telephone": "+351 210 000 120",
+              "email": "visits@asteria-residences.example",
+              "address": {
+                "@type": "PostalAddress",
+                "streetAddress": "Rua da Pedreira 12",
+                "addressLocality": "Oeiras",
+                "postalCode": "2780-158",
+                "addressCountry": "Portugal"
+              },
+              "areaServed": "Alto da Pedra, Lisbon District, Portugal",
+              "openingHours": "Mo-Sa 10:00-18:00"
+            },
+            {
+              "@type": "WebSite",
+              "@id": "https://asteria-residences.example/#website",
+              "name": "Asteria Residences",
+              "url": "https://asteria-residences.example/",
+              "inLanguage": "en-GB",
+              "publisher": {
+                "@id": "https://asteria-residences.example/#organisation"
+              }
+            },
+            {
+              "@type": "Place",
+              "@id": "https://asteria-residences.example/#development",
+              "name": "Asteria Residences, Alto da Pedra",
+              "description": "Twelve houses on the Alto da Pedra ridge",
+              "geo": {
+                "@type": "GeoCoordinates",
+                "latitude": 38.7412,
+                "longitude": -9.2986
+              },
+              "address": {
+                "@type": "PostalAddress",
+                "addressLocality": "Alto da Pedra",
+                "addressRegion": "Lisbon District",
+                "addressCountry": "Portugal"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "path": "/residences/ridge-house-03",
+      "nodeTypes": [
+        "BreadcrumbList",
+        "SingleFamilyResidence",
+        "RealEstateAgent",
+        "WebSite",
+        "Place"
+      ],
+      "graphs": [
+        {
+          "@context": "https://schema.org",
+          "@graph": [
+            {
+              "@type": "BreadcrumbList",
+              "itemListElement": [
+                {
+                  "@type": "ListItem",
+                  "position": 1,
+                  "name": "Home",
+                  "item": "https://asteria-residences.example/"
+                },
+                {
+                  "@type": "ListItem",
+                  "position": 2,
+                  "name": "Residences",
+                  "item": "https://asteria-residences.example/residences"
+                },
+                {
+                  "@type": "ListItem",
+                  "position": 3,
+                  "name": "Ridge House 03",
+                  "item": "https://asteria-residences.example/residences/ridge-house-03"
+                }
+              ]
+            },
+            {
+              "@type": "SingleFamilyResidence",
+              "@id": "https://asteria-residences.example/residences/ridge-house-03#residence",
+              "name": "Ridge House 03",
+              "url": "https://asteria-residences.example/residences/ridge-house-03",
+              "description": "The most compact of the ridge houses, planned around a single continuous living space that runs the depth of the plan.",
+              "numberOfRooms": 4,
+              "numberOfBedrooms": 4,
+              "numberOfBathroomsTotal": 3,
+              "numberOfFullBathrooms": 3,
+              "floorSize": {
+                "@type": "QuantitativeValue",
+                "value": 386,
+                "unitCode": "MTK"
+              },
+              "lotSize": {
+                "@type": "QuantitativeValue",
+                "value": 910,
+                "unitCode": "MTK"
+              },
+              "address": {
+                "@type": "PostalAddress",
+                "addressLocality": "Alto da Pedra",
+                "addressRegion": "Lisbon District",
+                "addressCountry": "Portugal"
+              },
+              "containedInPlace": {
+                "@id": "https://asteria-residences.example/#development"
+              }
+            }
+          ]
+        },
+        {
+          "@context": "https://schema.org",
+          "@graph": [
+            {
+              "@type": "RealEstateAgent",
+              "@id": "https://asteria-residences.example/#organisation",
+              "name": "Asteria Residences",
+              "legalName": "Asteria Ridge Development, Lda.",
+              "url": "https://asteria-residences.example/",
+              "telephone": "+351 210 000 120",
+              "email": "visits@asteria-residences.example",
+              "address": {
+                "@type": "PostalAddress",
+                "streetAddress": "Rua da Pedreira 12",
+                "addressLocality": "Oeiras",
+                "postalCode": "2780-158",
+                "addressCountry": "Portugal"
+              },
+              "areaServed": "Alto da Pedra, Lisbon District, Portugal",
+              "openingHours": "Mo-Sa 10:00-18:00"
+            },
+            {
+              "@type": "WebSite",
+              "@id": "https://asteria-residences.example/#website",
+              "name": "Asteria Residences",
+              "url": "https://asteria-residences.example/",
+              "inLanguage": "en-GB",
+              "publisher": {
+                "@id": "https://asteria-residences.example/#organisation"
+              }
+            },
+            {
+              "@type": "Place",
+              "@id": "https://asteria-residences.example/#development",
+              "name": "Asteria Residences, Alto da Pedra",
+              "description": "Twelve houses on the Alto da Pedra ridge",
+              "geo": {
+                "@type": "GeoCoordinates",
+                "latitude": 38.7412,
+                "longitude": -9.2986
+              },
+              "address": {
+                "@type": "PostalAddress",
+                "addressLocality": "Alto da Pedra",
+                "addressRegion": "Lisbon District",
+                "addressCountry": "Portugal"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "path": "/residences/courtyard-house-12",
+      "nodeTypes": [
+        "BreadcrumbList",
+        "SingleFamilyResidence",
+        "RealEstateAgent",
+        "WebSite",
+        "Place"
+      ],
+      "graphs": [
+        {
+          "@context": "https://schema.org",
+          "@graph": [
+            {
+              "@type": "BreadcrumbList",
+              "itemListElement": [
+                {
+                  "@type": "ListItem",
+                  "position": 1,
+                  "name": "Home",
+                  "item": "https://asteria-residences.example/"
+                },
+                {
+                  "@type": "ListItem",
+                  "position": 2,
+                  "name": "Residences",
+                  "item": "https://asteria-residences.example/residences"
+                },
+                {
+                  "@type": "ListItem",
+                  "position": 3,
+                  "name": "Courtyard House 12",
+                  "item": "https://asteria-residences.example/residences/courtyard-house-12"
+                }
+              ]
+            },
+            {
+              "@type": "SingleFamilyResidence",
+              "@id": "https://asteria-residences.example/residences/courtyard-house-12#residence",
+              "name": "Courtyard House 12",
+              "url": "https://asteria-residences.example/residences/courtyard-house-12",
+              "description": "The highest and largest house, holding the end of the plateau with a five-bedroom plan around a single deep court.",
+              "numberOfRooms": 5,
+              "numberOfBedrooms": 5,
+              "numberOfBathroomsTotal": 4,
+              "numberOfFullBathrooms": 4,
+              "floorSize": {
+                "@type": "QuantitativeValue",
+                "value": 368,
+                "unitCode": "MTK"
+              },
+              "lotSize": {
+                "@type": "QuantitativeValue",
+                "value": 860,
+                "unitCode": "MTK"
+              },
+              "address": {
+                "@type": "PostalAddress",
+                "addressLocality": "Alto da Pedra",
+                "addressRegion": "Lisbon District",
+                "addressCountry": "Portugal"
+              },
+              "containedInPlace": {
+                "@id": "https://asteria-residences.example/#development"
+              }
+            }
+          ]
+        },
+        {
+          "@context": "https://schema.org",
+          "@graph": [
+            {
+              "@type": "RealEstateAgent",
+              "@id": "https://asteria-residences.example/#organisation",
+              "name": "Asteria Residences",
+              "legalName": "Asteria Ridge Development, Lda.",
+              "url": "https://asteria-residences.example/",
+              "telephone": "+351 210 000 120",
+              "email": "visits@asteria-residences.example",
+              "address": {
+                "@type": "PostalAddress",
+                "streetAddress": "Rua da Pedreira 12",
+                "addressLocality": "Oeiras",
+                "postalCode": "2780-158",
+                "addressCountry": "Portugal"
+              },
+              "areaServed": "Alto da Pedra, Lisbon District, Portugal",
+              "openingHours": "Mo-Sa 10:00-18:00"
+            },
+            {
+              "@type": "WebSite",
+              "@id": "https://asteria-residences.example/#website",
+              "name": "Asteria Residences",
+              "url": "https://asteria-residences.example/",
+              "inLanguage": "en-GB",
+              "publisher": {
+                "@id": "https://asteria-residences.example/#organisation"
+              }
+            },
+            {
+              "@type": "Place",
+              "@id": "https://asteria-residences.example/#development",
+              "name": "Asteria Residences, Alto da Pedra",
+              "description": "Twelve houses on the Alto da Pedra ridge",
+              "geo": {
+                "@type": "GeoCoordinates",
+                "latitude": 38.7412,
+                "longitude": -9.2986
+              },
+              "address": {
+                "@type": "PostalAddress",
+                "addressLocality": "Alto da Pedra",
+                "addressRegion": "Lisbon District",
+                "addressCountry": "Portugal"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "path": "/journal/why-twelve-houses",
+      "nodeTypes": [
+        "BreadcrumbList",
+        "Article",
+        "RealEstateAgent",
+        "WebSite",
+        "Place"
+      ],
+      "graphs": [
+        {
+          "@context": "https://schema.org",
+          "@graph": [
+            {
+              "@type": "BreadcrumbList",
+              "itemListElement": [
+                {
+                  "@type": "ListItem",
+                  "position": 1,
+                  "name": "Home",
+                  "item": "https://asteria-residences.example/"
+                },
+                {
+                  "@type": "ListItem",
+                  "position": 2,
+                  "name": "Journal",
+                  "item": "https://asteria-residences.example/journal"
+                },
+                {
+                  "@type": "ListItem",
+                  "position": 3,
+                  "name": "Why twelve houses and not forty",
+                  "item": "https://asteria-residences.example/journal/why-twelve-houses"
+                }
+              ]
+            },
+            {
+              "@type": "Article",
+              "@id": "https://asteria-residences.example/journal/why-twelve-houses#article",
+              "headline": "Why twelve houses and not forty",
+              "description": "The ridge could carry three times the density under the local plan. The arithmetic of why it does not is the whole argument of the project.",
+              "url": "https://asteria-residences.example/journal/why-twelve-houses",
+              "datePublished": "2026-02-11",
+              "dateModified": "2026-05-04",
+              "author": {
+                "@type": "Person",
+                "name": "Inês Vidal Ferrão",
+                "jobTitle": "Principal architect"
+              },
+              "publisher": {
+                "@id": "https://asteria-residences.example/#organisation"
+              },
+              "inLanguage": "en-GB",
+              "isPartOf": {
+                "@id": "https://asteria-residences.example/#website"
+              },
+              "wordCount": 260
+            }
+          ]
+        },
+        {
+          "@context": "https://schema.org",
+          "@graph": [
+            {
+              "@type": "RealEstateAgent",
+              "@id": "https://asteria-residences.example/#organisation",
+              "name": "Asteria Residences",
+              "legalName": "Asteria Ridge Development, Lda.",
+              "url": "https://asteria-residences.example/",
+              "telephone": "+351 210 000 120",
+              "email": "visits@asteria-residences.example",
+              "address": {
+                "@type": "PostalAddress",
+                "streetAddress": "Rua da Pedreira 12",
+                "addressLocality": "Oeiras",
+                "postalCode": "2780-158",
+                "addressCountry": "Portugal"
+              },
+              "areaServed": "Alto da Pedra, Lisbon District, Portugal",
+              "openingHours": "Mo-Sa 10:00-18:00"
+            },
+            {
+              "@type": "WebSite",
+              "@id": "https://asteria-residences.example/#website",
+              "name": "Asteria Residences",
+              "url": "https://asteria-residences.example/",
+              "inLanguage": "en-GB",
+              "publisher": {
+                "@id": "https://asteria-residences.example/#organisation"
+              }
+            },
+            {
+              "@type": "Place",
+              "@id": "https://asteria-residences.example/#development",
+              "name": "Asteria Residences, Alto da Pedra",
+              "description": "Twelve houses on the Alto da Pedra ridge",
+              "geo": {
+                "@type": "GeoCoordinates",
+                "latitude": 38.7412,
+                "longitude": -9.2986
+              },
+              "address": {
+                "@type": "PostalAddress",
+                "addressLocality": "Alto da Pedra",
+                "addressRegion": "Lisbon District",
+                "addressCountry": "Portugal"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "path": "/enquire",
+      "nodeTypes": [
+        "BreadcrumbList",
+        "FAQPage",
+        "RealEstateAgent",
+        "WebSite",
+        "Place"
+      ],
+      "graphs": [
+        {
+          "@context": "https://schema.org",
+          "@graph": [
+            {
+              "@type": "BreadcrumbList",
+              "itemListElement": [
+                {
+                  "@type": "ListItem",
+                  "position": 1,
+                  "name": "Home",
+                  "item": "https://asteria-residences.example/"
+                },
+                {
+                  "@type": "ListItem",
+                  "position": 2,
+                  "name": "Request a visit",
+                  "item": "https://asteria-residences.example/enquire"
+                }
+              ]
+            },
+            {
+              "@type": "FAQPage",
+              "@id": "https://asteria-residences.example/enquire#faq",
+              "mainEntity": [
+                {
+                  "@type": "Question",
+                  "name": "What happens after I send this form?",
+                  "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Your request is recorded immediately with a reference code beginning AST- and passed to the sales team. A person answers within 24 hours, Monday to Saturday."
+                  }
+                },
+                {
+                  "@type": "Question",
+                  "name": "How long does a visit take?",
+                  "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "About ninety minutes. Visits leave from the sales office at Rua da Pedreira 12, Oeiras, and cross the ridge on foot, so sturdy shoes are genuinely necessary."
+                  }
+                },
+                {
+                  "@type": "Question",
+                  "name": "Is there a show home?",
+                  "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Not yet. Two houses are under construction and can be walked through in shell form. Everything else is seen as drawings and on the ground itself."
+                  }
+                },
+                {
+                  "@type": "Question",
+                  "name": "Will I be added to a mailing list?",
+                  "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "No. Requesting a visit consents to us answering that request only. Marketing contact would need a separate opt-in, which this form does not ask for."
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "@context": "https://schema.org",
+          "@graph": [
+            {
+              "@type": "RealEstateAgent",
+              "@id": "https://asteria-residences.example/#organisation",
+              "name": "Asteria Residences",
+              "legalName": "Asteria Ridge Development, Lda.",
+              "url": "https://asteria-residences.example/",
+              "telephone": "+351 210 000 120",
+              "email": "visits@asteria-residences.example",
+              "address": {
+                "@type": "PostalAddress",
+                "streetAddress": "Rua da Pedreira 12",
+                "addressLocality": "Oeiras",
+                "postalCode": "2780-158",
+                "addressCountry": "Portugal"
+              },
+              "areaServed": "Alto da Pedra, Lisbon District, Portugal",
+              "openingHours": "Mo-Sa 10:00-18:00"
+            },
+            {
+              "@type": "WebSite",
+              "@id": "https://asteria-residences.example/#website",
+              "name": "Asteria Residences",
+              "url": "https://asteria-residences.example/",
+              "inLanguage": "en-GB",
+              "publisher": {
+                "@id": "https://asteria-residences.example/#organisation"
+              }
+            },
+            {
+              "@type": "Place",
+              "@id": "https://asteria-residences.example/#development",
+              "name": "Asteria Residences, Alto da Pedra",
+              "description": "Twelve houses on the Alto da Pedra ridge",
+              "geo": {
+                "@type": "GeoCoordinates",
+                "latitude": 38.7412,
+                "longitude": -9.2986
+              },
+              "address": {
+                "@type": "PostalAddress",
+                "addressLocality": "Alto da Pedra",
+                "addressRegion": "Lisbon District",
+                "addressCountry": "Portugal"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "path": "/location",
+      "nodeTypes": [
+        "BreadcrumbList",
+        "Place",
+        "Place",
+        "Place",
+        "Place",
+        "Place",
+        "RealEstateAgent",
+        "WebSite",
+        "Place"
+      ],
+      "graphs": [
+        {
+          "@context": "https://schema.org",
+          "@graph": [
+            {
+              "@type": "BreadcrumbList",
+              "itemListElement": [
+                {
+                  "@type": "ListItem",
+                  "position": 1,
+                  "name": "Home",
+                  "item": "https://asteria-residences.example/"
+                },
+                {
+                  "@type": "ListItem",
+                  "position": 2,
+                  "name": "Location",
+                  "item": "https://asteria-residences.example/location"
+                }
+              ]
+            },
+            {
+              "@type": "Place",
+              "@id": "https://asteria-residences.example/#development",
+              "name": "Asteria Residences, Alto da Pedra",
+              "description": "Twelve houses on the Alto da Pedra ridge",
+              "geo": {
+                "@type": "GeoCoordinates",
+                "latitude": 38.7412,
+                "longitude": -9.2986
+              },
+              "address": {
+                "@type": "PostalAddress",
+                "addressLocality": "Alto da Pedra",
+                "addressRegion": "Lisbon District",
+                "addressCountry": "Portugal"
+              }
+            },
+            {
+              "@type": "Place",
+              "@id": "https://asteria-residences.example/location#the-ridge",
+              "name": "The ridge itself",
+              "description": "A 1.4 km limestone escarpment at 148–178 m, carrying the twelve plots, a retained vineyard and an orchard."
+            },
+            {
+              "@type": "Place",
+              "@id": "https://asteria-residences.example/location#the-village",
+              "name": "Pedra Alta village",
+              "description": "The nearest settlement: a square, a weekly market, a pharmacy, two restaurants, a bakery and the primary school."
+            },
+            {
+              "@type": "Place",
+              "@id": "https://asteria-residences.example/location#oeiras-and-the-coast",
+              "name": "Oeiras and the coast",
+              "description": "The nearest town centre and the Atlantic: supermarkets, international schools, the marina, and the coast road west."
+            },
+            {
+              "@type": "Place",
+              "@id": "https://asteria-residences.example/location#lisbon",
+              "name": "Central Lisbon",
+              "description": "Twenty-two kilometres east: the reason the ridge is commutable and the reason it is quiet."
+            }
+          ]
+        },
+        {
+          "@context": "https://schema.org",
+          "@graph": [
+            {
+              "@type": "RealEstateAgent",
+              "@id": "https://asteria-residences.example/#organisation",
+              "name": "Asteria Residences",
+              "legalName": "Asteria Ridge Development, Lda.",
+              "url": "https://asteria-residences.example/",
+              "telephone": "+351 210 000 120",
+              "email": "visits@asteria-residences.example",
+              "address": {
+                "@type": "PostalAddress",
+                "streetAddress": "Rua da Pedreira 12",
+                "addressLocality": "Oeiras",
+                "postalCode": "2780-158",
+                "addressCountry": "Portugal"
+              },
+              "areaServed": "Alto da Pedra, Lisbon District, Portugal",
+              "openingHours": "Mo-Sa 10:00-18:00"
+            },
+            {
+              "@type": "WebSite",
+              "@id": "https://asteria-residences.example/#website",
+              "name": "Asteria Residences",
+              "url": "https://asteria-residences.example/",
+              "inLanguage": "en-GB",
+              "publisher": {
+                "@id": "https://asteria-residences.example/#organisation"
+              }
+            },
+            {
+              "@type": "Place",
+              "@id": "https://asteria-residences.example/#development",
+              "name": "Asteria Residences, Alto da Pedra",
+              "description": "Twelve houses on the Alto da Pedra ridge",
+              "geo": {
+                "@type": "GeoCoordinates",
+                "latitude": 38.7412,
+                "longitude": -9.2986
+              },
+              "address": {
+                "@type": "PostalAddress",
+                "addressLocality": "Alto da Pedra",
+                "addressRegion": "Lisbon District",
+                "addressCountry": "Portugal"
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "uniqueEntityIds": [
+    "https://asteria-residences.example/#organisation",
+    "https://asteria-residences.example/#website",
+    "https://asteria-residences.example/#development",
+    "https://asteria-residences.example/residences/ridge-house-04#residence",
+    "https://asteria-residences.example/residences/ridge-house-01#residence",
+    "https://asteria-residences.example/residences/ridge-house-03#residence",
+    "https://asteria-residences.example/residences/courtyard-house-12#residence",
+    "https://asteria-residences.example/journal/why-twelve-houses#article",
+    "https://asteria-residences.example/enquire#faq",
+    "https://asteria-residences.example/location#the-ridge",
+    "https://asteria-residences.example/location#the-village",
+    "https://asteria-residences.example/location#oeiras-and-the-coast",
+    "https://asteria-residences.example/location#lisbon"
+  ],
+  "problems": []
+}

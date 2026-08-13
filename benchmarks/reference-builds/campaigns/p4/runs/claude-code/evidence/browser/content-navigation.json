@@ -1,0 +1,25 @@
+{
+  "diagnostics": {
+    "consoleErrors": [],
+    "consoleWarnings": [],
+    "pageErrors": [],
+    "failedRequests": [
+      {
+        "url": "http://localhost:3100/icon.svg?icon.2c7hkhdh1dsl5.svg",
+        "failure": "net::ERR_ABORTED"
+      },
+      {
+        "url": "http://localhost:3100/api/events",
+        "failure": "net::ERR_ABORTED"
+      }
+    ],
+    "badResponses": [],
+    "cancelledPrefetches": [
+      "http://localhost:3100/residences?_rsc=PPJxfRJ-k5tS7084",
+      "http://localhost:3100/enquire?_rsc=PPJxfRJ-k5tS7084",
+      "http://localhost:3100/residences?_rsc=Kp6DC_thboaMmsVA",
+      "http://localhost:3100/enquire?_rsc=Kp6DC_thboaMmsVA",
+      "http://localhost:3100/residences?_rsc=YJt8RDywXG9e7VRI"
+    ]
+  }
+}

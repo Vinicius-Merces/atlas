@@ -1,0 +1,367 @@
+{
+  "base": "http://localhost:3100",
+  "generatedAt": "2026-08-13T21:03:22.457Z",
+  "deviceProfile": {
+    "viewport": "390x844 @3x",
+    "cpuThrottling": "4x",
+    "network": "1.6 Mbps down / 750 Kbps up / 150 ms RTT",
+    "note": "Emulated mid-range mobile; measured on the production build over HTTP on the loopback interface, so network latency is emulated rather than real."
+  },
+  "budget": {
+    "totalTransferKb": 320,
+    "scriptTransferKb": 190,
+    "fontTransferKb": 130,
+    "imageTransferKb": 40,
+    "requests": 40,
+    "lcpMs": 2500,
+    "clsScore": 0.1,
+    "domContentLoadedMs": 3000
+  },
+  "results": [
+    {
+      "route": "/",
+      "wallClockMs": 5141,
+      "requests": 26,
+      "totalTransferKb": 317,
+      "documentKb": 23,
+      "scriptTransferKb": 139,
+      "styleTransferKb": 11,
+      "fontTransferKb": 109,
+      "imageTransferKb": 1,
+      "vitals": {
+        "lcp": 828,
+        "cls": 0.0043,
+        "fcp": 828,
+        "dcl": 846,
+        "load": 1693,
+        "longTasks": 4
+      },
+      "largest": [
+        {
+          "url": "/_next/static/chunks/08ttfj81-47mu.js",
+          "status": 200,
+          "type": "application/javascript",
+          "bytes": 72487
+        },
+        {
+          "url": "/_next/static/media/newsreader-latin-wght-normal.0rbocftmutivq.woff2",
+          "status": 200,
+          "type": "font/woff2",
+          "bytes": 58825
+        },
+        {
+          "url": "/_next/static/chunks/0td_q_jvg2olo.js",
+          "status": 200,
+          "type": "application/javascript",
+          "bytes": 45520
+        },
+        {
+          "url": "/_next/static/media/fraunces-latin-wght-normal.1v4l5w6-86t-v.woff2",
+          "status": 200,
+          "type": "font/woff2",
+          "bytes": 37361
+        },
+        {
+          "url": "/",
+          "status": 200,
+          "type": "text/html",
+          "bytes": 23715
+        },
+        {
+          "url": "/_next/static/media/ibm-plex-mono-latin-400-normal.3xdfs0-p_zi4c.woff2",
+          "status": 200,
+          "type": "font/woff2",
+          "bytes": 15449
+        }
+      ]
+    },
+    {
+      "route": "/residences",
+      "wallClockMs": 5289,
+      "requests": 27,
+      "totalTransferKb": 314,
+      "documentKb": 17,
+      "scriptTransferKb": 139,
+      "styleTransferKb": 13,
+      "fontTransferKb": 109,
+      "imageTransferKb": 1,
+      "vitals": {
+        "lcp": 708,
+        "cls": 0.0562,
+        "fcp": 708,
+        "dcl": 722,
+        "load": 1855,
+        "longTasks": 3
+      },
+      "largest": [
+        {
+          "url": "/_next/static/chunks/08ttfj81-47mu.js",
+          "status": 200,
+          "type": "application/javascript",
+          "bytes": 72487
+        },
+        {
+          "url": "/_next/static/media/newsreader-latin-wght-normal.0rbocftmutivq.woff2",
+          "status": 200,
+          "type": "font/woff2",
+          "bytes": 58825
+        },
+        {
+          "url": "/_next/static/chunks/0td_q_jvg2olo.js",
+          "status": 200,
+          "type": "application/javascript",
+          "bytes": 45520
+        },
+        {
+          "url": "/_next/static/media/fraunces-latin-wght-normal.1v4l5w6-86t-v.woff2",
+          "status": 200,
+          "type": "font/woff2",
+          "bytes": 37361
+        },
+        {
+          "url": "/residences",
+          "status": 200,
+          "type": "text/html",
+          "bytes": 16904
+        },
+        {
+          "url": "/_next/static/media/ibm-plex-mono-latin-400-normal.3xdfs0-p_zi4c.woff2",
+          "status": 200,
+          "type": "font/woff2",
+          "bytes": 15449
+        }
+      ]
+    },
+    {
+      "route": "/residences/ridge-house-04",
+      "wallClockMs": 5134,
+      "requests": 28,
+      "totalTransferKb": 321,
+      "documentKb": 23,
+      "scriptTransferKb": 140,
+      "styleTransferKb": 13,
+      "fontTransferKb": 109,
+      "imageTransferKb": 1,
+      "vitals": {
+        "lcp": 804,
+        "cls": 0,
+        "fcp": 804,
+        "dcl": 770,
+        "load": 1706,
+        "longTasks": 4
+      },
+      "largest": [
+        {
+          "url": "/_next/static/chunks/08ttfj81-47mu.js",
+          "status": 200,
+          "type": "application/javascript",
+          "bytes": 72487
+        },
+        {
+          "url": "/_next/static/media/newsreader-latin-wght-normal.0rbocftmutivq.woff2",
+          "status": 200,
+          "type": "font/woff2",
+          "bytes": 58825
+        },
+        {
+          "url": "/_next/static/chunks/0td_q_jvg2olo.js",
+          "status": 200,
+          "type": "application/javascript",
+          "bytes": 45520
+        },
+        {
+          "url": "/_next/static/media/fraunces-latin-wght-normal.1v4l5w6-86t-v.woff2",
+          "status": 200,
+          "type": "font/woff2",
+          "bytes": 37361
+        },
+        {
+          "url": "/residences/ridge-house-04",
+          "status": 200,
+          "type": "text/html",
+          "bytes": 23908
+        },
+        {
+          "url": "/_next/static/media/ibm-plex-mono-latin-400-normal.3xdfs0-p_zi4c.woff2",
+          "status": 200,
+          "type": "font/woff2",
+          "bytes": 15449
+        }
+      ]
+    },
+    {
+      "route": "/location",
+      "wallClockMs": 5245,
+      "requests": 26,
+      "totalTransferKb": 309,
+      "documentKb": 15,
+      "scriptTransferKb": 139,
+      "styleTransferKb": 11,
+      "fontTransferKb": 109,
+      "imageTransferKb": 1,
+      "vitals": {
+        "lcp": 624,
+        "cls": 0.0208,
+        "fcp": 624,
+        "dcl": 606,
+        "load": 1812,
+        "longTasks": 3
+      },
+      "largest": [
+        {
+          "url": "/_next/static/chunks/08ttfj81-47mu.js",
+          "status": 200,
+          "type": "application/javascript",
+          "bytes": 72487
+        },
+        {
+          "url": "/_next/static/media/newsreader-latin-wght-normal.0rbocftmutivq.woff2",
+          "status": 200,
+          "type": "font/woff2",
+          "bytes": 58825
+        },
+        {
+          "url": "/_next/static/chunks/0td_q_jvg2olo.js",
+          "status": 200,
+          "type": "application/javascript",
+          "bytes": 45520
+        },
+        {
+          "url": "/_next/static/media/fraunces-latin-wght-normal.1v4l5w6-86t-v.woff2",
+          "status": 200,
+          "type": "font/woff2",
+          "bytes": 37361
+        },
+        {
+          "url": "/_next/static/media/ibm-plex-mono-latin-400-normal.3xdfs0-p_zi4c.woff2",
+          "status": 200,
+          "type": "font/woff2",
+          "bytes": 15449
+        },
+        {
+          "url": "/location",
+          "status": 200,
+          "type": "text/html",
+          "bytes": 14954
+        }
+      ]
+    },
+    {
+      "route": "/journal",
+      "wallClockMs": 5329,
+      "requests": 32,
+      "totalTransferKb": 317,
+      "documentKb": 8,
+      "scriptTransferKb": 139,
+      "styleTransferKb": 11,
+      "fontTransferKb": 109,
+      "imageTransferKb": 1,
+      "vitals": {
+        "lcp": 564,
+        "cls": 0.0472,
+        "fcp": 564,
+        "dcl": 573,
+        "load": 1897,
+        "longTasks": 3
+      },
+      "largest": [
+        {
+          "url": "/_next/static/chunks/08ttfj81-47mu.js",
+          "status": 200,
+          "type": "application/javascript",
+          "bytes": 72487
+        },
+        {
+          "url": "/_next/static/media/newsreader-latin-wght-normal.0rbocftmutivq.woff2",
+          "status": 200,
+          "type": "font/woff2",
+          "bytes": 58825
+        },
+        {
+          "url": "/_next/static/chunks/0td_q_jvg2olo.js",
+          "status": 200,
+          "type": "application/javascript",
+          "bytes": 45520
+        },
+        {
+          "url": "/_next/static/media/fraunces-latin-wght-normal.1v4l5w6-86t-v.woff2",
+          "status": 200,
+          "type": "font/woff2",
+          "bytes": 37361
+        },
+        {
+          "url": "/_next/static/media/ibm-plex-mono-latin-400-normal.3xdfs0-p_zi4c.woff2",
+          "status": 200,
+          "type": "font/woff2",
+          "bytes": 15449
+        },
+        {
+          "url": "/?_rsc=um14wpm0sJhODkY6",
+          "status": 200,
+          "type": "text/x-component",
+          "bytes": 11387
+        }
+      ]
+    },
+    {
+      "route": "/enquire",
+      "wallClockMs": 5268,
+      "requests": 29,
+      "totalTransferKb": 313,
+      "documentKb": 11,
+      "scriptTransferKb": 144,
+      "styleTransferKb": 13,
+      "fontTransferKb": 109,
+      "imageTransferKb": 1,
+      "vitals": {
+        "lcp": 612,
+        "cls": 0.0135,
+        "fcp": 612,
+        "dcl": 606,
+        "load": 1838,
+        "longTasks": 4
+      },
+      "largest": [
+        {
+          "url": "/_next/static/chunks/08ttfj81-47mu.js",
+          "status": 200,
+          "type": "application/javascript",
+          "bytes": 72487
+        },
+        {
+          "url": "/_next/static/media/newsreader-latin-wght-normal.0rbocftmutivq.woff2",
+          "status": 200,
+          "type": "font/woff2",
+          "bytes": 58825
+        },
+        {
+          "url": "/_next/static/chunks/0td_q_jvg2olo.js",
+          "status": 200,
+          "type": "application/javascript",
+          "bytes": 45520
+        },
+        {
+          "url": "/_next/static/media/fraunces-latin-wght-normal.1v4l5w6-86t-v.woff2",
+          "status": 200,
+          "type": "font/woff2",
+          "bytes": 37361
+        },
+        {
+          "url": "/_next/static/media/ibm-plex-mono-latin-400-normal.3xdfs0-p_zi4c.woff2",
+          "status": 200,
+          "type": "font/woff2",
+          "bytes": 15449
+        },
+        {
+          "url": "/?_rsc=C6qGC5HIku4LmIKX",
+          "status": 200,
+          "type": "text/x-component",
+          "bytes": 11387
+        }
+      ]
+    }
+  ],
+  "problems": [
+    "/residences/ridge-house-04: 321 KB total > 320 KB budget"
+  ]
+}

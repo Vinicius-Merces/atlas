@@ -1,0 +1,102 @@
+/*
+ * Design tokens — the drawing-sheet system described in
+ * planning/02-visual-direction.md. Every colour, rule weight, measure and
+ * motion duration used anywhere on the site resolves here.
+ */
+
+:root {
+  /* Material palette. Taken from the project's specified materials. */
+  --ink: #14161a;
+  --paper: #f4f1ea;
+  --chalk: #fbfaf7;
+  --limestone: #c9bfae;
+  --limestone-deep: #a89c88;
+  --oxide: #8c4a2f;
+  --oxide-deep: #6f3a24;
+  --slate: #3d4550;
+  --slate-soft: #5b6472;
+  --moss: #4a5b46;
+
+  /* Semantic surface roles */
+  --surface-page: var(--paper);
+  --surface-raised: var(--chalk);
+  --surface-inverse: var(--ink);
+  --text-primary: var(--ink);
+  --text-secondary: var(--slate);
+  --text-annotation: var(--slate-soft);
+  --text-inverse: #f0ece3;
+  --accent: var(--oxide);
+  --accent-strong: var(--oxide-deep);
+
+  /* Rule weights. Depth is expressed by line weight, not by shadow. */
+  --rule-hair: 0.5px;
+  --rule-thin: 1px;
+  --rule-heavy: 2px;
+  --rule-color: color-mix(in srgb, var(--limestone) 78%, var(--ink) 22%);
+  --rule-color-soft: color-mix(in srgb, var(--limestone) 45%, transparent);
+
+  /* Type */
+  --font-display: "Fraunces Variable", "Fraunces", Georgia, serif;
+  --font-body: "Newsreader Variable", "Newsreader", Georgia, serif;
+  --font-annotation: "IBM Plex Mono", ui-monospace, "SFMono-Regular", Menlo, monospace;
+
+  --step--1: clamp(0.8125rem, 0.79rem + 0.11vw, 0.875rem);
+  --step-0: clamp(1.0625rem, 1.03rem + 0.16vw, 1.1875rem);
+  --step-1: clamp(1.25rem, 1.19rem + 0.3vw, 1.4375rem);
+  --step-2: clamp(1.5rem, 1.38rem + 0.6vw, 1.9375rem);
+  --step-3: clamp(1.875rem, 1.62rem + 1.2vw, 2.75rem);
+  --step-4: clamp(2.25rem, 1.7rem + 2.7vw, 4rem);
+  --step-5: clamp(2.75rem, 1.75rem + 4.9vw, 5.5rem);
+
+  --annotation-size: clamp(0.6875rem, 0.67rem + 0.08vw, 0.75rem);
+  --annotation-tracking: 0.12em;
+
+  --measure: 68ch;
+  --measure-tight: 54ch;
+
+  /* Grid: twelve columns, because there are twelve houses. */
+  --grid-columns: 12;
+  --gutter: 1.5rem;
+  --page-max: 1360px;
+  --page-pad: clamp(1.25rem, 0.9rem + 1.8vw, 3rem);
+  --margin-rule-offset: clamp(0rem, -1.5rem + 4vw, 3.25rem);
+
+  /* Vertical rhythm */
+  --space-3xs: 0.25rem;
+  --space-2xs: 0.5rem;
+  --space-xs: 0.75rem;
+  --space-s: 1rem;
+  --space-m: 1.5rem;
+  --space-l: 2.25rem;
+  --space-xl: 3.5rem;
+  --space-2xl: clamp(4rem, 3rem + 4vw, 6.5rem);
+  --space-3xl: clamp(5.5rem, 4rem + 6vw, 9rem);
+
+  /* Motion. Zeroed wholesale by the reduced-motion query below. */
+  --motion-instant: 90ms;
+  --motion-quick: 120ms;
+  --motion-considered: 220ms;
+  --motion-draw: 900ms;
+  --motion-ease: cubic-bezier(0.2, 0, 0, 1);
+
+  --radius-control: 2px;
+
+  --focus-ring: 2px solid var(--accent);
+  --focus-offset: 3px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  :root {
+    --motion-instant: 0ms;
+    --motion-quick: 0ms;
+    --motion-considered: 0ms;
+    --motion-draw: 0ms;
+  }
+}
+
+@media (prefers-contrast: more) {
+  :root {
+    --rule-color: var(--ink);
+    --text-annotation: var(--slate);
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "route": "enquire",
+  "viewport": "tablet-768",
+  "documentWidth": 768,
+  "viewportWidth": 768,
+  "horizontalOverflow": 0,
+  "overflowingSelectors": [],
+  "smallTapTargets": [],
+  "longestLineChars": 71,
+  "longestSample": "Your request is recorded immediately with a reference code b",
+  "headingSizePx": 48
+}

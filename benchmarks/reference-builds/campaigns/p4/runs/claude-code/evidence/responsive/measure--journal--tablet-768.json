@@ -1,0 +1,12 @@
+{
+  "route": "journal",
+  "viewport": "tablet-768",
+  "documentWidth": 768,
+  "viewportWidth": 768,
+  "horizontalOverflow": 0,
+  "overflowingSelectors": [],
+  "smallTapTargets": [],
+  "longestLineChars": 77,
+  "longestSample": "Two point one hectares of retained terraces need someone to ",
+  "headingSizePx": 48
+}

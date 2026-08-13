@@ -1,0 +1,12 @@
+{
+  "route": "journal",
+  "viewport": "phone-360",
+  "documentWidth": 360,
+  "viewportWidth": 360,
+  "horizontalOverflow": 0,
+  "overflowingSelectors": [],
+  "smallTapTargets": [],
+  "longestLineChars": 32,
+  "longestSample": "Written by the architect, the services engineer and the sale",
+  "headingSizePx": 37
+}

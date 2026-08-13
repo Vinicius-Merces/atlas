@@ -1,0 +1,22 @@
+{
+  "message": "Your request was not recorded.\n\nYour request was NOT recorded. Nothing has been sent. Please try again, or telephone +351 210 000 120.\n\nYour answers are still in the form below — nothing has been cleared.",
+  "preservedName": "Failure Path",
+  "diagnostics": {
+    "consoleErrors": [
+      "Failed to load resource: the server responded with a status of 503 (Service Unavailable)"
+    ],
+    "consoleWarnings": [],
+    "pageErrors": [],
+    "failedRequests": [],
+    "badResponses": [
+      {
+        "url": "http://localhost:3102/api/visit-requests",
+        "status": 503
+      }
+    ],
+    "cancelledPrefetches": [
+      "http://localhost:3102/residences?_rsc=tPrHoWTfrBcLzX1U",
+      "http://localhost:3102/enquire?_rsc=Q_VpMOe1UT0KvbFk"
+    ]
+  }
+}

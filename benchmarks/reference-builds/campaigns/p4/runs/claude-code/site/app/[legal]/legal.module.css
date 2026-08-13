@@ -1,0 +1,9 @@
+.wrap {
+  padding-top: var(--space-xl);
+  padding-bottom: var(--space-2xl);
+}
+
+.title {
+  font-size: var(--step-4);
+  max-width: 20ch;
+}

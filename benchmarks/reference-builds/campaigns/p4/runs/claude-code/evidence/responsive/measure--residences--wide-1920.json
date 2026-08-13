@@ -1,0 +1,12 @@
+{
+  "route": "residences",
+  "viewport": "wide-1920",
+  "documentWidth": 1920,
+  "viewportWidth": 1920,
+  "horizontalOverflow": 0,
+  "overflowingSelectors": [],
+  "smallTapTargets": [],
+  "longestLineChars": 60,
+  "longestSample": "A mid-row terrace house with the same stepped section and a ",
+  "headingSizePx": 64
+}
