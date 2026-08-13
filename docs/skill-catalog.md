@@ -4,7 +4,7 @@ Canonical, generated inventory of every skill under `.claude/skills/<skill-name>
 
 Regenerate both capability catalogs with `python scripts/generate_capability_catalogs.py`. Use `--check` in validation and CI.
 
-Total: 110 skills.
+Total: 117 skills.
 
 ## Accessibility Audit
 
@@ -25,6 +25,10 @@ Total: 110 skills.
 ## AI System Design
 
 `ai-system-design`. Design an AI-enabled system with explicit capabilities, limitations, data flow, and evaluation.
+
+## Analytics Implementation Audit
+
+`analytics-implementation-audit`. Audit product analytics implementation when events, properties, identity, consent, ecommerce, client/server collection, destinations, or decision metrics change, verifying taxonomy parity and trustworthy measurement.
 
 ## API Contract Analysis
 
@@ -54,6 +58,10 @@ Total: 110 skills.
 
 `authorization-boundary-review`. Review resource and action permissions when roles, ownership, tenants, admin paths, APIs, or privileged operations change, verifying deny-by-default authorization at every trust boundary.
 
+## Background Job Reliability
+
+`background-job-reliability`. Review background jobs and queues when asynchronous work, retries, scheduling, concurrency, leases, deduplication, cancellation, dead letters, or worker recovery change, assuming duplicate delivery can occur.
+
 ## Blueprint Selection
 
 `blueprint-selection`. Choose the closest ATLAS blueprint for a project.
@@ -61,6 +69,10 @@ Total: 110 skills.
 ## Browser Flow Validation
 
 `browser-flow-validation`. Validate critical user journeys in a real browser when releases or frontend changes need evidence for navigation, forms, auth states, errors, console/network failures, and cross-viewport behavior.
+
+## Cache Strategy Assessment
+
+`cache-strategy-assessment`. Assess caching when browser, CDN, edge, server, database, runtime, or distributed caches change, verifying key scope, freshness, invalidation, authorization safety, stampede control, and consistency tradeoffs.
 
 ## Change Provenance Mapping
 
@@ -94,6 +106,10 @@ Total: 110 skills.
 
 `conflict-prediction`. Predict overlapping changes and dependency conflicts before parallel execution.
 
+## Content Discoverability Review
+
+`content-discoverability-review`. Review content discoverability when information architecture, internal links, semantic structure, rendering, topic/entity organization, or AI/search visibility changes, aligning human navigation with crawlable authoritative content.
+
 ## Content Quality Review
 
 `content-quality-review`. Review product copy for clarity, consistency, actionability, and audience fit.
@@ -114,6 +130,10 @@ Total: 110 skills.
 
 `control-design`. Design a proportionate preventive, detective, or corrective control.
 
+## Conversion Funnel Review
+
+`conversion-funnel-review`. Review conversion funnels when acquisition, landing pages, forms, onboarding, checkout, lead handoff, or activation paths change, connecting user friction and measurement to business outcomes without dark patterns.
+
 ## Core Contract Stabilization
 
 `core-contract-stabilization`. Evaluate whether a contract is stable enough for a beta support commitment.
@@ -121,6 +141,10 @@ Total: 110 skills.
 ## Database Migration Analysis
 
 `database-migration-analysis`. Assess schema and data migrations for integrity, compatibility, and operational risk.
+
+## Database Schema Review
+
+`database-schema-review`. Review relational database schema changes when tables, columns, constraints, indexes, relationships, partitioning, retention, or migration-sensitive data models change, verifying integrity and query-fit before release.
 
 ## Dependency Graph Analysis
 
@@ -353,6 +377,10 @@ Total: 110 skills.
 ## Runtime Semantic Parity
 
 `runtime-semantic-parity`. Compare two runtime implementations for semantic equivalence.
+
+## Saas Multitenancy Review
+
+`saas-multitenancy-review`. Review SaaS multitenancy when tenant identity, pooled/siloed resources, quotas, storage, caches, jobs, search, exports, or operational isolation change, verifying cross-tenant safety and noisy-neighbor controls.
 
 ## Secret Environment Audit
 

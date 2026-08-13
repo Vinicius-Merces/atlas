@@ -1,229 +1,252 @@
 version: 1
 label_contract:
   source: .claude/agents/<agent>.md frontmatter description
-  rule: >-
-    The description is the canonical human-facing purpose label used for runtime
-    discovery and selectors. Keep it concise, specific, and action-oriented.
+  rule: The description is the canonical human-facing purpose label used for runtime discovery and selectors. Keep it concise,
+    specific, and action-oriented.
 categories:
   orchestration-delivery:
-    purpose: Route complex work, decompose it safely, coordinate parallel execution, preserve role boundaries, and reconcile results.
+    purpose: Route complex work, decompose it safely, coordinate parallel execution, preserve role boundaries, and reconcile
+      results.
     principal_skills:
-      - task-routing-policy
-      - agent-overlap-analysis
-      - workstream-decomposition
-      - resource-claim-design
-      - result-reconciliation
-      - execution-checkpointing
+    - task-routing-policy
+    - agent-overlap-analysis
+    - workstream-decomposition
+    - resource-claim-design
+    - result-reconciliation
+    - execution-checkpointing
     agents:
-      - orchestrator
-      - task-routing-engineer
-      - runtime-execution-planner
-      - parallel-execution-architect
-      - workstream-coordinator
-      - technical-program-manager
-      - conflict-resolution-engineer
-      - merge-readiness-reviewer
+    - orchestrator
+    - task-routing-engineer
+    - runtime-execution-planner
+    - parallel-execution-architect
+    - workstream-coordinator
+    - technical-program-manager
+    - conflict-resolution-engineer
+    - merge-readiness-reviewer
   product-strategy:
-    purpose: Turn product intent into bounded requirements, architecture choices, adoption decisions, and technical roadmaps.
+    purpose: Turn product intent into bounded requirements, architecture choices, adoption decisions, technical roadmaps,
+      and evidence-aware conversion outcomes.
     principal_skills:
-      - product-requirement-decomposition
-      - project-adoption-assessment
-      - blueprint-selection
-      - technical-roadmap-synthesis
-      - architecture-assessment
+    - product-requirement-decomposition
+    - project-adoption-assessment
+    - blueprint-selection
+    - technical-roadmap-synthesis
+    - architecture-assessment
+    - conversion-funnel-review
     agents:
-      - product-manager
-      - product-architect
-      - adoption-architect
-      - solution-blueprint-engineer
-      - project-health-analyst
-      - technical-debt-steward
+    - product-manager
+    - product-architect
+    - adoption-architect
+    - solution-blueprint-engineer
+    - project-health-analyst
+    - technical-debt-steward
   experience-design:
-    purpose: Protect usability, accessibility, content quality, design-system consistency, localization readiness, and public content discoverability.
+    purpose: Protect usability, accessibility, content quality, design-system consistency, localization readiness, conversion
+      clarity, and content discoverability.
     principal_skills:
-      - accessibility-audit
-      - content-quality-review
-      - component-reuse-assessment
-      - design-token-architecture
-      - localization-readiness-assessment
-      - seo-technical-audit
-      - structured-data-validation
+    - accessibility-audit
+    - content-quality-review
+    - component-reuse-assessment
+    - design-token-architecture
+    - localization-readiness-assessment
+    - seo-technical-audit
+    - structured-data-validation
+    - conversion-funnel-review
+    - content-discoverability-review
     agents:
-      - ux-director
-      - content-designer
-      - design-system-engineer
-      - localization-engineer
+    - ux-director
+    - content-designer
+    - design-system-engineer
+    - localization-engineer
   application-engineering:
-    purpose: Implement and evolve application code while preserving contracts, dependencies, tests, maintainability, and provider reliability.
+    purpose: Implement and evolve application code while preserving contracts, database integrity, tenant boundaries, asynchronous
+      reliability, caching, dependencies, tests, and provider reliability.
     principal_skills:
-      - repository-mapping
-      - api-contract-analysis
-      - dependency-impact-analysis
-      - regression-risk-analysis
-      - test-strategy-design
-      - webhook-reliability-review
-      - payment-integration-review
-      - external-api-resilience-review
+    - repository-mapping
+    - api-contract-analysis
+    - dependency-impact-analysis
+    - regression-risk-analysis
+    - test-strategy-design
+    - webhook-reliability-review
+    - payment-integration-review
+    - external-api-resilience-review
+    - database-schema-review
+    - saas-multitenancy-review
+    - background-job-reliability
+    - cache-strategy-assessment
     agents:
-      - frontend-engineer
-      - backend-engineer
-      - mobile-engineer
-      - integration-engineer
-      - developer-experience-engineer
-      - monorepo-maintainer
-      - dependency-manager
-      - automation-engineer
+    - frontend-engineer
+    - backend-engineer
+    - mobile-engineer
+    - integration-engineer
+    - developer-experience-engineer
+    - monorepo-maintainer
+    - dependency-manager
+    - automation-engineer
   data-ai-analytics:
-    purpose: Design data, AI, retrieval, analytics, and experimentation systems with explicit evaluation and measurement.
+    purpose: Design data, AI, retrieval, analytics, measurement, and experimentation systems with explicit integrity, evaluation,
+      and decision evidence.
     principal_skills:
-      - ai-system-design
-      - rag-architecture-assessment
-      - prompt-model-evaluation
-      - event-taxonomy-design
-      - experiment-design
+    - ai-system-design
+    - rag-architecture-assessment
+    - prompt-model-evaluation
+    - event-taxonomy-design
+    - experiment-design
+    - database-schema-review
+    - analytics-implementation-audit
     agents:
-      - data-engineer
-      - ai-engineer
-      - search-retrieval-engineer
-      - analytics-engineer
-      - experimentation-analyst
+    - data-engineer
+    - ai-engineer
+    - search-retrieval-engineer
+    - analytics-engineer
+    - experimentation-analyst
   cloud-platform-operations:
-    purpose: Design and operate cloud, platform, deployment, cost, performance, reliability, and observability foundations.
+    purpose: Design and operate cloud, platform, deployment, shared-tenant resources, queues, caches, cost, performance, reliability,
+      and observability foundations.
     principal_skills:
-      - infrastructure-change-assessment
-      - observability-design
-      - performance-budget-analysis
-      - cloud-cost-analysis
-      - incident-triage
-      - secret-environment-audit
-      - external-api-resilience-review
+    - infrastructure-change-assessment
+    - observability-design
+    - performance-budget-analysis
+    - cloud-cost-analysis
+    - incident-triage
+    - secret-environment-audit
+    - external-api-resilience-review
+    - saas-multitenancy-review
+    - background-job-reliability
+    - cache-strategy-assessment
     agents:
-      - cloud-architect
-      - platform-engineer
-      - devops-engineer
-      - finops-engineer
-      - performance-engineer
-      - reliability-engineer
+    - cloud-architect
+    - platform-engineer
+    - devops-engineer
+    - finops-engineer
+    - performance-engineer
+    - reliability-engineer
   security-privacy-compliance:
-    purpose: Protect identity, authorization, tenant/data isolation, secrets, dependencies and supply-chain trust, privacy, compliance evidence, and proportionate controls.
+    purpose: Protect identity, authorization, tenant/data isolation across all shared resources, secrets, dependencies, privacy,
+      compliance evidence, and proportionate controls.
     principal_skills:
-      - authentication-flow-review
-      - authorization-boundary-review
-      - row-level-security-review
-      - secret-environment-audit
-      - supply-chain-risk-audit
-      - threat-modeling
-      - privacy-impact-assessment
-      - compliance-evidence-mapping
-      - control-design
-      - dependency-impact-analysis
+    - authentication-flow-review
+    - authorization-boundary-review
+    - row-level-security-review
+    - secret-environment-audit
+    - supply-chain-risk-audit
+    - threat-modeling
+    - privacy-impact-assessment
+    - compliance-evidence-mapping
+    - control-design
+    - dependency-impact-analysis
+    - saas-multitenancy-review
     agents:
-      - security-engineer
-      - threat-modeling-engineer
-      - privacy-engineer
-      - compliance-analyst
+    - security-engineer
+    - threat-modeling-engineer
+    - privacy-engineer
+    - compliance-analyst
   quality-assurance-audit:
-    purpose: Independently validate rendered behavior, regressions, automation, search-facing evidence, contracts, capability quality, routing evidence, and release readiness.
+    purpose: Independently validate rendered behavior, regressions, automation, search-facing evidence, analytics integrity,
+      conversion evidence, contracts, capability quality, and release readiness.
     principal_skills:
-      - skill-quality-evaluation
-      - skill-trigger-evaluation
-      - browser-flow-validation
-      - seo-technical-audit
-      - structured-data-validation
-      - regression-risk-analysis
-      - test-strategy-design
-      - smoke-test-design
-      - framework-package-validation
-      - source-of-truth-validation
+    - skill-quality-evaluation
+    - skill-trigger-evaluation
+    - browser-flow-validation
+    - seo-technical-audit
+    - structured-data-validation
+    - regression-risk-analysis
+    - test-strategy-design
+    - smoke-test-design
+    - framework-package-validation
+    - source-of-truth-validation
+    - analytics-implementation-audit
+    - conversion-funnel-review
+    - content-discoverability-review
     agents:
-      - qa-engineer
-      - test-automation-engineer
-      - contract-test-engineer
-      - technical-auditor
-      - reference-implementation-reviewer
-      - audit-bundle-reviewer
-      - checkpoint-integrity-reviewer
+    - qa-engineer
+    - test-automation-engineer
+    - contract-test-engineer
+    - technical-auditor
+    - reference-implementation-reviewer
+    - audit-bundle-reviewer
+    - checkpoint-integrity-reviewer
   architecture-migration-stability:
     purpose: Protect architectural boundaries, compatibility, migrations, deprecations, and stable contracts.
     principal_skills:
-      - architecture-assessment
-      - architecture-audit
-      - dependency-graph-analysis
-      - version-migration-planning
-      - semantic-compatibility-verification
+    - architecture-assessment
+    - architecture-audit
+    - dependency-graph-analysis
+    - version-migration-planning
+    - semantic-compatibility-verification
     agents:
-      - enterprise-architect
-      - migration-architect
-      - stability-engineer
-      - compatibility-engineer
-      - deprecation-manager
+    - enterprise-architect
+    - migration-architect
+    - stability-engineer
+    - compatibility-engineer
+    - deprecation-manager
   knowledge-continuity-documentation:
     purpose: Keep project knowledge source-linked, fresh, navigable, resumable, and portable across sessions.
     principal_skills:
-      - context-pack-composition
-      - knowledge-graph-synthesis
-      - memory-freshness-audit
-      - source-of-truth-validation
-      - session-closeout
+    - context-pack-composition
+    - knowledge-graph-synthesis
+    - memory-freshness-audit
+    - source-of-truth-validation
+    - session-closeout
     agents:
-      - knowledge-engineer
-      - knowledge-contradiction-reviewer
-      - memory-governance-architect
-      - project-memory-curator
-      - project-state-reconciler
-      - documentation-architect
-      - documentation-engineer
-      - context-pack-engineer
-      - execution-continuity-engineer
-      - session-continuity-engineer
-      - resume-packet-reviewer
-      - evidence-ledger-architect
+    - knowledge-engineer
+    - knowledge-contradiction-reviewer
+    - memory-governance-architect
+    - project-memory-curator
+    - project-state-reconciler
+    - documentation-architect
+    - documentation-engineer
+    - context-pack-engineer
+    - execution-continuity-engineer
+    - session-continuity-engineer
+    - resume-packet-reviewer
+    - evidence-ledger-architect
   governance-policy:
     purpose: Translate governance into explicit policy, controls, support states, exceptions, and evidence requirements.
     principal_skills:
-      - policy-as-code-design
-      - policy-rule-design
-      - policy-exception-handling
-      - control-design
-      - support-classification
+    - policy-as-code-design
+    - policy-rule-design
+    - policy-exception-handling
+    - control-design
+    - support-classification
     agents:
-      - governance-steward
-      - policy-enforcement-architect
-      - policy-engineer
-      - policy-exception-reviewer
-      - support-policy-maintainer
+    - governance-steward
+    - policy-enforcement-architect
+    - policy-engineer
+    - policy-exception-reviewer
+    - support-policy-maintainer
   runtime-portability:
     purpose: Keep ATLAS capabilities semantically equivalent and discoverable across supported AI coding runtimes.
     principal_skills:
-      - runtime-adapter-mapping
-      - registry-to-runtime-generation
-      - runtime-conformance-testing
-      - runtime-semantic-parity
-      - dual-runtime-validation
+    - runtime-adapter-mapping
+    - registry-to-runtime-generation
+    - runtime-conformance-testing
+    - runtime-semantic-parity
+    - dual-runtime-validation
     agents:
-      - codex-runtime-engineer
-      - runtime-adapter-engineer
-      - runtime-capability-mapper
-      - runtime-catalog-maintainer
-      - runtime-conformance-auditor
-      - runtime-handoff-coordinator
-      - runtime-parity-reviewer
-      - runtime-synchronization-engineer
-      - universal-runtime-architect
-      - adapter-drift-auditor
+    - codex-runtime-engineer
+    - runtime-adapter-engineer
+    - runtime-capability-mapper
+    - runtime-catalog-maintainer
+    - runtime-conformance-auditor
+    - runtime-handoff-coordinator
+    - runtime-parity-reviewer
+    - runtime-synchronization-engineer
+    - universal-runtime-architect
+    - adapter-drift-auditor
   release-deployment-integrity:
     purpose: Protect release, package, provenance, patch, and manual-deployment integrity from build through rollout.
     principal_skills:
-      - release-integrity-verification
-      - incremental-patch-verification
-      - manual-deployment-preflight
-      - change-provenance-mapping
-      - version-transition-validation
+    - release-integrity-verification
+    - incremental-patch-verification
+    - manual-deployment-preflight
+    - change-provenance-mapping
+    - version-transition-validation
     agents:
-      - release-manager
-      - release-integrity-engineer
-      - beta-release-coordinator
-      - patch-integrity-engineer
-      - manual-deployment-auditor
-      - manual-deployment-safety-engineer
-      - change-provenance-engineer
+    - release-manager
+    - release-integrity-engineer
+    - beta-release-coordinator
+    - patch-integrity-engineer
+    - manual-deployment-auditor
+    - manual-deployment-safety-engineer
+    - change-provenance-engineer

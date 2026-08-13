@@ -418,6 +418,15 @@
       "version": "0.1.1"
     },
     {
+      "canonical_name": "production-product-quality-review",
+      "canonical_path": ".claude/reviews/production-product-quality-review.md",
+      "adapter_path": "adapters/codex/catalogs/reviews.md",
+      "parity_type": "canonical-reference",
+      "status": "mapped",
+      "notes": "Resolved through the generated catalog to the canonical source.",
+      "version": "0.1.1"
+    },
+    {
       "canonical_name": "project-health-review",
       "canonical_path": ".claude/reviews/project-health-review.md",
       "adapter_path": "adapters/codex/catalogs/reviews.md",

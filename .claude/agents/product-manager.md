@@ -42,6 +42,10 @@ and measurable delivery decisions.
 - Security approval
 - Final release approval
 
+## P1 production/product quality routing
+
+Use `conversion-funnel-review` for acquisition, onboarding, activation, checkout and handoff decisions. Define conversion together with downstream quality and trust outcomes, not only short-term completion rate.
+
 ## Authority level
 
 Coordinator: sequences scoped work and enforces gates; cannot waive reviews, extend scope, or approve its own changes.

@@ -80,10 +80,10 @@ frontmatter and validated in CI.
 | Component | Count | What it provides | Complete reference |
 | --- | ---: | --- | --- |
 | Agents | 87 | Orchestration plus focused product, engineering, architecture, governance, runtime, and assurance roles | [Agent Catalog](docs/agent-catalog.md) |
-| Skills | 107 | Bounded procedures for analysis, design, frontend craft, production trust, web assurance, validation, continuity, and delivery | [Skill Catalog](docs/skill-catalog.md) |
+| Skills | 117 | Bounded procedures for analysis, design, frontend craft, production trust, web assurance, validation, continuity, and delivery | [Skill Catalog](docs/skill-catalog.md) |
 | Commands | 71 | Explicit entry points for common ATLAS operations | `.claude/commands/` |
-| Workflows | 79 | Repeatable execution paths with responsibilities and gates | `.claude/workflows/` |
-| Reviews | 71 | Independent review procedures and acceptance checks | `.claude/reviews/` |
+| Workflows | 81 | Repeatable execution paths with responsibilities and gates | `.claude/workflows/` |
+| Reviews | 73 | Independent review procedures and acceptance checks | `.claude/reviews/` |
 | Contracts | 6 | Stable interfaces for agents, skills, workflows, memory, reviews, and commands | `.claude/contracts/` |
 
 ### Agent model
@@ -142,7 +142,7 @@ Examples:
   scripts, source/provenance, and blast radius;
 - `dual-runtime-validation` checks Claude Code and Codex surfaces together.
 
-See the [Skill Catalog](docs/skill-catalog.md) for all 107 descriptions.
+See the [Skill Catalog](docs/skill-catalog.md) for all 117 descriptions.
 
 ## Discovery descriptions and hover surfaces
 
@@ -339,6 +339,14 @@ Significant public-web releases follow `.claude/workflows/web-production-assuran
 and use the independent `.claude/reviews/web-production-assurance-review.md` gate.
 Critical or High findings, or missing mandatory release evidence, prevent an
 unconditional approval.
+
+## Capability Evaluation
+
+ATLAS measures its own capability library before expanding it. The first full baseline measured 110 skills and all 87 agent surfaces across structural skill quality, deterministic routing proxies, curated routing cases, and agent-overlap analysis. The pre-P1 baseline is recorded at `docs/assurance/capability-quality-baseline-2026-08-13.md`. Static metrics are diagnostic evidence, not claims about live Claude Code or Codex accuracy.
+
+## Production Systems & Product Quality
+
+P1 adds seven focused skills without adding new agents: `database-schema-review`, `saas-multitenancy-review`, `background-job-reliability`, `cache-strategy-assessment`, `conversion-funnel-review`, `analytics-implementation-audit`, and `content-discoverability-review`. The canonical model is `framework/production-product-quality-model.md`, with workflow `production-product-quality-readiness` and independent review `production-product-quality-review`.
 
 ## How a task moves through ATLAS
 

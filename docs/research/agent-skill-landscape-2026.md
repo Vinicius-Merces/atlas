@@ -208,22 +208,22 @@ Future P0 work should come from new evidence or newly discovered risk, not from 
 
 ### P1: data and multi-tenant systems
 
-- **Pending** `database-schema-review`: assess constraints, indexes, ownership, lifecycle, query patterns, and migration impact.
-- **Pending** `saas-multitenancy-review`: assess tenant isolation, tenancy model, noisy-neighbor risk, quotas, background work, and operational boundaries.
-- **Pending** `background-job-reliability`: assess queues, retry policy, idempotency, poison jobs, scheduling, cancellation, and observability.
-- **Pending** `cache-strategy-assessment`: decide what may be cached, where, for how long, and how invalidation/consistency is proven.
+- **Implemented** `database-schema-review`: assess constraints, indexes, ownership, lifecycle, query patterns, and migration impact.
+- **Implemented** `saas-multitenancy-review`: assess tenant isolation, tenancy model, noisy-neighbor risk, quotas, background work, and operational boundaries.
+- **Implemented** `background-job-reliability`: assess queues, retry policy, idempotency, poison jobs, scheduling, cancellation, and observability.
+- **Implemented** `cache-strategy-assessment`: decide what may be cached, where, for how long, and how invalidation/consistency is proven.
 
 ### P1: growth and product quality
 
-- **Pending** `conversion-funnel-review`: connect UX friction, instrumentation, forms, handoff states, and conversion measurement without dark patterns.
-- **Pending** `analytics-implementation-audit`: compare implemented events against the canonical taxonomy, privacy rules, and decision metrics.
-- **Pending** `content-discoverability-review`: align information architecture, internal links, semantic HTML, structured content, and AI/search discoverability.
+- **Implemented** `conversion-funnel-review`: connect UX friction, instrumentation, forms, handoff states, and conversion measurement without dark patterns.
+- **Implemented** `analytics-implementation-audit`: compare implemented events against the canonical taxonomy, privacy rules, and decision metrics.
+- **Implemented** `content-discoverability-review`: align information architecture, internal links, semantic HTML, structured content, and AI/search discoverability.
 
 ### P1: capability quality itself
 
-- **Pending** `skill-trigger-evaluation`: test whether a skill activates on positive cases and stays quiet on negative/adjacent cases.
-- **Pending** `skill-quality-evaluation`: score scope clarity, evidence, repeatability, context cost, references, failure handling, and validation quality.
-- **Pending** `agent-overlap-analysis`: detect redundant role scopes and ambiguous routing before adding a new agent.
+- **Implemented** `skill-trigger-evaluation`: test whether a skill activates on positive cases and stays quiet on negative/adjacent cases.
+- **Implemented** `skill-quality-evaluation`: score scope clarity, evidence, repeatability, context cost, references, failure handling, and validation quality.
+- **Implemented** `agent-overlap-analysis`: detect redundant role scopes and ambiguous routing before adding a new agent.
 
 ## Agent creation policy
 
@@ -271,3 +271,8 @@ The taxonomy can remain global while install/discovery surfaces expose smaller d
 ## Research guardrails
 
 External repositories are architecture and capability references, not copy sources. New ATLAS content should remain original, respect upstream licenses, and be validated against official runtime behavior before being promoted to stable support.
+
+
+## P1 completion note
+
+The original P1 capability gaps for data/multi-tenant systems, product/growth quality, and capability-quality measurement are now implemented as validated skills attached to existing durable agents. The catalog must continue to be measured before introducing new agent roles.

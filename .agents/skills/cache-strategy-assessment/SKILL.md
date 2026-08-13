@@ -3,6 +3,7 @@ name: cache-strategy-assessment
 description: "Assess caching when browser, CDN, edge, server, database, runtime, or distributed caches change, verifying key scope, freshness, invalidation, authorization safety, stampede control, and consistency tradeoffs."
 ---
 
-# Cache Strategy Assessment
+# ATLAS skill adapter: cache-strategy-assessment
 
-Use the canonical ATLAS skill at `.claude/skills/cache-strategy-assessment/SKILL.md`.
+Read `.claude/skills/cache-strategy-assessment/SKILL.md` completely, then follow its canonical instructions.
+Use the shared ATLAS memory, contracts, workflow, and review gates; do not create Codex-only project knowledge.
