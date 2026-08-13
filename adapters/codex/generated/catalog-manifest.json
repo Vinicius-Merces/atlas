@@ -5,8 +5,8 @@
     "agents": 86,
     "commands": 71,
     "skills": 128,
-    "workflows": 83,
-    "reviews": 74
+    "workflows": 84,
+    "reviews": 75
   },
   "maps": {
     "agents": "agent-map.json",

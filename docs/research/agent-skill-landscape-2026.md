@@ -276,3 +276,12 @@ External repositories are architecture and capability references, not copy sourc
 ## P1 completion note
 
 The original P1 capability gaps for data/multi-tenant systems, product/growth quality, and capability-quality measurement are now implemented as validated skills attached to existing durable agents. The catalog must continue to be measured before introducing new agent roles.
+
+## P3 Reference Build Benchmark
+
+Implemented after P2 to stop capability growth from becoming speculative.
+
+P3 adds no agents and no skills. It introduces three fixed complete-product briefs, a shared 10-axis scoring rubric with build-specific weights, blocking checks, deterministic submission scoring, harness-smoke fixtures, independent benchmark review, and exact-fixture Claude Code/Codex comparison.
+
+The next capability additions should be justified by repeated live reference-build evidence: implementation failure, routing failure, missing capability, workflow weakness, evidence gap, or fixture ambiguity. Prefer repairing existing skills/workflows before adding new durable roles.
+

@@ -63,3 +63,7 @@ Implementation: may change claimed assets within scope and produce validation ev
 ## P2 Full-Stack Delivery
 
 Route applicable construction work through: `admin-operations-surface`, `application-search-design`, `audit-log-design`, `cms-content-modeling`, `data-import-export-workflow`, `feature-flag-rollout`, `file-upload-storage-design`, `form-mutation-design`, `notification-system-design`, `rate-limit-abuse-control`, `transactional-email-delivery`. Preserve `framework/full-stack-delivery-model.md`, inherited Frontend Craft, and existing trust/assurance gates.
+
+## P3 Reference Build Benchmark
+
+Map each fixed P3 brief to the closest blueprint and delivery workflow while preserving fixture constraints. Do not turn the benchmark brief into a hidden source template.

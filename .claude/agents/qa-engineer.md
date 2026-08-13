@@ -81,3 +81,7 @@ Implementation: may change claimed assets within scope and produce validation ev
 - Verify evidence before concluding; distinguish fact from inference and assumption.
 - Stay in scope, preserve user changes and canonical sources, keep outputs traceable.
 - Never self-approve or bypass review; report uncertainty and residual risk.
+
+## P3 Reference Build Benchmark
+
+Collect reproducible browser, negative-path, responsive, accessibility, failure, and deployment evidence required by reference-build checks. Missing evidence remains unverified rather than inferred pass.

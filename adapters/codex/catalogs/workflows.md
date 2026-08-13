@@ -2,7 +2,7 @@
 
 > Generated from `.claude/registry.json`. Do not edit manually.
 
-Total: **83**
+Total: **84**
 
 - `adapter-drift-audit` → `.claude/workflows/adapter-drift-audit.md`
 - `ai-feature-delivery` → `.claude/workflows/ai-feature-delivery.md`
@@ -60,6 +60,7 @@ Total: **83**
 - `project-state-reconciliation` → `.claude/workflows/project-state-reconciliation.md`
 - `provenance-reconciliation` → `.claude/workflows/provenance-reconciliation.md`
 - `refactoring` → `.claude/workflows/refactoring.md`
+- `reference-build-benchmark` → `.claude/workflows/reference-build-benchmark.md`
 - `reference-project-review` → `.claude/workflows/reference-project-review.md`
 - `release` → `.claude/workflows/release.md`
 - `release-artifact` → `.claude/workflows/release-artifact.md`

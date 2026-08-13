@@ -82,8 +82,8 @@ frontmatter and validated in CI.
 | Agents | 87 | Orchestration plus focused product, engineering, architecture, governance, runtime, and assurance roles | [Agent Catalog](docs/agent-catalog.md) |
 | Skills | 128 | Bounded procedures for analysis, design, frontend craft, production trust, web assurance, validation, continuity, and delivery | [Skill Catalog](docs/skill-catalog.md) |
 | Commands | 71 | Explicit entry points for common ATLAS operations | `.claude/commands/` |
-| Workflows | 83 | Repeatable execution paths with responsibilities and gates | `.claude/workflows/` |
-| Reviews | 74 | Independent review procedures and acceptance checks | `.claude/reviews/` |
+| Workflows | 84 | Repeatable execution paths with responsibilities and gates | `.claude/workflows/` |
+| Reviews | 75 | Independent review procedures and acceptance checks | `.claude/reviews/` |
 | Contracts | 6 | Stable interfaces for agents, skills, workflows, memory, reviews, and commands | `.claude/contracts/` |
 
 ### Agent model
@@ -152,6 +152,17 @@ ATLAS now composes reusable production primitives for building complete websites
 The canonical model is `framework/full-stack-delivery-model.md`. Public sites use `site-from-brief-delivery`; authenticated systems use `saas-from-brief-delivery`. Eleven new skills cover form mutations, file/object storage, transactional email, notifications, abuse/resource limits, application search, CMS modeling, audit logs, privileged admin operations, feature rollout, and bulk import/export.
 
 Six focused blueprints cover premium marketing, content, subscription SaaS, internal admin, marketplace/ecommerce, and AI SaaS. Every user-facing blueprint inherits Frontend Craft, so P2 expands construction power without weakening the premium frontend standard.
+
+
+## Reference Build Benchmark P3
+
+P3 makes complete-product execution measurable. ATLAS now ships three fixed reference briefs: a premium marketing site, a multi-tenant subscription SaaS, and a dense internal operations system, plus a deterministic 10-axis scoring harness.
+
+The canonical model is `framework/reference-build-benchmark-model.md`; fixtures and rubric live under `benchmarks/reference-builds/`; execution uses `reference-build-benchmark`; independent review uses `reference-build-benchmark-review`.
+
+A harness-smoke run only proves that fixtures and scoring work and is always non-claimable. A live result may be compared across Claude Code and Codex only when the exact fixture/rubric version, run metadata, inspectable evidence, blockers, and independent review are preserved.
+
+P3 intentionally adds no new agents or skills: it tests whether the existing **87 agent surfaces and 128 skills** can actually compose into complete products before ATLAS expands the catalog again.
 
 ## Discovery descriptions and hover surfaces
 
