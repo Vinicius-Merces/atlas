@@ -1,0 +1,77 @@
+name: P2 Contract Fix
+
+on:
+  push:
+    branches:
+      - feat/atlas-p2-full-stack-delivery-pack
+
+permissions:
+  contents: write
+
+jobs:
+  fix:
+    if: github.actor != 'github-actions[bot]'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install test dependencies
+        run: python -m pip install --requirement requirements-test.txt
+      - name: Bring P2 workflows and review into contract conformance
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+
+          site = Path('.claude/workflows/site-from-brief-delivery.md')
+          text = site.read_text(encoding='utf-8')
+          if '## Inputs' not in text:
+              text = text.replace('## Sequence\n', '''## Inputs\n\n- Business/product brief, target audience, brand constraints, desired outcomes, acceptance criteria, domain/deployment context, and non-functional constraints.\n- Existing site/content/data/integrations when this is a rebuild.\n- Reference material and visual preferences, treated as direction rather than copy targets.\n- Authoritative conversion state, content ownership/editorial needs, analytics requirements, and privacy/security constraints.\n- Supported browsers/devices plus performance and accessibility expectations.\n\n## Sequence\n''', 1)
+          if '## Required lifecycle' not in text:
+              text = text.replace('## Responsible agents\n', '''## Required lifecycle\n\n1. **Understand** - Resolve audience, jobs-to-be-done, brand intent, content authority, conversion objective, integrations, constraints, and production target.\n2. **Inspect** - Read existing implementation/content and deployed behavior when present; identify reusable assets and regressions that must not be carried forward.\n3. **Plan** - Select blueprint, information architecture, visual thesis, component/system strategy, applicable P2 primitives, quality gates, evidence, and release path.\n4. **Execute** - Implement incrementally, preserving authoritative mutation/content state and deliberate visual authorship.\n5. **Validate** - Exercise representative viewports, keyboard/accessibility, negative form/provider states, performance, browser behavior, analytics, crawl/index, and structured-data evidence as applicable.\n6. **Review** - Complete independent Frontend Craft, Web Production Assurance, and Full-Stack Delivery review gates.\n7. **Document** - Record durable content/model decisions, integrations, deployment configuration, residual risks, and evidence.\n8. **Deliver** - Ship only after blocking findings are resolved and production behavior matches the brief.\n\n## Responsible agents\n''', 1)
+          if '## Decision points' not in text:
+              text = text.replace('## Validation\n', '''## Decision points\n\n- Which blueprint best matches the product without forcing template aesthetics?\n- Is content code-owned or editor-owned, and does that justify a CMS?\n- What state proves a real conversion rather than a client-side success message?\n- Which interactions justify Motion, GSAP, WebGL/3D, or no extra library at all?\n- Do uploads, search, email, external APIs, or rate/resource controls actually apply?\n- Which public pages should be crawlable/indexable, canonical, structured, or intentionally excluded?\n- What evidence is required before the design can be called premium and release-ready?\n\n## Validation\n''', 1)
+          if '## Failure handling' not in text:
+              text = text.replace('## Completion criteria\n', '''## Failure handling\n\n- Do not claim completion when a primary journey, required viewport, accessibility path, or production integration is unverified.\n- Do not replace missing brand/product direction with generic component-library defaults.\n- Do not treat a UI success state as authoritative when server/provider state failed or remains ambiguous.\n- Do not expose credentials, private content, uploads, or provider keys to the browser to accelerate implementation.\n- Do not add motion/3D that breaks reduced-motion, mobile performance, navigation, content legibility, or conversion tasks.\n- When deployed SEO/browser behavior contradicts source configuration, treat the deployed evidence as the defect to resolve.\n\n## Completion criteria\n''', 1)
+          site.write_text(text, encoding='utf-8')
+
+          saas = Path('.claude/workflows/saas-from-brief-delivery.md')
+          text = saas.read_text(encoding='utf-8')
+          if '## Inputs' not in text:
+              text = text.replace('## Sequence\n', '''## Inputs\n\n- Product brief, users, tenant/account model, jobs-to-be-done, acceptance criteria, business rules, and non-functional constraints.\n- Revenue, subscription, entitlement, or internal permission model where applicable.\n- Existing architecture, schema, integrations, providers, deployment/runtime, and migration constraints for non-greenfield work.\n- Data sensitivity, privacy/compliance requirements, expected scale, availability, performance, and operational support needs.\n- Brand/design direction plus representative target devices and browsers.\n\n## Sequence\n''', 1)
+          if '`cms-content-modeling`' not in text:
+              text = text.replace('5. Add `application-search-design` and `data-import-export-workflow` for discovery/bulk-data jobs as applicable.\n', '5. Add `application-search-design` and `data-import-export-workflow` for discovery/bulk-data jobs as applicable. Run `cms-content-modeling` when editor-owned product, help, marketing, listing, or documentation content must publish independently from code.\n', 1)
+          if '## Required lifecycle' not in text:
+              text = text.replace('## Responsible agents\n', '''## Required lifecycle\n\n1. **Understand** - Resolve actors, tenants, domain invariants, authoritative state, revenue/entitlements, integrations, operational ownership, constraints, and success criteria.\n2. **Inspect** - Read existing code/schema/runtime/provider behavior and prior trust/quality evidence when present.\n3. **Plan** - Select blueprint, architecture, schema/migrations, identity/tenant model, applicable P2 primitives, frontend thesis, failure/recovery paths, observability, and release strategy.\n4. **Execute** - Build incrementally with server-authoritative privileged state, tenant-safe resources, reliable distributed transitions, and premium frontend composition.\n5. **Validate** - Exercise positive, denial, duplicate, concurrent, cross-tenant, stale, retry, provider-outage, privileged, responsive, accessibility, performance, and browser paths as applicable.\n6. **Review** - Complete independent trust, P1 quality, frontend/web assurance, security, and Full-Stack Delivery gates appropriate to scope.\n7. **Document** - Record domain/architecture decisions, provider contracts, operational procedures, rollout/rollback, recovery, evidence, and residual risks.\n8. **Deliver** - Release only when blocking findings are resolved and production configuration/runtime behavior is verified.\n\n## Responsible agents\n''', 1)
+          if '## Decision points' not in text:
+              text = text.replace('## Validation\n', '''## Decision points\n\n- What is the authoritative source for each consequential business state and who may change it?\n- Where is tenant identity established, propagated, enforced, cached, indexed, queued, stored, exported, and observed?\n- Which P2 primitives are required and which are genuinely not applicable?\n- Does a CMS, dedicated search engine, queue, external notification provider, feature-flag service, or other dependency solve a demonstrated requirement?\n- Which mutations/jobs/provider calls can be duplicated, reordered, retried, or become obsolete?\n- Which privileged operations need confirmation, re-authentication, reason capture, dual control, break-glass, or audit evidence?\n- What makes the frontend premium for this product category without importing marketing-site theatrics into operational UX?\n- What metrics and failure thresholds trigger rollback or degraded mode?\n\n## Validation\n''', 1)
+          if '## Failure handling' not in text:
+              text = text.replace('## Completion criteria\n', '''## Failure handling\n\n- Do not infer tenant, role, entitlement, retention, billing, or support policy from incidental implementation state.\n- Do not rely on hidden UI, feature flags, storage paths, cache keys, search filtering, or notification routing as substitutes for authorization.\n- Do not accept irreversible duplicate effects because a provider/queue is expected to deliver once.\n- Do not declare distributed integration success solely from an intermediate provider response when authoritative state can diverge.\n- Do not let privileged support/admin actions bypass domain invariants or become unaudited direct-database workflows by default.\n- If a dependency is unavailable, follow explicit degradation/retry/reconciliation policy rather than silently losing state.\n- If required trust/browser/frontend evidence is unavailable, report the claim as unverified and block release when material.\n\n## Completion criteria\n''', 1)
+          saas.write_text(text, encoding='utf-8')
+
+          review = Path('.claude/reviews/full-stack-delivery-review.md')
+          text = review.read_text(encoding='utf-8')
+          if '## Review type' not in text:
+              text = text.replace('## Independence\n', '''## Review type\n\nIndependent production-readiness and full-stack delivery gate.\n\n## Scope\n\nThe changed website/SaaS journeys, delivery primitives, trust boundaries, user-facing surfaces, production configuration, operational controls, and applicable inherited ATLAS gates.\n\n## Evidence inspected\n\nInspect the brief and acceptance criteria, architecture/schema decisions, rendered browser evidence, tests, validation outputs, trust/security findings, runtime/deployment evidence, provider/reconciliation evidence, and applicable Frontend Craft/Web Production/P1 review results. Record missing evidence explicitly.\n\n## Independence\n''', 1)
+          if '## Findings' not in text:
+              text = text.replace('## Blocking findings\n', '''## Findings\n\nRecord every finding with affected journey/component/subsystem, observed evidence, user/business/operational impact, applicable contract or invariant, and remediation owner. Distinguish fact, inference, and unverified claim.\n\n## Severity\n\nUse **Critical**, **High**, **Medium**, **Low**, or **Note**. Critical and High findings affecting mandatory production journeys or trust boundaries block approval until resolved or explicitly governed by an authorized risk owner.\n\n## Required actions\n\nFor each unresolved finding, state the corrective action, owner, verification method, and whether release is blocked. Re-run the relevant focused skill/gate after remediation rather than accepting code change alone.\n\n## Blocking findings\n''', 1)
+          review.write_text(text, encoding='utf-8')
+          PY
+      - name: Validate contracts and P2 pack
+        run: |
+          python scripts/validate_contracts.py --mode strict
+          python scripts/validate_full_stack_delivery_pack.py
+      - name: Commit conformance fixes
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A
+          if git diff --cached --quiet; then
+            echo "No conformance changes"
+          else
+            git commit -m "fix: make P2 workflows and review contract-conformant"
+            git push
+          fi
