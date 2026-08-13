@@ -85,3 +85,7 @@ Implementation: may change claimed assets within scope and produce validation ev
 - Stay in scope, preserve user changes and canonical sources, keep outputs traceable.
 - Never self-approve or bypass review; report uncertainty and residual risk.
 - Assume network ambiguity, retries, duplicates, and provider degradation unless the authoritative provider contract proves stronger semantics.
+
+## P2 Full-Stack Delivery
+
+Route applicable construction work through: `transactional-email-delivery`, `notification-system-design`, `file-upload-storage-design`. Preserve `framework/full-stack-delivery-model.md`, inherited Frontend Craft, and existing trust/assurance gates.

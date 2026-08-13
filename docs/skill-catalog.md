@@ -4,7 +4,7 @@ Canonical, generated inventory of every skill under `.claude/skills/<skill-name>
 
 Regenerate both capability catalogs with `python scripts/generate_capability_catalogs.py`. Use `--check` in validation and CI.
 
-Total: 117 skills.
+Total: 128 skills.
 
 ## Accessibility Audit
 
@@ -13,6 +13,10 @@ Total: 117 skills.
 ## Adapter Drift Detection
 
 `adapter-drift-detection`. Detect divergence between a supported runtime adapter and canonical ATLAS.
+
+## Admin Operations Surface
+
+`admin-operations-surface`. Design internal admin and support surfaces for privileged operations, covering role boundaries, tenant context, search, impersonation, dangerous actions, approval/confirmation, audit evidence, support workflows, break-glass access, and prevention of accidental cross-customer impact.
 
 ## ADR Authoring
 
@@ -34,6 +38,10 @@ Total: 117 skills.
 
 `api-contract-analysis`. Assess API compatibility and identify migration risks.
 
+## Application Search Design
+
+`application-search-design`. Design application search and filtering when users need discovery across product data or content, covering source of truth, query semantics, ranking, filters, pagination, indexing, authorization, tenant scope, freshness, empty states, and database-versus-search-engine tradeoffs.
+
 ## Architecture Assessment
 
 `architecture-assessment`. Evaluate whether a proposed change fits existing architecture and preserves clear boundaries.
@@ -49,6 +57,10 @@ Total: 117 skills.
 ## Audit Bundle Assembly
 
 `audit-bundle-assembly`. Assemble a navigable manifest of evidence for a task, release, or deployment.
+
+## Audit Log Design
+
+`audit-log-design`. Design security and business audit logs for consequential actions, covering actor, tenant, resource, action, before/after context, request correlation, append-only expectations, sensitive-data minimization, retention, access, export, and investigation usability.
 
 ## Authentication Flow Review
 
@@ -81,6 +93,10 @@ Total: 117 skills.
 ## Cloud Cost Analysis
 
 `cloud-cost-analysis`. Analyze cloud or platform spending and identify evidence-based optimization opportunities.
+
+## Cms Content Modeling
+
+`cms-content-modeling`. Design content models and editorial workflows for websites and content-driven products, covering content types, structured fields, slugs, drafts, preview, localization, media, authorship, publishing lifecycle, references, SEO data, migrations, and frontend rendering contracts.
 
 ## Codex Runtime Generation
 
@@ -138,6 +154,10 @@ Total: 117 skills.
 
 `core-contract-stabilization`. Evaluate whether a contract is stable enough for a beta support commitment.
 
+## Data Import Export Workflow
+
+`data-import-export-workflow`. Design bulk data import and export workflows for CSV, spreadsheet, archive, or generated datasets, covering authorization, schema mapping, preview, validation, partial errors, idempotency, background processing, progress, large files, privacy, reconciliation, and downloadable artifact lifecycle.
+
 ## Database Migration Analysis
 
 `database-migration-analysis`. Assess schema and data migrations for integrity, compatibility, and operational risk.
@@ -193,6 +213,18 @@ Total: 117 skills.
 ## External API Resilience Review
 
 `external-api-resilience-review`. Review third-party API integrations when timeouts, retries, rate limits, pagination, versioning, partial failures, provider outages, or fallback behavior can affect production reliability.
+
+## Feature Flag Rollout
+
+`feature-flag-rollout`. Design feature flags and staged rollouts when behavior must vary by environment, user, tenant, cohort, percentage, or operational kill switch, covering authoritative evaluation context, defaults, lifecycle, observability, experiments, failure behavior, and flag removal.
+
+## File Upload Storage Design
+
+`file-upload-storage-design`. Design file upload and object-storage flows when users or systems create media or documents, covering ownership, authorization, signed access, type and size validation, object naming, integrity, processing, lifecycle, deletion, and tenant isolation.
+
+## Form Mutation Design
+
+`form-mutation-design`. Design and review user-initiated forms and mutations when data is created, edited, deleted, submitted, or transitioned, covering validation, authorization, concurrency, duplicate submission, optimistic UI, failure recovery, and accessible feedback.
 
 ## Framework Package Validation
 
@@ -266,6 +298,10 @@ Total: 117 skills.
 
 `motion-choreography`. Design and implement purposeful UI motion when a frontend needs transitions, gestures, scroll choreography, or timelines, selecting CSS, Motion, or GSAP by interaction semantics.
 
+## Notification System Design
+
+`notification-system-design`. Design multi-channel product notifications when users need in-app, push, email, or provider messages, covering event authority, preferences, deduplication, urgency, read state, fan-out, delivery channels, quieting, retries, and notification-center UX.
+
 ## Observability Design
 
 `observability-design`. Design logs, metrics, traces, dashboards, and alerts for a feature or service.
@@ -317,6 +353,10 @@ Total: 117 skills.
 ## RAG Architecture Assessment
 
 `rag-architecture-assessment`. Evaluate retrieval-augmented generation architecture for grounding, security, freshness, quality, latency, and cost.
+
+## Rate Limit Abuse Control
+
+`rate-limit-abuse-control`. Design abuse and resource-consumption controls for public or expensive operations, covering actor and resource keys, rate and concurrency limits, payload bounds, OTP/recovery abuse, uploads, provider spend, failure responses, bypass identities, and observability.
 
 ## Reference Implementation Review
 
@@ -445,6 +485,10 @@ Total: 117 skills.
 ## Threat Modeling
 
 `threat-modeling`. Identify threats and controls for a system, feature, integration, or data flow.
+
+## Transactional Email Delivery
+
+`transactional-email-delivery`. Design transactional email delivery for verification, recovery, invitations, receipts, alerts, and workflow messages, covering authoritative triggers, template data, provider handoff, idempotency, retries, suppression, security, observability, and delivery-state reconciliation.
 
 ## Universal Runtime Contract Design
 

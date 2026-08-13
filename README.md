@@ -80,10 +80,10 @@ frontmatter and validated in CI.
 | Component | Count | What it provides | Complete reference |
 | --- | ---: | --- | --- |
 | Agents | 87 | Orchestration plus focused product, engineering, architecture, governance, runtime, and assurance roles | [Agent Catalog](docs/agent-catalog.md) |
-| Skills | 117 | Bounded procedures for analysis, design, frontend craft, production trust, web assurance, validation, continuity, and delivery | [Skill Catalog](docs/skill-catalog.md) |
+| Skills | 128 | Bounded procedures for analysis, design, frontend craft, production trust, web assurance, validation, continuity, and delivery | [Skill Catalog](docs/skill-catalog.md) |
 | Commands | 71 | Explicit entry points for common ATLAS operations | `.claude/commands/` |
-| Workflows | 81 | Repeatable execution paths with responsibilities and gates | `.claude/workflows/` |
-| Reviews | 73 | Independent review procedures and acceptance checks | `.claude/reviews/` |
+| Workflows | 83 | Repeatable execution paths with responsibilities and gates | `.claude/workflows/` |
+| Reviews | 74 | Independent review procedures and acceptance checks | `.claude/reviews/` |
 | Contracts | 6 | Stable interfaces for agents, skills, workflows, memory, reviews, and commands | `.claude/contracts/` |
 
 ### Agent model
@@ -142,7 +142,16 @@ Examples:
   scripts, source/provenance, and blast radius;
 - `dual-runtime-validation` checks Claude Code and Codex surfaces together.
 
-See the [Skill Catalog](docs/skill-catalog.md) for all 117 descriptions.
+See the [Skill Catalog](docs/skill-catalog.md) for all 128 descriptions.
+
+
+## Full-Stack Delivery P2
+
+ATLAS now composes reusable production primitives for building complete websites and SaaS products from a brief, rather than stopping at architecture and review.
+
+The canonical model is `framework/full-stack-delivery-model.md`. Public sites use `site-from-brief-delivery`; authenticated systems use `saas-from-brief-delivery`. Eleven new skills cover form mutations, file/object storage, transactional email, notifications, abuse/resource limits, application search, CMS modeling, audit logs, privileged admin operations, feature rollout, and bulk import/export.
+
+Six focused blueprints cover premium marketing, content, subscription SaaS, internal admin, marketplace/ecommerce, and AI SaaS. Every user-facing blueprint inherits Frontend Craft, so P2 expands construction power without weakening the premium frontend standard.
 
 ## Discovery descriptions and hover surfaces
 

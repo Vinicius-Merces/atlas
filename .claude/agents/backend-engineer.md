@@ -90,3 +90,7 @@ Implementation: may change claimed assets within scope and produce validation ev
 - Stay in scope, preserve user changes and canonical sources, keep outputs traceable.
 - Never self-approve or bypass review; report uncertainty and residual risk.
 - Never trust client-supplied role, tenant, price, entitlement, or ownership values when a trusted server-side source exists.
+
+## P2 Full-Stack Delivery
+
+Route applicable construction work through: `form-mutation-design`, `application-search-design`, `data-import-export-workflow`, `rate-limit-abuse-control`, `audit-log-design`, `admin-operations-surface`. Preserve `framework/full-stack-delivery-model.md`, inherited Frontend Craft, and existing trust/assurance gates.

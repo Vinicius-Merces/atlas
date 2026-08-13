@@ -2,7 +2,7 @@
 
 > Generated from `.claude/registry.json`. Do not edit manually.
 
-Total: **81**
+Total: **83**
 
 - `adapter-drift-audit` → `.claude/workflows/adapter-drift-audit.md`
 - `ai-feature-delivery` → `.claude/workflows/ai-feature-delivery.md`
@@ -71,10 +71,12 @@ Total: **81**
 - `runtime-handoff` → `.claude/workflows/runtime-handoff.md`
 - `runtime-parity` → `.claude/workflows/runtime-parity.md`
 - `runtime-synchronization` → `.claude/workflows/runtime-synchronization.md`
+- `saas-from-brief-delivery` → `.claude/workflows/saas-from-brief-delivery.md`
 - `saas-production-readiness` → `.claude/workflows/saas-production-readiness.md`
 - `session-bootstrap` → `.claude/workflows/session-bootstrap.md`
 - `session-closeout` → `.claude/workflows/session-closeout.md`
 - `shared-state-protection` → `.claude/workflows/shared-state-protection.md`
+- `site-from-brief-delivery` → `.claude/workflows/site-from-brief-delivery.md`
 - `support-policy` → `.claude/workflows/support-policy.md`
 - `system-modernization` → `.claude/workflows/system-modernization.md`
 - `task-envelope-lifecycle` → `.claude/workflows/task-envelope-lifecycle.md`
