@@ -1,0 +1,22 @@
+version: 1
+canonical_model: framework/capability-evaluation-model.md
+skills:
+  - skill-quality-evaluation
+  - skill-trigger-evaluation
+  - agent-overlap-analysis
+preferred_workflow: capability-quality-assessment
+required_review: capability-quality-review
+measurement:
+  skill_quality:
+    scale: 0-100
+    blocking_missing_contract_sections: true
+  skill_routing:
+    proxy: deterministic lexical retrieval
+    report_top_k: [1, 3, 5]
+  agent_overlap:
+    proxy: weighted lexical similarity
+    manual_review_required_for_top_pairs: true
+policy:
+  add_agent_only_for_durable_responsibility: true
+  prefer_skill_for_repeatable_procedure: true
+  do_not_claim_static_metrics_equal_live_runtime_behavior: true

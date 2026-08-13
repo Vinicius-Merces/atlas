@@ -1,0 +1,74 @@
+version: 1
+cases:
+  - id: responsive-mobile-clipping
+    query: Audit this page at phone, tablet and desktop widths for clipping, overflow, broken stacking and image crop.
+    expected: responsive-layout-audit
+  - id: screenshot-diff
+    query: Compare browser screenshots against the accepted UI and classify visual regressions.
+    expected: visual-regression-review
+  - id: browser-checkout-flow
+    query: Exercise the real checkout journey in a browser including submit, redirect, loading and error states.
+    expected: browser-flow-validation
+  - id: crawl-index-canonical
+    query: Check robots, noindex, redirects, canonical URLs, sitemap and deployed metadata for indexing problems.
+    expected: seo-technical-audit
+  - id: jsonld-truth
+    query: Validate the JSON-LD Product and Organization entities and ensure prices, ratings and URLs match real page content.
+    expected: structured-data-validation
+  - id: dependency-install-script
+    query: Review the new npm dependency, transitive packages, lockfile, postinstall scripts, maintainer risk and advisories.
+    expected: supply-chain-risk-audit
+  - id: auth-recovery
+    query: Review sign in, password recovery, MFA, OAuth callback and session lifecycle security.
+    expected: authentication-flow-review
+  - id: object-permission
+    query: Verify users cannot change an object id or tenant id to access another customer's resource.
+    expected: authorization-boundary-review
+  - id: postgres-tenant-policy
+    query: Inspect PostgreSQL row policies, USING WITH CHECK, service role bypasses and cross-tenant denial.
+    expected: row-level-security-review
+  - id: webhook-retry
+    query: Validate webhook signatures, duplicates, retries, replay, out-of-order delivery and recovery.
+    expected: webhook-reliability-review
+  - id: billing-entitlement
+    query: Review subscription checkout, idempotency, refund, failed renewal and entitlement reconciliation.
+    expected: payment-integration-review
+  - id: provider-timeout
+    query: Review a third-party API for explicit timeouts, bounded retries, 429 handling, pagination and outage degradation.
+    expected: external-api-resilience-review
+  - id: secret-client-bundle
+    query: Audit environment variables and confirm service credentials cannot leak into browser bundles, logs or previews.
+    expected: secret-environment-audit
+  - id: premium-ui-direction
+    query: Define a distinctive visual thesis, hierarchy, typography, composition and art direction before coding this premium landing page.
+    expected: interface-visual-direction
+  - id: animation-tool-choice
+    query: Decide whether this React interaction should use CSS, Motion, GSAP or another animation approach before adding dependencies.
+    expected: frontend-stack-selection
+  - id: scroll-timeline
+    query: Design a coordinated scroll-driven timeline with sequencing, pinning and reduced-motion behavior.
+    expected: motion-choreography
+  - id: webgl-admission
+    query: Decide whether a persistent React Three Fiber scene is justified and define DPR, draw-call, fallback and reduced-motion budgets.
+    expected: immersive-3d-experience
+  - id: web-runtime-cost
+    query: Assess fonts, images, JavaScript, third-party scripts and WebGL against real-device web performance budgets.
+    expected: web-performance-field-readiness
+  - id: api-breaking-change
+    query: Analyze whether this API request and response change breaks existing consumers and what migration is required.
+    expected: api-contract-analysis
+  - id: architecture-fit
+    query: Evaluate whether this proposed subsystem fits current architectural boundaries and dependency direction.
+    expected: architecture-assessment
+  - id: manual-patch
+    query: Verify an incremental manual-deployment patch matches the installed base and declared file changes before copying anything.
+    expected: manual-deployment-preflight
+  - id: runtime-parity
+    query: Compare Claude Code and Codex representations to ensure the same capability meaning is preserved.
+    expected: runtime-semantic-parity
+  - id: memory-staleness
+    query: Audit persistent project memory for age, ownership, stale claims and source reliability.
+    expected: memory-freshness-audit
+  - id: evidence-release
+    query: Verify a release artifact is complete, traceable and consistent with manifests, hashes and source state.
+    expected: release-integrity-verification
