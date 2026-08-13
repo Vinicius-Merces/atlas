@@ -1,0 +1,23 @@
+{
+  "campaign_id": "p4-live-reference-build-campaign",
+  "target_id": "calibration-gpt-5-6-sol",
+  "role": "calibration",
+  "runtime": "chatgpt",
+  "model": "GPT-5.6 Sol",
+  "fixture_id": "premium-marketing-site",
+  "campaign_base_commit": "3ccdf6e6209c3aea949e62226af1cb6b35167487",
+  "run_branch": "bench/p4-asteria-calibration-gpt-5-6-sol",
+  "fixture_sha256": "e57da062e6223f6ecbea84a64813f6d8e73f9b0954cda065da5edbc680762947",
+  "rubric_sha256": "6463ae7fde36affecc20eff21f0ec73e04e0fb44c920a3cbc9115502a1b56b31",
+  "started_at": "2026-08-13T15:37:00-03:00",
+  "tool_permissions": [
+    "GitHub repository read/write",
+    "GitHub Actions"
+  ],
+  "isolation_attestation": {
+    "same_base_commit": true,
+    "no_cross_run_branch_reads": true,
+    "no_implementation_reuse": true
+  },
+  "notes": "Diagnostic calibration; not a Codex or Claude Code target run."
+}
