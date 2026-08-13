@@ -151,6 +151,24 @@ def quick_steps(root: Path) -> list[ValidationStep]:
         ),
         _python_step(
             root,
+            "web-production-assurance-pack",
+            "Validate web production assurance capability pack",
+            "validate_web_production_assurance_pack.py",
+        ),
+        _python_step(
+            root,
+            "capability-evaluation-pack",
+            "Validate capability evaluation pack",
+            "validate_capability_evaluation_pack.py",
+        ),
+        _python_step(
+            root,
+            "production-product-quality-pack",
+            "Validate P1 production and product quality capability pack",
+            "validate_production_product_quality_pack.py",
+        ),
+        _python_step(
+            root,
             "capability-catalogs",
             "Check agent and skill catalogs",
             "generate_capability_catalogs.py",

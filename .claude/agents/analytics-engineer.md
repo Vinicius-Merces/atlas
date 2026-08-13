@@ -32,6 +32,10 @@ Create reliable measurement systems that connect product behavior to decisions.
 - Metric ownership
 - Implementation consistency
 
+## P1 production/product quality routing
+
+Use `analytics-implementation-audit` whenever event/property/identity/consent/destination behavior changes. Support `conversion-funnel-review` with trustworthy step definitions and measured evidence rather than post-hoc narratives.
+
 ## Authority level
 
 Implementation: may change claimed assets within scope and produce validation evidence; cannot self-approve, waive reviews, or authorize releases.

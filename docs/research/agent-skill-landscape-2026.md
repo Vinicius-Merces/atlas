@@ -169,14 +169,14 @@ Status markers in this research note describe repository state as of the current
 
 ### P0: production web quality
 
-- **Pending** `browser-flow-validation`: exercise critical user journeys in a real browser and capture failures/evidence.
+- **Implemented** `browser-flow-validation`: exercise critical user journeys in a real browser and capture failures/evidence.
 - **Implemented** `responsive-layout-audit`: validate breakpoints, overflow, stacking, typography, touch targets, and media behavior across viewport classes.
 - **Implemented** `visual-regression-review`: compare intended and observed UI and classify meaningful visual regressions.
-- **Pending** `seo-technical-audit`: validate crawlability, canonical URLs, redirects, sitemap/robots behavior, metadata, indexing blockers, and internal discovery.
-- **Pending** `structured-data-validation`: review JSON-LD/schema markup against page meaning and supported search features.
+- **Implemented** `seo-technical-audit`: validate crawlability, canonical URLs, redirects, sitemap/robots behavior, metadata, indexing blockers, and internal discovery.
+- **Implemented** `structured-data-validation`: review JSON-LD/schema markup against page meaning and supported search features.
 - **Implemented** `web-performance-field-readiness`: connect performance budgets to Core Web Vitals, asset strategy, hydration, caching, and runtime behavior.
 
-The implemented web-quality capabilities are governed by the Frontend Craft Pack. Browser-flow and search/discoverability capabilities remain separate P0 work rather than being hidden inside frontend craft.
+Frontend Craft governs visual/responsive/performance quality. Web Production Assurance now governs real-browser journeys, deployed technical SEO, and structured-data truth. These are separate gates that compose for significant public-web work.
 
 ### P0: SaaS trust boundaries
 
@@ -184,9 +184,9 @@ The implemented web-quality capabilities are governed by the Frontend Craft Pack
 - **Implemented** `authorization-boundary-review`: verify server-side authorization, object-level access, role boundaries, and privilege escalation risks.
 - **Implemented** `row-level-security-review`: validate database tenant/user isolation policies and dangerous bypass paths.
 - **Implemented** `secret-environment-audit`: detect accidental secret exposure, unsafe defaults, environment drift, and client/server variable boundary mistakes.
-- **Pending** `supply-chain-risk-audit`: inspect dependency advisories, install scripts, maintainer/upstream risk, and suspicious package changes.
+- **Implemented** `supply-chain-risk-audit`: inspect dependency advisories, install scripts, maintainer/upstream risk, provenance, and suspicious package/build-input changes.
 
-The first four capabilities are now governed by the SaaS Production Trust Model, readiness workflow, independent trust review, Claude/Codex discovery parity, and pack-specific contract validation. `supply-chain-risk-audit` remains the only unresolved P0 item in this trust-boundary group.
+Authentication, authorization, RLS, and secret/environment boundaries are governed by SaaS Production Trust. Supply-chain risk is intentionally cross-cutting and is governed through Web Production Assurance with security and dependency ownership.
 
 ### P0: integrations and money paths
 
@@ -196,24 +196,34 @@ The first four capabilities are now governed by the SaaS Production Trust Model,
 
 These capabilities are part of the SaaS Production Trust Pack and are routed through existing security, backend, integration, platform, reliability, and QA responsibilities rather than new provider-specific agents.
 
+### P0 completion status
+
+The identified P0 website/SaaS capability layer is now implemented across three complementary packs:
+
+1. **Frontend Craft**: visual direction, stack selection, motion/3D discipline, responsive authorship, visual regression, frontend performance, and craft review.
+2. **SaaS Production Trust**: authentication, authorization, RLS, secrets/environment, webhooks, payments, and external API resilience.
+3. **Web Production Assurance**: browser-flow evidence, technical SEO, structured-data truth, and supply-chain risk.
+
+Future P0 work should come from new evidence or newly discovered risk, not from the original gap list above.
+
 ### P1: data and multi-tenant systems
 
-- **Pending** `database-schema-review`: assess constraints, indexes, ownership, lifecycle, query patterns, and migration impact.
-- **Pending** `saas-multitenancy-review`: assess tenant isolation, tenancy model, noisy-neighbor risk, quotas, background work, and operational boundaries.
-- **Pending** `background-job-reliability`: assess queues, retry policy, idempotency, poison jobs, scheduling, cancellation, and observability.
-- **Pending** `cache-strategy-assessment`: decide what may be cached, where, for how long, and how invalidation/consistency is proven.
+- **Implemented** `database-schema-review`: assess constraints, indexes, ownership, lifecycle, query patterns, and migration impact.
+- **Implemented** `saas-multitenancy-review`: assess tenant isolation, tenancy model, noisy-neighbor risk, quotas, background work, and operational boundaries.
+- **Implemented** `background-job-reliability`: assess queues, retry policy, idempotency, poison jobs, scheduling, cancellation, and observability.
+- **Implemented** `cache-strategy-assessment`: decide what may be cached, where, for how long, and how invalidation/consistency is proven.
 
 ### P1: growth and product quality
 
-- **Pending** `conversion-funnel-review`: connect UX friction, instrumentation, forms, handoff states, and conversion measurement without dark patterns.
-- **Pending** `analytics-implementation-audit`: compare implemented events against the canonical taxonomy, privacy rules, and decision metrics.
-- **Pending** `content-discoverability-review`: align information architecture, internal links, semantic HTML, structured content, and AI/search discoverability.
+- **Implemented** `conversion-funnel-review`: connect UX friction, instrumentation, forms, handoff states, and conversion measurement without dark patterns.
+- **Implemented** `analytics-implementation-audit`: compare implemented events against the canonical taxonomy, privacy rules, and decision metrics.
+- **Implemented** `content-discoverability-review`: align information architecture, internal links, semantic HTML, structured content, and AI/search discoverability.
 
 ### P1: capability quality itself
 
-- **Pending** `skill-trigger-evaluation`: test whether a skill activates on positive cases and stays quiet on negative/adjacent cases.
-- **Pending** `skill-quality-evaluation`: score scope clarity, evidence, repeatability, context cost, references, failure handling, and validation quality.
-- **Pending** `agent-overlap-analysis`: detect redundant role scopes and ambiguous routing before adding a new agent.
+- **Implemented** `skill-trigger-evaluation`: test whether a skill activates on positive cases and stays quiet on negative/adjacent cases.
+- **Implemented** `skill-quality-evaluation`: score scope clarity, evidence, repeatability, context cost, references, failure handling, and validation quality.
+- **Implemented** `agent-overlap-analysis`: detect redundant role scopes and ambiguous routing before adding a new agent.
 
 ## Agent creation policy
 
@@ -252,11 +262,17 @@ The taxonomy can remain global while install/discovery surfaces expose smaller d
 2. **Completed:** expose agents and domain-to-skill relationships through Obsidian capability views.
 3. **Completed:** validate that every registered agent belongs to exactly one domain and every principal skill is registered.
 4. **Completed:** enforce canonical agent/skill discovery descriptions and Codex skill metadata parity.
-5. **In progress:** implement the P0 web/SaaS skills with deterministic evidence where possible. Frontend Craft and SaaS Production Trust packs cover the implemented items above; browser flow, SEO/structured data, and supply-chain risk remain P0.
-6. **Pending:** add skill-trigger and skill-quality evaluation fixtures.
-7. **Pending:** reassess the agent catalog only after the remaining P0/P1 skill layer exists.
-8. **In progress:** publish runtime-native/plugin packaging from canonical sources and continuously test drift; Claude Code and Codex are first-class supported runtimes while other adapters remain experimental.
+5. **Completed:** implement the original P0 web/SaaS capability layer through Frontend Craft, SaaS Production Trust, and Web Production Assurance.
+6. **Next:** add `skill-trigger-evaluation`, `skill-quality-evaluation`, and representative positive/negative routing fixtures so the 107-skill catalog is evaluated by behavior rather than inventory alone.
+7. **Next:** implement the P1 data/multi-tenant reliability layer, beginning with database schema, multitenancy, background jobs, and cache strategy.
+8. **Later:** add growth/product-quality capabilities and reassess agent overlap only after capability evaluation data exists.
+9. **Continuous:** publish runtime-native/plugin packaging from canonical sources and test Claude Code/Codex drift on every capability change.
 
 ## Research guardrails
 
 External repositories are architecture and capability references, not copy sources. New ATLAS content should remain original, respect upstream licenses, and be validated against official runtime behavior before being promoted to stable support.
+
+
+## P1 completion note
+
+The original P1 capability gaps for data/multi-tenant systems, product/growth quality, and capability-quality measurement are now implemented as validated skills attached to existing durable agents. The catalog must continue to be measured before introducing new agent roles.

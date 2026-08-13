@@ -1,7 +1,7 @@
 ---
 atlas_type: agent-domain
 domain: data-ai-analytics
-purpose: Design data, AI, retrieval, analytics, and experimentation systems with explicit evaluation and measurement.
+purpose: Design data, AI, retrieval, analytics, measurement, and experimentation systems with explicit integrity, evaluation, and decision evidence.
 agents:
   - data-engineer
   - ai-engineer
@@ -14,6 +14,8 @@ principal_skills:
   - prompt-model-evaluation
   - event-taxonomy-design
   - experiment-design
+  - database-schema-review
+  - analytics-implementation-audit
 ---
 # Data, AI & Analytics
 

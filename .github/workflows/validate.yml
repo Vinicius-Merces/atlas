@@ -56,6 +56,14 @@ jobs:
           fi
           exit "$status"
 
+      - name: Measure capability quality
+        shell: bash
+        run: |
+          python scripts/evaluate_skill_quality.py
+          python scripts/evaluate_skill_routing.py
+          python scripts/analyze_agent_overlap.py
+          python scripts/validate_capability_evaluation_pack.py
+
       - name: Run contract tests
         shell: bash
         run: |
