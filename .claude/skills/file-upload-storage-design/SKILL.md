@@ -1,6 +1,6 @@
 ---
 name: file-upload-storage-design
-description: "Design file upload and object-storage flows when users or systems create media or documents, covering ownership, authorization, signed access, type and size validation, object naming, integrity, processing, lifecycle, deletion, and tenant isolation."
+description: "Design file upload and object-storage flows with ownership, authorization, signed access, type/size validation, safe object keys, integrity, processing, retention, deletion, and tenant isolation."
 ---
 
 # File Upload & Storage Design
