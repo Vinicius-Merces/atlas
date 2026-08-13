@@ -1,0 +1,1 @@
+P4 Asteria diagnostic calibration trigger. The frozen manifest predates implementation.
