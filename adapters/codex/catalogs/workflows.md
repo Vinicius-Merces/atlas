@@ -2,7 +2,7 @@
 
 > Generated from `.claude/registry.json`. Do not edit manually.
 
-Total: **77**
+Total: **81**
 
 - `adapter-drift-audit` → `.claude/workflows/adapter-drift-audit.md`
 - `ai-feature-delivery` → `.claude/workflows/ai-feature-delivery.md`
@@ -13,6 +13,7 @@ Total: **77**
 - `beta-stabilization` → `.claude/workflows/beta-stabilization.md`
 - `blueprint-instantiation` → `.claude/workflows/blueprint-instantiation.md`
 - `bug-fix` → `.claude/workflows/bug-fix.md`
+- `capability-quality-assessment` → `.claude/workflows/capability-quality-assessment.md`
 - `ci-governance` → `.claude/workflows/ci-governance.md`
 - `codex-synchronization` → `.claude/workflows/codex-synchronization.md`
 - `compatibility-validation` → `.claude/workflows/compatibility-validation.md`
@@ -53,6 +54,7 @@ Total: **77**
 - `policy-exception` → `.claude/workflows/policy-exception.md`
 - `privacy-review` → `.claude/workflows/privacy-review.md`
 - `product-discovery` → `.claude/workflows/product-discovery.md`
+- `production-product-quality-readiness` → `.claude/workflows/production-product-quality-readiness.md`
 - `project-bootstrap` → `.claude/workflows/project-bootstrap.md`
 - `project-health` → `.claude/workflows/project-health.md`
 - `project-state-reconciliation` → `.claude/workflows/project-state-reconciliation.md`
@@ -69,6 +71,7 @@ Total: **77**
 - `runtime-handoff` → `.claude/workflows/runtime-handoff.md`
 - `runtime-parity` → `.claude/workflows/runtime-parity.md`
 - `runtime-synchronization` → `.claude/workflows/runtime-synchronization.md`
+- `saas-production-readiness` → `.claude/workflows/saas-production-readiness.md`
 - `session-bootstrap` → `.claude/workflows/session-bootstrap.md`
 - `session-closeout` → `.claude/workflows/session-closeout.md`
 - `shared-state-protection` → `.claude/workflows/shared-state-protection.md`
@@ -80,4 +83,5 @@ Total: **77**
 - `technical-program` → `.claude/workflows/technical-program.md`
 - `test-automation` → `.claude/workflows/test-automation.md`
 - `threat-modeling` → `.claude/workflows/threat-modeling.md`
+- `web-production-assurance` → `.claude/workflows/web-production-assurance.md`
 - `workstream-merge` → `.claude/workflows/workstream-merge.md`

@@ -4,7 +4,7 @@ Canonical, generated inventory of every skill under `.claude/skills/<skill-name>
 
 Regenerate both capability catalogs with `python scripts/generate_capability_catalogs.py`. Use `--check` in validation and CI.
 
-Total: 96 skills.
+Total: 117 skills.
 
 ## Accessibility Audit
 
@@ -18,9 +18,17 @@ Total: 96 skills.
 
 `adr-authoring`. Capture an important architecture decision with sufficient context and traceability.
 
+## Agent Overlap Analysis
+
+`agent-overlap-analysis`. Measure semantic overlap across registered ATLAS agents when roles are added, scopes change, or the catalog may contain redundant responsibilities, using descriptions, missions, ownership, and taxonomy boundaries.
+
 ## AI System Design
 
 `ai-system-design`. Design an AI-enabled system with explicit capabilities, limitations, data flow, and evaluation.
+
+## Analytics Implementation Audit
+
+`analytics-implementation-audit`. Audit product analytics implementation when events, properties, identity, consent, ecommerce, client/server collection, destinations, or decision metrics change, verifying taxonomy parity and trustworthy measurement.
 
 ## API Contract Analysis
 
@@ -42,9 +50,29 @@ Total: 96 skills.
 
 `audit-bundle-assembly`. Assemble a navigable manifest of evidence for a task, release, or deployment.
 
+## Authentication Flow Review
+
+`authentication-flow-review`. Review sign-in, sign-up, recovery, MFA, SSO/OAuth/OIDC, session creation, and account-linking flows when identity behavior changes or authentication must be production-ready.
+
+## Authorization Boundary Review
+
+`authorization-boundary-review`. Review resource and action permissions when roles, ownership, tenants, admin paths, APIs, or privileged operations change, verifying deny-by-default authorization at every trust boundary.
+
+## Background Job Reliability
+
+`background-job-reliability`. Review background jobs and queues when asynchronous work, retries, scheduling, concurrency, leases, deduplication, cancellation, dead letters, or worker recovery change, assuming duplicate delivery can occur.
+
 ## Blueprint Selection
 
 `blueprint-selection`. Choose the closest ATLAS blueprint for a project.
+
+## Browser Flow Validation
+
+`browser-flow-validation`. Validate critical user journeys in a real browser when releases or frontend changes need evidence for navigation, forms, auth states, errors, console/network failures, and cross-viewport behavior.
+
+## Cache Strategy Assessment
+
+`cache-strategy-assessment`. Assess caching when browser, CDN, edge, server, database, runtime, or distributed caches change, verifying key scope, freshness, invalidation, authorization safety, stampede control, and consistency tradeoffs.
 
 ## Change Provenance Mapping
 
@@ -78,6 +106,10 @@ Total: 96 skills.
 
 `conflict-prediction`. Predict overlapping changes and dependency conflicts before parallel execution.
 
+## Content Discoverability Review
+
+`content-discoverability-review`. Review content discoverability when information architecture, internal links, semantic structure, rendering, topic/entity organization, or AI/search visibility changes, aligning human navigation with crawlable authoritative content.
+
 ## Content Quality Review
 
 `content-quality-review`. Review product copy for clarity, consistency, actionability, and audience fit.
@@ -98,6 +130,10 @@ Total: 96 skills.
 
 `control-design`. Design a proportionate preventive, detective, or corrective control.
 
+## Conversion Funnel Review
+
+`conversion-funnel-review`. Review conversion funnels when acquisition, landing pages, forms, onboarding, checkout, lead handoff, or activation paths change, connecting user friction and measurement to business outcomes without dark patterns.
+
 ## Core Contract Stabilization
 
 `core-contract-stabilization`. Evaluate whether a contract is stable enough for a beta support commitment.
@@ -105,6 +141,10 @@ Total: 96 skills.
 ## Database Migration Analysis
 
 `database-migration-analysis`. Assess schema and data migrations for integrity, compatibility, and operational risk.
+
+## Database Schema Review
+
+`database-schema-review`. Review relational database schema changes when tables, columns, constraints, indexes, relationships, partitioning, retention, or migration-sensitive data models change, verifying integrity and query-fit before release.
 
 ## Dependency Graph Analysis
 
@@ -149,6 +189,10 @@ Total: 96 skills.
 ## Experiment Design
 
 `experiment-design`. Design an experiment with explicit hypothesis, metrics, population, analysis, and decision rules.
+
+## External API Resilience Review
+
+`external-api-resilience-review`. Review third-party API integrations when timeouts, retries, rate limits, pagination, versioning, partial failures, provider outages, or fallback behavior can affect production reliability.
 
 ## Framework Package Validation
 
@@ -225,6 +269,10 @@ Total: 96 skills.
 ## Observability Design
 
 `observability-design`. Design logs, metrics, traces, dashboards, and alerts for a feature or service.
+
+## Payment Integration Review
+
+`payment-integration-review`. Review payment and billing integrations when checkout, subscriptions, invoices, refunds, entitlements, webhooks, idempotency, or provider state synchronization change.
 
 ## Performance Budget Analysis
 
@@ -306,6 +354,10 @@ Total: 96 skills.
 
 `resume-packet-assembly`. Assemble a bounded repository-native packet for cross-session or cross-runtime continuation.
 
+## Row Level Security Review
+
+`row-level-security-review`. Review PostgreSQL/Supabase row-level security when exposed tables, tenancy, ownership policies, service roles, views, or database authorization change, verifying default-deny data isolation.
+
 ## Runtime Adapter Mapping
 
 `runtime-adapter-mapping`. Map canonical ATLAS capabilities to a target AI coding runtime.
@@ -326,13 +378,33 @@ Total: 96 skills.
 
 `runtime-semantic-parity`. Compare two runtime implementations for semantic equivalence.
 
+## Saas Multitenancy Review
+
+`saas-multitenancy-review`. Review SaaS multitenancy when tenant identity, pooled/siloed resources, quotas, storage, caches, jobs, search, exports, or operational isolation change, verifying cross-tenant safety and noisy-neighbor controls.
+
+## Secret Environment Audit
+
+`secret-environment-audit`. Audit secrets and environment configuration when credentials, API keys, signing secrets, database URLs, CI/CD variables, or public/private runtime configuration change.
+
 ## Semantic Compatibility Verification
 
 `semantic-compatibility-verification`. Verify that a change preserves the meaning of a stable ATLAS contract.
 
+## Seo Technical Audit
+
+`seo-technical-audit`. Audit technical SEO when public web routes, domains, redirects, metadata, robots, sitemaps, canonicals, rendering, status codes, or crawl/index behavior change.
+
 ## Session Closeout
 
 `session-closeout`. Capture completed work, validation, decisions, risks, pending work, and next actions at session end.
+
+## Skill Quality Evaluation
+
+`skill-quality-evaluation`. Measure registered ATLAS skills for structural completeness, discovery quality, trigger clarity, evidence strength, boundaries, and context discipline when the capability library changes or quality must be baselined.
+
+## Skill Trigger Evaluation
+
+`skill-trigger-evaluation`. Evaluate whether ATLAS skill discovery metadata and trigger conditions route representative requests to the intended capability without excessive collisions when skills are added, renamed, or overlap risk changes.
 
 ## Smoke Test Design
 
@@ -341,6 +413,14 @@ Total: 96 skills.
 ## Source Of Truth Validation
 
 `source-of-truth-validation`. Verify that memory claims reference valid and authoritative project sources.
+
+## Structured Data Validation
+
+`structured-data-validation`. Validate JSON-LD and other structured data when public pages add or change schema markup, verifying syntax, page-content truthfulness, search eligibility, and non-conflicting canonical entities.
+
+## Supply Chain Risk Audit
+
+`supply-chain-risk-audit`. Audit dependency and build supply-chain risk when packages, lockfiles, registries, install scripts, CI actions, container bases, or third-party build inputs change.
 
 ## Support Classification
 
@@ -385,6 +465,10 @@ Total: 96 skills.
 ## Web Performance Field Readiness
 
 `web-performance-field-readiness`. Assess user-facing performance before release when images, fonts, animation, WebGL, third-party scripts, or client JavaScript could threaten real-device experience.
+
+## Webhook Reliability Review
+
+`webhook-reliability-review`. Review inbound or outbound webhooks when event delivery, signatures, retries, ordering, deduplication, async processing, or replay behavior changes.
 
 ## Workstream Decomposition
 

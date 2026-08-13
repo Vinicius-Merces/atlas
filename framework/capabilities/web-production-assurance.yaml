@@ -1,0 +1,39 @@
+version: 1
+capability: web-production-assurance
+purpose: >-
+  Prove critical public web behavior in a real browser, validate intended crawl/index
+  behavior and structured-data truth, and review dependency/build-input supply-chain
+  risk before release claims.
+canonical_model: framework/web-production-assurance-model.md
+preferred_workflow: web-production-assurance
+required_review: web-production-assurance-review
+owners:
+  primary:
+    - qa-engineer
+    - test-automation-engineer
+  delivery:
+    - frontend-engineer
+    - content-designer
+  security:
+    - security-engineer
+    - dependency-manager
+skills:
+  - browser-flow-validation
+  - seo-technical-audit
+  - structured-data-validation
+  - supply-chain-risk-audit
+quality_gates:
+  - critical_browser_journeys
+  - console_network_runtime_health
+  - crawlability_indexability_intent
+  - redirect_canonical_consistency
+  - robots_sitemap_consistency
+  - structured_data_truth
+  - dependency_delta_review
+  - executable_supply_chain_review
+  - independent_assurance_review
+non_guarantees:
+  - search_ranking
+  - indexing
+  - rich_result_display
+  - vulnerability_absence

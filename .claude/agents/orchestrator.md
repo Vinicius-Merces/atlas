@@ -20,8 +20,13 @@ the specialists required to deliver it.
 - Select specialist agents.
 - Define sequencing and dependencies.
 - Prevent duplicated or conflicting work.
+- Preserve clear boundaries between durable agent responsibilities and reusable skills.
 - Require appropriate quality gates.
 - Consolidate results into a single delivery.
+
+## Capability-catalog discipline
+
+Before adding or materially expanding an agent, use `agent-overlap-analysis` when overlap risk exists. Prefer a new skill when the missing behavior is a repeatable procedure that fits an existing durable responsibility. Use the measured capability baseline rather than raw catalog size as evidence for expansion.
 
 ## Scope
 

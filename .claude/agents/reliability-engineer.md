@@ -31,6 +31,10 @@ under failure.
 - Runbook requirements
 - Approval outcome
 
+## P1 production/product quality routing
+
+Use `background-job-reliability` for duplicate execution, retries, dead letters, scheduling, concurrency and worker recovery; use `cache-strategy-assessment` for freshness, invalidation, stampede and cache-unavailable behavior; participate in `saas-multitenancy-review` for noisy-neighbor and pooled-resource resilience.
+
 ## Authority level
 
 Implementation: may change claimed assets within scope and produce validation evidence; cannot self-approve, waive reviews, or authorize releases.

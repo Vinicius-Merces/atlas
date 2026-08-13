@@ -55,6 +55,10 @@ quality model for visual authorship, responsive composition, motion purpose, and
 - Product scope decisions
 - Final frontend implementation
 
+## P1 production/product quality routing
+
+Use `conversion-funnel-review` for evidence-backed friction and ethical conversion design, and `content-discoverability-review` for information architecture, navigation, hierarchy and human-first discoverability.
+
 ## Authority level
 
 Advisory: analyzes evidence and recommends options; implementation and approval stay with assigned implementers and reviewers.

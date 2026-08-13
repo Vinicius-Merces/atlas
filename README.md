@@ -2,8 +2,8 @@
 
 > Repository-native operating system for AI-assisted software engineering.
 > ATLAS gives Claude Code and Codex shared project memory, specialist roles,
-> repeatable workflows, governance contracts, frontend craft standards, and
-> verifiable continuity.
+> repeatable workflows, governance contracts, frontend craft standards,
+> production trust and web assurance gates, and verifiable continuity.
 
 **Version:** `0.1.1`
 **Status:** Stable · **License:** MIT
@@ -19,15 +19,18 @@
 
 AI coding sessions are productive, but projects lose quality when important
 decisions live only in chat history, every session starts from zero, each runtime
-interprets the project differently, or technically correct frontend work slowly
-collapses into generic template patterns.
+interprets the project differently, technically correct frontend work collapses
+into generic template patterns, a SaaS feature reaches production with unverified
+trust boundaries, or a public site ships without real browser and search-facing
+evidence.
 
 ATLAS keeps the operating context inside the repository so work remains portable,
 reviewable, resumable, and governed by the same quality model across sessions.
 
 ATLAS is designed for individual engineers and teams using AI coding runtimes on
-projects where architecture, business constraints, frontend quality, manual
-deployment, auditability, or cross-session handoff matter.
+projects where architecture, business constraints, frontend quality, production
+trust, public-web discoverability, integrations, manual deployment, auditability,
+or cross-session handoff matter.
 
 ## What it solves
 
@@ -42,7 +45,11 @@ ATLAS helps a project:
 - produce checkpoints, handoffs, evidence, deployment receipts, and release bundles;
 - apply cumulative or incremental updates safely, including manual deployment;
 - build user-facing interfaces with explicit visual direction, responsive evidence,
-  purposeful motion/3D, performance budgets, and independent craft review.
+  purposeful motion/3D, performance budgets, and independent craft review;
+- review authentication, authorization, tenant/data isolation, secrets, webhooks,
+  payments, and external API failure behavior before production approval;
+- prove critical browser journeys, technical crawl/index behavior, structured-data
+  truth, and dependency/build supply-chain risk before public-web release claims.
 
 ## What ATLAS is
 
@@ -73,10 +80,10 @@ frontmatter and validated in CI.
 | Component | Count | What it provides | Complete reference |
 | --- | ---: | --- | --- |
 | Agents | 87 | Orchestration plus focused product, engineering, architecture, governance, runtime, and assurance roles | [Agent Catalog](docs/agent-catalog.md) |
-| Skills | 96 | Bounded procedures for analysis, design, frontend craft, validation, continuity, and delivery | [Skill Catalog](docs/skill-catalog.md) |
+| Skills | 117 | Bounded procedures for analysis, design, frontend craft, production trust, web assurance, validation, continuity, and delivery | [Skill Catalog](docs/skill-catalog.md) |
 | Commands | 71 | Explicit entry points for common ATLAS operations | `.claude/commands/` |
-| Workflows | 77 | Repeatable execution paths with responsibilities and gates | `.claude/workflows/` |
-| Reviews | 69 | Independent review procedures and acceptance checks | `.claude/reviews/` |
+| Workflows | 81 | Repeatable execution paths with responsibilities and gates | `.claude/workflows/` |
+| Reviews | 73 | Independent review procedures and acceptance checks | `.claude/reviews/` |
 | Contracts | 6 | Stable interfaces for agents, skills, workflows, memory, reviews, and commands | `.claude/contracts/` |
 
 ### Agent model
@@ -88,9 +95,18 @@ documentation, release integrity, project memory, or runtime parity.
 
 Examples:
 
-- `frontend-engineer` implements maintainable, accessible, responsive, and
-  visually intentional web interfaces;
-- `security-engineer` reviews trust boundaries, auth, secrets, and abuse risks;
+- `frontend-engineer` implements maintainable, accessible, responsive, visually
+  intentional, and search-aware public interfaces;
+- `security-engineer` reviews identity, authorization, tenant/data boundaries,
+  secrets, provider trust, dependency supply-chain risk, and abuse risks;
+- `backend-engineer` implements server-side contracts, data access, authorization,
+  idempotent state transitions, and failure behavior;
+- `integration-engineer` owns provider contracts, webhooks, retries, idempotency,
+  rate limits, and reconciliation;
+- `qa-engineer` independently validates acceptance behavior and rendered public-web
+  evidence;
+- `dependency-manager` governs dependency deltas, sources, advisories, scripts,
+  maintenance risk, and rollback paths;
 - `project-memory-curator` maintains portable, current project knowledge;
 - `release-integrity-engineer` verifies versions, manifests, checksums, and provenance;
 - `runtime-parity-reviewer` checks semantic parity between supported runtimes.
@@ -113,9 +129,20 @@ Examples:
   frontend tools by evidence rather than trend;
 - `frontend-craft-review` independently checks whether a UI is product-specific or
   still looks generic/template-driven;
+- `authorization-boundary-review` checks object/action permissions, ownership,
+  roles, admin paths, and tenant boundaries using direct negative evidence;
+- `webhook-reliability-review` validates signatures, retries, duplicates, replay,
+  ordering, durable acceptance, and recovery;
+- `payment-integration-review` validates server-authoritative financial state,
+  idempotency, entitlements, refunds, and provider reconciliation;
+- `browser-flow-validation` proves release-critical journeys in a rendered browser;
+- `seo-technical-audit` verifies deployed crawl/index/canonical/robots/sitemap behavior;
+- `structured-data-validation` checks schema markup against authoritative page facts;
+- `supply-chain-risk-audit` reviews dependency/build deltas, advisories, executable
+  scripts, source/provenance, and blast radius;
 - `dual-runtime-validation` checks Claude Code and Codex surfaces together.
 
-See the [Skill Catalog](docs/skill-catalog.md) for all 96 descriptions.
+See the [Skill Catalog](docs/skill-catalog.md) for all 117 descriptions.
 
 ## Discovery descriptions and hover surfaces
 
@@ -199,6 +226,128 @@ Significant frontend work follows `.claude/workflows/frontend-feature-delivery.m
 and may require the independent `.claude/reviews/frontend-craft-review.md` gate.
 Critical or High craft findings block approval.
 
+## SaaS Production Trust
+
+ATLAS includes a vendor-neutral production-trust model for SaaS features that
+handle identities, protected resources, tenant data, privileged configuration,
+asynchronous provider events, payments, or third-party APIs.
+
+The canonical model and capability overlay live at:
+
+```text
+framework/saas-production-trust-model.md
+framework/capabilities/saas-production-trust.yaml
+```
+
+The trust path is cumulative:
+
+```text
+identity
+  ↓
+authentication
+  ↓
+authorization
+  ↓
+data / tenant isolation
+  ↓
+secret + environment boundaries
+  ↓
+webhook + provider reliability
+  ↓
+payment / entitlement consistency
+  ↓
+observability + recovery
+  ↓
+independent SaaS production trust review
+```
+
+The pack provides seven focused capabilities:
+
+- `authentication-flow-review` for sign-in/sign-up, recovery, MFA, SSO/OAuth/OIDC,
+  sessions, callbacks, and account linking;
+- `authorization-boundary-review` for role, ownership, tenant, resource/action,
+  admin, API, and service-identity permissions;
+- `row-level-security-review` for PostgreSQL/Supabase RLS, grants, policies, views,
+  service-role bypasses, and cross-tenant negative testing;
+- `secret-environment-audit` for API keys, database URLs, signing secrets, CI/CD
+  credentials, public/private runtime configuration, rotation, and leakage paths;
+- `webhook-reliability-review` for signature verification, replay, duplicate delivery,
+  ordering, idempotency, retries, durable acceptance, and recovery;
+- `payment-integration-review` for checkout, subscriptions, refunds, entitlements,
+  idempotent mutations, provider events, and reconciliation;
+- `external-api-resilience-review` for deadlines, retry budgets, rate limits,
+  pagination, versioning, provider outages, degradation, and reconciliation.
+
+Authentication is explicitly not treated as authorization. UI visibility is not
+an access-control boundary. Environment variables are an injection mechanism, not
+proof that a value is secret. A successful checkout redirect is not durable payment
+or entitlement evidence. Provider success paths are insufficient without retry,
+duplicate, timeout, outage, and reconciliation behavior.
+
+Significant SaaS changes follow `.claude/workflows/saas-production-readiness.md`
+and require the independent `.claude/reviews/saas-production-trust-review.md` gate
+when the risk is material. Unresolved Critical or High production-trust findings
+block approval.
+
+## Web Production Assurance
+
+ATLAS includes a public-web assurance model for release evidence that sits beside,
+not inside, frontend craft and SaaS trust.
+
+The canonical model and capability overlay live at:
+
+```text
+framework/web-production-assurance-model.md
+framework/capabilities/web-production-assurance.yaml
+```
+
+The assurance path is:
+
+```text
+route / release intent
+        ↓
+supply-chain delta when dependencies or build inputs changed
+        ↓
+critical rendered browser journeys
+        ↓
+deployed HTTP + crawl/index/canonical evidence
+        ↓
+structured-data truth and validation when present
+        ↓
+independent web-production-assurance-review
+```
+
+The pack provides four focused capabilities:
+
+- `browser-flow-validation` for critical navigation, forms, auth state, routing,
+  async behavior, direct URL/refresh, console/network/runtime errors, and retained
+  failure diagnostics in a real browser;
+- `seo-technical-audit` for status codes, redirects, canonical URLs, `robots.txt`,
+  robots meta/X-Robots-Tag, sitemaps, rendering, internal discovery, and metadata;
+- `structured-data-validation` for JSON-LD/Microdata/RDFa syntax, canonical entity
+  identity, factual page-content consistency, and current feature validation;
+- `supply-chain-risk-audit` for direct/transitive dependency changes, registries,
+  advisories/malware evidence, lifecycle scripts, CI/build inputs, provenance,
+  maintenance signals, blast radius, and rollback/removal paths.
+
+The model explicitly avoids false guarantees. Technical SEO evidence does not
+promise ranking or indexing, valid schema does not promise a rich result, and a
+clean dependency scan does not prove the absence of supply-chain risk. `robots.txt`
+is crawl control rather than access control or confidential-data protection.
+
+Significant public-web releases follow `.claude/workflows/web-production-assurance.md`
+and use the independent `.claude/reviews/web-production-assurance-review.md` gate.
+Critical or High findings, or missing mandatory release evidence, prevent an
+unconditional approval.
+
+## Capability Evaluation
+
+ATLAS measures its own capability library before expanding it. The first full baseline measured 110 skills and all 87 agent surfaces across structural skill quality, deterministic routing proxies, curated routing cases, and agent-overlap analysis. The pre-P1 baseline is recorded at `docs/assurance/capability-quality-baseline-2026-08-13.md`. Static metrics are diagnostic evidence, not claims about live Claude Code or Codex accuracy.
+
+## Production Systems & Product Quality
+
+P1 adds seven focused skills without adding new agents: `database-schema-review`, `saas-multitenancy-review`, `background-job-reliability`, `cache-strategy-assessment`, `conversion-funnel-review`, `analytics-implementation-audit`, and `content-discoverability-review`. The canonical model is `framework/production-product-quality-model.md`, with workflow `production-product-quality-readiness` and independent review `production-product-quality-review`.
+
 ## How a task moves through ATLAS
 
 ```mermaid
@@ -229,8 +378,9 @@ python scripts/validate_all.py --profile quick
 ```
 
 The quick profile includes registry validation, agent taxonomy, discovery metadata,
-frontend craft pack validation, generated catalog checks, package checks, and
-contract validation.
+Frontend Craft Pack validation, SaaS Production Trust Pack validation, Web
+Production Assurance Pack validation, generated catalog checks, package checks,
+and contract validation.
 
 Use the full profile when changing runtime adapters, policies, generated catalogs,
 documentation, or release behavior:
