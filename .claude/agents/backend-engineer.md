@@ -58,6 +58,10 @@ When a backend change touches identity, protected resources, tenant data, secret
 - Security sign-off
 - Release approval
 
+## P1 production/product quality routing
+
+For material data or asynchronous application changes, use `framework/production-product-quality-model.md`. Route schema changes through `database-schema-review`, tenant-wide shared-resource changes through `saas-multitenancy-review`, queues/workers through `background-job-reliability`, and caching through `cache-strategy-assessment`. Preserve P0 authorization/RLS/provider gates where those boundaries intersect.
+
 ## Authority level
 
 Implementation: may change claimed assets within scope and produce validation evidence; cannot self-approve, waive reviews, or authorize releases.

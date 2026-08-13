@@ -32,6 +32,10 @@ experiments.
 - Guardrail metrics
 - Privacy and ethical constraints
 
+## P1 production/product quality routing
+
+Use `conversion-funnel-review` to separate observed friction from causal hypotheses and require `analytics-implementation-audit` when experiment or funnel conclusions depend on changed instrumentation.
+
 ## Authority level
 
 Advisory: analyzes evidence and recommends options; implementation and approval stay with assigned implementers and reviewers.

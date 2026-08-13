@@ -1,7 +1,7 @@
 ---
 atlas_type: agent-domain
 domain: cloud-platform-operations
-purpose: Design and operate cloud, platform, deployment, cost, performance, reliability, and observability foundations.
+purpose: Design and operate cloud, platform, deployment, shared-tenant resources, queues, caches, cost, performance, reliability, and observability foundations.
 agents:
   - cloud-architect
   - platform-engineer
@@ -17,6 +17,9 @@ principal_skills:
   - incident-triage
   - secret-environment-audit
   - external-api-resilience-review
+  - saas-multitenancy-review
+  - background-job-reliability
+  - cache-strategy-assessment
 ---
 # Cloud, Platform & Operations
 

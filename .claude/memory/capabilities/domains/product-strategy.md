@@ -1,7 +1,7 @@
 ---
 atlas_type: agent-domain
 domain: product-strategy
-purpose: Turn product intent into bounded requirements, architecture choices, adoption decisions, and technical roadmaps.
+purpose: Turn product intent into bounded requirements, architecture choices, adoption decisions, technical roadmaps, and evidence-aware conversion outcomes.
 agents:
   - product-manager
   - product-architect
@@ -15,6 +15,7 @@ principal_skills:
   - blueprint-selection
   - technical-roadmap-synthesis
   - architecture-assessment
+  - conversion-funnel-review
 ---
 # Product & Strategy
 

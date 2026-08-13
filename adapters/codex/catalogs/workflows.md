@@ -2,7 +2,7 @@
 
 > Generated from `.claude/registry.json`. Do not edit manually.
 
-Total: **80**
+Total: **81**
 
 - `adapter-drift-audit` → `.claude/workflows/adapter-drift-audit.md`
 - `ai-feature-delivery` → `.claude/workflows/ai-feature-delivery.md`
@@ -54,6 +54,7 @@ Total: **80**
 - `policy-exception` → `.claude/workflows/policy-exception.md`
 - `privacy-review` → `.claude/workflows/privacy-review.md`
 - `product-discovery` → `.claude/workflows/product-discovery.md`
+- `production-product-quality-readiness` → `.claude/workflows/production-product-quality-readiness.md`
 - `project-bootstrap` → `.claude/workflows/project-bootstrap.md`
 - `project-health` → `.claude/workflows/project-health.md`
 - `project-state-reconciliation` → `.claude/workflows/project-state-reconciliation.md`

@@ -2,13 +2,14 @@
 
 > Generated from `.claude/registry.json`. Do not edit manually.
 
-Total: **110**
+Total: **117**
 
 - `accessibility-audit` → `.claude/skills/accessibility-audit/SKILL.md`
 - `adapter-drift-detection` → `.claude/skills/adapter-drift-detection/SKILL.md`
 - `adr-authoring` → `.claude/skills/adr-authoring/SKILL.md`
 - `agent-overlap-analysis` → `.claude/skills/agent-overlap-analysis/SKILL.md`
 - `ai-system-design` → `.claude/skills/ai-system-design/SKILL.md`
+- `analytics-implementation-audit` → `.claude/skills/analytics-implementation-audit/SKILL.md`
 - `api-contract-analysis` → `.claude/skills/api-contract-analysis/SKILL.md`
 - `architecture-assessment` → `.claude/skills/architecture-assessment/SKILL.md`
 - `architecture-audit` → `.claude/skills/architecture-audit/SKILL.md`
@@ -16,8 +17,10 @@ Total: **110**
 - `audit-bundle-assembly` → `.claude/skills/audit-bundle-assembly/SKILL.md`
 - `authentication-flow-review` → `.claude/skills/authentication-flow-review/SKILL.md`
 - `authorization-boundary-review` → `.claude/skills/authorization-boundary-review/SKILL.md`
+- `background-job-reliability` → `.claude/skills/background-job-reliability/SKILL.md`
 - `blueprint-selection` → `.claude/skills/blueprint-selection/SKILL.md`
 - `browser-flow-validation` → `.claude/skills/browser-flow-validation/SKILL.md`
+- `cache-strategy-assessment` → `.claude/skills/cache-strategy-assessment/SKILL.md`
 - `change-provenance-mapping` → `.claude/skills/change-provenance-mapping/SKILL.md`
 - `cloud-cost-analysis` → `.claude/skills/cloud-cost-analysis/SKILL.md`
 - `codex-runtime-generation` → `.claude/skills/codex-runtime-generation/SKILL.md`
@@ -26,13 +29,16 @@ Total: **110**
 - `compliance-evidence-mapping` → `.claude/skills/compliance-evidence-mapping/SKILL.md`
 - `component-reuse-assessment` → `.claude/skills/component-reuse-assessment/SKILL.md`
 - `conflict-prediction` → `.claude/skills/conflict-prediction/SKILL.md`
+- `content-discoverability-review` → `.claude/skills/content-discoverability-review/SKILL.md`
 - `content-quality-review` → `.claude/skills/content-quality-review/SKILL.md`
 - `context-pack-composition` → `.claude/skills/context-pack-composition/SKILL.md`
 - `continuation-planning` → `.claude/skills/continuation-planning/SKILL.md`
 - `continuity-reconciliation` → `.claude/skills/continuity-reconciliation/SKILL.md`
 - `control-design` → `.claude/skills/control-design/SKILL.md`
+- `conversion-funnel-review` → `.claude/skills/conversion-funnel-review/SKILL.md`
 - `core-contract-stabilization` → `.claude/skills/core-contract-stabilization/SKILL.md`
 - `database-migration-analysis` → `.claude/skills/database-migration-analysis/SKILL.md`
+- `database-schema-review` → `.claude/skills/database-schema-review/SKILL.md`
 - `dependency-graph-analysis` → `.claude/skills/dependency-graph-analysis/SKILL.md`
 - `dependency-impact-analysis` → `.claude/skills/dependency-impact-analysis/SKILL.md`
 - `deprecation-planning` → `.claude/skills/deprecation-planning/SKILL.md`
@@ -91,6 +97,7 @@ Total: **110**
 - `runtime-execution-planning` → `.claude/skills/runtime-execution-planning/SKILL.md`
 - `runtime-handoff-design` → `.claude/skills/runtime-handoff-design/SKILL.md`
 - `runtime-semantic-parity` → `.claude/skills/runtime-semantic-parity/SKILL.md`
+- `saas-multitenancy-review` → `.claude/skills/saas-multitenancy-review/SKILL.md`
 - `secret-environment-audit` → `.claude/skills/secret-environment-audit/SKILL.md`
 - `semantic-compatibility-verification` → `.claude/skills/semantic-compatibility-verification/SKILL.md`
 - `seo-technical-audit` → `.claude/skills/seo-technical-audit/SKILL.md`

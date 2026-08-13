@@ -92,6 +92,10 @@ For public web routes or significant releases:
 - Final QA approval
 - Independent approval of its own significant frontend craft or public-web assurance work
 
+## P1 production/product quality routing
+
+Use `content-discoverability-review` for rendered semantic/internal-link changes and `conversion-funnel-review` for material user-facing funnel changes. Compose with existing browser, SEO, structured-data, performance and frontend-craft gates rather than duplicating them.
+
 ## Authority level
 
 Implementation: may change claimed assets within scope and produce validation evidence; cannot self-approve, waive reviews, or authorize releases.

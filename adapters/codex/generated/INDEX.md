@@ -4,6 +4,6 @@
 
 - [Agents](../catalogs/agents.md): 86
 - [Commands](../catalogs/commands.md): 71
-- [Skills](../catalogs/skills.md): 110
-- [Workflows](../catalogs/workflows.md): 80
-- [Reviews](../catalogs/reviews.md): 72
+- [Skills](../catalogs/skills.md): 117
+- [Workflows](../catalogs/workflows.md): 81
+- [Reviews](../catalogs/reviews.md): 73
