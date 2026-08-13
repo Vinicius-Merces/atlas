@@ -2,7 +2,7 @@
 
 > Generated from `.claude/registry.json`. Do not edit manually.
 
-Total: **69**
+Total: **70**
 
 - `adapter-drift-review` → `.claude/reviews/adapter-drift-review.md`
 - `adoption-review` → `.claude/reviews/adoption-review.md`
@@ -62,6 +62,7 @@ Total: **69**
 - `runtime-handoff-review` → `.claude/reviews/runtime-handoff-review.md`
 - `runtime-parity-review` → `.claude/reviews/runtime-parity-review.md`
 - `runtime-synchronization-review` → `.claude/reviews/runtime-synchronization-review.md`
+- `saas-production-trust-review` → `.claude/reviews/saas-production-trust-review.md`
 - `security-review` → `.claude/reviews/security-review.md`
 - `session-continuity-review` → `.claude/reviews/session-continuity-review.md`
 - `source-of-truth-review` → `.claude/reviews/source-of-truth-review.md`
