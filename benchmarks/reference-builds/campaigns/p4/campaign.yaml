@@ -1,0 +1,48 @@
+version: 1
+id: p4-live-reference-build-campaign
+title: P4 Live Reference Build Campaign - Asteria Residences
+fixture:
+  id: premium-marketing-site
+  spec: benchmarks/reference-builds/specs/premium-marketing-site.yaml
+  rubric: benchmarks/reference-builds/scoring-rubric.yaml
+  benchmark_version: 1
+run_policy:
+  base_ref: main
+  same_base_commit_required: true
+  isolated_run_branches: true
+  branch_pattern: bench/p4-asteria-{target_id}
+  forbid_cross_run_branch_reads: true
+  forbid_implementation_reuse: true
+  preserve_exact_fixture_and_rubric: true
+  record_runtime_reported_model: true
+  browser_evidence_required: true
+  deployment_evidence_required_for_claimable_result: true
+  independent_review_required: true
+  preserve_first_frozen_result_before_remediation: true
+  compare_only_after_target_results_frozen: true
+targets:
+- id: calibration-gpt-5-6-sol
+  role: calibration
+  runtime: chatgpt
+  model: GPT-5.6 Sol
+  packet: benchmarks/reference-builds/campaigns/p4/runtime-packets/calibration-gpt-5-6-sol.md
+  include_in_target_comparison: false
+- id: codex
+  role: target
+  runtime: codex
+  model: runtime-reported
+  packet: benchmarks/reference-builds/campaigns/p4/runtime-packets/codex-asteria.md
+  include_in_target_comparison: true
+- id: claude-code
+  role: target
+  runtime: claude-code
+  model: runtime-reported
+  packet: benchmarks/reference-builds/campaigns/p4/runtime-packets/claude-code-asteria.md
+  include_in_target_comparison: true
+completion:
+- campaign infrastructure merged to main
+- calibration live path exercised and frozen
+- codex target run frozen
+- claude-code target run frozen
+- exact-fixture comparison generated
+- evidence-led remediation backlog recorded

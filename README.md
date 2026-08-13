@@ -164,6 +164,13 @@ A harness-smoke run only proves that fixtures and scoring work and is always non
 
 P3 intentionally adds no new agents or skills: it tests whether the existing **87 agent surfaces and 128 skills** can actually compose into complete products before ATLAS expands the catalog again.
 
+
+## Live Reference Build Campaign P4
+
+P4 turns P3 into an isolated live-build campaign. Asteria is executed from one frozen base commit in separate calibration, Codex, and Claude Code branches. Implementations stay isolated until first target results are frozen, preventing one runtime from inheriting another runtime's solution.
+
+P4 adds no agents or skills. It requires truthful runtime/model identity, browser/deployment evidence, preserved first results, independent review, and exact-fixture comparison. Canonical protocol: `framework/live-reference-build-campaign-model.md` and `benchmarks/reference-builds/campaigns/p4/`.
+
 ## Discovery descriptions and hover surfaces
 
 Every ATLAS agent and skill has one canonical `description` in YAML frontmatter.

@@ -285,3 +285,6 @@ P3 adds no agents and no skills. It introduces three fixed complete-product brie
 
 The next capability additions should be justified by repeated live reference-build evidence: implementation failure, routing failure, missing capability, workflow weakness, evidence gap, or fixture ambiguity. Prefer repairing existing skills/workflows before adding new durable roles.
 
+## P4 Live Reference Build Campaign
+
+P4 freezes catalog growth again and executes Asteria through isolated live runs. Campaign order: diagnostic calibration, Codex target, Claude Code target, exact-fixture comparison, then evidence-led remediation. New capabilities should be justified by repeated live evidence rather than speculation.

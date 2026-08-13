@@ -181,6 +181,12 @@ def quick_steps(root: Path) -> list[ValidationStep]:
         ),
         _python_step(
             root,
+            "live-reference-build-campaign",
+            "Validate P4 live reference build campaign",
+            "validate_live_reference_campaign.py",
+        ),
+        _python_step(
+            root,
             "capability-catalogs",
             "Check agent and skill catalogs",
             "generate_capability_catalogs.py",
