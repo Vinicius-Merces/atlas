@@ -1,0 +1,226 @@
+name: Apply P1 catalog updates
+
+on:
+  push:
+    branches:
+      - feat/atlas-p1-production-product-quality-pack
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  update:
+    if: github.actor != 'github-actions[bot]'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out P1 branch
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ github.ref_name }}
+          fetch-depth: 0
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install dependencies
+        run: python -m pip install --requirement requirements-test.txt
+
+      - name: Update canonical P1 routing and registry
+        shell: bash
+        run: |
+          python - <<'PY'
+          from __future__ import annotations
+          import json
+          import re
+          from pathlib import Path
+          import yaml
+
+          root = Path('.')
+          p1_skills = [
+              'analytics-implementation-audit',
+              'background-job-reliability',
+              'cache-strategy-assessment',
+              'content-discoverability-review',
+              'conversion-funnel-review',
+              'database-schema-review',
+              'saas-multitenancy-review',
+          ]
+
+          registry_path = root / '.claude/registry.json'
+          registry = json.loads(registry_path.read_text(encoding='utf-8'))
+          registry['skills'] = sorted(set(registry['skills']) | set(p1_skills))
+          registry['workflows'] = sorted(set(registry['workflows']) | {'production-product-quality-readiness'})
+          registry['reviews'] = sorted(set(registry['reviews']) | {'production-product-quality-review'})
+          registry.setdefault('assurance', {})['production_product_quality_model'] = 'framework/production-product-quality-model.md'
+          registry_path.write_text(json.dumps(registry, indent=2) + '\n', encoding='utf-8')
+
+          taxonomy_path = root / 'framework/capabilities/agent-taxonomy.yaml'
+          taxonomy = yaml.safe_load(taxonomy_path.read_text(encoding='utf-8'))
+          cats = taxonomy['categories']
+          additions = {
+              'product-strategy': ['conversion-funnel-review'],
+              'experience-design': ['conversion-funnel-review', 'content-discoverability-review'],
+              'application-engineering': ['database-schema-review', 'saas-multitenancy-review', 'background-job-reliability', 'cache-strategy-assessment'],
+              'data-ai-analytics': ['database-schema-review', 'analytics-implementation-audit'],
+              'cloud-platform-operations': ['saas-multitenancy-review', 'background-job-reliability', 'cache-strategy-assessment'],
+              'security-privacy-compliance': ['saas-multitenancy-review'],
+              'quality-assurance-audit': ['analytics-implementation-audit', 'conversion-funnel-review', 'content-discoverability-review'],
+          }
+          purposes = {
+              'product-strategy': 'Turn product intent into bounded requirements, architecture choices, adoption decisions, technical roadmaps, and evidence-aware conversion outcomes.',
+              'experience-design': 'Protect usability, accessibility, content quality, design-system consistency, localization readiness, conversion clarity, and content discoverability.',
+              'application-engineering': 'Implement and evolve application code while preserving contracts, database integrity, tenant boundaries, asynchronous reliability, caching, dependencies, tests, and provider reliability.',
+              'data-ai-analytics': 'Design data, AI, retrieval, analytics, measurement, and experimentation systems with explicit integrity, evaluation, and decision evidence.',
+              'cloud-platform-operations': 'Design and operate cloud, platform, deployment, shared-tenant resources, queues, caches, cost, performance, reliability, and observability foundations.',
+              'security-privacy-compliance': 'Protect identity, authorization, tenant/data isolation across all shared resources, secrets, dependencies, privacy, compliance evidence, and proportionate controls.',
+              'quality-assurance-audit': 'Independently validate rendered behavior, regressions, automation, search-facing evidence, analytics integrity, conversion evidence, contracts, capability quality, and release readiness.',
+          }
+          for domain, skills in additions.items():
+              existing = list(cats[domain].get('principal_skills', []))
+              for skill in skills:
+                  if skill not in existing:
+                      existing.append(skill)
+              cats[domain]['principal_skills'] = existing
+              cats[domain]['purpose'] = purposes[domain]
+          taxonomy_path.write_text(yaml.safe_dump(taxonomy, sort_keys=False, width=120, allow_unicode=True), encoding='utf-8')
+
+          titles = {
+              'product-strategy': 'Product & Strategy',
+              'experience-design': 'Experience & Design',
+              'application-engineering': 'Application Engineering',
+              'data-ai-analytics': 'Data, AI & Analytics',
+              'cloud-platform-operations': 'Cloud, Platform & Operations',
+              'security-privacy-compliance': 'Security, Privacy & Compliance',
+              'quality-assurance-audit': 'Quality Assurance & Audit',
+          }
+          for domain in additions:
+              data = cats[domain]
+              lines = [
+                  '---',
+                  'atlas_type: agent-domain',
+                  f'domain: {domain}',
+                  f"purpose: {data['purpose']}",
+                  'agents:',
+              ]
+              lines.extend(f'  - {agent}' for agent in data['agents'])
+              lines.append('principal_skills:')
+              lines.extend(f'  - {skill}' for skill in data['principal_skills'])
+              lines.extend(['---', f"# {titles[domain]}", '', 'Generated knowledge view of the canonical ATLAS capability taxonomy.', ''])
+              (root / '.claude/memory/capabilities/domains' / f'{domain}.md').write_text('\n'.join(lines), encoding='utf-8')
+
+          agent_sections = {
+              'backend-engineer': '''## P1 production/product quality routing\n\nFor material data or asynchronous application changes, use `framework/production-product-quality-model.md`. Route schema changes through `database-schema-review`, tenant-wide shared-resource changes through `saas-multitenancy-review`, queues/workers through `background-job-reliability`, and caching through `cache-strategy-assessment`. Preserve P0 authorization/RLS/provider gates where those boundaries intersect.\n\n''',
+              'data-engineer': '''## P1 production/product quality routing\n\nUse `database-schema-review` for relational integrity/index/lifecycle changes and `saas-multitenancy-review` when data architecture participates in tenant partitioning or isolation. Coordinate with `analytics-implementation-audit` when analytical outputs depend on changed event/data contracts.\n\n''',
+              'reliability-engineer': '''## P1 production/product quality routing\n\nUse `background-job-reliability` for duplicate execution, retries, dead letters, scheduling, concurrency and worker recovery; use `cache-strategy-assessment` for freshness, invalidation, stampede and cache-unavailable behavior; participate in `saas-multitenancy-review` for noisy-neighbor and pooled-resource resilience.\n\n''',
+              'platform-engineer': '''## P1 production/product quality routing\n\nUse `saas-multitenancy-review` when pooled/siloed infrastructure, quotas or tenant-aware operations change, `background-job-reliability` for managed queue/worker foundations, and `cache-strategy-assessment` for shared cache infrastructure.\n\n''',
+              'analytics-engineer': '''## P1 production/product quality routing\n\nUse `analytics-implementation-audit` whenever event/property/identity/consent/destination behavior changes. Support `conversion-funnel-review` with trustworthy step definitions and measured evidence rather than post-hoc narratives.\n\n''',
+              'experimentation-analyst': '''## P1 production/product quality routing\n\nUse `conversion-funnel-review` to separate observed friction from causal hypotheses and require `analytics-implementation-audit` when experiment or funnel conclusions depend on changed instrumentation.\n\n''',
+              'product-manager': '''## P1 production/product quality routing\n\nUse `conversion-funnel-review` for acquisition, onboarding, activation, checkout and handoff decisions. Define conversion together with downstream quality and trust outcomes, not only short-term completion rate.\n\n''',
+              'ux-director': '''## P1 production/product quality routing\n\nUse `conversion-funnel-review` for evidence-backed friction and ethical conversion design, and `content-discoverability-review` for information architecture, navigation, hierarchy and human-first discoverability.\n\n''',
+              'content-designer': '''## P1 production/product quality routing\n\nUse `content-discoverability-review` when information architecture, internal links, semantic content hierarchy, freshness or search/AI discoverability changes. Preserve people-first usefulness rather than producing keyword-only or AI-only content.\n\n''',
+              'frontend-engineer': '''## P1 production/product quality routing\n\nUse `content-discoverability-review` for rendered semantic/internal-link changes and `conversion-funnel-review` for material user-facing funnel changes. Compose with existing browser, SEO, structured-data, performance and frontend-craft gates rather than duplicating them.\n\n''',
+          }
+          for agent, section_text in agent_sections.items():
+              path = root / '.claude/agents' / f'{agent}.md'
+              text = path.read_text(encoding='utf-8')
+              if '## P1 production/product quality routing' in text:
+                  continue
+              marker = '## Authority level\n'
+              if marker not in text:
+                  marker = '## Boundaries\n'
+              if marker not in text:
+                  raise SystemExit(f'No safe insertion marker in {path}')
+              text = text.replace(marker, section_text + marker, 1)
+              path.write_text(text, encoding='utf-8')
+
+          validate_path = root / 'scripts/validate_all.py'
+          validate_text = validate_path.read_text(encoding='utf-8')
+          if '"production-product-quality-pack"' not in validate_text:
+              needle = '''        _python_step(\n            root,\n            "capability-catalogs",\n'''
+              insert = '''        _python_step(\n            root,\n            "production-product-quality-pack",\n            "Validate P1 production and product quality capability pack",\n            "validate_production_product_quality_pack.py",\n        ),\n'''
+              if needle not in validate_text:
+                  raise SystemExit('Could not patch validate_all.py')
+              validate_text = validate_text.replace(needle, insert + needle, 1)
+              validate_path.write_text(validate_text, encoding='utf-8')
+
+          readme = root / 'README.md'
+          text = readme.read_text(encoding='utf-8')
+          text = re.sub(r'\| Skills \| \d+ \|', '| Skills | 117 |', text)
+          text = re.sub(r'\| Workflows \| \d+ \|', '| Workflows | 81 |', text)
+          text = re.sub(r'\| Reviews \| \d+ \|', '| Reviews | 73 |', text)
+          text = re.sub(r'See the \[Skill Catalog\]\(docs/skill-catalog\.md\) for all \d+ descriptions\.', 'See the [Skill Catalog](docs/skill-catalog.md) for all 117 descriptions.', text)
+          if '## Capability Evaluation' not in text:
+              marker = '## How a task moves through ATLAS\n'
+              section = '''## Capability Evaluation\n\nATLAS measures its own capability library before expanding it. The first full baseline measured 110 skills and all 87 agent surfaces across structural skill quality, deterministic routing proxies, curated routing cases, and agent-overlap analysis. The pre-P1 baseline is recorded at `docs/assurance/capability-quality-baseline-2026-08-13.md`. Static metrics are diagnostic evidence, not claims about live Claude Code or Codex accuracy.\n\n## Production Systems & Product Quality\n\nP1 adds seven focused skills without adding new agents: `database-schema-review`, `saas-multitenancy-review`, `background-job-reliability`, `cache-strategy-assessment`, `conversion-funnel-review`, `analytics-implementation-audit`, and `content-discoverability-review`. The canonical model is `framework/production-product-quality-model.md`, with workflow `production-product-quality-readiness` and independent review `production-product-quality-review`.\n\n'''
+              if marker not in text:
+                  raise SystemExit('README insertion marker missing')
+              text = text.replace(marker, section + marker, 1)
+          readme.write_text(text, encoding='utf-8')
+
+          research = root / 'docs/research/agent-skill-landscape-2026.md'
+          r = research.read_text(encoding='utf-8')
+          pending = [
+              'database-schema-review', 'saas-multitenancy-review', 'background-job-reliability', 'cache-strategy-assessment',
+              'conversion-funnel-review', 'analytics-implementation-audit', 'content-discoverability-review',
+              'skill-trigger-evaluation', 'skill-quality-evaluation', 'agent-overlap-analysis',
+          ]
+          for name in pending:
+              r = r.replace(f'- **Pending** `{name}`:', f'- **Implemented** `{name}`:')
+          r = r.replace('**In progress:** implement the P0 web/SaaS skills', '**Completed:** implement the P0 web/SaaS skills')
+          if '## P1 completion note' not in r:
+              r += '''\n\n## P1 completion note\n\nThe original P1 capability gaps for data/multi-tenant systems, product/growth quality, and capability-quality measurement are now implemented as validated skills attached to existing durable agents. The catalog must continue to be measured before introducing new agent roles.\n'''
+          research.write_text(r, encoding='utf-8')
+          PY
+
+      - name: Regenerate catalogs and Codex adapter
+        run: |
+          python scripts/generate_capability_catalogs.py
+          python scripts/sync_codex_adapter.py
+          python scripts/sync_native_skills.py
+
+      - name: Measure post-P1 capability quality
+        shell: bash
+        run: |
+          python scripts/evaluate_skill_quality.py --json /tmp/skill-quality.json
+          python scripts/evaluate_skill_routing.py --json /tmp/skill-routing.json
+          python scripts/analyze_agent_overlap.py --json /tmp/agent-overlap.json
+          python - <<'PY'
+          import json
+          from pathlib import Path
+
+          q = json.loads(Path('/tmp/skill-quality.json').read_text())
+          r = json.loads(Path('/tmp/skill-routing.json').read_text())
+          a = json.loads(Path('/tmp/agent-overlap.json').read_text())
+          baseline = {
+              'count': 110, 'mean': 87.44, 'median': 86.0, 'min': 60,
+              'fixture_top1': 0.708, 'fixture_top3': 0.833, 'fixture_top5': 0.917,
+              'collisions55': 1, 'agent55': 0, 'cross55': 0,
+          }
+          def pct(v): return f'{v * 100:.1f}%'
+          content = f'''# Capability Quality Post-P1 — 2026-08-13\n\nThis measurement uses the same deterministic evaluators as the pre-P1 baseline after adding the seven P1 skills. Static metrics remain diagnostic proxies rather than live-runtime accuracy claims.\n\n## Inventory\n\n- Skills: **{q['skill_count']}** (baseline {baseline['count']}; delta {q['skill_count'] - baseline['count']:+d})\n- Agent surfaces: **{a['agent_count']}**\n- Agent pairs: **{a['pair_count']}**\n- Curated routing fixtures: **{r['fixtures']['count']}**\n\n## Skill quality\n\n- Mean: **{q['mean']}** (baseline {baseline['mean']}; delta {q['mean'] - baseline['mean']:+.2f})\n- Median: **{q['median']}** (baseline {baseline['median']}; delta {q['median'] - baseline['median']:+.2f})\n- Minimum: **{q['minimum']}** (baseline {baseline['min']})\n- P25: **{q['p25']}**\n- P75: **{q['p75']}**\n- Grades: **{q['grades']}**\n\n## Routing proxy\n\n- Curated top-1: **{pct(r['fixtures']['top1'])}** (baseline {pct(baseline['fixture_top1'])})\n- Curated top-3: **{pct(r['fixtures']['top3'])}** (baseline {pct(baseline['fixture_top3'])})\n- Curated top-5: **{pct(r['fixtures']['top5'])}** (baseline {pct(baseline['fixture_top5'])})\n- Description pairs >= 0.55: **{r['description_collisions']['pairs_ge_0_55']}** (baseline {baseline['collisions55']})\n- Description pairs >= 0.70: **{r['description_collisions']['pairs_ge_0_70']}**\n\nSelf-retrieval remains a diagnostic lexical experiment only and is not used as a blocking release threshold.\n\n## Agent overlap\n\n- Pairs >= 0.55: **{a['pairs_ge_0_55']}** (baseline {baseline['agent55']})\n- Pairs >= 0.70: **{a['pairs_ge_0_70']}**\n- Cross-domain pairs >= 0.55: **{a['cross_domain_ge_0_55']}** (baseline {baseline['cross55']})\n\n## Post-P1 decision\n\nP1 preserves the no-agent-inflation policy because the agent surface remains 87 and no new agent was introduced. Any material regression in curated routing, description collisions, or agent-overlap must be inspected before the next capability expansion.\n'''
+          Path('docs/assurance/capability-quality-post-p1-2026-08-13.md').write_text(content, encoding='utf-8')
+          PY
+
+      - name: Validate P1 and capability measurements
+        run: |
+          python scripts/validate_production_product_quality_pack.py
+          python scripts/validate_capability_evaluation_pack.py
+          python scripts/generate_capability_catalogs.py --check
+          python scripts/sync_codex_adapter.py --check
+          python scripts/sync_native_skills.py --check
+
+      - name: Commit P1 integration
+        shell: bash
+        run: |
+          if git diff --quiet; then
+            echo "P1 integration already current."
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add .claude .agents adapters framework scripts docs README.md
+          git commit -m "chore: integrate P1 catalog and post-P1 measurements"
+          git push origin HEAD:${GITHUB_REF_NAME}
