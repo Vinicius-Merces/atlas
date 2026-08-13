@@ -1,0 +1,59 @@
+version: 1
+name: reference-build-benchmark
+purpose: Execute and evaluate complete reference products against fixed briefs without
+  confusing harness validation with live product quality.
+model: framework/reference-build-benchmark-model.md
+workflow: .claude/workflows/reference-build-benchmark.md
+review: .claude/reviews/reference-build-benchmark-review.md
+suite: benchmarks/reference-builds/
+reference_builds:
+- id: premium-marketing-site
+  delivery_workflow: site-from-brief-delivery
+- id: multitenant-subscription-saas
+  delivery_workflow: saas-from-brief-delivery
+- id: internal-operations-system
+  delivery_workflow: saas-from-brief-delivery
+reused_capabilities:
+  common:
+  - project-brief-synthesis
+  - architecture-assessment
+  - test-strategy-design
+  - browser-flow-validation
+  - responsive-layout-audit
+  - visual-regression-review
+  - web-performance-field-readiness
+  - supply-chain-risk-audit
+  frontend:
+  - interface-visual-direction
+  - frontend-stack-selection
+  - frontend-craft-review
+  saas:
+  - authentication-flow-review
+  - authorization-boundary-review
+  - saas-multitenancy-review
+  - row-level-security-review
+  - secret-environment-audit
+  - background-job-reliability
+  - cache-strategy-assessment
+  - payment-integration-review
+  - webhook-reliability-review
+  - external-api-resilience-review
+  p2_primitives:
+  - form-mutation-design
+  - file-upload-storage-design
+  - transactional-email-delivery
+  - notification-system-design
+  - rate-limit-abuse-control
+  - application-search-design
+  - cms-content-modeling
+  - audit-log-design
+  - admin-operations-surface
+  - feature-flag-rollout
+  - data-import-export-workflow
+invariants:
+- Harness smoke results are never public benchmark claims.
+- Blocking checks override aggregate score.
+- Live runs use fixed fixture and rubric versions.
+- Independent review cannot be authored solely by the implementer.
+- Missing evidence is unverified, not assumed pass.
+- No new agent is introduced merely to execute or score the benchmark.

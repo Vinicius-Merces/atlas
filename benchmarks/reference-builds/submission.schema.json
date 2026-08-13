@@ -1,0 +1,150 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://atlas.local/schemas/reference-build-submission.schema.json",
+  "title": "ATLAS Reference Build Benchmark Submission",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "benchmark_version",
+    "spec_id",
+    "execution_mode",
+    "run",
+    "review",
+    "checks"
+  ],
+  "properties": {
+    "benchmark_version": {
+      "type": "integer",
+      "const": 1
+    },
+    "spec_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "execution_mode": {
+      "type": "string",
+      "enum": [
+        "live",
+        "harness-smoke"
+      ]
+    },
+    "run": {
+      "type": "object",
+      "additionalProperties": true,
+      "required": [
+        "runtime",
+        "model",
+        "repository",
+        "commit",
+        "evidence_root"
+      ],
+      "properties": {
+        "runtime": {
+          "type": "string",
+          "minLength": 1
+        },
+        "model": {
+          "type": "string",
+          "minLength": 1
+        },
+        "repository": {
+          "type": "string",
+          "minLength": 1
+        },
+        "commit": {
+          "type": "string",
+          "minLength": 1
+        },
+        "evidence_root": {
+          "type": "string",
+          "minLength": 1
+        },
+        "started_at": {
+          "type": "string"
+        },
+        "finished_at": {
+          "type": "string"
+        },
+        "environment_notes": {
+          "type": "string"
+        },
+        "tool_permissions": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "review": {
+      "type": "object",
+      "additionalProperties": true,
+      "required": [
+        "reviewer",
+        "outcome"
+      ],
+      "properties": {
+        "reviewer": {
+          "type": "string",
+          "minLength": 1
+        },
+        "outcome": {
+          "type": "string",
+          "enum": [
+            "Approved",
+            "Approved with conditions",
+            "Changes required",
+            "Blocked"
+          ]
+        },
+        "evidence": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "notes": {
+          "type": "string"
+        }
+      }
+    },
+    "checks": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "id",
+          "status",
+          "evidence"
+        ],
+        "properties": {
+          "id": {
+            "type": "string",
+            "minLength": 1
+          },
+          "status": {
+            "type": "string",
+            "enum": [
+              "pass",
+              "partial",
+              "fail",
+              "unverified"
+            ]
+          },
+          "evidence": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "minLength": 1
+            }
+          },
+          "notes": {
+            "type": "string"
+          }
+        }
+      }
+    }
+  }
+}
