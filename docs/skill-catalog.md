@@ -4,7 +4,7 @@ Canonical, generated inventory of every skill under `.claude/skills/<skill-name>
 
 Regenerate both capability catalogs with `python scripts/generate_capability_catalogs.py`. Use `--check` in validation and CI.
 
-Total: 96 skills.
+Total: 103 skills.
 
 ## Accessibility Audit
 
@@ -41,6 +41,14 @@ Total: 96 skills.
 ## Audit Bundle Assembly
 
 `audit-bundle-assembly`. Assemble a navigable manifest of evidence for a task, release, or deployment.
+
+## Authentication Flow Review
+
+`authentication-flow-review`. Review sign-in, sign-up, recovery, MFA, SSO/OAuth/OIDC, session creation, and account-linking flows when identity behavior changes or authentication must be production-ready.
+
+## Authorization Boundary Review
+
+`authorization-boundary-review`. Review resource and action permissions when roles, ownership, tenants, admin paths, APIs, or privileged operations change, verifying deny-by-default authorization at every trust boundary.
 
 ## Blueprint Selection
 
@@ -150,6 +158,10 @@ Total: 96 skills.
 
 `experiment-design`. Design an experiment with explicit hypothesis, metrics, population, analysis, and decision rules.
 
+## External API Resilience Review
+
+`external-api-resilience-review`. Review third-party API integrations when timeouts, retries, rate limits, pagination, versioning, partial failures, provider outages, or fallback behavior can affect production reliability.
+
 ## Framework Package Validation
 
 `framework-package-validation`. Verify that an ATLAS distribution is structurally complete and internally consistent.
@@ -225,6 +237,10 @@ Total: 96 skills.
 ## Observability Design
 
 `observability-design`. Design logs, metrics, traces, dashboards, and alerts for a feature or service.
+
+## Payment Integration Review
+
+`payment-integration-review`. Review payment and billing integrations when checkout, subscriptions, invoices, refunds, entitlements, webhooks, idempotency, or provider state synchronization change.
 
 ## Performance Budget Analysis
 
@@ -306,6 +322,10 @@ Total: 96 skills.
 
 `resume-packet-assembly`. Assemble a bounded repository-native packet for cross-session or cross-runtime continuation.
 
+## Row Level Security Review
+
+`row-level-security-review`. Review PostgreSQL/Supabase row-level security when exposed tables, tenancy, ownership policies, service roles, views, or database authorization change, verifying default-deny data isolation.
+
 ## Runtime Adapter Mapping
 
 `runtime-adapter-mapping`. Map canonical ATLAS capabilities to a target AI coding runtime.
@@ -325,6 +345,10 @@ Total: 96 skills.
 ## Runtime Semantic Parity
 
 `runtime-semantic-parity`. Compare two runtime implementations for semantic equivalence.
+
+## Secret Environment Audit
+
+`secret-environment-audit`. Audit secrets and environment configuration when credentials, API keys, signing secrets, database URLs, CI/CD variables, or public/private runtime configuration change.
 
 ## Semantic Compatibility Verification
 
@@ -385,6 +409,10 @@ Total: 96 skills.
 ## Web Performance Field Readiness
 
 `web-performance-field-readiness`. Assess user-facing performance before release when images, fonts, animation, WebGL, third-party scripts, or client JavaScript could threaten real-device experience.
+
+## Webhook Reliability Review
+
+`webhook-reliability-review`. Review inbound or outbound webhooks when event delivery, signatures, retries, ordering, deduplication, async processing, or replay behavior changes.
 
 ## Workstream Decomposition
 
