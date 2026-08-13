@@ -162,7 +162,7 @@ Total: 96 skills.
 
 `frontend-stack-selection`. Select frontend libraries and rendering tools when a user-facing web change needs implementation or modernization, choosing CSS, Motion, GSAP, React Three Fiber, primitives, and supporting libraries by evidence rather than trend.
 
-## Immersive 3d Experience
+## Immersive 3D Experience
 
 `immersive-3d-experience`. Design and review web 3D with Three.js or React Three Fiber when spatial interaction or narrative depth is justified, with strict performance, fallback, and accessibility budgets.
 
