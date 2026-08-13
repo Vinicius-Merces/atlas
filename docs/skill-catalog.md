@@ -4,7 +4,7 @@ Canonical, generated inventory of every skill under `.claude/skills/<skill-name>
 
 Regenerate both capability catalogs with `python scripts/generate_capability_catalogs.py`. Use `--check` in validation and CI.
 
-Total: 103 skills.
+Total: 107 skills.
 
 ## Accessibility Audit
 
@@ -53,6 +53,10 @@ Total: 103 skills.
 ## Blueprint Selection
 
 `blueprint-selection`. Choose the closest ATLAS blueprint for a project.
+
+## Browser Flow Validation
+
+`browser-flow-validation`. Validate critical user journeys in a real browser when releases or frontend changes need evidence for navigation, forms, auth states, errors, console/network failures, and cross-viewport behavior.
 
 ## Change Provenance Mapping
 
@@ -354,6 +358,10 @@ Total: 103 skills.
 
 `semantic-compatibility-verification`. Verify that a change preserves the meaning of a stable ATLAS contract.
 
+## Seo Technical Audit
+
+`seo-technical-audit`. Audit technical SEO when public web routes, domains, redirects, metadata, robots, sitemaps, canonicals, rendering, status codes, or crawl/index behavior change.
+
 ## Session Closeout
 
 `session-closeout`. Capture completed work, validation, decisions, risks, pending work, and next actions at session end.
@@ -365,6 +373,14 @@ Total: 103 skills.
 ## Source Of Truth Validation
 
 `source-of-truth-validation`. Verify that memory claims reference valid and authoritative project sources.
+
+## Structured Data Validation
+
+`structured-data-validation`. Validate JSON-LD and other structured data when public pages add or change schema markup, verifying syntax, page-content truthfulness, search eligibility, and non-conflicting canonical entities.
+
+## Supply Chain Risk Audit
+
+`supply-chain-risk-audit`. Audit dependency and build supply-chain risk when packages, lockfiles, registries, install scripts, CI actions, container bases, or third-party build inputs change.
 
 ## Support Classification
 
