@@ -22,6 +22,13 @@ Use when credentials, tokens, API keys, signing secrets, database URLs, service-
 - Logs, error reporting, build output, and deployment manifests
 - Rotation and incident procedures where available
 
+## Dependencies
+
+- Runtime/framework rules that determine server-only versus client-exposed configuration
+- Hosting, CI/CD, or secret-store metadata sufficient to inspect scope without revealing secret values
+- Deployment/environment ownership and rotation/revocation procedures when privileged credentials are present
+- Repository/build artifact inspection or secret-scanning capability where exposure is suspected
+
 ## Procedure
 
 1. Inventory every sensitive and non-sensitive configuration value used by the changed system.
