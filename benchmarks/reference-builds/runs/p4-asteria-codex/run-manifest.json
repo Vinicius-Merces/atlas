@@ -10,6 +10,7 @@
   "fixture_sha256": "e57da062e6223f6ecbea84a64813f6d8e73f9b0954cda065da5edbc680762947",
   "rubric_sha256": "6463ae7fde36affecc20eff21f0ec73e04e0fb44c920a3cbc9115502a1b56b31",
   "started_at": "2026-08-13T16:31:00-03:00",
+  "finished_at": "2026-08-13T17:08:13-03:00",
   "tool_permissions": [
     "filesystem: workspace-write under /workspace/scratch/b9c5e270056f",
     "network: restricted allowlist",
@@ -24,5 +25,5 @@
     "no_cross_run_branch_reads": true,
     "no_implementation_reuse": true
   },
-  "notes": "Codex self-identifies in this session as an agent based on GPT-5; model is recorded exactly as GPT-5. The run did not inspect, fetch, diff, or reuse any other Asteria target branch or repository history."
+  "notes": "Codex self-identifies in this session as an agent based on GPT-5; model is recorded exactly as GPT-5. The run did not inspect, fetch, diff, or reuse any other Asteria target branch or repository history. On the pushed branch, the first result is frozen at a1751e8558beddee8e8c57d2b3f47de86e1c5860; remediation at e818410355af1237c35da71f7d4f79a356c154a6; final tested source at b259ff86f5a2a049be7d88416f227c62c0b61071."
 }

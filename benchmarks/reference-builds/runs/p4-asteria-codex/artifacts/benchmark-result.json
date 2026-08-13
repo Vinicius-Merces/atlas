@@ -1,0 +1,400 @@
+{
+  "benchmark_version": 1,
+  "spec_id": "premium-marketing-site",
+  "spec_version": 1,
+  "spec_sha256": "e57da062e6223f6ecbea84a64813f6d8e73f9b0954cda065da5edbc680762947",
+  "rubric_sha256": "6463ae7fde36affecc20eff21f0ec73e04e0fb44c920a3cbc9115502a1b56b31",
+  "execution_mode": "live",
+  "run": {
+    "runtime": "codex",
+    "model": "GPT-5",
+    "repository": "https://github.com/Vinicius-Merces/atlas",
+    "commit": "b259ff86f5a2a049be7d88416f227c62c0b61071",
+    "evidence_root": "benchmarks/reference-builds/runs/p4-asteria-codex/evidence",
+    "environment_notes": "Local Node 24 execution under a restricted network; browser bridge and production deployment unavailable."
+  },
+  "score": 53.15,
+  "base_outcome": "insufficient",
+  "outcome": "blocked",
+  "claimable": false,
+  "blocking_failures": [
+    "marketing-responsive",
+    "marketing-accessibility",
+    "marketing-browser-primary-flow",
+    "marketing-production-domain",
+    "marketing-seo-indexing"
+  ],
+  "review": {
+    "reviewer": "independent-agent:/root/asteria_independent_review",
+    "outcome": "Blocked",
+    "evidence": [
+      "benchmarks/reference-builds/runs/p4-asteria-codex/reviews/independent-review.md"
+    ],
+    "notes": "Local code findings were remediated; browser and deployment blocking evidence remains unavailable."
+  },
+  "axis_scores": {
+    "brief_fidelity": {
+      "weight": 10.0,
+      "completion_factor": 1.0,
+      "score": 10.0
+    },
+    "architecture_quality": {
+      "weight": 8.0,
+      "completion_factor": 0.6667,
+      "score": 5.33
+    },
+    "capability_routing": {
+      "weight": 8.0,
+      "completion_factor": 1.0,
+      "score": 8.0
+    },
+    "implementation_completeness": {
+      "weight": 14.0,
+      "completion_factor": 0.75,
+      "score": 10.5
+    },
+    "frontend_craft": {
+      "weight": 20.0,
+      "completion_factor": 0.2,
+      "score": 4.0
+    },
+    "security_isolation": {
+      "weight": 5.0,
+      "completion_factor": 1.0,
+      "score": 5.0
+    },
+    "failure_resilience": {
+      "weight": 8.0,
+      "completion_factor": 0.8333,
+      "score": 6.67
+    },
+    "browser_reality": {
+      "weight": 10.0,
+      "completion_factor": 0.0,
+      "score": 0.0
+    },
+    "production_readiness": {
+      "weight": 12.0,
+      "completion_factor": 0.2,
+      "score": 2.4
+    },
+    "independent_review": {
+      "weight": 5.0,
+      "completion_factor": 0.25,
+      "score": 1.25
+    }
+  },
+  "checks": [
+    {
+      "id": "marketing-audience-outcome",
+      "axis": "brief_fidelity",
+      "status": "pass",
+      "factor": 1.0,
+      "evidence": [
+        "benchmarks/reference-builds/runs/p4-asteria-codex/evidence/final/execution-evidence.md#product-and-public-surfaces"
+      ],
+      "notes": "Copy, property facts and qualified visit journey target affluent property buyers."
+    },
+    {
+      "id": "marketing-required-surfaces",
+      "axis": "brief_fidelity",
+      "status": "pass",
+      "factor": 1.0,
+      "evidence": [
+        "benchmarks/reference-builds/runs/p4-asteria-codex/evidence/final/execution-evidence.md#real-local-http-execution"
+      ],
+      "notes": "Every fixture surface exists and returned its intended local HTTP status."
+    },
+    {
+      "id": "marketing-prohibited-shortcuts",
+      "axis": "brief_fidelity",
+      "status": "pass",
+      "factor": 1.0,
+      "evidence": [
+        "benchmarks/reference-builds/runs/p4-asteria-codex/evidence/final/execution-evidence.md#product-and-public-surfaces"
+      ],
+      "notes": "Original copy and imagery; no autoplay video, copied template or lorem ipsum."
+    },
+    {
+      "id": "marketing-content-authority",
+      "axis": "architecture_quality",
+      "status": "pass",
+      "factor": 1.0,
+      "evidence": [
+        "benchmarks/reference-builds/runs/p4-asteria-codex/evidence/final/execution-evidence.md#product-and-public-surfaces"
+      ],
+      "notes": "Shared code-owned content records drive pages, sitemap and schema."
+    },
+    {
+      "id": "marketing-conversion-authority",
+      "axis": "architecture_quality",
+      "status": "partial",
+      "factor": 0.5,
+      "evidence": [
+        "benchmarks/reference-builds/runs/p4-asteria-codex/evidence/final/execution-evidence.md#form-persistence-failure-and-abuse-controls"
+      ],
+      "notes": "Transactional local authority is proven; shared multi-instance storage and outbox delivery are not."
+    },
+    {
+      "id": "marketing-stack-fit",
+      "axis": "architecture_quality",
+      "status": "partial",
+      "factor": 0.5,
+      "evidence": [
+        "benchmarks/reference-builds/runs/p4-asteria-codex/evidence/final/execution-evidence.md#product-and-public-surfaces"
+      ],
+      "notes": "Lean maintainable SSR stack fits the site; production topology remains unproven."
+    },
+    {
+      "id": "marketing-routing-core",
+      "axis": "capability_routing",
+      "status": "pass",
+      "factor": 1.0,
+      "evidence": [
+        "benchmarks/reference-builds/runs/p4-asteria-codex/brief-and-direction.md"
+      ],
+      "notes": "Canonical site delivery and Frontend Craft gates were routed."
+    },
+    {
+      "id": "marketing-routing-public-web",
+      "axis": "capability_routing",
+      "status": "pass",
+      "factor": 1.0,
+      "evidence": [
+        "benchmarks/reference-builds/runs/p4-asteria-codex/evidence/final/execution-evidence.md"
+      ],
+      "notes": "SEO, schema, discoverability, analytics, conversion and supply-chain checks were executed where possible."
+    },
+    {
+      "id": "marketing-routing-no-theater",
+      "axis": "capability_routing",
+      "status": "pass",
+      "factor": 1.0,
+      "evidence": [
+        "benchmarks/reference-builds/runs/p4-asteria-codex/brief-and-direction.md"
+      ],
+      "notes": "Only fixture-relevant capabilities were selected."
+    },
+    {
+      "id": "marketing-navigation-complete",
+      "axis": "implementation_completeness",
+      "status": "partial",
+      "factor": 0.5,
+      "evidence": [
+        "benchmarks/reference-builds/runs/p4-asteria-codex/evidence/final/execution-evidence.md#real-local-http-execution"
+      ],
+      "notes": "Route/link surfaces are complete locally; no browser interaction proof."
+    },
+    {
+      "id": "marketing-lead-authoritative",
+      "axis": "implementation_completeness",
+      "status": "pass",
+      "factor": 1.0,
+      "evidence": [
+        "benchmarks/reference-builds/runs/p4-asteria-codex/evidence/final/execution-evidence.md#form-persistence-failure-and-abuse-controls"
+      ],
+      "notes": "Transactional lead state, stable ID, validation and duplicate protection executed locally."
+    },
+    {
+      "id": "marketing-content-complete",
+      "axis": "implementation_completeness",
+      "status": "pass",
+      "factor": 1.0,
+      "evidence": [
+        "benchmarks/reference-builds/runs/p4-asteria-codex/evidence/final/execution-evidence.md#product-and-public-surfaces"
+      ],
+      "notes": "Twelve residences, location, three articles and legal/contact content are present."
+    },
+    {
+      "id": "marketing-states-complete",
+      "axis": "implementation_completeness",
+      "status": "partial",
+      "factor": 0.5,
+      "evidence": [
+        "benchmarks/reference-builds/runs/p4-asteria-codex/evidence/final/execution-evidence.md#form-persistence-failure-and-abuse-controls"
+      ],
+      "notes": "Source and HTTP prove success, validation and provider failure; browser presentation is unverified."
+    },
+    {
+      "id": "marketing-visual-thesis",
+      "axis": "frontend_craft",
+      "status": "partial",
+      "factor": 0.5,
+      "evidence": [
+        "benchmarks/reference-builds/runs/p4-asteria-codex/evidence/final/execution-evidence.md#product-and-public-surfaces"
+      ],
+      "notes": "Product-specific editorial system and imagery exist, without rendered browser review."
+    },
+    {
+      "id": "marketing-responsive",
+      "axis": "frontend_craft",
+      "status": "unverified",
+      "factor": 0.0,
+      "evidence": [],
+      "notes": "Blocking check; no real viewport evidence."
+    },
+    {
+      "id": "marketing-accessibility",
+      "axis": "frontend_craft",
+      "status": "unverified",
+      "factor": 0.0,
+      "evidence": [],
+      "notes": "Blocking check; source provisions exist but no keyboard/tree/browser audit."
+    },
+    {
+      "id": "marketing-motion-purpose",
+      "axis": "frontend_craft",
+      "status": "partial",
+      "factor": 0.5,
+      "evidence": [
+        "benchmarks/reference-builds/runs/p4-asteria-codex/evidence/final/execution-evidence.md#responsive-accessibility-and-interaction-provisions"
+      ],
+      "notes": "Motion is restrained and reduced-motion-aware in source; rendering unverified."
+    },
+    {
+      "id": "marketing-visual-regression",
+      "axis": "frontend_craft",
+      "status": "unverified",
+      "factor": 0.0,
+      "evidence": [],
+      "notes": "No reproducible browser screenshots."
+    },
+    {
+      "id": "marketing-form-security",
+      "axis": "security_isolation",
+      "status": "pass",
+      "factor": 1.0,
+      "evidence": [
+        "benchmarks/reference-builds/runs/p4-asteria-codex/evidence/final/execution-evidence.md#security-privacy-and-supply-chain"
+      ],
+      "notes": "Validation, honeypot, origin, limits, idempotency and data boundaries execute server-side."
+    },
+    {
+      "id": "marketing-private-data",
+      "axis": "security_isolation",
+      "status": "pass",
+      "factor": 1.0,
+      "evidence": [
+        "benchmarks/reference-builds/runs/p4-asteria-codex/evidence/final/execution-evidence.md#security-privacy-and-supply-chain"
+      ],
+      "notes": "Lead storage is non-public, mode 0600 and excluded from Git; no client secrets."
+    },
+    {
+      "id": "marketing-provider-failure",
+      "axis": "failure_resilience",
+      "status": "pass",
+      "factor": 1.0,
+      "evidence": [
+        "benchmarks/reference-builds/runs/p4-asteria-codex/evidence/final/execution-evidence.md#form-persistence-failure-and-abuse-controls"
+      ],
+      "notes": "Executed 503 path states that data was not saved and permits retry."
+    },
+    {
+      "id": "marketing-duplicate-submit",
+      "axis": "failure_resilience",
+      "status": "pass",
+      "factor": 1.0,
+      "evidence": [
+        "benchmarks/reference-builds/runs/p4-asteria-codex/evidence/final/execution-evidence.md#form-persistence-failure-and-abuse-controls"
+      ],
+      "notes": "Concurrent and restart duplicate paths retained one lead and stable ID."
+    },
+    {
+      "id": "marketing-degraded-assets",
+      "axis": "failure_resilience",
+      "status": "partial",
+      "factor": 0.5,
+      "evidence": [
+        "benchmarks/reference-builds/runs/p4-asteria-codex/evidence/final/execution-evidence.md#product-and-public-surfaces"
+      ],
+      "notes": "SSR text/navigation do not require JavaScript; actual media-failure browser behavior unverified."
+    },
+    {
+      "id": "marketing-browser-primary-flow",
+      "axis": "browser_reality",
+      "status": "unverified",
+      "factor": 0.0,
+      "evidence": [],
+      "notes": "Blocking check; browser bridge unavailable."
+    },
+    {
+      "id": "marketing-browser-negative-flow",
+      "axis": "browser_reality",
+      "status": "unverified",
+      "factor": 0.0,
+      "evidence": [],
+      "notes": "HTTP negative flow executed, but no real-browser flow exists."
+    },
+    {
+      "id": "marketing-browser-console-network",
+      "axis": "browser_reality",
+      "status": "unverified",
+      "factor": 0.0,
+      "evidence": [],
+      "notes": "No browser console/network capture."
+    },
+    {
+      "id": "marketing-production-domain",
+      "axis": "production_readiness",
+      "status": "unverified",
+      "factor": 0.0,
+      "evidence": [],
+      "notes": "Blocking check; no public HTTPS deployment."
+    },
+    {
+      "id": "marketing-seo-indexing",
+      "axis": "production_readiness",
+      "status": "unverified",
+      "factor": 0.0,
+      "evidence": [],
+      "notes": "Blocking check; local SEO passed but deployed indexability was not verified."
+    },
+    {
+      "id": "marketing-structured-data",
+      "axis": "production_readiness",
+      "status": "partial",
+      "factor": 0.5,
+      "evidence": [
+        "benchmarks/reference-builds/runs/p4-asteria-codex/evidence/final/execution-evidence.md#seo-structured-data-and-performance-provisions"
+      ],
+      "notes": "Local JSON parsing and source truth pass; deployed external validation absent."
+    },
+    {
+      "id": "marketing-performance",
+      "axis": "production_readiness",
+      "status": "unverified",
+      "factor": 0.0,
+      "evidence": [],
+      "notes": "Asset bytes measured, but no representative mobile Lighthouse or field run."
+    },
+    {
+      "id": "marketing-analytics",
+      "axis": "production_readiness",
+      "status": "partial",
+      "factor": 0.5,
+      "evidence": [
+        "benchmarks/reference-builds/runs/p4-asteria-codex/evidence/final/execution-evidence.md#form-persistence-failure-and-abuse-controls"
+      ],
+      "notes": "Atomic authoritative outbox event proven; downstream delivery and production dedupe unverified."
+    },
+    {
+      "id": "marketing-review-frontend",
+      "axis": "independent_review",
+      "status": "fail",
+      "factor": 0.0,
+      "evidence": [],
+      "notes": "Independent reviewer could not inspect rendered browser evidence."
+    },
+    {
+      "id": "marketing-review-production",
+      "axis": "independent_review",
+      "status": "partial",
+      "factor": 0.5,
+      "evidence": [
+        "benchmarks/reference-builds/runs/p4-asteria-codex/reviews/independent-review.md"
+      ],
+      "notes": "Reviewer audited benchmark truthfulness and local gates; production deployment was unavailable."
+    }
+  ],
+  "warnings": []
+}

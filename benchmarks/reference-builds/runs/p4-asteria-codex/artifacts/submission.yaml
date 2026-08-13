@@ -1,0 +1,149 @@
+benchmark_version: 1
+spec_id: premium-marketing-site
+execution_mode: live
+run:
+  runtime: codex
+  model: GPT-5
+  repository: https://github.com/Vinicius-Merces/atlas
+  commit: b259ff86f5a2a049be7d88416f227c62c0b61071
+  evidence_root: benchmarks/reference-builds/runs/p4-asteria-codex/evidence
+  environment_notes: Local Node 24 execution under a restricted network; browser bridge and production deployment unavailable.
+review:
+  reviewer: independent-agent:/root/asteria_independent_review
+  outcome: Blocked
+  evidence:
+    - benchmarks/reference-builds/runs/p4-asteria-codex/reviews/independent-review.md
+  notes: Local code findings were remediated; browser and deployment blocking evidence remains unavailable.
+checks:
+  - id: marketing-audience-outcome
+    status: pass
+    evidence: [benchmarks/reference-builds/runs/p4-asteria-codex/evidence/final/execution-evidence.md#product-and-public-surfaces]
+    notes: Copy, property facts and qualified visit journey target affluent property buyers.
+  - id: marketing-required-surfaces
+    status: pass
+    evidence: [benchmarks/reference-builds/runs/p4-asteria-codex/evidence/final/execution-evidence.md#real-local-http-execution]
+    notes: Every fixture surface exists and returned its intended local HTTP status.
+  - id: marketing-prohibited-shortcuts
+    status: pass
+    evidence: [benchmarks/reference-builds/runs/p4-asteria-codex/evidence/final/execution-evidence.md#product-and-public-surfaces]
+    notes: Original copy and imagery; no autoplay video, copied template or lorem ipsum.
+  - id: marketing-content-authority
+    status: pass
+    evidence: [benchmarks/reference-builds/runs/p4-asteria-codex/evidence/final/execution-evidence.md#product-and-public-surfaces]
+    notes: Shared code-owned content records drive pages, sitemap and schema.
+  - id: marketing-conversion-authority
+    status: partial
+    evidence: [benchmarks/reference-builds/runs/p4-asteria-codex/evidence/final/execution-evidence.md#form-persistence-failure-and-abuse-controls]
+    notes: Transactional local authority is proven; shared multi-instance storage and outbox delivery are not.
+  - id: marketing-stack-fit
+    status: partial
+    evidence: [benchmarks/reference-builds/runs/p4-asteria-codex/evidence/final/execution-evidence.md#product-and-public-surfaces]
+    notes: Lean maintainable SSR stack fits the site; production topology remains unproven.
+  - id: marketing-routing-core
+    status: pass
+    evidence: [benchmarks/reference-builds/runs/p4-asteria-codex/brief-and-direction.md]
+    notes: Canonical site delivery and Frontend Craft gates were routed.
+  - id: marketing-routing-public-web
+    status: pass
+    evidence: [benchmarks/reference-builds/runs/p4-asteria-codex/evidence/final/execution-evidence.md]
+    notes: SEO, schema, discoverability, analytics, conversion and supply-chain checks were executed where possible.
+  - id: marketing-routing-no-theater
+    status: pass
+    evidence: [benchmarks/reference-builds/runs/p4-asteria-codex/brief-and-direction.md]
+    notes: Only fixture-relevant capabilities were selected.
+  - id: marketing-navigation-complete
+    status: partial
+    evidence: [benchmarks/reference-builds/runs/p4-asteria-codex/evidence/final/execution-evidence.md#real-local-http-execution]
+    notes: Route/link surfaces are complete locally; no browser interaction proof.
+  - id: marketing-lead-authoritative
+    status: pass
+    evidence: [benchmarks/reference-builds/runs/p4-asteria-codex/evidence/final/execution-evidence.md#form-persistence-failure-and-abuse-controls]
+    notes: Transactional lead state, stable ID, validation and duplicate protection executed locally.
+  - id: marketing-content-complete
+    status: pass
+    evidence: [benchmarks/reference-builds/runs/p4-asteria-codex/evidence/final/execution-evidence.md#product-and-public-surfaces]
+    notes: Twelve residences, location, three articles and legal/contact content are present.
+  - id: marketing-states-complete
+    status: partial
+    evidence: [benchmarks/reference-builds/runs/p4-asteria-codex/evidence/final/execution-evidence.md#form-persistence-failure-and-abuse-controls]
+    notes: Source and HTTP prove success, validation and provider failure; browser presentation is unverified.
+  - id: marketing-visual-thesis
+    status: partial
+    evidence: [benchmarks/reference-builds/runs/p4-asteria-codex/evidence/final/execution-evidence.md#product-and-public-surfaces]
+    notes: Product-specific editorial system and imagery exist, without rendered browser review.
+  - id: marketing-responsive
+    status: unverified
+    evidence: []
+    notes: Blocking check; no real viewport evidence.
+  - id: marketing-accessibility
+    status: unverified
+    evidence: []
+    notes: Blocking check; source provisions exist but no keyboard/tree/browser audit.
+  - id: marketing-motion-purpose
+    status: partial
+    evidence: [benchmarks/reference-builds/runs/p4-asteria-codex/evidence/final/execution-evidence.md#responsive-accessibility-and-interaction-provisions]
+    notes: Motion is restrained and reduced-motion-aware in source; rendering unverified.
+  - id: marketing-visual-regression
+    status: unverified
+    evidence: []
+    notes: No reproducible browser screenshots.
+  - id: marketing-form-security
+    status: pass
+    evidence: [benchmarks/reference-builds/runs/p4-asteria-codex/evidence/final/execution-evidence.md#security-privacy-and-supply-chain]
+    notes: Validation, honeypot, origin, limits, idempotency and data boundaries execute server-side.
+  - id: marketing-private-data
+    status: pass
+    evidence: [benchmarks/reference-builds/runs/p4-asteria-codex/evidence/final/execution-evidence.md#security-privacy-and-supply-chain]
+    notes: Lead storage is non-public, mode 0600 and excluded from Git; no client secrets.
+  - id: marketing-provider-failure
+    status: pass
+    evidence: [benchmarks/reference-builds/runs/p4-asteria-codex/evidence/final/execution-evidence.md#form-persistence-failure-and-abuse-controls]
+    notes: Executed 503 path states that data was not saved and permits retry.
+  - id: marketing-duplicate-submit
+    status: pass
+    evidence: [benchmarks/reference-builds/runs/p4-asteria-codex/evidence/final/execution-evidence.md#form-persistence-failure-and-abuse-controls]
+    notes: Concurrent and restart duplicate paths retained one lead and stable ID.
+  - id: marketing-degraded-assets
+    status: partial
+    evidence: [benchmarks/reference-builds/runs/p4-asteria-codex/evidence/final/execution-evidence.md#product-and-public-surfaces]
+    notes: SSR text/navigation do not require JavaScript; actual media-failure browser behavior unverified.
+  - id: marketing-browser-primary-flow
+    status: unverified
+    evidence: []
+    notes: Blocking check; browser bridge unavailable.
+  - id: marketing-browser-negative-flow
+    status: unverified
+    evidence: []
+    notes: HTTP negative flow executed, but no real-browser flow exists.
+  - id: marketing-browser-console-network
+    status: unverified
+    evidence: []
+    notes: No browser console/network capture.
+  - id: marketing-production-domain
+    status: unverified
+    evidence: []
+    notes: Blocking check; no public HTTPS deployment.
+  - id: marketing-seo-indexing
+    status: unverified
+    evidence: []
+    notes: Blocking check; local SEO passed but deployed indexability was not verified.
+  - id: marketing-structured-data
+    status: partial
+    evidence: [benchmarks/reference-builds/runs/p4-asteria-codex/evidence/final/execution-evidence.md#seo-structured-data-and-performance-provisions]
+    notes: Local JSON parsing and source truth pass; deployed external validation absent.
+  - id: marketing-performance
+    status: unverified
+    evidence: []
+    notes: Asset bytes measured, but no representative mobile Lighthouse or field run.
+  - id: marketing-analytics
+    status: partial
+    evidence: [benchmarks/reference-builds/runs/p4-asteria-codex/evidence/final/execution-evidence.md#form-persistence-failure-and-abuse-controls]
+    notes: Atomic authoritative outbox event proven; downstream delivery and production dedupe unverified.
+  - id: marketing-review-frontend
+    status: fail
+    evidence: []
+    notes: Independent reviewer could not inspect rendered browser evidence.
+  - id: marketing-review-production
+    status: partial
+    evidence: [benchmarks/reference-builds/runs/p4-asteria-codex/reviews/independent-review.md]
+    notes: Reviewer audited benchmark truthfulness and local gates; production deployment was unavailable.
