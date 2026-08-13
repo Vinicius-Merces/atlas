@@ -133,6 +133,12 @@ def quick_steps(root: Path) -> list[ValidationStep]:
         ),
         _python_step(
             root,
+            "discovery-metadata",
+            "Validate agent and skill descriptions for runtime discovery",
+            "validate_discovery_metadata.py",
+        ),
+        _python_step(
+            root,
             "frontend-craft-pack",
             "Validate frontend craft capability pack",
             "validate_frontend_craft_pack.py",
