@@ -4,7 +4,7 @@ Canonical, generated inventory of every skill under `.claude/skills/<skill-name>
 
 Regenerate both capability catalogs with `python scripts/generate_capability_catalogs.py`. Use `--check` in validation and CI.
 
-Total: 107 skills.
+Total: 110 skills.
 
 ## Accessibility Audit
 
@@ -17,6 +17,10 @@ Total: 107 skills.
 ## ADR Authoring
 
 `adr-authoring`. Capture an important architecture decision with sufficient context and traceability.
+
+## Agent Overlap Analysis
+
+`agent-overlap-analysis`. Measure semantic overlap across registered ATLAS agents when roles are added, scopes change, or the catalog may contain redundant responsibilities, using descriptions, missions, ownership, and taxonomy boundaries.
 
 ## AI System Design
 
@@ -365,6 +369,14 @@ Total: 107 skills.
 ## Session Closeout
 
 `session-closeout`. Capture completed work, validation, decisions, risks, pending work, and next actions at session end.
+
+## Skill Quality Evaluation
+
+`skill-quality-evaluation`. Measure registered ATLAS skills for structural completeness, discovery quality, trigger clarity, evidence strength, boundaries, and context discipline when the capability library changes or quality must be baselined.
+
+## Skill Trigger Evaluation
+
+`skill-trigger-evaluation`. Evaluate whether ATLAS skill discovery metadata and trigger conditions route representative requests to the intended capability without excessive collisions when skills are added, renamed, or overlap risk changes.
 
 ## Smoke Test Design
 

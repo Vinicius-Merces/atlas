@@ -31,6 +31,15 @@
       "version": "0.1.1"
     },
     {
+      "canonical_name": "agent-overlap-analysis",
+      "canonical_path": ".claude/skills/agent-overlap-analysis/SKILL.md",
+      "adapter_path": ".agents/skills/agent-overlap-analysis/SKILL.md",
+      "parity_type": "runtime-native",
+      "status": "native",
+      "notes": "Codex-native entry point.",
+      "version": "0.1.1"
+    },
+    {
       "canonical_name": "ai-system-design",
       "canonical_path": ".claude/skills/ai-system-design/SKILL.md",
       "adapter_path": ".agents/skills/ai-system-design/SKILL.md",
@@ -808,6 +817,24 @@
       "canonical_name": "session-closeout",
       "canonical_path": ".claude/skills/session-closeout/SKILL.md",
       "adapter_path": ".agents/skills/session-closeout/SKILL.md",
+      "parity_type": "runtime-native",
+      "status": "native",
+      "notes": "Codex-native entry point.",
+      "version": "0.1.1"
+    },
+    {
+      "canonical_name": "skill-quality-evaluation",
+      "canonical_path": ".claude/skills/skill-quality-evaluation/SKILL.md",
+      "adapter_path": ".agents/skills/skill-quality-evaluation/SKILL.md",
+      "parity_type": "runtime-native",
+      "status": "native",
+      "notes": "Codex-native entry point.",
+      "version": "0.1.1"
+    },
+    {
+      "canonical_name": "skill-trigger-evaluation",
+      "canonical_path": ".claude/skills/skill-trigger-evaluation/SKILL.md",
+      "adapter_path": ".agents/skills/skill-trigger-evaluation/SKILL.md",
       "parity_type": "runtime-native",
       "status": "native",
       "notes": "Codex-native entry point.",

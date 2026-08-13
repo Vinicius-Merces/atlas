@@ -2,11 +2,12 @@
 
 > Generated from `.claude/registry.json`. Do not edit manually.
 
-Total: **107**
+Total: **110**
 
 - `accessibility-audit` → `.claude/skills/accessibility-audit/SKILL.md`
 - `adapter-drift-detection` → `.claude/skills/adapter-drift-detection/SKILL.md`
 - `adr-authoring` → `.claude/skills/adr-authoring/SKILL.md`
+- `agent-overlap-analysis` → `.claude/skills/agent-overlap-analysis/SKILL.md`
 - `ai-system-design` → `.claude/skills/ai-system-design/SKILL.md`
 - `api-contract-analysis` → `.claude/skills/api-contract-analysis/SKILL.md`
 - `architecture-assessment` → `.claude/skills/architecture-assessment/SKILL.md`
@@ -94,6 +95,8 @@ Total: **107**
 - `semantic-compatibility-verification` → `.claude/skills/semantic-compatibility-verification/SKILL.md`
 - `seo-technical-audit` → `.claude/skills/seo-technical-audit/SKILL.md`
 - `session-closeout` → `.claude/skills/session-closeout/SKILL.md`
+- `skill-quality-evaluation` → `.claude/skills/skill-quality-evaluation/SKILL.md`
+- `skill-trigger-evaluation` → `.claude/skills/skill-trigger-evaluation/SKILL.md`
 - `smoke-test-design` → `.claude/skills/smoke-test-design/SKILL.md`
 - `source-of-truth-validation` → `.claude/skills/source-of-truth-validation/SKILL.md`
 - `structured-data-validation` → `.claude/skills/structured-data-validation/SKILL.md`
