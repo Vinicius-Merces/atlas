@@ -107,6 +107,7 @@
     "beta-stabilization",
     "blueprint-instantiation",
     "bug-fix",
+    "capability-quality-assessment",
     "ci-governance",
     "codex-synchronization",
     "compatibility-validation",
@@ -182,6 +183,7 @@
     "accessibility-audit",
     "adapter-drift-detection",
     "adr-authoring",
+    "agent-overlap-analysis",
     "ai-system-design",
     "api-contract-analysis",
     "architecture-assessment",
@@ -269,6 +271,8 @@
     "semantic-compatibility-verification",
     "seo-technical-audit",
     "session-closeout",
+    "skill-quality-evaluation",
+    "skill-trigger-evaluation",
     "smoke-test-design",
     "source-of-truth-validation",
     "structured-data-validation",
@@ -296,6 +300,7 @@
     "automation-review",
     "beta-readiness-review",
     "blueprint-review",
+    "capability-quality-review",
     "checkpoint-integrity-review",
     "codex-runtime-review",
     "compatibility-review",
@@ -485,7 +490,8 @@
     "project_health_model": "framework/project-health-model.md",
     "technical_debt_model": "framework/technical-debt-model.md",
     "framework_evolution_model": "framework/framework-evolution-model.md",
-    "web_production_assurance_model": "framework/web-production-assurance-model.md"
+    "web_production_assurance_model": "framework/web-production-assurance-model.md",
+    "capability_evaluation_model": "framework/capability-evaluation-model.md"
   },
   "stability": {
     "compatibility_model": "framework/compatibility-model.md",
