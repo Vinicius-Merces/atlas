@@ -21,6 +21,13 @@ Use when a change adds or modifies sign-in, sign-up, passwordless access, passwo
 - Threat model and trust boundaries
 - Relevant tests, logs, and environment configuration
 
+## Dependencies
+
+- Authoritative identity-provider or authentication-library contract for enabled flows
+- Product account lifecycle and recovery requirements
+- `authorization-boundary-review` when authenticated identities can access protected resources
+- `secret-environment-audit` when client/server credentials, signing secrets, or provider configuration change
+
 ## Procedure
 
 1. Map every authentication entry point and callback.
