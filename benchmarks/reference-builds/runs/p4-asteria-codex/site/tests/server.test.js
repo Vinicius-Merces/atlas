@@ -1,7 +1,8 @@
 import test from "node:test";
 import assert from "node:assert/strict";
-import { mkdtempSync, rmSync } from "node:fs";
+import { mkdirSync, mkdtempSync, rmSync } from "node:fs";
 import { join } from "node:path";
+import { fileURLToPath } from "node:url";
 import { AsteriaStore, validateLead } from "../server.js";
 import { renderPage } from "../src/render.js";
 
@@ -45,7 +46,9 @@ test("models all twelve residences and distinct editorial bodies", () => {
 });
 
 test("persists idempotency and analytics outbox across store restart", () => {
-  const directory = mkdtempSync(join(process.cwd(), "data/test-store-"));
+  const testDataRoot = fileURLToPath(new URL("../data/", import.meta.url));
+  mkdirSync(testDataRoot, { recursive: true });
+  const directory = mkdtempSync(join(testDataRoot, "test-store-"));
   const path = join(directory, "asteria.sqlite");
   const lead = { name:"Rafael Nogueira", email:"rafael@example.test", phone:"11988887777", interest:"casa-horizonte", budget:"acima-7m", visitDate:"2026-09-10", consent:true };
   try {
