@@ -74,7 +74,7 @@ Use only the recorded campaign base commit, the canonical `premium-marketing-sit
 
 Follow `site-from-brief-delivery` and all applicable Frontend Craft, browser, accessibility, responsive, SEO, structured-data, analytics/conversion, supply-chain, production, and benchmark gates.
 
-Record runtime exactly as `chatgpt` and model exactly as `GPT-5.6 Sol`. Freeze the first result before remediation. A same-session review is not independent; report it honestly.
+Record runtime exactly as `chatgpt` and model exactly as `GPT-5.6 Sol`. Freeze the first result before remediation. Independent review cannot be performed by the implementer in this same session; report that limitation honestly.
 ''',
     "benchmarks/reference-builds/campaigns/p4/runtime-packets/codex-asteria.md": '''# P4 Asteria Target Packet - Codex
 

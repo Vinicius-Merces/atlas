@@ -16,3 +16,4 @@ project has stable knowledge for those domains.
 
 Templates are available under [templates](templates/). Do not treat template
 placeholders as reviewed project memory.
+- [Live Reference Build Campaign](capabilities/live-reference-build-campaign.md) - P4 isolated live benchmark protocol.

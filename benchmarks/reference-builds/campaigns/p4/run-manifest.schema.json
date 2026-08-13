@@ -1,0 +1,33 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "ATLAS P4 Live Reference Build Run Manifest",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["campaign_id", "target_id", "role", "runtime", "model", "fixture_id", "campaign_base_commit", "run_branch", "fixture_sha256", "rubric_sha256", "isolation_attestation"],
+  "properties": {
+    "campaign_id": {"type": "string", "const": "p4-live-reference-build-campaign"},
+    "target_id": {"type": "string", "minLength": 1},
+    "role": {"type": "string", "enum": ["calibration", "target"]},
+    "runtime": {"type": "string", "minLength": 1},
+    "model": {"type": "string", "minLength": 1},
+    "fixture_id": {"type": "string", "const": "premium-marketing-site"},
+    "campaign_base_commit": {"type": "string", "minLength": 7},
+    "run_branch": {"type": "string", "pattern": "^bench/p4-asteria-[a-z0-9-]+$"},
+    "fixture_sha256": {"type": "string", "pattern": "^[a-f0-9]{64}$"},
+    "rubric_sha256": {"type": "string", "pattern": "^[a-f0-9]{64}$"},
+    "started_at": {"type": "string"},
+    "finished_at": {"type": "string"},
+    "tool_permissions": {"type": "array", "items": {"type": "string"}},
+    "isolation_attestation": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["same_base_commit", "no_cross_run_branch_reads", "no_implementation_reuse"],
+      "properties": {
+        "same_base_commit": {"type": "boolean", "const": true},
+        "no_cross_run_branch_reads": {"type": "boolean", "const": true},
+        "no_implementation_reuse": {"type": "boolean", "const": true}
+      }
+    },
+    "notes": {"type": "string"}
+  }
+}
