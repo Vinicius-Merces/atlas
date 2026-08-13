@@ -1,0 +1,69 @@
+name: P2 Metadata Sync
+
+on:
+  push:
+    branches:
+      - feat/atlas-p2-full-stack-delivery-pack
+
+permissions:
+  contents: write
+
+jobs:
+  sync:
+    if: github.actor != 'github-actions[bot]'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install test dependencies
+        run: python -m pip install --requirement requirements-test.txt
+      - name: Normalize P2 discovery metadata
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          values = {
+              'form-mutation-design': 'Design user-initiated forms and state mutations with server validation, authorization, duplicate-submit safety, concurrency, optimistic UI, failure recovery, revalidation, and accessible feedback.',
+              'file-upload-storage-design': 'Design file upload and object-storage flows with ownership, authorization, signed access, type/size validation, safe object keys, integrity, processing, retention, deletion, and tenant isolation.',
+              'transactional-email-delivery': 'Design transactional email for verification, recovery, invitations, receipts, and alerts with authoritative triggers, safe templates, idempotent retries, suppression, security, observability, and reconciliation.',
+              'notification-system-design': 'Design in-app, push, email, or provider notifications with trusted recipient rules, preferences, deduplication, urgency, read state, fan-out, retries, quieting, and accessible notification-center UX.',
+              'rate-limit-abuse-control': 'Design abuse and resource controls for public or expensive operations using actor-aware rate/concurrency limits, payload bounds, OTP/recovery protections, provider-spend controls, bypass policy, and observability.',
+              'application-search-design': 'Design product/content search with source-of-truth fields, query semantics, ranking, filters, pagination, indexing, authorization, tenant scope, freshness, failure states, and database-versus-search-engine tradeoffs.',
+              'cms-content-modeling': 'Design CMS content models and editorial workflows with structured types, slugs, drafts, preview, localization, media, publishing lifecycle, references, SEO fields, migrations, and frontend rendering contracts.',
+              'audit-log-design': 'Design audit logs for consequential actions with actor, tenant, resource, action/result, correlation, sensitive-data minimization, integrity expectations, retention, access control, export, and investigation usability.',
+              'admin-operations-surface': 'Design privileged admin/support surfaces with least-privilege roles, explicit tenant context, safe search, impersonation controls, dangerous-action confirmation, audit evidence, and break-glass access.',
+              'feature-flag-rollout': 'Design feature flags and staged rollouts by environment, user, tenant, cohort, percentage, or kill switch with trusted evaluation context, safe defaults, metrics, rollback, lifecycle ownership, and flag removal.',
+              'data-import-export-workflow': 'Design bulk data import/export with authorization, schema mapping, preview, validation, partial errors, idempotency, background processing, progress, large-file handling, privacy, and secure artifact lifecycle.',
+          }
+          for name, description in values.items():
+              assert len(description) <= 240, (name, len(description))
+              path = Path('.claude/skills') / name / 'SKILL.md'
+              text = path.read_text(encoding='utf-8')
+              lines = text.splitlines()
+              for index, line in enumerate(lines):
+                  if line.startswith('description:'):
+                      lines[index] = f'description: "{description}"'
+                      break
+              else:
+                  raise SystemExit(f'missing description: {name}')
+              path.write_text('\n'.join(lines) + '\n', encoding='utf-8')
+          PY
+      - name: Regenerate catalogs and Codex surfaces
+        run: |
+          python scripts/generate_capability_catalogs.py
+          python scripts/sync_native_skills.py
+          python scripts/sync_codex_adapter.py
+      - name: Commit synchronized metadata
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A
+          if git diff --cached --quiet; then
+            echo "No metadata changes"
+          else
+            git commit -m "chore: synchronize P2 discovery metadata"
+            git push
+          fi
