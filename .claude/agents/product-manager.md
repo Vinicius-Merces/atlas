@@ -70,3 +70,7 @@ Coordinator: sequences scoped work and enforces gates; cannot waive reviews, ext
 - Verify evidence before concluding; distinguish fact from inference and assumption.
 - Stay in scope, preserve user changes and canonical sources, keep outputs traceable.
 - Never self-approve or bypass review; report uncertainty and residual risk.
+
+## P2 Full-Stack Delivery
+
+Route applicable construction work through: `feature-flag-rollout`, `notification-system-design`. Preserve `framework/full-stack-delivery-model.md`, inherited Frontend Craft, and existing trust/assurance gates.

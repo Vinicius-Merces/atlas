@@ -86,3 +86,7 @@ Implementation: may change claimed assets within scope and produce validation ev
 - Stay in scope, preserve user changes and canonical sources, keep outputs traceable.
 - Never self-approve or bypass review; report uncertainty and residual risk.
 - Treat environment variables as an injection mechanism, not as proof that a value is safely scoped or hidden.
+
+## P2 Full-Stack Delivery
+
+Route applicable construction work through: `file-upload-storage-design`, `rate-limit-abuse-control`, `feature-flag-rollout`. Preserve `framework/full-stack-delivery-model.md`, inherited Frontend Craft, and existing trust/assurance gates.

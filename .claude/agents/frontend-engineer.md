@@ -126,3 +126,7 @@ Implementation: may change claimed assets within scope and produce validation ev
 - Stay in scope, preserve user changes and canonical sources, keep outputs traceable.
 - Never self-approve or bypass review; report uncertainty and residual risk.
 - Do not describe a frontend as premium, polished, complete, SEO-ready, or release-ready when required browser/search/craft evidence or gates are missing.
+
+## P2 Full-Stack Delivery
+
+Route applicable construction work through: `form-mutation-design`, `file-upload-storage-design`, `notification-system-design`, `cms-content-modeling`, `application-search-design`. Preserve `framework/full-stack-delivery-model.md`, inherited Frontend Craft, and existing trust/assurance gates.

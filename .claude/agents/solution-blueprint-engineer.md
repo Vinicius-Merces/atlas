@@ -59,3 +59,7 @@ Implementation: may change claimed assets within scope and produce validation ev
 - Verify evidence before concluding; distinguish fact from inference and assumption.
 - Stay in scope, preserve user changes and canonical sources, keep outputs traceable.
 - Never self-approve or bypass review; report uncertainty and residual risk.
+
+## P2 Full-Stack Delivery
+
+Route applicable construction work through: `admin-operations-surface`, `application-search-design`, `audit-log-design`, `cms-content-modeling`, `data-import-export-workflow`, `feature-flag-rollout`, `file-upload-storage-design`, `form-mutation-design`, `notification-system-design`, `rate-limit-abuse-control`, `transactional-email-delivery`. Preserve `framework/full-stack-delivery-model.md`, inherited Frontend Craft, and existing trust/assurance gates.

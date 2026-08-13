@@ -4,7 +4,7 @@ Canonical, generated inventory of every skill under `.claude/skills/<skill-name>
 
 Regenerate both capability catalogs with `python scripts/generate_capability_catalogs.py`. Use `--check` in validation and CI.
 
-Total: 117 skills.
+Total: 128 skills.
 
 ## Accessibility Audit
 
@@ -13,6 +13,10 @@ Total: 117 skills.
 ## Adapter Drift Detection
 
 `adapter-drift-detection`. Detect divergence between a supported runtime adapter and canonical ATLAS.
+
+## Admin Operations Surface
+
+`admin-operations-surface`. Design privileged admin/support surfaces with least-privilege roles, explicit tenant context, safe search, impersonation controls, dangerous-action confirmation, audit evidence, and break-glass access.
 
 ## ADR Authoring
 
@@ -34,6 +38,10 @@ Total: 117 skills.
 
 `api-contract-analysis`. Assess API compatibility and identify migration risks.
 
+## Application Search Design
+
+`application-search-design`. Design product/content search with source-of-truth fields, query semantics, ranking, filters, pagination, indexing, authorization, tenant scope, freshness, failure states, and database-versus-search-engine tradeoffs.
+
 ## Architecture Assessment
 
 `architecture-assessment`. Evaluate whether a proposed change fits existing architecture and preserves clear boundaries.
@@ -49,6 +57,10 @@ Total: 117 skills.
 ## Audit Bundle Assembly
 
 `audit-bundle-assembly`. Assemble a navigable manifest of evidence for a task, release, or deployment.
+
+## Audit Log Design
+
+`audit-log-design`. Design audit logs for consequential actions with actor, tenant, resource, action/result, correlation, sensitive-data minimization, integrity expectations, retention, access control, export, and investigation usability.
 
 ## Authentication Flow Review
 
@@ -81,6 +93,10 @@ Total: 117 skills.
 ## Cloud Cost Analysis
 
 `cloud-cost-analysis`. Analyze cloud or platform spending and identify evidence-based optimization opportunities.
+
+## Cms Content Modeling
+
+`cms-content-modeling`. Design CMS content models and editorial workflows with structured types, slugs, drafts, preview, localization, media, publishing lifecycle, references, SEO fields, migrations, and frontend rendering contracts.
 
 ## Codex Runtime Generation
 
@@ -138,6 +154,10 @@ Total: 117 skills.
 
 `core-contract-stabilization`. Evaluate whether a contract is stable enough for a beta support commitment.
 
+## Data Import Export Workflow
+
+`data-import-export-workflow`. Design bulk data import/export with authorization, schema mapping, preview, validation, partial errors, idempotency, background processing, progress, large-file handling, privacy, and secure artifact lifecycle.
+
 ## Database Migration Analysis
 
 `database-migration-analysis`. Assess schema and data migrations for integrity, compatibility, and operational risk.
@@ -193,6 +213,18 @@ Total: 117 skills.
 ## External API Resilience Review
 
 `external-api-resilience-review`. Review third-party API integrations when timeouts, retries, rate limits, pagination, versioning, partial failures, provider outages, or fallback behavior can affect production reliability.
+
+## Feature Flag Rollout
+
+`feature-flag-rollout`. Design feature flags and staged rollouts by environment, user, tenant, cohort, percentage, or kill switch with trusted evaluation context, safe defaults, metrics, rollback, lifecycle ownership, and flag removal.
+
+## File Upload Storage Design
+
+`file-upload-storage-design`. Design file upload and object-storage flows with ownership, authorization, signed access, type/size validation, safe object keys, integrity, processing, retention, deletion, and tenant isolation.
+
+## Form Mutation Design
+
+`form-mutation-design`. Design user-initiated forms and state mutations with server validation, authorization, duplicate-submit safety, concurrency, optimistic UI, failure recovery, revalidation, and accessible feedback.
 
 ## Framework Package Validation
 
@@ -266,6 +298,10 @@ Total: 117 skills.
 
 `motion-choreography`. Design and implement purposeful UI motion when a frontend needs transitions, gestures, scroll choreography, or timelines, selecting CSS, Motion, or GSAP by interaction semantics.
 
+## Notification System Design
+
+`notification-system-design`. Design in-app, push, email, or provider notifications with trusted recipient rules, preferences, deduplication, urgency, read state, fan-out, retries, quieting, and accessible notification-center UX.
+
 ## Observability Design
 
 `observability-design`. Design logs, metrics, traces, dashboards, and alerts for a feature or service.
@@ -317,6 +353,10 @@ Total: 117 skills.
 ## RAG Architecture Assessment
 
 `rag-architecture-assessment`. Evaluate retrieval-augmented generation architecture for grounding, security, freshness, quality, latency, and cost.
+
+## Rate Limit Abuse Control
+
+`rate-limit-abuse-control`. Design abuse and resource controls for public or expensive operations using actor-aware rate/concurrency limits, payload bounds, OTP/recovery protections, provider-spend controls, bypass policy, and observability.
 
 ## Reference Implementation Review
 
@@ -445,6 +485,10 @@ Total: 117 skills.
 ## Threat Modeling
 
 `threat-modeling`. Identify threats and controls for a system, feature, integration, or data flow.
+
+## Transactional Email Delivery
+
+`transactional-email-delivery`. Design transactional email for verification, recovery, invitations, receipts, and alerts with authoritative triggers, safe templates, idempotent retries, suppression, security, observability, and reconciliation.
 
 ## Universal Runtime Contract Design
 

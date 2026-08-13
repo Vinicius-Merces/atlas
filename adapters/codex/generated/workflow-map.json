@@ -607,6 +607,15 @@
       "version": "0.1.1"
     },
     {
+      "canonical_name": "saas-from-brief-delivery",
+      "canonical_path": ".claude/workflows/saas-from-brief-delivery.md",
+      "adapter_path": "adapters/codex/catalogs/workflows.md",
+      "parity_type": "canonical-reference",
+      "status": "mapped",
+      "notes": "Resolved through the generated catalog to the canonical source.",
+      "version": "0.1.1"
+    },
+    {
       "canonical_name": "saas-production-readiness",
       "canonical_path": ".claude/workflows/saas-production-readiness.md",
       "adapter_path": "adapters/codex/catalogs/workflows.md",
@@ -636,6 +645,15 @@
     {
       "canonical_name": "shared-state-protection",
       "canonical_path": ".claude/workflows/shared-state-protection.md",
+      "adapter_path": "adapters/codex/catalogs/workflows.md",
+      "parity_type": "canonical-reference",
+      "status": "mapped",
+      "notes": "Resolved through the generated catalog to the canonical source.",
+      "version": "0.1.1"
+    },
+    {
+      "canonical_name": "site-from-brief-delivery",
+      "canonical_path": ".claude/workflows/site-from-brief-delivery.md",
       "adapter_path": "adapters/codex/catalogs/workflows.md",
       "parity_type": "canonical-reference",
       "status": "mapped",
