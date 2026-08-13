@@ -78,10 +78,10 @@
     {
       "canonical_name": "bug-fix",
       "canonical_path": ".claude/workflows/bug-fix.md",
-      "adapter_path": "adapters/codex/workflows/bug-fix.md",
-      "parity_type": "runtime-native",
-      "status": "native",
-      "notes": "Codex-native entry point.",
+      "adapter_path": "adapters/codex/catalogs/workflows.md",
+      "parity_type": "canonical-reference",
+      "status": "mapped",
+      "notes": "Resolved through the generated catalog to the canonical source.",
       "version": "0.1.1"
     },
     {
@@ -258,10 +258,10 @@
     {
       "canonical_name": "feature-delivery",
       "canonical_path": ".claude/workflows/feature-delivery.md",
-      "adapter_path": "adapters/codex/workflows/feature-delivery.md",
-      "parity_type": "runtime-native",
-      "status": "native",
-      "notes": "Codex-native entry point.",
+      "adapter_path": "adapters/codex/catalogs/workflows.md",
+      "parity_type": "canonical-reference",
+      "status": "mapped",
+      "notes": "Resolved through the generated catalog to the canonical source.",
       "version": "0.1.1"
     },
     {
@@ -285,6 +285,15 @@
     {
       "canonical_name": "framework-upgrade",
       "canonical_path": ".claude/workflows/framework-upgrade.md",
+      "adapter_path": "adapters/codex/catalogs/workflows.md",
+      "parity_type": "canonical-reference",
+      "status": "mapped",
+      "notes": "Resolved through the generated catalog to the canonical source.",
+      "version": "0.1.1"
+    },
+    {
+      "canonical_name": "frontend-feature-delivery",
+      "canonical_path": ".claude/workflows/frontend-feature-delivery.md",
       "adapter_path": "adapters/codex/catalogs/workflows.md",
       "parity_type": "canonical-reference",
       "status": "mapped",
@@ -492,10 +501,10 @@
     {
       "canonical_name": "release",
       "canonical_path": ".claude/workflows/release.md",
-      "adapter_path": "adapters/codex/workflows/release.md",
-      "parity_type": "runtime-native",
-      "status": "native",
-      "notes": "Codex-native entry point.",
+      "adapter_path": "adapters/codex/catalogs/workflows.md",
+      "parity_type": "canonical-reference",
+      "status": "mapped",
+      "notes": "Resolved through the generated catalog to the canonical source.",
       "version": "0.1.1"
     },
     {
