@@ -130,6 +130,7 @@
     "finops-optimization",
     "framework-adoption",
     "framework-upgrade",
+    "frontend-feature-delivery",
     "incident-response",
     "integration-onboarding",
     "interrupted-task-recovery",
@@ -213,10 +214,14 @@
     "execution-checkpointing",
     "experiment-design",
     "framework-package-validation",
+    "frontend-craft-review",
+    "frontend-stack-selection",
+    "immersive-3d-experience",
     "incident-triage",
     "incremental-patch-verification",
     "infrastructure-change-assessment",
     "integration-contract-mapping",
+    "interface-visual-direction",
     "knowledge-graph-synthesis",
     "localization-readiness-assessment",
     "manual-deployment-preflight",
@@ -225,6 +230,7 @@
     "memory-freshness-audit",
     "memory-update-proposal",
     "mobile-architecture-assessment",
+    "motion-choreography",
     "observability-design",
     "performance-budget-analysis",
     "policy-as-code-design",
@@ -243,6 +249,7 @@
     "release-integrity-verification",
     "repository-mapping",
     "resource-claim-design",
+    "responsive-layout-audit",
     "result-reconciliation",
     "resume-packet-assembly",
     "runtime-adapter-mapping",
@@ -263,6 +270,8 @@
     "universal-runtime-contract-design",
     "version-migration-planning",
     "version-transition-validation",
+    "visual-regression-review",
+    "web-performance-field-readiness",
     "workstream-decomposition"
   ],
   "reviews": [
@@ -291,6 +300,7 @@
     "evidence-integrity-review",
     "execution-planning-review",
     "finops-review",
+    "frontend-craft-review",
     "governance-review",
     "integration-review",
     "knowledge-review",
@@ -426,7 +436,8 @@
   "experience": {
     "product_operating_model": "framework/product-operating-model.md",
     "analytics_model": "framework/analytics-model.md",
-    "design_system_model": "framework/design-system-model.md"
+    "design_system_model": "framework/design-system-model.md",
+    "frontend_craft_model": "framework/frontend-craft-model.md"
   },
   "platform": {
     "platform_model": "framework/platform-model.md",
