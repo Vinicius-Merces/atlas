@@ -31,13 +31,14 @@ Measure the complete registered skill and agent catalog, identify quality/routin
 
 ## Required lifecycle
 
-1. Understand what changed in the capability surface.
-2. Measure the complete canonical inventory.
-3. Inspect outliers and collisions.
-4. Correct defects without gaming metrics.
-5. Re-run deterministic measurements.
-6. Review independently.
-7. Record baseline and residual limitations.
+1. **Understand** - Identify what changed in the capability surface and why measurement is needed.
+2. **Inspect** - Read registry, taxonomy, contracts, skill/agent files, fixtures, and prior baseline.
+3. **Plan** - Define measurement scope, comparison baseline, manual review targets, and blocking criteria.
+4. **Execute** - Run the deterministic skill-quality, routing, and agent-overlap evaluators.
+5. **Validate** - Confirm counts, determinism, fixture validity, and outlier evidence.
+6. **Review** - Complete independent capability-quality review and inspect top collisions manually.
+7. **Document** - Record baseline metrics, limitations, accepted adjacency, and remediation decisions.
+8. **Deliver** - Report whether catalog expansion is Approved, Approved with conditions, Changes required, or Blocked.
 
 ## Responsible agents
 
@@ -46,6 +47,14 @@ Measure the complete registered skill and agent catalog, identify quality/routin
 - `orchestrator`: owns agent-boundary and catalog-shape decisions.
 - `runtime-catalog-maintainer`: consulted when generated discovery surfaces are affected.
 - independent reviewer: verifies the measurement claims and interpretation.
+
+## Decision points
+
+- Are low scores structural defects or merely diagnostic improvement opportunities?
+- Does a routing miss reflect weak discovery metadata, a deliberately different trigger vocabulary, or a limitation of the lexical proxy?
+- Is a high-similarity skill pair actually redundant or intentionally adjacent?
+- Does a proposed new agent own a durable outcome that cannot be represented by an existing agent plus a new skill?
+- Is the current baseline strong enough to admit the next capability pack without increasing unresolved ambiguity?
 
 ## Validation
 
