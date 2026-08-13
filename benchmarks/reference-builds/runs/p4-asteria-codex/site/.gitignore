@@ -1,0 +1,5 @@
+data/leads.json
+data/analytics.jsonl
+data/*.tmp
+reports/
+
