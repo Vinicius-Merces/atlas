@@ -5,7 +5,7 @@
 > repeatable workflows, governance contracts, frontend craft standards, and
 > verifiable continuity.
 
-**Version:** `0.1.1`  
+**Version:** `0.1.1`
 **Status:** Stable · **License:** MIT
 
 [Installation](docs/installation.md) ·
