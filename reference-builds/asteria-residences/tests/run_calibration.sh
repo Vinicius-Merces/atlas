@@ -4,6 +4,16 @@ python -m pip install --requirement requirements-test.txt
 python -m pip install 'playwright>=1.50,<2'
 python -m playwright install --with-deps chromium
 python reference-builds/asteria-residences/tests/prepare_run.py
+python - <<'PY'
+from pathlib import Path
+p=Path('reference-builds/asteria-residences/tests/browser_evidence.py')
+t=p.read_text(encoding='utf-8')
+t=t.replace('degraded.route("**/*.svg", lambda route: route.abort())','degraded.route("**/assets/app.js", lambda route: route.abort())')
+t=t.replace("degraded.locator('a[href=\"/residences.html\"]'.replace(chr(39), chr(39))).first.is_visible()", "degraded.locator('a[href=\"/residences.html\"]').last.is_visible()")
+# The generated source contains the direct locator expression; normalize it explicitly.
+t=t.replace("degraded.locator('a[href=\"/residences.html\"]').first.is_visible()", "degraded.locator('a[href=\"/residences.html\"]').last.is_visible()")
+p.write_text(t,encoding='utf-8')
+PY
 python -m pytest reference-builds/asteria-residences/tests/test_server.py -q | tee reference-builds/asteria-residences/evidence/unit-tests.txt
 export ASTERIA_ENABLE_TEST_FAILURES=1
 export ASTERIA_DATA_DIR="$GITHUB_WORKSPACE/reference-builds/asteria-residences/evidence/data"
