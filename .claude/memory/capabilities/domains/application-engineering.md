@@ -1,7 +1,7 @@
 ---
 atlas_type: agent-domain
 domain: application-engineering
-purpose: Implement and evolve application code while preserving contracts, dependencies, tests, and maintainability.
+purpose: Implement and evolve application code while preserving contracts, dependencies, tests, maintainability, and provider reliability.
 agents:
   - frontend-engineer
   - backend-engineer
@@ -17,6 +17,9 @@ principal_skills:
   - dependency-impact-analysis
   - regression-risk-analysis
   - test-strategy-design
+  - webhook-reliability-review
+  - payment-integration-review
+  - external-api-resilience-review
 ---
 # Application Engineering
 
