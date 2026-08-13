@@ -1,0 +1,195 @@
+version: 1
+id: internal-operations-system
+title: Northstar Desk — Internal Operations System
+execution_workflow: saas-from-brief-delivery
+blueprint: internal-admin-tool
+brief:
+  organization: Northstar Desk
+  product: A fictional internal service-operations system for teams that receive requests,
+    schedule work, assign owners, track SLAs, communicate status, and export operational
+    data.
+  audience: Service coordinators, technicians, team leads, and administrators using the
+    product for hours each day.
+  goal: Prove ATLAS can build dense, efficient operational software with safe privileged
+    actions and excellent information design, not only visually dramatic public sites.
+  required_surfaces:
+  - Role-aware operations dashboard and queue
+  - Dense request/ticket table with sorting, filtering, search, saved views, and pagination
+  - Request detail with activity history and status/owner transitions
+  - Kanban or equivalent workflow view
+  - Create/edit forms with validation, conflicts, and keyboard-friendly behavior
+  - Bulk actions and CSV import/export
+  - Notification/reminder path
+  - Audit trail and administrative configuration
+  - Destructive/privileged action confirmation and recovery policy
+  constraints:
+  - Optimize for repeated daily use, scanability, keyboard efficiency, and information
+    density.
+  - Do not imitate a marketing dashboard with oversized decorative cards and low data
+    density.
+  - Privileged/destructive actions must be permissioned, confirmed, and auditable.
+  - Bulk actions must report partial failures rather than silently applying inconsistent
+    state.
+  - Mobile may simplify dense views but must preserve critical triage/update workflows.
+required_capabilities:
+- form-mutation-design
+- application-search-design
+- notification-system-design
+- audit-log-design
+- admin-operations-surface
+- data-import-export-workflow
+- rate-limit-abuse-control
+- database-schema-review
+- authorization-boundary-review
+- saas-multitenancy-review
+- background-job-reliability
+- cache-strategy-assessment
+- browser-flow-validation
+- responsive-layout-audit
+- accessibility-audit
+- visual-regression-review
+- web-performance-field-readiness
+- frontend-craft-review
+axes:
+  brief_fidelity:
+    weight: 8
+    checks:
+    - id: ops-daily-work
+      description: The product prioritizes repeated operational work, scanability, and
+        fast triage/update flows.
+    - id: ops-required-surfaces
+      description: Queue, table, detail, workflow view, forms, bulk operations, notifications,
+        audit, and admin surfaces exist.
+    - id: ops-no-marketing-shell
+      description: Dense operational requirements are not replaced by decorative dashboard
+        placeholders.
+  architecture_quality:
+    weight: 10
+    checks:
+    - id: ops-domain-invariants
+      description: Request, owner, status, SLA, activity, notification, and audit state
+        transitions have explicit invariants.
+    - id: ops-query-model
+      description: Search/filter/sort/pagination and saved-view behavior matches indexes/data
+        shape and scale assumptions.
+    - id: ops-bulk-architecture
+      description: Bulk import/export/action processing has bounded, resumable, observable
+        failure semantics.
+  capability_routing:
+    weight: 8
+    checks:
+    - id: ops-routing-primitives
+      description: Forms, search, notifications, audit, admin, import/export, jobs, cache,
+        and authz capabilities are routed where applicable.
+    - id: ops-routing-frontend
+      description: Frontend Craft is interpreted for dense operational UX rather than
+        decorative motion.
+    - id: ops-routing-no-agent-inflation
+      description: Existing durable agents own the work without creating procedural personas.
+  implementation_completeness:
+    weight: 16
+    checks:
+    - id: ops-table-complete
+      description: Dense table supports required sorting, filtering, search, saved views,
+        pagination, and meaningful empty/loading/error states.
+    - id: ops-detail-transition
+      description: Request detail activity plus owner/status transitions persist authoritative
+        state and conflicts are handled.
+    - id: ops-workflow-view
+      description: Kanban/equivalent workflow view updates the same authoritative state
+        without divergence.
+    - id: ops-bulk-complete
+      description: Bulk actions/import/export report progress and partial failures safely.
+    - id: ops-notify-audit-admin
+      description: Notifications/reminders, audit history, and admin configuration are
+        implemented.
+  frontend_craft:
+    weight: 16
+    checks:
+    - id: ops-density-hierarchy
+      description: Information density, typography, spacing, status encoding, and hierarchy
+        support fast scanning.
+    - id: ops-keyboard-efficiency
+      description: Frequent table/form/dialog workflows are keyboard-operable with predictable
+        focus.
+    - id: ops-responsive
+      description: Critical triage/update workflows remain usable on phone/tablet while
+        desktop retains dense efficiency.
+    - id: ops-state-design
+      description: Loading, empty, validation, conflict, partial failure, destructive
+        confirmation, and success states are deliberate.
+    - id: ops-visual-consistency
+      description: Tables, filters, forms, activity, Kanban, and admin use a coherent product
+        design system.
+  security_isolation:
+    weight: 14
+    checks:
+    - id: ops-role-permissions
+      description: Coordinator, technician, lead, and admin action boundaries are negatively
+        tested.
+    - id: ops-privileged-actions
+      description: Administrative and destructive operations require explicit authorization
+        and safe confirmation.
+    - id: ops-audit-coverage
+      description: Consequential privileged/bulk/state-changing operations produce useful
+        audit evidence.
+    - id: ops-export-scope
+      description: Export/bulk selection cannot escape authorized resource scope.
+    - id: ops-impersonation-breakglass
+      description: Any impersonation or emergency access path is explicit, bounded, and
+        auditable or intentionally absent.
+  failure_resilience:
+    weight: 10
+    checks:
+    - id: ops-conflict-duplicate
+      description: Concurrent edits and duplicate submits/actions do not silently corrupt
+        state.
+    - id: ops-bulk-partial
+      description: Bulk operations expose partial failures and safe retry/reconciliation.
+    - id: ops-job-notification-retry
+      description: Background notification/reminder work handles retry/duplicate/failure
+        visibly.
+    - id: ops-stale-view
+      description: Saved/filter/cache state cannot silently authorize or display revoked
+        resources.
+  browser_reality:
+    weight: 8
+    checks:
+    - id: ops-browser-triage
+      description: Real-browser evidence covers queue/table filter/search to detail update
+        workflow.
+    - id: ops-browser-bulk
+      description: Real-browser evidence covers a bulk or import/export flow including
+        partial/error behavior.
+    - id: ops-browser-responsive-keyboard
+      description: Representative responsive and keyboard interactions are exercised
+        in the browser.
+  production_readiness:
+    weight: 5
+    checks:
+    - id: ops-production-config
+      description: Deployment/environment/database migration and secret configuration
+        are reproducible.
+    - id: ops-observability
+      description: Failed jobs, bulk operations, privileged actions, and critical errors
+        are diagnosable.
+    - id: ops-performance
+      description: Dense list/search/filter interactions remain responsive at representative
+        data volume.
+  independent_review:
+    weight: 5
+    checks:
+    - id: ops-review-ux
+      description: Independent reviewer inspects density, accessibility, keyboard, responsive,
+        and workflow evidence.
+    - id: ops-review-safety
+      description: Independent reviewer inspects permission, destructive, audit, bulk-failure,
+        and benchmark evidence.
+blocking_checks:
+- ops-table-complete
+- ops-detail-transition
+- ops-role-permissions
+- ops-privileged-actions
+- ops-audit-coverage
+- ops-browser-triage
+- ops-production-config

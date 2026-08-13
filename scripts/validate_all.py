@@ -175,6 +175,12 @@ def quick_steps(root: Path) -> list[ValidationStep]:
         ),
         _python_step(
             root,
+            "reference-build-benchmark-pack",
+            "Validate P3 reference build benchmark pack",
+            "validate_reference_build_benchmark_pack.py",
+        ),
+        _python_step(
+            root,
             "capability-catalogs",
             "Check agent and skill catalogs",
             "generate_capability_catalogs.py",

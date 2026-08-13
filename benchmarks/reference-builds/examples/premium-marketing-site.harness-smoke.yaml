@@ -1,0 +1,182 @@
+benchmark_version: 1
+spec_id: premium-marketing-site
+execution_mode: harness-smoke
+run:
+  runtime: benchmark-harness
+  model: none
+  repository: synthetic://harness/repository
+  commit: synthetic://harness/commit
+  evidence_root: synthetic://harness/premium-marketing-site
+  environment_notes: Scorer smoke fixture only.
+review:
+  reviewer: benchmark-harness
+  outcome: Approved
+  evidence:
+  - synthetic://harness/premium-marketing-site/review
+  notes: Validates review/outcome plumbing only.
+checks:
+- id: marketing-audience-outcome
+  status: pass
+  evidence:
+  - synthetic://harness/premium-marketing-site/marketing-audience-outcome
+  notes: Synthetic harness evidence; never a live product claim.
+- id: marketing-required-surfaces
+  status: pass
+  evidence:
+  - synthetic://harness/premium-marketing-site/marketing-required-surfaces
+  notes: Synthetic harness evidence; never a live product claim.
+- id: marketing-prohibited-shortcuts
+  status: pass
+  evidence:
+  - synthetic://harness/premium-marketing-site/marketing-prohibited-shortcuts
+  notes: Synthetic harness evidence; never a live product claim.
+- id: marketing-content-authority
+  status: pass
+  evidence:
+  - synthetic://harness/premium-marketing-site/marketing-content-authority
+  notes: Synthetic harness evidence; never a live product claim.
+- id: marketing-conversion-authority
+  status: pass
+  evidence:
+  - synthetic://harness/premium-marketing-site/marketing-conversion-authority
+  notes: Synthetic harness evidence; never a live product claim.
+- id: marketing-stack-fit
+  status: pass
+  evidence:
+  - synthetic://harness/premium-marketing-site/marketing-stack-fit
+  notes: Synthetic harness evidence; never a live product claim.
+- id: marketing-routing-core
+  status: pass
+  evidence:
+  - synthetic://harness/premium-marketing-site/marketing-routing-core
+  notes: Synthetic harness evidence; never a live product claim.
+- id: marketing-routing-public-web
+  status: pass
+  evidence:
+  - synthetic://harness/premium-marketing-site/marketing-routing-public-web
+  notes: Synthetic harness evidence; never a live product claim.
+- id: marketing-routing-no-theater
+  status: pass
+  evidence:
+  - synthetic://harness/premium-marketing-site/marketing-routing-no-theater
+  notes: Synthetic harness evidence; never a live product claim.
+- id: marketing-navigation-complete
+  status: pass
+  evidence:
+  - synthetic://harness/premium-marketing-site/marketing-navigation-complete
+  notes: Synthetic harness evidence; never a live product claim.
+- id: marketing-lead-authoritative
+  status: pass
+  evidence:
+  - synthetic://harness/premium-marketing-site/marketing-lead-authoritative
+  notes: Synthetic harness evidence; never a live product claim.
+- id: marketing-content-complete
+  status: pass
+  evidence:
+  - synthetic://harness/premium-marketing-site/marketing-content-complete
+  notes: Synthetic harness evidence; never a live product claim.
+- id: marketing-states-complete
+  status: pass
+  evidence:
+  - synthetic://harness/premium-marketing-site/marketing-states-complete
+  notes: Synthetic harness evidence; never a live product claim.
+- id: marketing-visual-thesis
+  status: pass
+  evidence:
+  - synthetic://harness/premium-marketing-site/marketing-visual-thesis
+  notes: Synthetic harness evidence; never a live product claim.
+- id: marketing-responsive
+  status: pass
+  evidence:
+  - synthetic://harness/premium-marketing-site/marketing-responsive
+  notes: Synthetic harness evidence; never a live product claim.
+- id: marketing-accessibility
+  status: pass
+  evidence:
+  - synthetic://harness/premium-marketing-site/marketing-accessibility
+  notes: Synthetic harness evidence; never a live product claim.
+- id: marketing-motion-purpose
+  status: pass
+  evidence:
+  - synthetic://harness/premium-marketing-site/marketing-motion-purpose
+  notes: Synthetic harness evidence; never a live product claim.
+- id: marketing-visual-regression
+  status: pass
+  evidence:
+  - synthetic://harness/premium-marketing-site/marketing-visual-regression
+  notes: Synthetic harness evidence; never a live product claim.
+- id: marketing-form-security
+  status: pass
+  evidence:
+  - synthetic://harness/premium-marketing-site/marketing-form-security
+  notes: Synthetic harness evidence; never a live product claim.
+- id: marketing-private-data
+  status: pass
+  evidence:
+  - synthetic://harness/premium-marketing-site/marketing-private-data
+  notes: Synthetic harness evidence; never a live product claim.
+- id: marketing-provider-failure
+  status: pass
+  evidence:
+  - synthetic://harness/premium-marketing-site/marketing-provider-failure
+  notes: Synthetic harness evidence; never a live product claim.
+- id: marketing-duplicate-submit
+  status: pass
+  evidence:
+  - synthetic://harness/premium-marketing-site/marketing-duplicate-submit
+  notes: Synthetic harness evidence; never a live product claim.
+- id: marketing-degraded-assets
+  status: pass
+  evidence:
+  - synthetic://harness/premium-marketing-site/marketing-degraded-assets
+  notes: Synthetic harness evidence; never a live product claim.
+- id: marketing-browser-primary-flow
+  status: pass
+  evidence:
+  - synthetic://harness/premium-marketing-site/marketing-browser-primary-flow
+  notes: Synthetic harness evidence; never a live product claim.
+- id: marketing-browser-negative-flow
+  status: pass
+  evidence:
+  - synthetic://harness/premium-marketing-site/marketing-browser-negative-flow
+  notes: Synthetic harness evidence; never a live product claim.
+- id: marketing-browser-console-network
+  status: pass
+  evidence:
+  - synthetic://harness/premium-marketing-site/marketing-browser-console-network
+  notes: Synthetic harness evidence; never a live product claim.
+- id: marketing-production-domain
+  status: pass
+  evidence:
+  - synthetic://harness/premium-marketing-site/marketing-production-domain
+  notes: Synthetic harness evidence; never a live product claim.
+- id: marketing-seo-indexing
+  status: pass
+  evidence:
+  - synthetic://harness/premium-marketing-site/marketing-seo-indexing
+  notes: Synthetic harness evidence; never a live product claim.
+- id: marketing-structured-data
+  status: pass
+  evidence:
+  - synthetic://harness/premium-marketing-site/marketing-structured-data
+  notes: Synthetic harness evidence; never a live product claim.
+- id: marketing-performance
+  status: pass
+  evidence:
+  - synthetic://harness/premium-marketing-site/marketing-performance
+  notes: Synthetic harness evidence; never a live product claim.
+- id: marketing-analytics
+  status: pass
+  evidence:
+  - synthetic://harness/premium-marketing-site/marketing-analytics
+  notes: Synthetic harness evidence; never a live product claim.
+- id: marketing-review-frontend
+  status: pass
+  evidence:
+  - synthetic://harness/premium-marketing-site/marketing-review-frontend
+  notes: Synthetic harness evidence; never a live product claim.
+- id: marketing-review-production
+  status: pass
+  evidence:
+  - synthetic://harness/premium-marketing-site/marketing-review-production
+  notes: Synthetic harness evidence; never a live product claim.

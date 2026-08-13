@@ -1,0 +1,211 @@
+version: 1
+id: multitenant-subscription-saas
+title: RelayOps — Multi-Tenant Subscription SaaS
+execution_workflow: saas-from-brief-delivery
+blueprint: subscription-saas
+brief:
+  organization: RelayOps
+  product: A fictional B2B field-service SaaS for service companies to manage customers,
+    work orders, technicians, files, notifications, and subscription access.
+  audience: Operations managers, dispatchers, technicians, billing administrators, and
+    support staff working across isolated customer organizations.
+  goal: Deliver a credible production SaaS where tenant isolation, operational reliability,
+    billing/entitlements, and efficient application UX are first-class.
+  required_surfaces:
+  - Organization/account creation or invitation and authenticated session lifecycle
+  - Role-aware dashboard for managers/dispatchers/technicians
+  - Customer and work-order CRUD with status transitions
+  - Tenant-safe file attachment flow
+  - Search/filtering for customers and work orders
+  - Transactional email and in-app notification path
+  - Subscription checkout/billing state and entitlement enforcement
+  - Background processing path with retry/recovery
+  - Audit log and privileged support/admin surface
+  - CSV import/export for a material entity
+  constraints:
+  - Tenant isolation must extend beyond database rows to files, search, cache, queues,
+    notifications, exports, and admin tooling.
+  - Billing provider state is not the sole application entitlement authority without
+    reconciliation.
+  - Privileged support actions require explicit tenant context and audit evidence.
+  - Dashboard UI must prioritize operational clarity and responsive product craft, not
+    marketing-page theatrics.
+  - No service-role or privileged secret may be exposed to the browser.
+required_capabilities:
+- database-schema-review
+- authentication-flow-review
+- authorization-boundary-review
+- saas-multitenancy-review
+- row-level-security-review
+- secret-environment-audit
+- form-mutation-design
+- file-upload-storage-design
+- application-search-design
+- transactional-email-delivery
+- notification-system-design
+- rate-limit-abuse-control
+- audit-log-design
+- admin-operations-surface
+- data-import-export-workflow
+- background-job-reliability
+- cache-strategy-assessment
+- payment-integration-review
+- webhook-reliability-review
+- external-api-resilience-review
+- browser-flow-validation
+- responsive-layout-audit
+- accessibility-audit
+- web-performance-field-readiness
+- supply-chain-risk-audit
+- frontend-craft-review
+axes:
+  brief_fidelity:
+    weight: 7
+    checks:
+    - id: saas-personas-workflows
+      description: Manager, dispatcher, technician, billing, and support responsibilities
+        are reflected in real workflows.
+    - id: saas-required-surfaces
+      description: All fixture-required SaaS surfaces exist without placeholder-only
+        implementations.
+    - id: saas-operational-goal
+      description: The product supports realistic service operations rather than a dashboard
+        shell.
+  architecture_quality:
+    weight: 13
+    checks:
+    - id: saas-domain-model
+      description: Organizations, users, roles, customers, work orders, attachments,
+        billing, and events have explicit authoritative models.
+    - id: saas-tenant-propagation
+      description: Tenant identity propagation and enforcement are defined across database,
+        storage, search, cache, jobs, notifications, exports, and admin.
+    - id: saas-distributed-state
+      description: Webhook/provider/job divergence has explicit idempotency, reconciliation,
+        retry, and recovery design.
+    - id: saas-migration-operability
+      description: Schema/migration and production configuration changes have safe rollout/rollback
+        considerations.
+  capability_routing:
+    weight: 8
+    checks:
+    - id: saas-routing-trust
+      description: Identity, authorization, tenancy/RLS, secret, payment, webhook, and
+        provider gates are routed.
+    - id: saas-routing-p2
+      description: Applicable P2 primitives are routed through existing responsibilities.
+    - id: saas-routing-quality
+      description: Frontend/browser/P1/release gates are composed without unnecessary
+        agent proliferation.
+  implementation_completeness:
+    weight: 13
+    checks:
+    - id: saas-auth-org-complete
+      description: Account/invitation/session and organization membership flow works end
+        to end.
+    - id: saas-work-order-complete
+      description: Customer/work-order CRUD and status transition flow persists authoritative
+        state.
+    - id: saas-files-search-notify
+      description: Tenant-safe files, search/filtering, and notification/email flow are
+        implemented.
+    - id: saas-billing-entitlement
+      description: Checkout/renewal/failure/cancellation or equivalent subscription state
+        drives reconciled entitlements.
+    - id: saas-admin-import-export
+      description: Audit/admin and CSV import/export workflows are usable end to end.
+  frontend_craft:
+    weight: 8
+    checks:
+    - id: saas-information-density
+      description: Dashboard, tables, filters, forms, detail views, and states have clear
+        operational hierarchy.
+    - id: saas-responsive
+      description: Core authenticated workflows remain usable on phone, tablet, and desktop.
+    - id: saas-accessibility
+      description: Keyboard, focus, semantics, errors, dialogs, tables, and status feedback
+        are accessible.
+    - id: saas-visual-authorship
+      description: Product UI is coherent and specific without generic AI-dashboard defaults.
+  security_isolation:
+    weight: 17
+    checks:
+    - id: saas-cross-tenant-database
+      description: Direct cross-tenant database/object access attempts are denied.
+    - id: saas-cross-tenant-storage
+      description: Cross-tenant attachment read/write attempts are denied.
+    - id: saas-cross-tenant-search
+      description: Search/filter indexes cannot leak another tenant's records.
+    - id: saas-cross-tenant-cache-job
+      description: Cache/job keys and execution context cannot cross tenant boundaries.
+    - id: saas-admin-privilege
+      description: Support/admin operations enforce least privilege, explicit tenant context,
+        and audited access.
+    - id: saas-secret-boundary
+      description: Privileged/provider secrets are absent from browser bundles and client-visible
+        logs.
+  failure_resilience:
+    weight: 12
+    checks:
+    - id: saas-duplicate-mutation-job
+      description: Duplicate user mutations and job delivery do not create uncontrolled
+        irreversible effects.
+    - id: saas-webhook-replay
+      description: Duplicate/replayed/out-of-order billing or integration webhooks reconcile
+        safely.
+    - id: saas-provider-outage
+      description: Email/payment/external provider outage has bounded retry/degradation/recovery
+        behavior.
+    - id: saas-stale-cache-entitlement
+      description: Revoked role/tenant/entitlement changes cannot remain incorrectly available
+        through stale caches.
+    - id: saas-import-partial-failure
+      description: Bulk import exposes row-level validation/partial failure and safe retry
+        semantics.
+  browser_reality:
+    weight: 7
+    checks:
+    - id: saas-browser-auth-flow
+      description: Real-browser evidence covers authentication/organization entry and
+        a primary protected workflow.
+    - id: saas-browser-operational-flow
+      description: Real-browser evidence covers customer/work-order mutation, search/filtering,
+        and relevant error states.
+    - id: saas-browser-console-network
+      description: Critical journeys show no unexplained runtime exceptions or unexpected
+        failed requests.
+  production_readiness:
+    weight: 10
+    checks:
+    - id: saas-production-config
+      description: Production deployment, migrations, environment/secrets, domain/HTTPS,
+        and provider configuration are verified.
+    - id: saas-observability
+      description: Consequential jobs/providers/billing/admin operations expose actionable
+        logs/correlation/metrics.
+    - id: saas-recovery
+      description: Backup/recovery or data-reconciliation procedures exist for authoritative
+        product state.
+    - id: saas-supply-chain
+      description: Changed dependencies/build inputs have supply-chain evidence.
+    - id: saas-performance
+      description: Representative authenticated flows meet reasonable latency/asset/runtime
+        expectations.
+  independent_review:
+    weight: 5
+    checks:
+    - id: saas-review-trust
+      description: Independent reviewer inspects tenant/security/billing negative evidence.
+    - id: saas-review-product
+      description: Independent reviewer inspects browser, frontend, completeness, and
+        benchmark truthfulness.
+blocking_checks:
+- saas-auth-org-complete
+- saas-billing-entitlement
+- saas-cross-tenant-database
+- saas-cross-tenant-storage
+- saas-cross-tenant-search
+- saas-admin-privilege
+- saas-secret-boundary
+- saas-browser-auth-flow
+- saas-production-config

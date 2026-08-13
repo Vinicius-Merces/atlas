@@ -154,6 +154,7 @@
     "project-state-reconciliation",
     "provenance-reconciliation",
     "refactoring",
+    "reference-build-benchmark",
     "reference-project-review",
     "release",
     "release-artifact",
@@ -365,6 +366,7 @@
     "project-memory-review",
     "provenance-review",
     "qa-review",
+    "reference-build-benchmark-review",
     "reference-implementation-review",
     "repository-review",
     "resource-claim-review",
@@ -516,7 +518,8 @@
     "web_production_assurance_model": "framework/web-production-assurance-model.md",
     "capability_evaluation_model": "framework/capability-evaluation-model.md",
     "production_product_quality_model": "framework/production-product-quality-model.md",
-    "full_stack_delivery_model": "framework/full-stack-delivery-model.md"
+    "full_stack_delivery_model": "framework/full-stack-delivery-model.md",
+    "reference_build_benchmark_model": "framework/reference-build-benchmark-model.md"
   },
   "stability": {
     "compatibility_model": "framework/compatibility-model.md",

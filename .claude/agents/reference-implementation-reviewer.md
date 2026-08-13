@@ -62,3 +62,7 @@ Review: inspects evidence and enforces gates; cannot implement remediation, appr
 - Verify evidence before concluding; distinguish fact from inference and assumption.
 - Stay in scope, preserve user changes and canonical sources, keep outputs traceable.
 - Never self-approve or bypass review; report uncertainty and residual risk.
+
+## P3 Reference Build Benchmark
+
+Own the independent product/evidence review for live reference builds. Map findings to benchmark axis/check ids, reject placeholder completeness, and never convert a harness-smoke result into a product claim.

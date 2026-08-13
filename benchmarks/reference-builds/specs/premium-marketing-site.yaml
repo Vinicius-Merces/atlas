@@ -1,0 +1,181 @@
+version: 1
+id: premium-marketing-site
+title: Asteria Residences — Premium Marketing Site
+execution_workflow: site-from-brief-delivery
+blueprint: premium-marketing-site
+brief:
+  organization: Asteria Residences
+  product: A fictional boutique residential development with twelve high-end homes near
+    a major urban center.
+  audience: Affluent buyers comparing premium properties on mobile and desktop who expect
+    trust, visual polish, concrete property information, and a low-friction contact journey.
+  goal: Generate qualified visits and broker conversations while establishing a premium,
+    credible brand that does not depend on generic luxury-site conventions.
+  required_surfaces:
+  - Distinctive responsive home page with visual thesis and clear value proposition
+  - Residences overview and at least one detail experience with factual structured content
+  - Location/lifestyle content section with internal navigation
+  - Editorial/news or guide content model
+  - Qualified contact/visit request form with authoritative submission state
+  - Privacy/contact/legal basics
+  constraints:
+  - Do not copy an existing luxury real-estate site or use placeholder lorem ipsum as final
+    content.
+  - Do not depend on autoplay background video for the primary value proposition.
+  - Motion or 3D must be justified by the visual thesis and preserve reduced-motion/mobile
+    performance.
+  - Public production routes must have explicit crawl/index/canonical behavior.
+  - A client-side success toast is not proof that a lead reached authoritative downstream
+    state.
+required_capabilities:
+- project-brief-synthesis
+- interface-visual-direction
+- frontend-stack-selection
+- form-mutation-design
+- cms-content-modeling
+- conversion-funnel-review
+- analytics-implementation-audit
+- responsive-layout-audit
+- accessibility-audit
+- visual-regression-review
+- browser-flow-validation
+- web-performance-field-readiness
+- seo-technical-audit
+- structured-data-validation
+- content-discoverability-review
+- supply-chain-risk-audit
+- frontend-craft-review
+axes:
+  brief_fidelity:
+    weight: 10
+    checks:
+    - id: marketing-audience-outcome
+      description: Rendered experience and copy visibly target the defined audience and
+        qualified-contact outcome.
+    - id: marketing-required-surfaces
+      description: All required public surfaces and content responsibilities exist without
+        placeholder substitution.
+    - id: marketing-prohibited-shortcuts
+      description: The build avoids the fixture's prohibited shortcuts and records material
+        deviations.
+  architecture_quality:
+    weight: 8
+    checks:
+    - id: marketing-content-authority
+      description: Content ownership and CMS/code boundary are explicit and fit editorial
+        needs.
+    - id: marketing-conversion-authority
+      description: Lead/contact success has an authoritative server/provider state and
+        reconciliation path.
+    - id: marketing-stack-fit
+      description: Frontend/motion/data stack is justified by requirements and remains
+        maintainable.
+  capability_routing:
+    weight: 8
+    checks:
+    - id: marketing-routing-core
+      description: The run uses the declared site delivery workflow and relevant Frontend
+        Craft/browser gates.
+    - id: marketing-routing-public-web
+      description: SEO, structured data, content discoverability, analytics/conversion,
+        and supply-chain capabilities are routed when applicable.
+    - id: marketing-routing-no-theater
+      description: Capabilities not needed by the brief are omitted rather than invoked
+        for benchmark theater.
+  implementation_completeness:
+    weight: 14
+    checks:
+    - id: marketing-navigation-complete
+      description: Primary navigation, residence discovery, content navigation, and contact
+        journey work end to end.
+    - id: marketing-lead-authoritative
+      description: Qualified contact/visit request reaches authoritative downstream state
+        with validation and duplicate protection.
+    - id: marketing-content-complete
+      description: Residence/location/editorial content is usable and internally linked.
+    - id: marketing-states-complete
+      description: Loading, success, validation, provider failure, and recovery states
+        are implemented for material interactions.
+  frontend_craft:
+    weight: 20
+    checks:
+    - id: marketing-visual-thesis
+      description: The rendered site has a coherent, product-specific visual thesis rather
+        than generic luxury-template styling.
+    - id: marketing-responsive
+      description: Phone, tablet, laptop, and wide layouts preserve hierarchy, crop, spacing,
+        and interaction quality.
+    - id: marketing-accessibility
+      description: Keyboard, focus, semantics, contrast, reduced motion, and form errors
+        satisfy the required experience.
+    - id: marketing-motion-purpose
+      description: Motion/3D, if present, strengthens hierarchy/story without harming
+        readability or device performance.
+    - id: marketing-visual-regression
+      description: Critical pages have reproducible rendered evidence suitable for regression
+        comparison.
+  security_isolation:
+    weight: 5
+    checks:
+    - id: marketing-form-security
+      description: Public forms enforce server-side validation, abuse controls, and secret/provider
+        boundaries.
+    - id: marketing-private-data
+      description: Lead data and private provider credentials are not exposed through
+        client bundles or public content.
+  failure_resilience:
+    weight: 8
+    checks:
+    - id: marketing-provider-failure
+      description: Lead/provider failure and ambiguous network outcomes are visible and
+        recoverable without silent loss.
+    - id: marketing-duplicate-submit
+      description: Repeated/rapid submission cannot create uncontrolled duplicate effects.
+    - id: marketing-degraded-assets
+      description: Critical navigation/content remains usable when nonessential media
+        or animation fails.
+  browser_reality:
+    weight: 10
+    checks:
+    - id: marketing-browser-primary-flow
+      description: Real-browser evidence covers home to residence/content to successful
+        contact flow.
+    - id: marketing-browser-negative-flow
+      description: Real-browser evidence covers form validation and provider/server failure
+        behavior.
+    - id: marketing-browser-console-network
+      description: Critical flows are free of unexplained runtime exceptions and unexpected
+        failed requests.
+  production_readiness:
+    weight: 12
+    checks:
+    - id: marketing-production-domain
+      description: Production deployment/domain/HTTPS and environment configuration are
+        verified.
+    - id: marketing-seo-indexing
+      description: Deployed status, robots, sitemap, canonical, metadata, and intended
+        indexability are verified.
+    - id: marketing-structured-data
+      description: Structured data is syntactically valid and truthful to visible authoritative
+        content.
+    - id: marketing-performance
+      description: Representative mobile performance and asset budgets are measured and
+        acceptable.
+    - id: marketing-analytics
+      description: Primary conversion analytics is verified without duplicate or false-success
+        events.
+  independent_review:
+    weight: 5
+    checks:
+    - id: marketing-review-frontend
+      description: Independent Frontend Craft review inspects rendered product evidence.
+    - id: marketing-review-production
+      description: Independent Web Production/benchmark review inspects deployment and
+        benchmark truthfulness.
+blocking_checks:
+- marketing-lead-authoritative
+- marketing-responsive
+- marketing-accessibility
+- marketing-browser-primary-flow
+- marketing-production-domain
+- marketing-seo-indexing

@@ -1,0 +1,51 @@
+version: 1
+name: ATLAS Reference Build Benchmark Rubric
+status_factors:
+  pass: 1.0
+  partial: 0.5
+  fail: 0.0
+  unverified: 0.0
+axis_order:
+- brief_fidelity
+- architecture_quality
+- capability_routing
+- implementation_completeness
+- frontend_craft
+- security_isolation
+- failure_resilience
+- browser_reality
+- production_readiness
+- independent_review
+score_thresholds:
+- minimum: 90
+  label: exemplary
+- minimum: 80
+  label: production-ready
+- minimum: 70
+  label: conditional
+- minimum: 0
+  label: insufficient
+review_outcomes:
+  Approved: allow
+  Approved with conditions: cap-conditional
+  Changes required: block
+  Blocked: block
+claim_policy:
+  live_execution_modes:
+  - live
+  required_run_metadata:
+  - runtime
+  - model
+  - repository
+  - commit
+  - evidence_root
+  require_independent_review: true
+  require_no_blockers: true
+  harness_smoke_claimable: false
+rules:
+- Axis weights in every spec must sum to 100.
+- Every pass or partial check must include at least one evidence reference.
+- Any blocking check not marked pass blocks the run regardless of score.
+- Changes required or Blocked independent review blocks the run.
+- Approved with conditions cannot exceed the conditional public outcome.
+- Harness-smoke results validate the scorer only and are never claimable.

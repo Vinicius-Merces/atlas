@@ -57,3 +57,7 @@ Review: inspects evidence and enforces gates; cannot implement remediation, appr
 - Verify evidence before concluding; distinguish fact from inference and assumption.
 - Stay in scope, preserve user changes and canonical sources, keep outputs traceable.
 - Never self-approve or bypass review; report uncertainty and residual risk.
+
+## P3 Reference Build Benchmark
+
+Compare Claude Code and Codex reference-build results only after each run is independently scored on the exact same fixture and rubric; disclose material tool/environment differences.

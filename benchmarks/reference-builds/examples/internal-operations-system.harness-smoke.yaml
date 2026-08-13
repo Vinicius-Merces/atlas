@@ -1,0 +1,197 @@
+benchmark_version: 1
+spec_id: internal-operations-system
+execution_mode: harness-smoke
+run:
+  runtime: benchmark-harness
+  model: none
+  repository: synthetic://harness/repository
+  commit: synthetic://harness/commit
+  evidence_root: synthetic://harness/internal-operations-system
+  environment_notes: Scorer smoke fixture only.
+review:
+  reviewer: benchmark-harness
+  outcome: Approved
+  evidence:
+  - synthetic://harness/internal-operations-system/review
+  notes: Validates review/outcome plumbing only.
+checks:
+- id: ops-daily-work
+  status: pass
+  evidence:
+  - synthetic://harness/internal-operations-system/ops-daily-work
+  notes: Synthetic harness evidence; never a live product claim.
+- id: ops-required-surfaces
+  status: pass
+  evidence:
+  - synthetic://harness/internal-operations-system/ops-required-surfaces
+  notes: Synthetic harness evidence; never a live product claim.
+- id: ops-no-marketing-shell
+  status: pass
+  evidence:
+  - synthetic://harness/internal-operations-system/ops-no-marketing-shell
+  notes: Synthetic harness evidence; never a live product claim.
+- id: ops-domain-invariants
+  status: pass
+  evidence:
+  - synthetic://harness/internal-operations-system/ops-domain-invariants
+  notes: Synthetic harness evidence; never a live product claim.
+- id: ops-query-model
+  status: pass
+  evidence:
+  - synthetic://harness/internal-operations-system/ops-query-model
+  notes: Synthetic harness evidence; never a live product claim.
+- id: ops-bulk-architecture
+  status: pass
+  evidence:
+  - synthetic://harness/internal-operations-system/ops-bulk-architecture
+  notes: Synthetic harness evidence; never a live product claim.
+- id: ops-routing-primitives
+  status: pass
+  evidence:
+  - synthetic://harness/internal-operations-system/ops-routing-primitives
+  notes: Synthetic harness evidence; never a live product claim.
+- id: ops-routing-frontend
+  status: pass
+  evidence:
+  - synthetic://harness/internal-operations-system/ops-routing-frontend
+  notes: Synthetic harness evidence; never a live product claim.
+- id: ops-routing-no-agent-inflation
+  status: pass
+  evidence:
+  - synthetic://harness/internal-operations-system/ops-routing-no-agent-inflation
+  notes: Synthetic harness evidence; never a live product claim.
+- id: ops-table-complete
+  status: pass
+  evidence:
+  - synthetic://harness/internal-operations-system/ops-table-complete
+  notes: Synthetic harness evidence; never a live product claim.
+- id: ops-detail-transition
+  status: pass
+  evidence:
+  - synthetic://harness/internal-operations-system/ops-detail-transition
+  notes: Synthetic harness evidence; never a live product claim.
+- id: ops-workflow-view
+  status: pass
+  evidence:
+  - synthetic://harness/internal-operations-system/ops-workflow-view
+  notes: Synthetic harness evidence; never a live product claim.
+- id: ops-bulk-complete
+  status: pass
+  evidence:
+  - synthetic://harness/internal-operations-system/ops-bulk-complete
+  notes: Synthetic harness evidence; never a live product claim.
+- id: ops-notify-audit-admin
+  status: pass
+  evidence:
+  - synthetic://harness/internal-operations-system/ops-notify-audit-admin
+  notes: Synthetic harness evidence; never a live product claim.
+- id: ops-density-hierarchy
+  status: pass
+  evidence:
+  - synthetic://harness/internal-operations-system/ops-density-hierarchy
+  notes: Synthetic harness evidence; never a live product claim.
+- id: ops-keyboard-efficiency
+  status: pass
+  evidence:
+  - synthetic://harness/internal-operations-system/ops-keyboard-efficiency
+  notes: Synthetic harness evidence; never a live product claim.
+- id: ops-responsive
+  status: pass
+  evidence:
+  - synthetic://harness/internal-operations-system/ops-responsive
+  notes: Synthetic harness evidence; never a live product claim.
+- id: ops-state-design
+  status: pass
+  evidence:
+  - synthetic://harness/internal-operations-system/ops-state-design
+  notes: Synthetic harness evidence; never a live product claim.
+- id: ops-visual-consistency
+  status: pass
+  evidence:
+  - synthetic://harness/internal-operations-system/ops-visual-consistency
+  notes: Synthetic harness evidence; never a live product claim.
+- id: ops-role-permissions
+  status: pass
+  evidence:
+  - synthetic://harness/internal-operations-system/ops-role-permissions
+  notes: Synthetic harness evidence; never a live product claim.
+- id: ops-privileged-actions
+  status: pass
+  evidence:
+  - synthetic://harness/internal-operations-system/ops-privileged-actions
+  notes: Synthetic harness evidence; never a live product claim.
+- id: ops-audit-coverage
+  status: pass
+  evidence:
+  - synthetic://harness/internal-operations-system/ops-audit-coverage
+  notes: Synthetic harness evidence; never a live product claim.
+- id: ops-export-scope
+  status: pass
+  evidence:
+  - synthetic://harness/internal-operations-system/ops-export-scope
+  notes: Synthetic harness evidence; never a live product claim.
+- id: ops-impersonation-breakglass
+  status: pass
+  evidence:
+  - synthetic://harness/internal-operations-system/ops-impersonation-breakglass
+  notes: Synthetic harness evidence; never a live product claim.
+- id: ops-conflict-duplicate
+  status: pass
+  evidence:
+  - synthetic://harness/internal-operations-system/ops-conflict-duplicate
+  notes: Synthetic harness evidence; never a live product claim.
+- id: ops-bulk-partial
+  status: pass
+  evidence:
+  - synthetic://harness/internal-operations-system/ops-bulk-partial
+  notes: Synthetic harness evidence; never a live product claim.
+- id: ops-job-notification-retry
+  status: pass
+  evidence:
+  - synthetic://harness/internal-operations-system/ops-job-notification-retry
+  notes: Synthetic harness evidence; never a live product claim.
+- id: ops-stale-view
+  status: pass
+  evidence:
+  - synthetic://harness/internal-operations-system/ops-stale-view
+  notes: Synthetic harness evidence; never a live product claim.
+- id: ops-browser-triage
+  status: pass
+  evidence:
+  - synthetic://harness/internal-operations-system/ops-browser-triage
+  notes: Synthetic harness evidence; never a live product claim.
+- id: ops-browser-bulk
+  status: pass
+  evidence:
+  - synthetic://harness/internal-operations-system/ops-browser-bulk
+  notes: Synthetic harness evidence; never a live product claim.
+- id: ops-browser-responsive-keyboard
+  status: pass
+  evidence:
+  - synthetic://harness/internal-operations-system/ops-browser-responsive-keyboard
+  notes: Synthetic harness evidence; never a live product claim.
+- id: ops-production-config
+  status: pass
+  evidence:
+  - synthetic://harness/internal-operations-system/ops-production-config
+  notes: Synthetic harness evidence; never a live product claim.
+- id: ops-observability
+  status: pass
+  evidence:
+  - synthetic://harness/internal-operations-system/ops-observability
+  notes: Synthetic harness evidence; never a live product claim.
+- id: ops-performance
+  status: pass
+  evidence:
+  - synthetic://harness/internal-operations-system/ops-performance
+  notes: Synthetic harness evidence; never a live product claim.
+- id: ops-review-ux
+  status: pass
+  evidence:
+  - synthetic://harness/internal-operations-system/ops-review-ux
+  notes: Synthetic harness evidence; never a live product claim.
+- id: ops-review-safety
+  status: pass
+  evidence:
+  - synthetic://harness/internal-operations-system/ops-review-safety
+  notes: Synthetic harness evidence; never a live product claim.

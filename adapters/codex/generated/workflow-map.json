@@ -508,6 +508,15 @@
       "version": "0.1.1"
     },
     {
+      "canonical_name": "reference-build-benchmark",
+      "canonical_path": ".claude/workflows/reference-build-benchmark.md",
+      "adapter_path": "adapters/codex/catalogs/workflows.md",
+      "parity_type": "canonical-reference",
+      "status": "mapped",
+      "notes": "Resolved through the generated catalog to the canonical source.",
+      "version": "0.1.1"
+    },
+    {
       "canonical_name": "reference-project-review",
       "canonical_path": ".claude/workflows/reference-project-review.md",
       "adapter_path": "adapters/codex/catalogs/workflows.md",

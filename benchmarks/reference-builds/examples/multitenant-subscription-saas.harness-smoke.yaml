@@ -1,0 +1,217 @@
+benchmark_version: 1
+spec_id: multitenant-subscription-saas
+execution_mode: harness-smoke
+run:
+  runtime: benchmark-harness
+  model: none
+  repository: synthetic://harness/repository
+  commit: synthetic://harness/commit
+  evidence_root: synthetic://harness/multitenant-subscription-saas
+  environment_notes: Scorer smoke fixture only.
+review:
+  reviewer: benchmark-harness
+  outcome: Approved
+  evidence:
+  - synthetic://harness/multitenant-subscription-saas/review
+  notes: Validates review/outcome plumbing only.
+checks:
+- id: saas-personas-workflows
+  status: pass
+  evidence:
+  - synthetic://harness/multitenant-subscription-saas/saas-personas-workflows
+  notes: Synthetic harness evidence; never a live product claim.
+- id: saas-required-surfaces
+  status: pass
+  evidence:
+  - synthetic://harness/multitenant-subscription-saas/saas-required-surfaces
+  notes: Synthetic harness evidence; never a live product claim.
+- id: saas-operational-goal
+  status: pass
+  evidence:
+  - synthetic://harness/multitenant-subscription-saas/saas-operational-goal
+  notes: Synthetic harness evidence; never a live product claim.
+- id: saas-domain-model
+  status: pass
+  evidence:
+  - synthetic://harness/multitenant-subscription-saas/saas-domain-model
+  notes: Synthetic harness evidence; never a live product claim.
+- id: saas-tenant-propagation
+  status: pass
+  evidence:
+  - synthetic://harness/multitenant-subscription-saas/saas-tenant-propagation
+  notes: Synthetic harness evidence; never a live product claim.
+- id: saas-distributed-state
+  status: pass
+  evidence:
+  - synthetic://harness/multitenant-subscription-saas/saas-distributed-state
+  notes: Synthetic harness evidence; never a live product claim.
+- id: saas-migration-operability
+  status: pass
+  evidence:
+  - synthetic://harness/multitenant-subscription-saas/saas-migration-operability
+  notes: Synthetic harness evidence; never a live product claim.
+- id: saas-routing-trust
+  status: pass
+  evidence:
+  - synthetic://harness/multitenant-subscription-saas/saas-routing-trust
+  notes: Synthetic harness evidence; never a live product claim.
+- id: saas-routing-p2
+  status: pass
+  evidence:
+  - synthetic://harness/multitenant-subscription-saas/saas-routing-p2
+  notes: Synthetic harness evidence; never a live product claim.
+- id: saas-routing-quality
+  status: pass
+  evidence:
+  - synthetic://harness/multitenant-subscription-saas/saas-routing-quality
+  notes: Synthetic harness evidence; never a live product claim.
+- id: saas-auth-org-complete
+  status: pass
+  evidence:
+  - synthetic://harness/multitenant-subscription-saas/saas-auth-org-complete
+  notes: Synthetic harness evidence; never a live product claim.
+- id: saas-work-order-complete
+  status: pass
+  evidence:
+  - synthetic://harness/multitenant-subscription-saas/saas-work-order-complete
+  notes: Synthetic harness evidence; never a live product claim.
+- id: saas-files-search-notify
+  status: pass
+  evidence:
+  - synthetic://harness/multitenant-subscription-saas/saas-files-search-notify
+  notes: Synthetic harness evidence; never a live product claim.
+- id: saas-billing-entitlement
+  status: pass
+  evidence:
+  - synthetic://harness/multitenant-subscription-saas/saas-billing-entitlement
+  notes: Synthetic harness evidence; never a live product claim.
+- id: saas-admin-import-export
+  status: pass
+  evidence:
+  - synthetic://harness/multitenant-subscription-saas/saas-admin-import-export
+  notes: Synthetic harness evidence; never a live product claim.
+- id: saas-information-density
+  status: pass
+  evidence:
+  - synthetic://harness/multitenant-subscription-saas/saas-information-density
+  notes: Synthetic harness evidence; never a live product claim.
+- id: saas-responsive
+  status: pass
+  evidence:
+  - synthetic://harness/multitenant-subscription-saas/saas-responsive
+  notes: Synthetic harness evidence; never a live product claim.
+- id: saas-accessibility
+  status: pass
+  evidence:
+  - synthetic://harness/multitenant-subscription-saas/saas-accessibility
+  notes: Synthetic harness evidence; never a live product claim.
+- id: saas-visual-authorship
+  status: pass
+  evidence:
+  - synthetic://harness/multitenant-subscription-saas/saas-visual-authorship
+  notes: Synthetic harness evidence; never a live product claim.
+- id: saas-cross-tenant-database
+  status: pass
+  evidence:
+  - synthetic://harness/multitenant-subscription-saas/saas-cross-tenant-database
+  notes: Synthetic harness evidence; never a live product claim.
+- id: saas-cross-tenant-storage
+  status: pass
+  evidence:
+  - synthetic://harness/multitenant-subscription-saas/saas-cross-tenant-storage
+  notes: Synthetic harness evidence; never a live product claim.
+- id: saas-cross-tenant-search
+  status: pass
+  evidence:
+  - synthetic://harness/multitenant-subscription-saas/saas-cross-tenant-search
+  notes: Synthetic harness evidence; never a live product claim.
+- id: saas-cross-tenant-cache-job
+  status: pass
+  evidence:
+  - synthetic://harness/multitenant-subscription-saas/saas-cross-tenant-cache-job
+  notes: Synthetic harness evidence; never a live product claim.
+- id: saas-admin-privilege
+  status: pass
+  evidence:
+  - synthetic://harness/multitenant-subscription-saas/saas-admin-privilege
+  notes: Synthetic harness evidence; never a live product claim.
+- id: saas-secret-boundary
+  status: pass
+  evidence:
+  - synthetic://harness/multitenant-subscription-saas/saas-secret-boundary
+  notes: Synthetic harness evidence; never a live product claim.
+- id: saas-duplicate-mutation-job
+  status: pass
+  evidence:
+  - synthetic://harness/multitenant-subscription-saas/saas-duplicate-mutation-job
+  notes: Synthetic harness evidence; never a live product claim.
+- id: saas-webhook-replay
+  status: pass
+  evidence:
+  - synthetic://harness/multitenant-subscription-saas/saas-webhook-replay
+  notes: Synthetic harness evidence; never a live product claim.
+- id: saas-provider-outage
+  status: pass
+  evidence:
+  - synthetic://harness/multitenant-subscription-saas/saas-provider-outage
+  notes: Synthetic harness evidence; never a live product claim.
+- id: saas-stale-cache-entitlement
+  status: pass
+  evidence:
+  - synthetic://harness/multitenant-subscription-saas/saas-stale-cache-entitlement
+  notes: Synthetic harness evidence; never a live product claim.
+- id: saas-import-partial-failure
+  status: pass
+  evidence:
+  - synthetic://harness/multitenant-subscription-saas/saas-import-partial-failure
+  notes: Synthetic harness evidence; never a live product claim.
+- id: saas-browser-auth-flow
+  status: pass
+  evidence:
+  - synthetic://harness/multitenant-subscription-saas/saas-browser-auth-flow
+  notes: Synthetic harness evidence; never a live product claim.
+- id: saas-browser-operational-flow
+  status: pass
+  evidence:
+  - synthetic://harness/multitenant-subscription-saas/saas-browser-operational-flow
+  notes: Synthetic harness evidence; never a live product claim.
+- id: saas-browser-console-network
+  status: pass
+  evidence:
+  - synthetic://harness/multitenant-subscription-saas/saas-browser-console-network
+  notes: Synthetic harness evidence; never a live product claim.
+- id: saas-production-config
+  status: pass
+  evidence:
+  - synthetic://harness/multitenant-subscription-saas/saas-production-config
+  notes: Synthetic harness evidence; never a live product claim.
+- id: saas-observability
+  status: pass
+  evidence:
+  - synthetic://harness/multitenant-subscription-saas/saas-observability
+  notes: Synthetic harness evidence; never a live product claim.
+- id: saas-recovery
+  status: pass
+  evidence:
+  - synthetic://harness/multitenant-subscription-saas/saas-recovery
+  notes: Synthetic harness evidence; never a live product claim.
+- id: saas-supply-chain
+  status: pass
+  evidence:
+  - synthetic://harness/multitenant-subscription-saas/saas-supply-chain
+  notes: Synthetic harness evidence; never a live product claim.
+- id: saas-performance
+  status: pass
+  evidence:
+  - synthetic://harness/multitenant-subscription-saas/saas-performance
+  notes: Synthetic harness evidence; never a live product claim.
+- id: saas-review-trust
+  status: pass
+  evidence:
+  - synthetic://harness/multitenant-subscription-saas/saas-review-trust
+  notes: Synthetic harness evidence; never a live product claim.
+- id: saas-review-product
+  status: pass
+  evidence:
+  - synthetic://harness/multitenant-subscription-saas/saas-review-product
+  notes: Synthetic harness evidence; never a live product claim.
