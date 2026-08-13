@@ -85,6 +85,24 @@
       "version": "0.1.1"
     },
     {
+      "canonical_name": "authentication-flow-review",
+      "canonical_path": ".claude/skills/authentication-flow-review/SKILL.md",
+      "adapter_path": ".agents/skills/authentication-flow-review/SKILL.md",
+      "parity_type": "runtime-native",
+      "status": "native",
+      "notes": "Codex-native entry point.",
+      "version": "0.1.1"
+    },
+    {
+      "canonical_name": "authorization-boundary-review",
+      "canonical_path": ".claude/skills/authorization-boundary-review/SKILL.md",
+      "adapter_path": ".agents/skills/authorization-boundary-review/SKILL.md",
+      "parity_type": "runtime-native",
+      "status": "native",
+      "notes": "Codex-native entry point.",
+      "version": "0.1.1"
+    },
+    {
       "canonical_name": "blueprint-selection",
       "canonical_path": ".claude/skills/blueprint-selection/SKILL.md",
       "adapter_path": ".agents/skills/blueprint-selection/SKILL.md",
@@ -328,6 +346,15 @@
       "version": "0.1.1"
     },
     {
+      "canonical_name": "external-api-resilience-review",
+      "canonical_path": ".claude/skills/external-api-resilience-review/SKILL.md",
+      "adapter_path": ".agents/skills/external-api-resilience-review/SKILL.md",
+      "parity_type": "runtime-native",
+      "status": "native",
+      "notes": "Codex-native entry point.",
+      "version": "0.1.1"
+    },
+    {
       "canonical_name": "framework-package-validation",
       "canonical_path": ".claude/skills/framework-package-validation/SKILL.md",
       "adapter_path": ".agents/skills/framework-package-validation/SKILL.md",
@@ -493,6 +520,15 @@
       "canonical_name": "observability-design",
       "canonical_path": ".claude/skills/observability-design/SKILL.md",
       "adapter_path": ".agents/skills/observability-design/SKILL.md",
+      "parity_type": "runtime-native",
+      "status": "native",
+      "notes": "Codex-native entry point.",
+      "version": "0.1.1"
+    },
+    {
+      "canonical_name": "payment-integration-review",
+      "canonical_path": ".claude/skills/payment-integration-review/SKILL.md",
+      "adapter_path": ".agents/skills/payment-integration-review/SKILL.md",
       "parity_type": "runtime-native",
       "status": "native",
       "notes": "Codex-native entry point.",
@@ -679,6 +715,15 @@
       "version": "0.1.1"
     },
     {
+      "canonical_name": "row-level-security-review",
+      "canonical_path": ".claude/skills/row-level-security-review/SKILL.md",
+      "adapter_path": ".agents/skills/row-level-security-review/SKILL.md",
+      "parity_type": "runtime-native",
+      "status": "native",
+      "notes": "Codex-native entry point.",
+      "version": "0.1.1"
+    },
+    {
       "canonical_name": "runtime-adapter-mapping",
       "canonical_path": ".claude/skills/runtime-adapter-mapping/SKILL.md",
       "adapter_path": ".agents/skills/runtime-adapter-mapping/SKILL.md",
@@ -718,6 +763,15 @@
       "canonical_name": "runtime-semantic-parity",
       "canonical_path": ".claude/skills/runtime-semantic-parity/SKILL.md",
       "adapter_path": ".agents/skills/runtime-semantic-parity/SKILL.md",
+      "parity_type": "runtime-native",
+      "status": "native",
+      "notes": "Codex-native entry point.",
+      "version": "0.1.1"
+    },
+    {
+      "canonical_name": "secret-environment-audit",
+      "canonical_path": ".claude/skills/secret-environment-audit/SKILL.md",
+      "adapter_path": ".agents/skills/secret-environment-audit/SKILL.md",
       "parity_type": "runtime-native",
       "status": "native",
       "notes": "Codex-native entry point.",
@@ -853,6 +907,15 @@
       "canonical_name": "web-performance-field-readiness",
       "canonical_path": ".claude/skills/web-performance-field-readiness/SKILL.md",
       "adapter_path": ".agents/skills/web-performance-field-readiness/SKILL.md",
+      "parity_type": "runtime-native",
+      "status": "native",
+      "notes": "Codex-native entry point.",
+      "version": "0.1.1"
+    },
+    {
+      "canonical_name": "webhook-reliability-review",
+      "canonical_path": ".claude/skills/webhook-reliability-review/SKILL.md",
+      "adapter_path": ".agents/skills/webhook-reliability-review/SKILL.md",
       "parity_type": "runtime-native",
       "status": "native",
       "notes": "Codex-native entry point.",
