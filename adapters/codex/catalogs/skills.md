@@ -2,7 +2,7 @@
 
 > Generated from `.claude/registry.json`. Do not edit manually.
 
-Total: **96**
+Total: **103**
 
 - `accessibility-audit` → `.claude/skills/accessibility-audit/SKILL.md`
 - `adapter-drift-detection` → `.claude/skills/adapter-drift-detection/SKILL.md`
@@ -13,6 +13,8 @@ Total: **96**
 - `architecture-audit` → `.claude/skills/architecture-audit/SKILL.md`
 - `architecture-portfolio-assessment` → `.claude/skills/architecture-portfolio-assessment/SKILL.md`
 - `audit-bundle-assembly` → `.claude/skills/audit-bundle-assembly/SKILL.md`
+- `authentication-flow-review` → `.claude/skills/authentication-flow-review/SKILL.md`
+- `authorization-boundary-review` → `.claude/skills/authorization-boundary-review/SKILL.md`
 - `blueprint-selection` → `.claude/skills/blueprint-selection/SKILL.md`
 - `change-provenance-mapping` → `.claude/skills/change-provenance-mapping/SKILL.md`
 - `cloud-cost-analysis` → `.claude/skills/cloud-cost-analysis/SKILL.md`
@@ -40,6 +42,7 @@ Total: **96**
 - `evidence-record-design` → `.claude/skills/evidence-record-design/SKILL.md`
 - `execution-checkpointing` → `.claude/skills/execution-checkpointing/SKILL.md`
 - `experiment-design` → `.claude/skills/experiment-design/SKILL.md`
+- `external-api-resilience-review` → `.claude/skills/external-api-resilience-review/SKILL.md`
 - `framework-package-validation` → `.claude/skills/framework-package-validation/SKILL.md`
 - `frontend-craft-review` → `.claude/skills/frontend-craft-review/SKILL.md`
 - `frontend-stack-selection` → `.claude/skills/frontend-stack-selection/SKILL.md`
@@ -59,6 +62,7 @@ Total: **96**
 - `mobile-architecture-assessment` → `.claude/skills/mobile-architecture-assessment/SKILL.md`
 - `motion-choreography` → `.claude/skills/motion-choreography/SKILL.md`
 - `observability-design` → `.claude/skills/observability-design/SKILL.md`
+- `payment-integration-review` → `.claude/skills/payment-integration-review/SKILL.md`
 - `performance-budget-analysis` → `.claude/skills/performance-budget-analysis/SKILL.md`
 - `policy-as-code-design` → `.claude/skills/policy-as-code-design/SKILL.md`
 - `policy-exception-handling` → `.claude/skills/policy-exception-handling/SKILL.md`
@@ -79,11 +83,13 @@ Total: **96**
 - `responsive-layout-audit` → `.claude/skills/responsive-layout-audit/SKILL.md`
 - `result-reconciliation` → `.claude/skills/result-reconciliation/SKILL.md`
 - `resume-packet-assembly` → `.claude/skills/resume-packet-assembly/SKILL.md`
+- `row-level-security-review` → `.claude/skills/row-level-security-review/SKILL.md`
 - `runtime-adapter-mapping` → `.claude/skills/runtime-adapter-mapping/SKILL.md`
 - `runtime-conformance-testing` → `.claude/skills/runtime-conformance-testing/SKILL.md`
 - `runtime-execution-planning` → `.claude/skills/runtime-execution-planning/SKILL.md`
 - `runtime-handoff-design` → `.claude/skills/runtime-handoff-design/SKILL.md`
 - `runtime-semantic-parity` → `.claude/skills/runtime-semantic-parity/SKILL.md`
+- `secret-environment-audit` → `.claude/skills/secret-environment-audit/SKILL.md`
 - `semantic-compatibility-verification` → `.claude/skills/semantic-compatibility-verification/SKILL.md`
 - `session-closeout` → `.claude/skills/session-closeout/SKILL.md`
 - `smoke-test-design` → `.claude/skills/smoke-test-design/SKILL.md`
@@ -99,4 +105,5 @@ Total: **96**
 - `version-transition-validation` → `.claude/skills/version-transition-validation/SKILL.md`
 - `visual-regression-review` → `.claude/skills/visual-regression-review/SKILL.md`
 - `web-performance-field-readiness` → `.claude/skills/web-performance-field-readiness/SKILL.md`
+- `webhook-reliability-review` → `.claude/skills/webhook-reliability-review/SKILL.md`
 - `workstream-decomposition` → `.claude/skills/workstream-decomposition/SKILL.md`
