@@ -1,0 +1,45 @@
+version: 1
+canonical_model: framework/full-stack-delivery-model.md
+skills:
+  state_and_data:
+    - form-mutation-design
+    - file-upload-storage-design
+    - application-search-design
+    - data-import-export-workflow
+  communication_and_operations:
+    - transactional-email-delivery
+    - notification-system-design
+    - audit-log-design
+    - admin-operations-surface
+  product_delivery_controls:
+    - rate-limit-abuse-control
+    - feature-flag-rollout
+    - cms-content-modeling
+preferred_workflows:
+  website: site-from-brief-delivery
+  saas: saas-from-brief-delivery
+required_review: full-stack-delivery-review
+agents:
+  implementation:
+    - frontend-engineer
+    - backend-engineer
+    - data-engineer
+    - integration-engineer
+    - platform-engineer
+  product_experience:
+    - product-manager
+    - product-architect
+    - ux-director
+    - content-designer
+    - solution-blueprint-engineer
+  assurance:
+    - security-engineer
+    - reliability-engineer
+    - qa-engineer
+policy:
+  no_provider_specific_agents: true
+  no_new_agents_without_overlap_evidence: true
+  frontend_craft_inherited_by_user_facing_blueprints: true
+  server_authority_required_for_privileged_state: true
+  tenant_scope_extends_to_every_shared_subsystem: true
+  failure_paths_are_product_paths: true
