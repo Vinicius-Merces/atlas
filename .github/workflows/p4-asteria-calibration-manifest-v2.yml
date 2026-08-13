@@ -1,0 +1,35 @@
+name: P4 Asteria Calibration Manifest V2
+on:
+  push:
+    branches: [bench/p4-asteria-calibration-gpt-5-6-sol]
+permissions:
+  contents: write
+jobs:
+  manifest:
+    if: github.actor != 'github-actions[bot]'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: python -m pip install --requirement requirements-test.txt
+      - run: |
+          python - <<'PY'
+          import hashlib,json
+          from pathlib import Path
+          from jsonschema import validate
+          spec=Path('benchmarks/reference-builds/specs/premium-marketing-site.yaml')
+          rubric=Path('benchmarks/reference-builds/scoring-rubric.yaml')
+          out=Path('reference-builds/asteria-residences/run/manifest.json');out.parent.mkdir(parents=True,exist_ok=True)
+          h=lambda p: hashlib.sha256(p.read_bytes()).hexdigest()
+          data={'campaign_id':'p4-live-reference-build-campaign','target_id':'calibration-gpt-5-6-sol','role':'calibration','runtime':'chatgpt','model':'GPT-5.6 Sol','fixture_id':'premium-marketing-site','campaign_base_commit':'3ccdf6e6209c3aea949e62226af1cb6b35167487','run_branch':'bench/p4-asteria-calibration-gpt-5-6-sol','fixture_sha256':h(spec),'rubric_sha256':h(rubric),'started_at':'2026-08-13T15:37:00-03:00','tool_permissions':['GitHub repository read/write','GitHub Actions'],'isolation_attestation':{'same_base_commit':True,'no_cross_run_branch_reads':True,'no_implementation_reuse':True},'notes':'Diagnostic calibration; not a Codex or Claude Code target run.'}
+          validate(data,json.loads(Path('benchmarks/reference-builds/campaigns/p4/run-manifest.schema.json').read_text()))
+          out.write_text(json.dumps(data,indent=2)+'\n')
+          print(data['fixture_sha256'],data['rubric_sha256'])
+          PY
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add reference-builds/asteria-residences/run/manifest.json
+          git commit -m "chore: freeze P4 Asteria calibration manifest"
+          git push
