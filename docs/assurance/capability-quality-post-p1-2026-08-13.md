@@ -7,7 +7,7 @@ This measurement uses the same deterministic evaluators as the pre-P1 baseline a
 - Skills: **117** (baseline 110; delta +7)
 - Agent surfaces: **87**
 - Agent pairs: **3741**
-- Curated routing fixtures: **24**
+- Curated routing fixtures: **31**
 
 ## Skill quality
 
@@ -20,9 +20,9 @@ This measurement uses the same deterministic evaluators as the pre-P1 baseline a
 
 ## Routing proxy
 
-- Curated top-1: **70.8%** (baseline 70.8%)
-- Curated top-3: **83.3%** (baseline 83.3%)
-- Curated top-5: **91.7%** (baseline 91.7%)
+- Curated top-1: **74.2%** (baseline 70.8%)
+- Curated top-3: **87.1%** (baseline 83.3%)
+- Curated top-5: **93.5%** (baseline 91.7%)
 - Description pairs >= 0.55: **1** (baseline 1)
 - Description pairs >= 0.70: **0**
 
