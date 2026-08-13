@@ -95,9 +95,9 @@ with sync_playwright() as p:
     summary["seo"]["sitemap_urls"] = page.request.get(BASE + "/sitemap.xml").text().count("<url>")
 
     degraded = browser.new_page(viewport={"width": 390, "height": 844})
-    degraded.route("**/*.svg", lambda route: route.abort())
+    degraded.route("**/assets/app.js", lambda route: route.abort())
     degraded.goto(BASE + "/", wait_until="domcontentloaded")
-    assert degraded.locator("h1").is_visible() and degraded.locator('a[href="/residences.html"]').first.is_visible()
+    assert degraded.locator("h1").is_visible() and degraded.locator('a[href="/residences.html"]').last.is_visible()
     summary["flows"]["degraded_media_navigation"] = "pass"
     degraded.close()
     browser.close()

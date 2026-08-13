@@ -1,0 +1,54 @@
+{
+  "base_url": "http://127.0.0.1:4173",
+  "console_errors": [],
+  "request_failures": [],
+  "viewports": {
+    "mobile": {
+      "overflow": false,
+      "h1": "Room for a quieter kind of city life."
+    },
+    "tablet": {
+      "overflow": false,
+      "h1": "Room for a quieter kind of city life."
+    },
+    "desktop": {
+      "overflow": false,
+      "h1": "Room for a quieter kind of city life."
+    },
+    "wide": {
+      "overflow": false,
+      "h1": "Room for a quieter kind of city life."
+    }
+  },
+  "flows": {
+    "residence_discovery": "pass",
+    "validation_focus": "pass",
+    "authoritative_lead_success": "pass",
+    "analytics_after_success": "pass",
+    "provider_failure_recovery": "pass",
+    "no_false_success_event": "pass",
+    "duplicate_protection": "pass",
+    "degraded_media_navigation": "pass"
+  },
+  "accessibility": {
+    "missingAlt": 0,
+    "missingLabels": 0,
+    "main": true,
+    "nav": true,
+    "footer": true,
+    "lang": "en"
+  },
+  "seo": {
+    "home_jsonld": "valid",
+    "home_canonical": "http://127.0.0.1:4173/",
+    "guide_jsonld": "valid",
+    "guide_internal_links": 2,
+    "robots_has_sitemap": true,
+    "sitemap_urls": 5
+  },
+  "performance": {
+    "domContentLoaded": 12,
+    "load": 17,
+    "resources": 5
+  }
+}

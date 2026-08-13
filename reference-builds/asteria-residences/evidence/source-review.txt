@@ -1,0 +1,6 @@
+Workflow: site-from-brief-delivery
+Stack: authored HTML/CSS/JS plus Python standard-library service; no frontend package dependency chain.
+Server: validation, request-size cap, rate limit, idempotency, private persistence, test-only failure injection.
+Public web: canonical metadata, robots, sitemap, WebSite/Residence/Article JSON-LD.
+Frontend thesis: limestone/mineral editorial system, original vector scenes, restrained reveal motion, reduced-motion override.
+Not routed: authenticated SaaS tenancy, payments, RLS, queues or privileged admin primitives.
