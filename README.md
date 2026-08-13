@@ -2,8 +2,8 @@
 
 > Repository-native operating system for AI-assisted software engineering.
 > ATLAS gives Claude Code and Codex shared project memory, specialist roles,
-> repeatable workflows, governance contracts, frontend craft standards, and
-> verifiable continuity.
+> repeatable workflows, governance contracts, frontend craft standards,
+> production trust gates, and verifiable continuity.
 
 **Version:** `0.1.1`
 **Status:** Stable · **License:** MIT
@@ -19,15 +19,17 @@
 
 AI coding sessions are productive, but projects lose quality when important
 decisions live only in chat history, every session starts from zero, each runtime
-interprets the project differently, or technically correct frontend work slowly
-collapses into generic template patterns.
+interprets the project differently, technically correct frontend work collapses
+into generic template patterns, or a SaaS feature reaches production with happy-
+path behavior but unverified trust boundaries.
 
 ATLAS keeps the operating context inside the repository so work remains portable,
 reviewable, resumable, and governed by the same quality model across sessions.
 
 ATLAS is designed for individual engineers and teams using AI coding runtimes on
-projects where architecture, business constraints, frontend quality, manual
-deployment, auditability, or cross-session handoff matter.
+projects where architecture, business constraints, frontend quality, production
+trust, integrations, manual deployment, auditability, or cross-session handoff
+matter.
 
 ## What it solves
 
@@ -42,7 +44,9 @@ ATLAS helps a project:
 - produce checkpoints, handoffs, evidence, deployment receipts, and release bundles;
 - apply cumulative or incremental updates safely, including manual deployment;
 - build user-facing interfaces with explicit visual direction, responsive evidence,
-  purposeful motion/3D, performance budgets, and independent craft review.
+  purposeful motion/3D, performance budgets, and independent craft review;
+- review authentication, authorization, tenant/data isolation, secrets, webhooks,
+  payments, and external API failure behavior before production approval.
 
 ## What ATLAS is
 
@@ -73,10 +77,10 @@ frontmatter and validated in CI.
 | Component | Count | What it provides | Complete reference |
 | --- | ---: | --- | --- |
 | Agents | 87 | Orchestration plus focused product, engineering, architecture, governance, runtime, and assurance roles | [Agent Catalog](docs/agent-catalog.md) |
-| Skills | 96 | Bounded procedures for analysis, design, frontend craft, validation, continuity, and delivery | [Skill Catalog](docs/skill-catalog.md) |
+| Skills | 103 | Bounded procedures for analysis, design, frontend craft, production trust, validation, continuity, and delivery | [Skill Catalog](docs/skill-catalog.md) |
 | Commands | 71 | Explicit entry points for common ATLAS operations | `.claude/commands/` |
-| Workflows | 77 | Repeatable execution paths with responsibilities and gates | `.claude/workflows/` |
-| Reviews | 69 | Independent review procedures and acceptance checks | `.claude/reviews/` |
+| Workflows | 78 | Repeatable execution paths with responsibilities and gates | `.claude/workflows/` |
+| Reviews | 70 | Independent review procedures and acceptance checks | `.claude/reviews/` |
 | Contracts | 6 | Stable interfaces for agents, skills, workflows, memory, reviews, and commands | `.claude/contracts/` |
 
 ### Agent model
@@ -90,7 +94,12 @@ Examples:
 
 - `frontend-engineer` implements maintainable, accessible, responsive, and
   visually intentional web interfaces;
-- `security-engineer` reviews trust boundaries, auth, secrets, and abuse risks;
+- `security-engineer` reviews identity, authorization, tenant/data boundaries,
+  secrets, provider trust, and abuse risks;
+- `backend-engineer` implements server-side contracts, data access, authorization,
+  idempotent state transitions, and failure behavior;
+- `integration-engineer` owns provider contracts, webhooks, retries, idempotency,
+  rate limits, and reconciliation;
 - `project-memory-curator` maintains portable, current project knowledge;
 - `release-integrity-engineer` verifies versions, manifests, checksums, and provenance;
 - `runtime-parity-reviewer` checks semantic parity between supported runtimes.
@@ -113,9 +122,15 @@ Examples:
   frontend tools by evidence rather than trend;
 - `frontend-craft-review` independently checks whether a UI is product-specific or
   still looks generic/template-driven;
+- `authorization-boundary-review` checks object/action permissions, ownership,
+  roles, admin paths, and tenant boundaries using direct negative evidence;
+- `webhook-reliability-review` validates signatures, retries, duplicates, replay,
+  ordering, durable acceptance, and recovery;
+- `payment-integration-review` validates server-authoritative financial state,
+  idempotency, entitlements, refunds, and provider reconciliation;
 - `dual-runtime-validation` checks Claude Code and Codex surfaces together.
 
-See the [Skill Catalog](docs/skill-catalog.md) for all 96 descriptions.
+See the [Skill Catalog](docs/skill-catalog.md) for all 103 descriptions.
 
 ## Discovery descriptions and hover surfaces
 
@@ -199,6 +214,69 @@ Significant frontend work follows `.claude/workflows/frontend-feature-delivery.m
 and may require the independent `.claude/reviews/frontend-craft-review.md` gate.
 Critical or High craft findings block approval.
 
+## SaaS Production Trust
+
+ATLAS includes a vendor-neutral production-trust model for SaaS features that
+handle identities, protected resources, tenant data, privileged configuration,
+asynchronous provider events, payments, or third-party APIs.
+
+The canonical model and capability overlay live at:
+
+```text
+framework/saas-production-trust-model.md
+framework/capabilities/saas-production-trust.yaml
+```
+
+The trust path is cumulative:
+
+```text
+identity
+  ↓
+authentication
+  ↓
+authorization
+  ↓
+data / tenant isolation
+  ↓
+secret + environment boundaries
+  ↓
+webhook + provider reliability
+  ↓
+payment / entitlement consistency
+  ↓
+observability + recovery
+  ↓
+independent SaaS production trust review
+```
+
+The pack provides seven focused capabilities:
+
+- `authentication-flow-review` for sign-in/sign-up, recovery, MFA, SSO/OAuth/OIDC,
+  sessions, callbacks, and account linking;
+- `authorization-boundary-review` for role, ownership, tenant, resource/action,
+  admin, API, and service-identity permissions;
+- `row-level-security-review` for PostgreSQL/Supabase RLS, grants, policies, views,
+  service-role bypasses, and cross-tenant negative testing;
+- `secret-environment-audit` for API keys, database URLs, signing secrets, CI/CD
+  credentials, public/private runtime configuration, rotation, and leakage paths;
+- `webhook-reliability-review` for signature verification, replay, duplicate delivery,
+  ordering, idempotency, retries, durable acceptance, and recovery;
+- `payment-integration-review` for checkout, subscriptions, refunds, entitlements,
+  idempotent mutations, provider events, and reconciliation;
+- `external-api-resilience-review` for deadlines, retry budgets, rate limits,
+  pagination, versioning, provider outages, degradation, and reconciliation.
+
+Authentication is explicitly not treated as authorization. UI visibility is not
+an access-control boundary. Environment variables are an injection mechanism, not
+proof that a value is secret. A successful checkout redirect is not durable payment
+or entitlement evidence. Provider success paths are insufficient without retry,
+duplicate, timeout, outage, and reconciliation behavior.
+
+Significant SaaS changes follow `.claude/workflows/saas-production-readiness.md`
+and require the independent `.claude/reviews/saas-production-trust-review.md` gate
+when the risk is material. Unresolved Critical or High production-trust findings
+block approval.
+
 ## How a task moves through ATLAS
 
 ```mermaid
@@ -229,8 +307,8 @@ python scripts/validate_all.py --profile quick
 ```
 
 The quick profile includes registry validation, agent taxonomy, discovery metadata,
-frontend craft pack validation, generated catalog checks, package checks, and
-contract validation.
+Frontend Craft Pack validation, SaaS Production Trust Pack validation, generated
+catalog checks, package checks, and contract validation.
 
 Use the full profile when changing runtime adapters, policies, generated catalogs,
 documentation, or release behavior:
