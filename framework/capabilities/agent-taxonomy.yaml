@@ -6,9 +6,10 @@ label_contract:
     discovery and selectors. Keep it concise, specific, and action-oriented.
 categories:
   orchestration-delivery:
-    purpose: Route complex work, decompose it safely, coordinate parallel execution, and reconcile results.
+    purpose: Route complex work, decompose it safely, coordinate parallel execution, preserve role boundaries, and reconcile results.
     principal_skills:
       - task-routing-policy
+      - agent-overlap-analysis
       - workstream-decomposition
       - resource-claim-design
       - result-reconciliation
@@ -122,8 +123,10 @@ categories:
       - privacy-engineer
       - compliance-analyst
   quality-assurance-audit:
-    purpose: Independently validate rendered behavior, regressions, automation, search-facing evidence, contracts, and release readiness.
+    purpose: Independently validate rendered behavior, regressions, automation, search-facing evidence, contracts, capability quality, routing evidence, and release readiness.
     principal_skills:
+      - skill-quality-evaluation
+      - skill-trigger-evaluation
       - browser-flow-validation
       - seo-technical-audit
       - structured-data-validation

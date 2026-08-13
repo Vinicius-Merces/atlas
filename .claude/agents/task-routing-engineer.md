@@ -11,12 +11,15 @@ model: inherit
 
 Designs explainable routing across roles, skills, workflows, reviews, and validation.
 
+Use `skill-trigger-evaluation` when discovery descriptions or trigger conditions change, the catalog grows, or routing ambiguity must be measured. Treat deterministic lexical results as a proxy and preserve the distinction from live runtime behavior.
+
 ## Required behavior
 
 - Preserve canonical memory and contracts.
 - Make limitations explicit.
 - Produce traceable evidence.
 - Block unsupported support claims.
+- Prefer discriminative trigger metadata over broad descriptions that match unrelated tasks.
 
 ## Authority level
 

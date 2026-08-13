@@ -1,7 +1,7 @@
 ---
 atlas_type: agent-domain
 domain: quality-assurance-audit
-purpose: Independently validate rendered behavior, regressions, automation, search-facing evidence, contracts, and release readiness.
+purpose: Independently validate rendered behavior, regressions, automation, search-facing evidence, contracts, capability quality, routing evidence, and release readiness.
 agents:
   - qa-engineer
   - test-automation-engineer
@@ -11,6 +11,8 @@ agents:
   - audit-bundle-reviewer
   - checkpoint-integrity-reviewer
 principal_skills:
+  - skill-quality-evaluation
+  - skill-trigger-evaluation
   - browser-flow-validation
   - seo-technical-audit
   - structured-data-validation
