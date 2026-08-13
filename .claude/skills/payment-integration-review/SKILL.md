@@ -24,6 +24,14 @@ Use when adding or changing checkout, payment intents, subscriptions, invoices, 
 - Refund/cancel/dispute behavior
 - Test/sandbox evidence
 
+## Dependencies
+
+- Authoritative payment-provider API, event, idempotency, and environment contracts
+- Server-authoritative product, pricing, currency, discount, and entitlement rules
+- `webhook-reliability-review` when provider events participate in state synchronization
+- `authorization-boundary-review` for customer/admin billing actions
+- `secret-environment-audit` for provider credentials, webhook secrets, and sandbox/live separation
+
 ## Procedure
 
 1. Map the authoritative state for price, payment, subscription, invoice, refund, and entitlement decisions.
