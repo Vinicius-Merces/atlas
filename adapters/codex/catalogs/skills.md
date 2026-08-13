@@ -2,7 +2,7 @@
 
 > Generated from `.claude/registry.json`. Do not edit manually.
 
-Total: **88**
+Total: **96**
 
 - `accessibility-audit` → `.claude/skills/accessibility-audit/SKILL.md`
 - `adapter-drift-detection` → `.claude/skills/adapter-drift-detection/SKILL.md`
@@ -41,10 +41,14 @@ Total: **88**
 - `execution-checkpointing` → `.claude/skills/execution-checkpointing/SKILL.md`
 - `experiment-design` → `.claude/skills/experiment-design/SKILL.md`
 - `framework-package-validation` → `.claude/skills/framework-package-validation/SKILL.md`
+- `frontend-craft-review` → `.claude/skills/frontend-craft-review/SKILL.md`
+- `frontend-stack-selection` → `.claude/skills/frontend-stack-selection/SKILL.md`
+- `immersive-3d-experience` → `.claude/skills/immersive-3d-experience/SKILL.md`
 - `incident-triage` → `.claude/skills/incident-triage/SKILL.md`
 - `incremental-patch-verification` → `.claude/skills/incremental-patch-verification/SKILL.md`
 - `infrastructure-change-assessment` → `.claude/skills/infrastructure-change-assessment/SKILL.md`
 - `integration-contract-mapping` → `.claude/skills/integration-contract-mapping/SKILL.md`
+- `interface-visual-direction` → `.claude/skills/interface-visual-direction/SKILL.md`
 - `knowledge-graph-synthesis` → `.claude/skills/knowledge-graph-synthesis/SKILL.md`
 - `localization-readiness-assessment` → `.claude/skills/localization-readiness-assessment/SKILL.md`
 - `manual-deployment-preflight` → `.claude/skills/manual-deployment-preflight/SKILL.md`
@@ -53,6 +57,7 @@ Total: **88**
 - `memory-freshness-audit` → `.claude/skills/memory-freshness-audit/SKILL.md`
 - `memory-update-proposal` → `.claude/skills/memory-update-proposal/SKILL.md`
 - `mobile-architecture-assessment` → `.claude/skills/mobile-architecture-assessment/SKILL.md`
+- `motion-choreography` → `.claude/skills/motion-choreography/SKILL.md`
 - `observability-design` → `.claude/skills/observability-design/SKILL.md`
 - `performance-budget-analysis` → `.claude/skills/performance-budget-analysis/SKILL.md`
 - `policy-as-code-design` → `.claude/skills/policy-as-code-design/SKILL.md`
@@ -71,6 +76,7 @@ Total: **88**
 - `release-integrity-verification` → `.claude/skills/release-integrity-verification/SKILL.md`
 - `repository-mapping` → `.claude/skills/repository-mapping/SKILL.md`
 - `resource-claim-design` → `.claude/skills/resource-claim-design/SKILL.md`
+- `responsive-layout-audit` → `.claude/skills/responsive-layout-audit/SKILL.md`
 - `result-reconciliation` → `.claude/skills/result-reconciliation/SKILL.md`
 - `resume-packet-assembly` → `.claude/skills/resume-packet-assembly/SKILL.md`
 - `runtime-adapter-mapping` → `.claude/skills/runtime-adapter-mapping/SKILL.md`
@@ -91,4 +97,6 @@ Total: **88**
 - `universal-runtime-contract-design` → `.claude/skills/universal-runtime-contract-design/SKILL.md`
 - `version-migration-planning` → `.claude/skills/version-migration-planning/SKILL.md`
 - `version-transition-validation` → `.claude/skills/version-transition-validation/SKILL.md`
+- `visual-regression-review` → `.claude/skills/visual-regression-review/SKILL.md`
+- `web-performance-field-readiness` → `.claude/skills/web-performance-field-readiness/SKILL.md`
 - `workstream-decomposition` → `.claude/skills/workstream-decomposition/SKILL.md`
