@@ -1,0 +1,112 @@
+# Web Production Assurance Workflow
+
+## Trigger
+
+A public web feature or release changes critical browser journeys, routes/domains/redirects, crawl/index behavior, metadata/sitemaps/robots/canonicals, structured data, or dependency/build inputs with production impact.
+
+## Objective
+
+Deliver evidence that critical journeys work in a rendered browser, intended public pages are technically discoverable/indexable by design, structured data is factual and valid, and changed third-party code/build inputs have received proportionate supply-chain review.
+
+## Inputs
+
+- Request, acceptance criteria, risk, and release scope
+- Public route/domain/canonical intent
+- Critical user journeys and safe test data
+- Deployed or production-equivalent environment
+- Browser/E2E tooling
+- Robots, sitemap, metadata, structured-data output when applicable
+- Dependency manifests, lockfiles, CI/build inputs, and trusted base revision
+
+## Sequence
+
+1. **Map assurance scope**
+   - Read `framework/web-production-assurance-model.md`.
+   - Classify critical browser journeys, intended-indexable URLs, structured-data surfaces, and dependency/build deltas.
+
+2. **Audit supply-chain delta when applicable**
+   - Run `supply-chain-risk-audit` when dependencies, lockfiles, registries, scripts, CI actions, container bases, plugins, or build inputs changed.
+
+3. **Validate critical browser journeys**
+   - Run `browser-flow-validation` for release-critical user paths.
+   - Use clean browser/test state and observable assertions; capture console/network/runtime failures and failure diagnostics.
+
+4. **Audit technical SEO when public discovery matters**
+   - Run `seo-technical-audit` against deployed/production-equivalent HTTP behavior.
+   - Verify status, redirects, canonical, robots/noindex, sitemap, rendering, metadata, and crawlable internal discovery.
+
+5. **Validate structured data when present**
+   - Run `structured-data-validation`.
+   - Compare schema output with authoritative/visible page facts and current feature validation.
+
+6. **Compose adjacent gates**
+   - Use frontend craft gates for visual/responsive quality.
+   - Use SaaS production trust for identity, authorization, RLS, secrets, webhooks, payments, and external API trust.
+   - Use accessibility/performance/privacy/release gates when material.
+
+7. **Run independent assurance review**
+   - A reviewer who did not solely implement the change runs `.claude/reviews/web-production-assurance-review.md`.
+
+8. **Record evidence and continuity**
+   - Record browser, HTTP/search, structured-data, dependency, review, limitation, and residual-risk evidence.
+
+## Required lifecycle
+
+1. **Understand** - Identify public/release intent, critical journeys, search intent, dependency delta, environment, and acceptance criteria.
+2. **Inspect** - Read canonical memory, current routes, deployment behavior, browser tests, metadata, search controls, manifests/lockfiles, and relevant contracts.
+3. **Plan** - Choose representative journeys/URLs/dependency checks and independent review ownership.
+4. **Execute** - Implement without weakening established frontend, trust, security, or release boundaries.
+5. **Validate** - Run applicable browser-flow, SEO, structured-data, and supply-chain capabilities with real evidence.
+6. **Review** - Complete independent web-production assurance and adjacent required gates.
+7. **Document** - Record results, diagnostics, limitations, exceptions, and stable decisions.
+8. **Deliver** - Report Approved, Approved with conditions, Changes required, or Blocked according to evidence.
+
+## Responsible agents
+
+- `qa-engineer`: primary independent release/behavior evidence owner.
+- `test-automation-engineer`: browser automation architecture, fixtures, determinism, diagnostics, and CI integration.
+- `frontend-engineer`: implements public-route, rendering, metadata, structured-data, and browser fixes while preserving craft/accessibility/performance.
+- `content-designer`: validates page/entity meaning, public content hierarchy, titles/descriptions, and factual structured-data claims where assigned.
+- `security-engineer`: reviews high-risk dependency/build-input findings and blocks unsafe supply-chain changes.
+- `dependency-manager`: owns dependency delta, source, advisories, maintenance, scripts, and rollback assessment.
+- `orchestrator`: routes adjacent gates and preserves reviewer independence.
+
+## Decision points
+
+- Which journeys are truly release-critical rather than every possible click path?
+- Is browser automation already available and healthy, or is a new tool justified?
+- Which URLs are intentionally indexable, duplicate, redirected, noindex, error, or private?
+- Do canonical, sitemap, redirect, and robots/noindex signals agree?
+- Does JavaScript rendering hide essential public content or links from the intended fetch path?
+- Which structured-data types are actually justified by page meaning and current search support?
+- Which dependency/build changes execute code or have production reach?
+- Is missing evidence safe to defer, or does it block the release claim?
+
+## Validation
+
+- Run `browser-flow-validation` for release-critical journeys and retain reproducible failure diagnostics.
+- Run `seo-technical-audit` for public discoverability changes using deployed/production-equivalent HTTP responses.
+- Run `structured-data-validation` for every changed schema surface and compare markup with authoritative page facts.
+- Run `supply-chain-risk-audit` for changed dependencies/build inputs and retain advisory/dependency-diff/script/provenance evidence.
+- Verify applicable adjacent frontend craft, accessibility, performance, SaaS trust, privacy, and release gates.
+- Complete `web-production-assurance-review` independently for significant public-web releases.
+- Record browser/tool versions, environment, representative URLs, test-state class, dependency base, commands, validator output, limitations, and exceptions without secrets.
+
+## Failure handling
+
+- Do not mark a journey passed when assertions were skipped, flaky failures were merely retried away, or console/network errors remain unexplained.
+- Do not change robots/canonical/noindex expectations solely to make a crawler test green without confirming product search intent.
+- Do not add fabricated structured data to silence validator warnings.
+- Do not accept broad unexplained lockfile churn, malware evidence, critical reachable vulnerability, or opaque install/build execution merely because the application build succeeds.
+- Do not use `robots.txt` as private-data protection.
+- Do not claim ranking, indexing, rich-result display, or complete vulnerability absence from this workflow.
+- Unresolved Critical or High findings block approval.
+
+## Completion criteria
+
+- Critical journeys have rendered browser evidence or an explicit blocking gap.
+- Intended-indexable public URLs have coherent status/redirect/canonical/robots/sitemap/rendering behavior.
+- Changed structured data is valid, non-conflicting, and factually grounded where applicable.
+- Changed dependency/build inputs have a reviewed source, delta, execution surface, and advisory risk where applicable.
+- Independent review is Approved or Approved with resolved/accepted conditions.
+- Residual risks and unavailable evidence are explicit.
