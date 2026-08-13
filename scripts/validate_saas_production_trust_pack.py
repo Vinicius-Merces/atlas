@@ -185,11 +185,11 @@ def main() -> None:
                 )
 
     if MODEL.is_file():
-        model_text = MODEL.read_text(encoding="utf-8")
+        model_text = MODEL.read_text(encoding="utf-8").lower()
         markers = [
             "authentication",
             "authorization",
-            "RLS",
+            "rls",
             "service-role",
             "idempotency",
             "webhook",
