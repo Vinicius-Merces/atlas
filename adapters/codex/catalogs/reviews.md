@@ -2,7 +2,7 @@
 
 > Generated from `.claude/registry.json`. Do not edit manually.
 
-Total: **68**
+Total: **73**
 
 - `adapter-drift-review` → `.claude/reviews/adapter-drift-review.md`
 - `adoption-review` → `.claude/reviews/adoption-review.md`
@@ -12,6 +12,7 @@ Total: **68**
 - `automation-review` → `.claude/reviews/automation-review.md`
 - `beta-readiness-review` → `.claude/reviews/beta-readiness-review.md`
 - `blueprint-review` → `.claude/reviews/blueprint-review.md`
+- `capability-quality-review` → `.claude/reviews/capability-quality-review.md`
 - `checkpoint-integrity-review` → `.claude/reviews/checkpoint-integrity-review.md`
 - `codex-runtime-review` → `.claude/reviews/codex-runtime-review.md`
 - `compatibility-review` → `.claude/reviews/compatibility-review.md`
@@ -29,6 +30,7 @@ Total: **68**
 - `evidence-integrity-review` → `.claude/reviews/evidence-integrity-review.md`
 - `execution-planning-review` → `.claude/reviews/execution-planning-review.md`
 - `finops-review` → `.claude/reviews/finops-review.md`
+- `frontend-craft-review` → `.claude/reviews/frontend-craft-review.md`
 - `governance-review` → `.claude/reviews/governance-review.md`
 - `integration-review` → `.claude/reviews/integration-review.md`
 - `knowledge-review` → `.claude/reviews/knowledge-review.md`
@@ -48,6 +50,7 @@ Total: **68**
 - `policy-review` → `.claude/reviews/policy-review.md`
 - `privacy-review` → `.claude/reviews/privacy-review.md`
 - `product-review` → `.claude/reviews/product-review.md`
+- `production-product-quality-review` → `.claude/reviews/production-product-quality-review.md`
 - `project-health-review` → `.claude/reviews/project-health-review.md`
 - `project-memory-review` → `.claude/reviews/project-memory-review.md`
 - `provenance-review` → `.claude/reviews/provenance-review.md`
@@ -61,6 +64,7 @@ Total: **68**
 - `runtime-handoff-review` → `.claude/reviews/runtime-handoff-review.md`
 - `runtime-parity-review` → `.claude/reviews/runtime-parity-review.md`
 - `runtime-synchronization-review` → `.claude/reviews/runtime-synchronization-review.md`
+- `saas-production-trust-review` → `.claude/reviews/saas-production-trust-review.md`
 - `security-review` → `.claude/reviews/security-review.md`
 - `session-continuity-review` → `.claude/reviews/session-continuity-review.md`
 - `source-of-truth-review` → `.claude/reviews/source-of-truth-review.md`
@@ -72,3 +76,4 @@ Total: **68**
 - `threat-model-review` → `.claude/reviews/threat-model-review.md`
 - `universal-runtime-contract-review` → `.claude/reviews/universal-runtime-contract-review.md`
 - `ux-review` → `.claude/reviews/ux-review.md`
+- `web-production-assurance-review` → `.claude/reviews/web-production-assurance-review.md`

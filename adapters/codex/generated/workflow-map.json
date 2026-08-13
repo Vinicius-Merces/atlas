@@ -85,6 +85,15 @@
       "version": "0.1.1"
     },
     {
+      "canonical_name": "capability-quality-assessment",
+      "canonical_path": ".claude/workflows/capability-quality-assessment.md",
+      "adapter_path": "adapters/codex/catalogs/workflows.md",
+      "parity_type": "canonical-reference",
+      "status": "mapped",
+      "notes": "Resolved through the generated catalog to the canonical source.",
+      "version": "0.1.1"
+    },
+    {
       "canonical_name": "ci-governance",
       "canonical_path": ".claude/workflows/ci-governance.md",
       "adapter_path": "adapters/codex/catalogs/workflows.md",
@@ -292,6 +301,15 @@
       "version": "0.1.1"
     },
     {
+      "canonical_name": "frontend-feature-delivery",
+      "canonical_path": ".claude/workflows/frontend-feature-delivery.md",
+      "adapter_path": "adapters/codex/catalogs/workflows.md",
+      "parity_type": "canonical-reference",
+      "status": "mapped",
+      "notes": "Resolved through the generated catalog to the canonical source.",
+      "version": "0.1.1"
+    },
+    {
       "canonical_name": "incident-response",
       "canonical_path": ".claude/workflows/incident-response.md",
       "adapter_path": "adapters/codex/catalogs/workflows.md",
@@ -429,6 +447,15 @@
     {
       "canonical_name": "product-discovery",
       "canonical_path": ".claude/workflows/product-discovery.md",
+      "adapter_path": "adapters/codex/catalogs/workflows.md",
+      "parity_type": "canonical-reference",
+      "status": "mapped",
+      "notes": "Resolved through the generated catalog to the canonical source.",
+      "version": "0.1.1"
+    },
+    {
+      "canonical_name": "production-product-quality-readiness",
+      "canonical_path": ".claude/workflows/production-product-quality-readiness.md",
       "adapter_path": "adapters/codex/catalogs/workflows.md",
       "parity_type": "canonical-reference",
       "status": "mapped",
@@ -580,6 +607,15 @@
       "version": "0.1.1"
     },
     {
+      "canonical_name": "saas-production-readiness",
+      "canonical_path": ".claude/workflows/saas-production-readiness.md",
+      "adapter_path": "adapters/codex/catalogs/workflows.md",
+      "parity_type": "canonical-reference",
+      "status": "mapped",
+      "notes": "Resolved through the generated catalog to the canonical source.",
+      "version": "0.1.1"
+    },
+    {
       "canonical_name": "session-bootstrap",
       "canonical_path": ".claude/workflows/session-bootstrap.md",
       "adapter_path": "adapters/codex/catalogs/workflows.md",
@@ -672,6 +708,15 @@
     {
       "canonical_name": "threat-modeling",
       "canonical_path": ".claude/workflows/threat-modeling.md",
+      "adapter_path": "adapters/codex/catalogs/workflows.md",
+      "parity_type": "canonical-reference",
+      "status": "mapped",
+      "notes": "Resolved through the generated catalog to the canonical source.",
+      "version": "0.1.1"
+    },
+    {
+      "canonical_name": "web-production-assurance",
+      "canonical_path": ".claude/workflows/web-production-assurance.md",
       "adapter_path": "adapters/codex/catalogs/workflows.md",
       "parity_type": "canonical-reference",
       "status": "mapped",
