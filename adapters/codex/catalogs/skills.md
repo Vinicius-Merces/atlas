@@ -2,7 +2,7 @@
 
 > Generated from `.claude/registry.json`. Do not edit manually.
 
-Total: **103**
+Total: **107**
 
 - `accessibility-audit` → `.claude/skills/accessibility-audit/SKILL.md`
 - `adapter-drift-detection` → `.claude/skills/adapter-drift-detection/SKILL.md`
@@ -16,6 +16,7 @@ Total: **103**
 - `authentication-flow-review` → `.claude/skills/authentication-flow-review/SKILL.md`
 - `authorization-boundary-review` → `.claude/skills/authorization-boundary-review/SKILL.md`
 - `blueprint-selection` → `.claude/skills/blueprint-selection/SKILL.md`
+- `browser-flow-validation` → `.claude/skills/browser-flow-validation/SKILL.md`
 - `change-provenance-mapping` → `.claude/skills/change-provenance-mapping/SKILL.md`
 - `cloud-cost-analysis` → `.claude/skills/cloud-cost-analysis/SKILL.md`
 - `codex-runtime-generation` → `.claude/skills/codex-runtime-generation/SKILL.md`
@@ -91,9 +92,12 @@ Total: **103**
 - `runtime-semantic-parity` → `.claude/skills/runtime-semantic-parity/SKILL.md`
 - `secret-environment-audit` → `.claude/skills/secret-environment-audit/SKILL.md`
 - `semantic-compatibility-verification` → `.claude/skills/semantic-compatibility-verification/SKILL.md`
+- `seo-technical-audit` → `.claude/skills/seo-technical-audit/SKILL.md`
 - `session-closeout` → `.claude/skills/session-closeout/SKILL.md`
 - `smoke-test-design` → `.claude/skills/smoke-test-design/SKILL.md`
 - `source-of-truth-validation` → `.claude/skills/source-of-truth-validation/SKILL.md`
+- `structured-data-validation` → `.claude/skills/structured-data-validation/SKILL.md`
+- `supply-chain-risk-audit` → `.claude/skills/supply-chain-risk-audit/SKILL.md`
 - `support-classification` → `.claude/skills/support-classification/SKILL.md`
 - `task-routing-policy` → `.claude/skills/task-routing-policy/SKILL.md`
 - `technical-debt-classification` → `.claude/skills/technical-debt-classification/SKILL.md`

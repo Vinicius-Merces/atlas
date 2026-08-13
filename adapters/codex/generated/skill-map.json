@@ -112,6 +112,15 @@
       "version": "0.1.1"
     },
     {
+      "canonical_name": "browser-flow-validation",
+      "canonical_path": ".claude/skills/browser-flow-validation/SKILL.md",
+      "adapter_path": ".agents/skills/browser-flow-validation/SKILL.md",
+      "parity_type": "runtime-native",
+      "status": "native",
+      "notes": "Codex-native entry point.",
+      "version": "0.1.1"
+    },
+    {
       "canonical_name": "change-provenance-mapping",
       "canonical_path": ".claude/skills/change-provenance-mapping/SKILL.md",
       "adapter_path": ".agents/skills/change-provenance-mapping/SKILL.md",
@@ -787,6 +796,15 @@
       "version": "0.1.1"
     },
     {
+      "canonical_name": "seo-technical-audit",
+      "canonical_path": ".claude/skills/seo-technical-audit/SKILL.md",
+      "adapter_path": ".agents/skills/seo-technical-audit/SKILL.md",
+      "parity_type": "runtime-native",
+      "status": "native",
+      "notes": "Codex-native entry point.",
+      "version": "0.1.1"
+    },
+    {
       "canonical_name": "session-closeout",
       "canonical_path": ".claude/skills/session-closeout/SKILL.md",
       "adapter_path": ".agents/skills/session-closeout/SKILL.md",
@@ -808,6 +826,24 @@
       "canonical_name": "source-of-truth-validation",
       "canonical_path": ".claude/skills/source-of-truth-validation/SKILL.md",
       "adapter_path": ".agents/skills/source-of-truth-validation/SKILL.md",
+      "parity_type": "runtime-native",
+      "status": "native",
+      "notes": "Codex-native entry point.",
+      "version": "0.1.1"
+    },
+    {
+      "canonical_name": "structured-data-validation",
+      "canonical_path": ".claude/skills/structured-data-validation/SKILL.md",
+      "adapter_path": ".agents/skills/structured-data-validation/SKILL.md",
+      "parity_type": "runtime-native",
+      "status": "native",
+      "notes": "Codex-native entry point.",
+      "version": "0.1.1"
+    },
+    {
+      "canonical_name": "supply-chain-risk-audit",
+      "canonical_path": ".claude/skills/supply-chain-risk-audit/SKILL.md",
+      "adapter_path": ".agents/skills/supply-chain-risk-audit/SKILL.md",
       "parity_type": "runtime-native",
       "status": "native",
       "notes": "Codex-native entry point.",

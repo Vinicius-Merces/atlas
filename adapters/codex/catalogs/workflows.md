@@ -2,7 +2,7 @@
 
 > Generated from `.claude/registry.json`. Do not edit manually.
 
-Total: **78**
+Total: **79**
 
 - `adapter-drift-audit` → `.claude/workflows/adapter-drift-audit.md`
 - `ai-feature-delivery` → `.claude/workflows/ai-feature-delivery.md`
@@ -81,4 +81,5 @@ Total: **78**
 - `technical-program` → `.claude/workflows/technical-program.md`
 - `test-automation` → `.claude/workflows/test-automation.md`
 - `threat-modeling` → `.claude/workflows/threat-modeling.md`
+- `web-production-assurance` → `.claude/workflows/web-production-assurance.md`
 - `workstream-merge` → `.claude/workflows/workstream-merge.md`

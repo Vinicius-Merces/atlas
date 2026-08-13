@@ -632,6 +632,15 @@
       "status": "mapped",
       "notes": "Resolved through the generated catalog to the canonical source.",
       "version": "0.1.1"
+    },
+    {
+      "canonical_name": "web-production-assurance-review",
+      "canonical_path": ".claude/reviews/web-production-assurance-review.md",
+      "adapter_path": "adapters/codex/catalogs/reviews.md",
+      "parity_type": "canonical-reference",
+      "status": "mapped",
+      "notes": "Resolved through the generated catalog to the canonical source.",
+      "version": "0.1.1"
     }
   ]
 }
