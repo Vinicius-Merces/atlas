@@ -83,3 +83,9 @@ def test_p5_assurance_requires_direct_tenant_and_billing_evidence() -> None:
     } <= required
     assert schema["$defs"]["denialAttempt"]["properties"]["outcome"]["const"] == "denied"
     assert schema["properties"]["secret_boundary"]["properties"]["exposed_privileged_secrets"]["const"] == 0
+
+
+def test_p5_validator_is_part_of_global_quick_validation() -> None:
+    text = (ROOT / "scripts/validate_all.py").read_text(encoding="utf-8")
+    assert '"relayops-live-saas-campaign"' in text
+    assert '"validate_relayops_live_campaign.py"' in text
