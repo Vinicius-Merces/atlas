@@ -1,0 +1,10 @@
+{
+  "version": 1,
+  "generated_at": "2026-08-14T11:57:38.338Z",
+  "anonymous_protected_redirect": true,
+  "invalid_credentials_status": 401,
+  "authenticated_tenant": "northline",
+  "protected_dashboard_status": 200,
+  "foreign_tenant_name_exposed": false,
+  "logout_invalidated_session": true
+}

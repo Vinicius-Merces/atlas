@@ -1,0 +1,16 @@
+{
+  "version": 1,
+  "generated_at": "2026-08-14T11:57:39.633Z",
+  "cache": {
+    "stale_membership_after_revoke": "denied",
+    "cache_invalidated": true
+  },
+  "jobs": {
+    "idempotency_key_deduplicated": true,
+    "duplicate_job_id": "6c229f71-f5ac-45fb-b737-9eaed326aaaf",
+    "tenant_context": "northline",
+    "provider_failure_status": "retry",
+    "retry_recovery_status": "done",
+    "uncontrolled_duplicate_effects": 0
+  }
+}

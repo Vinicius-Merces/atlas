@@ -1,0 +1,10 @@
+{
+  "version": 1,
+  "generated_at": "2026-08-14T11:57:39.021Z",
+  "manager_privileged_attempt_status": 403,
+  "support_missing_context_status": 400,
+  "support_explicit_context_status": 200,
+  "target_tenant": "harbor",
+  "foreign_customer_exposed": false,
+  "audit_action": "support.tenant_viewed"
+}

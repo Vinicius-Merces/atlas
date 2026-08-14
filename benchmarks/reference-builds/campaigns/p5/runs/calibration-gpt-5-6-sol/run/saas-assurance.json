@@ -1,0 +1,112 @@
+{
+  "version": 1,
+  "run_manifest": "benchmarks/reference-builds/campaigns/p5/runs/calibration-gpt-5-6-sol/run/manifest.json",
+  "evidence_references": [
+    "benchmarks/reference-builds/campaigns/p5/runs/calibration-gpt-5-6-sol/run/evidence/auth-membership.json",
+    "benchmarks/reference-builds/campaigns/p5/runs/calibration-gpt-5-6-sol/run/evidence/http-auth-flow.json",
+    "benchmarks/reference-builds/campaigns/p5/runs/calibration-gpt-5-6-sol/run/evidence/tenant-database.json",
+    "benchmarks/reference-builds/campaigns/p5/runs/calibration-gpt-5-6-sol/run/evidence/tenant-storage.json",
+    "benchmarks/reference-builds/campaigns/p5/runs/calibration-gpt-5-6-sol/run/evidence/tenant-search.json",
+    "benchmarks/reference-builds/campaigns/p5/runs/calibration-gpt-5-6-sol/run/evidence/tenant-cache-jobs.json",
+    "benchmarks/reference-builds/campaigns/p5/runs/calibration-gpt-5-6-sol/run/evidence/notifications.json",
+    "benchmarks/reference-builds/campaigns/p5/runs/calibration-gpt-5-6-sol/run/evidence/billing-entitlements.json",
+    "benchmarks/reference-builds/campaigns/p5/runs/calibration-gpt-5-6-sol/run/evidence/admin-audit.json",
+    "benchmarks/reference-builds/campaigns/p5/runs/calibration-gpt-5-6-sol/run/evidence/http-admin-flow.json",
+    "benchmarks/reference-builds/campaigns/p5/runs/calibration-gpt-5-6-sol/run/evidence/import-export.json",
+    "benchmarks/reference-builds/campaigns/p5/runs/calibration-gpt-5-6-sol/run/evidence/secret-boundary.json",
+    "benchmarks/reference-builds/campaigns/p5/runs/calibration-gpt-5-6-sol/run/evidence/http-operational-flow.json",
+    "benchmarks/reference-builds/campaigns/p5/runs/calibration-gpt-5-6-sol/run/evidence/http-security.json",
+    "benchmarks/reference-builds/campaigns/p5/runs/calibration-gpt-5-6-sol/run/evidence/browser/browser-auth-flow.json"
+  ],
+  "auth_and_membership": {
+    "session_lifecycle_ref": "benchmarks/reference-builds/campaigns/p5/runs/calibration-gpt-5-6-sol/run/evidence/auth-membership.json",
+    "organization_membership_ref": "benchmarks/reference-builds/campaigns/p5/runs/calibration-gpt-5-6-sol/run/evidence/auth-membership.json",
+    "unauthenticated_denial_ref": "benchmarks/reference-builds/campaigns/p5/runs/calibration-gpt-5-6-sol/run/evidence/http-auth-flow.json",
+    "role_denial_ref": "benchmarks/reference-builds/campaigns/p5/runs/calibration-gpt-5-6-sol/run/evidence/admin-audit.json"
+  },
+  "tenant_database": {
+    "attempts": [
+      {
+        "source_tenant": "northline",
+        "target_tenant": "harbor",
+        "operation": "customer/work-order read",
+        "outcome": "denied",
+        "evidence_ref": "benchmarks/reference-builds/campaigns/p5/runs/calibration-gpt-5-6-sol/run/evidence/tenant-database.json"
+      },
+      {
+        "source_tenant": "harbor",
+        "target_tenant": "northline",
+        "operation": "foreign customer write dependency",
+        "outcome": "denied",
+        "evidence_ref": "benchmarks/reference-builds/campaigns/p5/runs/calibration-gpt-5-6-sol/run/evidence/tenant-database.json"
+      }
+    ]
+  },
+  "tenant_storage": {
+    "attempts": [
+      {
+        "source_tenant": "harbor",
+        "target_tenant": "northline",
+        "operation": "attachment read",
+        "outcome": "denied",
+        "evidence_ref": "benchmarks/reference-builds/campaigns/p5/runs/calibration-gpt-5-6-sol/run/evidence/tenant-storage.json"
+      },
+      {
+        "source_tenant": "harbor",
+        "target_tenant": "northline",
+        "operation": "attachment write to foreign work order",
+        "outcome": "denied",
+        "evidence_ref": "benchmarks/reference-builds/campaigns/p5/runs/calibration-gpt-5-6-sol/run/evidence/tenant-storage.json"
+      }
+    ]
+  },
+  "tenant_search": {
+    "attempts": [
+      {
+        "source_tenant": "northline",
+        "target_tenant": "harbor",
+        "operation": "foreign customer/work-order search",
+        "outcome": "denied",
+        "evidence_ref": "benchmarks/reference-builds/campaigns/p5/runs/calibration-gpt-5-6-sol/run/evidence/tenant-search.json"
+      }
+    ]
+  },
+  "tenant_cache_jobs": {
+    "cache_isolation_ref": "benchmarks/reference-builds/campaigns/p5/runs/calibration-gpt-5-6-sol/run/evidence/tenant-cache-jobs.json",
+    "job_context_ref": "benchmarks/reference-builds/campaigns/p5/runs/calibration-gpt-5-6-sol/run/evidence/tenant-cache-jobs.json",
+    "duplicate_delivery_ref": "benchmarks/reference-builds/campaigns/p5/runs/calibration-gpt-5-6-sol/run/evidence/tenant-cache-jobs.json",
+    "retry_recovery_ref": "benchmarks/reference-builds/campaigns/p5/runs/calibration-gpt-5-6-sol/run/evidence/tenant-cache-jobs.json",
+    "stale_authorization_ref": "benchmarks/reference-builds/campaigns/p5/runs/calibration-gpt-5-6-sol/run/evidence/tenant-cache-jobs.json"
+  },
+  "notifications": {
+    "tenant_delivery_ref": "benchmarks/reference-builds/campaigns/p5/runs/calibration-gpt-5-6-sol/run/evidence/notifications.json",
+    "provider_failure_ref": "benchmarks/reference-builds/campaigns/p5/runs/calibration-gpt-5-6-sol/run/evidence/notifications.json",
+    "recovery_ref": "benchmarks/reference-builds/campaigns/p5/runs/calibration-gpt-5-6-sol/run/evidence/notifications.json"
+  },
+  "billing_entitlements": {
+    "checkout_ref": "benchmarks/reference-builds/campaigns/p5/runs/calibration-gpt-5-6-sol/run/evidence/http-operational-flow.json",
+    "authoritative_entitlement_ref": "benchmarks/reference-builds/campaigns/p5/runs/calibration-gpt-5-6-sol/run/evidence/billing-entitlements.json",
+    "duplicate_webhook_ref": "benchmarks/reference-builds/campaigns/p5/runs/calibration-gpt-5-6-sol/run/evidence/billing-entitlements.json",
+    "out_of_order_webhook_ref": "benchmarks/reference-builds/campaigns/p5/runs/calibration-gpt-5-6-sol/run/evidence/billing-entitlements.json",
+    "reconciliation_ref": "benchmarks/reference-builds/campaigns/p5/runs/calibration-gpt-5-6-sol/run/evidence/billing-entitlements.json",
+    "revocation_ref": "benchmarks/reference-builds/campaigns/p5/runs/calibration-gpt-5-6-sol/run/evidence/billing-entitlements.json"
+  },
+  "admin_audit": {
+    "explicit_tenant_context": true,
+    "least_privilege_denial_ref": "benchmarks/reference-builds/campaigns/p5/runs/calibration-gpt-5-6-sol/run/evidence/admin-audit.json",
+    "privileged_action_ref": "benchmarks/reference-builds/campaigns/p5/runs/calibration-gpt-5-6-sol/run/evidence/http-admin-flow.json",
+    "audit_record_ref": "benchmarks/reference-builds/campaigns/p5/runs/calibration-gpt-5-6-sol/run/evidence/admin-audit.json"
+  },
+  "import_export": {
+    "row_validation_ref": "benchmarks/reference-builds/campaigns/p5/runs/calibration-gpt-5-6-sol/run/evidence/import-export.json",
+    "partial_failure_ref": "benchmarks/reference-builds/campaigns/p5/runs/calibration-gpt-5-6-sol/run/evidence/import-export.json",
+    "safe_retry_ref": "benchmarks/reference-builds/campaigns/p5/runs/calibration-gpt-5-6-sol/run/evidence/import-export.json",
+    "export_isolation_ref": "benchmarks/reference-builds/campaigns/p5/runs/calibration-gpt-5-6-sol/run/evidence/import-export.json"
+  },
+  "secret_boundary": {
+    "browser_bundle_scan_ref": "benchmarks/reference-builds/campaigns/p5/runs/calibration-gpt-5-6-sol/run/evidence/secret-boundary.json",
+    "client_log_scan_ref": "benchmarks/reference-builds/campaigns/p5/runs/calibration-gpt-5-6-sol/run/evidence/secret-boundary.json",
+    "exposed_privileged_secrets": 0
+  },
+  "notes": "Generated from executed Node tests and, when present, authenticated Playwright evidence. Controlled preview and independent review are handled by separate assurance sidecars."
+}

@@ -1,0 +1,138 @@
+{
+  "version": 2,
+  "environment_manifest": "benchmarks/reference-builds/campaigns/p5/runs/calibration-gpt-5-6-sol/run/environment-capability.json",
+  "evidence_references": [
+    "benchmarks/reference-builds/campaigns/p5/runs/calibration-gpt-5-6-sol/run/environment-capability.json",
+    "benchmarks/reference-builds/campaigns/p5/runs/calibration-gpt-5-6-sol/run/evidence/public-browser/browser-summary.json",
+    "benchmarks/reference-builds/campaigns/p5/runs/calibration-gpt-5-6-sol/run/deployment.json",
+    "benchmarks/reference-builds/campaigns/p5/runs/calibration-gpt-5-6-sol/run/evidence/tenant-cache-jobs.json",
+    "benchmarks/reference-builds/campaigns/p5/runs/calibration-gpt-5-6-sol/run/evidence/billing-entitlements.json",
+    "benchmarks/reference-builds/campaigns/p5/runs/calibration-gpt-5-6-sol/run/evidence/http-security.json",
+    "benchmarks/reference-builds/campaigns/p5/runs/calibration-gpt-5-6-sol/run/evidence/public-browser/screenshots/admin--laptop-1280.png",
+    "benchmarks/reference-builds/campaigns/p5/runs/calibration-gpt-5-6-sol/run/evidence/public-browser/screenshots/admin--phone-360.png",
+    "benchmarks/reference-builds/campaigns/p5/runs/calibration-gpt-5-6-sol/run/evidence/public-browser/screenshots/admin--tablet-768.png",
+    "benchmarks/reference-builds/campaigns/p5/runs/calibration-gpt-5-6-sol/run/evidence/public-browser/screenshots/admin--wide-1920.png",
+    "benchmarks/reference-builds/campaigns/p5/runs/calibration-gpt-5-6-sol/run/evidence/public-browser/screenshots/billing--laptop-1280.png",
+    "benchmarks/reference-builds/campaigns/p5/runs/calibration-gpt-5-6-sol/run/evidence/public-browser/screenshots/billing--phone-360.png",
+    "benchmarks/reference-builds/campaigns/p5/runs/calibration-gpt-5-6-sol/run/evidence/public-browser/screenshots/billing--tablet-768.png",
+    "benchmarks/reference-builds/campaigns/p5/runs/calibration-gpt-5-6-sol/run/evidence/public-browser/screenshots/billing--wide-1920.png",
+    "benchmarks/reference-builds/campaigns/p5/runs/calibration-gpt-5-6-sol/run/evidence/public-browser/screenshots/customers--laptop-1280.png",
+    "benchmarks/reference-builds/campaigns/p5/runs/calibration-gpt-5-6-sol/run/evidence/public-browser/screenshots/customers--phone-360.png",
+    "benchmarks/reference-builds/campaigns/p5/runs/calibration-gpt-5-6-sol/run/evidence/public-browser/screenshots/customers--tablet-768.png",
+    "benchmarks/reference-builds/campaigns/p5/runs/calibration-gpt-5-6-sol/run/evidence/public-browser/screenshots/customers--wide-1920.png",
+    "benchmarks/reference-builds/campaigns/p5/runs/calibration-gpt-5-6-sol/run/evidence/public-browser/screenshots/dashboard--laptop-1280.png",
+    "benchmarks/reference-builds/campaigns/p5/runs/calibration-gpt-5-6-sol/run/evidence/public-browser/screenshots/dashboard--phone-360.png",
+    "benchmarks/reference-builds/campaigns/p5/runs/calibration-gpt-5-6-sol/run/evidence/public-browser/screenshots/dashboard--tablet-768.png",
+    "benchmarks/reference-builds/campaigns/p5/runs/calibration-gpt-5-6-sol/run/evidence/public-browser/screenshots/dashboard--wide-1920.png",
+    "benchmarks/reference-builds/campaigns/p5/runs/calibration-gpt-5-6-sol/run/evidence/public-browser/screenshots/import-export--laptop-1280.png",
+    "benchmarks/reference-builds/campaigns/p5/runs/calibration-gpt-5-6-sol/run/evidence/public-browser/screenshots/import-export--phone-360.png",
+    "benchmarks/reference-builds/campaigns/p5/runs/calibration-gpt-5-6-sol/run/evidence/public-browser/screenshots/import-export--tablet-768.png",
+    "benchmarks/reference-builds/campaigns/p5/runs/calibration-gpt-5-6-sol/run/evidence/public-browser/screenshots/import-export--wide-1920.png",
+    "benchmarks/reference-builds/campaigns/p5/runs/calibration-gpt-5-6-sol/run/evidence/public-browser/screenshots/login--laptop-1280.png",
+    "benchmarks/reference-builds/campaigns/p5/runs/calibration-gpt-5-6-sol/run/evidence/public-browser/screenshots/login--phone-360.png",
+    "benchmarks/reference-builds/campaigns/p5/runs/calibration-gpt-5-6-sol/run/evidence/public-browser/screenshots/login--tablet-768.png",
+    "benchmarks/reference-builds/campaigns/p5/runs/calibration-gpt-5-6-sol/run/evidence/public-browser/screenshots/login--wide-1920.png",
+    "benchmarks/reference-builds/campaigns/p5/runs/calibration-gpt-5-6-sol/run/evidence/public-browser/screenshots/work-orders--laptop-1280.png",
+    "benchmarks/reference-builds/campaigns/p5/runs/calibration-gpt-5-6-sol/run/evidence/public-browser/screenshots/work-orders--phone-360.png",
+    "benchmarks/reference-builds/campaigns/p5/runs/calibration-gpt-5-6-sol/run/evidence/public-browser/screenshots/work-orders--tablet-768.png",
+    "benchmarks/reference-builds/campaigns/p5/runs/calibration-gpt-5-6-sol/run/evidence/public-browser/screenshots/work-orders--wide-1920.png"
+  ],
+  "browser": {
+    "source": "campaign-portable",
+    "summary": "benchmarks/reference-builds/campaigns/p5/runs/calibration-gpt-5-6-sol/run/evidence/public-browser/browser-summary.json",
+    "screenshots": [
+      "benchmarks/reference-builds/campaigns/p5/runs/calibration-gpt-5-6-sol/run/evidence/public-browser/screenshots/admin--laptop-1280.png",
+      "benchmarks/reference-builds/campaigns/p5/runs/calibration-gpt-5-6-sol/run/evidence/public-browser/screenshots/admin--phone-360.png",
+      "benchmarks/reference-builds/campaigns/p5/runs/calibration-gpt-5-6-sol/run/evidence/public-browser/screenshots/admin--tablet-768.png",
+      "benchmarks/reference-builds/campaigns/p5/runs/calibration-gpt-5-6-sol/run/evidence/public-browser/screenshots/admin--wide-1920.png",
+      "benchmarks/reference-builds/campaigns/p5/runs/calibration-gpt-5-6-sol/run/evidence/public-browser/screenshots/billing--laptop-1280.png",
+      "benchmarks/reference-builds/campaigns/p5/runs/calibration-gpt-5-6-sol/run/evidence/public-browser/screenshots/billing--phone-360.png",
+      "benchmarks/reference-builds/campaigns/p5/runs/calibration-gpt-5-6-sol/run/evidence/public-browser/screenshots/billing--tablet-768.png",
+      "benchmarks/reference-builds/campaigns/p5/runs/calibration-gpt-5-6-sol/run/evidence/public-browser/screenshots/billing--wide-1920.png",
+      "benchmarks/reference-builds/campaigns/p5/runs/calibration-gpt-5-6-sol/run/evidence/public-browser/screenshots/customers--laptop-1280.png",
+      "benchmarks/reference-builds/campaigns/p5/runs/calibration-gpt-5-6-sol/run/evidence/public-browser/screenshots/customers--phone-360.png",
+      "benchmarks/reference-builds/campaigns/p5/runs/calibration-gpt-5-6-sol/run/evidence/public-browser/screenshots/customers--tablet-768.png",
+      "benchmarks/reference-builds/campaigns/p5/runs/calibration-gpt-5-6-sol/run/evidence/public-browser/screenshots/customers--wide-1920.png",
+      "benchmarks/reference-builds/campaigns/p5/runs/calibration-gpt-5-6-sol/run/evidence/public-browser/screenshots/dashboard--laptop-1280.png",
+      "benchmarks/reference-builds/campaigns/p5/runs/calibration-gpt-5-6-sol/run/evidence/public-browser/screenshots/dashboard--phone-360.png",
+      "benchmarks/reference-builds/campaigns/p5/runs/calibration-gpt-5-6-sol/run/evidence/public-browser/screenshots/dashboard--tablet-768.png",
+      "benchmarks/reference-builds/campaigns/p5/runs/calibration-gpt-5-6-sol/run/evidence/public-browser/screenshots/dashboard--wide-1920.png",
+      "benchmarks/reference-builds/campaigns/p5/runs/calibration-gpt-5-6-sol/run/evidence/public-browser/screenshots/import-export--laptop-1280.png",
+      "benchmarks/reference-builds/campaigns/p5/runs/calibration-gpt-5-6-sol/run/evidence/public-browser/screenshots/import-export--phone-360.png",
+      "benchmarks/reference-builds/campaigns/p5/runs/calibration-gpt-5-6-sol/run/evidence/public-browser/screenshots/import-export--tablet-768.png",
+      "benchmarks/reference-builds/campaigns/p5/runs/calibration-gpt-5-6-sol/run/evidence/public-browser/screenshots/import-export--wide-1920.png",
+      "benchmarks/reference-builds/campaigns/p5/runs/calibration-gpt-5-6-sol/run/evidence/public-browser/screenshots/login--laptop-1280.png",
+      "benchmarks/reference-builds/campaigns/p5/runs/calibration-gpt-5-6-sol/run/evidence/public-browser/screenshots/login--phone-360.png",
+      "benchmarks/reference-builds/campaigns/p5/runs/calibration-gpt-5-6-sol/run/evidence/public-browser/screenshots/login--tablet-768.png",
+      "benchmarks/reference-builds/campaigns/p5/runs/calibration-gpt-5-6-sol/run/evidence/public-browser/screenshots/login--wide-1920.png",
+      "benchmarks/reference-builds/campaigns/p5/runs/calibration-gpt-5-6-sol/run/evidence/public-browser/screenshots/work-orders--laptop-1280.png",
+      "benchmarks/reference-builds/campaigns/p5/runs/calibration-gpt-5-6-sol/run/evidence/public-browser/screenshots/work-orders--phone-360.png",
+      "benchmarks/reference-builds/campaigns/p5/runs/calibration-gpt-5-6-sol/run/evidence/public-browser/screenshots/work-orders--tablet-768.png",
+      "benchmarks/reference-builds/campaigns/p5/runs/calibration-gpt-5-6-sol/run/evidence/public-browser/screenshots/work-orders--wide-1920.png"
+    ]
+  },
+  "non_text_contrast": {
+    "minimum_required": 3,
+    "samples": []
+  },
+  "seo_not_found": [
+    {
+      "route": "/__atlas_reference_build_missing__",
+      "status": 404,
+      "robots": [
+        "noindex,nofollow"
+      ],
+      "canonical": null,
+      "evidence_ref": "benchmarks/reference-builds/campaigns/p5/runs/calibration-gpt-5-6-sol/run/evidence/public-browser/browser-summary.json"
+    }
+  ],
+  "visual_regression": {
+    "mode": "capture-only",
+    "baseline_root": null,
+    "diff_report": null
+  },
+  "recovery_claims": [
+    {
+      "claim": "Notification jobs retry after provider failure without uncontrolled duplicate delivery.",
+      "advertised": true,
+      "implementation_ref": "benchmarks/reference-builds/campaigns/p5/runs/calibration-gpt-5-6-sol/site/src/store.js",
+      "evidence_ref": "benchmarks/reference-builds/campaigns/p5/runs/calibration-gpt-5-6-sol/run/evidence/tenant-cache-jobs.json"
+    },
+    {
+      "claim": "Billing entitlement reconciliation rejects stale and duplicate provider events.",
+      "advertised": true,
+      "implementation_ref": "benchmarks/reference-builds/campaigns/p5/runs/calibration-gpt-5-6-sol/site/src/store.js",
+      "evidence_ref": "benchmarks/reference-builds/campaigns/p5/runs/calibration-gpt-5-6-sol/run/evidence/billing-entitlements.json"
+    }
+  ],
+  "mutable_cache": [
+    {
+      "route": "/dashboard",
+      "shared": false,
+      "max_age_seconds": 0,
+      "freshness_budget_seconds": 0,
+      "evidence_ref": "benchmarks/reference-builds/campaigns/p5/runs/calibration-gpt-5-6-sol/run/evidence/http-security.json"
+    },
+    {
+      "route": "/customers",
+      "shared": false,
+      "max_age_seconds": 0,
+      "freshness_budget_seconds": 0,
+      "evidence_ref": "benchmarks/reference-builds/campaigns/p5/runs/calibration-gpt-5-6-sol/run/evidence/http-security.json"
+    },
+    {
+      "route": "/work-orders",
+      "shared": false,
+      "max_age_seconds": 0,
+      "freshness_budget_seconds": 0,
+      "evidence_ref": "benchmarks/reference-builds/campaigns/p5/runs/calibration-gpt-5-6-sol/run/evidence/http-security.json"
+    }
+  ],
+  "deployment": {
+    "status": "public-https",
+    "deployment_class": "controlled-preview",
+    "claimable_production": false,
+    "url": "https://slowly-robinson-gmbh-adjust.trycloudflare.com",
+    "evidence_ref": "benchmarks/reference-builds/campaigns/p5/runs/calibration-gpt-5-6-sol/run/deployment.json"
+  }
+}

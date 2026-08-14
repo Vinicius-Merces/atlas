@@ -1,0 +1,22 @@
+{
+  "version": 1,
+  "generated_at": "2026-08-14T11:57:38.960Z",
+  "attempts": [
+    {
+      "source_tenant": "harbor",
+      "target_tenant": "northline",
+      "operation": "attachment-read",
+      "outcome": "denied",
+      "attachment_id": "10c33ead-ee26-4480-8a22-b3871726e9fb"
+    },
+    {
+      "source_tenant": "harbor",
+      "target_tenant": "northline",
+      "operation": "attachment-write",
+      "outcome": "denied",
+      "work_order_id": "wo-north-1"
+    }
+  ],
+  "authorized_read": true,
+  "namespace_root": "tenant-scoped filesystem path plus tenant-filtered attachment row"
+}

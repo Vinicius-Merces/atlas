@@ -1,0 +1,10 @@
+{
+  "version": 1,
+  "generated_at": "2026-08-14T11:57:38.667Z",
+  "customer_created_status": 201,
+  "work_order_created_status": 201,
+  "work_order_transition": "new -> scheduled",
+  "search_found_tenant_customer": true,
+  "search_found_tenant_work_order": true,
+  "unknown_or_foreign_object_status": 403
+}

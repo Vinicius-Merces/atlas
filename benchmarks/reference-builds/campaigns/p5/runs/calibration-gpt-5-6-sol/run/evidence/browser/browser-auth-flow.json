@@ -1,0 +1,35 @@
+{
+  "version": 1,
+  "evidence_source": "calibration-playwright-authenticated",
+  "base_url": "http://127.0.0.1:4173",
+  "checks": {
+    "login_heading": true,
+    "authenticated_dashboard": true,
+    "northline_visible": true,
+    "harbor_not_visible": true,
+    "customer_created": true,
+    "work_order_created": true,
+    "work_order_transitioned": true,
+    "checkout_does_not_directly_grant": true,
+    "import_partial_failure_visible": true,
+    "logout_returned_to_login": true,
+    "support_starts_without_tenant_context": true,
+    "support_explicit_harbor_context": true,
+    "support_northline_data_not_visible": true,
+    "support_audit_visible": true,
+    "final_viewport_horizontal_overflow": 0
+  },
+  "console_errors": [],
+  "page_errors": [],
+  "failed_requests": [],
+  "error_responses": [],
+  "screenshots": [
+    "01-manager-dashboard.png",
+    "02-customer-created.png",
+    "03-work-order-scheduled.png",
+    "04-billing-entitlement.png",
+    "05-import-partial-failure.png",
+    "06-support-explicit-tenant.png"
+  ],
+  "passed": true
+}

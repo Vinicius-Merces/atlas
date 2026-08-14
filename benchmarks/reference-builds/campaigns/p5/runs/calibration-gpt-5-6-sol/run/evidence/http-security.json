@@ -1,0 +1,9 @@
+{
+  "version": 1,
+  "generated_at": "2026-08-14T11:57:39.278Z",
+  "csp": "default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; connect-src 'self'; form-action 'self'; base-uri 'none'; frame-ancestors 'none'",
+  "x_frame_options": "DENY",
+  "not_found_status": 404,
+  "not_found_noindex": true,
+  "not_found_has_canonical": false
+}

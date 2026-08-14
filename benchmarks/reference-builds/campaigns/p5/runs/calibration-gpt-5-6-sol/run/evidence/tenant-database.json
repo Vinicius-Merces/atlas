@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "generated_at": "2026-08-14T11:57:38.621Z",
+  "attempts": [
+    {
+      "source_tenant": "northline",
+      "target_tenant": "harbor",
+      "operation": "customer-read",
+      "outcome": "denied"
+    },
+    {
+      "source_tenant": "harbor",
+      "target_tenant": "northline",
+      "operation": "customer-read",
+      "outcome": "denied"
+    },
+    {
+      "source_tenant": "northline",
+      "target_tenant": "harbor",
+      "operation": "work-order-read",
+      "outcome": "denied"
+    },
+    {
+      "source_tenant": "harbor",
+      "target_tenant": "northline",
+      "operation": "work-order-create-with-foreign-customer",
+      "outcome": "denied"
+    }
+  ],
+  "tenant_filtered_lists": true
+}

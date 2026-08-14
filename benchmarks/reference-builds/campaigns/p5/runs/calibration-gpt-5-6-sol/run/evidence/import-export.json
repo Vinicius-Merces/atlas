@@ -1,0 +1,29 @@
+{
+  "version": 1,
+  "generated_at": "2026-08-14T11:57:40.865Z",
+  "row_validation": true,
+  "first_run": [
+    {
+      "rowNumber": 2,
+      "status": "imported",
+      "error": null,
+      "customerId": "07cbc581-882f-472e-99e0-56ad1990a25f",
+      "replay": false
+    },
+    {
+      "rowNumber": 3,
+      "status": "failed",
+      "error": "invalid_name_or_email",
+      "customerId": null,
+      "replay": false
+    }
+  ],
+  "safe_retry": {
+    "successful_row_replayed_without_duplicate": true
+  },
+  "export": {
+    "tenant": "northline",
+    "contains_northline_import": true,
+    "contains_harbor_customer": false
+  }
+}

@@ -1,0 +1,25 @@
+{
+  "version": 1,
+  "generated_at": "2026-08-14T11:57:40.250Z",
+  "provider_is_not_direct_authority": true,
+  "cancellation": {
+    "version": 3,
+    "applied": true,
+    "resulting_entitlement": "inactive",
+    "protected_action_after_revoke": "denied"
+  },
+  "out_of_order": {
+    "version": 2,
+    "applied": false,
+    "entitlement_remained": "inactive"
+  },
+  "duplicate": {
+    "provider_event_id": "evt-v3-cancel",
+    "duplicate": true
+  },
+  "reconciliation": {
+    "version": 4,
+    "applied": true,
+    "resulting_entitlement": "active"
+  }
+}

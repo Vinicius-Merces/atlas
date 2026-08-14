@@ -1,0 +1,11 @@
+{
+  "version": 1,
+  "generated_at": "2026-08-14T11:57:38.265Z",
+  "checks": {
+    "invalid_password_denied": true,
+    "northline_session_tenant": "northline",
+    "harbor_session_tenant": "harbor",
+    "support_has_no_implicit_tenant": true,
+    "logout_invalidates_session": true
+  }
+}

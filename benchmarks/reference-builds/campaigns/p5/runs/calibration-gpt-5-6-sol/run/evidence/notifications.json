@@ -1,0 +1,12 @@
+{
+  "version": 1,
+  "generated_at": "2026-08-14T11:57:39.963Z",
+  "foreign_recipient": {
+    "source_tenant": "northline",
+    "target_tenant": "harbor",
+    "outcome": "denied"
+  },
+  "provider_failure": "retry",
+  "recovery": "done",
+  "tenant_delivery_count": 1
+}

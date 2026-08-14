@@ -1,0 +1,49 @@
+{
+  "version": 1,
+  "deployment_class": "controlled-preview",
+  "provider": "cloudflare-quick-tunnel",
+  "source_ref": "bench/p5-relayops-calibration-gpt-5-6-sol",
+  "source_commit": "4d3206c7756c798e3e75cf38ec2a171f7b92ac40",
+  "url": "https://slowly-robinson-gmbh-adjust.trycloudflare.com",
+  "started_at": "2026-08-14T11:58:14Z",
+  "finished_at": "2026-08-14T11:58:26.339127Z",
+  "health_path": "/api/health",
+  "tls": {
+    "verified": true,
+    "hostname": "slowly-robinson-gmbh-adjust.trycloudflare.com",
+    "protocol": "TLSv1.3",
+    "certificate_subject": "commonName=trycloudflare.com",
+    "certificate_issuer": "countryName=US, organizationName=Google Trust Services, commonName=WE1",
+    "not_after": "Nov  5 21:25:21 2026 GMT"
+  },
+  "http": {
+    "status": 200,
+    "final_url": "https://slowly-robinson-gmbh-adjust.trycloudflare.com/api/health",
+    "headers": {
+      "date": "Fri, 14 Aug 2026 11:58:26 GMT",
+      "content-type": "application/json; charset=utf-8",
+      "content-length": "60",
+      "connection": "close",
+      "cf-ray": "a2afc9a61976c93a-ORD",
+      "cf-cache-status": "DYNAMIC",
+      "cache-control": "no-store",
+      "server": "cloudflare",
+      "content-security-policy": "default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; connect-src 'self'; form-action 'self'; base-uri 'none'; frame-ancestors 'none'",
+      "permissions-policy": "camera=(), microphone=(), geolocation=()",
+      "referrer-policy": "no-referrer",
+      "x-content-type-options": "nosniff",
+      "x-frame-options": "DENY"
+    },
+    "body_sha256": "63455b27b3f83bbb7e9987ea6116c97ef713e6cfac44de53d42ad34dfe6fdb63"
+  },
+  "lifecycle": {
+    "ephemeral": true,
+    "cleanup_policy": "process termination at workflow completion",
+    "expires_with_job": true
+  },
+  "claimable_production": false,
+  "persistent_configuration_ref": null,
+  "environment_configuration_ref": null,
+  "browser_evidence_ref": null,
+  "notes": "Campaign-owned controlled preview. Public HTTPS/browser/SEO evidence only; not a production-domain pass."
+}

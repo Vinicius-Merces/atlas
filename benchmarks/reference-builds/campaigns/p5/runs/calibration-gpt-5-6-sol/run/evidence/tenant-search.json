@@ -1,0 +1,21 @@
+{
+  "version": 1,
+  "generated_at": "2026-08-14T11:57:39.297Z",
+  "attempts": [
+    {
+      "source_tenant": "northline",
+      "target_tenant": "harbor",
+      "operation": "search-Beacon",
+      "outcome": "denied",
+      "leaked_records": 0
+    },
+    {
+      "source_tenant": "harbor",
+      "target_tenant": "northline",
+      "operation": "search-Atlas",
+      "outcome": "denied",
+      "leaked_records": 0
+    }
+  ],
+  "positive_tenant_search": true
+}

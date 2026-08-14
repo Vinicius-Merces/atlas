@@ -1,0 +1,15 @@
+{
+  "version": 1,
+  "generated_at": "2026-08-14T11:57:40.577Z",
+  "non_support_attempt": {
+    "outcome": "denied"
+  },
+  "missing_tenant_context": {
+    "outcome": "denied"
+  },
+  "privileged_action": "support.tenant_viewed",
+  "target_tenant": "northline",
+  "foreign_customer_visible": false,
+  "audit_recorded": true,
+  "explicit_tenant_context": true
+}
