@@ -15,6 +15,13 @@ run_policy:
   forbid_implementation_reuse: true
   preserve_exact_fixture_and_rubric: true
   record_runtime_reported_model: true
+  environment_capability_manifest_required: true
+  portable_browser_fallback_required: true
+  evidence_assurance_manifest_required: true
+  evidence_reference_integrity_required: true
+  visual_regression_mode_required: true
+  recovery_claim_evidence_required: true
+  mutable_cache_freshness_required: true
   browser_evidence_required: true
   deployment_evidence_required_for_claimable_result: true
   independent_review_required: true
@@ -46,3 +53,6 @@ completion:
 - claude-code target run frozen
 - exact-fixture comparison generated
 - evidence-led remediation backlog recorded
+- P4.1 environment capability contract validated
+- P4.1 portable browser fallback validated
+- P4.1 evidence assurance validator validated
