@@ -1,0 +1,21 @@
+{
+  "version": 1,
+  "app_dir": "benchmarks/reference-builds/campaigns/p5/runs/calibration-gpt-5-6-sol/site",
+  "install_command": "npm install --ignore-scripts",
+  "test_command": "npm test",
+  "build_command": "npm run build",
+  "start_command": "npm start",
+  "port": 4173,
+  "health_path": "/api/health",
+  "origin_env": "RELAYOPS_ORIGIN",
+  "browser_routes": [
+    "/login",
+    "/dashboard",
+    "/customers",
+    "/work-orders",
+    "/billing",
+    "/import-export",
+    "/admin"
+  ],
+  "notes": "Frozen target-specific execution inputs for the campaign-owned adapter. Protected routes redirect unauthenticated portable browsing to sign-in; authenticated workflow evidence is collected separately by the calibration browser flow."
+}
