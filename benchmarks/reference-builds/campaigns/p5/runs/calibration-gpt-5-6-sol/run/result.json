@@ -1,0 +1,494 @@
+{
+  "benchmark_version": 1,
+  "spec_id": "multitenant-subscription-saas",
+  "spec_version": 1,
+  "spec_sha256": "3227ec96f8528476bffbfd860112534158cb5c562a1474e329760685f78d59b9",
+  "rubric_sha256": "6463ae7fde36affecc20eff21f0ec73e04e0fb44c920a3cbc9115502a1b56b31",
+  "execution_mode": "live",
+  "run": {
+    "runtime": "chatgpt",
+    "model": "GPT-5.6 Sol",
+    "repository": "https://github.com/Vinicius-Merces/atlas",
+    "commit": "c601049856d3f7714deb06c1c9f419057acca596",
+    "evidence_root": "benchmarks/reference-builds/campaigns/p5/runs/calibration-gpt-5-6-sol/run/evidence"
+  },
+  "score": 79.21,
+  "base_outcome": "conditional",
+  "outcome": "blocked",
+  "claimable": false,
+  "blocking_failures": [
+    "saas-auth-org-complete",
+    "saas-billing-entitlement",
+    "saas-production-config"
+  ],
+  "review": {
+    "reviewer": "same-session-calibration-not-independent",
+    "outcome": "Changes required",
+    "notes": "Self-review is explicitly not treated as independent. Calibration result remains blocked/non-claimable until a separate reviewer inspects it."
+  },
+  "axis_scores": {
+    "brief_fidelity": {
+      "weight": 7.0,
+      "completion_factor": 0.8333,
+      "score": 5.83
+    },
+    "architecture_quality": {
+      "weight": 13.0,
+      "completion_factor": 0.875,
+      "score": 11.38
+    },
+    "capability_routing": {
+      "weight": 8.0,
+      "completion_factor": 1.0,
+      "score": 8.0
+    },
+    "implementation_completeness": {
+      "weight": 13.0,
+      "completion_factor": 0.8,
+      "score": 10.4
+    },
+    "frontend_craft": {
+      "weight": 8.0,
+      "completion_factor": 0.75,
+      "score": 6.0
+    },
+    "security_isolation": {
+      "weight": 17.0,
+      "completion_factor": 1.0,
+      "score": 17.0
+    },
+    "failure_resilience": {
+      "weight": 12.0,
+      "completion_factor": 0.8,
+      "score": 9.6
+    },
+    "browser_reality": {
+      "weight": 7.0,
+      "completion_factor": 1.0,
+      "score": 7.0
+    },
+    "production_readiness": {
+      "weight": 10.0,
+      "completion_factor": 0.4,
+      "score": 4.0
+    },
+    "independent_review": {
+      "weight": 5.0,
+      "completion_factor": 0.0,
+      "score": 0.0
+    }
+  },
+  "checks": [
+    {
+      "id": "saas-personas-workflows",
+      "axis": "brief_fidelity",
+      "status": "pass",
+      "factor": 1.0,
+      "evidence": [
+        "benchmarks/reference-builds/campaigns/p5/runs/calibration-gpt-5-6-sol/run/evidence/auth-membership.json",
+        "benchmarks/reference-builds/campaigns/p5/runs/calibration-gpt-5-6-sol/run/evidence/admin-audit.json"
+      ],
+      "notes": "Manager, dispatcher, technician, billing and support roles are represented in membership/authorization behavior; support is separated as a platform role."
+    },
+    {
+      "id": "saas-required-surfaces",
+      "axis": "brief_fidelity",
+      "status": "partial",
+      "factor": 0.5,
+      "evidence": [
+        "benchmarks/reference-builds/campaigns/p5/runs/calibration-gpt-5-6-sol/run/evidence/browser/browser-auth-flow.json"
+      ],
+      "notes": "Operational, billing, admin, import/export and session surfaces exist, but self-service organization/account creation or invitation was not implemented."
+    },
+    {
+      "id": "saas-operational-goal",
+      "axis": "brief_fidelity",
+      "status": "pass",
+      "factor": 1.0,
+      "evidence": [
+        "benchmarks/reference-builds/campaigns/p5/runs/calibration-gpt-5-6-sol/run/evidence/browser/browser-auth-flow.json"
+      ],
+      "notes": "Authenticated browser flow creates a customer, creates/transitions a work order, exercises billing, import and audited support context."
+    },
+    {
+      "id": "saas-domain-model",
+      "axis": "architecture_quality",
+      "status": "pass",
+      "factor": 1.0,
+      "evidence": [
+        "benchmarks/reference-builds/campaigns/p5/runs/calibration-gpt-5-6-sol/site/src/store.js"
+      ],
+      "notes": "Authoritative models exist for organizations, users, memberships, sessions, customers, work orders, attachments, notifications/jobs, billing events, entitlements, audit and imports."
+    },
+    {
+      "id": "saas-tenant-propagation",
+      "axis": "architecture_quality",
+      "status": "pass",
+      "factor": 1.0,
+      "evidence": [
+        "benchmarks/reference-builds/campaigns/p5/runs/calibration-gpt-5-6-sol/run/saas-assurance.json"
+      ],
+      "notes": "Tenant context is exercised across database, storage, search, authorization cache/jobs, notifications, exports and privileged support."
+    },
+    {
+      "id": "saas-distributed-state",
+      "axis": "architecture_quality",
+      "status": "pass",
+      "factor": 1.0,
+      "evidence": [
+        "benchmarks/reference-builds/campaigns/p5/runs/calibration-gpt-5-6-sol/run/evidence/billing-entitlements.json",
+        "benchmarks/reference-builds/campaigns/p5/runs/calibration-gpt-5-6-sol/run/evidence/tenant-cache-jobs.json"
+      ],
+      "notes": "Billing events and background jobs demonstrate idempotency, stale/out-of-order handling, retry and reconciliation."
+    },
+    {
+      "id": "saas-migration-operability",
+      "axis": "architecture_quality",
+      "status": "partial",
+      "factor": 0.5,
+      "evidence": [
+        "benchmarks/reference-builds/campaigns/p5/runs/calibration-gpt-5-6-sol/site/src/store.js"
+      ],
+      "notes": "Schema and indexes are explicit and idempotent for this calibration, but production migration rollout/rollback automation is not demonstrated."
+    },
+    {
+      "id": "saas-routing-trust",
+      "axis": "capability_routing",
+      "status": "pass",
+      "factor": 1.0,
+      "evidence": [
+        "benchmarks/reference-builds/campaigns/p5/runtime-packets/calibration-gpt-5-6-sol.md",
+        "benchmarks/reference-builds/campaigns/p5/runs/calibration-gpt-5-6-sol/run/saas-assurance.json"
+      ],
+      "notes": "Identity, authorization, tenancy, secrets, billing, provider/recovery and admin trust gates are represented in the routed campaign and executed assurance."
+    },
+    {
+      "id": "saas-routing-p2",
+      "axis": "capability_routing",
+      "status": "pass",
+      "factor": 1.0,
+      "evidence": [
+        "benchmarks/reference-builds/campaigns/p5/runtime-packets/calibration-gpt-5-6-sol.md",
+        "benchmarks/reference-builds/campaigns/p5/runs/calibration-gpt-5-6-sol/run/saas-assurance.json"
+      ],
+      "notes": "Mutation, storage, search, notifications, audit/admin and import/export primitives were composed without new benchmark-only capabilities."
+    },
+    {
+      "id": "saas-routing-quality",
+      "axis": "capability_routing",
+      "status": "pass",
+      "factor": 1.0,
+      "evidence": [
+        "benchmarks/reference-builds/campaigns/p5/runs/calibration-gpt-5-6-sol/run/evidence-assurance.json"
+      ],
+      "notes": "Browser, responsive capture, security evidence and release truth are composed through existing campaign assurance rather than agent proliferation."
+    },
+    {
+      "id": "saas-auth-org-complete",
+      "axis": "implementation_completeness",
+      "status": "partial",
+      "factor": 0.5,
+      "evidence": [
+        "benchmarks/reference-builds/campaigns/p5/runs/calibration-gpt-5-6-sol/run/evidence/http-auth-flow.json",
+        "benchmarks/reference-builds/campaigns/p5/runs/calibration-gpt-5-6-sol/run/evidence/auth-membership.json"
+      ],
+      "notes": "Session lifecycle and organization membership work end to end, but account creation/invitation is absent. This blocking check therefore cannot pass."
+    },
+    {
+      "id": "saas-work-order-complete",
+      "axis": "implementation_completeness",
+      "status": "pass",
+      "factor": 1.0,
+      "evidence": [
+        "benchmarks/reference-builds/campaigns/p5/runs/calibration-gpt-5-6-sol/run/evidence/http-operational-flow.json",
+        "benchmarks/reference-builds/campaigns/p5/runs/calibration-gpt-5-6-sol/run/evidence/browser/browser-auth-flow.json"
+      ],
+      "notes": "Customer/work-order creation, authoritative persistence, search and status transition are exercised end to end."
+    },
+    {
+      "id": "saas-files-search-notify",
+      "axis": "implementation_completeness",
+      "status": "pass",
+      "factor": 1.0,
+      "evidence": [
+        "benchmarks/reference-builds/campaigns/p5/runs/calibration-gpt-5-6-sol/run/evidence/tenant-storage.json",
+        "benchmarks/reference-builds/campaigns/p5/runs/calibration-gpt-5-6-sol/run/evidence/tenant-search.json",
+        "benchmarks/reference-builds/campaigns/p5/runs/calibration-gpt-5-6-sol/run/evidence/notifications.json"
+      ],
+      "notes": "Tenant-safe attachments, search and notification queue/delivery are implemented and adversarially tested."
+    },
+    {
+      "id": "saas-billing-entitlement",
+      "axis": "implementation_completeness",
+      "status": "partial",
+      "factor": 0.5,
+      "evidence": [
+        "benchmarks/reference-builds/campaigns/p5/runs/calibration-gpt-5-6-sol/run/evidence/billing-entitlements.json",
+        "benchmarks/reference-builds/campaigns/p5/runs/calibration-gpt-5-6-sol/run/evidence/browser/browser-auth-flow.json"
+      ],
+      "notes": "Reconciled application entitlements, duplicate/out-of-order provider events and revocation are implemented, but checkout/provider integration is a calibration intent rather than a real external billing provider. This blocking check cannot pass."
+    },
+    {
+      "id": "saas-admin-import-export",
+      "axis": "implementation_completeness",
+      "status": "pass",
+      "factor": 1.0,
+      "evidence": [
+        "benchmarks/reference-builds/campaigns/p5/runs/calibration-gpt-5-6-sol/run/evidence/admin-audit.json",
+        "benchmarks/reference-builds/campaigns/p5/runs/calibration-gpt-5-6-sol/run/evidence/import-export.json"
+      ],
+      "notes": "Audited explicit-tenant support plus row-level import failure/retry and tenant-scoped export are usable."
+    },
+    {
+      "id": "saas-information-density",
+      "axis": "frontend_craft",
+      "status": "pass",
+      "factor": 1.0,
+      "evidence": [
+        "benchmarks/reference-builds/campaigns/p5/runs/calibration-gpt-5-6-sol/run/evidence/browser/browser-auth-flow.json"
+      ],
+      "notes": "Dashboard, tables, filters, forms, work-order states and support context use an operational hierarchy."
+    },
+    {
+      "id": "saas-responsive",
+      "axis": "frontend_craft",
+      "status": "partial",
+      "factor": 0.5,
+      "evidence": [
+        "benchmarks/reference-builds/campaigns/p5/runs/calibration-gpt-5-6-sol/run/evidence/public-browser/browser-summary.json",
+        "benchmarks/reference-builds/campaigns/p5/runs/calibration-gpt-5-6-sol/run/evidence/browser/browser-auth-flow.json"
+      ],
+      "notes": "Public login is captured across phone/tablet/laptop/wide and authenticated desktop has zero overflow, but core authenticated workflows were not replayed at every viewport."
+    },
+    {
+      "id": "saas-accessibility",
+      "axis": "frontend_craft",
+      "status": "partial",
+      "factor": 0.5,
+      "evidence": [
+        "benchmarks/reference-builds/campaigns/p5/runs/calibration-gpt-5-6-sol/run/evidence/public-browser/browser-summary.json"
+      ],
+      "notes": "Labels, focus-visible styling, semantics and reduced-motion support are present; full contrast and assistive-technology audit was not performed."
+    },
+    {
+      "id": "saas-visual-authorship",
+      "axis": "frontend_craft",
+      "status": "pass",
+      "factor": 1.0,
+      "evidence": [
+        "benchmarks/reference-builds/campaigns/p5/runs/calibration-gpt-5-6-sol/run/evidence/browser/browser-auth-flow.json"
+      ],
+      "notes": "Product-specific field-service operational UI was authored rather than a generic marketing/dashboard shell."
+    },
+    {
+      "id": "saas-cross-tenant-database",
+      "axis": "security_isolation",
+      "status": "pass",
+      "factor": 1.0,
+      "evidence": [
+        "benchmarks/reference-builds/campaigns/p5/runs/calibration-gpt-5-6-sol/run/evidence/tenant-database.json"
+      ],
+      "notes": "Direct foreign customer/work-order reads and foreign-dependent writes are denied across two seeded organizations."
+    },
+    {
+      "id": "saas-cross-tenant-storage",
+      "axis": "security_isolation",
+      "status": "pass",
+      "factor": 1.0,
+      "evidence": [
+        "benchmarks/reference-builds/campaigns/p5/runs/calibration-gpt-5-6-sol/run/evidence/tenant-storage.json"
+      ],
+      "notes": "Cross-tenant attachment read and write attempts are directly denied."
+    },
+    {
+      "id": "saas-cross-tenant-search",
+      "axis": "security_isolation",
+      "status": "pass",
+      "factor": 1.0,
+      "evidence": [
+        "benchmarks/reference-builds/campaigns/p5/runs/calibration-gpt-5-6-sol/run/evidence/tenant-search.json"
+      ],
+      "notes": "Searches for foreign customer/work-order identifiers return zero leaked records."
+    },
+    {
+      "id": "saas-cross-tenant-cache-job",
+      "axis": "security_isolation",
+      "status": "pass",
+      "factor": 1.0,
+      "evidence": [
+        "benchmarks/reference-builds/campaigns/p5/runs/calibration-gpt-5-6-sol/run/evidence/tenant-cache-jobs.json"
+      ],
+      "notes": "Authorization cache revocation is enforced and jobs retain tenant context with idempotent retry behavior."
+    },
+    {
+      "id": "saas-admin-privilege",
+      "axis": "security_isolation",
+      "status": "pass",
+      "factor": 1.0,
+      "evidence": [
+        "benchmarks/reference-builds/campaigns/p5/runs/calibration-gpt-5-6-sol/run/evidence/admin-audit.json",
+        "benchmarks/reference-builds/campaigns/p5/runs/calibration-gpt-5-6-sol/run/evidence/http-admin-flow.json"
+      ],
+      "notes": "Non-support privilege is denied; support requires explicit tenant context and writes an audit record."
+    },
+    {
+      "id": "saas-secret-boundary",
+      "axis": "security_isolation",
+      "status": "pass",
+      "factor": 1.0,
+      "evidence": [
+        "benchmarks/reference-builds/campaigns/p5/runs/calibration-gpt-5-6-sol/run/evidence/secret-boundary.json"
+      ],
+      "notes": "Browser-visible source scan reports zero privileged/provider secret identifiers; test controls remain server-only and env-gated."
+    },
+    {
+      "id": "saas-duplicate-mutation-job",
+      "axis": "failure_resilience",
+      "status": "partial",
+      "factor": 0.5,
+      "evidence": [
+        "benchmarks/reference-builds/campaigns/p5/runs/calibration-gpt-5-6-sol/run/evidence/tenant-cache-jobs.json",
+        "benchmarks/reference-builds/campaigns/p5/runs/calibration-gpt-5-6-sol/run/evidence/import-export.json"
+      ],
+      "notes": "Jobs and import replay are idempotent, but general interactive customer/work-order mutations do not have explicit idempotency keys."
+    },
+    {
+      "id": "saas-webhook-replay",
+      "axis": "failure_resilience",
+      "status": "pass",
+      "factor": 1.0,
+      "evidence": [
+        "benchmarks/reference-builds/campaigns/p5/runs/calibration-gpt-5-6-sol/run/evidence/billing-entitlements.json"
+      ],
+      "notes": "Duplicate and out-of-order billing events are recorded/deduplicated and cannot roll entitlement backwards."
+    },
+    {
+      "id": "saas-provider-outage",
+      "axis": "failure_resilience",
+      "status": "partial",
+      "factor": 0.5,
+      "evidence": [
+        "benchmarks/reference-builds/campaigns/p5/runs/calibration-gpt-5-6-sol/run/evidence/notifications.json"
+      ],
+      "notes": "Notification provider failure demonstrates bounded retry/recovery, but a real payment/email provider outage was not exercised."
+    },
+    {
+      "id": "saas-stale-cache-entitlement",
+      "axis": "failure_resilience",
+      "status": "pass",
+      "factor": 1.0,
+      "evidence": [
+        "benchmarks/reference-builds/campaigns/p5/runs/calibration-gpt-5-6-sol/run/evidence/tenant-cache-jobs.json",
+        "benchmarks/reference-builds/campaigns/p5/runs/calibration-gpt-5-6-sol/run/evidence/billing-entitlements.json"
+      ],
+      "notes": "Membership and entitlement revocation invalidate/defeat stale authorization cache access."
+    },
+    {
+      "id": "saas-import-partial-failure",
+      "axis": "failure_resilience",
+      "status": "pass",
+      "factor": 1.0,
+      "evidence": [
+        "benchmarks/reference-builds/campaigns/p5/runs/calibration-gpt-5-6-sol/run/evidence/import-export.json",
+        "benchmarks/reference-builds/campaigns/p5/runs/calibration-gpt-5-6-sol/run/evidence/browser/browser-auth-flow.json"
+      ],
+      "notes": "Row-level imported/failed outcomes are visible and safe retry reuses the successful row without duplication."
+    },
+    {
+      "id": "saas-browser-auth-flow",
+      "axis": "browser_reality",
+      "status": "pass",
+      "factor": 1.0,
+      "evidence": [
+        "benchmarks/reference-builds/campaigns/p5/runs/calibration-gpt-5-6-sol/run/evidence/browser/browser-auth-flow.json"
+      ],
+      "notes": "Real Chromium covers sign-in, protected organization dashboard, logout and a separate support sign-in/context flow."
+    },
+    {
+      "id": "saas-browser-operational-flow",
+      "axis": "browser_reality",
+      "status": "pass",
+      "factor": 1.0,
+      "evidence": [
+        "benchmarks/reference-builds/campaigns/p5/runs/calibration-gpt-5-6-sol/run/evidence/browser/browser-auth-flow.json"
+      ],
+      "notes": "Real Chromium creates a customer and work order, transitions state, exercises billing and exposes partial import failure."
+    },
+    {
+      "id": "saas-browser-console-network",
+      "axis": "browser_reality",
+      "status": "pass",
+      "factor": 1.0,
+      "evidence": [
+        "benchmarks/reference-builds/campaigns/p5/runs/calibration-gpt-5-6-sol/run/evidence/browser/browser-auth-flow.json"
+      ],
+      "notes": "Authenticated critical journey records zero console errors, page errors, failed requests and HTTP error responses."
+    },
+    {
+      "id": "saas-production-config",
+      "axis": "production_readiness",
+      "status": "unverified",
+      "factor": 0.0,
+      "evidence": [],
+      "notes": "Evidence is a campaign-owned Cloudflare controlled preview, not a claimable production deployment. Production migrations/domain/provider configuration are not verified. This blocking check remains unverified."
+    },
+    {
+      "id": "saas-observability",
+      "axis": "production_readiness",
+      "status": "partial",
+      "factor": 0.5,
+      "evidence": [
+        "benchmarks/reference-builds/campaigns/p5/runs/calibration-gpt-5-6-sol/run/evidence/admin-audit.json",
+        "benchmarks/reference-builds/campaigns/p5/runs/calibration-gpt-5-6-sol/run/evidence/tenant-cache-jobs.json"
+      ],
+      "notes": "Audit events and job error/retry state are actionable, but production metrics/tracing/correlation are not demonstrated."
+    },
+    {
+      "id": "saas-recovery",
+      "axis": "production_readiness",
+      "status": "partial",
+      "factor": 0.5,
+      "evidence": [
+        "benchmarks/reference-builds/campaigns/p5/runs/calibration-gpt-5-6-sol/run/evidence/billing-entitlements.json",
+        "benchmarks/reference-builds/campaigns/p5/runs/calibration-gpt-5-6-sol/run/evidence/import-export.json"
+      ],
+      "notes": "Reconciliation and safe retry exist for consequential state, but database backup/restore procedure is not demonstrated."
+    },
+    {
+      "id": "saas-supply-chain",
+      "axis": "production_readiness",
+      "status": "pass",
+      "factor": 1.0,
+      "evidence": [
+        "benchmarks/reference-builds/campaigns/p5/runs/calibration-gpt-5-6-sol/site/package.json",
+        "benchmarks/reference-builds/campaigns/p5/runs/calibration-gpt-5-6-sol/run/deployment.json"
+      ],
+      "notes": "The application has no third-party runtime dependencies; execution uses Node built-ins and campaign-pinned deployment evidence tooling."
+    },
+    {
+      "id": "saas-performance",
+      "axis": "production_readiness",
+      "status": "unverified",
+      "factor": 0.0,
+      "evidence": [],
+      "notes": "Browser behavior is stable, but representative authenticated latency/resource budgets were not measured, so performance is not claimed."
+    },
+    {
+      "id": "saas-review-trust",
+      "axis": "independent_review",
+      "status": "unverified",
+      "factor": 0.0,
+      "evidence": [],
+      "notes": "The implementing GPT-5.6 Sol session cannot independently review its own tenant/security/billing evidence."
+    },
+    {
+      "id": "saas-review-product",
+      "axis": "independent_review",
+      "status": "unverified",
+      "factor": 0.0,
+      "evidence": [],
+      "notes": "No independent reviewer separate from the implementer is available in this calibration session."
+    }
+  ],
+  "warnings": []
+}
