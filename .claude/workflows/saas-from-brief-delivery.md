@@ -28,7 +28,7 @@ Compose a complete production SaaS from product intent through premium frontend,
 8. Implement `audit-log-design` and `admin-operations-surface` for consequential support/privileged operations.
 9. Use `feature-flag-rollout` for staged launches, migrations, experiments, or kill switches when rollout risk warrants it.
 10. Compose background jobs, caching, webhooks, payments, external API resilience, observability, and reconciliation as the product requires.
-11. Build every user-facing surface under Frontend Craft, including dashboard/admin forms, tables, empty/error/loading states and responsive behavior.
+11. Before UI implementation, run `interface-visual-direction`. When the brief asks for premium or non-vibe-coded quality, freeze the Frontend Craft premium delivery contract: product vocabulary, visual thesis, signature moment, justified aesthetic risk, token grammar, motion/state inventory, responsive recomposition, and screenshot acceptance matrix. Then build every user-facing surface under Frontend Craft, including dashboard/admin forms, tables, empty/error/loading/success/destructive states and responsive behavior.
 12. Run SaaS Production Trust, P1 Production/Product Quality, browser/assurance, security, performance and supply-chain gates.
 13. Complete independent `full-stack-delivery-review` before production approval.
 
@@ -61,6 +61,7 @@ Compose a complete production SaaS from product intent through premium frontend,
 - Which mutations/jobs/provider calls can be duplicated, reordered, retried, or become obsolete?
 - Which privileged operations need confirmation, re-authentication, reason capture, dual control, break-glass, or audit evidence?
 - What makes the frontend premium for this product category without importing marketing-site theatrics into operational UX?
+- What product-specific command surface or interaction prevents the first authenticated viewport from collapsing into a generic sidebar/cards/table shell?
 - What metrics and failure thresholds trigger rollback or degraded mode?
 
 ## Validation
@@ -69,6 +70,7 @@ Compose a complete production SaaS from product intent through premium frontend,
 - Test horizontal, vertical and cross-tenant boundaries across database, files, search, notifications, exports and admin surfaces.
 - Exercise duplicate mutation/job/provider events, stale state, retry/recovery, flag rollback and privileged audit evidence where applicable.
 - Validate representative phone/tablet/desktop UI, accessibility, performance and browser behavior.
+- Treat build success and source inspection as insufficient for visual approval; compare rendered evidence against the frozen frontend direction and interaction-state matrix.
 - Reconcile payments/entitlements, imports/exports, notifications, files, search indexes or provider state when architecture permits divergence.
 
 ## Failure handling

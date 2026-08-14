@@ -29,7 +29,24 @@ Translate product, audience, brand, and content into an explicit visual thesis b
 7. Define interaction character: restrained, editorial, kinetic, tactile, cinematic, utilitarian, or another explicit direction.
 8. Identify one or more signature moments that belong to the product or brand rather than to a generic frontend trend.
 9. Identify patterns to avoid because they would make the result look templated, derivative, or disconnected from the product.
-10. Produce implementation constraints that the frontend engineer can verify.
+10. Name one aesthetic risk that is specific to the brief and explain why it improves recognition, trust, or comprehension.
+11. For interactive products, define how navigation, mutation, loading, success, error, destructive, empty, disabled, and focus states should feel. Do not leave motion and feedback as implementation defaults.
+12. Produce implementation constraints that the frontend engineer can verify in a rendered browser.
+
+## Premium contract
+
+When the request explicitly asks for premium, high-end, bespoke, agency-level, cinematic, memorable, or non-vibe-coded work, do not finish this skill with mood adjectives alone. Record all of the following before implementation:
+
+- subject vocabulary: real objects, processes, materials, data, and language from the product domain;
+- visual thesis and dominant hierarchy;
+- signature moment plus justified aesthetic risk;
+- token grammar for spacing, typography, color, surface, radius, depth, and iconography;
+- interaction and motion inventory, including reduced motion;
+- responsive recomposition at phone, tablet, laptop, and wide desktop;
+- applicable loading, empty, error, success, focus, disabled, destructive, and long-content states;
+- screenshot/browser acceptance matrix.
+
+If the direction could be relabeled for an unrelated SaaS without changing its composition, it is not specific enough.
 
 ## Anti-default review
 
@@ -85,3 +102,4 @@ Use before redesigning or significantly extending a marketing site, product shel
 - Each major visual choice must support hierarchy, brand, content, interaction, or usability.
 - Responsive behavior must preserve the visual thesis rather than simply stack desktop sections vertically.
 - The final implementation must be reviewed against this direction by `frontend-craft-review`.
+- Premium language is not satisfied until the direction record, rendered viewport evidence, and interaction-state evidence all exist.

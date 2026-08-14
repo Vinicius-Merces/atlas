@@ -8,7 +8,7 @@
     {
       "domain": "auth_and_membership",
       "name": "session lifecycle and stale membership",
-      "executedAt": "2026-08-14T15:10:09.040Z",
+      "executedAt": "2026-08-14T15:17:08.883Z",
       "organizationCreated": true,
       "sessionCreated": true,
       "revokedSessionDenied": true,
@@ -17,7 +17,7 @@
     {
       "domain": "auth_and_membership",
       "name": "technician vertical escalation",
-      "executedAt": "2026-08-14T15:10:09.245Z",
+      "executedAt": "2026-08-14T15:17:09.080Z",
       "role": "technician",
       "operations": [
         "customer.create",
@@ -29,7 +29,7 @@
     {
       "domain": "tenant_database",
       "name": "read target customer",
-      "executedAt": "2026-08-14T15:10:09.449Z",
+      "executedAt": "2026-08-14T15:17:09.276Z",
       "sourceTenant": "org_northstar",
       "targetTenant": "org_harbor",
       "operation": "database/object read cus_beta",
@@ -39,7 +39,7 @@
     {
       "domain": "tenant_database",
       "name": "mutate target customer",
-      "executedAt": "2026-08-14T15:10:09.449Z",
+      "executedAt": "2026-08-14T15:17:09.276Z",
       "sourceTenant": "org_northstar",
       "targetTenant": "org_harbor",
       "operation": "database/object update cus_beta",
@@ -50,7 +50,7 @@
     {
       "domain": "tenant_storage",
       "name": "read target attachment",
-      "executedAt": "2026-08-14T15:10:09.655Z",
+      "executedAt": "2026-08-14T15:17:09.470Z",
       "sourceTenant": "org_northstar",
       "targetTenant": "org_harbor",
       "operation": "storage read att_beta",
@@ -61,7 +61,7 @@
     {
       "domain": "tenant_storage",
       "name": "write to target work order",
-      "executedAt": "2026-08-14T15:10:09.655Z",
+      "executedAt": "2026-08-14T15:17:09.470Z",
       "sourceTenant": "org_northstar",
       "targetTenant": "org_harbor",
       "operation": "storage write against wo_beta",
@@ -72,7 +72,7 @@
     {
       "domain": "tenant_search",
       "name": "target sentinel query",
-      "executedAt": "2026-08-14T15:10:09.857Z",
+      "executedAt": "2026-08-14T15:17:09.664Z",
       "sourceTenant": "org_northstar",
       "targetTenant": "org_harbor",
       "operation": "search BETA_ONLY_SENTINEL",
@@ -83,7 +83,7 @@
     {
       "domain": "tenant_cache_jobs",
       "name": "cache isolation",
-      "executedAt": "2026-08-14T15:10:10.051Z",
+      "executedAt": "2026-08-14T15:17:09.852Z",
       "sourceTenant": "org_northstar",
       "targetTenant": "org_harbor",
       "cacheKey": "shared",
@@ -94,8 +94,8 @@
     {
       "domain": "tenant_cache_jobs",
       "name": "stale job authorization",
-      "executedAt": "2026-08-14T15:10:10.051Z",
-      "jobId": "job_fa174fcb-709f-4727-a42b-d00bd5bde7c7",
+      "executedAt": "2026-08-14T15:17:09.852Z",
+      "jobId": "job_b1c08a94-972d-463e-846a-4553a592bd0d",
       "membershipChangedBeforeExecution": true,
       "effectCount": 0,
       "outcome": "denied"
@@ -103,10 +103,10 @@
     {
       "domain": "tenant_cache_jobs",
       "name": "job tenant context",
-      "executedAt": "2026-08-14T15:10:10.249Z",
+      "executedAt": "2026-08-14T15:17:10.050Z",
       "sourceTenant": "org_northstar",
       "targetTenant": "org_harbor",
-      "jobId": "job_b3461b62-eabd-41f5-a9ce-633ddbe13d0b",
+      "jobId": "job_20ac2221-27e9-4ffc-9d40-57148bdecaa1",
       "status": "denied",
       "effectCount": 0,
       "outcome": "denied"
@@ -114,8 +114,8 @@
     {
       "domain": "tenant_cache_jobs",
       "name": "duplicate delivery",
-      "executedAt": "2026-08-14T15:10:10.249Z",
-      "jobId": "job_95629e10-8746-4231-8828-f4698fdd462a",
+      "executedAt": "2026-08-14T15:17:10.050Z",
+      "jobId": "job_448fb7ee-d674-429d-81f1-3e35929b5239",
       "deliveries": 2,
       "effects": 1,
       "idempotent": true
@@ -123,8 +123,8 @@
     {
       "domain": "tenant_cache_jobs",
       "name": "bounded retry and recovery",
-      "executedAt": "2026-08-14T15:10:10.249Z",
-      "jobId": "job_ec9294a8-413f-4bba-a911-103f71be7226",
+      "executedAt": "2026-08-14T15:17:10.050Z",
+      "jobId": "job_f7e8386a-d1c9-4a1f-9185-51e2d1f35a44",
       "maxAttempts": 3,
       "statusBeforeReplay": "failed",
       "statusAfterExplicitRecovery": "completed",
@@ -133,7 +133,7 @@
     {
       "domain": "notifications",
       "name": "cross-tenant recipient and read",
-      "executedAt": "2026-08-14T15:10:10.445Z",
+      "executedAt": "2026-08-14T15:17:10.247Z",
       "sourceTenant": "org_northstar",
       "targetTenant": "org_harbor",
       "recipientDenied": true,
@@ -143,31 +143,31 @@
     {
       "domain": "notifications",
       "name": "email provider failure",
-      "executedAt": "2026-08-14T15:10:10.445Z",
-      "jobId": "job_a75b3464-12e2-4c11-a1db-3d18ef5ea0a1",
+      "executedAt": "2026-08-14T15:17:10.247Z",
+      "jobId": "job_1c542f1b-00cf-4032-8157-62115e40f50a",
       "boundedAttempts": 2,
       "failed": true
     },
     {
       "domain": "notifications",
       "name": "email recovery",
-      "executedAt": "2026-08-14T15:10:10.445Z",
-      "jobId": "job_a75b3464-12e2-4c11-a1db-3d18ef5ea0a1",
+      "executedAt": "2026-08-14T15:17:10.247Z",
+      "jobId": "job_1c542f1b-00cf-4032-8157-62115e40f50a",
       "replayedAfterRecovery": true,
       "effects": 1
     },
     {
       "domain": "billing_entitlements",
       "name": "checkout authority",
-      "executedAt": "2026-08-14T15:10:10.640Z",
-      "checkoutId": "chk_402dce61-2bc1-4dfa-a514-69469ad8e64b",
+      "executedAt": "2026-08-14T15:17:10.454Z",
+      "checkoutId": "chk_7691f591-2736-4716-8994-ac99e7779558",
       "checkoutStatus": "pending",
       "successReturnGrantedAccess": false
     },
     {
       "domain": "billing_entitlements",
       "name": "duplicate webhook",
-      "executedAt": "2026-08-14T15:10:10.640Z",
+      "executedAt": "2026-08-14T15:17:10.454Z",
       "eventId": "evt_cancel",
       "duplicate": true,
       "entitlementTransitions": 1
@@ -175,7 +175,7 @@
     {
       "domain": "billing_entitlements",
       "name": "out of order webhook",
-      "executedAt": "2026-08-14T15:10:10.640Z",
+      "executedAt": "2026-08-14T15:17:10.454Z",
       "newerCancellation": 300,
       "olderActivation": 200,
       "olderDisposition": "out_of_order_ignored",
@@ -184,7 +184,7 @@
     {
       "domain": "billing_entitlements",
       "name": "reconciliation and revocation",
-      "executedAt": "2026-08-14T15:10:10.640Z",
+      "executedAt": "2026-08-14T15:17:10.454Z",
       "providerStatus": "canceled",
       "applicationEntitlement": false,
       "staleCacheCleared": true,
@@ -194,14 +194,14 @@
     {
       "domain": "billing_entitlements",
       "name": "provider outage",
-      "executedAt": "2026-08-14T15:10:10.640Z",
+      "executedAt": "2026-08-14T15:17:10.454Z",
       "checkoutStatus": 503,
       "entitlementChanged": false
     },
     {
       "domain": "admin_audit",
       "name": "support without context",
-      "executedAt": "2026-08-14T15:10:10.847Z",
+      "executedAt": "2026-08-14T15:17:10.666Z",
       "sourceTenant": "support-global",
       "targetTenant": "org_northstar",
       "operation": "support inspect without explicit tenant",
@@ -210,7 +210,7 @@
     {
       "domain": "admin_audit",
       "name": "manager vertical escalation",
-      "executedAt": "2026-08-14T15:10:10.847Z",
+      "executedAt": "2026-08-14T15:17:10.666Z",
       "sourceTenant": "org_northstar",
       "targetTenant": "support-surface",
       "operation": "ordinary manager support inspect",
@@ -219,18 +219,18 @@
     {
       "domain": "admin_audit",
       "name": "privileged action audit",
-      "executedAt": "2026-08-14T15:10:10.847Z",
+      "executedAt": "2026-08-14T15:17:10.666Z",
       "explicitTenant": "org_northstar",
       "reasonCaptured": true,
-      "auditId": "aud_a3750607-6d9a-4d41-baae-c6c456a9567b",
+      "auditId": "aud_a5e7f675-a783-40d3-bc9f-1867d40ba4c8",
       "actor": "usr_support",
       "result": "allowed"
     },
     {
       "domain": "import_export",
       "name": "row validation and partial failure",
-      "executedAt": "2026-08-14T15:10:11.039Z",
-      "importId": "imp_aa77ed60-aebc-428b-a0f0-1377fcfa6444",
+      "executedAt": "2026-08-14T15:17:10.868Z",
+      "importId": "imp_0be0970d-68b4-4c65-869a-a545363398e6",
       "created": 2,
       "failed": 1,
       "rowStatuses": [
@@ -238,7 +238,7 @@
           "row": 2,
           "status": "created",
           "error": null,
-          "entityId": "cus_d127a52a-e184-4b53-8b6b-75958ae4fac4"
+          "entityId": "cus_e946dbe0-58ad-4008-80d6-4eff9d278337"
         },
         {
           "row": 3,
@@ -250,14 +250,14 @@
           "row": 4,
           "status": "created",
           "error": null,
-          "entityId": "cus_c30b1fed-a0c7-434f-abda-261bee279368"
+          "entityId": "cus_10c1c593-edf7-4bc5-abc0-6a82d19bf998"
         }
       ]
     },
     {
       "domain": "import_export",
       "name": "safe retry",
-      "executedAt": "2026-08-14T15:10:11.039Z",
+      "executedAt": "2026-08-14T15:17:10.868Z",
       "operationKey": "import-key-1",
       "duplicate": true,
       "totalImportedRows": 2
@@ -265,7 +265,7 @@
     {
       "domain": "import_export",
       "name": "export isolation",
-      "executedAt": "2026-08-14T15:10:11.039Z",
+      "executedAt": "2026-08-14T15:17:10.868Z",
       "sourceTenant": "org_northstar",
       "targetTenant": "org_harbor",
       "targetSentinelPresent": false,
@@ -274,7 +274,7 @@
     {
       "domain": "secret_boundary",
       "name": "browser bundle and HTML scan",
-      "executedAt": "2026-08-14T15:10:11.040Z",
+      "executedAt": "2026-08-14T15:17:10.869Z",
       "scanned": [
         "public/app.js",
         "public/styles.css",
@@ -286,7 +286,7 @@
     {
       "domain": "secret_boundary",
       "name": "client log scan",
-      "executedAt": "2026-08-14T15:10:11.040Z",
+      "executedAt": "2026-08-14T15:17:10.869Z",
       "capturedClientErrors": 0,
       "secretMatches": 0,
       "redactionPolicy": "password/cookie/authorization/signature/secret/contentBase64"
@@ -294,7 +294,7 @@
     {
       "domain": "auth_and_membership",
       "name": "real HTTP lifecycle",
-      "executedAt": "2026-08-14T15:10:11.324Z",
+      "executedAt": "2026-08-14T15:17:11.162Z",
       "anonymousStatus": 401,
       "crossOriginStatus": 403,
       "loginStatus": 200,

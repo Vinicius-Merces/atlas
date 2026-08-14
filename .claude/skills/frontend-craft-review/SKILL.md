@@ -76,6 +76,22 @@ Flag repeated or unexplained use of:
 
 These are not banned categorically. A finding exists when the pattern lacks product, UX, content, or brand justification.
 
+### 9. Product-specificity test
+
+- Could the interface be relabeled for an unrelated product with only copy changes?
+- Does the first authenticated viewport expose the actual operating model rather than generic KPI cards?
+- Is there at least one signature composition or interaction grounded in real product state?
+- Are changing numbers tabular, status color exception-first, iconography consistent, and hierarchy stronger than container decoration?
+
+For a premium brief, a generic sidebar plus cards plus table is a High finding even when clean and accessible, unless a stronger product-specific command surface or interaction system clearly authors the experience.
+
+### 10. State and interaction completeness
+
+- Are loading, empty, error, success, disabled, destructive, focus, and long-content states designed where applicable?
+- Do navigation, mutation, dialog, and status transitions provide spatially coherent feedback?
+- If the interface is deliberately static, is the absence of motion justified by product intent rather than omission?
+- Does reduced motion preserve clarity without leaving broken or unexplained states?
+
 ## Procedure
 
 1. Review the live/rendered interface before reading implementation details when possible.
@@ -86,6 +102,7 @@ These are not banned categorically. A finding exists when the pattern lacks prod
 6. Distinguish subjective preference from evidence-backed craft issues.
 7. Rank findings by impact on trust, usability, differentiation, and polish.
 8. Require remediation for Critical/High craft failures before approval.
+9. For premium claims, compare the rendered result against the premium delivery contract in `framework/frontend-craft-model.md`; missing direction or viewport/state evidence blocks approval.
 
 ## Output
 
@@ -120,3 +137,5 @@ Use as an independent gate for significant marketing sites, portfolios, public p
 ## Validation
 
 Approval requires enough rendered evidence to assess the relevant viewport and interaction states. Missing browser evidence for a meaningful visual change produces a conditional or blocked outcome rather than assumed success.
+
+A build or source-code review cannot promote visual authorship, responsive craft, motion quality, or premium quality to approved. Those claims require rendered evidence.
