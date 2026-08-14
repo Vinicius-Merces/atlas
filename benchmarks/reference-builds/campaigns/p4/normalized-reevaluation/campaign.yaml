@@ -1,0 +1,102 @@
+version: 1
+id: p4-3-normalized-asteria-reevaluation
+title: P4.3 Frozen Asteria Environment-Normalized Re-evaluation
+purpose: >-
+  Re-evaluate the exact first-frozen Codex and Claude Code Asteria implementations
+  through the same campaign-owned public HTTPS and Chromium evidence path. This
+  isolates environment/evidence availability from implementation changes without
+  rewriting historical P4 scores.
+fixture:
+  id: premium-marketing-site
+  spec: benchmarks/reference-builds/specs/premium-marketing-site.yaml
+  rubric: benchmarks/reference-builds/scoring-rubric.yaml
+  fixture_sha256: e57da062e6223f6ecbea84a64813f6d8e73f9b0954cda065da5edbc680762947
+  rubric_sha256: 6463ae7fde36affecc20eff21f0ec73e04e0fb44c920a3cbc9115502a1b56b31
+historical_comparison: benchmarks/reference-builds/campaigns/p4/comparison.json
+policy:
+  frozen_implementation_only: true
+  implementation_mutation_forbidden: true
+  same_public_https_adapter: true
+  same_chromium_runner: true
+  same_viewports: true
+  same_required_surface_count: true
+  campaign_infrastructure_checkout_separate_from_target: true
+  native_runtime_evidence_not_required_for_normalized_floor: true
+  historical_scores_immutable: true
+  no_model_quality_rescore_from_portable_floor_alone: true
+  controlled_preview_not_claimable_production: true
+  results_must_record_source_commit: true
+  results_must_record_campaign_commit: true
+normalized_floor:
+  deployment_class: controlled-preview
+  provider: cloudflare-quick-tunnel
+  browser_source: campaign-portable
+  viewport_names:
+    - phone-360
+    - tablet-768
+    - laptop-1280
+    - wide-1920
+  required_surfaces:
+    - home
+    - residences
+    - residence-detail
+    - location
+    - editorial
+    - contact
+    - privacy
+  checks:
+    - public HTTPS and verified TLS
+    - all required public surfaces return 2xx or 3xx
+    - no horizontal overflow at normalized viewports
+    - no page errors or console errors on required surfaces
+    - no unexpected failed requests on required surfaces
+    - form fields exposed on tested surfaces have labels or aria-labels
+    - missing route returns HTTP 404
+    - missing route includes noindex
+    - missing route has no conflicting index directive
+    - missing route does not canonicalise to another document
+targets:
+  codex:
+    runtime: codex
+    model: GPT-5
+    historical_score: 53.15
+    frozen_commit: a1751e8558beddee8e8c57d2b3f47de86e1c5860
+    app_path: benchmarks/reference-builds/runs/p4-asteria-codex/site
+    install_command: "true"
+    build_command: npm run check && npm test
+    start_command: npm start
+    port: 4173
+    health_path: /api/health
+    origin_env: PUBLIC_ORIGIN
+    routes:
+      - /
+      - /residencias
+      - /residencias/casa-patio
+      - /localizacao
+      - /caderno
+      - /contato
+      - /privacidade
+  claude-code:
+    runtime: claude-code
+    model: claude-opus-5
+    historical_score: 86.40
+    frozen_commit: bff32598806c7ea9b6cd4c2218ee7d5eac2d0816
+    app_path: benchmarks/reference-builds/campaigns/p4/runs/claude-code/site
+    install_command: npm ci
+    build_command: npm run build
+    start_command: npm start
+    port: 4173
+    health_path: /
+    origin_env: ASTERIA_ORIGIN
+    routes:
+      - /
+      - /residences
+      - /residences/ridge-house-01
+      - /location
+      - /journal
+      - /enquire
+      - /privacy
+truth_rule: >-
+  P4.3 reports normalized evidence coverage and defects for the frozen implementations.
+  It does not overwrite the original 53.15 or 86.40 benchmark scores and does not
+  infer a new model-quality ranking from portable evidence alone.
