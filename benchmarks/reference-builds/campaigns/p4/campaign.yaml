@@ -23,10 +23,24 @@ run_policy:
   recovery_claim_evidence_required: true
   mutable_cache_freshness_required: true
   browser_evidence_required: true
+  deployment_evidence_manifest_required: true
+  controlled_public_preview_required: true
+  deployment_class_truth_required: true
+  controlled_preview_cannot_satisfy_production_domain: true
+  claimable_production_same_provider_required: true
   deployment_evidence_required_for_claimable_result: true
   independent_review_required: true
   preserve_first_frozen_result_before_remediation: true
   compare_only_after_target_results_frozen: true
+controlled_deployment:
+  adapter: benchmarks/reference-builds/campaigns/p4/assurance/deployment-adapter.contract.yaml
+  evidence_schema: benchmarks/reference-builds/campaigns/p4/controlled-deployment/deployment-evidence.schema.json
+  workflow: .github/workflows/reference-build-controlled-deployment.yml
+  preview_class: controlled-preview
+  production_class: claimable-production
+  preview_provider: cloudflare-quick-tunnel
+  production_provider: vercel
+  production_enabled: false
 targets:
 - id: calibration-gpt-5-6-sol
   role: calibration
@@ -56,3 +70,6 @@ completion:
 - P4.1 environment capability contract validated
 - P4.1 portable browser fallback validated
 - P4.1 evidence assurance validator validated
+- P4.2 controlled public HTTPS preview adapter activated
+- P4.2 deployment evidence truth contract validated
+- P4.2 external ingress smoke validated in GitHub Actions

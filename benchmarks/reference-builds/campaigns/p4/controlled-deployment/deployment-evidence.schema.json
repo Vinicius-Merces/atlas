@@ -1,0 +1,93 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "ATLAS Controlled Benchmark Deployment Evidence",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "version",
+    "deployment_class",
+    "provider",
+    "source_ref",
+    "source_commit",
+    "url",
+    "started_at",
+    "finished_at",
+    "tls",
+    "http",
+    "lifecycle",
+    "claimable_production"
+  ],
+  "properties": {
+    "version": {"type": "integer", "const": 1},
+    "deployment_class": {"type": "string", "enum": ["controlled-preview", "claimable-production"]},
+    "provider": {"type": "string", "minLength": 1},
+    "source_ref": {"type": "string", "minLength": 1},
+    "source_commit": {"type": "string", "pattern": "^[a-f0-9]{40}$"},
+    "url": {"type": "string", "pattern": "^https://"},
+    "started_at": {"type": "string", "format": "date-time"},
+    "finished_at": {"type": "string", "format": "date-time"},
+    "health_path": {"type": "string", "pattern": "^/"},
+    "tls": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["verified", "hostname", "protocol"],
+      "properties": {
+        "verified": {"type": "boolean"},
+        "hostname": {"type": "string", "minLength": 1},
+        "protocol": {"type": "string", "minLength": 1},
+        "certificate_subject": {"type": ["string", "null"]},
+        "certificate_issuer": {"type": ["string", "null"]},
+        "not_after": {"type": ["string", "null"]}
+      }
+    },
+    "http": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["status", "final_url", "headers", "body_sha256"],
+      "properties": {
+        "status": {"type": "integer", "minimum": 100, "maximum": 599},
+        "final_url": {"type": "string", "pattern": "^https://"},
+        "headers": {"type": "object", "additionalProperties": {"type": "string"}},
+        "body_sha256": {"type": "string", "pattern": "^[a-f0-9]{64}$"}
+      }
+    },
+    "lifecycle": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["ephemeral", "cleanup_policy"],
+      "properties": {
+        "ephemeral": {"type": "boolean"},
+        "cleanup_policy": {"type": "string", "minLength": 1},
+        "expires_with_job": {"type": "boolean"}
+      }
+    },
+    "claimable_production": {"type": "boolean"},
+    "persistent_configuration_ref": {"type": ["string", "null"]},
+    "environment_configuration_ref": {"type": ["string", "null"]},
+    "browser_evidence_ref": {"type": ["string", "null"]},
+    "notes": {"type": "string"}
+  },
+  "allOf": [
+    {
+      "if": {"properties": {"deployment_class": {"const": "controlled-preview"}}},
+      "then": {
+        "properties": {
+          "claimable_production": {"const": false},
+          "lifecycle": {
+            "properties": {"ephemeral": {"const": true}, "expires_with_job": {"const": true}}
+          }
+        }
+      }
+    },
+    {
+      "if": {"properties": {"deployment_class": {"const": "claimable-production"}}},
+      "then": {
+        "required": ["persistent_configuration_ref", "environment_configuration_ref"],
+        "properties": {
+          "claimable_production": {"const": true},
+          "lifecycle": {"properties": {"ephemeral": {"const": false}}}
+        }
+      }
+    }
+  ]
+}

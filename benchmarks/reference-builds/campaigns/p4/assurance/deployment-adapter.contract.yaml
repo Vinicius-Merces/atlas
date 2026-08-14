@@ -1,7 +1,6 @@
-version: 1
+version: 2
 id: reference-build-public-deployment-adapter
-status: contract-ready
-provider: unconfigured
+status: controlled-preview-active
 policy:
   same_adapter_for_compared_targets: true
   campaign_owned_credentials: true
@@ -9,19 +8,54 @@ policy:
   public_https_required: true
   immutable_source_ref_required: true
   deployment_evidence_required: true
+  deployment_class_must_be_explicit: true
+  controlled_preview_cannot_pass_production_domain: true
+controlled_preview:
+  enabled: true
+  provider: cloudflare-quick-tunnel
+  execution: github-actions
+  workflow: .github/workflows/reference-build-controlled-deployment.yml
+  requires_credentials: false
+  public_https: true
+  ephemeral: true
+  purpose:
+    - external HTTP and TLS evidence
+    - deployed SEO/crawl probes
+    - public-network browser evidence
+    - cross-runtime environment normalization
+  prohibited_claims:
+    - marketing-production-domain pass
+    - persistent production deployment
+    - provider SLA
+claimable_production:
+  enabled: false
+  provider: vercel
+  execution: vercel-cli-or-api
+  activation_requirements:
+    - campaign-owned Vercel project
+    - campaign-owned deployment credentials available to the deployment runner only
+    - identical environment-variable topology for all compared targets
+    - immutable deployment URL tied to the frozen source commit
+    - deployment and runtime logs inspectable by independent review
+    - cleanup or retention policy recorded
 inputs:
   - source_ref
   - application_path
   - build_command
   - start_or_runtime_contract
 outputs:
+  - deployment_class
   - public_https_url
   - source_ref
+  - source_commit
   - deployment_timestamp
   - provider_identity
+  - tls_probe_evidence
   - http_probe_evidence
   - teardown_or_expiry_policy
 activation_rule: >-
-  Set provider and execution implementation only when the campaign can expose the
-  same topology and credentials to every compared target. Until then deployment
-  remains unavailable and production-domain blockers cannot pass.
+  Controlled preview is active for every runtime through the same GitHub Actions
+  plus Cloudflare Quick Tunnel path. Claimable production remains disabled until
+  the campaign can expose one persistent provider topology and campaign-owned
+  credentials equally to every compared target. Controlled preview evidence must
+  never be used to mark the production-domain blocker as pass.

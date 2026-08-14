@@ -3,7 +3,7 @@
   "title": "ATLAS P4 Live Reference Build Run Manifest",
   "type": "object",
   "additionalProperties": false,
-  "required": ["campaign_id", "target_id", "role", "runtime", "model", "fixture_id", "campaign_base_commit", "run_branch", "fixture_sha256", "rubric_sha256", "environment_capability_manifest", "evidence_assurance_manifest", "isolation_attestation"],
+  "required": ["campaign_id", "target_id", "role", "runtime", "model", "fixture_id", "campaign_base_commit", "run_branch", "fixture_sha256", "rubric_sha256", "environment_capability_manifest", "evidence_assurance_manifest", "deployment_evidence_manifest", "isolation_attestation"],
   "properties": {
     "campaign_id": {"type": "string", "const": "p4-live-reference-build-campaign"},
     "target_id": {"type": "string", "minLength": 1},
@@ -17,6 +17,7 @@
     "rubric_sha256": {"type": "string", "pattern": "^[a-f0-9]{64}$"},
     "environment_capability_manifest": {"type": "string", "minLength": 1},
     "evidence_assurance_manifest": {"type": "string", "minLength": 1},
+    "deployment_evidence_manifest": {"type": "string", "minLength": 1},
     "started_at": {"type": "string"},
     "finished_at": {"type": "string"},
     "tool_permissions": {"type": "array", "items": {"type": "string"}},

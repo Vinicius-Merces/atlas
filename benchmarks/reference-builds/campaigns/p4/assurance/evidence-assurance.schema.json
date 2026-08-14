@@ -5,7 +5,7 @@
   "additionalProperties": false,
   "required": ["version", "environment_manifest", "evidence_references", "browser", "non_text_contrast", "seo_not_found", "visual_regression", "recovery_claims", "mutable_cache", "deployment"],
   "properties": {
-    "version": {"type": "integer", "const": 1},
+    "version": {"type": "integer", "const": 2},
     "environment_manifest": {"type": "string", "minLength": 1},
     "evidence_references": {"type": "array", "items": {"type": "string", "minLength": 1}, "uniqueItems": true},
     "browser": {
@@ -97,12 +97,47 @@
     "deployment": {
       "type": "object",
       "additionalProperties": false,
-      "required": ["status"],
+      "required": ["status", "deployment_class", "claimable_production"],
       "properties": {
         "status": {"type": "string", "enum": ["public-https", "unavailable"]},
+        "deployment_class": {"type": "string", "enum": ["controlled-preview", "claimable-production", "unavailable"]},
+        "claimable_production": {"type": "boolean"},
         "url": {"type": ["string", "null"]},
         "evidence_ref": {"type": ["string", "null"]}
-      }
+      },
+      "allOf": [
+        {
+          "if": {"properties": {"deployment_class": {"const": "controlled-preview"}}},
+          "then": {
+            "properties": {
+              "status": {"const": "public-https"},
+              "claimable_production": {"const": false}
+            },
+            "required": ["url", "evidence_ref"]
+          }
+        },
+        {
+          "if": {"properties": {"deployment_class": {"const": "claimable-production"}}},
+          "then": {
+            "properties": {
+              "status": {"const": "public-https"},
+              "claimable_production": {"const": true}
+            },
+            "required": ["url", "evidence_ref"]
+          }
+        },
+        {
+          "if": {"properties": {"deployment_class": {"const": "unavailable"}}},
+          "then": {
+            "properties": {
+              "status": {"const": "unavailable"},
+              "claimable_production": {"const": false},
+              "url": {"type": "null"},
+              "evidence_ref": {"type": "null"}
+            }
+          }
+        }
+      ]
     }
   }
 }
