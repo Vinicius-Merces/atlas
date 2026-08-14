@@ -1,0 +1,29 @@
+{
+  "version": 1,
+  "captured_at": "2026-08-14T11:49:05Z",
+  "runtime": "chatgpt",
+  "model": "GPT-5.6 Sol",
+  "capabilities": {
+    "browser": {
+      "native_available": false,
+      "portable_fallback_eligible": true,
+      "source": "campaign-portable",
+      "details": "This ChatGPT session has no native interactive web-app browser automation surface. P5 uses the campaign-owned Chromium fallback for public browser evidence."
+    },
+    "deployment": {
+      "native_available": false,
+      "campaign_adapter_available": true,
+      "details": "No runtime-native application deployment is claimed. The shared ATLAS controlled deployment adapter is available through GitHub Actions."
+    },
+    "network": {
+      "mode": "restricted",
+      "details": "Repository/network operations are mediated through connected GitHub tooling; unrestricted local shell networking is not claimed."
+    },
+    "independent_review": {
+      "available": false,
+      "details": "The implementing session cannot self-certify an independent review."
+    },
+    "commands": {}
+  },
+  "notes": "Truthfulness deviation: the P5 run manifest was frozen before implementation, but this environment sidecar was materialized after implementation had already begun rather than before it. The timestamp is not backdated and this calibration must not claim pre-implementation environment capture."
+}
