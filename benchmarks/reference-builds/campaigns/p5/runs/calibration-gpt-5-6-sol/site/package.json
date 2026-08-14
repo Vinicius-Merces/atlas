@@ -6,9 +6,9 @@
     "node": ">=22"
   },
   "scripts": {
-    "check": "node --check server.js && node --check src/store.js && node --check src/auth.js && node --check src/render.js && node --check public/app.js",
+    "check": "node --check start.js && node --check server.js && node --check src/store.js && node --check src/tenant-repository.js && node --check src/auth.js && node --check src/render.js && node --check public/app.js",
     "test": "node --test tests/*.test.js",
     "build": "npm run check",
-    "start": "node server.js"
+    "start": "node start.js"
   }
 }
