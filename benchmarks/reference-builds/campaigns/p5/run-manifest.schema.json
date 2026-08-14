@@ -1,0 +1,59 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "ATLAS P5 RelayOps Live SaaS Run Manifest",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "campaign_id",
+    "target_id",
+    "role",
+    "runtime",
+    "model",
+    "fixture_id",
+    "campaign_base_commit",
+    "run_branch",
+    "fixture_sha256",
+    "rubric_sha256",
+    "environment_capability_manifest",
+    "evidence_assurance_manifest",
+    "deployment_evidence_manifest",
+    "saas_assurance_manifest",
+    "isolation_attestation"
+  ],
+  "properties": {
+    "campaign_id": {"type": "string", "const": "p5-live-saas-reference-build-campaign"},
+    "target_id": {"type": "string", "minLength": 1},
+    "role": {"type": "string", "enum": ["calibration", "target"]},
+    "runtime": {"type": "string", "minLength": 1},
+    "model": {"type": "string", "minLength": 1},
+    "fixture_id": {"type": "string", "const": "multitenant-subscription-saas"},
+    "campaign_base_commit": {"type": "string", "pattern": "^[a-f0-9]{40}$"},
+    "run_branch": {"type": "string", "pattern": "^bench/p5-relayops-[a-z0-9-]+$"},
+    "fixture_sha256": {"type": "string", "pattern": "^[a-f0-9]{64}$"},
+    "rubric_sha256": {"type": "string", "pattern": "^[a-f0-9]{64}$"},
+    "environment_capability_manifest": {"type": "string", "minLength": 1},
+    "evidence_assurance_manifest": {"type": "string", "minLength": 1},
+    "deployment_evidence_manifest": {"type": "string", "minLength": 1},
+    "saas_assurance_manifest": {"type": "string", "minLength": 1},
+    "started_at": {"type": "string"},
+    "finished_at": {"type": "string"},
+    "tool_permissions": {"type": "array", "items": {"type": "string"}},
+    "isolation_attestation": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "same_base_commit",
+        "no_cross_run_branch_reads",
+        "no_implementation_reuse",
+        "common_environment_floor"
+      ],
+      "properties": {
+        "same_base_commit": {"type": "boolean", "const": true},
+        "no_cross_run_branch_reads": {"type": "boolean", "const": true},
+        "no_implementation_reuse": {"type": "boolean", "const": true},
+        "common_environment_floor": {"type": "boolean", "const": true}
+      }
+    },
+    "notes": {"type": "string"}
+  }
+}
