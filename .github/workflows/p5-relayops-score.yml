@@ -1,0 +1,36 @@
+name: P5 RelayOps Calibration Score
+
+on:
+  push:
+    branches:
+      - bench/p5-relayops-calibration-gpt-5-6-sol
+
+permissions:
+  contents: write
+
+jobs:
+  score:
+    if: github.actor != 'github-actions[bot]'
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Install scorer dependency
+        run: python -m pip install PyYAML==6.0.2
+      - name: Run canonical reference-build scorer
+        run: |
+          python scripts/run_reference_build_benchmark.py \
+            --spec benchmarks/reference-builds/specs/multitenant-subscription-saas.yaml \
+            --submission benchmarks/reference-builds/campaigns/p5/runs/calibration-gpt-5-6-sol/run/submission.yaml \
+            --rubric benchmarks/reference-builds/scoring-rubric.yaml \
+            --output benchmarks/reference-builds/campaigns/p5/runs/calibration-gpt-5-6-sol/run/result.json
+          cat benchmarks/reference-builds/campaigns/p5/runs/calibration-gpt-5-6-sol/run/result.json
+      - name: Freeze first calibration score
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add benchmarks/reference-builds/campaigns/p5/runs/calibration-gpt-5-6-sol/run/result.json
+          git commit -m "bench(p5): freeze first RelayOps calibration result"
+          git push origin HEAD:bench/p5-relayops-calibration-gpt-5-6-sol
