@@ -102,7 +102,7 @@ async function screenshot(page, name) {
     page.waitForLoadState('networkidle'),
     page.getByRole('button', { name: 'Open audited context' }).click(),
   ]);
-  checks.support_explicit_harbor_context = await page.getByText('Harbor Service Group').isVisible();
+  checks.support_explicit_harbor_context = await page.locator('.metric strong').filter({ hasText: /^Harbor Service Group$/ }).isVisible();
   checks.support_northline_data_not_visible = (await page.getByText('Atlas Dental Group').count()) === 0;
   checks.support_audit_visible = await page.getByText('support.tenant_viewed').first().isVisible();
   screenshots.push(await screenshot(page, '06-support-explicit-tenant'));
