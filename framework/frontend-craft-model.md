@@ -14,6 +14,21 @@ This model makes frontend craft an explicit system concern.
 
 ATLAS must not equate premium quality with more animation, more dependencies, more WebGL, darker backgrounds, larger gradients, or a particular component library. Premium frontend quality comes from coherent hierarchy, distinctive authorship, appropriate interaction, strong responsive composition, and disciplined execution.
 
+## Premium delivery contract
+
+When the brief uses language such as premium, bespoke, high-end, studio-grade, memorable, cinematic, or "must not look vibe-coded", the frontend owner must create a compact direction record before implementation. It must define:
+
+1. a product-specific visual thesis derived from the subject's real vocabulary, tools, materials, data, or workflow;
+2. one justified aesthetic risk and one signature moment that could not be relabeled for an unrelated product;
+3. hierarchy, density, grid, typography, surface, color, iconography, and responsive composition rules;
+4. a motion inventory covering state feedback, spatial continuity, and emphasis, or an explicit rationale for a deliberately static interface;
+5. loading, empty, error, success, focus, disabled, destructive, and long-content states applicable to the surface;
+6. rendered acceptance evidence at the declared viewport matrix.
+
+The direction record can live in a design-system document, implementation plan, evidence packet, or project memory. It must be inspectable; adjectives in a prompt do not satisfy it.
+
+An interactive product surface should not ship with zero interaction feedback. At minimum, navigation, mutation feedback, focus, loading, and state change need coherent visual behavior. Motion must remain purposeful and reduced-motion safe; this rule does not require decorative animation.
+
 ## Capability sequence
 
 For significant user-facing work, ATLAS should use the following sequence proportionate to scope:
@@ -113,6 +128,19 @@ A significant frontend should be able to answer:
 - What happens with reduced motion, weak devices, slow networks, or failed WebGL?
 
 If those answers are missing, implementation should not be described as premium or finished.
+
+### Operational SaaS authorship
+
+For dashboards and business systems, authorship must come from the product's operating model rather than marketing-page spectacle. Prefer a product-specific command surface, meaningful density, exception-first status color, tabular changing numbers, strong table/form/detail composition, and transitions that clarify state. A generic sidebar plus KPI cards plus a table is a shell, not a finished direction.
+
+Use a restrained token grammar by default:
+
+- one dominant accent plus semantic status colors;
+- an explicit spatial rhythm, commonly an 8 px-derived scale;
+- layered low-opacity shadows from one light direction;
+- related nested radii rather than arbitrary rounded containers;
+- iconography from one visual family, without emoji or repeated icon-in-chip decoration;
+- color to signal priority or exception, not to rainbow-code ordinary rows.
 
 ## Responsive craft
 

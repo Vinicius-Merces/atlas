@@ -1,0 +1,357 @@
+{
+  "version": 1,
+  "runtime": "codex",
+  "model": "GPT-5",
+  "sourceTenant": "org_northstar",
+  "targetTenant": "org_harbor",
+  "results": [
+    {
+      "domain": "auth_and_membership",
+      "name": "session lifecycle and stale membership",
+      "executedAt": "2026-08-14T15:32:02.345Z",
+      "organizationCreated": true,
+      "sessionCreated": true,
+      "revokedSessionDenied": true,
+      "outcome": "denied"
+    },
+    {
+      "domain": "auth_and_membership",
+      "name": "invite password and single-use policy",
+      "executedAt": "2026-08-14T15:32:02.610Z",
+      "weakPasswordStatus": 422,
+      "weakAttemptConsumedInvite": false,
+      "strongAcceptance": true,
+      "loginAfterAcceptance": true
+    },
+    {
+      "domain": "auth_and_membership",
+      "name": "technician vertical escalation",
+      "executedAt": "2026-08-14T15:32:02.802Z",
+      "role": "technician",
+      "operations": [
+        "customer.create",
+        "billing.checkout",
+        "billing.demo_event",
+        "billing.reconcile",
+        "audit.read"
+      ],
+      "outcome": "denied"
+    },
+    {
+      "domain": "auth_and_membership",
+      "name": "technician visibility scope",
+      "executedAt": "2026-08-14T15:32:02.802Z",
+      "dashboardOnlyAssigned": true,
+      "searchOnlyAssigned": true,
+      "outcome": "denied"
+    },
+    {
+      "domain": "tenant_database",
+      "name": "read target customer",
+      "executedAt": "2026-08-14T15:32:02.989Z",
+      "sourceTenant": "org_northstar",
+      "targetTenant": "org_harbor",
+      "operation": "database/object read cus_beta",
+      "httpEquivalent": 404,
+      "outcome": "denied"
+    },
+    {
+      "domain": "tenant_database",
+      "name": "mutate target customer",
+      "executedAt": "2026-08-14T15:32:02.989Z",
+      "sourceTenant": "org_northstar",
+      "targetTenant": "org_harbor",
+      "operation": "database/object update cus_beta",
+      "httpEquivalent": 404,
+      "authoritativeTargetUnchanged": true,
+      "outcome": "denied"
+    },
+    {
+      "domain": "tenant_storage",
+      "name": "read target attachment",
+      "executedAt": "2026-08-14T15:32:03.178Z",
+      "sourceTenant": "org_northstar",
+      "targetTenant": "org_harbor",
+      "operation": "storage read att_beta",
+      "httpEquivalent": 404,
+      "bytesReturned": 0,
+      "outcome": "denied"
+    },
+    {
+      "domain": "tenant_storage",
+      "name": "write to target work order",
+      "executedAt": "2026-08-14T15:32:03.178Z",
+      "sourceTenant": "org_northstar",
+      "targetTenant": "org_harbor",
+      "operation": "storage write against wo_beta",
+      "httpEquivalent": 404,
+      "targetObjectsCreated": 0,
+      "outcome": "denied"
+    },
+    {
+      "domain": "tenant_search",
+      "name": "target sentinel query",
+      "executedAt": "2026-08-14T15:32:03.368Z",
+      "sourceTenant": "org_northstar",
+      "targetTenant": "org_harbor",
+      "operation": "search BETA_ONLY_SENTINEL",
+      "targetControlResults": 2,
+      "sourceResults": 0,
+      "outcome": "denied"
+    },
+    {
+      "domain": "tenant_cache_jobs",
+      "name": "cache isolation",
+      "executedAt": "2026-08-14T15:32:03.559Z",
+      "sourceTenant": "org_northstar",
+      "targetTenant": "org_harbor",
+      "cacheKey": "shared",
+      "returned": "ALPHA",
+      "targetSentinelExposed": false,
+      "outcome": "denied"
+    },
+    {
+      "domain": "tenant_cache_jobs",
+      "name": "stale job authorization",
+      "executedAt": "2026-08-14T15:32:03.559Z",
+      "jobId": "job_165cccb2-f931-4394-b7cb-be6d9420e070",
+      "membershipChangedBeforeExecution": true,
+      "effectCount": 0,
+      "outcome": "denied"
+    },
+    {
+      "domain": "tenant_cache_jobs",
+      "name": "job tenant context",
+      "executedAt": "2026-08-14T15:32:03.754Z",
+      "sourceTenant": "org_northstar",
+      "targetTenant": "org_harbor",
+      "jobId": "job_1ecd9ca7-7d29-405b-b3bb-3dab90e680e8",
+      "status": "denied",
+      "effectCount": 0,
+      "outcome": "denied"
+    },
+    {
+      "domain": "tenant_cache_jobs",
+      "name": "duplicate delivery",
+      "executedAt": "2026-08-14T15:32:03.754Z",
+      "jobId": "job_75ca7564-55f8-465e-a1de-ed10a95df619",
+      "deliveries": 2,
+      "effects": 1,
+      "idempotent": true
+    },
+    {
+      "domain": "tenant_cache_jobs",
+      "name": "bounded retry and recovery",
+      "executedAt": "2026-08-14T15:32:03.754Z",
+      "jobId": "job_e038c214-b467-49d6-b13b-cb3eeef6fe30",
+      "maxAttempts": 3,
+      "statusBeforeReplay": "failed",
+      "statusAfterExplicitRecovery": "completed",
+      "effects": 1
+    },
+    {
+      "domain": "notifications",
+      "name": "cross-tenant recipient and read",
+      "executedAt": "2026-08-14T15:32:03.946Z",
+      "sourceTenant": "org_northstar",
+      "targetTenant": "org_harbor",
+      "recipientDenied": true,
+      "readDenied": true,
+      "outcome": "denied"
+    },
+    {
+      "domain": "notifications",
+      "name": "email provider failure",
+      "executedAt": "2026-08-14T15:32:03.946Z",
+      "jobId": "job_195a6274-031b-4237-9758-3e12aa243aac",
+      "boundedAttempts": 2,
+      "failed": true
+    },
+    {
+      "domain": "notifications",
+      "name": "email recovery",
+      "executedAt": "2026-08-14T15:32:03.946Z",
+      "jobId": "job_195a6274-031b-4237-9758-3e12aa243aac",
+      "replayedAfterRecovery": true,
+      "effects": 1
+    },
+    {
+      "domain": "billing_entitlements",
+      "name": "checkout authority",
+      "executedAt": "2026-08-14T15:32:04.135Z",
+      "checkoutId": "chk_a12e800b-a48f-4d30-9212-3ef4c31e0c6f",
+      "checkoutStatus": "pending",
+      "successReturnGrantedAccess": false
+    },
+    {
+      "domain": "billing_entitlements",
+      "name": "duplicate webhook",
+      "executedAt": "2026-08-14T15:32:04.135Z",
+      "eventId": "evt_cancel",
+      "duplicate": true,
+      "entitlementTransitions": 1
+    },
+    {
+      "domain": "billing_entitlements",
+      "name": "out of order webhook",
+      "executedAt": "2026-08-14T15:32:04.135Z",
+      "newerCancellation": 300,
+      "olderActivation": 200,
+      "olderDisposition": "out_of_order_ignored",
+      "finalEnabled": false
+    },
+    {
+      "domain": "billing_entitlements",
+      "name": "reconciliation and revocation",
+      "executedAt": "2026-08-14T15:32:04.135Z",
+      "providerStatus": "canceled",
+      "applicationEntitlement": false,
+      "staleCacheCleared": true,
+      "gatedOperationDenied": true,
+      "outcome": "denied"
+    },
+    {
+      "domain": "billing_entitlements",
+      "name": "provider outage",
+      "executedAt": "2026-08-14T15:32:04.135Z",
+      "checkoutStatus": 503,
+      "entitlementChanged": false
+    },
+    {
+      "domain": "billing_entitlements",
+      "name": "revoked mutation gate",
+      "executedAt": "2026-08-14T15:32:04.332Z",
+      "workOrderCreated": true,
+      "idempotentReplay": true,
+      "customerMutationStatus": 402,
+      "workOrderMutationStatus": 402,
+      "outcome": "denied"
+    },
+    {
+      "domain": "billing_entitlements",
+      "name": "provider outage replay recovery",
+      "executedAt": "2026-08-14T15:32:04.526Z",
+      "eventId": "evt_outage_cancel",
+      "providerStatePersisted": true,
+      "reconciliationPending": true,
+      "replayReconciled": true,
+      "finalEnabled": false
+    },
+    {
+      "domain": "billing_entitlements",
+      "name": "reconciliation role denial",
+      "executedAt": "2026-08-14T15:32:04.526Z",
+      "role": "technician",
+      "operation": "billing.reconcile",
+      "outcome": "denied"
+    },
+    {
+      "domain": "admin_audit",
+      "name": "support without context",
+      "executedAt": "2026-08-14T15:32:04.722Z",
+      "sourceTenant": "support-global",
+      "targetTenant": "org_northstar",
+      "operation": "support inspect without explicit tenant",
+      "outcome": "denied"
+    },
+    {
+      "domain": "admin_audit",
+      "name": "manager vertical escalation",
+      "executedAt": "2026-08-14T15:32:04.722Z",
+      "sourceTenant": "org_northstar",
+      "targetTenant": "support-surface",
+      "operation": "ordinary manager support inspect",
+      "outcome": "denied"
+    },
+    {
+      "domain": "admin_audit",
+      "name": "privileged action audit",
+      "executedAt": "2026-08-14T15:32:04.722Z",
+      "explicitTenant": "org_northstar",
+      "reasonCaptured": true,
+      "auditId": "aud_5a577bed-b0bf-4d35-8051-5c9348e6dbc0",
+      "actor": "usr_support",
+      "result": "allowed"
+    },
+    {
+      "domain": "import_export",
+      "name": "row validation and partial failure",
+      "executedAt": "2026-08-14T15:32:04.928Z",
+      "importId": "imp_3f142c1f-7a65-4a9c-873f-f80c05d606e8",
+      "created": 2,
+      "failed": 1,
+      "rowStatuses": [
+        {
+          "row": 2,
+          "status": "created",
+          "error": null,
+          "entityId": "cus_07188786-23f5-4c60-bdd3-d078438568c3"
+        },
+        {
+          "row": 3,
+          "status": "failed",
+          "error": "row_validation",
+          "entityId": null
+        },
+        {
+          "row": 4,
+          "status": "created",
+          "error": null,
+          "entityId": "cus_8aa9d896-62de-4a02-a0e0-749f81189923"
+        }
+      ]
+    },
+    {
+      "domain": "import_export",
+      "name": "safe retry",
+      "executedAt": "2026-08-14T15:32:04.928Z",
+      "operationKey": "import-key-1",
+      "duplicate": true,
+      "totalImportedRows": 2
+    },
+    {
+      "domain": "import_export",
+      "name": "export isolation",
+      "executedAt": "2026-08-14T15:32:04.928Z",
+      "sourceTenant": "org_northstar",
+      "targetTenant": "org_harbor",
+      "targetSentinelPresent": false,
+      "outcome": "denied"
+    },
+    {
+      "domain": "secret_boundary",
+      "name": "browser bundle and HTML scan",
+      "executedAt": "2026-08-14T15:32:04.931Z",
+      "scanned": [
+        "public/app.js",
+        "public/styles.css",
+        "login HTML"
+      ],
+      "secretClasses": 3,
+      "exposedPrivilegedSecrets": 0
+    },
+    {
+      "domain": "secret_boundary",
+      "name": "client log scan",
+      "executedAt": "2026-08-14T15:32:04.931Z",
+      "capturedClientErrors": 0,
+      "secretMatches": 0,
+      "redactionPolicy": "password/cookie/authorization/signature/secret/contentBase64"
+    },
+    {
+      "domain": "auth_and_membership",
+      "name": "real HTTP lifecycle",
+      "executedAt": "2026-08-14T15:32:05.249Z",
+      "anonymousStatus": 401,
+      "crossOriginStatus": 403,
+      "loginStatus": 200,
+      "protectedStatus": 200,
+      "workOrderCreateStatus": 201,
+      "technicianBillingEventStatus": 403,
+      "technicianReconcileStatus": 403,
+      "logoutStatus": 200,
+      "reusedSessionStatus": 401,
+      "outcome": "denied"
+    }
+  ]
+}

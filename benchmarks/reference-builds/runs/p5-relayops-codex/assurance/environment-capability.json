@@ -1,0 +1,75 @@
+{
+  "capabilities": {
+    "browser": {
+      "details": "Host=Linux-6.18.35-x86_64-with-glibc2.39",
+      "native_available": false,
+      "portable_fallback_eligible": true,
+      "source": "campaign-portable"
+    },
+    "commands": {
+      "chromium": {
+        "available": false,
+        "path": null,
+        "version": null
+      },
+      "chromium-browser": {
+        "available": false,
+        "path": null,
+        "version": null
+      },
+      "git": {
+        "available": true,
+        "path": "/usr/local/bin/git",
+        "version": "git version 2.51.1"
+      },
+      "google-chrome": {
+        "available": false,
+        "path": null,
+        "version": null
+      },
+      "node": {
+        "available": true,
+        "path": "/opt/codex/runtimes/codex-primary-runtime/dependencies/node/bin/node",
+        "version": "v24.19.0"
+      },
+      "npm": {
+        "available": true,
+        "path": "/opt/codex/runtimes/codex-primary-runtime/dependencies/node/bin/npm",
+        "version": "11.9.0"
+      },
+      "npx": {
+        "available": true,
+        "path": "/opt/codex/runtimes/codex-primary-runtime/dependencies/node/bin/npx",
+        "version": "11.9.0"
+      },
+      "python": {
+        "available": true,
+        "path": "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+        "version": "Python 3.12.13"
+      },
+      "python3": {
+        "available": true,
+        "path": "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+        "version": "Python 3.12.13"
+      }
+    },
+    "deployment": {
+      "campaign_adapter_available": true,
+      "details": "Declared before implementation; availability must be proven again when used.",
+      "native_available": false
+    },
+    "independent_review": {
+      "available": true,
+      "details": "Separate reviewer availability frozen before implementation."
+    },
+    "network": {
+      "details": "Runtime-declared network posture.",
+      "mode": "allowlisted"
+    }
+  },
+  "captured_at": "2026-08-14T12:39:32.544102+00:00",
+  "model": "GPT-5",
+  "notes": "Captured before product implementation. Runtime-native browser binaries are absent; campaign-owned portable Chromium and controlled deployment are the declared common fallback.",
+  "runtime": "codex",
+  "version": 1
+}

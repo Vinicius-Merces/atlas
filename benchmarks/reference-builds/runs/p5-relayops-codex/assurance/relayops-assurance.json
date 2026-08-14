@@ -1,0 +1,98 @@
+{
+  "version": 1,
+  "run_manifest": "benchmarks/reference-builds/runs/p5-relayops-codex/run-manifest.json",
+  "evidence_references": [
+    "benchmarks/reference-builds/runs/p5-relayops-codex/evidence/local/assurance-results.json"
+  ],
+  "auth_and_membership": {
+    "session_lifecycle_ref": "benchmarks/reference-builds/runs/p5-relayops-codex/evidence/local/assurance-results.json",
+    "organization_membership_ref": "benchmarks/reference-builds/runs/p5-relayops-codex/evidence/local/assurance-results.json",
+    "unauthenticated_denial_ref": "benchmarks/reference-builds/runs/p5-relayops-codex/evidence/local/assurance-results.json",
+    "role_denial_ref": "benchmarks/reference-builds/runs/p5-relayops-codex/evidence/local/assurance-results.json"
+  },
+  "tenant_database": {
+    "attempts": [
+      {
+        "source_tenant": "org_northstar",
+        "target_tenant": "org_harbor",
+        "operation": "read target customer cus_beta through scoped object service",
+        "outcome": "denied",
+        "evidence_ref": "benchmarks/reference-builds/runs/p5-relayops-codex/evidence/local/assurance-results.json"
+      },
+      {
+        "source_tenant": "org_northstar",
+        "target_tenant": "org_harbor",
+        "operation": "mutate target customer cus_beta through scoped object service",
+        "outcome": "denied",
+        "evidence_ref": "benchmarks/reference-builds/runs/p5-relayops-codex/evidence/local/assurance-results.json"
+      }
+    ]
+  },
+  "tenant_storage": {
+    "attempts": [
+      {
+        "source_tenant": "org_northstar",
+        "target_tenant": "org_harbor",
+        "operation": "read target attachment att_beta",
+        "outcome": "denied",
+        "evidence_ref": "benchmarks/reference-builds/runs/p5-relayops-codex/evidence/local/assurance-results.json"
+      },
+      {
+        "source_tenant": "org_northstar",
+        "target_tenant": "org_harbor",
+        "operation": "write attachment against target work order wo_beta",
+        "outcome": "denied",
+        "evidence_ref": "benchmarks/reference-builds/runs/p5-relayops-codex/evidence/local/assurance-results.json"
+      }
+    ]
+  },
+  "tenant_search": {
+    "attempts": [
+      {
+        "source_tenant": "org_northstar",
+        "target_tenant": "org_harbor",
+        "operation": "search BETA_ONLY_SENTINEL after positive target control",
+        "outcome": "denied",
+        "evidence_ref": "benchmarks/reference-builds/runs/p5-relayops-codex/evidence/local/assurance-results.json"
+      }
+    ]
+  },
+  "tenant_cache_jobs": {
+    "cache_isolation_ref": "benchmarks/reference-builds/runs/p5-relayops-codex/evidence/local/assurance-results.json",
+    "job_context_ref": "benchmarks/reference-builds/runs/p5-relayops-codex/evidence/local/assurance-results.json",
+    "duplicate_delivery_ref": "benchmarks/reference-builds/runs/p5-relayops-codex/evidence/local/assurance-results.json",
+    "retry_recovery_ref": "benchmarks/reference-builds/runs/p5-relayops-codex/evidence/local/assurance-results.json",
+    "stale_authorization_ref": "benchmarks/reference-builds/runs/p5-relayops-codex/evidence/local/assurance-results.json"
+  },
+  "notifications": {
+    "tenant_delivery_ref": "benchmarks/reference-builds/runs/p5-relayops-codex/evidence/local/assurance-results.json",
+    "provider_failure_ref": "benchmarks/reference-builds/runs/p5-relayops-codex/evidence/local/assurance-results.json",
+    "recovery_ref": "benchmarks/reference-builds/runs/p5-relayops-codex/evidence/local/assurance-results.json"
+  },
+  "billing_entitlements": {
+    "checkout_ref": "benchmarks/reference-builds/runs/p5-relayops-codex/evidence/local/assurance-results.json",
+    "authoritative_entitlement_ref": "benchmarks/reference-builds/runs/p5-relayops-codex/evidence/local/assurance-results.json",
+    "duplicate_webhook_ref": "benchmarks/reference-builds/runs/p5-relayops-codex/evidence/local/assurance-results.json",
+    "out_of_order_webhook_ref": "benchmarks/reference-builds/runs/p5-relayops-codex/evidence/local/assurance-results.json",
+    "reconciliation_ref": "benchmarks/reference-builds/runs/p5-relayops-codex/evidence/local/assurance-results.json",
+    "revocation_ref": "benchmarks/reference-builds/runs/p5-relayops-codex/evidence/local/assurance-results.json"
+  },
+  "admin_audit": {
+    "explicit_tenant_context": true,
+    "least_privilege_denial_ref": "benchmarks/reference-builds/runs/p5-relayops-codex/evidence/local/assurance-results.json",
+    "privileged_action_ref": "benchmarks/reference-builds/runs/p5-relayops-codex/evidence/local/assurance-results.json",
+    "audit_record_ref": "benchmarks/reference-builds/runs/p5-relayops-codex/evidence/local/assurance-results.json"
+  },
+  "import_export": {
+    "row_validation_ref": "benchmarks/reference-builds/runs/p5-relayops-codex/evidence/local/assurance-results.json",
+    "partial_failure_ref": "benchmarks/reference-builds/runs/p5-relayops-codex/evidence/local/assurance-results.json",
+    "safe_retry_ref": "benchmarks/reference-builds/runs/p5-relayops-codex/evidence/local/assurance-results.json",
+    "export_isolation_ref": "benchmarks/reference-builds/runs/p5-relayops-codex/evidence/local/assurance-results.json"
+  },
+  "secret_boundary": {
+    "browser_bundle_scan_ref": "benchmarks/reference-builds/runs/p5-relayops-codex/evidence/local/assurance-results.json",
+    "client_log_scan_ref": "benchmarks/reference-builds/runs/p5-relayops-codex/evidence/local/assurance-results.json",
+    "exposed_privileged_secrets": 0
+  },
+  "notes": "Executed local assurance for two distinct tenants. Database evidence proves the application/object boundary and composite tenant constraints in SQLite; it does not claim PostgreSQL RLS. Provider behavior is deterministic sandbox-equivalent and not live production configuration."
+}

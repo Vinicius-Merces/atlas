@@ -1,0 +1,474 @@
+{
+  "benchmark_version": 1,
+  "spec_id": "multitenant-subscription-saas",
+  "spec_version": 1,
+  "spec_sha256": "3227ec96f8528476bffbfd860112534158cb5c562a1474e329760685f78d59b9",
+  "rubric_sha256": "6463ae7fde36affecc20eff21f0ec73e04e0fb44c920a3cbc9115502a1b56b31",
+  "execution_mode": "live",
+  "run": {
+    "runtime": "codex",
+    "model": "GPT-5",
+    "repository": "https://github.com/Vinicius-Merces/atlas.git",
+    "commit": "db6c52e774c817ae72ad11f64ea7cfd5b4233944",
+    "evidence_root": "benchmarks/reference-builds/runs/p5-relayops-codex/evidence",
+    "started_at": "2026-08-14T12:39:07Z",
+    "finished_at": "2026-08-14T15:10:08Z",
+    "environment_notes": "First frozen result before frontend remediation. Browser and public deployment evidence were not yet collected and are unverified.",
+    "tool_permissions": [
+      "filesystem workspace-write",
+      "network allowlisted",
+      "campaign-portable browser eligible"
+    ]
+  },
+  "score": 75.38,
+  "base_outcome": "conditional",
+  "outcome": "blocked",
+  "claimable": false,
+  "blocking_failures": [
+    "saas-browser-auth-flow",
+    "saas-production-config"
+  ],
+  "review": {
+    "reviewer": "unavailable-before-first-result",
+    "outcome": "Changes required",
+    "evidence": [],
+    "notes": "No independent review was completed before the first frozen score; no independence is claimed."
+  },
+  "axis_scores": {
+    "brief_fidelity": {
+      "weight": 7.0,
+      "completion_factor": 1.0,
+      "score": 7.0
+    },
+    "architecture_quality": {
+      "weight": 13.0,
+      "completion_factor": 0.875,
+      "score": 11.38
+    },
+    "capability_routing": {
+      "weight": 8.0,
+      "completion_factor": 1.0,
+      "score": 8.0
+    },
+    "implementation_completeness": {
+      "weight": 13.0,
+      "completion_factor": 1.0,
+      "score": 13.0
+    },
+    "frontend_craft": {
+      "weight": 8.0,
+      "completion_factor": 0.25,
+      "score": 2.0
+    },
+    "security_isolation": {
+      "weight": 17.0,
+      "completion_factor": 1.0,
+      "score": 17.0
+    },
+    "failure_resilience": {
+      "weight": 12.0,
+      "completion_factor": 1.0,
+      "score": 12.0
+    },
+    "browser_reality": {
+      "weight": 7.0,
+      "completion_factor": 0.0,
+      "score": 0.0
+    },
+    "production_readiness": {
+      "weight": 10.0,
+      "completion_factor": 0.5,
+      "score": 5.0
+    },
+    "independent_review": {
+      "weight": 5.0,
+      "completion_factor": 0.0,
+      "score": 0.0
+    }
+  },
+  "checks": [
+    {
+      "id": "saas-personas-workflows",
+      "axis": "brief_fidelity",
+      "status": "pass",
+      "factor": 1.0,
+      "evidence": [
+        "benchmarks/reference-builds/runs/p5-relayops-codex/evidence/local/execution-summary.md"
+      ],
+      "notes": ""
+    },
+    {
+      "id": "saas-required-surfaces",
+      "axis": "brief_fidelity",
+      "status": "pass",
+      "factor": 1.0,
+      "evidence": [
+        "benchmarks/reference-builds/runs/p5-relayops-codex/evidence/local/execution-summary.md"
+      ],
+      "notes": ""
+    },
+    {
+      "id": "saas-operational-goal",
+      "axis": "brief_fidelity",
+      "status": "pass",
+      "factor": 1.0,
+      "evidence": [
+        "benchmarks/reference-builds/runs/p5-relayops-codex/evidence/local/execution-summary.md"
+      ],
+      "notes": ""
+    },
+    {
+      "id": "saas-domain-model",
+      "axis": "architecture_quality",
+      "status": "pass",
+      "factor": 1.0,
+      "evidence": [
+        "benchmarks/reference-builds/runs/p5-relayops-codex/architecture.md"
+      ],
+      "notes": ""
+    },
+    {
+      "id": "saas-tenant-propagation",
+      "axis": "architecture_quality",
+      "status": "pass",
+      "factor": 1.0,
+      "evidence": [
+        "benchmarks/reference-builds/runs/p5-relayops-codex/evidence/local/assurance-results.json"
+      ],
+      "notes": ""
+    },
+    {
+      "id": "saas-distributed-state",
+      "axis": "architecture_quality",
+      "status": "pass",
+      "factor": 1.0,
+      "evidence": [
+        "benchmarks/reference-builds/runs/p5-relayops-codex/evidence/local/assurance-results.json"
+      ],
+      "notes": ""
+    },
+    {
+      "id": "saas-migration-operability",
+      "axis": "architecture_quality",
+      "status": "partial",
+      "factor": 0.5,
+      "evidence": [
+        "benchmarks/reference-builds/runs/p5-relayops-codex/architecture.md"
+      ],
+      "notes": ""
+    },
+    {
+      "id": "saas-routing-trust",
+      "axis": "capability_routing",
+      "status": "pass",
+      "factor": 1.0,
+      "evidence": [
+        "benchmarks/reference-builds/runs/p5-relayops-codex/architecture.md"
+      ],
+      "notes": ""
+    },
+    {
+      "id": "saas-routing-p2",
+      "axis": "capability_routing",
+      "status": "pass",
+      "factor": 1.0,
+      "evidence": [
+        "benchmarks/reference-builds/runs/p5-relayops-codex/architecture.md"
+      ],
+      "notes": ""
+    },
+    {
+      "id": "saas-routing-quality",
+      "axis": "capability_routing",
+      "status": "pass",
+      "factor": 1.0,
+      "evidence": [
+        "benchmarks/reference-builds/runs/p5-relayops-codex/architecture.md"
+      ],
+      "notes": ""
+    },
+    {
+      "id": "saas-auth-org-complete",
+      "axis": "implementation_completeness",
+      "status": "pass",
+      "factor": 1.0,
+      "evidence": [
+        "benchmarks/reference-builds/runs/p5-relayops-codex/evidence/local/assurance-results.json"
+      ],
+      "notes": ""
+    },
+    {
+      "id": "saas-work-order-complete",
+      "axis": "implementation_completeness",
+      "status": "pass",
+      "factor": 1.0,
+      "evidence": [
+        "benchmarks/reference-builds/runs/p5-relayops-codex/evidence/local/assurance-results.json"
+      ],
+      "notes": ""
+    },
+    {
+      "id": "saas-files-search-notify",
+      "axis": "implementation_completeness",
+      "status": "pass",
+      "factor": 1.0,
+      "evidence": [
+        "benchmarks/reference-builds/runs/p5-relayops-codex/evidence/local/assurance-results.json"
+      ],
+      "notes": ""
+    },
+    {
+      "id": "saas-billing-entitlement",
+      "axis": "implementation_completeness",
+      "status": "pass",
+      "factor": 1.0,
+      "evidence": [
+        "benchmarks/reference-builds/runs/p5-relayops-codex/evidence/local/assurance-results.json"
+      ],
+      "notes": ""
+    },
+    {
+      "id": "saas-admin-import-export",
+      "axis": "implementation_completeness",
+      "status": "pass",
+      "factor": 1.0,
+      "evidence": [
+        "benchmarks/reference-builds/runs/p5-relayops-codex/evidence/local/assurance-results.json"
+      ],
+      "notes": ""
+    },
+    {
+      "id": "saas-information-density",
+      "axis": "frontend_craft",
+      "status": "partial",
+      "factor": 0.5,
+      "evidence": [
+        "benchmarks/reference-builds/runs/p5-relayops-codex/app/src/render.js"
+      ],
+      "notes": ""
+    },
+    {
+      "id": "saas-responsive",
+      "axis": "frontend_craft",
+      "status": "unverified",
+      "factor": 0.0,
+      "evidence": [],
+      "notes": "No rendered viewport evidence in first result."
+    },
+    {
+      "id": "saas-accessibility",
+      "axis": "frontend_craft",
+      "status": "unverified",
+      "factor": 0.0,
+      "evidence": [],
+      "notes": "No rendered keyboard or accessibility evidence in first result."
+    },
+    {
+      "id": "saas-visual-authorship",
+      "axis": "frontend_craft",
+      "status": "partial",
+      "factor": 0.5,
+      "evidence": [
+        "benchmarks/reference-builds/runs/p5-relayops-codex/app/public/styles.css"
+      ],
+      "notes": ""
+    },
+    {
+      "id": "saas-cross-tenant-database",
+      "axis": "security_isolation",
+      "status": "pass",
+      "factor": 1.0,
+      "evidence": [
+        "benchmarks/reference-builds/runs/p5-relayops-codex/evidence/local/assurance-results.json"
+      ],
+      "notes": ""
+    },
+    {
+      "id": "saas-cross-tenant-storage",
+      "axis": "security_isolation",
+      "status": "pass",
+      "factor": 1.0,
+      "evidence": [
+        "benchmarks/reference-builds/runs/p5-relayops-codex/evidence/local/assurance-results.json"
+      ],
+      "notes": ""
+    },
+    {
+      "id": "saas-cross-tenant-search",
+      "axis": "security_isolation",
+      "status": "pass",
+      "factor": 1.0,
+      "evidence": [
+        "benchmarks/reference-builds/runs/p5-relayops-codex/evidence/local/assurance-results.json"
+      ],
+      "notes": ""
+    },
+    {
+      "id": "saas-cross-tenant-cache-job",
+      "axis": "security_isolation",
+      "status": "pass",
+      "factor": 1.0,
+      "evidence": [
+        "benchmarks/reference-builds/runs/p5-relayops-codex/evidence/local/assurance-results.json"
+      ],
+      "notes": ""
+    },
+    {
+      "id": "saas-admin-privilege",
+      "axis": "security_isolation",
+      "status": "pass",
+      "factor": 1.0,
+      "evidence": [
+        "benchmarks/reference-builds/runs/p5-relayops-codex/evidence/local/assurance-results.json"
+      ],
+      "notes": ""
+    },
+    {
+      "id": "saas-secret-boundary",
+      "axis": "security_isolation",
+      "status": "pass",
+      "factor": 1.0,
+      "evidence": [
+        "benchmarks/reference-builds/runs/p5-relayops-codex/evidence/local/assurance-results.json"
+      ],
+      "notes": ""
+    },
+    {
+      "id": "saas-duplicate-mutation-job",
+      "axis": "failure_resilience",
+      "status": "pass",
+      "factor": 1.0,
+      "evidence": [
+        "benchmarks/reference-builds/runs/p5-relayops-codex/evidence/local/assurance-results.json"
+      ],
+      "notes": ""
+    },
+    {
+      "id": "saas-webhook-replay",
+      "axis": "failure_resilience",
+      "status": "pass",
+      "factor": 1.0,
+      "evidence": [
+        "benchmarks/reference-builds/runs/p5-relayops-codex/evidence/local/assurance-results.json"
+      ],
+      "notes": ""
+    },
+    {
+      "id": "saas-provider-outage",
+      "axis": "failure_resilience",
+      "status": "pass",
+      "factor": 1.0,
+      "evidence": [
+        "benchmarks/reference-builds/runs/p5-relayops-codex/evidence/local/assurance-results.json"
+      ],
+      "notes": ""
+    },
+    {
+      "id": "saas-stale-cache-entitlement",
+      "axis": "failure_resilience",
+      "status": "pass",
+      "factor": 1.0,
+      "evidence": [
+        "benchmarks/reference-builds/runs/p5-relayops-codex/evidence/local/assurance-results.json"
+      ],
+      "notes": ""
+    },
+    {
+      "id": "saas-import-partial-failure",
+      "axis": "failure_resilience",
+      "status": "pass",
+      "factor": 1.0,
+      "evidence": [
+        "benchmarks/reference-builds/runs/p5-relayops-codex/evidence/local/assurance-results.json"
+      ],
+      "notes": ""
+    },
+    {
+      "id": "saas-browser-auth-flow",
+      "axis": "browser_reality",
+      "status": "unverified",
+      "factor": 0.0,
+      "evidence": [],
+      "notes": "No browser evidence in first result."
+    },
+    {
+      "id": "saas-browser-operational-flow",
+      "axis": "browser_reality",
+      "status": "unverified",
+      "factor": 0.0,
+      "evidence": [],
+      "notes": "No browser evidence in first result."
+    },
+    {
+      "id": "saas-browser-console-network",
+      "axis": "browser_reality",
+      "status": "unverified",
+      "factor": 0.0,
+      "evidence": [],
+      "notes": "No browser evidence in first result."
+    },
+    {
+      "id": "saas-production-config",
+      "axis": "production_readiness",
+      "status": "unverified",
+      "factor": 0.0,
+      "evidence": [],
+      "notes": "No production deployment; controlled-preview also cannot satisfy this blocker."
+    },
+    {
+      "id": "saas-observability",
+      "axis": "production_readiness",
+      "status": "pass",
+      "factor": 1.0,
+      "evidence": [
+        "benchmarks/reference-builds/runs/p5-relayops-codex/evidence/local/execution-summary.md"
+      ],
+      "notes": ""
+    },
+    {
+      "id": "saas-recovery",
+      "axis": "production_readiness",
+      "status": "partial",
+      "factor": 0.5,
+      "evidence": [
+        "benchmarks/reference-builds/runs/p5-relayops-codex/architecture.md"
+      ],
+      "notes": ""
+    },
+    {
+      "id": "saas-supply-chain",
+      "axis": "production_readiness",
+      "status": "pass",
+      "factor": 1.0,
+      "evidence": [
+        "benchmarks/reference-builds/runs/p5-relayops-codex/app/package-lock.json"
+      ],
+      "notes": ""
+    },
+    {
+      "id": "saas-performance",
+      "axis": "production_readiness",
+      "status": "unverified",
+      "factor": 0.0,
+      "evidence": [],
+      "notes": "No browser performance evidence in first result."
+    },
+    {
+      "id": "saas-review-trust",
+      "axis": "independent_review",
+      "status": "unverified",
+      "factor": 0.0,
+      "evidence": [],
+      "notes": "Independent review not yet performed."
+    },
+    {
+      "id": "saas-review-product",
+      "axis": "independent_review",
+      "status": "unverified",
+      "factor": 0.0,
+      "evidence": [],
+      "notes": "Independent review not yet performed."
+    }
+  ],
+  "warnings": []
+}

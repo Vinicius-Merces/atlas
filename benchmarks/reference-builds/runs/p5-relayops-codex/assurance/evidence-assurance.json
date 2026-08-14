@@ -1,0 +1,48 @@
+{
+  "version": 2,
+  "environment_manifest": "benchmarks/reference-builds/runs/p5-relayops-codex/assurance/environment-capability.json",
+  "evidence_references": [
+    "benchmarks/reference-builds/runs/p5-relayops-codex/evidence/local/assurance-results.json",
+    "benchmarks/reference-builds/runs/p5-relayops-codex/evidence/local/execution-summary.md",
+    "benchmarks/reference-builds/runs/p5-relayops-codex/evidence/final/execution-evidence.md"
+  ],
+  "browser": {
+    "source": "unavailable",
+    "summary": "Runtime-native browser unavailable. Campaign-portable collection remained blocked because session policy rejected publication required to invoke the shared workflow.",
+    "screenshots": []
+  },
+  "non_text_contrast": {
+    "minimum_required": 3.0,
+    "samples": []
+  },
+  "seo_not_found": [],
+  "visual_regression": {
+    "mode": "unavailable",
+    "baseline_root": null,
+    "diff_report": null
+  },
+  "recovery_claims": [
+    {
+      "claim": "Transactional SQLite state and deterministic reconciliation paths are exercised by the local assurance suite.",
+      "advertised": false,
+      "implementation_ref": "benchmarks/reference-builds/runs/p5-relayops-codex/app/src/store.js",
+      "evidence_ref": "benchmarks/reference-builds/runs/p5-relayops-codex/evidence/local/assurance-results.json"
+    }
+  ],
+  "mutable_cache": [
+    {
+      "route": "/api/dashboard",
+      "shared": false,
+      "max_age_seconds": 0,
+      "freshness_budget_seconds": 0,
+      "evidence_ref": "benchmarks/reference-builds/runs/p5-relayops-codex/evidence/local/assurance-results.json"
+    }
+  ],
+  "deployment": {
+    "status": "unavailable",
+    "deployment_class": "unavailable",
+    "claimable_production": false,
+    "url": null,
+    "evidence_ref": null
+  }
+}

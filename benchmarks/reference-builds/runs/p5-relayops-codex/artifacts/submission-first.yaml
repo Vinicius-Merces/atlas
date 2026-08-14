@@ -1,0 +1,62 @@
+benchmark_version: 1
+spec_id: multitenant-subscription-saas
+execution_mode: live
+run:
+  runtime: codex
+  model: GPT-5
+  repository: https://github.com/Vinicius-Merces/atlas.git
+  commit: db6c52e774c817ae72ad11f64ea7cfd5b4233944
+  evidence_root: benchmarks/reference-builds/runs/p5-relayops-codex/evidence
+  started_at: "2026-08-14T12:39:07Z"
+  finished_at: "2026-08-14T15:10:08Z"
+  environment_notes: First frozen result before frontend remediation. Browser and public deployment evidence were not yet collected and are unverified.
+  tool_permissions:
+    - filesystem workspace-write
+    - network allowlisted
+    - campaign-portable browser eligible
+review:
+  reviewer: unavailable-before-first-result
+  outcome: Changes required
+  evidence: []
+  notes: No independent review was completed before the first frozen score; no independence is claimed.
+checks:
+  - {id: saas-personas-workflows, status: pass, evidence: [benchmarks/reference-builds/runs/p5-relayops-codex/evidence/local/execution-summary.md]}
+  - {id: saas-required-surfaces, status: pass, evidence: [benchmarks/reference-builds/runs/p5-relayops-codex/evidence/local/execution-summary.md]}
+  - {id: saas-operational-goal, status: pass, evidence: [benchmarks/reference-builds/runs/p5-relayops-codex/evidence/local/execution-summary.md]}
+  - {id: saas-domain-model, status: pass, evidence: [benchmarks/reference-builds/runs/p5-relayops-codex/architecture.md]}
+  - {id: saas-tenant-propagation, status: pass, evidence: [benchmarks/reference-builds/runs/p5-relayops-codex/evidence/local/assurance-results.json]}
+  - {id: saas-distributed-state, status: pass, evidence: [benchmarks/reference-builds/runs/p5-relayops-codex/evidence/local/assurance-results.json]}
+  - {id: saas-migration-operability, status: partial, evidence: [benchmarks/reference-builds/runs/p5-relayops-codex/architecture.md]}
+  - {id: saas-routing-trust, status: pass, evidence: [benchmarks/reference-builds/runs/p5-relayops-codex/architecture.md]}
+  - {id: saas-routing-p2, status: pass, evidence: [benchmarks/reference-builds/runs/p5-relayops-codex/architecture.md]}
+  - {id: saas-routing-quality, status: pass, evidence: [benchmarks/reference-builds/runs/p5-relayops-codex/architecture.md]}
+  - {id: saas-auth-org-complete, status: pass, evidence: [benchmarks/reference-builds/runs/p5-relayops-codex/evidence/local/assurance-results.json]}
+  - {id: saas-work-order-complete, status: pass, evidence: [benchmarks/reference-builds/runs/p5-relayops-codex/evidence/local/assurance-results.json]}
+  - {id: saas-files-search-notify, status: pass, evidence: [benchmarks/reference-builds/runs/p5-relayops-codex/evidence/local/assurance-results.json]}
+  - {id: saas-billing-entitlement, status: pass, evidence: [benchmarks/reference-builds/runs/p5-relayops-codex/evidence/local/assurance-results.json]}
+  - {id: saas-admin-import-export, status: pass, evidence: [benchmarks/reference-builds/runs/p5-relayops-codex/evidence/local/assurance-results.json]}
+  - {id: saas-information-density, status: partial, evidence: [benchmarks/reference-builds/runs/p5-relayops-codex/app/src/render.js]}
+  - {id: saas-responsive, status: unverified, evidence: [], notes: No rendered viewport evidence in first result.}
+  - {id: saas-accessibility, status: unverified, evidence: [], notes: No rendered keyboard or accessibility evidence in first result.}
+  - {id: saas-visual-authorship, status: partial, evidence: [benchmarks/reference-builds/runs/p5-relayops-codex/app/public/styles.css]}
+  - {id: saas-cross-tenant-database, status: pass, evidence: [benchmarks/reference-builds/runs/p5-relayops-codex/evidence/local/assurance-results.json]}
+  - {id: saas-cross-tenant-storage, status: pass, evidence: [benchmarks/reference-builds/runs/p5-relayops-codex/evidence/local/assurance-results.json]}
+  - {id: saas-cross-tenant-search, status: pass, evidence: [benchmarks/reference-builds/runs/p5-relayops-codex/evidence/local/assurance-results.json]}
+  - {id: saas-cross-tenant-cache-job, status: pass, evidence: [benchmarks/reference-builds/runs/p5-relayops-codex/evidence/local/assurance-results.json]}
+  - {id: saas-admin-privilege, status: pass, evidence: [benchmarks/reference-builds/runs/p5-relayops-codex/evidence/local/assurance-results.json]}
+  - {id: saas-secret-boundary, status: pass, evidence: [benchmarks/reference-builds/runs/p5-relayops-codex/evidence/local/assurance-results.json]}
+  - {id: saas-duplicate-mutation-job, status: pass, evidence: [benchmarks/reference-builds/runs/p5-relayops-codex/evidence/local/assurance-results.json]}
+  - {id: saas-webhook-replay, status: pass, evidence: [benchmarks/reference-builds/runs/p5-relayops-codex/evidence/local/assurance-results.json]}
+  - {id: saas-provider-outage, status: pass, evidence: [benchmarks/reference-builds/runs/p5-relayops-codex/evidence/local/assurance-results.json]}
+  - {id: saas-stale-cache-entitlement, status: pass, evidence: [benchmarks/reference-builds/runs/p5-relayops-codex/evidence/local/assurance-results.json]}
+  - {id: saas-import-partial-failure, status: pass, evidence: [benchmarks/reference-builds/runs/p5-relayops-codex/evidence/local/assurance-results.json]}
+  - {id: saas-browser-auth-flow, status: unverified, evidence: [], notes: No browser evidence in first result.}
+  - {id: saas-browser-operational-flow, status: unverified, evidence: [], notes: No browser evidence in first result.}
+  - {id: saas-browser-console-network, status: unverified, evidence: [], notes: No browser evidence in first result.}
+  - {id: saas-production-config, status: unverified, evidence: [], notes: No production deployment; controlled-preview also cannot satisfy this blocker.}
+  - {id: saas-observability, status: pass, evidence: [benchmarks/reference-builds/runs/p5-relayops-codex/evidence/local/execution-summary.md]}
+  - {id: saas-recovery, status: partial, evidence: [benchmarks/reference-builds/runs/p5-relayops-codex/architecture.md]}
+  - {id: saas-supply-chain, status: pass, evidence: [benchmarks/reference-builds/runs/p5-relayops-codex/app/package-lock.json]}
+  - {id: saas-performance, status: unverified, evidence: [], notes: No browser performance evidence in first result.}
+  - {id: saas-review-trust, status: unverified, evidence: [], notes: Independent review not yet performed.}
+  - {id: saas-review-product, status: unverified, evidence: [], notes: Independent review not yet performed.}
