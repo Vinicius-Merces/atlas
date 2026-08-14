@@ -107,7 +107,7 @@ jobs:
           NODE_ENV: production
         run: |
           cd "target/${{ matrix.app_path }}"
-          nohup bash -lc "$START_COMMAND" > /tmp/atlas-p43-${{ matrix.target }}.log 2>&1 &
+          nohup setsid bash -lc "$START_COMMAND" > /tmp/atlas-p43-${{ matrix.target }}.log 2>&1 &
           echo $! > /tmp/atlas-p43-${{ matrix.target }}.pid
 
       - name: Wait for bootstrap origin
@@ -171,7 +171,7 @@ jobs:
           PORT: ${{ matrix.port }}
           NODE_ENV: production
         run: |
-          kill "$(cat /tmp/atlas-p43-${{ matrix.target }}.pid)" || true
+          kill -- -"$(cat /tmp/atlas-p43-${{ matrix.target }}.pid)" || true
           for i in $(seq 1 20); do
             if ! curl --silent "http://127.0.0.1:${{ matrix.port }}${{ matrix.health_path }}" >/dev/null 2>&1; then
               break
@@ -180,7 +180,7 @@ jobs:
           done
           cd "target/${{ matrix.app_path }}"
           export "$ORIGIN_ENV=$PUBLIC_URL"
-          nohup bash -lc "$START_COMMAND" > /tmp/atlas-p43-${{ matrix.target }}.log 2>&1 &
+          nohup setsid bash -lc "$START_COMMAND" > /tmp/atlas-p43-${{ matrix.target }}.log 2>&1 &
           echo $! > /tmp/atlas-p43-${{ matrix.target }}.pid
 
       - name: Verify normalized public endpoint
