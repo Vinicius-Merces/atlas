@@ -1,0 +1,29 @@
+{
+  "campaign_id": "p5-live-saas-reference-build-campaign",
+  "target_id": "calibration-gpt-5-6-sol",
+  "role": "calibration",
+  "runtime": "chatgpt",
+  "model": "GPT-5.6 Sol",
+  "fixture_id": "multitenant-subscription-saas",
+  "campaign_base_commit": "99cdbdbf40ca2709bb4e0d99b7d3320d9f89610b",
+  "run_branch": "bench/p5-relayops-calibration-gpt-5-6-sol",
+  "fixture_sha256": "3227ec96f8528476bffbfd860112534158cb5c562a1474e329760685f78d59b9",
+  "rubric_sha256": "6463ae7fde36affecc20eff21f0ec73e04e0fb44c920a3cbc9115502a1b56b31",
+  "runner_contract": "benchmarks/reference-builds/campaigns/p5/runs/calibration-gpt-5-6-sol/run/runner-contract.json",
+  "environment_capability_manifest": "benchmarks/reference-builds/campaigns/p5/runs/calibration-gpt-5-6-sol/run/environment-capability.json",
+  "evidence_assurance_manifest": "benchmarks/reference-builds/campaigns/p5/runs/calibration-gpt-5-6-sol/run/evidence-assurance.json",
+  "deployment_evidence_manifest": "benchmarks/reference-builds/campaigns/p5/runs/calibration-gpt-5-6-sol/run/deployment.json",
+  "saas_assurance_manifest": "benchmarks/reference-builds/campaigns/p5/runs/calibration-gpt-5-6-sol/run/saas-assurance.json",
+  "tool_permissions": [
+    "github-read-write",
+    "github-actions",
+    "campaign-portable-browser"
+  ],
+  "isolation_attestation": {
+    "same_base_commit": true,
+    "no_cross_run_branch_reads": true,
+    "no_implementation_reuse": true,
+    "common_environment_floor": true
+  },
+  "notes": "P5 diagnostic calibration. Not Codex or Claude Code. Controlled preview cannot satisfy saas-production-config; independent review remains external to the implementing session."
+}
