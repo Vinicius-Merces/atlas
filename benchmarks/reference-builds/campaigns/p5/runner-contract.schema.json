@@ -1,0 +1,36 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "ATLAS P5 Common Target Runner Contract",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "version",
+    "app_dir",
+    "install_command",
+    "test_command",
+    "build_command",
+    "start_command",
+    "port",
+    "health_path",
+    "origin_env",
+    "browser_routes"
+  ],
+  "properties": {
+    "version": {"type": "integer", "const": 1},
+    "app_dir": {"type": "string", "minLength": 1, "pattern": "^(?!/)(?!.*\\.\\.).+$"},
+    "install_command": {"type": "string", "minLength": 1, "pattern": "^[^\\r\\n]+$"},
+    "test_command": {"type": "string", "minLength": 1, "pattern": "^[^\\r\\n]+$"},
+    "build_command": {"type": "string", "minLength": 1, "pattern": "^[^\\r\\n]+$"},
+    "start_command": {"type": "string", "minLength": 1, "pattern": "^[^\\r\\n]+$"},
+    "port": {"type": "integer", "const": 4173},
+    "health_path": {"type": "string", "pattern": "^/[^\\s]*$"},
+    "origin_env": {"type": "string", "pattern": "^[A-Z][A-Z0-9_]*$"},
+    "browser_routes": {
+      "type": "array",
+      "minItems": 5,
+      "uniqueItems": true,
+      "items": {"type": "string", "pattern": "^/[^\\s,]*$"}
+    },
+    "notes": {"type": "string"}
+  }
+}
