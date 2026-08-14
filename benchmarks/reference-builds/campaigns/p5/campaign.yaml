@@ -22,6 +22,7 @@ run_policy:
   forbid_implementation_reuse: true
   preserve_exact_fixture_and_rubric: true
   record_runtime_reported_model: true
+  frozen_runner_contract_required: true
   environment_capability_manifest_required: true
   portable_browser_fallback_required: true
   evidence_assurance_manifest_required: true
@@ -49,6 +50,9 @@ common_environment_floor:
   public_preview_provider: cloudflare-quick-tunnel
   browser_runner: campaign-portable
   browser_engine: chromium
+  runner_contract_schema: benchmarks/reference-builds/campaigns/p5/runner-contract.schema.json
+  runner_contract_validator: scripts/validate_benchmark_runner_contract.py
+  deployment_workflow: .github/workflows/reference-build-controlled-deployment.yml
   required_viewports:
   - phone-360
   - tablet-768
