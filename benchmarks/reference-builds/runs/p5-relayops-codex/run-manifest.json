@@ -1,0 +1,34 @@
+{
+  "campaign_id": "p5-live-saas-reference-build-campaign",
+  "target_id": "codex",
+  "role": "target",
+  "runtime": "codex",
+  "model": "GPT-5",
+  "fixture_id": "multitenant-subscription-saas",
+  "campaign_base_commit": "99cdbdbf40ca2709bb4e0d99b7d3320d9f89610b",
+  "run_branch": "bench/p5-relayops-codex",
+  "fixture_sha256": "3227ec96f8528476bffbfd860112534158cb5c562a1474e329760685f78d59b9",
+  "rubric_sha256": "6463ae7fde36affecc20eff21f0ec73e04e0fb44c920a3cbc9115502a1b56b31",
+  "runner_contract": "benchmarks/reference-builds/runs/p5-relayops-codex/runner-contract.json",
+  "environment_capability_manifest": "benchmarks/reference-builds/runs/p5-relayops-codex/assurance/environment-capability.json",
+  "evidence_assurance_manifest": "benchmarks/reference-builds/runs/p5-relayops-codex/assurance/evidence-assurance.json",
+  "deployment_evidence_manifest": "benchmarks/reference-builds/runs/p5-relayops-codex/assurance/deployment-evidence.json",
+  "saas_assurance_manifest": "benchmarks/reference-builds/runs/p5-relayops-codex/assurance/relayops-assurance.json",
+  "started_at": "2026-08-14T12:39:07Z",
+  "tool_permissions": [
+    "filesystem: workspace-write under /workspace/scratch/b9c5e270056f",
+    "network: allowlisted",
+    "GitHub connector: available",
+    "GitHub CLI: unavailable",
+    "campaign controlled deployment workflow: available",
+    "campaign-portable Chromium: eligible",
+    "independent agent reviewer: available"
+  ],
+  "isolation_attestation": {
+    "same_base_commit": true,
+    "no_cross_run_branch_reads": true,
+    "no_implementation_reuse": true,
+    "common_environment_floor": true
+  },
+  "notes": "Manifest frozen before RelayOps implementation. Codex self-identifies in this session as an agent based on GPT-5; the model string is recorded exactly as GPT-5. No prohibited P5 branch, calibration result, RelayOps implementation history, or cross-run evidence was inspected."
+}
