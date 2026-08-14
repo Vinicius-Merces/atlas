@@ -1,0 +1,113 @@
+version: 1
+id: p5-live-saas-reference-build-campaign
+title: P5 Live SaaS Reference Build Campaign - RelayOps
+fixture:
+  id: multitenant-subscription-saas
+  spec: benchmarks/reference-builds/specs/multitenant-subscription-saas.yaml
+  rubric: benchmarks/reference-builds/scoring-rubric.yaml
+  benchmark_version: 1
+inherits:
+  live_campaign_model: framework/live-reference-build-campaign-model.md
+  full_stack_model: framework/full-stack-delivery-model.md
+  p4_environment_assurance: benchmarks/reference-builds/campaigns/p4/assurance/environment-capability.schema.json
+  p4_evidence_assurance: benchmarks/reference-builds/campaigns/p4/assurance/evidence-assurance.schema.json
+  p4_deployment_contract: benchmarks/reference-builds/campaigns/p4/assurance/deployment-adapter.contract.yaml
+  p4_deployment_evidence: benchmarks/reference-builds/campaigns/p4/controlled-deployment/deployment-evidence.schema.json
+run_policy:
+  base_ref: main
+  same_base_commit_required: true
+  isolated_run_branches: true
+  branch_pattern: bench/p5-relayops-{target_id}
+  forbid_cross_run_branch_reads: true
+  forbid_implementation_reuse: true
+  preserve_exact_fixture_and_rubric: true
+  record_runtime_reported_model: true
+  frozen_runner_contract_required: true
+  environment_capability_manifest_required: true
+  portable_browser_fallback_required: true
+  evidence_assurance_manifest_required: true
+  saas_assurance_manifest_required: true
+  evidence_reference_integrity_required: true
+  browser_evidence_required: true
+  deployment_evidence_manifest_required: true
+  controlled_public_preview_required: true
+  deployment_class_truth_required: true
+  controlled_preview_cannot_satisfy_production_config: true
+  claimable_production_same_provider_required: true
+  deployment_evidence_required_for_claimable_result: true
+  independent_review_required: true
+  preserve_first_frozen_result_before_remediation: true
+  compare_only_after_target_results_frozen: true
+  common_environment_floor_required: true
+  negative_tenant_isolation_evidence_required: true
+  billing_reconciliation_evidence_required: true
+  background_recovery_evidence_required: true
+  privileged_admin_audit_evidence_required: true
+  secret_boundary_evidence_required: true
+  import_partial_failure_evidence_required: true
+common_environment_floor:
+  execution: github-actions
+  public_preview_provider: cloudflare-quick-tunnel
+  browser_runner: campaign-portable
+  browser_engine: chromium
+  runner_contract_schema: benchmarks/reference-builds/campaigns/p5/runner-contract.schema.json
+  runner_contract_validator: scripts/validate_benchmark_runner_contract.py
+  deployment_workflow: .github/workflows/reference-build-controlled-deployment.yml
+  required_viewports:
+  - phone-360
+  - tablet-768
+  - laptop-1280
+  - wide-1920
+  historical_scores_immutable: true
+controlled_deployment:
+  adapter: benchmarks/reference-builds/campaigns/p4/assurance/deployment-adapter.contract.yaml
+  evidence_schema: benchmarks/reference-builds/campaigns/p4/controlled-deployment/deployment-evidence.schema.json
+  workflow: .github/workflows/reference-build-controlled-deployment.yml
+  preview_class: controlled-preview
+  production_class: claimable-production
+  preview_provider: cloudflare-quick-tunnel
+  production_provider: vercel
+  production_enabled: false
+saas_assurance:
+  schema: benchmarks/reference-builds/campaigns/p5/assurance/relayops-assurance.schema.json
+  validator: scripts/validate_relayops_assurance.py
+  domains:
+  - auth_and_membership
+  - tenant_database
+  - tenant_storage
+  - tenant_search
+  - tenant_cache_jobs
+  - notifications
+  - billing_entitlements
+  - admin_audit
+  - import_export
+  - secret_boundary
+targets:
+- id: calibration-gpt-5-6-sol
+  role: calibration
+  runtime: chatgpt
+  model: GPT-5.6 Sol
+  packet: benchmarks/reference-builds/campaigns/p5/runtime-packets/calibration-gpt-5-6-sol.md
+  include_in_target_comparison: false
+- id: codex
+  role: target
+  runtime: codex
+  model: runtime-reported
+  packet: benchmarks/reference-builds/campaigns/p5/runtime-packets/codex-relayops.md
+  include_in_target_comparison: true
+- id: claude-code
+  role: target
+  runtime: claude-code
+  model: runtime-reported
+  packet: benchmarks/reference-builds/campaigns/p5/runtime-packets/claude-code-relayops.md
+  include_in_target_comparison: true
+completion:
+- campaign infrastructure merged to main
+- target branches frozen from one campaign base commit
+- calibration live path exercised and frozen
+- codex target run frozen
+- claude-code target run frozen
+- common-environment evidence collected for both targets
+- exact-fixture comparison generated
+- tenant/security/billing negative evidence independently reviewed
+- evidence-led remediation backlog recorded

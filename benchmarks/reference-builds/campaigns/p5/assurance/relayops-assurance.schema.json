@@ -1,0 +1,148 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "ATLAS P5 RelayOps SaaS Assurance Manifest",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "version",
+    "run_manifest",
+    "evidence_references",
+    "auth_and_membership",
+    "tenant_database",
+    "tenant_storage",
+    "tenant_search",
+    "tenant_cache_jobs",
+    "notifications",
+    "billing_entitlements",
+    "admin_audit",
+    "import_export",
+    "secret_boundary"
+  ],
+  "$defs": {
+    "denialAttempt": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["source_tenant", "target_tenant", "operation", "outcome", "evidence_ref"],
+      "properties": {
+        "source_tenant": {"type": "string", "minLength": 1},
+        "target_tenant": {"type": "string", "minLength": 1},
+        "operation": {"type": "string", "minLength": 1},
+        "outcome": {"type": "string", "const": "denied"},
+        "evidence_ref": {"type": "string", "minLength": 1}
+      }
+    }
+  },
+  "properties": {
+    "version": {"type": "integer", "const": 1},
+    "run_manifest": {"type": "string", "minLength": 1},
+    "evidence_references": {
+      "type": "array",
+      "minItems": 1,
+      "uniqueItems": true,
+      "items": {"type": "string", "minLength": 1}
+    },
+    "auth_and_membership": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["session_lifecycle_ref", "organization_membership_ref", "unauthenticated_denial_ref", "role_denial_ref"],
+      "properties": {
+        "session_lifecycle_ref": {"type": "string", "minLength": 1},
+        "organization_membership_ref": {"type": "string", "minLength": 1},
+        "unauthenticated_denial_ref": {"type": "string", "minLength": 1},
+        "role_denial_ref": {"type": "string", "minLength": 1}
+      }
+    },
+    "tenant_database": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["attempts"],
+      "properties": {
+        "attempts": {"type": "array", "minItems": 2, "items": {"$ref": "#/$defs/denialAttempt"}}
+      }
+    },
+    "tenant_storage": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["attempts"],
+      "properties": {
+        "attempts": {"type": "array", "minItems": 2, "items": {"$ref": "#/$defs/denialAttempt"}}
+      }
+    },
+    "tenant_search": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["attempts"],
+      "properties": {
+        "attempts": {"type": "array", "minItems": 1, "items": {"$ref": "#/$defs/denialAttempt"}}
+      }
+    },
+    "tenant_cache_jobs": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["cache_isolation_ref", "job_context_ref", "duplicate_delivery_ref", "retry_recovery_ref", "stale_authorization_ref"],
+      "properties": {
+        "cache_isolation_ref": {"type": "string", "minLength": 1},
+        "job_context_ref": {"type": "string", "minLength": 1},
+        "duplicate_delivery_ref": {"type": "string", "minLength": 1},
+        "retry_recovery_ref": {"type": "string", "minLength": 1},
+        "stale_authorization_ref": {"type": "string", "minLength": 1}
+      }
+    },
+    "notifications": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["tenant_delivery_ref", "provider_failure_ref", "recovery_ref"],
+      "properties": {
+        "tenant_delivery_ref": {"type": "string", "minLength": 1},
+        "provider_failure_ref": {"type": "string", "minLength": 1},
+        "recovery_ref": {"type": "string", "minLength": 1}
+      }
+    },
+    "billing_entitlements": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["checkout_ref", "authoritative_entitlement_ref", "duplicate_webhook_ref", "out_of_order_webhook_ref", "reconciliation_ref", "revocation_ref"],
+      "properties": {
+        "checkout_ref": {"type": "string", "minLength": 1},
+        "authoritative_entitlement_ref": {"type": "string", "minLength": 1},
+        "duplicate_webhook_ref": {"type": "string", "minLength": 1},
+        "out_of_order_webhook_ref": {"type": "string", "minLength": 1},
+        "reconciliation_ref": {"type": "string", "minLength": 1},
+        "revocation_ref": {"type": "string", "minLength": 1}
+      }
+    },
+    "admin_audit": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["explicit_tenant_context", "least_privilege_denial_ref", "privileged_action_ref", "audit_record_ref"],
+      "properties": {
+        "explicit_tenant_context": {"type": "boolean", "const": true},
+        "least_privilege_denial_ref": {"type": "string", "minLength": 1},
+        "privileged_action_ref": {"type": "string", "minLength": 1},
+        "audit_record_ref": {"type": "string", "minLength": 1}
+      }
+    },
+    "import_export": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["row_validation_ref", "partial_failure_ref", "safe_retry_ref", "export_isolation_ref"],
+      "properties": {
+        "row_validation_ref": {"type": "string", "minLength": 1},
+        "partial_failure_ref": {"type": "string", "minLength": 1},
+        "safe_retry_ref": {"type": "string", "minLength": 1},
+        "export_isolation_ref": {"type": "string", "minLength": 1}
+      }
+    },
+    "secret_boundary": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["browser_bundle_scan_ref", "client_log_scan_ref", "exposed_privileged_secrets"],
+      "properties": {
+        "browser_bundle_scan_ref": {"type": "string", "minLength": 1},
+        "client_log_scan_ref": {"type": "string", "minLength": 1},
+        "exposed_privileged_secrets": {"type": "integer", "const": 0}
+      }
+    },
+    "notes": {"type": "string"}
+  }
+}
