@@ -164,7 +164,7 @@ def main() -> int:
         tmp_path = Path(tmp)
         rel = tmp_path.relative_to(ROOT).as_posix()
         refs = []
-        for index in range(1, 30):
+        for index in range(1, 41):
             path = tmp_path / f"e{index}.txt"
             path.write_text("ok\n", encoding="utf-8")
             refs.append(f"{rel}/e{index}.txt")
