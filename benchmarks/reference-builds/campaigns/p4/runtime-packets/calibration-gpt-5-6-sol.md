@@ -6,4 +6,8 @@ Use only the recorded campaign base commit, the canonical `premium-marketing-sit
 
 Follow `site-from-brief-delivery` and all applicable Frontend Craft, browser, accessibility, responsive, SEO, structured-data, analytics/conversion, supply-chain, production, and benchmark gates.
 
-Record runtime exactly as `chatgpt` and model exactly as `GPT-5.6 Sol`. Freeze the first result before remediation. Independent review cannot be performed by the implementer in this same session; report that limitation honestly.
+Before implementation, record runtime exactly as `chatgpt`, model exactly as `GPT-5.6 Sol`, and freeze the P4.1 environment capability manifest using `scripts/capture_benchmark_environment.py`.
+
+If native browser evidence is unavailable, use the campaign-owned portable browser fallback and label it `campaign-portable`. Before scoring, produce and validate the evidence-assurance sidecar, including non-text contrast, 404 SEO truth, visual-regression mode, recovery claims, mutable cache freshness, evidence-reference existence, and deployment truth.
+
+Freeze the first result before remediation. Independent review cannot be performed by the implementer in this same session; report that limitation honestly.
