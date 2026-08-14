@@ -1,12 +1,12 @@
-# P4.1 Benchmark Environment & Assurance Hardening
+# P4.1/P4.2 Benchmark Environment, Assurance & Controlled Deployment
 
-P4.1 normalizes the evidence environment exposed by the first Asteria campaign without adding benchmark-only agents or skills.
+P4.1 normalizes the evidence environment exposed by the first Asteria campaign. P4.2 extends that work with a campaign-owned public HTTPS deployment path. Neither phase adds benchmark-only agents or skills.
 
 ## Principle
 
 **Separate implementation quality from runtime tool availability, and make every assurance claim traceable to executable evidence.**
 
-A coding runtime may use its native browser/deployment tools. When those tools are unavailable, campaign-owned fallbacks may collect evidence, but the evidence source must remain explicit (`runtime-native`, `campaign-portable`, or `unavailable`).
+A coding runtime may use its native browser/deployment tools. When those tools are unavailable, campaign-owned fallbacks may collect evidence, but the evidence source must remain explicit (`runtime-native`, `campaign-portable`, or `unavailable`). Public deployment evidence must additionally declare whether it is `controlled-preview`, `claimable-production`, or `unavailable`.
 
 ## Required pre-build environment freeze
 
@@ -20,6 +20,14 @@ This manifest is interpretive evidence. It must exist before comparing raw score
 
 The fallback does not replace product-specific browser flows. It provides a minimum neutral evidence floor for public routes when the coding runtime cannot expose a browser itself.
 
+## Controlled public deployment
+
+`.github/workflows/reference-build-controlled-deployment.yml` checks out an immutable target ref, builds and starts it, opens a campaign-owned public HTTPS ingress, verifies that ingress externally, records TLS/HTTP/source/lifecycle evidence, and can run the portable Chromium collector against the public URL.
+
+The active preview adapter uses a pinned Cloudflare Quick Tunnel from GitHub Actions and requires no runtime-owned credential. This is intentionally classified `controlled-preview`: it equalizes public-network evidence but is temporary testing infrastructure and cannot satisfy a production-domain blocker.
+
+The `claimable-production` provider shape is currently Vercel and remains disabled until one campaign-owned project/credential topology can be applied identically to every compared target. Target-specific hosting convenience is not comparison-grade.
+
 ## Evidence assurance sidecar
 
 A live run should produce an evidence-assurance JSON document matching `evidence-assurance.schema.json` and validate it with:
@@ -29,7 +37,14 @@ python scripts/validate_benchmark_evidence_assurance.py \
   --manifest path/to/evidence-assurance.json
 ```
 
-The validator enforces the measured P4 findings:
+Deployment evidence should match `../controlled-deployment/deployment-evidence.schema.json` and validate with:
+
+```bash
+python scripts/validate_controlled_deployment_evidence.py \
+  --manifest path/to/deployment.json
+```
+
+The validators enforce the measured P4 findings:
 
 - every cited evidence path exists inside the repository;
 - essential non-text UI contrast is at least 3:1;
@@ -38,12 +53,9 @@ The validator enforces the measured P4 findings:
 - advertised retry/recovery claims have both implementation and execution evidence;
 - shared-cache lifetimes for mutable content do not exceed the declared freshness budget;
 - public deployment claims use HTTPS and have evidence;
-- browser and deployment absence is reported as a warning rather than silently upgraded.
+- controlled previews cannot be promoted into claimable production;
+- browser and deployment absence is reported rather than silently upgraded.
 
 ## Claim discipline
 
-P4.1 does not make blocked runs claimable by relaxing the rubric. It reduces environment asymmetry and catches evidence-theater defects earlier. Production-domain and deployed-indexing blockers still require a real public HTTPS environment.
-
-## Deployment normalization
-
-The deployment side remains campaign-owned but provider-neutral in this phase. The assurance contract records whether a campaign deployment adapter exists and refuses to infer a public deployment from localhost, preview screenshots, or source configuration. A concrete provider adapter should only be enabled when the campaign can offer the same credentials/topology to every target.
+P4.1/P4.2 do not make blocked runs claimable by relaxing the rubric. They reduce environment asymmetry and catch evidence-theater defects earlier. A controlled public preview can support browser, remote-network and deployed-crawl evidence, but production-domain blockers still require a persistent `claimable-production` deployment with environment configuration evidence.
