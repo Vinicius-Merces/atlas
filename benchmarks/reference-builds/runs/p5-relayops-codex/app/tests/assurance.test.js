@@ -27,12 +27,23 @@ test("authentication lifecycle, organization registration and stale membership d
   record("auth_and_membership","session lifecycle and stale membership",{organizationCreated:true,sessionCreated:true,revokedSessionDenied:true,outcome:"denied"});store.close();
 });
 
+test("invite acceptance enforces account policy before consuming invite",()=>{
+  const {store,domain,alpha}=fixture();const invite=domain.createInvite(alpha,{email:"invitee@northstar.test",role:"technician"});
+  assert.throws(()=>domain.acceptInvite({token:invite.token,email:"invitee@northstar.test",name:"I",password:"short"}),error=>error.status===422);
+  assert.equal(store.one("SELECT used_at FROM invites WHERE id=?",invite.inviteId).used_at,null);
+  const accepted=domain.acceptInvite({token:invite.token,email:"invitee@northstar.test",name:"Iara Lima",password:"StrongPass!2026"});assert.equal(accepted.role,"technician");
+  assert.ok(store.createSession("invitee@northstar.test","StrongPass!2026"));
+  record("auth_and_membership","invite password and single-use policy",{weakPasswordStatus:422,weakAttemptConsumedInvite:false,strongAcceptance:true,loginAfterAcceptance:true});store.close();
+});
+
 test("roles are deny-by-default for technician billing/admin/customer mutation",()=>{
   const {store,domain,tech}=fixture();
   denied(()=>domain.createCustomer(tech,{name:"No",email:"x@y.test",phone:"1199999999",siteAddress:"Rua Um 1"},"tech-deny"),[403]);
   denied(()=>domain.checkout(tech,{plan:"scale"},"tech-billing"),[403]);
   denied(()=>domain.auditRows(tech),[403]);
-  record("auth_and_membership","technician vertical escalation",{role:"technician",operations:["customer.create","billing.checkout","audit.read"],outcome:"denied"});store.close();
+  denied(()=>domain.demoWebhook(tech,{status:"canceled"}),[403]);denied(()=>domain.reconcileFor(tech),[403]);
+  const dashboard=domain.dashboard(tech);assert.ok(dashboard.queue.every(order=>order.assigned_user_id===tech.userId));const searches=domain.search(tech,"Preventiva");assert.ok(searches.filter(row=>row.type==="work_order").every(row=>domain.order(tech,row.id).assigned_user_id===tech.userId));
+  record("auth_and_membership","technician vertical escalation",{role:"technician",operations:["customer.create","billing.checkout","billing.demo_event","billing.reconcile","audit.read"],outcome:"denied"});record("auth_and_membership","technician visibility scope",{dashboardOnlyAssigned:true,searchOnlyAssigned:true,outcome:"denied"});store.close();
 });
 
 test("direct cross-tenant database object read and mutation are denied",()=>{
@@ -89,6 +100,24 @@ test("billing uses signed ordered webhooks and authoritative reconciled entitlem
   record("billing_entitlements","checkout authority",{checkoutId:checkout.id,checkoutStatus:"pending",successReturnGrantedAccess:false});record("billing_entitlements","duplicate webhook",{eventId:cancel.id,duplicate:true,entitlementTransitions:1});record("billing_entitlements","out of order webhook",{newerCancellation:300,olderActivation:200,olderDisposition:"out_of_order_ignored",finalEnabled:false});record("billing_entitlements","reconciliation and revocation",{providerStatus:"canceled",applicationEntitlement:false,staleCacheCleared:true,gatedOperationDenied:true,outcome:"denied"});record("billing_entitlements","provider outage",{checkoutStatus:503,entitlementChanged:false});store.close();
 });
 
+test("work-order creation persists, deduplicates and revoked entitlement blocks mutations",()=>{
+  const {store,domain,alpha}=fixture(),customer=domain.listCustomers(alpha)[0];const input={customerId:customer.id,title:"Revisar unidade condensadora",description:"Ruído intermitente",priority:"high"};
+  const created=domain.createOrder(alpha,input,"order-idem-1");assert.equal(created.status,"new");assert.equal(created.customer_id,customer.id);
+  const replay=domain.createOrder(alpha,input,"order-idem-1");assert.equal(replay.id,created.id);assert.equal(store.one("SELECT COUNT(*) count FROM work_orders WHERE tenant_id=? AND title=?",alpha.tenantId,input.title).count,1);
+  store.run("UPDATE entitlements SET enabled=0,version=version+1 WHERE tenant_id=? AND feature='operations'",alpha.tenantId);
+  assert.throws(()=>domain.createCustomer(alpha,{name:"Bloqueado",email:"blocked@test.local",phone:"11999999999",siteAddress:"Rua Bloqueada 10"},"revoked-customer"),error=>error.status===402);
+  assert.throws(()=>domain.createOrder(alpha,{...input,title:"Outra ordem"},"revoked-order"),error=>error.status===402);
+  record("billing_entitlements","revoked mutation gate",{workOrderCreated:true,idempotentReplay:true,customerMutationStatus:402,workOrderMutationStatus:402,outcome:"denied"});store.close();
+});
+
+test("billing webhook outage recovers on replay and reconciliation enforces role",()=>{
+  const {store,domain,billing,tech}=fixture();const event={id:"evt_outage_cancel",tenantId:billing.tenantId,type:"subscription.updated",created:400,status:"canceled"},raw=JSON.stringify(event),signature=domain.signWebhook(raw);
+  domain.paymentMode="outage";const accepted=domain.webhook(raw,signature);assert.equal(accepted.reconciliationPending,true);assert.equal(domain.entitlement(billing),true);
+  domain.paymentMode="healthy";const replay=domain.webhook(raw,signature);assert.equal(replay.duplicate,true);assert.equal(replay.reconciled,true);assert.equal(domain.entitlement(billing),false);
+  denied(()=>domain.reconcileFor(tech),[403]);
+  record("billing_entitlements","provider outage replay recovery",{eventId:event.id,providerStatePersisted:true,reconciliationPending:true,replayReconciled:true,finalEnabled:false});record("billing_entitlements","reconciliation role denial",{role:"technician",operation:"billing.reconcile",outcome:"denied"});store.close();
+});
+
 test("support requires explicit tenant, least privilege, reason and writes audit evidence",()=>{
   const {store,domain,alpha,support}=fixture();denied(()=>domain.support(support,"","ticket"),[403]);denied(()=>domain.support(alpha,"org_northstar","ticket"),[403]);assert.throws(()=>domain.support(support,"org_northstar",""),error=>error.status===422);const result=domain.support(support,"org_northstar","INC-2048 — validar fila");assert.equal(result.tenant.id,"org_northstar");const audit=store.one("SELECT * FROM audit_log WHERE id=?",result.auditId);assert.equal(audit.actor_user_id,support.userId);assert.equal(audit.tenant_id,"org_northstar");assert.equal(audit.result,"allowed");
   record("admin_audit","support without context",{sourceTenant:"support-global",targetTenant:"org_northstar",operation:"support inspect without explicit tenant",outcome:"denied"});record("admin_audit","manager vertical escalation",{sourceTenant:alpha.tenantId,targetTenant:"support-surface",operation:"ordinary manager support inspect",outcome:"denied"});record("admin_audit","privileged action audit",{explicitTenant:"org_northstar",reasonCaptured:true,auditId:result.auditId,actor:support.userId,result:"allowed"});store.close();
@@ -106,13 +135,17 @@ test("browser-visible assets, HTML and logs contain no privileged secret canarie
 });
 
 test("real HTTP authentication, protected route, origin denial and logout lifecycle",async()=>{
-  const store=new Store(":memory:"),{server}=createApp({store,webhookSecret:"http-test-secret"});await new Promise(resolve=>server.listen(0,"127.0.0.1",resolve));const port=server.address().port,origin=`http://127.0.0.1:${port}`;
+  const previousDemo=process.env.RELAYOPS_DEMO_MODE;process.env.RELAYOPS_DEMO_MODE="1";const store=new Store(":memory:"),{server}=createApp({store,webhookSecret:"http-test-secret"});await new Promise(resolve=>server.listen(0,"127.0.0.1",resolve));const port=server.address().port,origin=`http://127.0.0.1:${port}`;
   try{
     const anonymous=await fetch(`${origin}/api/dashboard`,{redirect:"manual"});assert.equal(anonymous.status,401);
     const crossOrigin=await fetch(`${origin}/api/auth/login`,{method:"POST",headers:{origin:"https://evil.test","content-type":"application/json"},body:JSON.stringify({email:"manager@northstar.test",password:"RelayOps!2026"})});assert.equal(crossOrigin.status,403);
     const login=await fetch(`${origin}/api/auth/login`,{method:"POST",headers:{origin,"content-type":"application/json"},body:JSON.stringify({email:"manager@northstar.test",password:"RelayOps!2026"})});assert.equal(login.status,200);const sessionCookie=login.headers.get("set-cookie").split(";")[0];
     const protectedResponse=await fetch(`${origin}/api/dashboard`,{headers:{cookie:sessionCookie}});assert.equal(protectedResponse.status,200);
+    const customers=await (await fetch(`${origin}/api/customers`,{headers:{cookie:sessionCookie}})).json();const createdOrder=await fetch(`${origin}/api/work-orders`,{method:"POST",headers:{origin,cookie:sessionCookie,"content-type":"application/json","idempotency-key":"http-order-1"},body:JSON.stringify({customerId:customers[0].id,title:"Ordem criada via HTTP",priority:"normal"})});assert.equal(createdOrder.status,201);
+    const techLogin=await fetch(`${origin}/api/auth/login`,{method:"POST",headers:{origin,"content-type":"application/json"},body:JSON.stringify({email:"tech@northstar.test",password:"RelayOps!2026"})});const techCookie=techLogin.headers.get("set-cookie").split(";")[0];
+    const techDemoBilling=await fetch(`${origin}/api/billing/demo-webhook`,{method:"POST",headers:{origin,cookie:techCookie,"content-type":"application/json"},body:JSON.stringify({status:"canceled"})});assert.equal(techDemoBilling.status,403);
+    const techReconcile=await fetch(`${origin}/api/billing/reconcile`,{method:"POST",headers:{origin,cookie:techCookie,"content-type":"application/json"},body:"{}"});assert.equal(techReconcile.status,403);
     const logout=await fetch(`${origin}/api/auth/logout`,{method:"POST",headers:{origin,cookie:sessionCookie,"content-type":"application/json"},body:"{}"});assert.equal(logout.status,200);const after=await fetch(`${origin}/api/dashboard`,{headers:{cookie:sessionCookie}});assert.equal(after.status,401);
-    record("auth_and_membership","real HTTP lifecycle",{anonymousStatus:401,crossOriginStatus:403,loginStatus:200,protectedStatus:200,logoutStatus:200,reusedSessionStatus:401,outcome:"denied"});
-  }finally{await new Promise(resolve=>server.close(resolve));store.close();}
+    record("auth_and_membership","real HTTP lifecycle",{anonymousStatus:401,crossOriginStatus:403,loginStatus:200,protectedStatus:200,workOrderCreateStatus:201,technicianBillingEventStatus:403,technicianReconcileStatus:403,logoutStatus:200,reusedSessionStatus:401,outcome:"denied"});
+  }finally{await new Promise(resolve=>server.close(resolve));store.close();if(previousDemo===undefined)delete process.env.RELAYOPS_DEMO_MODE;else process.env.RELAYOPS_DEMO_MODE=previousDemo;}
 });

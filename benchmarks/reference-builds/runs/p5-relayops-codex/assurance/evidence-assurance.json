@@ -3,11 +3,12 @@
   "environment_manifest": "benchmarks/reference-builds/runs/p5-relayops-codex/assurance/environment-capability.json",
   "evidence_references": [
     "benchmarks/reference-builds/runs/p5-relayops-codex/evidence/local/assurance-results.json",
-    "benchmarks/reference-builds/runs/p5-relayops-codex/evidence/local/execution-summary.md"
+    "benchmarks/reference-builds/runs/p5-relayops-codex/evidence/local/execution-summary.md",
+    "benchmarks/reference-builds/runs/p5-relayops-codex/evidence/final/execution-evidence.md"
   ],
   "browser": {
     "source": "unavailable",
-    "summary": "First frozen result: no rendered-browser evidence had been collected yet.",
+    "summary": "Runtime-native browser unavailable. Campaign-portable collection remained blocked because session policy rejected publication required to invoke the shared workflow.",
     "screenshots": []
   },
   "non_text_contrast": {
