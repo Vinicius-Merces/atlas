@@ -1,0 +1,23 @@
+{
+  "version": 1,
+  "app_dir": "benchmarks/reference-builds/runs/p5-relayops-codex/app",
+  "install_command": "node --version",
+  "test_command": "NODE_ENV=test node --test tests/*.test.js",
+  "build_command": "node scripts/build.mjs",
+  "start_command": "RELAYOPS_DEMO_MODE=1 node dist/server.js",
+  "port": 4173,
+  "health_path": "/api/health",
+  "origin_env": "PUBLIC_ORIGIN",
+  "browser_routes": [
+    "/demo/manager",
+    "/app",
+    "/app/work-orders",
+    "/app/work-orders/wo_2408",
+    "/app/customers",
+    "/app/billing",
+    "/app/import-export",
+    "/demo/support",
+    "/support"
+  ],
+  "notes": "Frozen before public/browser evidence. The shared adapter does not consume test_command or origin_env; both are validated separately. Demo entry is enabled only by the declared start command for safe synthetic campaign data."
+}
