@@ -1,0 +1,27 @@
+version: 1
+id: reference-build-public-deployment-adapter
+status: contract-ready
+provider: unconfigured
+policy:
+  same_adapter_for_compared_targets: true
+  campaign_owned_credentials: true
+  target_runtime_credentials_forbidden: true
+  public_https_required: true
+  immutable_source_ref_required: true
+  deployment_evidence_required: true
+inputs:
+  - source_ref
+  - application_path
+  - build_command
+  - start_or_runtime_contract
+outputs:
+  - public_https_url
+  - source_ref
+  - deployment_timestamp
+  - provider_identity
+  - http_probe_evidence
+  - teardown_or_expiry_policy
+activation_rule: >-
+  Set provider and execution implementation only when the campaign can expose the
+  same topology and credentials to every compared target. Until then deployment
+  remains unavailable and production-domain blockers cannot pass.
