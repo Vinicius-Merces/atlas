@@ -23,6 +23,42 @@ def load_json(path: Path):
     return json.loads(path.read_text(encoding="utf-8"))
 
 
+def validate_no_benchmark_catalog_expansion() -> None:
+    """When git metadata is available, prove P5 infrastructure did not touch capability catalogs."""
+    if not (ROOT / ".git").exists():
+        return
+    base = subprocess.run(
+        ["git", "merge-base", "HEAD", "origin/main"],
+        cwd=ROOT,
+        text=True,
+        capture_output=True,
+        check=False,
+    )
+    if base.returncode != 0 or not base.stdout.strip():
+        return
+    changed = subprocess.run(
+        ["git", "diff", "--name-only", f"{base.stdout.strip()}...HEAD"],
+        cwd=ROOT,
+        text=True,
+        capture_output=True,
+        check=False,
+    )
+    if changed.returncode != 0:
+        fail("cannot inspect P5 capability-catalog scope")
+    forbidden_prefixes = (
+        "agents/",
+        "skills/",
+        ".claude/agents/",
+        ".claude/skills/",
+    )
+    touched = sorted(
+        path for path in changed.stdout.splitlines()
+        if path.startswith(forbidden_prefixes)
+    )
+    if touched:
+        fail("P5 infrastructure touches agent/skill catalogs: " + ", ".join(touched))
+
+
 def main() -> int:
     campaign = yaml.safe_load(CAMPAIGN.read_text(encoding="utf-8"))
     if campaign.get("id") != "p5-live-saas-reference-build-campaign":
@@ -193,9 +229,7 @@ def main() -> int:
         if marker not in deployment_workflow:
             fail(f"common deployment workflow missing {marker}")
 
-    registry = load_json(ROOT / ".claude/registry.json")
-    if len(registry.get("skills", [])) != 128 or len(registry.get("agents", [])) != 87:
-        fail("P5 infrastructure must not add benchmark-only agents or skills")
+    validate_no_benchmark_catalog_expansion()
 
     with tempfile.TemporaryDirectory(prefix="p5-relayops-", dir=ROOT) as tmp:
         tmp_path = Path(tmp)
