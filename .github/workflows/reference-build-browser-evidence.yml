@@ -1,0 +1,119 @@
+name: Reference Build Browser Evidence
+
+on:
+  workflow_dispatch:
+    inputs:
+      ref:
+        description: Target run branch or commit
+        required: true
+        type: string
+      app_path:
+        description: Application directory relative to repository root
+        required: true
+        type: string
+      install_command:
+        description: Dependency install command executed inside app_path
+        required: true
+        default: npm ci
+        type: string
+      build_command:
+        description: Build command executed inside app_path
+        required: true
+        default: npm run build
+        type: string
+      start_command:
+        description: Production start command executed inside app_path
+        required: true
+        default: npm start
+        type: string
+      port:
+        description: Local application port
+        required: true
+        default: "4173"
+        type: string
+      routes:
+        description: Comma-separated public routes for portable evidence
+        required: true
+        default: "/"
+        type: string
+      evidence_dir:
+        description: Output directory relative to repository root
+        required: true
+        default: benchmarks/reference-builds/runtime-evidence/portable-browser
+        type: string
+
+permissions:
+  contents: read
+
+jobs:
+  browser-evidence:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - name: Check out target ref
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ inputs.ref }}
+
+      - name: Set up Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+
+      - name: Install target dependencies
+        working-directory: ${{ inputs.app_path }}
+        run: ${{ inputs.install_command }}
+
+      - name: Build target application
+        working-directory: ${{ inputs.app_path }}
+        run: ${{ inputs.build_command }}
+
+      - name: Install campaign-owned Chromium runner
+        run: |
+          mkdir -p .atlas-browser-runner
+          cd .atlas-browser-runner
+          npm init -y >/dev/null 2>&1
+          npm install --ignore-scripts playwright@1.55.0
+          npx playwright install --with-deps chromium
+
+      - name: Start target application
+        env:
+          PORT: ${{ inputs.port }}
+        run: |
+          cd "${{ inputs.app_path }}"
+          nohup bash -lc '${{ inputs.start_command }}' > /tmp/atlas-reference-app.log 2>&1 &
+          echo $! > /tmp/atlas-reference-app.pid
+
+      - name: Wait for application
+        run: |
+          for i in $(seq 1 60); do
+            if curl --fail --silent "http://127.0.0.1:${{ inputs.port }}/" >/dev/null; then
+              exit 0
+            fi
+            sleep 1
+          done
+          cat /tmp/atlas-reference-app.log || true
+          exit 1
+
+      - name: Collect portable browser evidence
+        env:
+          NODE_PATH: ${{ github.workspace }}/.atlas-browser-runner/node_modules
+        run: |
+          node scripts/collect_portable_browser_evidence.cjs \
+            --base-url "http://127.0.0.1:${{ inputs.port }}" \
+            --routes '${{ inputs.routes }}' \
+            --output-dir '${{ inputs.evidence_dir }}'
+
+      - name: Record application log
+        if: always()
+        run: |
+          mkdir -p '${{ inputs.evidence_dir }}'
+          cp /tmp/atlas-reference-app.log '${{ inputs.evidence_dir }}/application.log' || true
+
+      - name: Upload portable evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: reference-build-browser-evidence
+          path: ${{ inputs.evidence_dir }}
+          if-no-files-found: error
