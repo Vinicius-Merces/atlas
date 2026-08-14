@@ -23,6 +23,9 @@ def test_p4_target_runs_are_isolated_and_runtime_truthful() -> None:
     assert policy["environment_capability_manifest_required"] is True
     assert policy["portable_browser_fallback_required"] is True
     assert policy["evidence_reference_integrity_required"] is True
+    assert policy["controlled_public_preview_required"] is True
+    assert policy["controlled_preview_cannot_satisfy_production_domain"] is True
+    assert policy["claimable_production_same_provider_required"] is True
     targets = {row["id"]: row for row in campaign["targets"]}
     assert targets["codex"]["model"] == "runtime-reported"
     assert targets["claude-code"]["model"] == "runtime-reported"
@@ -38,15 +41,22 @@ def test_p4_manifest_requires_isolation_and_assurance_sidecars() -> None:
         "rubric_sha256",
         "environment_capability_manifest",
         "evidence_assurance_manifest",
+        "deployment_evidence_manifest",
         "isolation_attestation",
     } <= required
 
 
-def test_p41_deployment_adapter_is_campaign_owned_and_equal_for_targets() -> None:
+def test_p42_deployment_adapter_has_equal_preview_and_separate_production_class() -> None:
     contract = yaml.safe_load((ROOT / "benchmarks/reference-builds/campaigns/p4/assurance/deployment-adapter.contract.yaml").read_text(encoding="utf-8"))
-    assert contract["status"] == "contract-ready"
-    assert contract["provider"] == "unconfigured"
+    assert contract["version"] == 2
+    assert contract["status"] == "controlled-preview-active"
     assert contract["policy"]["same_adapter_for_compared_targets"] is True
     assert contract["policy"]["campaign_owned_credentials"] is True
     assert contract["policy"]["target_runtime_credentials_forbidden"] is True
     assert contract["policy"]["public_https_required"] is True
+    assert contract["policy"]["controlled_preview_cannot_pass_production_domain"] is True
+    assert contract["controlled_preview"]["enabled"] is True
+    assert contract["controlled_preview"]["provider"] == "cloudflare-quick-tunnel"
+    assert contract["controlled_preview"]["requires_credentials"] is False
+    assert contract["claimable_production"]["provider"] == "vercel"
+    assert contract["claimable_production"]["enabled"] is False
