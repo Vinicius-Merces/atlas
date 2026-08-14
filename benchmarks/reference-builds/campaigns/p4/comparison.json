@@ -1,0 +1,53 @@
+{
+  "campaign_id": "p4-live-reference-build-campaign",
+  "fixture_id": "premium-marketing-site",
+  "fixture_sha256": "e57da062e6223f6ecbea84a64813f6d8e73f9b0954cda065da5edbc680762947",
+  "rubric_sha256": "6463ae7fde36affecc20eff21f0ec73e04e0fb44c920a3cbc9115502a1b56b31",
+  "campaign_base_commit": "3ccdf6e6209c3aea949e62226af1cb6b35167487",
+  "runs": [
+    {
+      "target": "calibration-gpt-5-6-sol",
+      "runtime": "chatgpt",
+      "model": "GPT-5.6 Sol",
+      "score": 88.07,
+      "outcome": "blocked",
+      "claimable": false,
+      "frozen_commit": "6ad7a1ac5d6146f28ff04a4094f7b19a0557f377",
+      "axis_scores": {"brief_fidelity":10.0,"architecture_quality":6.67,"capability_routing":8.0,"implementation_completeness":14.0,"frontend_craft":18.0,"security_isolation":5.0,"failure_resilience":8.0,"browser_reality":10.0,"production_readiness":8.4,"independent_review":0.0},
+      "blocking_failures": ["marketing-accessibility","marketing-production-domain","marketing-seo-indexing"],
+      "comparison_role": "diagnostic-calibration"
+    },
+    {
+      "target": "codex",
+      "runtime": "codex",
+      "model": "GPT-5",
+      "score": 53.15,
+      "outcome": "blocked",
+      "claimable": false,
+      "frozen_commit": "a1751e8558beddee8e8c57d2b3f47de86e1c5860",
+      "final_tested_commit": "b259ff86f5a2a049be7d88416f227c62c0b61071",
+      "result_commit": "626f25edaf85051a70aab15d45f4cc5eb1b72bb2",
+      "axis_scores": {"brief_fidelity":10.0,"architecture_quality":5.33,"capability_routing":8.0,"implementation_completeness":10.5,"frontend_craft":4.0,"security_isolation":5.0,"failure_resilience":6.67,"browser_reality":0.0,"production_readiness":2.4,"independent_review":1.25},
+      "blocking_failures": ["marketing-responsive","marketing-accessibility","marketing-browser-primary-flow","marketing-production-domain","marketing-seo-indexing"],
+      "environment_constraints": ["browser bridge/evidence unavailable","public deployment unavailable"],
+      "comparison_role": "official-target"
+    },
+    {
+      "target": "claude-code",
+      "runtime": "claude-code",
+      "model": "claude-opus-5",
+      "score": 86.4,
+      "outcome": "blocked",
+      "claimable": false,
+      "frozen_implementation_commit": "bff32598806c7ea9b6cd4c2218ee7d5eac2d0816",
+      "result_commit": "d706322b3abf0a6655ba94b0206ff3db02827845",
+      "axis_scores": {"brief_fidelity":10.0,"architecture_quality":6.67,"capability_routing":6.67,"implementation_completeness":14.0,"frontend_craft":14.0,"security_isolation":5.0,"failure_resilience":6.67,"browser_reality":10.0,"production_readiness":8.4,"independent_review":5.0},
+      "blocking_failures": ["marketing-responsive","marketing-accessibility","marketing-production-domain","marketing-seo-indexing"],
+      "environment_constraints": ["public deployment unavailable"],
+      "comparison_role": "official-target"
+    }
+  ],
+  "target_ranking_by_observed_score": ["claude-code", "codex"],
+  "interpretation_policy": "Observed score is evidence- and environment-sensitive. Do not treat missing browser/deployment capability as pure model-quality loss; preserve raw scores and report environment constraints separately.",
+  "p4_status": "target-runs-frozen-comparison-recorded"
+}
