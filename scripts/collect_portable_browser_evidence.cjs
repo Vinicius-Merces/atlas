@@ -33,9 +33,26 @@ function safeName(value) { return value.replace(/[^a-z0-9]+/gi, '-').replace(/^-
       const consoleErrors = [];
       const pageErrors = [];
       const failedRequests = [];
+      const errorResponses = [];
       page.on('console', m => { if (m.type() === 'error') consoleErrors.push(m.text()); });
       page.on('pageerror', e => pageErrors.push(String(e)));
-      page.on('requestfailed', r => failedRequests.push({ url: r.url(), error: r.failure()?.errorText || 'unknown' }));
+      page.on('requestfailed', r => failedRequests.push({
+        url: r.url(),
+        resourceType: r.resourceType(),
+        error: r.failure()?.errorText || 'unknown',
+      }));
+      page.on('response', response => {
+        if (response.status() >= 400) {
+          const request = response.request();
+          errorResponses.push({
+            url: response.url(),
+            status: response.status(),
+            statusText: response.statusText(),
+            resourceType: request.resourceType(),
+            method: request.method(),
+          });
+        }
+      });
       const response = await page.goto(new URL(route, baseUrl).toString(), { waitUntil: 'networkidle' });
       const metrics = await page.evaluate(() => ({
         title: document.title,
@@ -56,7 +73,17 @@ function safeName(value) { return value.replace(/[^a-z0-9]+/gi, '-').replace(/^-
       }));
       const screenshot = path.join(outputDir, 'screenshots', `${safeName(route)}--${viewport.name}.png`);
       await page.screenshot({ path: screenshot, fullPage: true, animations: 'disabled' });
-      results.push({ route, viewport, status: response?.status() || null, ...metrics, consoleErrors, pageErrors, failedRequests, screenshot: path.relative(outputDir, screenshot) });
+      results.push({
+        route,
+        viewport,
+        status: response?.status() || null,
+        ...metrics,
+        consoleErrors,
+        pageErrors,
+        failedRequests,
+        errorResponses,
+        screenshot: path.relative(outputDir, screenshot),
+      });
       await page.close();
     }
     await context.close();
@@ -76,7 +103,7 @@ function safeName(value) { return value.replace(/[^a-z0-9]+/gi, '-').replace(/^-
   await browser.close();
 
   const summary = {
-    version: 1,
+    version: 2,
     evidence_source: 'campaign-portable',
     generated_at: new Date().toISOString(),
     base_url: baseUrl,
