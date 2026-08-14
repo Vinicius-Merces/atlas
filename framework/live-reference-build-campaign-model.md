@@ -39,22 +39,53 @@ For P4 the primary targets are Codex and Claude Code. Each target records the ex
 1. Freeze the campaign base commit, fixture SHA, and rubric SHA.
 2. Create one isolated run branch/repository from that exact base.
 3. Record a run manifest before implementation begins.
-4. Give the runtime only the canonical fixture, ATLAS framework surfaces, and its runtime packet.
-5. Execute the fixture's declared delivery workflow.
-6. Collect browser, architecture, test, security, failure, SEO/performance, and deployment evidence required by the fixture.
-7. Freeze the implementation/evidence commit.
-8. Produce a live benchmark submission tied to that commit.
-9. Obtain an independent review that did not implement the build.
-10. Score the submission with the P3 scorer.
-11. Remediate only after the first frozen result is preserved.
-12. Repeat on a new commit if needed, preserving before/after results.
-13. Compare target runs only after both are frozen on the exact same fixture and rubric.
+4. Freeze an environment capability manifest before implementation begins.
+5. Give the runtime only the canonical fixture, ATLAS framework surfaces, and its runtime packet.
+6. Execute the fixture's declared delivery workflow.
+7. Collect browser, architecture, test, security, failure, SEO/performance, and deployment evidence required by the fixture.
+8. If native browser evidence is unavailable, use the campaign-owned portable browser fallback and label its source explicitly.
+9. Produce and validate the evidence-assurance sidecar before scoring.
+10. Freeze the implementation/evidence commit.
+11. Produce a live benchmark submission tied to that commit.
+12. Obtain an independent review that did not implement the build.
+13. Score the submission with the P3 scorer.
+14. Remediate only after the first frozen result is preserved.
+15. Repeat on a new commit if needed, preserving before/after results.
+16. Compare target runs only after both are frozen on the exact same fixture and rubric.
 
 ## Evidence rules
 
 Evidence must be concrete and inspectable. Examples include browser screenshots/traces, automated test output, deployment URLs, HTTP/SEO probes, accessibility findings, performance measurements, architecture decisions, negative authorization/form tests, provider/reconciliation records, and independent review findings.
 
 A statement in a report is not evidence by itself when the underlying behavior can be tested directly.
+
+Every evidence reference used by an assurance sidecar must resolve to a repository path. A missing path is an evidence-integrity failure rather than a documentation typo.
+
+## Environment normalization
+
+P4.1 separates implementation quality from runtime tool availability.
+
+Before implementation, every run freezes browser, deployment, network, command/runtime, and independent-review availability in an environment capability manifest. The manifest must state whether browser evidence comes from the runtime itself, the campaign-owned portable fallback, or remains unavailable.
+
+Cross-runtime reports must preserve the observed raw score and the environment capability differences side by side. The campaign must not silently normalize a score by guessing what a runtime would have achieved with different tools.
+
+## Browser evidence fallback
+
+A campaign-owned GitHub Actions workflow may collect a minimum browser evidence floor from a frozen target ref when the coding runtime lacks Chromium or a browser bridge. The fallback may inspect public routes, multiple viewports, console errors, page errors, request failures, overflow, screenshots, canonicals, robots directives, and a real 404.
+
+Fallback evidence is labeled `campaign-portable`. Product-specific flows, authentication, authoritative mutations, negative business states, and other fixture-specific behavior still require dedicated execution evidence.
+
+## Assurance truth checks
+
+P4.1 adds deterministic checks for failure modes observed in the first Asteria campaign:
+
+- essential non-text control boundaries must meet the declared 3:1 minimum;
+- 404 responses must return 404, include `noindex`, avoid conflicting index directives, and avoid canonicalising the error document to another page;
+- screenshot capture may be labeled `capture-only`, but only a deterministic baseline plus diff report may be labeled visual regression;
+- advertised retry, queue, reconciliation, or recovery behavior must cite both an implementation path and execution evidence;
+- shared caches for mutable content must stay within an explicit freshness budget;
+- public deployment claims require a real HTTPS URL plus evidence;
+- source/configuration alone cannot upgrade an unavailable browser or deployment blocker.
 
 ## Frontend standard
 
@@ -76,3 +107,7 @@ Calibration can still be useful under those conditions, but it must be labeled d
 ## P4 completion
 
 P4 is complete when campaign infrastructure is validated and merged, a diagnostic calibration has exercised the live path, Codex and Claude Code target runs are independently frozen, and the exact-fixture comparison plus remediation backlog are recorded.
+
+## P4.1 completion
+
+P4.1 is complete when the benchmark can freeze environment capabilities before implementation, use a runtime-neutral browser fallback without falsifying evidence provenance, validate assurance sidecars deterministically, catch the measured Asteria evidence-integrity failures, and pass the normal ATLAS contract/release gates without adding benchmark-only agents or skills.

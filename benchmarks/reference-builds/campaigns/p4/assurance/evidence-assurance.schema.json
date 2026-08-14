@@ -1,0 +1,108 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "ATLAS Benchmark Evidence Assurance Manifest",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["version", "environment_manifest", "evidence_references", "browser", "non_text_contrast", "seo_not_found", "visual_regression", "recovery_claims", "mutable_cache", "deployment"],
+  "properties": {
+    "version": {"type": "integer", "const": 1},
+    "environment_manifest": {"type": "string", "minLength": 1},
+    "evidence_references": {"type": "array", "items": {"type": "string", "minLength": 1}, "uniqueItems": true},
+    "browser": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["source"],
+      "properties": {
+        "source": {"type": "string", "enum": ["runtime-native", "campaign-portable", "unavailable"]},
+        "summary": {"type": ["string", "null"]},
+        "screenshots": {"type": "array", "items": {"type": "string"}, "uniqueItems": true}
+      }
+    },
+    "non_text_contrast": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["minimum_required", "samples"],
+      "properties": {
+        "minimum_required": {"type": "number", "minimum": 3.0},
+        "samples": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["selector", "ratio", "essential"],
+            "properties": {
+              "selector": {"type": "string", "minLength": 1},
+              "ratio": {"type": "number", "minimum": 1.0},
+              "essential": {"type": "boolean"},
+              "evidence_ref": {"type": ["string", "null"]}
+            }
+          }
+        }
+      }
+    },
+    "seo_not_found": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["route", "status", "robots", "canonical"],
+        "properties": {
+          "route": {"type": "string", "minLength": 1},
+          "status": {"type": "integer"},
+          "robots": {"type": "array", "items": {"type": "string"}},
+          "canonical": {"type": ["string", "null"]},
+          "evidence_ref": {"type": ["string", "null"]}
+        }
+      }
+    },
+    "visual_regression": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["mode"],
+      "properties": {
+        "mode": {"type": "string", "enum": ["baseline-diff", "capture-only", "unavailable"]},
+        "baseline_root": {"type": ["string", "null"]},
+        "diff_report": {"type": ["string", "null"]}
+      }
+    },
+    "recovery_claims": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["claim", "advertised"],
+        "properties": {
+          "claim": {"type": "string", "minLength": 1},
+          "advertised": {"type": "boolean"},
+          "implementation_ref": {"type": ["string", "null"]},
+          "evidence_ref": {"type": ["string", "null"]}
+        }
+      }
+    },
+    "mutable_cache": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["route", "shared", "max_age_seconds", "freshness_budget_seconds"],
+        "properties": {
+          "route": {"type": "string", "minLength": 1},
+          "shared": {"type": "boolean"},
+          "max_age_seconds": {"type": "integer", "minimum": 0},
+          "freshness_budget_seconds": {"type": "integer", "minimum": 0},
+          "evidence_ref": {"type": ["string", "null"]}
+        }
+      }
+    },
+    "deployment": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["status"],
+      "properties": {
+        "status": {"type": "string", "enum": ["public-https", "unavailable"]},
+        "url": {"type": ["string", "null"]},
+        "evidence_ref": {"type": ["string", "null"]}
+      }
+    }
+  }
+}
