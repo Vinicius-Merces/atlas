@@ -200,10 +200,9 @@ jobs:
       - name: Install common campaign Chromium runner
         run: |
           mkdir -p campaign/.atlas-browser-runner
-          cd campaign/.atlas-browser-runner
-          npm init -y >/dev/null 2>&1
-          npm install --ignore-scripts playwright@1.55.0
-          npx playwright install --with-deps chromium
+          printf '%s\n' '{"name":"atlas-p43-browser-runner","version":"1.0.0","private":true}' > campaign/.atlas-browser-runner/package.json
+          npm install --prefix campaign/.atlas-browser-runner --ignore-scripts playwright@1.55.0
+          npx --prefix campaign/.atlas-browser-runner playwright install --with-deps chromium
 
       - name: Collect public TLS and HTTP evidence
         env:
