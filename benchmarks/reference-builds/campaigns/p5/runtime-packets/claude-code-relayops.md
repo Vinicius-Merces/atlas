@@ -15,6 +15,8 @@ Before implementation:
 - record exact fixture/rubric hashes and the campaign base commit;
 - reserve P4 evidence/deployment sidecars and the P5 RelayOps SaaS assurance sidecar.
 
+Before public/browser evidence, freeze a target runner contract matching `benchmarks/reference-builds/campaigns/p5/runner-contract.schema.json` and pass `scripts/validate_benchmark_runner_contract.py`. Its app path, commands, port, health path, and routes are the only target-specific inputs to the shared `.github/workflows/reference-build-controlled-deployment.yml` adapter. Do not create a Claude-only deployment or browser harness.
+
 The implementation must prove more than happy paths. Directly test cross-tenant denial in database/object access, attachment storage, search, cache/job context, notifications/exports, and privileged admin/support actions. Prove explicit tenant context and audit evidence for privileged operations. Prove billing entitlement authority and reconciliation across duplicate, replayed, and out-of-order provider events. Prove role/entitlement revocation does not remain incorrectly available through stale caches. Prove background-job duplicate handling, bounded retry and recovery. Prove provider outage behavior, import row-level partial failure and safe retry, and absence of privileged/provider secrets from browser bundles and client-visible logs.
 
 Browser evidence must cover authentication/organization entry plus a protected operational workflow, customer/work-order mutation, search/filtering, relevant negative/error states, and responsive behavior. If runtime-native browser evidence is unavailable, use the campaign-owned portable browser path and label it `campaign-portable`.
