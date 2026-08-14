@@ -90,6 +90,6 @@ def test_p42_workflow_pins_tunnel_binary_and_runs_external_smoke() -> None:
     assert 'CLOUDFLARED_VERSION: "2026.5.2"' in text
     assert "5286698547f03df745adb2355f04c12dde52ef425491e81f433642d695521886" in text
     assert "adapter-smoke:" in text
-    assert "trycloudflare.com" in text
+    assert "trycloudflare\\.com" in text
     assert "probe_controlled_deployment.py" in text
     assert "collect_portable_browser_evidence.cjs" in text
