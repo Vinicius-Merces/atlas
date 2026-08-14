@@ -15,7 +15,7 @@ permissions:
 
 concurrency:
   group: p4-3-normalized-asteria-${{ github.event_name }}-${{ github.ref }}
-  cancel-in-progress: false
+  cancel-in-progress: true
 
 env:
   CLOUDFLARED_VERSION: "2026.5.2"
@@ -36,7 +36,7 @@ jobs:
             frozen_commit: a1751e8558beddee8e8c57d2b3f47de86e1c5860
             app_path: benchmarks/reference-builds/runs/p4-asteria-codex/site
             install_command: "true"
-            build_command: "npm run check && npm test"
+            build_command: "npm run check && NODE_ENV=test npm test"
             start_command: "npm start"
             port: "4173"
             health_path: /api/health
