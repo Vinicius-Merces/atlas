@@ -44,6 +44,7 @@ def main() -> int:
         "forbid_implementation_reuse",
         "preserve_exact_fixture_and_rubric",
         "record_runtime_reported_model",
+        "frozen_runner_contract_required",
         "environment_capability_manifest_required",
         "portable_browser_fallback_required",
         "evidence_assurance_manifest_required",
@@ -84,6 +85,7 @@ def main() -> int:
     packet_markers = (
         "do not inspect",
         "saas-from-brief-delivery",
+        "runner contract",
         "controlled-preview",
         "saas-production-config",
         "validate_relayops_assurance.py",
@@ -115,27 +117,37 @@ def main() -> int:
 
     run_schema = load_json(P5 / "run-manifest.schema.json")
     assurance_schema = load_json(P5 / "assurance/relayops-assurance.schema.json")
-    Draft202012Validator.check_schema(run_schema)
-    Draft202012Validator.check_schema(assurance_schema)
+    runner_schema = load_json(P5 / "runner-contract.schema.json")
+    for schema in (run_schema, assurance_schema, runner_schema):
+        Draft202012Validator.check_schema(schema)
     if run_schema.get("title") != "ATLAS P5 RelayOps Live SaaS Run Manifest":
         fail("run manifest schema title")
+    if assurance_schema.get("title") != "ATLAS P5 RelayOps SaaS Assurance Manifest":
+        fail("SaaS assurance schema title")
+    if runner_schema.get("title") != "ATLAS P5 Common Target Runner Contract":
+        fail("runner contract schema title")
     required = set(run_schema.get("required", []))
     if not {
+        "runner_contract",
         "environment_capability_manifest",
         "evidence_assurance_manifest",
         "deployment_evidence_manifest",
         "saas_assurance_manifest",
         "isolation_attestation",
     } <= required:
-        fail("run manifest missing required assurance sidecars")
-    if assurance_schema.get("title") != "ATLAS P5 RelayOps SaaS Assurance Manifest":
-        fail("SaaS assurance schema title")
+        fail("run manifest missing required runner/assurance sidecars")
 
     floor = campaign["common_environment_floor"]
     if floor.get("execution") != "github-actions" or floor.get("public_preview_provider") != "cloudflare-quick-tunnel":
         fail("common environment execution/provider")
     if floor.get("browser_runner") != "campaign-portable" or floor.get("browser_engine") != "chromium":
         fail("common browser floor")
+    if floor.get("runner_contract_schema") != "benchmarks/reference-builds/campaigns/p5/runner-contract.schema.json":
+        fail("runner contract schema pointer")
+    if floor.get("runner_contract_validator") != "scripts/validate_benchmark_runner_contract.py":
+        fail("runner contract validator pointer")
+    if floor.get("deployment_workflow") != ".github/workflows/reference-build-controlled-deployment.yml":
+        fail("common deployment workflow pointer")
     if floor.get("required_viewports") != ["phone-360", "tablet-768", "laptop-1280", "wide-1920"]:
         fail("common viewport set")
     if floor.get("historical_scores_immutable") is not True:
@@ -156,6 +168,31 @@ def main() -> int:
     if domains != expected_domains:
         fail("SaaS assurance domain set")
 
+    required_files = [
+        ROOT / "scripts/validate_relayops_assurance.py",
+        ROOT / "scripts/validate_benchmark_runner_contract.py",
+        ROOT / ".github/workflows/reference-build-controlled-deployment.yml",
+        ROOT / ".github/workflows/reference-build-browser-evidence.yml",
+    ]
+    missing_files = [path.relative_to(ROOT).as_posix() for path in required_files if not path.is_file()]
+    if missing_files:
+        fail("missing common evidence infrastructure: " + ", ".join(missing_files))
+
+    deployment_workflow = (ROOT / ".github/workflows/reference-build-controlled-deployment.yml").read_text(encoding="utf-8")
+    for marker in (
+        "workflow_dispatch",
+        "app_path",
+        "install_command",
+        "build_command",
+        "start_command",
+        "health_path",
+        "routes",
+        "cloudflare-quick-tunnel",
+        "collect_portable_browser_evidence.cjs",
+    ):
+        if marker not in deployment_workflow:
+            fail(f"common deployment workflow missing {marker}")
+
     registry = load_json(ROOT / ".claude/registry.json")
     if len(registry.get("skills", [])) != 128 or len(registry.get("agents", [])) != 87:
         fail("P5 infrastructure must not add benchmark-only agents or skills")
@@ -163,6 +200,34 @@ def main() -> int:
     with tempfile.TemporaryDirectory(prefix="p5-relayops-", dir=ROOT) as tmp:
         tmp_path = Path(tmp)
         rel = tmp_path.relative_to(ROOT).as_posix()
+        app_dir = tmp_path / "site"
+        app_dir.mkdir()
+        runner = {
+            "version": 1,
+            "app_dir": f"{rel}/site",
+            "install_command": "npm ci",
+            "test_command": "npm test",
+            "build_command": "npm run build",
+            "start_command": "npm start",
+            "port": 4173,
+            "health_path": "/health",
+            "origin_env": "RELAYOPS_ORIGIN",
+            "browser_routes": ["/", "/login", "/dashboard", "/customers", "/work-orders"],
+        }
+        runner_path = tmp_path / "runner.json"
+        runner_path.write_text(json.dumps(runner), encoding="utf-8")
+        runner_run = subprocess.run(
+            [
+                sys.executable,
+                str(ROOT / "scripts/validate_benchmark_runner_contract.py"),
+                "--manifest", str(runner_path),
+                "--target-root", str(ROOT),
+            ],
+            cwd=ROOT, text=True, capture_output=True, check=False,
+        )
+        if runner_run.returncode != 0:
+            fail("runner contract self-test failed: " + (runner_run.stdout + runner_run.stderr).strip())
+
         refs = []
         for index in range(1, 41):
             path = tmp_path / f"e{index}.txt"
@@ -215,14 +280,14 @@ def main() -> int:
         }
         manifest_path = tmp_path / "assurance.json"
         manifest_path.write_text(json.dumps(assurance), encoding="utf-8")
-        run = subprocess.run(
+        assurance_run = subprocess.run(
             [sys.executable, str(ROOT / "scripts/validate_relayops_assurance.py"), "--manifest", str(manifest_path)],
             cwd=ROOT, text=True, capture_output=True, check=False,
         )
-        if run.returncode != 0:
-            fail("RelayOps assurance self-test failed: " + (run.stdout + run.stderr).strip())
+        if assurance_run.returncode != 0:
+            fail("RelayOps assurance self-test failed: " + (assurance_run.stdout + assurance_run.stderr).strip())
 
-    print("P5 RelayOps live campaign validation passed: clean-room targets, common environment floor, and SaaS negative-evidence gates are active.")
+    print("P5 RelayOps live campaign validation passed: clean-room targets, frozen runner contracts, common environment floor, and SaaS negative-evidence gates are active.")
     return 0
 
 
