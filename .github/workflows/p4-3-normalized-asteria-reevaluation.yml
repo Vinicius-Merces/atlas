@@ -1,0 +1,298 @@
+name: P4.3 Normalized Asteria Re-evaluation
+
+on:
+  pull_request:
+    paths:
+      - ".github/workflows/p4-3-normalized-asteria-reevaluation.yml"
+      - "benchmarks/reference-builds/campaigns/p4/normalized-reevaluation/**"
+      - "scripts/summarize_normalized_asteria_evidence.py"
+      - "scripts/compare_normalized_asteria_evidence.py"
+      - "tests/contract/test_p43_normalized_asteria_reevaluation.py"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: p4-3-normalized-asteria-${{ github.event_name }}-${{ github.ref }}
+  cancel-in-progress: false
+
+env:
+  CLOUDFLARED_VERSION: "2026.5.2"
+  CLOUDFLARED_LINUX_AMD64_SHA256: "5286698547f03df745adb2355f04c12dde52ef425491e81f433642d695521886"
+
+jobs:
+  normalized-evidence:
+    runs-on: ubuntu-latest
+    timeout-minutes: 40
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - target: codex
+            runtime: codex
+            model: GPT-5
+            historical_score: "53.15"
+            frozen_commit: a1751e8558beddee8e8c57d2b3f47de86e1c5860
+            app_path: benchmarks/reference-builds/runs/p4-asteria-codex/site
+            install_command: "true"
+            build_command: "npm run check && npm test"
+            start_command: "npm start"
+            port: "4173"
+            health_path: /api/health
+            origin_env: PUBLIC_ORIGIN
+            routes: "/,/residencias,/residencias/casa-patio,/localizacao,/caderno,/contato,/privacidade"
+          - target: claude-code
+            runtime: claude-code
+            model: claude-opus-5
+            historical_score: "86.40"
+            frozen_commit: bff32598806c7ea9b6cd4c2218ee7d5eac2d0816
+            app_path: benchmarks/reference-builds/campaigns/p4/runs/claude-code/site
+            install_command: "npm ci"
+            build_command: "npm run build"
+            start_command: "npm start"
+            port: "4173"
+            health_path: /
+            origin_env: ASTERIA_ORIGIN
+            routes: "/,/residences,/residences/ridge-house-01,/location,/journal,/enquire,/privacy"
+
+    steps:
+      - name: Check out campaign infrastructure
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.head.sha || github.sha }}
+          path: campaign
+
+      - name: Check out exact frozen target implementation
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ matrix.frozen_commit }}
+          path: target
+
+      - name: Prove checkout separation and immutable target SHA
+        run: |
+          test "$(git -C target rev-parse HEAD)" = "${{ matrix.frozen_commit }}"
+          echo "campaign_commit=$(git -C campaign rev-parse HEAD)"
+          echo "target_commit=$(git -C target rev-parse HEAD)"
+          test "$(git -C campaign rev-parse HEAD)" != "$(git -C target rev-parse HEAD)"
+
+      - name: Set up Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install target dependencies
+        working-directory: target/${{ matrix.app_path }}
+        env:
+          INSTALL_COMMAND: ${{ matrix.install_command }}
+        run: bash -lc "$INSTALL_COMMAND"
+
+      - name: Build and test frozen target before ingress
+        working-directory: target/${{ matrix.app_path }}
+        env:
+          BUILD_COMMAND: ${{ matrix.build_command }}
+          NODE_ENV: production
+          PORT: ${{ matrix.port }}
+        run: bash -lc "$BUILD_COMMAND"
+
+      - name: Start bootstrap origin
+        env:
+          START_COMMAND: ${{ matrix.start_command }}
+          PORT: ${{ matrix.port }}
+          NODE_ENV: production
+        run: |
+          cd "target/${{ matrix.app_path }}"
+          nohup bash -lc "$START_COMMAND" > /tmp/atlas-p43-${{ matrix.target }}.log 2>&1 &
+          echo $! > /tmp/atlas-p43-${{ matrix.target }}.pid
+
+      - name: Wait for bootstrap origin
+        run: |
+          for i in $(seq 1 90); do
+            if curl --fail --silent "http://127.0.0.1:${{ matrix.port }}${{ matrix.health_path }}" >/dev/null; then
+              exit 0
+            fi
+            sleep 1
+          done
+          cat /tmp/atlas-p43-${{ matrix.target }}.log || true
+          exit 1
+
+      - name: Install pinned cloudflared
+        run: |
+          curl --fail --location --retry 3 \
+            "https://github.com/cloudflare/cloudflared/releases/download/${CLOUDFLARED_VERSION}/cloudflared-linux-amd64" \
+            --output /tmp/cloudflared
+          echo "${CLOUDFLARED_LINUX_AMD64_SHA256}  /tmp/cloudflared" | sha256sum --check --strict
+          chmod +x /tmp/cloudflared
+
+      - name: Open common campaign-owned HTTPS ingress
+        id: tunnel
+        run: |
+          STARTED_AT=$(date -u +%Y-%m-%dT%H:%M:%SZ)
+          nohup /tmp/cloudflared tunnel --no-autoupdate --url "http://127.0.0.1:${{ matrix.port }}" > /tmp/atlas-p43-cloudflared-${{ matrix.target }}.log 2>&1 &
+          echo $! > /tmp/atlas-p43-cloudflared-${{ matrix.target }}.pid
+          URL=""
+          for i in $(seq 1 60); do
+            URL=$(grep -oE 'https://[a-z0-9-]+\.trycloudflare\.com' /tmp/atlas-p43-cloudflared-${{ matrix.target }}.log | head -n 1 || true)
+            if [ -n "$URL" ]; then
+              break
+            fi
+            sleep 1
+          done
+          if [ -z "$URL" ]; then
+            cat /tmp/atlas-p43-cloudflared-${{ matrix.target }}.log || true
+            exit 1
+          fi
+          echo "url=$URL" >> "$GITHUB_OUTPUT"
+          echo "started_at=$STARTED_AT" >> "$GITHUB_OUTPUT"
+          echo "normalized_public_url=$URL"
+
+      - name: Rebuild frozen source for its assigned public origin
+        working-directory: target/${{ matrix.app_path }}
+        env:
+          PUBLIC_URL: ${{ steps.tunnel.outputs.url }}
+          ORIGIN_ENV: ${{ matrix.origin_env }}
+          BUILD_COMMAND: ${{ matrix.build_command }}
+          NODE_ENV: production
+          PORT: ${{ matrix.port }}
+        run: |
+          export "$ORIGIN_ENV=$PUBLIC_URL"
+          bash -lc "$BUILD_COMMAND"
+
+      - name: Restart frozen target with public origin
+        env:
+          PUBLIC_URL: ${{ steps.tunnel.outputs.url }}
+          ORIGIN_ENV: ${{ matrix.origin_env }}
+          START_COMMAND: ${{ matrix.start_command }}
+          PORT: ${{ matrix.port }}
+          NODE_ENV: production
+        run: |
+          kill "$(cat /tmp/atlas-p43-${{ matrix.target }}.pid)" || true
+          for i in $(seq 1 20); do
+            if ! curl --silent "http://127.0.0.1:${{ matrix.port }}${{ matrix.health_path }}" >/dev/null 2>&1; then
+              break
+            fi
+            sleep 1
+          done
+          cd "target/${{ matrix.app_path }}"
+          export "$ORIGIN_ENV=$PUBLIC_URL"
+          nohup bash -lc "$START_COMMAND" > /tmp/atlas-p43-${{ matrix.target }}.log 2>&1 &
+          echo $! > /tmp/atlas-p43-${{ matrix.target }}.pid
+
+      - name: Verify normalized public endpoint
+        env:
+          PUBLIC_URL: ${{ steps.tunnel.outputs.url }}
+        run: |
+          for i in $(seq 1 90); do
+            if curl --fail --silent "$PUBLIC_URL${{ matrix.health_path }}" >/dev/null; then
+              exit 0
+            fi
+            sleep 1
+          done
+          cat /tmp/atlas-p43-${{ matrix.target }}.log || true
+          cat /tmp/atlas-p43-cloudflared-${{ matrix.target }}.log || true
+          exit 1
+
+      - name: Install common campaign Chromium runner
+        run: |
+          mkdir -p campaign/.atlas-browser-runner
+          cd campaign/.atlas-browser-runner
+          npm init -y >/dev/null 2>&1
+          npm install --ignore-scripts playwright@1.55.0
+          npx playwright install --with-deps chromium
+
+      - name: Collect public TLS and HTTP evidence
+        env:
+          PUBLIC_URL: ${{ steps.tunnel.outputs.url }}
+          STARTED_AT: ${{ steps.tunnel.outputs.started_at }}
+        run: |
+          mkdir -p "campaign/benchmarks/reference-builds/runtime-evidence/p4-3/${{ matrix.target }}"
+          python campaign/scripts/probe_controlled_deployment.py \
+            --url "$PUBLIC_URL" \
+            --source-ref "${{ matrix.frozen_commit }}" \
+            --source-commit "${{ matrix.frozen_commit }}" \
+            --provider cloudflare-quick-tunnel \
+            --deployment-class controlled-preview \
+            --health-path '${{ matrix.health_path }}' \
+            --started-at "$STARTED_AT" \
+            --output "campaign/benchmarks/reference-builds/runtime-evidence/p4-3/${{ matrix.target }}/deployment.json"
+          python campaign/scripts/validate_controlled_deployment_evidence.py \
+            --manifest "campaign/benchmarks/reference-builds/runtime-evidence/p4-3/${{ matrix.target }}/deployment.json"
+
+      - name: Collect identical portable Chromium evidence floor
+        env:
+          NODE_PATH: ${{ github.workspace }}/campaign/.atlas-browser-runner/node_modules
+          PUBLIC_URL: ${{ steps.tunnel.outputs.url }}
+        run: |
+          node campaign/scripts/collect_portable_browser_evidence.cjs \
+            --base-url "$PUBLIC_URL" \
+            --routes '${{ matrix.routes }}' \
+            --output-dir "campaign/benchmarks/reference-builds/runtime-evidence/p4-3/${{ matrix.target }}/browser"
+
+      - name: Summarize normalized evidence without rescoring model quality
+        run: |
+          CAMPAIGN_COMMIT=$(git -C campaign rev-parse HEAD)
+          python campaign/scripts/summarize_normalized_asteria_evidence.py \
+            --target '${{ matrix.target }}' \
+            --browser "campaign/benchmarks/reference-builds/runtime-evidence/p4-3/${{ matrix.target }}/browser/browser-summary.json" \
+            --deployment "campaign/benchmarks/reference-builds/runtime-evidence/p4-3/${{ matrix.target }}/deployment.json" \
+            --source-commit '${{ matrix.frozen_commit }}' \
+            --campaign-commit "$CAMPAIGN_COMMIT" \
+            --historical-score '${{ matrix.historical_score }}' \
+            --output "campaign/benchmarks/reference-builds/runtime-evidence/p4-3/${{ matrix.target }}/summary.json"
+
+      - name: Record runner logs
+        if: always()
+        run: |
+          mkdir -p "campaign/benchmarks/reference-builds/runtime-evidence/p4-3/${{ matrix.target }}"
+          cp /tmp/atlas-p43-${{ matrix.target }}.log "campaign/benchmarks/reference-builds/runtime-evidence/p4-3/${{ matrix.target }}/application.log" || true
+          cp /tmp/atlas-p43-cloudflared-${{ matrix.target }}.log "campaign/benchmarks/reference-builds/runtime-evidence/p4-3/${{ matrix.target }}/cloudflared.log" || true
+
+      - name: Upload target normalized evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: p4-3-normalized-${{ matrix.target }}
+          path: campaign/benchmarks/reference-builds/runtime-evidence/p4-3/${{ matrix.target }}
+          if-no-files-found: error
+          retention-days: 14
+
+  compare-normalized-evidence:
+    needs: normalized-evidence
+    if: always() && needs.normalized-evidence.result == 'success'
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Check out campaign infrastructure
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.head.sha || github.sha }}
+          path: campaign
+
+      - name: Download target normalized evidence
+        uses: actions/download-artifact@v4
+        with:
+          pattern: p4-3-normalized-*
+          path: normalized
+
+      - name: Compare common evidence floor
+        run: |
+          python campaign/scripts/compare_normalized_asteria_evidence.py \
+            --codex normalized/p4-3-normalized-codex/summary.json \
+            --claude normalized/p4-3-normalized-claude-code/summary.json \
+            --output normalized/comparison.json
+          echo "P4.3_NORMALIZED_COMPARISON_BEGIN"
+          cat normalized/comparison.json
+          echo "P4.3_NORMALIZED_COMPARISON_END"
+
+      - name: Upload normalized comparison
+        uses: actions/upload-artifact@v4
+        with:
+          name: p4-3-normalized-comparison
+          path: normalized/comparison.json
+          if-no-files-found: error
+          retention-days: 14
