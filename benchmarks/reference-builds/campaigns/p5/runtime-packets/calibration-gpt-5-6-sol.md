@@ -16,7 +16,7 @@ Before implementation:
 
 Before public/browser evidence, freeze a target runner contract matching `benchmarks/reference-builds/campaigns/p5/runner-contract.schema.json` and pass `scripts/validate_benchmark_runner_contract.py`. Feed its app path, commands, port, health path, and browser routes into the shared `.github/workflows/reference-build-controlled-deployment.yml` adapter rather than inventing a calibration-only runner.
 
-Positive paths are not sufficient. Directly exercise negative tenant isolation across database/object access, attachment read/write, search, cache/job context, notifications/exports, and privileged admin actions. Exercise duplicate/out-of-order billing webhooks, entitlement reconciliation/revocation, job duplicate/retry/recovery, provider degradation, import partial failure/safe retry, and browser-visible secret scanning.
+Positive paths are not sufficient. Directly exercise cross-tenant denial across database/object access, attachment read/write, search, cache/job context, notifications/exports, and privileged admin actions. Exercise duplicate/out-of-order billing webhooks, entitlement reconciliation/revocation, job duplicate/retry/recovery, provider degradation, import partial failure/safe retry, and browser-visible secret scanning.
 
 Use the campaign-owned portable browser and controlled-preview path when native capability is unavailable. `controlled-preview` is real public HTTPS evidence but cannot satisfy `saas-production-config`.
 
