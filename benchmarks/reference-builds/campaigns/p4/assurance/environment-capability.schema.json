@@ -1,0 +1,64 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "ATLAS Benchmark Environment Capability Manifest",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["version", "captured_at", "runtime", "model", "capabilities"],
+  "properties": {
+    "version": {"type": "integer", "const": 1},
+    "captured_at": {"type": "string", "minLength": 1},
+    "runtime": {"type": "string", "minLength": 1},
+    "model": {"type": "string", "minLength": 1},
+    "capabilities": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["browser", "deployment", "network", "independent_review", "commands"],
+      "properties": {
+        "browser": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["native_available", "portable_fallback_eligible", "source"],
+          "properties": {
+            "native_available": {"type": "boolean"},
+            "portable_fallback_eligible": {"type": "boolean"},
+            "source": {"type": "string", "enum": ["runtime-native", "campaign-portable", "unavailable"]},
+            "details": {"type": "string"}
+          }
+        },
+        "deployment": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["native_available", "campaign_adapter_available"],
+          "properties": {
+            "native_available": {"type": "boolean"},
+            "campaign_adapter_available": {"type": "boolean"},
+            "details": {"type": "string"}
+          }
+        },
+        "network": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["mode"],
+          "properties": {
+            "mode": {"type": "string", "enum": ["open", "allowlisted", "restricted", "unknown"]},
+            "details": {"type": "string"}
+          }
+        },
+        "independent_review": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["available"],
+          "properties": {
+            "available": {"type": "boolean"},
+            "details": {"type": "string"}
+          }
+        },
+        "commands": {
+          "type": "object",
+          "additionalProperties": {"type": "object", "required": ["available"], "properties": {"available": {"type": "boolean"}, "path": {"type": ["string", "null"]}, "version": {"type": ["string", "null"]}}, "additionalProperties": false}
+        }
+      }
+    },
+    "notes": {"type": "string"}
+  }
+}
