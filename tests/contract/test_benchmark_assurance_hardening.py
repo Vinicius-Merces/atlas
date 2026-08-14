@@ -28,7 +28,7 @@ def write_fixture(tmp_path: Path, *, ratio: float = 3.5, robots: list[str] | Non
     }
     (tmp_path / "environment.json").write_text(json.dumps(env), encoding="utf-8")
     data = {
-        "version": 1,
+        "version": 2,
         "environment_manifest": "environment.json",
         "evidence_references": ["evidence.txt"],
         "browser": {"source": "campaign-portable", "summary": "browser.json", "screenshots": []},
@@ -37,7 +37,7 @@ def write_fixture(tmp_path: Path, *, ratio: float = 3.5, robots: list[str] | Non
         "visual_regression": {"mode": "capture-only", "baseline_root": None, "diff_report": None},
         "recovery_claims": [{"claim": "automatic retry", "advertised": True, "implementation_ref": "impl.txt", "evidence_ref": "recovery.txt" if recovery_evidence else "missing-recovery.txt"}],
         "mutable_cache": [{"route": "/inventory", "shared": True, "max_age_seconds": cache_age, "freshness_budget_seconds": 300, "evidence_ref": "cache.txt"}],
-        "deployment": {"status": "unavailable", "url": None, "evidence_ref": None},
+        "deployment": {"status": "unavailable", "deployment_class": "unavailable", "claimable_production": False, "url": None, "evidence_ref": None},
     }
     path = tmp_path / "assurance.json"
     path.write_text(json.dumps(data), encoding="utf-8")
@@ -79,3 +79,21 @@ def test_p41_rejects_unproven_recovery_claim_and_stale_mutable_cache(tmp_path: P
     assert result.returncode == 1
     assert "recovery claim evidence" in result.stdout
     assert "mutable cache exceeds freshness budget" in result.stdout
+
+
+def test_p42_controlled_preview_is_public_but_not_claimable(tmp_path: Path) -> None:
+    manifest = write_fixture(tmp_path)
+    data = json.loads(manifest.read_text(encoding="utf-8"))
+    (tmp_path / "deployment.json").write_text("{}\n", encoding="utf-8")
+    data["deployment"] = {
+        "status": "public-https",
+        "deployment_class": "controlled-preview",
+        "claimable_production": False,
+        "url": "https://example.trycloudflare.com",
+        "evidence_ref": "deployment.json",
+    }
+    manifest.write_text(json.dumps(data), encoding="utf-8")
+    result = run_validator(tmp_path, manifest)
+    assert result.returncode == 0, result.stdout + result.stderr
+    assert "controlled public HTTPS preview" in result.stdout
+    assert "production-domain blocker must remain non-pass" in result.stdout
