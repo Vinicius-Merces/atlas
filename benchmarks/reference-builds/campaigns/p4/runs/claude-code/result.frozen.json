@@ -1,0 +1,503 @@
+{
+  "benchmark_version": 1,
+  "spec_id": "premium-marketing-site",
+  "spec_version": 1,
+  "spec_sha256": "e57da062e6223f6ecbea84a64813f6d8e73f9b0954cda065da5edbc680762947",
+  "rubric_sha256": "6463ae7fde36affecc20eff21f0ec73e04e0fb44c920a3cbc9115502a1b56b31",
+  "execution_mode": "live",
+  "run": {
+    "runtime": "claude-code",
+    "model": "claude-opus-5",
+    "repository": "https://github.com/Vinicius-Merces/atlas",
+    "commit": "bff32598806c7ea9b6cd4c2218ee7d5eac2d0816",
+    "evidence_root": "benchmarks/reference-builds/campaigns/p4/runs/claude-code",
+    "started_at": "2026-08-13T19:39:43Z",
+    "finished_at": "2026-08-13T23:05:00Z",
+    "environment_notes": "Isolated cloud container. Node 22.22.2, npm 10.9.7, Chromium 1194 via Playwright. Network egress is allowlisted to the npm registry and github.com only; Vercel, Netlify, Cloudflare and every tunnel provider probed are unreachable, so no public production domain could be provisioned. The site was built with `next build` and served with `next start` in four production configurations (normal, production-default rate limit, forced store failure, forced provider failure). Model string is the identifier this runtime reports for itself in-session: claude-opus-5. This is the FIRST result, frozen before any remediation, as required by the P4 campaign protocol.",
+    "tool_permissions": [
+      "filesystem-read-write",
+      "shell",
+      "npm-registry",
+      "chromium-playwright",
+      "git-local-commit",
+      "git-push-blocked-by-sandbox-proxy"
+    ]
+  },
+  "score": 86.4,
+  "base_outcome": "production-ready",
+  "outcome": "blocked",
+  "claimable": false,
+  "blocking_failures": [
+    "marketing-responsive",
+    "marketing-accessibility",
+    "marketing-production-domain",
+    "marketing-seo-indexing"
+  ],
+  "review": {
+    "reviewer": "Two independent claude-code reviewers, neither of which implemented the build: Frontend Craft reviewer and Web Production Assurance / benchmark-truthfulness reviewer",
+    "outcome": "Changes required",
+    "evidence": [
+      "benchmarks/reference-builds/campaigns/p4/runs/claude-code/reviews/frontend-craft-review.md",
+      "benchmarks/reference-builds/campaigns/p4/runs/claude-code/reviews/web-production-assurance-review.md"
+    ],
+    "notes": "Both reviewers returned \"Changes required\". The Frontend Craft reviewer withheld approval on a High non-text-contrast failure (--rule-color at 2.47:1 is the sole boundary of every form field and the ghost CTA, WCAG 2.1 SC 1.4.11), plus SVG label legibility at phone scale and the absence of a screenshot baseline/diff mechanism. The Web Production reviewer confirmed the authoritative lead path, private-data isolation and abuse controls by re-running them himself, and downgraded marketing-seo-indexing after finding that 404 documents emit two conflicting robots metas and canonicalise to the homepage. He also found that the UI and the planning document claim an automatic broker retry that does not exist in the code, that the capability-routing table cites three evidence paths that were never produced, and that residence pages serve s-maxage=31536000. He found no vacuous tests, no synthetic evidence and no weakened assertions, and reproduced 74/74 Playwright tests and every collector independently. All check statuses below follow the reviewers' verdicts, not the implementer's."
+  },
+  "axis_scores": {
+    "brief_fidelity": {
+      "weight": 10.0,
+      "completion_factor": 1.0,
+      "score": 10.0
+    },
+    "architecture_quality": {
+      "weight": 8.0,
+      "completion_factor": 0.8333,
+      "score": 6.67
+    },
+    "capability_routing": {
+      "weight": 8.0,
+      "completion_factor": 0.8333,
+      "score": 6.67
+    },
+    "implementation_completeness": {
+      "weight": 14.0,
+      "completion_factor": 1.0,
+      "score": 14.0
+    },
+    "frontend_craft": {
+      "weight": 20.0,
+      "completion_factor": 0.7,
+      "score": 14.0
+    },
+    "security_isolation": {
+      "weight": 5.0,
+      "completion_factor": 1.0,
+      "score": 5.0
+    },
+    "failure_resilience": {
+      "weight": 8.0,
+      "completion_factor": 0.8333,
+      "score": 6.67
+    },
+    "browser_reality": {
+      "weight": 10.0,
+      "completion_factor": 1.0,
+      "score": 10.0
+    },
+    "production_readiness": {
+      "weight": 12.0,
+      "completion_factor": 0.7,
+      "score": 8.4
+    },
+    "independent_review": {
+      "weight": 5.0,
+      "completion_factor": 1.0,
+      "score": 5.0
+    }
+  },
+  "checks": [
+    {
+      "id": "marketing-audience-outcome",
+      "axis": "brief_fidelity",
+      "status": "pass",
+      "factor": 1.0,
+      "evidence": [
+        "benchmarks/reference-builds/campaigns/p4/runs/claude-code/planning/01-project-brief-synthesis.md",
+        "benchmarks/reference-builds/campaigns/p4/runs/claude-code/evidence/visual-regression/home--laptop-1280.png",
+        "benchmarks/reference-builds/campaigns/p4/runs/claude-code/evidence/analytics/analytics-and-funnel-review.md",
+        "benchmarks/reference-builds/campaigns/p4/runs/claude-code/evidence/browser/primary-flow.json"
+      ],
+      "notes": "The rendered experience targets a comparing buyer: twelve residences listed with real areas, price bands, orientation, elevation and delivery quarter on the home page itself, sold and reserved units kept visible, and a single qualified visit request as the one conversion. Qualification fields (residence, timeframe, purchase context) are stored on every lead and verified in the read-back record."
+    },
+    {
+      "id": "marketing-required-surfaces",
+      "axis": "brief_fidelity",
+      "status": "pass",
+      "factor": 1.0,
+      "evidence": [
+        "benchmarks/reference-builds/campaigns/p4/runs/claude-code/evidence/seo/seo-audit.json",
+        "benchmarks/reference-builds/campaigns/p4/runs/claude-code/evidence/content/content-integrity.json",
+        "benchmarks/reference-builds/campaigns/p4/runs/claude-code/evidence/visual-regression/location--tablet-768.png",
+        "benchmarks/reference-builds/campaigns/p4/runs/claude-code/evidence/visual-regression/journal-entry--laptop-1280.png"
+      ],
+      "notes": "All six required surfaces exist and return 200 with server-rendered content: home, residences overview plus twelve detail experiences, a location surface with in-page contents navigation across four districts, a five-entry editorial model with a typed block renderer, the visit-request form, and three legal/contact documents. content-integrity.json validates all twelve residences and finds no placeholder copy."
+    },
+    {
+      "id": "marketing-prohibited-shortcuts",
+      "axis": "brief_fidelity",
+      "status": "pass",
+      "factor": 1.0,
+      "evidence": [
+        "benchmarks/reference-builds/campaigns/p4/runs/claude-code/evidence/content/content-integrity.json",
+        "benchmarks/reference-builds/campaigns/p4/runs/claude-code/reviews/frontend-craft-review.md",
+        "benchmarks/reference-builds/campaigns/p4/runs/claude-code/planning/02-visual-direction.md"
+      ],
+      "notes": "No lorem ipsum (asserted programmatically over every content module), no copied luxury-site layout, no video at all so no autoplay background video, motion limited to one 900ms stroke that reduced motion removes. The independent Frontend Craft reviewer applied the anti-default list and confirmed no box-shadow, no glass, no glow, no gradient, no bento grid, no icon-circle list and no invented metrics."
+    },
+    {
+      "id": "marketing-content-authority",
+      "axis": "architecture_quality",
+      "status": "pass",
+      "factor": 1.0,
+      "evidence": [
+        "benchmarks/reference-builds/campaigns/p4/runs/claude-code/planning/03-content-model.md",
+        "benchmarks/reference-builds/campaigns/p4/runs/claude-code/site/content/schema.ts",
+        "benchmarks/reference-builds/campaigns/p4/runs/claude-code/site/lib/content.ts",
+        "benchmarks/reference-builds/campaigns/p4/runs/claude-code/evidence/browser/draft-exclusion.json"
+      ],
+      "notes": "The code/CMS boundary is a real seam: every content module is parsed through a Zod schema and read only through lib/content.ts, no component contains marketing copy, and the draft/published editorial state is exercised against a real draft entry that is absent from the index, the sitemap and direct fetch. The decision to keep content repository-authored is recorded with a field-by-field CMS migration path rather than left implicit."
+    },
+    {
+      "id": "marketing-conversion-authority",
+      "axis": "architecture_quality",
+      "status": "partial",
+      "factor": 0.5,
+      "evidence": [
+        "benchmarks/reference-builds/campaigns/p4/runs/claude-code/planning/05-lead-mutation-contract.md",
+        "benchmarks/reference-builds/campaigns/p4/runs/claude-code/evidence/browser/api-contract.json",
+        "benchmarks/reference-builds/campaigns/p4/runs/claude-code/reviews/web-production-assurance-review.md"
+      ],
+      "notes": "Authoritative state is genuine \u2014 SQLite row plus in-transaction conversion event, server-issued reference, authenticated read-back, verified independently by the reviewer. Downgraded to partial because the reconciliation path for a failed broker hand-off is manual only: the reviewer confirmed that the automatic retry claimed by both the UI copy and the planning document does not exist in notifyBroker(), which has a single call site and one attempt."
+    },
+    {
+      "id": "marketing-stack-fit",
+      "axis": "architecture_quality",
+      "status": "pass",
+      "factor": 1.0,
+      "evidence": [
+        "benchmarks/reference-builds/campaigns/p4/runs/claude-code/planning/04-stack-selection.md",
+        "benchmarks/reference-builds/campaigns/p4/runs/claude-code/evidence/supply-chain/supply-chain.json",
+        "benchmarks/reference-builds/campaigns/p4/runs/claude-code/evidence/performance/performance.json"
+      ],
+      "notes": "Seven direct runtime dependencies and 93 transitive packages. Motion, GSAP, Three.js, Radix/Base UI, a chart library and a native SQLite addon were each considered and rejected in writing with the reason. The rejections are visible in the result: one CSS keyframe site-wide and 139 KB of script on every route."
+    },
+    {
+      "id": "marketing-routing-core",
+      "axis": "capability_routing",
+      "status": "pass",
+      "factor": 1.0,
+      "evidence": [
+        "benchmarks/reference-builds/campaigns/p4/runs/claude-code/planning/06-capability-routing.md",
+        "benchmarks/reference-builds/campaigns/p4/runs/claude-code/reviews/frontend-craft-review.md",
+        "benchmarks/reference-builds/campaigns/p4/runs/claude-code/reviews/web-production-assurance-review.md"
+      ],
+      "notes": "site-from-brief-delivery was executed in sequence, with the inherited Frontend Craft, browser-flow and Web Production Assurance gates run by reviewers who did not implement."
+    },
+    {
+      "id": "marketing-routing-public-web",
+      "axis": "capability_routing",
+      "status": "pass",
+      "factor": 1.0,
+      "evidence": [
+        "benchmarks/reference-builds/campaigns/p4/runs/claude-code/evidence/seo/seo-audit.json",
+        "benchmarks/reference-builds/campaigns/p4/runs/claude-code/evidence/structured-data/structured-data.json",
+        "benchmarks/reference-builds/campaigns/p4/runs/claude-code/evidence/analytics/analytics-and-funnel-review.md",
+        "benchmarks/reference-builds/campaigns/p4/runs/claude-code/evidence/supply-chain/supply-chain.json"
+      ],
+      "notes": "SEO, structured data, analytics/conversion and supply-chain capabilities were all routed and all produced artefacts against the running build."
+    },
+    {
+      "id": "marketing-routing-no-theater",
+      "axis": "capability_routing",
+      "status": "partial",
+      "factor": 0.5,
+      "evidence": [
+        "benchmarks/reference-builds/campaigns/p4/runs/claude-code/planning/06-capability-routing.md",
+        "benchmarks/reference-builds/campaigns/p4/runs/claude-code/reviews/web-production-assurance-review.md"
+      ],
+      "notes": "Nine capabilities are recorded as deliberately NOT routed with the reason each does not apply, which is the behaviour the check rewards. Downgraded to partial because the reviewer found the routing table cites three evidence paths that were never produced, including content-discoverability-review.md, which has no artefact at all \u2014 an evidence gap in the routing record itself."
+    },
+    {
+      "id": "marketing-navigation-complete",
+      "axis": "implementation_completeness",
+      "status": "pass",
+      "factor": 1.0,
+      "evidence": [
+        "benchmarks/reference-builds/campaigns/p4/runs/claude-code/evidence/browser/primary-flow.json",
+        "benchmarks/reference-builds/campaigns/p4/runs/claude-code/evidence/browser/content-navigation.json",
+        "benchmarks/reference-builds/campaigns/p4/runs/claude-code/evidence/browser/filter-empty-state.json",
+        "benchmarks/reference-builds/campaigns/p4/runs/claude-code/evidence/browser/not-found.json"
+      ],
+      "notes": "Home to index to detail to contact works end to end in a real browser; journal and location cross-link into residences; filtering has a real empty state and reset; a missing residence returns a true 404 with recovery navigation."
+    },
+    {
+      "id": "marketing-lead-authoritative",
+      "axis": "implementation_completeness",
+      "status": "pass",
+      "factor": 1.0,
+      "evidence": [
+        "benchmarks/reference-builds/campaigns/p4/runs/claude-code/evidence/browser/api-contract.json",
+        "benchmarks/reference-builds/campaigns/p4/runs/claude-code/evidence/browser/primary-flow.json",
+        "benchmarks/reference-builds/campaigns/p4/runs/claude-code/evidence/browser/negative-duplicate.json",
+        "benchmarks/reference-builds/campaigns/p4/runs/claude-code/reviews/web-production-assurance-review.md"
+      ],
+      "notes": "BLOCKING \u2014 pass. The browser flow proves the lead by reading it back through the key-protected endpoint rather than by trusting the success state. The independent reviewer re-ran this himself: he submitted leads by curl, confirmed the reference is server-issued (his attempt to inject reference and status in the payload was ignored), and broke against duplicate protection with idempotency replay, six concurrent POSTs carrying six distinct keys (one row, one event, one reference) and email case/whitespace variants."
+    },
+    {
+      "id": "marketing-content-complete",
+      "axis": "implementation_completeness",
+      "status": "pass",
+      "factor": 1.0,
+      "evidence": [
+        "benchmarks/reference-builds/campaigns/p4/runs/claude-code/evidence/content/content-integrity.json",
+        "benchmarks/reference-builds/campaigns/p4/runs/claude-code/evidence/seo/seo-audit.json",
+        "benchmarks/reference-builds/campaigns/p4/runs/claude-code/evidence/visual-regression/residence-detail--laptop-1280.png"
+      ],
+      "notes": "Residence, location and editorial content is usable and internally linked; every residence carries a schedule of areas that foots against the stated gross area, and the drawings are generated from the same fields so they cannot contradict the tables."
+    },
+    {
+      "id": "marketing-states-complete",
+      "axis": "implementation_completeness",
+      "status": "pass",
+      "factor": 1.0,
+      "evidence": [
+        "benchmarks/reference-builds/campaigns/p4/runs/claude-code/evidence/browser/06-validation-empty.png",
+        "benchmarks/reference-builds/campaigns/p4/runs/claude-code/evidence/browser/05-enquire-success.png",
+        "benchmarks/reference-builds/campaigns/p4/runs/claude-code/evidence/browser/09-store-failure.png",
+        "benchmarks/reference-builds/campaigns/p4/runs/claude-code/evidence/browser/10-broker-failure.png",
+        "benchmarks/reference-builds/campaigns/p4/runs/claude-code/evidence/browser/08-duplicate.png",
+        "benchmarks/reference-builds/campaigns/p4/runs/claude-code/evidence/browser/16-empty-state.png"
+      ],
+      "notes": "Idle, pending, success, degraded success, validation, duplicate, rate-limited, store-failure, ambiguous-network and no-JavaScript states are all implemented and captured. The ambiguous-network state is treated as unknown rather than as failure and reuses the same idempotency key so a retry cannot duplicate."
+    },
+    {
+      "id": "marketing-visual-thesis",
+      "axis": "frontend_craft",
+      "status": "pass",
+      "factor": 1.0,
+      "evidence": [
+        "benchmarks/reference-builds/campaigns/p4/runs/claude-code/reviews/frontend-craft-review.md",
+        "benchmarks/reference-builds/campaigns/p4/runs/claude-code/planning/02-visual-direction.md",
+        "benchmarks/reference-builds/campaigns/p4/runs/claude-code/evidence/visual-regression/home--wide-1920.png",
+        "benchmarks/reference-builds/campaigns/p4/runs/claude-code/evidence/visual-regression/residence-detail--laptop-1280.png"
+      ],
+      "notes": "Independent verdict: the \"drawing set, not brochure\" thesis is real in the render and not only in the plan. Measured ridge section, mono annotation layer, ruled section transitions, schedule of areas, material swatches; zero box-shadow, a single 2px radius, no glass/glow/gradient/bento/icon-circle/fake metrics."
+    },
+    {
+      "id": "marketing-responsive",
+      "axis": "frontend_craft",
+      "status": "partial",
+      "factor": 0.5,
+      "evidence": [
+        "benchmarks/reference-builds/campaigns/p4/runs/claude-code/evidence/responsive/",
+        "benchmarks/reference-builds/campaigns/p4/runs/claude-code/reviews/frontend-craft-review.md",
+        "benchmarks/reference-builds/campaigns/p4/runs/claude-code/evidence/visual-regression/home--phone-360.png"
+      ],
+      "notes": "BLOCKING \u2014 partial, per the independent reviewer. All 40 measurements across five viewports show zero horizontal overflow, zero sub-24px tap targets and measure inside bound, and mobile genuinely recomposes rather than stacking. Withheld because SVG drawing labels render at roughly 3px at 360px and 6px at 768px, the site-plan plot links are display:none below 768px while the location copy still says \"Select any plot\", and 320px, height-constrained and 1024\u20131440px widths are untested."
+    },
+    {
+      "id": "marketing-accessibility",
+      "axis": "frontend_craft",
+      "status": "partial",
+      "factor": 0.5,
+      "evidence": [
+        "benchmarks/reference-builds/campaigns/p4/runs/claude-code/evidence/accessibility/",
+        "benchmarks/reference-builds/campaigns/p4/runs/claude-code/reviews/frontend-craft-review.md",
+        "benchmarks/reference-builds/campaigns/p4/runs/claude-code/evidence/accessibility/contrast.json"
+      ],
+      "notes": "BLOCKING \u2014 partial, per the independent reviewer. axe reports zero violations across 14 routes and both form states; keyboard order, focus indicators, heading structure, reduced motion and drawing text alternatives are all verified. Withheld on a real WCAG 2.1 SC 1.4.11 failure the automated pass could not see: --rule-color (#a19a8d) measures 2.47:1 against the page and is the sole visible boundary of every form field and of the ghost CTA. The run's own contrast.json checks nine text pairs and never measured it. 47\u201372 axe color-contrast incompletes were also left untriaged."
+    },
+    {
+      "id": "marketing-motion-purpose",
+      "axis": "frontend_craft",
+      "status": "pass",
+      "factor": 1.0,
+      "evidence": [
+        "benchmarks/reference-builds/campaigns/p4/runs/claude-code/evidence/accessibility/reduced-motion.json",
+        "benchmarks/reference-builds/campaigns/p4/runs/claude-code/reviews/frontend-craft-review.md",
+        "benchmarks/reference-builds/campaigns/p4/runs/claude-code/evidence/performance/performance.json"
+      ],
+      "notes": "One @keyframes site-wide (the ridge datum drawing itself once), eight 120ms colour-only transitions, and a single --motion-* token set that prefers-reduced-motion zeroes \u2014 proven numerically at 900ms versus 0ms. No scroll choreography and no fade-up-on-scroll anywhere, which was a deliberate rejection."
+    },
+    {
+      "id": "marketing-visual-regression",
+      "axis": "frontend_craft",
+      "status": "partial",
+      "factor": 0.5,
+      "evidence": [
+        "benchmarks/reference-builds/campaigns/p4/runs/claude-code/evidence/visual-regression/",
+        "benchmarks/reference-builds/campaigns/p4/runs/claude-code/site/tests/responsive.spec.ts",
+        "benchmarks/reference-builds/campaigns/p4/runs/claude-code/reviews/frontend-craft-review.md"
+      ],
+      "notes": "Forty full-page captures across eight routes and five viewports, deterministic by construction (fixed device pixel ratio, animations frozen, self-hosted fonts, static content). Partial because there is no baseline/diff mechanism \u2014 the captures are comparable by hand but nothing fails on a future regression \u2014 and error, success, empty and 404 states are absent from the capture matrix."
+    },
+    {
+      "id": "marketing-form-security",
+      "axis": "security_isolation",
+      "status": "pass",
+      "factor": 1.0,
+      "evidence": [
+        "benchmarks/reference-builds/campaigns/p4/runs/claude-code/evidence/browser/api-contract.json",
+        "benchmarks/reference-builds/campaigns/p4/runs/claude-code/evidence/security/secret-and-header-audit.json",
+        "benchmarks/reference-builds/campaigns/p4/runs/claude-code/planning/05-lead-mutation-contract.md"
+      ],
+      "notes": "Server-side validation of every field, 415/413/400/422 all exercised, honeypot, minimum time-to-submit, and a token-bucket limiter proven at the production default (five accepted then 429 with Retry-After). The reviewer re-ran each of these himself. CSP, X-Frame-Options, X-Content-Type-Options, Referrer-Policy and Permissions-Policy are asserted on live responses and X-Powered-By is absent."
+    },
+    {
+      "id": "marketing-private-data",
+      "axis": "security_isolation",
+      "status": "pass",
+      "factor": 1.0,
+      "evidence": [
+        "benchmarks/reference-builds/campaigns/p4/runs/claude-code/evidence/security/secret-and-header-audit.json",
+        "benchmarks/reference-builds/campaigns/p4/runs/claude-code/reviews/web-production-assurance-review.md"
+      ],
+      "notes": "Nineteen client assets scanned for seven secret markers with no hits; the reviewer independently grepped .next/static and found zero occurrences of the admin key or any ASTERIA_* variable. The lead read-back returns 401 without a key and with a wrong key, 404 for an invented reference, and no third-party origin is contacted at runtime."
+    },
+    {
+      "id": "marketing-provider-failure",
+      "axis": "failure_resilience",
+      "status": "partial",
+      "factor": 0.5,
+      "evidence": [
+        "benchmarks/reference-builds/campaigns/p4/runs/claude-code/evidence/browser/negative-broker-failure.json",
+        "benchmarks/reference-builds/campaigns/p4/runs/claude-code/evidence/browser/10-broker-failure.png",
+        "benchmarks/reference-builds/campaigns/p4/runs/claude-code/reviews/web-production-assurance-review.md"
+      ],
+      "notes": "The lead survives a provider failure with no silent loss \u2014 it is persisted before the hand-off is attempted, notification_status becomes failed, the reference is still issued and the degraded state is visible with a phone fallback. Partial because the reviewer established that the automatic retry promised by that visible copy does not exist: recovery is manual. Telling a visitor something is being retried when it is not is the defect, not the degradation itself."
+    },
+    {
+      "id": "marketing-duplicate-submit",
+      "axis": "failure_resilience",
+      "status": "pass",
+      "factor": 1.0,
+      "evidence": [
+        "benchmarks/reference-builds/campaigns/p4/runs/claude-code/evidence/browser/api-contract.json",
+        "benchmarks/reference-builds/campaigns/p4/runs/claude-code/evidence/browser/negative-duplicate.json",
+        "benchmarks/reference-builds/campaigns/p4/runs/claude-code/reviews/web-production-assurance-review.md"
+      ],
+      "notes": "Two UNIQUE indexes inside one BEGIN IMMEDIATE transaction. Eight concurrent identical POSTs produced one row, one conversion event and one reference; the reviewer independently repeated it with six concurrent posts carrying six distinct idempotency keys and got the same single row."
+    },
+    {
+      "id": "marketing-degraded-assets",
+      "axis": "failure_resilience",
+      "status": "pass",
+      "factor": 1.0,
+      "evidence": [
+        "benchmarks/reference-builds/campaigns/p4/runs/claude-code/evidence/browser/degraded-assets.json",
+        "benchmarks/reference-builds/campaigns/p4/runs/claude-code/evidence/browser/12-degraded-assets.png",
+        "benchmarks/reference-builds/campaigns/p4/runs/claude-code/evidence/browser/nojs-native-post.json"
+      ],
+      "notes": "With every font and raster request aborted, the full navigation from home to index to the conversion form still completes with no page errors. With JavaScript disabled entirely, the form performs a native POST and the server renders a confirmation carrying the authoritative reference."
+    },
+    {
+      "id": "marketing-browser-primary-flow",
+      "axis": "browser_reality",
+      "status": "pass",
+      "factor": 1.0,
+      "evidence": [
+        "benchmarks/reference-builds/campaigns/p4/runs/claude-code/evidence/browser/primary-flow.json",
+        "benchmarks/reference-builds/campaigns/p4/runs/claude-code/evidence/browser/01-home.png",
+        "benchmarks/reference-builds/campaigns/p4/runs/claude-code/evidence/browser/03-residence-detail.png",
+        "benchmarks/reference-builds/campaigns/p4/runs/claude-code/evidence/browser/05-enquire-success.png",
+        "benchmarks/reference-builds/campaigns/p4/runs/claude-code/evidence/browser/playwright-report.json"
+      ],
+      "notes": "BLOCKING \u2014 pass. Real Chromium covers home to residence to a successful contact whose success is asserted against the authenticated server record, not the toast. Independently re-run by the reviewer."
+    },
+    {
+      "id": "marketing-browser-negative-flow",
+      "axis": "browser_reality",
+      "status": "pass",
+      "factor": 1.0,
+      "evidence": [
+        "benchmarks/reference-builds/campaigns/p4/runs/claude-code/evidence/browser/negative-empty-submit.json",
+        "benchmarks/reference-builds/campaigns/p4/runs/claude-code/evidence/browser/negative-field-validation.json",
+        "benchmarks/reference-builds/campaigns/p4/runs/claude-code/evidence/browser/negative-store-failure.json",
+        "benchmarks/reference-builds/campaigns/p4/runs/claude-code/evidence/browser/07-validation-fields.png",
+        "benchmarks/reference-builds/campaigns/p4/runs/claude-code/evidence/browser/09-store-failure.png"
+      ],
+      "notes": "Browser evidence covers empty submit with focus moved to the first invalid control, field-level validation, duplicate submission, forced store failure (explicit \"was not recorded\" with the entered values preserved) and forced provider failure."
+    },
+    {
+      "id": "marketing-browser-console-network",
+      "axis": "browser_reality",
+      "status": "pass",
+      "factor": 1.0,
+      "evidence": [
+        "benchmarks/reference-builds/campaigns/p4/runs/claude-code/evidence/browser/primary-flow.json",
+        "benchmarks/reference-builds/campaigns/p4/runs/claude-code/evidence/browser/content-navigation.json",
+        "benchmarks/reference-builds/campaigns/p4/runs/claude-code/evidence/browser/degraded-assets.json"
+      ],
+      "notes": "Console errors, page errors, failed requests and 4xx/5xx responses are all collected and asserted empty across the critical flows. Cancelled Next.js link prefetches are recorded separately and explained rather than silently filtered."
+    },
+    {
+      "id": "marketing-production-domain",
+      "axis": "production_readiness",
+      "status": "partial",
+      "factor": 0.5,
+      "evidence": [
+        "benchmarks/reference-builds/campaigns/p4/runs/claude-code/evidence/production/deployment-constraint.md",
+        "benchmarks/reference-builds/campaigns/p4/runs/claude-code/run-manifest.json",
+        "benchmarks/reference-builds/campaigns/p4/runs/claude-code/evidence/security/secret-and-header-audit.json",
+        "benchmarks/reference-builds/campaigns/p4/runs/claude-code/reviews/web-production-assurance-review.md"
+      ],
+      "notes": "BLOCKING \u2014 partial, and this is what blocks the run. A real production build was served with real production environment configuration and verified production response headers, but no public domain, DNS record or TLS certificate exists, because egress is allowlisted to npm and GitHub only. The reviewer re-probed every provider and confirmed the constraint is real and honestly reported, and that the run declared itself blocked before anyone asked. No other check is upgraded to compensate."
+    },
+    {
+      "id": "marketing-seo-indexing",
+      "axis": "production_readiness",
+      "status": "partial",
+      "factor": 0.5,
+      "evidence": [
+        "benchmarks/reference-builds/campaigns/p4/runs/claude-code/evidence/seo/seo-audit.json",
+        "benchmarks/reference-builds/campaigns/p4/runs/claude-code/reviews/web-production-assurance-review.md"
+      ],
+      "notes": "BLOCKING \u2014 partial, downgraded by the independent reviewer. Everything on 2xx routes is correct on the wire: robots.txt with an explicit /api/ disallow and a sitemap declaration, a 25-URL sitemap excluding the draft entry and the per-submission confirmation, self-referencing canonicals on all thirteen indexable routes, noindex on /enquire/received, and 308 slash normalisation. Withheld because 404 documents emit two conflicting robots metas (noindex and index,follow) and canonicalise to the homepage, and the run's own collector cannot see it: it uses a first-match regex and skips all metadata checks on 404 routes."
+    },
+    {
+      "id": "marketing-structured-data",
+      "axis": "production_readiness",
+      "status": "pass",
+      "factor": 1.0,
+      "evidence": [
+        "benchmarks/reference-builds/campaigns/p4/runs/claude-code/evidence/structured-data/structured-data.json",
+        "benchmarks/reference-builds/campaigns/p4/runs/claude-code/site/scripts/collect-structured-data.mjs",
+        "benchmarks/reference-builds/campaigns/p4/runs/claude-code/reviews/web-production-assurance-review.md"
+      ],
+      "notes": "Eight documents, thirteen unique entity ids, all syntactically valid, and every asserted value compared against the visible text on the same page rather than merely parsed. Sold and reserved residences publish no Offer node while available ones do \u2014 spot-checked independently by the reviewer."
+    },
+    {
+      "id": "marketing-performance",
+      "axis": "production_readiness",
+      "status": "partial",
+      "factor": 0.5,
+      "evidence": [
+        "benchmarks/reference-builds/campaigns/p4/runs/claude-code/evidence/performance/performance.json",
+        "benchmarks/reference-builds/campaigns/p4/runs/claude-code/site/scripts/collect-performance.mjs"
+      ],
+      "notes": "Measured on an emulated mid-range mobile (390x844 at 3x, 4x CPU throttling, 1.6 Mbps / 150 ms RTT) from real on-the-wire encoded transfer sizes. LCP 564\u2013828 ms, CLS 0\u20130.056, 25\u201332 requests, 139\u2013144 KB of script on every route. Partial for two honest reasons: one route (residence detail) transfers 321 KB against the declared 320 KB budget and the breach was retained rather than tuned away, and the network profile is emulated over loopback rather than measured on a real network, so these are not field measurements."
+    },
+    {
+      "id": "marketing-analytics",
+      "axis": "production_readiness",
+      "status": "pass",
+      "factor": 1.0,
+      "evidence": [
+        "benchmarks/reference-builds/campaigns/p4/runs/claude-code/evidence/analytics/analytics-and-funnel-review.md",
+        "benchmarks/reference-builds/campaigns/p4/runs/claude-code/evidence/browser/api-contract.json",
+        "benchmarks/reference-builds/campaigns/p4/runs/claude-code/reviews/web-production-assurance-review.md"
+      ],
+      "notes": "The conversion event is written by the server inside the same transaction as the lead, so it cannot exist without its lead and cannot be duplicated. A client attempting to post the conversion event is refused with 422, verified independently by the reviewer, who also confirmed lead count equals conversion-event count. No third-party analytics script and no false-success event anywhere."
+    },
+    {
+      "id": "marketing-review-frontend",
+      "axis": "independent_review",
+      "status": "pass",
+      "factor": 1.0,
+      "evidence": [
+        "benchmarks/reference-builds/campaigns/p4/runs/claude-code/reviews/frontend-craft-review.md"
+      ],
+      "notes": "Performed by a reviewer that did not implement the build, who opened the rendered screenshots as images, recomputed contrast ratios independently rather than copying the run's own numbers, and returned Changes required with one blocking and seven further findings."
+    },
+    {
+      "id": "marketing-review-production",
+      "axis": "independent_review",
+      "status": "pass",
+      "factor": 1.0,
+      "evidence": [
+        "benchmarks/reference-builds/campaigns/p4/runs/claude-code/reviews/web-production-assurance-review.md"
+      ],
+      "notes": "Performed by a second reviewer that did not implement the build, who re-ran 74/74 Playwright tests and every collector, re-probed egress, submitted his own leads, attempted field injection and six-way concurrency, re-grepped the client bundle, and conducted an explicit benchmark-truthfulness sweep that produced five findings."
+    }
+  ],
+  "warnings": []
+}
