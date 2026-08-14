@@ -17,7 +17,7 @@ def load_json(path: Path):
 
 
 def parser() -> argparse.ArgumentParser:
-    p = argparse.ArgumentParser(description="Validate P4.1 benchmark evidence assurance sidecar.")
+    p = argparse.ArgumentParser(description="Validate P4.1/P4.2 benchmark evidence assurance sidecar.")
     p.add_argument("--manifest", required=True)
     p.add_argument("--repo-root", default=str(ROOT))
     return p
@@ -117,13 +117,27 @@ def main() -> int:
             require_path(row["evidence_ref"], f"mutable_cache:{row.get('route')}")
 
     deployment = data.get("deployment", {})
-    if deployment.get("status") == "public-https":
+    status = deployment.get("status")
+    deployment_class = deployment.get("deployment_class")
+    claimable = deployment.get("claimable_production")
+    if status == "public-https":
         url = deployment.get("url") or ""
         parsed = urlparse(url)
         if parsed.scheme != "https" or not parsed.netloc:
             failures.append("public deployment must use a valid https URL")
         require_path(deployment.get("evidence_ref"), "deployment.evidence_ref")
+        if deployment_class == "controlled-preview":
+            if claimable is not False:
+                failures.append("controlled preview cannot be claimable production")
+            warnings.append("controlled public HTTPS preview is available; production-domain blocker must remain non-pass")
+        elif deployment_class == "claimable-production":
+            if claimable is not True:
+                failures.append("claimable production deployment must set claimable_production=true")
+        else:
+            failures.append(f"public HTTPS deployment has invalid deployment_class: {deployment_class!r}")
     else:
+        if deployment_class != "unavailable" or claimable is not False:
+            failures.append("unavailable deployment must use deployment_class=unavailable and claimable_production=false")
         warnings.append("public HTTPS deployment unavailable; production-domain blocker cannot pass")
 
     if failures:
