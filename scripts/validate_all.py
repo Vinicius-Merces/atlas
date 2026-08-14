@@ -187,6 +187,12 @@ def quick_steps(root: Path) -> list[ValidationStep]:
         ),
         _python_step(
             root,
+            "relayops-live-saas-campaign",
+            "Validate P5 RelayOps live SaaS campaign",
+            "validate_relayops_live_campaign.py",
+        ),
+        _python_step(
+            root,
             "capability-catalogs",
             "Check agent and skill catalogs",
             "generate_capability_catalogs.py",
