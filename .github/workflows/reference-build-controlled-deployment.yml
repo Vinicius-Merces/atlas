@@ -1,0 +1,331 @@
+name: Reference Build Controlled Deployment
+
+on:
+  pull_request:
+    paths:
+      - ".github/workflows/reference-build-controlled-deployment.yml"
+      - "scripts/probe_controlled_deployment.py"
+      - "scripts/validate_controlled_deployment_evidence.py"
+      - "scripts/controlled_deployment_smoke_server.py"
+      - "benchmarks/reference-builds/campaigns/p4/controlled-deployment/**"
+      - "benchmarks/reference-builds/campaigns/p4/assurance/deployment-adapter.contract.yaml"
+  workflow_dispatch:
+    inputs:
+      ref:
+        description: Frozen target branch or commit to deploy
+        required: true
+        type: string
+      app_path:
+        description: Application directory relative to repository root
+        required: true
+        type: string
+      install_command:
+        description: Dependency install command
+        required: true
+        default: npm ci
+        type: string
+      build_command:
+        description: Production build command
+        required: true
+        default: npm run build
+        type: string
+      start_command:
+        description: Production start command
+        required: true
+        default: npm start
+        type: string
+      port:
+        description: Local application port
+        required: true
+        default: "4173"
+        type: string
+      health_path:
+        description: Health path used for local and public verification
+        required: true
+        default: "/"
+        type: string
+      routes:
+        description: Comma-separated routes for portable browser evidence
+        required: true
+        default: "/"
+        type: string
+      evidence_dir:
+        description: Artifact directory relative to repository root
+        required: true
+        default: benchmarks/reference-builds/runtime-evidence/controlled-deployment
+        type: string
+      collect_browser:
+        description: Collect Chromium evidence against the public HTTPS URL
+        required: true
+        default: true
+        type: boolean
+
+permissions:
+  contents: read
+
+concurrency:
+  group: reference-build-controlled-deployment-${{ github.event_name }}-${{ github.ref }}
+  cancel-in-progress: false
+
+env:
+  CLOUDFLARED_VERSION: "2026.5.2"
+  CLOUDFLARED_LINUX_AMD64_SHA256: "5286698547f03df745adb2355f04c12dde52ef425491e81f433642d695521886"
+
+jobs:
+  adapter-smoke:
+    if: github.event_name == 'pull_request'
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - name: Check out candidate
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install schema validator
+        run: python -m pip install jsonschema==4.25.1
+
+      - name: Start deterministic smoke origin
+        run: |
+          nohup python scripts/controlled_deployment_smoke_server.py --port 4173 > /tmp/atlas-deployment-origin.log 2>&1 &
+          echo $! > /tmp/atlas-deployment-origin.pid
+          for i in $(seq 1 30); do
+            if curl --fail --silent http://127.0.0.1:4173/healthz >/dev/null; then
+              exit 0
+            fi
+            sleep 1
+          done
+          cat /tmp/atlas-deployment-origin.log || true
+          exit 1
+
+      - name: Install pinned cloudflared
+        run: |
+          curl --fail --location --retry 3 \
+            "https://github.com/cloudflare/cloudflared/releases/download/${CLOUDFLARED_VERSION}/cloudflared-linux-amd64" \
+            --output /tmp/cloudflared
+          echo "${CLOUDFLARED_LINUX_AMD64_SHA256}  /tmp/cloudflared" | sha256sum --check --strict
+          chmod +x /tmp/cloudflared
+          /tmp/cloudflared --version
+
+      - name: Open campaign-owned public HTTPS ingress
+        id: tunnel
+        run: |
+          STARTED_AT=$(date -u +%Y-%m-%dT%H:%M:%SZ)
+          nohup /tmp/cloudflared tunnel --no-autoupdate --url http://127.0.0.1:4173 > /tmp/atlas-cloudflared.log 2>&1 &
+          echo $! > /tmp/atlas-cloudflared.pid
+          URL=""
+          for i in $(seq 1 60); do
+            URL=$(grep -oE 'https://[a-z0-9-]+\.trycloudflare\.com' /tmp/atlas-cloudflared.log | head -n 1 || true)
+            if [ -n "$URL" ]; then
+              break
+            fi
+            sleep 1
+          done
+          if [ -z "$URL" ]; then
+            cat /tmp/atlas-cloudflared.log || true
+            exit 1
+          fi
+          echo "url=$URL" >> "$GITHUB_OUTPUT"
+          echo "started_at=$STARTED_AT" >> "$GITHUB_OUTPUT"
+          echo "Public controlled preview: $URL"
+
+      - name: Verify public ingress is reachable
+        env:
+          PUBLIC_URL: ${{ steps.tunnel.outputs.url }}
+        run: |
+          for i in $(seq 1 60); do
+            if curl --fail --silent --show-error "$PUBLIC_URL/healthz" | grep -q '^ok'; then
+              exit 0
+            fi
+            sleep 1
+          done
+          cat /tmp/atlas-cloudflared.log || true
+          exit 1
+
+      - name: Record and validate deployment evidence
+        env:
+          PUBLIC_URL: ${{ steps.tunnel.outputs.url }}
+          STARTED_AT: ${{ steps.tunnel.outputs.started_at }}
+        run: |
+          mkdir -p benchmarks/reference-builds/runtime-evidence/p4-2-smoke
+          python scripts/probe_controlled_deployment.py \
+            --url "$PUBLIC_URL" \
+            --source-ref "${GITHUB_HEAD_REF}" \
+            --source-commit "$(git rev-parse HEAD)" \
+            --provider cloudflare-quick-tunnel \
+            --deployment-class controlled-preview \
+            --health-path /healthz \
+            --started-at "$STARTED_AT" \
+            --output benchmarks/reference-builds/runtime-evidence/p4-2-smoke/deployment.json
+          python scripts/validate_controlled_deployment_evidence.py \
+            --manifest benchmarks/reference-builds/runtime-evidence/p4-2-smoke/deployment.json
+          cp /tmp/atlas-cloudflared.log benchmarks/reference-builds/runtime-evidence/p4-2-smoke/cloudflared.log
+          cp /tmp/atlas-deployment-origin.log benchmarks/reference-builds/runtime-evidence/p4-2-smoke/origin.log
+
+      - name: Upload controlled deployment smoke evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: p4-2-controlled-deployment-smoke
+          path: benchmarks/reference-builds/runtime-evidence/p4-2-smoke
+          if-no-files-found: error
+          retention-days: 7
+
+  controlled-deployment:
+    if: github.event_name == 'workflow_dispatch'
+    runs-on: ubuntu-latest
+    timeout-minutes: 35
+    steps:
+      - name: Check out frozen target ref
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ inputs.ref }}
+
+      - name: Record frozen source commit
+        id: source
+        run: echo "sha=$(git rev-parse HEAD)" >> "$GITHUB_OUTPUT"
+
+      - name: Set up Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install target dependencies
+        working-directory: ${{ inputs.app_path }}
+        env:
+          INSTALL_COMMAND: ${{ inputs.install_command }}
+        run: bash -lc "$INSTALL_COMMAND"
+
+      - name: Build target application
+        working-directory: ${{ inputs.app_path }}
+        env:
+          BUILD_COMMAND: ${{ inputs.build_command }}
+        run: bash -lc "$BUILD_COMMAND"
+
+      - name: Start target application
+        env:
+          PORT: ${{ inputs.port }}
+          START_COMMAND: ${{ inputs.start_command }}
+        run: |
+          cd "${{ inputs.app_path }}"
+          nohup bash -lc "$START_COMMAND" > /tmp/atlas-reference-app.log 2>&1 &
+          echo $! > /tmp/atlas-reference-app.pid
+
+      - name: Verify local health
+        run: |
+          for i in $(seq 1 60); do
+            if curl --fail --silent "http://127.0.0.1:${{ inputs.port }}${{ inputs.health_path }}" >/dev/null; then
+              exit 0
+            fi
+            sleep 1
+          done
+          cat /tmp/atlas-reference-app.log || true
+          exit 1
+
+      - name: Install pinned cloudflared
+        run: |
+          curl --fail --location --retry 3 \
+            "https://github.com/cloudflare/cloudflared/releases/download/${CLOUDFLARED_VERSION}/cloudflared-linux-amd64" \
+            --output /tmp/cloudflared
+          echo "${CLOUDFLARED_LINUX_AMD64_SHA256}  /tmp/cloudflared" | sha256sum --check --strict
+          chmod +x /tmp/cloudflared
+
+      - name: Open controlled public HTTPS ingress
+        id: tunnel
+        run: |
+          STARTED_AT=$(date -u +%Y-%m-%dT%H:%M:%SZ)
+          nohup /tmp/cloudflared tunnel --no-autoupdate --url "http://127.0.0.1:${{ inputs.port }}" > /tmp/atlas-cloudflared.log 2>&1 &
+          echo $! > /tmp/atlas-cloudflared.pid
+          URL=""
+          for i in $(seq 1 60); do
+            URL=$(grep -oE 'https://[a-z0-9-]+\.trycloudflare\.com' /tmp/atlas-cloudflared.log | head -n 1 || true)
+            if [ -n "$URL" ]; then
+              break
+            fi
+            sleep 1
+          done
+          if [ -z "$URL" ]; then
+            cat /tmp/atlas-cloudflared.log || true
+            exit 1
+          fi
+          echo "url=$URL" >> "$GITHUB_OUTPUT"
+          echo "started_at=$STARTED_AT" >> "$GITHUB_OUTPUT"
+          echo "Public controlled preview: $URL"
+
+      - name: Verify public endpoint
+        env:
+          PUBLIC_URL: ${{ steps.tunnel.outputs.url }}
+        run: |
+          for i in $(seq 1 60); do
+            if curl --fail --silent "$PUBLIC_URL${{ inputs.health_path }}" >/dev/null; then
+              exit 0
+            fi
+            sleep 1
+          done
+          cat /tmp/atlas-cloudflared.log || true
+          exit 1
+
+      - name: Install evidence dependencies
+        run: python -m pip install jsonschema==4.25.1
+
+      - name: Record controlled deployment evidence
+        env:
+          PUBLIC_URL: ${{ steps.tunnel.outputs.url }}
+          STARTED_AT: ${{ steps.tunnel.outputs.started_at }}
+        run: |
+          mkdir -p '${{ inputs.evidence_dir }}'
+          python scripts/probe_controlled_deployment.py \
+            --url "$PUBLIC_URL" \
+            --source-ref '${{ inputs.ref }}' \
+            --source-commit '${{ steps.source.outputs.sha }}' \
+            --provider cloudflare-quick-tunnel \
+            --deployment-class controlled-preview \
+            --health-path '${{ inputs.health_path }}' \
+            --started-at "$STARTED_AT" \
+            --output '${{ inputs.evidence_dir }}/deployment.json'
+          python scripts/validate_controlled_deployment_evidence.py \
+            --manifest '${{ inputs.evidence_dir }}/deployment.json'
+
+      - name: Install campaign-owned Chromium runner
+        if: inputs.collect_browser
+        run: |
+          mkdir -p .atlas-browser-runner
+          cd .atlas-browser-runner
+          npm init -y >/dev/null 2>&1
+          npm install --ignore-scripts playwright@1.55.0
+          npx playwright install --with-deps chromium
+
+      - name: Collect portable browser evidence against public HTTPS
+        if: inputs.collect_browser
+        env:
+          NODE_PATH: ${{ github.workspace }}/.atlas-browser-runner/node_modules
+          PUBLIC_URL: ${{ steps.tunnel.outputs.url }}
+        run: |
+          node scripts/collect_portable_browser_evidence.cjs \
+            --base-url "$PUBLIC_URL" \
+            --routes '${{ inputs.routes }}' \
+            --output-dir '${{ inputs.evidence_dir }}/browser'
+
+      - name: Record process logs
+        if: always()
+        run: |
+          mkdir -p '${{ inputs.evidence_dir }}'
+          cp /tmp/atlas-reference-app.log '${{ inputs.evidence_dir }}/application.log' || true
+          cp /tmp/atlas-cloudflared.log '${{ inputs.evidence_dir }}/cloudflared.log' || true
+
+      - name: Upload controlled deployment evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: reference-build-controlled-deployment
+          path: ${{ inputs.evidence_dir }}
+          if-no-files-found: error
+          retention-days: 14
