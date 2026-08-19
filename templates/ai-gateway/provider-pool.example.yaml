@@ -44,7 +44,7 @@ providers:
     base_url_env: GROQ_BASE_URL
     api_key_env: GROQ_API_KEY
     model_env: GROQ_MODEL
-    capabilities: [chat, structured-output, tools]
+    capabilities: [chat]
     privacy:
       max_data_class: public
     fallback:
@@ -78,7 +78,7 @@ providers:
     base_url_env: CLOUDFLARE_AI_BASE_URL
     api_key_env: CLOUDFLARE_API_KEY
     model_env: CLOUDFLARE_AI_MODEL
-    capabilities: [chat, embeddings]
+    capabilities: [chat]
     privacy:
       max_data_class: public
     fallback:
@@ -137,6 +137,8 @@ providers:
     health:
       cooldown_seconds: 10
 
+# Add structured-output, tools, reasoning, vision, embeddings, or other
+# capabilities only after the exact configured model has been verified for them.
 # Optional adapters such as GitHub Models or Gemini should be added only after
 # their current API shape, data policy, free-tier eligibility, and capability
 # profile have been verified for the project. Do not commit real credentials.
