@@ -51,6 +51,25 @@ LLM_FALLBACK_PROVIDER=<optional>
 
 Do not commit real production endpoints, credentials, private network details, or secrets to shared templates or memory.
 
+## Free AI Pool for demos
+
+Use `framework/free-ai-pool-model.md` when the product should start with free-tier or owned-compute inference while retaining a clean path to paid capacity.
+
+A normal demo boundary is:
+
+```text
+AI_MODE=free_pool
+AI_ALLOW_PAID_FALLBACK=false
+```
+
+The application still calls one server-side gateway. Provider choice, credentials, capability checks, privacy filtering, cooldown, fallback, and future paid migration remain behind that boundary.
+
+Do not interpret `free_pool` as a weaker security or quality mode. Free-tier eligibility is external provider state and must be refreshed before deployment. The selected concrete model still needs representative evaluation for the logical capability profile.
+
+Copyable starters are available under `templates/ai-gateway/`, with deployment guidance in `docs/free-ai-demo-guide.md`.
+
+For Square Cloud applications, keep the application/API on Square and keep heavy LLM inference external. Use approved hosted APIs or an authenticated Ollama endpoint on external compute.
+
 ## Evaluate representative failures
 
 Evaluation should include ambiguous requests, missing context, adversarial inputs, unsupported tasks, context-limit behavior, malformed structured outputs, provider/model differences, tool failures, and sensitive-data scenarios.
@@ -103,6 +122,7 @@ Do not log raw prompts, private retrieved context, secrets, personal data, or mo
 ## Related models
 
 - `framework/llm-provider-routing-model.md`
+- `framework/free-ai-pool-model.md`
 - `framework/automation-model.md`
 - `framework/observability-model.md`
 - `framework/testing-model.md`
