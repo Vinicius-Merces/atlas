@@ -112,6 +112,39 @@ def test_non_replay_safe_request_does_not_hop_provider(monkeypatch: pytest.Monke
     assert exc.value.failure_class == "provider_unavailable"
 
 
+def test_paid_allowed_mode_can_select_paid_provider(monkeypatch: pytest.MonkeyPatch) -> None:
+    module = load_gateway_module()
+    paid = provider(module, "paid", priority=1, financial_class="paid")
+    monkeypatch.setenv("AI_MODE", "paid_allowed")
+    monkeypatch.setenv("AI_ALLOW_PAID_FALLBACK", "false")
+    monkeypatch.setattr(module, "_invoke", lambda selected, messages, *, timeout_seconds: "paid-ok")
+
+    result = module.FreeAIGateway([paid]).chat([{"role": "user", "content": "hello"}])
+    assert result.provider == "paid"
+
+
+def test_unknown_mode_fails_closed(monkeypatch: pytest.MonkeyPatch) -> None:
+    module = load_gateway_module()
+    monkeypatch.setenv("AI_MODE", "surprise-mode")
+    with pytest.raises(module.GatewayError) as exc:
+        module.FreeAIGateway([])
+    assert exc.value.failure_class == "invalid_configuration"
+
+
+def test_default_provider_catalog_includes_verified_optional_routes(monkeypatch: pytest.MonkeyPatch) -> None:
+    module = load_gateway_module()
+    monkeypatch.setenv("GITHUB_MODELS_ENABLED", "true")
+    monkeypatch.setenv("GITHUB_MODELS_MODEL", "openai/gpt-4.1")
+    monkeypatch.setenv("GEMINI_ENABLED", "true")
+    monkeypatch.setenv("GEMINI_MODEL", "gemini-demo")
+
+    providers = {item.id: item for item in module.providers_from_env()}
+    assert providers["github-models"].base_url == "https://models.github.ai/inference"
+    assert providers["gemini-free"].base_url == "https://generativelanguage.googleapis.com/v1beta/openai"
+    assert providers["github-models"].adapter == "openai-compatible"
+    assert providers["gemini-free"].adapter == "openai-compatible"
+
+
 def test_free_ai_pool_assets_are_packaged() -> None:
     required = [
         ROOT / "framework" / "free-ai-pool-model.md",
