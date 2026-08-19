@@ -62,6 +62,8 @@ const RETRYABLE = new Set<FailureClass>([
   "provider_unavailable",
 ]);
 
+const VALID_MODES = new Set(["free_pool", "provider", "local_only", "paid_allowed"]);
+
 export class FreeAIGateway {
   private readonly mode = env("AI_MODE", "free_pool");
   private readonly pinnedProvider = env("AI_PROVIDER", "");
@@ -69,7 +71,11 @@ export class FreeAIGateway {
   private readonly totalTimeoutMs = boundedInt("AI_TOTAL_TIMEOUT_MS", 20_000, 500, 120_000);
   private readonly allowPaidFallback = boolEnv("AI_ALLOW_PAID_FALLBACK", false);
 
-  constructor(private readonly providers: Provider[] = providersFromEnv()) {}
+  constructor(private readonly providers: Provider[] = providersFromEnv()) {
+    if (!VALID_MODES.has(this.mode)) {
+      throw new GatewayError("invalid_configuration", `Unsupported AI_MODE: ${this.mode}`);
+    }
+  }
 
   async chat(
     messages: Message[],
@@ -149,7 +155,7 @@ export class FreeAIGateway {
         if (this.mode === "local_only") return provider.financialClass === "owned-compute";
         if (this.mode === "free_pool") return ["free-tier", "owned-compute"].includes(provider.financialClass);
         if (this.mode === "provider") return provider.id === this.pinnedProvider;
-        if (provider.financialClass === "paid" && !this.allowPaidFallback) return false;
+        if (this.mode !== "paid_allowed" && provider.financialClass === "paid" && !this.allowPaidFallback) return false;
         return true;
       })
       .sort((a, b) => a.priority - b.priority);
@@ -209,6 +215,32 @@ function providersFromEnv(): Provider[] {
       maxDataClassEnv: "OPENROUTER_MAX_DATA_CLASS",
       financialClass: "free-tier",
       priority: 40,
+    }),
+    provider({
+      id: "github-models",
+      adapter: "openai-compatible",
+      enabledEnv: "GITHUB_MODELS_ENABLED",
+      baseUrlEnv: "GITHUB_MODELS_BASE_URL",
+      baseUrlDefault: "https://models.github.ai/inference",
+      apiKeyEnv: "GITHUB_MODELS_TOKEN",
+      modelEnv: "GITHUB_MODELS_MODEL",
+      capabilitiesEnv: "GITHUB_MODELS_CAPABILITIES",
+      maxDataClassEnv: "GITHUB_MODELS_MAX_DATA_CLASS",
+      financialClass: "free-tier",
+      priority: 45,
+    }),
+    provider({
+      id: "gemini-free",
+      adapter: "openai-compatible",
+      enabledEnv: "GEMINI_ENABLED",
+      baseUrlEnv: "GEMINI_BASE_URL",
+      baseUrlDefault: "https://generativelanguage.googleapis.com/v1beta/openai",
+      apiKeyEnv: "GEMINI_API_KEY",
+      modelEnv: "GEMINI_MODEL",
+      capabilitiesEnv: "GEMINI_CAPABILITIES",
+      maxDataClassEnv: "GEMINI_MAX_DATA_CLASS",
+      financialClass: "free-tier",
+      priority: 47,
     }),
     provider({
       id: "ollama-remote",
@@ -277,15 +309,15 @@ async function invoke(provider: Provider, messages: Message[], timeoutMs: number
 
   try {
     const isOpenAI = provider.adapter === "openai-compatible";
-    const url = isOpenAI
-      ? `${provider.baseUrl}/chat/completions`
-      : `${provider.baseUrl}/chat`;
-    const body = isOpenAI
-      ? { model: provider.model, messages, stream: false }
-      : { model: provider.model, messages, stream: false };
+    const url = isOpenAI ? `${provider.baseUrl}/chat/completions` : `${provider.baseUrl}/chat`;
+    const body = { model: provider.model, messages, stream: false };
 
     const headers: Record<string, string> = { "Content-Type": "application/json" };
     if (provider.apiKey) headers.Authorization = `Bearer ${provider.apiKey}`;
+    if (provider.id === "github-models") {
+      headers.Accept = "application/vnd.github+json";
+      headers["X-GitHub-Api-Version"] = env("GITHUB_MODELS_API_VERSION", "2026-03-10");
+    }
 
     const response = await fetch(url, {
       method: "POST",
