@@ -24,6 +24,8 @@ RETRYABLE_FAILURES = {
     "provider_unavailable",
 }
 
+VALID_MODES = {"free_pool", "provider", "local_only", "paid_allowed"}
+
 
 class GatewayError(RuntimeError):
     def __init__(self, failure_class: str, message: str, provider: str | None = None):
@@ -70,6 +72,8 @@ class FreeAIGateway:
 
     def __init__(self, providers: list[Provider] | None = None):
         self.mode = os.getenv("AI_MODE", "free_pool").strip() or "free_pool"
+        if self.mode not in VALID_MODES:
+            raise GatewayError("invalid_configuration", f"Unsupported AI_MODE: {self.mode}")
         self.pinned_provider = os.getenv("AI_PROVIDER", "").strip()
         self.max_attempts = _env_int("AI_MAX_ATTEMPTS", 3, minimum=1, maximum=8)
         self.total_timeout_ms = _env_int("AI_TOTAL_TIMEOUT_MS", 20_000, minimum=500, maximum=120_000)
@@ -122,7 +126,6 @@ class FreeAIGateway:
                 if exc.failure_class in {"rate_limited", "capacity_exhausted", "provider_unavailable"}:
                     provider.cooldown_until = time.monotonic() + provider.cooldown_seconds
 
-                # Blind provider hopping is unsafe for auth/policy/schema failures.
                 if exc.failure_class not in RETRYABLE_FAILURES:
                     raise
                 if not replay_safe:
@@ -155,7 +158,7 @@ class FreeAIGateway:
                 continue
             if self.mode == "provider" and provider.id != self.pinned_provider:
                 continue
-            if provider.financial_class == "paid" and not self.allow_paid_fallback and self.mode != "provider":
+            if self.mode not in {"paid_allowed", "provider"} and provider.financial_class == "paid" and not self.allow_paid_fallback:
                 continue
 
             eligible.append(provider)
@@ -217,6 +220,32 @@ def providers_from_env() -> list[Provider]:
             max_data_class_env="OPENROUTER_MAX_DATA_CLASS",
             financial_class="free-tier",
             priority=40,
+        ),
+        _provider(
+            "github-models",
+            adapter="openai-compatible",
+            enabled_env="GITHUB_MODELS_ENABLED",
+            base_url_env="GITHUB_MODELS_BASE_URL",
+            base_url_default="https://models.github.ai/inference",
+            api_key_env="GITHUB_MODELS_TOKEN",
+            model_env="GITHUB_MODELS_MODEL",
+            capabilities_env="GITHUB_MODELS_CAPABILITIES",
+            max_data_class_env="GITHUB_MODELS_MAX_DATA_CLASS",
+            financial_class="free-tier",
+            priority=45,
+        ),
+        _provider(
+            "gemini-free",
+            adapter="openai-compatible",
+            enabled_env="GEMINI_ENABLED",
+            base_url_env="GEMINI_BASE_URL",
+            base_url_default="https://generativelanguage.googleapis.com/v1beta/openai",
+            api_key_env="GEMINI_API_KEY",
+            model_env="GEMINI_MODEL",
+            capabilities_env="GEMINI_CAPABILITIES",
+            max_data_class_env="GEMINI_MAX_DATA_CLASS",
+            financial_class="free-tier",
+            priority=47,
         ),
         _provider(
             "ollama-remote",
@@ -281,11 +310,7 @@ def _provider(
 def _invoke(provider: Provider, messages: list[dict[str, str]], *, timeout_seconds: float) -> str:
     if provider.adapter == "openai-compatible":
         url = f"{provider.base_url}/chat/completions"
-        payload = {
-            "model": provider.model,
-            "messages": messages,
-            "stream": False,
-        }
+        payload = {"model": provider.model, "messages": messages, "stream": False}
         body = _post_json(url, payload, provider, timeout_seconds)
         try:
             return str(body["choices"][0]["message"]["content"])
@@ -298,11 +323,7 @@ def _invoke(provider: Provider, messages: list[dict[str, str]], *, timeout_secon
 
     if provider.adapter == "ollama-native":
         url = f"{provider.base_url}/chat"
-        payload = {
-            "model": provider.model,
-            "messages": messages,
-            "stream": False,
-        }
+        payload = {"model": provider.model, "messages": messages, "stream": False}
         body = _post_json(url, payload, provider, timeout_seconds)
         try:
             return str(body["message"]["content"])
@@ -313,24 +334,18 @@ def _invoke(provider: Provider, messages: list[dict[str, str]], *, timeout_secon
                 provider=provider.id,
             ) from exc
 
-    raise GatewayError(
-        "invalid_configuration",
-        f"Unsupported adapter: {provider.adapter}",
-        provider=provider.id,
-    )
+    raise GatewayError("invalid_configuration", f"Unsupported adapter: {provider.adapter}", provider=provider.id)
 
 
 def _post_json(url: str, payload: dict[str, Any], provider: Provider, timeout_seconds: float) -> dict[str, Any]:
     headers = {"Content-Type": "application/json"}
     if provider.api_key:
         headers["Authorization"] = f"Bearer {provider.api_key}"
+    if provider.id == "github-models":
+        headers["Accept"] = "application/vnd.github+json"
+        headers["X-GitHub-Api-Version"] = os.getenv("GITHUB_MODELS_API_VERSION", "2026-03-10")
 
-    request = Request(
-        url,
-        data=json.dumps(payload).encode("utf-8"),
-        headers=headers,
-        method="POST",
-    )
+    request = Request(url, data=json.dumps(payload).encode("utf-8"), headers=headers, method="POST")
 
     try:
         with urlopen(request, timeout=timeout_seconds) as response:
@@ -338,26 +353,15 @@ def _post_json(url: str, payload: dict[str, Any], provider: Provider, timeout_se
             return json.loads(raw)
     except HTTPError as exc:
         failure_class = _classify_http(exc.code)
-        raise GatewayError(
-            failure_class,
-            f"Provider {provider.id} returned HTTP {exc.code}",
-            provider=provider.id,
-        ) from exc
+        raise GatewayError(failure_class, f"Provider {provider.id} returned HTTP {exc.code}", provider=provider.id) from exc
     except (TimeoutError, socket.timeout) as exc:
         raise GatewayError("timeout", f"Provider {provider.id} timed out", provider=provider.id) from exc
     except URLError as exc:
         reason = getattr(exc, "reason", None)
-        if isinstance(reason, (TimeoutError, socket.timeout)):
-            failure_class = "timeout"
-        else:
-            failure_class = "provider_unavailable"
+        failure_class = "timeout" if isinstance(reason, (TimeoutError, socket.timeout)) else "provider_unavailable"
         raise GatewayError(failure_class, f"Provider {provider.id} request failed", provider=provider.id) from exc
     except json.JSONDecodeError as exc:
-        raise GatewayError(
-            "invalid_structured_output",
-            f"Provider {provider.id} returned invalid JSON",
-            provider=provider.id,
-        ) from exc
+        raise GatewayError("invalid_structured_output", f"Provider {provider.id} returned invalid JSON", provider=provider.id) from exc
 
 
 def _classify_http(status: int) -> str:
