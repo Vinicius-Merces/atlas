@@ -1,0 +1,142 @@
+version: 1
+mode: free_pool
+default_profile: demo-chat
+max_attempts: 3
+total_timeout_ms: 20000
+allow_paid_fallback: false
+
+profiles:
+  demo-chat:
+    requires: [chat]
+    data_class: public
+    latency_ms: 12000
+    replay_safe: true
+    paid_fallback: false
+
+  classification-low-cost:
+    requires: [chat, structured-output]
+    data_class: internal
+    latency_ms: 6000
+    replay_safe: true
+    paid_fallback: false
+
+  support-summary:
+    requires: [chat]
+    data_class: internal
+    latency_ms: 8000
+    replay_safe: true
+    paid_fallback: false
+
+  high-reasoning:
+    requires: [chat, reasoning]
+    data_class: internal
+    latency_ms: 20000
+    replay_safe: true
+    paid_fallback: false
+
+providers:
+  groq-demo:
+    adapter: openai-compatible
+    class: hosted
+    financial_class: free-tier
+    priority: 10
+    enabled_env: GROQ_ENABLED
+    base_url_env: GROQ_BASE_URL
+    api_key_env: GROQ_API_KEY
+    model_env: GROQ_MODEL
+    capabilities: [chat, structured-output, tools]
+    privacy:
+      max_data_class: public
+    fallback:
+      eligible: true
+    health:
+      cooldown_seconds: 30
+
+  ollama-cloud:
+    adapter: ollama-native
+    class: hosted
+    financial_class: free-tier
+    priority: 20
+    enabled_env: OLLAMA_CLOUD_ENABLED
+    base_url_env: OLLAMA_CLOUD_BASE_URL
+    api_key_env: OLLAMA_API_KEY
+    model_env: OLLAMA_CLOUD_MODEL
+    capabilities: [chat]
+    privacy:
+      max_data_class: public
+    fallback:
+      eligible: true
+    health:
+      cooldown_seconds: 30
+
+  cloudflare-workers-ai:
+    adapter: openai-compatible
+    class: hosted
+    financial_class: free-tier
+    priority: 30
+    enabled_env: CLOUDFLARE_AI_ENABLED
+    base_url_env: CLOUDFLARE_AI_BASE_URL
+    api_key_env: CLOUDFLARE_API_KEY
+    model_env: CLOUDFLARE_AI_MODEL
+    capabilities: [chat, embeddings]
+    privacy:
+      max_data_class: public
+    fallback:
+      eligible: true
+    health:
+      cooldown_seconds: 30
+
+  openrouter-free:
+    adapter: openai-compatible
+    class: hosted
+    financial_class: free-tier
+    priority: 40
+    enabled_env: OPENROUTER_ENABLED
+    base_url_env: OPENROUTER_BASE_URL
+    api_key_env: OPENROUTER_API_KEY
+    model_env: OPENROUTER_MODEL
+    capabilities: [chat]
+    privacy:
+      max_data_class: public
+    fallback:
+      eligible: true
+    health:
+      cooldown_seconds: 60
+
+  ollama-remote:
+    adapter: ollama-native
+    class: self-hosted
+    financial_class: owned-compute
+    priority: 50
+    enabled_env: OLLAMA_REMOTE_ENABLED
+    base_url_env: OLLAMA_REMOTE_BASE_URL
+    api_key_env: OLLAMA_REMOTE_GATEWAY_KEY
+    model_env: OLLAMA_REMOTE_MODEL
+    capabilities: [chat]
+    privacy:
+      max_data_class: confidential
+    fallback:
+      eligible: true
+    health:
+      cooldown_seconds: 20
+
+  ollama-local:
+    adapter: ollama-native
+    class: local
+    financial_class: owned-compute
+    priority: 60
+    enabled_env: OLLAMA_LOCAL_ENABLED
+    base_url_env: OLLAMA_LOCAL_BASE_URL
+    api_key_env: OLLAMA_LOCAL_GATEWAY_KEY
+    model_env: OLLAMA_LOCAL_MODEL
+    capabilities: [chat]
+    privacy:
+      max_data_class: confidential
+    fallback:
+      eligible: true
+    health:
+      cooldown_seconds: 10
+
+# Optional adapters such as GitHub Models or Gemini should be added only after
+# their current API shape, data policy, free-tier eligibility, and capability
+# profile have been verified for the project. Do not commit real credentials.
