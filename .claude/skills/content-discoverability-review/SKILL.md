@@ -22,6 +22,8 @@ Use when changing site information architecture, navigation, internal linking, c
 - Rendering approach
 - Content ownership/freshness model
 - Existing technical SEO and structured-data evidence
+- Current official search-platform guidance when making AI-search-specific recommendations
+- Search Console/analytics evidence when available
 
 ## Procedure
 
@@ -34,9 +36,14 @@ Use when changing site information architecture, navigation, internal linking, c
 7. Use `structured-data-validation` when entity markup exists; structured data must describe real visible/authoritative content rather than substitute for it.
 8. Assess images/video/other media for useful surrounding text, labels, captions, and landing-page context when they carry material information.
 9. Review freshness, dates/version signals, stale content, superseded pages, and internal links pointing to deprecated material.
-10. For AI-oriented discovery, follow the same crawlability, people-first usefulness, technical SEO, and accessible-content principles; do not invent unsupported LLM-only markup or promise inclusion.
-11. Identify content gaps only when a real user/business information need is unsupported, not merely because a keyword/tool suggests producing more pages.
-12. Record discoverability evidence separately from ranking/traffic expectations.
+10. For AI-oriented discovery, preserve the same crawlability, people-first usefulness, technical SEO, accessible-content, and authoritative-source principles. Do not invent unsupported LLM-only markup or promise inclusion.
+11. For Google Search AI features, current official guidance should be treated as authoritative for Google-specific claims: normal SEO/indexability remains foundational and no special AI-only markup or machine-readable text file is required for inclusion. Re-check official guidance before publishing a recommendation because this area changes quickly.
+12. Do not present `llms.txt`, AI-specific text files, or a special schema as a Google Search requirement. Evaluate such files separately only when another explicit consumer/runtime has a documented use for them.
+13. Prefer unique, useful, non-commodity content, clear firsthand expertise/evidence, and well-supported media over scaled pages created only to target speculative AI/GEO/AEO queries.
+14. When Search Console exposes generative-AI-specific performance reporting for the property, use it as measurement evidence. Do not assume the report is universally available, and do not infer causality from impression/click changes alone.
+15. Consider agent/browser interaction readiness only when it serves a real product use case. Semantic HTML, accessible controls, stable URLs, explicit forms/actions, and clear authorization boundaries are more durable than speculative agent-only markup.
+16. Identify content gaps only when a real user/business information need is unsupported, not merely because a keyword/tool suggests producing more pages.
+17. Record discoverability evidence separately from ranking, traffic, AI citation, and conversion expectations.
 
 ## Outputs
 
@@ -45,6 +52,8 @@ Use when changing site information architecture, navigation, internal linking, c
 - Semantic/rendering findings
 - Entity/topic consistency findings
 - Freshness/duplication findings
+- AI-search guidance source/freshness note when material
+- Search Console/analytics evidence and availability limits when used
 - Prioritized content architecture recommendations and limitations
 
 ## Dependencies
@@ -58,11 +67,13 @@ Use when changing site information architecture, navigation, internal linking, c
 
 - Discoverability does not guarantee ranking, traffic, AI citation, Discover inclusion, or conversion.
 - No special AI-search markup replaces normal crawlability and useful authoritative content.
-- Search-engine behavior can change; current official guidance should be rechecked for externally visible claims.
+- Platform-specific AI-search features and reporting are temporally unstable; current official guidance must be rechecked for externally visible claims.
+- Search Console visibility reports, when available, measure observed performance and do not prove why a page was or was not selected by an AI/search system.
 
 ## Validation
 
 - Crawl or manually trace representative important pages from navigation/hubs and identify orphaned or excessive-depth paths.
 - Inspect rendered DOM/links for JavaScript-driven navigation and content.
 - Verify canonical/structured-data signals through the dedicated skills when applicable.
-- Confirm recommendations improve real human information access as well as machine discovery rather than producing keyword-only pages.
+- Verify AI-search-specific recommendations against current official documentation before treating them as requirements.
+- Confirm recommendations improve real human information access as well as machine discovery rather than producing keyword-only or speculative AI-only pages.
