@@ -24,7 +24,12 @@ def load_json(path: Path):
 
 
 def validate_no_benchmark_catalog_expansion() -> None:
-    """When git metadata is available, prove P5 infrastructure did not touch capability catalogs."""
+    """Prove P5 infrastructure changes do not also mutate capability catalogs.
+
+    The campaign rule is a scope guard for benchmark infrastructure. It must not
+    accidentally freeze normal ATLAS capability evolution forever after the P5
+    branches have been isolated from their recorded base commit.
+    """
     if not (ROOT / ".git").exists():
         return
     base = subprocess.run(
@@ -45,6 +50,27 @@ def validate_no_benchmark_catalog_expansion() -> None:
     )
     if changed.returncode != 0:
         fail("cannot inspect P5 capability-catalog scope")
+
+    changed_paths = [path for path in changed.stdout.splitlines() if path]
+
+    # The clean-room invariant applies when a change is modifying P5 campaign
+    # infrastructure itself. A later, unrelated framework/agent/skill PR must be
+    # allowed to evolve ATLAS because the benchmark target branches are already
+    # frozen from their recorded campaign base commit. The validator file itself
+    # is excluded from this trigger because changing a scope guard necessarily
+    # changes the guard; its own diff remains reviewable as governance code.
+    p5_infrastructure_prefixes = (
+        "benchmarks/reference-builds/campaigns/p5/",
+        "scripts/validate_relayops_assurance.py",
+        "tests/contract/test_relayops_live_campaign.py",
+        "tests/contract/test_relayops_assurance.py",
+    )
+    touches_p5_infrastructure = any(
+        path.startswith(p5_infrastructure_prefixes) for path in changed_paths
+    )
+    if not touches_p5_infrastructure:
+        return
+
     forbidden_prefixes = (
         "agents/",
         "skills/",
@@ -52,7 +78,7 @@ def validate_no_benchmark_catalog_expansion() -> None:
         ".claude/skills/",
     )
     touched = sorted(
-        path for path in changed.stdout.splitlines()
+        path for path in changed_paths
         if path.startswith(forbidden_prefixes)
     )
     if touched:
