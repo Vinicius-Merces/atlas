@@ -103,6 +103,40 @@ providers:
     health:
       cooldown_seconds: 60
 
+  github-models:
+    adapter: openai-compatible
+    class: hosted
+    financial_class: free-tier
+    priority: 45
+    enabled_env: GITHUB_MODELS_ENABLED
+    base_url_env: GITHUB_MODELS_BASE_URL
+    api_key_env: GITHUB_MODELS_TOKEN
+    model_env: GITHUB_MODELS_MODEL
+    capabilities: [chat]
+    privacy:
+      max_data_class: public
+    fallback:
+      eligible: true
+    health:
+      cooldown_seconds: 60
+
+  gemini-free:
+    adapter: openai-compatible
+    class: hosted
+    financial_class: free-tier
+    priority: 47
+    enabled_env: GEMINI_ENABLED
+    base_url_env: GEMINI_BASE_URL
+    api_key_env: GEMINI_API_KEY
+    model_env: GEMINI_MODEL
+    capabilities: [chat]
+    privacy:
+      max_data_class: public
+    fallback:
+      eligible: true
+    health:
+      cooldown_seconds: 60
+
   ollama-remote:
     adapter: ollama-native
     class: self-hosted
@@ -139,6 +173,5 @@ providers:
 
 # Add structured-output, tools, reasoning, vision, embeddings, or other
 # capabilities only after the exact configured model has been verified for them.
-# Optional adapters such as GitHub Models or Gemini should be added only after
-# their current API shape, data policy, free-tier eligibility, and capability
-# profile have been verified for the project. Do not commit real credentials.
+# Free-tier status, data-use terms, API limits and model identifiers are external
+# state. Revalidate them before every public/client deployment. Never commit real credentials.
