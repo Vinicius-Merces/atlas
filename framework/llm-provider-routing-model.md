@@ -183,9 +183,26 @@ The router must distinguish at least:
 
 Unknown or ambiguous failures must not silently downgrade into a lower-trust provider.
 
+## Free AI Pool specialization
+
+`framework/free-ai-pool-model.md` specializes this routing model for demos, prototypes, and low-volume workloads that should prefer current free-tier or owned-compute capacity before paid inference.
+
+The specialization adds:
+
+- `free_pool`, `provider`, `local_only`, and `paid_allowed` operating modes;
+- explicit `free-tier`, `owned-compute`, and `paid` financial classes;
+- quota/capacity cooldown as expected behavior;
+- bounded free-provider fallback;
+- demo-to-production promotion triggers;
+- reusable gateway templates under `templates/ai-gateway/`;
+- a Square Cloud profile where the app/API remains on Square and LLM inference stays external.
+
+Free status never outranks capability, privacy, evaluation, or reliability requirements. A provider's current free allowance is freshness-sensitive external state and must not become a permanent assumption inside product logic.
+
 ## ATLAS integration
 
 - `framework/ai-engineering-model.md` defines the broader AI lifecycle.
+- `framework/free-ai-pool-model.md` defines demo-first free/owned-compute routing.
 - `prompt-model-evaluation` supplies comparative quality evidence.
 - `external-api-resilience-review` applies to hosted providers.
 - `observability-design` defines runtime signals.
