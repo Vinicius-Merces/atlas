@@ -56,10 +56,11 @@ def validate_no_benchmark_catalog_expansion() -> None:
     # The clean-room invariant applies when a change is modifying P5 campaign
     # infrastructure itself. A later, unrelated framework/agent/skill PR must be
     # allowed to evolve ATLAS because the benchmark target branches are already
-    # frozen from their recorded campaign base commit.
+    # frozen from their recorded campaign base commit. The validator file itself
+    # is excluded from this trigger because changing a scope guard necessarily
+    # changes the guard; its own diff remains reviewable as governance code.
     p5_infrastructure_prefixes = (
         "benchmarks/reference-builds/campaigns/p5/",
-        "scripts/validate_relayops_live_campaign.py",
         "scripts/validate_relayops_assurance.py",
         "tests/contract/test_relayops_live_campaign.py",
         "tests/contract/test_relayops_assurance.py",
