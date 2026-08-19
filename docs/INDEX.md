@@ -20,8 +20,11 @@
 - [Architecture](../framework/architecture.md)
 - [Governance](../framework/governance.md)
 - [Quality Model](../framework/quality-model.md)
+- [Quality Gates Model](../framework/quality-gates-model.md)
 - [Context Engine](../framework/context-engine.md)
 - [Testing Model](../framework/testing-model.md)
+- [Observability Model](../framework/observability-model.md)
+- [Upstream Capability Radar](../framework/upstream-capability-radar-model.md)
 
 ## Knowledge and memory
 
@@ -88,6 +91,8 @@
 - [Reference Implementations](reference-implementation-guide.md)
 - [Automation](automation-guide.md)
 - [AI Engineering](ai-engineering-guide.md)
+- [LLM Provider Routing](../framework/llm-provider-routing-model.md)
+- [Growth Automation](../framework/growth-automation-model.md)
 - [Platform](platform-guide.md)
 - [Integrations](integration-guide.md)
 - [Product](product-guide.md)
