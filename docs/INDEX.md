@@ -92,6 +92,8 @@
 - [Automation](automation-guide.md)
 - [AI Engineering](ai-engineering-guide.md)
 - [LLM Provider Routing](../framework/llm-provider-routing-model.md)
+- [Free AI Pool](../framework/free-ai-pool-model.md)
+- [Free AI Demo Guide](free-ai-demo-guide.md)
 - [Growth Automation](../framework/growth-automation-model.md)
 - [Platform](platform-guide.md)
 - [Integrations](integration-guide.md)
