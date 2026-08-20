@@ -2,13 +2,14 @@
 
 > Generated from `.claude/registry.json`. Do not edit manually.
 
-Total: **128**
+Total: **131**
 
 - `accessibility-audit` → `.claude/skills/accessibility-audit/SKILL.md`
 - `adapter-drift-detection` → `.claude/skills/adapter-drift-detection/SKILL.md`
 - `admin-operations-surface` → `.claude/skills/admin-operations-surface/SKILL.md`
 - `adr-authoring` → `.claude/skills/adr-authoring/SKILL.md`
 - `agent-overlap-analysis` → `.claude/skills/agent-overlap-analysis/SKILL.md`
+- `ai-search-measurement` → `.claude/skills/ai-search-measurement/SKILL.md`
 - `ai-system-design` → `.claude/skills/ai-system-design/SKILL.md`
 - `analytics-implementation-audit` → `.claude/skills/analytics-implementation-audit/SKILL.md`
 - `api-contract-analysis` → `.claude/skills/api-contract-analysis/SKILL.md`
@@ -51,6 +52,7 @@ Total: **128**
 - `developer-onboarding-assessment` → `.claude/skills/developer-onboarding-assessment/SKILL.md`
 - `documentation-information-architecture` → `.claude/skills/documentation-information-architecture/SKILL.md`
 - `dual-runtime-validation` → `.claude/skills/dual-runtime-validation/SKILL.md`
+- `entity-authority-mapping` → `.claude/skills/entity-authority-mapping/SKILL.md`
 - `event-taxonomy-design` → `.claude/skills/event-taxonomy-design/SKILL.md`
 - `evidence-record-design` → `.claude/skills/evidence-record-design/SKILL.md`
 - `execution-checkpointing` → `.claude/skills/execution-checkpointing/SKILL.md`
@@ -62,6 +64,7 @@ Total: **128**
 - `framework-package-validation` → `.claude/skills/framework-package-validation/SKILL.md`
 - `frontend-craft-review` → `.claude/skills/frontend-craft-review/SKILL.md`
 - `frontend-stack-selection` → `.claude/skills/frontend-stack-selection/SKILL.md`
+- `generative-engine-optimization` → `.claude/skills/generative-engine-optimization/SKILL.md`
 - `immersive-3d-experience` → `.claude/skills/immersive-3d-experience/SKILL.md`
 - `incident-triage` → `.claude/skills/incident-triage/SKILL.md`
 - `incremental-patch-verification` → `.claude/skills/incremental-patch-verification/SKILL.md`

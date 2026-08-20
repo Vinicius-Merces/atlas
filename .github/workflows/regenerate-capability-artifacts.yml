@@ -2,6 +2,9 @@ name: Regenerate capability artifacts
 
 on:
   workflow_dispatch:
+  push:
+    branches:
+      - feat/generative-engine-optimization
 
 permissions:
   contents: write
@@ -30,6 +33,27 @@ jobs:
           python scripts/sync_codex_adapter.py
           python scripts/sync_native_skills.py
 
+      - name: Normalize README inventory
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+
+          path = Path("README.md")
+          text = path.read_text(encoding="utf-8")
+          replacements = [
+              ("| Workflows | 84 |", "| Workflows | 85 |"),
+              ("| Reviews | 75 |", "| Reviews | 76 |"),
+              ("See the [Agent Catalog](docs/agent-catalog.md) for all 87 descriptions.", "See the [Agent Catalog](docs/agent-catalog.md) for all 88 descriptions."),
+              ("See the [Skill Catalog](docs/skill-catalog.md) for all 128 descriptions.", "See the [Skill Catalog](docs/skill-catalog.md) for all 131 descriptions."),
+              ("P3 intentionally adds no new agents or skills: it tests whether the existing **88 agent surfaces and 131 skills** can actually compose into complete products before ATLAS expands the catalog again.", "P3 intentionally adds no new agents or skills: it tests whether the existing **87 agent surfaces and 128 skills** can actually compose into complete products before ATLAS expands the catalog again."),
+          ]
+          for old, new in replacements:
+              if old not in text:
+                  raise SystemExit(f"README normalization target not found: {old}")
+              text = text.replace(old, new, 1)
+          path.write_text(text, encoding="utf-8")
+          PY
+
       - name: Commit generated artifacts
         shell: bash
         run: |
@@ -39,6 +63,6 @@ jobs:
           fi
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add docs/agent-catalog.md docs/skill-catalog.md adapters/codex .agents/skills
-          git commit -m "chore: regenerate capability artifacts"
+          git add README.md docs/agent-catalog.md docs/skill-catalog.md adapters/codex .agents/skills
+          git commit -m "chore: regenerate GEO capability artifacts"
           git push origin HEAD:${GITHUB_REF_NAME}

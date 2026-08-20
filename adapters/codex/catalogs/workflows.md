@@ -2,7 +2,7 @@
 
 > Generated from `.claude/registry.json`. Do not edit manually.
 
-Total: **84**
+Total: **85**
 
 - `adapter-drift-audit` → `.claude/workflows/adapter-drift-audit.md`
 - `ai-feature-delivery` → `.claude/workflows/ai-feature-delivery.md`
@@ -38,6 +38,7 @@ Total: **84**
 - `framework-adoption` → `.claude/workflows/framework-adoption.md`
 - `framework-upgrade` → `.claude/workflows/framework-upgrade.md`
 - `frontend-feature-delivery` → `.claude/workflows/frontend-feature-delivery.md`
+- `generative-engine-optimization-delivery` → `.claude/workflows/generative-engine-optimization-delivery.md`
 - `incident-response` → `.claude/workflows/incident-response.md`
 - `integration-onboarding` → `.claude/workflows/integration-onboarding.md`
 - `interrupted-task-recovery` → `.claude/workflows/interrupted-task-recovery.md`
