@@ -2,7 +2,7 @@
 
 > Generated from `.claude/registry.json`. Do not edit manually.
 
-Total: **86**
+Total: **87**
 
 - `adapter-drift-auditor` → `.claude/agents/adapter-drift-auditor.md`
 - `adoption-architect` → `.claude/agents/adoption-architect.md`
@@ -36,6 +36,7 @@ Total: **86**
 - `experimentation-analyst` → `.claude/agents/experimentation-analyst.md`
 - `finops-engineer` → `.claude/agents/finops-engineer.md`
 - `frontend-engineer` → `.claude/agents/frontend-engineer.md`
+- `generative-engine-optimization-strategist` → `.claude/agents/generative-engine-optimization-strategist.md`
 - `governance-steward` → `.claude/agents/governance-steward.md`
 - `integration-engineer` → `.claude/agents/integration-engineer.md`
 - `knowledge-contradiction-reviewer` → `.claude/agents/knowledge-contradiction-reviewer.md`

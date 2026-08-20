@@ -4,7 +4,7 @@ Canonical, generated inventory of every agent under `.claude/agents/`. Each entr
 
 Regenerate both capability catalogs with `python scripts/generate_capability_catalogs.py`. Use `--check` in validation and CI.
 
-Total: 87 agents.
+Total: 88 agents.
 
 ## Adapter Drift Auditor
 
@@ -133,6 +133,10 @@ Total: 87 agents.
 ## Frontend Engineer
 
 `frontend-engineer`. Implements maintainable, accessible, performant web interfaces while preserving existing behavior and design systems.
+
+## Generative Engine Optimization Strategist
+
+`generative-engine-optimization-strategist`. Leads evidence-based GEO strategy for AI-search visibility, entity authority, answer-ready content, and measurement without speculative ranking claims.
 
 ## Governance Steward
 

@@ -2,7 +2,7 @@
 
 > Generated from `.claude/registry.json`. Do not edit manually.
 
-Total: **75**
+Total: **76**
 
 - `adapter-drift-review` → `.claude/reviews/adapter-drift-review.md`
 - `adoption-review` → `.claude/reviews/adoption-review.md`
@@ -32,6 +32,7 @@ Total: **75**
 - `finops-review` → `.claude/reviews/finops-review.md`
 - `frontend-craft-review` → `.claude/reviews/frontend-craft-review.md`
 - `full-stack-delivery-review` → `.claude/reviews/full-stack-delivery-review.md`
+- `generative-engine-optimization-review` → `.claude/reviews/generative-engine-optimization-review.md`
 - `governance-review` → `.claude/reviews/governance-review.md`
 - `integration-review` → `.claude/reviews/integration-review.md`
 - `knowledge-review` → `.claude/reviews/knowledge-review.md`

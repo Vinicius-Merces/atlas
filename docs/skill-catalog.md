@@ -4,7 +4,7 @@ Canonical, generated inventory of every skill under `.claude/skills/<skill-name>
 
 Regenerate both capability catalogs with `python scripts/generate_capability_catalogs.py`. Use `--check` in validation and CI.
 
-Total: 128 skills.
+Total: 131 skills.
 
 ## Accessibility Audit
 
@@ -25,6 +25,10 @@ Total: 128 skills.
 ## Agent Overlap Analysis
 
 `agent-overlap-analysis`. Measure semantic overlap across registered ATLAS agents when roles are added, scopes change, or the catalog may contain redundant responsibilities, using descriptions, missions, ownership, and taxonomy boundaries.
+
+## AI Search Measurement
+
+`ai-search-measurement`. Establish and interpret AI-search/GEO measurement using reproducible query sets, Search Console/analytics evidence, attribution limits, and explicit confounders.
 
 ## AI System Design
 
@@ -194,6 +198,10 @@ Total: 128 skills.
 
 `dual-runtime-validation`. Validate Claude Code and Codex runtime support in the same release.
 
+## Entity Authority Mapping
+
+`entity-authority-mapping`. Map public entities, factual claims, evidence owners, canonical sources, and conflicts before GEO, schema, knowledge-content, or AI-search work.
+
 ## Event Taxonomy Design
 
 `event-taxonomy-design`. Design stable, privacy-aware analytics events and properties.
@@ -237,6 +245,10 @@ Total: 128 skills.
 ## Frontend Stack Selection
 
 `frontend-stack-selection`. Select frontend libraries and rendering tools when a user-facing web change needs implementation or modernization, choosing CSS, Motion, GSAP, React Three Fiber, primitives, and supporting libraries by evidence rather than trend.
+
+## Generative Engine Optimization
+
+`generative-engine-optimization`. Plan or review Generative Engine Optimization for AI-search visibility using factual entity evidence, answer-ready content, crawlability, external authority, and measured outcomes without speculative AI-only hacks.
 
 ## Immersive 3D Experience
 

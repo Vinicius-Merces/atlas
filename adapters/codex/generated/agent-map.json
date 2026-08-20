@@ -292,6 +292,15 @@
       "version": "0.1.1"
     },
     {
+      "canonical_name": "generative-engine-optimization-strategist",
+      "canonical_path": ".claude/agents/generative-engine-optimization-strategist.md",
+      "adapter_path": "adapters/codex/catalogs/agents.md",
+      "parity_type": "canonical-reference",
+      "status": "mapped",
+      "notes": "Resolved through the generated catalog to the canonical source.",
+      "version": "0.1.1"
+    },
+    {
       "canonical_name": "governance-steward",
       "canonical_path": ".claude/agents/governance-steward.md",
       "adapter_path": "adapters/codex/catalogs/agents.md",

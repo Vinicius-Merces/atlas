@@ -79,11 +79,11 @@ frontmatter and validated in CI.
 
 | Component | Count | What it provides | Complete reference |
 | --- | ---: | --- | --- |
-| Agents | 87 | Orchestration plus focused product, engineering, architecture, governance, runtime, and assurance roles | [Agent Catalog](docs/agent-catalog.md) |
-| Skills | 128 | Bounded procedures for analysis, design, frontend craft, production trust, web assurance, validation, continuity, and delivery | [Skill Catalog](docs/skill-catalog.md) |
+| Agents | 88 | Orchestration plus focused product, engineering, architecture, governance, runtime, and assurance roles | [Agent Catalog](docs/agent-catalog.md) |
+| Skills | 131 | Bounded procedures for analysis, design, frontend craft, production trust, web assurance, validation, continuity, and delivery | [Skill Catalog](docs/skill-catalog.md) |
 | Commands | 71 | Explicit entry points for common ATLAS operations | `.claude/commands/` |
-| Workflows | 84 | Repeatable execution paths with responsibilities and gates | `.claude/workflows/` |
-| Reviews | 75 | Independent review procedures and acceptance checks | `.claude/reviews/` |
+| Workflows | 85 | Repeatable execution paths with responsibilities and gates | `.claude/workflows/` |
+| Reviews | 76 | Independent review procedures and acceptance checks | `.claude/reviews/` |
 | Contracts | 6 | Stable interfaces for agents, skills, workflows, memory, reviews, and commands | `.claude/contracts/` |
 
 ### Agent model
@@ -111,7 +111,7 @@ Examples:
 - `release-integrity-engineer` verifies versions, manifests, checksums, and provenance;
 - `runtime-parity-reviewer` checks semantic parity between supported runtimes.
 
-See the [Agent Catalog](docs/agent-catalog.md) for all 87 descriptions.
+See the [Agent Catalog](docs/agent-catalog.md) for all 88 descriptions.
 
 ### Skill model
 
@@ -142,7 +142,7 @@ Examples:
   scripts, source/provenance, and blast radius;
 - `dual-runtime-validation` checks Claude Code and Codex surfaces together.
 
-See the [Skill Catalog](docs/skill-catalog.md) for all 128 descriptions.
+See the [Skill Catalog](docs/skill-catalog.md) for all 131 descriptions.
 
 
 ## Full-Stack Delivery P2

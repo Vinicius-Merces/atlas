@@ -49,6 +49,15 @@
       "version": "0.1.1"
     },
     {
+      "canonical_name": "ai-search-measurement",
+      "canonical_path": ".claude/skills/ai-search-measurement/SKILL.md",
+      "adapter_path": ".agents/skills/ai-search-measurement/SKILL.md",
+      "parity_type": "runtime-native",
+      "status": "native",
+      "notes": "Codex-native entry point.",
+      "version": "0.1.1"
+    },
+    {
       "canonical_name": "ai-system-design",
       "canonical_path": ".claude/skills/ai-system-design/SKILL.md",
       "adapter_path": ".agents/skills/ai-system-design/SKILL.md",
@@ -427,6 +436,15 @@
       "version": "0.1.1"
     },
     {
+      "canonical_name": "entity-authority-mapping",
+      "canonical_path": ".claude/skills/entity-authority-mapping/SKILL.md",
+      "adapter_path": ".agents/skills/entity-authority-mapping/SKILL.md",
+      "parity_type": "runtime-native",
+      "status": "native",
+      "notes": "Codex-native entry point.",
+      "version": "0.1.1"
+    },
+    {
       "canonical_name": "event-taxonomy-design",
       "canonical_path": ".claude/skills/event-taxonomy-design/SKILL.md",
       "adapter_path": ".agents/skills/event-taxonomy-design/SKILL.md",
@@ -520,6 +538,15 @@
       "canonical_name": "frontend-stack-selection",
       "canonical_path": ".claude/skills/frontend-stack-selection/SKILL.md",
       "adapter_path": ".agents/skills/frontend-stack-selection/SKILL.md",
+      "parity_type": "runtime-native",
+      "status": "native",
+      "notes": "Codex-native entry point.",
+      "version": "0.1.1"
+    },
+    {
+      "canonical_name": "generative-engine-optimization",
+      "canonical_path": ".claude/skills/generative-engine-optimization/SKILL.md",
+      "adapter_path": ".agents/skills/generative-engine-optimization/SKILL.md",
       "parity_type": "runtime-native",
       "status": "native",
       "notes": "Codex-native entry point.",
