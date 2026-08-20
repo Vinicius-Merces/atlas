@@ -294,10 +294,6 @@ Total: 88 agents.
 
 `runtime-synchronization-engineer`. Synchronizes runtime adapters with canonical ATLAS registry collections and contracts.
 
-## Generative Engine Optimization Strategist
-
-`generative-engine-optimization-strategist`. Leads evidence-based GEO strategy for AI-search visibility, entity authority, answer-ready content, and measurement without speculative ranking claims.
-
 ## Search Retrieval Engineer
 
 `search-retrieval-engineer`. Designs search, indexing, retrieval, ranking, chunking, embeddings, and RAG systems.
