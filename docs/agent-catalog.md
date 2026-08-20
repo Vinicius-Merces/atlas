@@ -134,6 +134,10 @@ Total: 88 agents.
 
 `frontend-engineer`. Implements maintainable, accessible, performant web interfaces while preserving existing behavior and design systems.
 
+## Generative Engine Optimization Strategist
+
+`generative-engine-optimization-strategist`. Leads evidence-based GEO strategy for AI-search visibility, entity authority, answer-ready content, and measurement without speculative ranking claims.
+
 ## Governance Steward
 
 `governance-steward`. Maintains standards, controls, exceptions, decision rights, evidence requirements, and governance health.
