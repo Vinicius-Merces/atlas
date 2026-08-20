@@ -198,6 +198,10 @@ Total: 128 skills.
 
 `dual-runtime-validation`. Validate Claude Code and Codex runtime support in the same release.
 
+## Entity Authority Mapping
+
+`entity-authority-mapping`. Map public entities, factual claims, evidence owners, canonical sources, and conflicts before GEO, schema, knowledge-content, or AI-search work.
+
 ## Event Taxonomy Design
 
 `event-taxonomy-design`. Design stable, privacy-aware analytics events and properties.
