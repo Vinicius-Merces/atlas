@@ -82,8 +82,8 @@ frontmatter and validated in CI.
 | Agents | 88 | Orchestration plus focused product, engineering, architecture, governance, runtime, and assurance roles | [Agent Catalog](docs/agent-catalog.md) |
 | Skills | 131 | Bounded procedures for analysis, design, frontend craft, production trust, web assurance, validation, continuity, and delivery | [Skill Catalog](docs/skill-catalog.md) |
 | Commands | 71 | Explicit entry points for common ATLAS operations | `.claude/commands/` |
-| Workflows | 84 | Repeatable execution paths with responsibilities and gates | `.claude/workflows/` |
-| Reviews | 75 | Independent review procedures and acceptance checks | `.claude/reviews/` |
+| Workflows | 85 | Repeatable execution paths with responsibilities and gates | `.claude/workflows/` |
+| Reviews | 76 | Independent review procedures and acceptance checks | `.claude/reviews/` |
 | Contracts | 6 | Stable interfaces for agents, skills, workflows, memory, reviews, and commands | `.claude/contracts/` |
 
 ### Agent model
@@ -111,7 +111,7 @@ Examples:
 - `release-integrity-engineer` verifies versions, manifests, checksums, and provenance;
 - `runtime-parity-reviewer` checks semantic parity between supported runtimes.
 
-See the [Agent Catalog](docs/agent-catalog.md) for all 87 descriptions.
+See the [Agent Catalog](docs/agent-catalog.md) for all 88 descriptions.
 
 ### Skill model
 
@@ -142,7 +142,7 @@ Examples:
   scripts, source/provenance, and blast radius;
 - `dual-runtime-validation` checks Claude Code and Codex surfaces together.
 
-See the [Skill Catalog](docs/skill-catalog.md) for all 128 descriptions.
+See the [Skill Catalog](docs/skill-catalog.md) for all 131 descriptions.
 
 
 ## Full-Stack Delivery P2
@@ -162,7 +162,7 @@ The canonical model is `framework/reference-build-benchmark-model.md`; fixtures 
 
 A harness-smoke run only proves that fixtures and scoring work and is always non-claimable. A live result may be compared across Claude Code and Codex only when the exact fixture/rubric version, run metadata, inspectable evidence, blockers, and independent review are preserved.
 
-P3 intentionally adds no new agents or skills: it tests whether the existing **88 agent surfaces and 131 skills** can actually compose into complete products before ATLAS expands the catalog again.
+P3 intentionally adds no new agents or skills: it tests whether the existing **87 agent surfaces and 128 skills** can actually compose into complete products before ATLAS expands the catalog again.
 
 
 ## Live Reference Build Campaign P4
