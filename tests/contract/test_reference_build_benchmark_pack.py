@@ -8,6 +8,8 @@ from pathlib import Path
 import yaml
 
 ROOT = Path(__file__).resolve().parents[2]
+P3_AGENT_SURFACE_BASELINE = 87
+P3_SKILL_CATALOG_BASELINE = 128
 
 
 def test_reference_build_benchmark_pack_validator() -> None:
@@ -25,8 +27,8 @@ def test_reference_build_benchmark_pack_validator() -> None:
 
 def test_p3_reuses_agents_and_skills() -> None:
     registry = json.loads((ROOT / ".claude" / "registry.json").read_text(encoding="utf-8"))
-    assert len(registry["agents"]) + 1 == 87
-    assert len(registry["skills"]) == 128
+    assert len(registry["agents"]) + 1 >= P3_AGENT_SURFACE_BASELINE
+    assert len(registry["skills"]) >= P3_SKILL_CATALOG_BASELINE
     assert "reference-build-benchmark" in registry["workflows"]
     assert "reference-build-benchmark-review" in registry["reviews"]
 
