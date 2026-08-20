@@ -4,7 +4,7 @@ Canonical, generated inventory of every skill under `.claude/skills/<skill-name>
 
 Regenerate both capability catalogs with `python scripts/generate_capability_catalogs.py`. Use `--check` in validation and CI.
 
-Total: 128 skills.
+Total: 131 skills.
 
 ## Accessibility Audit
 
@@ -245,6 +245,10 @@ Total: 128 skills.
 ## Frontend Stack Selection
 
 `frontend-stack-selection`. Select frontend libraries and rendering tools when a user-facing web change needs implementation or modernization, choosing CSS, Motion, GSAP, React Three Fiber, primitives, and supporting libraries by evidence rather than trend.
+
+## Generative Engine Optimization
+
+`generative-engine-optimization`. Plan or review Generative Engine Optimization for AI-search visibility using factual entity evidence, answer-ready content, crawlability, external authority, and measured outcomes without speculative AI-only hacks.
 
 ## Immersive 3D Experience
 
