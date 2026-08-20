@@ -42,7 +42,7 @@ Total: 131 skills.
 
 `application-search-design`. Design product/content search with source-of-truth fields, query semantics, ranking, filters, pagination, indexing, authorization, tenant scope, freshness, failure states, and database-versus-search-engine tradeoffs.
 
-## Ai Search Measurement
+## AI Search Measurement
 
 `ai-search-measurement`. Establish and interpret AI-search/GEO measurement using reproducible query sets, Search Console/analytics evidence, attribution limits, and explicit confounders.
 
