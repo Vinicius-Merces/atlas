@@ -79,8 +79,8 @@ frontmatter and validated in CI.
 
 | Component | Count | What it provides | Complete reference |
 | --- | ---: | --- | --- |
-| Agents | 87 | Orchestration plus focused product, engineering, architecture, governance, runtime, and assurance roles | [Agent Catalog](docs/agent-catalog.md) |
-| Skills | 128 | Bounded procedures for analysis, design, frontend craft, production trust, web assurance, validation, continuity, and delivery | [Skill Catalog](docs/skill-catalog.md) |
+| Agents | 88 | Orchestration plus focused product, engineering, architecture, governance, runtime, and assurance roles | [Agent Catalog](docs/agent-catalog.md) |
+| Skills | 131 | Bounded procedures for analysis, design, frontend craft, production trust, web assurance, validation, continuity, and delivery | [Skill Catalog](docs/skill-catalog.md) |
 | Commands | 71 | Explicit entry points for common ATLAS operations | `.claude/commands/` |
 | Workflows | 84 | Repeatable execution paths with responsibilities and gates | `.claude/workflows/` |
 | Reviews | 75 | Independent review procedures and acceptance checks | `.claude/reviews/` |
@@ -162,7 +162,7 @@ The canonical model is `framework/reference-build-benchmark-model.md`; fixtures 
 
 A harness-smoke run only proves that fixtures and scoring work and is always non-claimable. A live result may be compared across Claude Code and Codex only when the exact fixture/rubric version, run metadata, inspectable evidence, blockers, and independent review are preserved.
 
-P3 intentionally adds no new agents or skills: it tests whether the existing **87 agent surfaces and 128 skills** can actually compose into complete products before ATLAS expands the catalog again.
+P3 intentionally adds no new agents or skills: it tests whether the existing **88 agent surfaces and 131 skills** can actually compose into complete products before ATLAS expands the catalog again.
 
 
 ## Live Reference Build Campaign P4
