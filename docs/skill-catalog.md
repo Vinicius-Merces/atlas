@@ -26,6 +26,10 @@ Total: 131 skills.
 
 `agent-overlap-analysis`. Measure semantic overlap across registered ATLAS agents when roles are added, scopes change, or the catalog may contain redundant responsibilities, using descriptions, missions, ownership, and taxonomy boundaries.
 
+## AI Search Measurement
+
+`ai-search-measurement`. Establish and interpret AI-search/GEO measurement using reproducible query sets, Search Console/analytics evidence, attribution limits, and explicit confounders.
+
 ## AI System Design
 
 `ai-system-design`. Design an AI-enabled system with explicit capabilities, limitations, data flow, and evaluation.
@@ -41,10 +45,6 @@ Total: 131 skills.
 ## Application Search Design
 
 `application-search-design`. Design product/content search with source-of-truth fields, query semantics, ranking, filters, pagination, indexing, authorization, tenant scope, freshness, failure states, and database-versus-search-engine tradeoffs.
-
-## AI Search Measurement
-
-`ai-search-measurement`. Establish and interpret AI-search/GEO measurement using reproducible query sets, Search Console/analytics evidence, attribution limits, and explicit confounders.
 
 ## Architecture Assessment
 
