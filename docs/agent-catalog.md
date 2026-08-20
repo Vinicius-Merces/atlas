@@ -4,7 +4,7 @@ Canonical, generated inventory of every agent under `.claude/agents/`. Each entr
 
 Regenerate both capability catalogs with `python scripts/generate_capability_catalogs.py`. Use `--check` in validation and CI.
 
-Total: 87 agents.
+Total: 88 agents.
 
 ## Adapter Drift Auditor
 
