@@ -1,0 +1,42 @@
+version: 1
+capability: web-security-edge-assurance
+purpose: >-
+  Protect public web applications at browser and edge layers with evidence-backed
+  security headers, CSP, sensitive-path checks, and crawler-aware CDN/WAF/bot
+  validation that preserves trusted integrations and intended discovery.
+canonical_model: framework/web-security-edge-assurance-model.md
+preferred_workflow: web-security-edge-assurance
+required_review: web-security-edge-assurance-review
+owners:
+  primary:
+    - security-engineer
+    - qa-engineer
+  delivery:
+    - frontend-engineer
+    - infrastructure-engineer
+    - test-automation-engineer
+  adjacent:
+    - content-designer
+    - orchestrator
+skills:
+  - web-security-header-audit
+  - crawler-edge-access-audit
+  - browser-flow-validation
+  - secret-environment-audit
+quality_gates:
+  - effective_security_headers
+  - csp_origin_inventory
+  - csp_critical_integration_regression
+  - sensitive_public_path_exposure
+  - edge_control_rule_order
+  - external_http_body_evidence
+  - crawler_access_policy_consistency
+  - ua_simulation_evidence_boundary
+  - narrow_security_exceptions
+  - independent_security_edge_review
+non_guarantees:
+  - vulnerability_absence
+  - proprietary_crawler_visit
+  - search_indexing
+  - ai_citation
+  - future_crawl_frequency
