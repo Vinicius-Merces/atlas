@@ -19,9 +19,11 @@ MEMORY = ROOT / ".claude" / "memory" / "capabilities" / "web-production-assuranc
 
 REQUIRED_SKILLS = {
     "browser-flow-validation",
+    "crawler-edge-access-audit",
     "seo-technical-audit",
     "structured-data-validation",
     "supply-chain-risk-audit",
+    "web-security-header-audit",
 }
 
 REQUIRED_AGENTS = {
@@ -125,7 +127,20 @@ def main() -> None:
 
     if MODEL.is_file():
         text = MODEL.read_text(encoding="utf-8").lower()
-        markers = ["browser", "playwright", "canonical", "robots.txt", "sitemap", "structured data", "json-ld", "supply-chain", "dependency", "independent review"]
+        markers = [
+            "browser",
+            "playwright",
+            "content-security-policy",
+            "crawler-edge-access-audit",
+            "canonical",
+            "robots.txt",
+            "sitemap",
+            "structured data",
+            "json-ld",
+            "supply-chain",
+            "dependency",
+            "independent review",
+        ]
         for marker in markers:
             if marker not in text:
                 failures.append(f"web production assurance model is missing required marker: {marker}")
@@ -136,7 +151,7 @@ def main() -> None:
             print(f"- {failure}")
         raise SystemExit(1)
 
-    print("Web production assurance pack valid: 4 skills, 1 workflow, 1 independent review gate")
+    print("Web production assurance pack valid: 6 skills, 1 workflow, 1 independent review gate")
 
 
 if __name__ == "__main__":
