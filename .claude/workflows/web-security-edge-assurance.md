@@ -54,6 +54,17 @@ Produce release evidence that browser security headers are intentional and effec
 8. **Record evidence and continuity**
    - Record effective headers, CSP origin inventory/exceptions, passive path results, edge/crawler matrix, browser evidence, provider limitations, and residual risk.
 
+## Required lifecycle
+
+1. **Understand** - Identify public routes, critical integrations, security/header intent, discovery intent, edge products, risk, and acceptance criteria.
+2. **Inspect** - Read canonical memory, effective responses, CSP/header configuration, browser/network behavior, sensitive-path risk, CDN/WAF/bot rules, robots/search controls, and provider evidence.
+3. **Plan** - Choose representative routes, origin inventory, passive probes, crawler-policy checks, browser journeys, and independent review ownership.
+4. **Execute** - Implement the narrowest evidence-backed hardening without weakening established trust, product, conversion, analytics, or discovery boundaries.
+5. **Validate** - Run effective-header, CSP/browser, sensitive-path, external HTTP/body, and crawler-edge checks required by scope.
+6. **Review** - Complete independent web-security-edge review and any adjacent Web Production Assurance, SEO/GEO, SaaS trust, privacy, or abuse-control gates.
+7. **Document** - Record policy, exceptions, before/after evidence, provider limitations, residual risk, and rollback/continuity information without secrets.
+8. **Deliver** - Report Approved, Approved with conditions, Changes required, or Blocked according to evidence.
+
 ## Responsible agents
 
 - `security-engineer`: primary owner of CSP/header threat model, sensitive-path findings, WAF/bot security tradeoffs, and bypass review.
