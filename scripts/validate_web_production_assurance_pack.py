@@ -130,7 +130,7 @@ def main() -> None:
         markers = [
             "browser",
             "playwright",
-            "content-security-policy",
+            "csp",
             "crawler-edge-access-audit",
             "canonical",
             "robots.txt",
