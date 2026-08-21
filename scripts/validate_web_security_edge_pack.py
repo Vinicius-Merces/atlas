@@ -65,6 +65,9 @@ def main() -> None:
             if isinstance(values, list):
                 owner_names.update(str(value) for value in values)
     registered_agents = set(registry.get("agents", []))
+    orchestrator = registry.get("orchestrator")
+    if isinstance(orchestrator, str) and orchestrator:
+        registered_agents.add(orchestrator)
     unknown_owners = sorted(owner_names - registered_agents)
     if unknown_owners:
         raise SystemExit(f"Capability overlay references unknown agents: {unknown_owners}")
