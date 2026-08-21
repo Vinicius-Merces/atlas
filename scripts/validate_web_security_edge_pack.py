@@ -1,11 +1,14 @@
 from __future__ import annotations
 
+import json
 from pathlib import Path
 
 import yaml
 
 
 ROOT = Path(__file__).resolve().parents[1]
+REGISTRY = ROOT / ".claude" / "registry.json"
+MEMORY = ROOT / ".claude" / "memory" / "capabilities" / "web-security-edge-assurance.md"
 
 REQUIRED_FILES = [
     "framework/web-security-edge-assurance-model.md",
@@ -16,12 +19,13 @@ REQUIRED_FILES = [
     ".agents/skills/crawler-edge-access-audit/SKILL.md",
     ".claude/workflows/web-security-edge-assurance.md",
     ".claude/reviews/web-security-edge-assurance-review.md",
+    ".claude/memory/capabilities/web-security-edge-assurance.md",
 ]
 
 
 def require_text(path: str, terms: list[str]) -> None:
-    text = (ROOT / path).read_text(encoding="utf-8")
-    missing = [term for term in terms if term not in text]
+    text = (ROOT / path).read_text(encoding="utf-8").lower()
+    missing = [term for term in terms if term.lower() not in text]
     if missing:
         raise SystemExit(f"{path}: missing required contract text: {missing}")
 
@@ -31,6 +35,19 @@ def main() -> None:
     if missing_files:
         raise SystemExit(f"Missing web security/edge pack files: {missing_files}")
 
+    registry = json.loads(REGISTRY.read_text(encoding="utf-8"))
+    required_skills = {"web-security-header-audit", "crawler-edge-access-audit"}
+    missing_skills = sorted(required_skills - set(registry.get("skills", [])))
+    if missing_skills:
+        raise SystemExit(f"Registry missing web security/edge skills: {missing_skills}")
+    if "web-security-edge-assurance" not in set(registry.get("workflows", [])):
+        raise SystemExit("Registry missing web-security-edge-assurance workflow")
+    if "web-security-edge-assurance-review" not in set(registry.get("reviews", [])):
+        raise SystemExit("Registry missing web-security-edge-assurance-review")
+    assurance = registry.get("assurance", {})
+    if not isinstance(assurance, dict) or assurance.get("web_security_edge_assurance_model") != "framework/web-security-edge-assurance-model.md":
+        raise SystemExit("Registry assurance.web_security_edge_assurance_model is missing or invalid")
+
     overlay = yaml.safe_load(
         (ROOT / "framework/capabilities/web-security-edge-assurance.yaml").read_text(
             encoding="utf-8"
@@ -38,9 +55,19 @@ def main() -> None:
     )
     if overlay.get("capability") != "web-security-edge-assurance":
         raise SystemExit("Capability overlay has the wrong capability id")
-    required_skills = {"web-security-header-audit", "crawler-edge-access-audit"}
     if not required_skills.issubset(set(overlay.get("skills", []))):
         raise SystemExit("Capability overlay does not register both security-edge skills")
+
+    owners = overlay.get("owners", {})
+    owner_names: set[str] = set()
+    if isinstance(owners, dict):
+        for values in owners.values():
+            if isinstance(values, list):
+                owner_names.update(str(value) for value in values)
+    registered_agents = set(registry.get("agents", []))
+    unknown_owners = sorted(owner_names - registered_agents)
+    if unknown_owners:
+        raise SystemExit(f"Capability overlay references unknown agents: {unknown_owners}")
 
     require_text(
         "framework/web-security-edge-assurance-model.md",
@@ -80,6 +107,15 @@ def main() -> None:
             "broad security bypass",
             "proprietary crawler",
             "authoritative content",
+        ],
+    )
+    require_text(
+        ".claude/memory/capabilities/web-security-edge-assurance.md",
+        [
+            "configuration intent is not production evidence",
+            "UA simulation",
+            "CSP",
+            "sensitive-path",
         ],
     )
 
