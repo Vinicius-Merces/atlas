@@ -60,7 +60,7 @@ Produce release evidence that browser security headers are intentional and effec
 - `qa-engineer`: independent external HTTP/browser evidence and release outcome.
 - `test-automation-engineer`: deterministic passive probes, body/challenge assertions, and regression diagnostics.
 - `frontend-engineer`: implements framework-side headers/CSP and fixes browser integration regressions.
-- `infrastructure-engineer`: owns CDN/WAF/edge configuration when present.
+- `platform-engineer`: owns CDN/WAF/edge configuration when present.
 - `orchestrator`: composes adjacent SEO/GEO/trust gates and preserves reviewer independence.
 
 ## Decision points
