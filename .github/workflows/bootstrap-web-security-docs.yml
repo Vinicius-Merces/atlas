@@ -1,0 +1,84 @@
+name: Bootstrap web security edge docs
+
+on:
+  push:
+    branches:
+      - feat/web-security-edge-assurance
+
+permissions:
+  contents: write
+
+concurrency:
+  group: bootstrap-web-security-edge-docs
+  cancel-in-progress: false
+
+jobs:
+  update-docs:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out feature branch
+        uses: actions/checkout@v4
+        with:
+          ref: feat/web-security-edge-assurance
+          fetch-depth: 0
+
+      - name: Update README and documentation index
+        shell: bash
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+
+          readme = Path('README.md')
+          text = readme.read_text(encoding='utf-8')
+          replacements = {
+              '| Skills | 131 |': '| Skills | 133 |',
+              '| Workflows | 85 |': '| Workflows | 86 |',
+              '| Reviews | 76 |': '| Reviews | 77 |',
+              'See the [Skill Catalog](docs/skill-catalog.md) for all 131 descriptions.': 'See the [Skill Catalog](docs/skill-catalog.md) for all 133 descriptions.',
+          }
+          for old, new in replacements.items():
+              text = text.replace(old, new)
+
+          old_web_bullet = '''- prove critical browser journeys, technical crawl/index behavior, structured-data
+  truth, and dependency/build supply-chain risk before public-web release claims.'''
+          new_web_bullet = '''- prove critical browser journeys, technical crawl/index behavior, structured-data
+  truth, and dependency/build supply-chain risk before public-web release claims;
+- validate effective CSP/security headers, sensitive public-path exposure, and
+  CDN/WAF/bot/crawler interactions without weakening trusted integrations.'''
+          text = text.replace(old_web_bullet, new_web_bullet)
+
+          old_skill_examples = '''- `seo-technical-audit` verifies deployed crawl/index/canonical/robots/sitemap behavior;
+- `structured-data-validation` checks schema markup against authoritative page facts;'''
+          new_skill_examples = '''- `seo-technical-audit` verifies deployed crawl/index/canonical/robots/sitemap behavior;
+- `web-security-header-audit` verifies effective CSP/security headers, trusted browser integrations, and bounded sensitive-path exposure;
+- `crawler-edge-access-audit` verifies CDN/WAF/bot/challenge behavior without treating simulated user agents as proprietary crawler proof;
+- `structured-data-validation` checks schema markup against authoritative page facts;'''
+          text = text.replace(old_skill_examples, new_skill_examples)
+
+          section = '''\n## Web Security and Edge Assurance\n\nATLAS treats browser security and crawler-access behavior as production evidence,\nnot configuration trivia. The canonical model lives at:\n\n```text\nframework/web-security-edge-assurance-model.md\nframework/capabilities/web-security-edge-assurance.yaml\n```\n\nThe pack composes two focused capabilities:\n\n- `web-security-header-audit` for CSP, HSTS and browser security headers, third-party\n  origin inventory, `blocked:csp` browser regression, and bounded sensitive-path checks;\n- `crawler-edge-access-audit` for CDN/WAF/bot/challenge ordering, search/AI crawler\n  access, authoritative response-body checks, and explicit separation between\n  user-agent simulation and verified proprietary crawler evidence.\n\nThe operating path is:\n\n```text\npublic route + trusted integrations\n        ↓\neffective headers + CSP origin inventory\n        ↓\nsensitive public-path exposure\n        ↓\nCDN / WAF / bot / challenge mapping\n        ↓\nexternal HTTP + crawler evidence\n        ↓\nrendered browser regression\n        ↓\nindependent web-security-edge-assurance review\n```\n\nThe model rejects broad bot/datacenter/IP bypasses created only to make CI green.\nIt also rejects the opposite failure: security rules that silently block intended\nGoogle/Bing/AI-search discovery or CSP changes that break analytics, conversion,\nchat, auth, payments, APIs, fonts/images, or other trusted product behavior.\n\nA passive scan or simulated crawler does not prove vulnerability absence, indexing,\nAI citation, or proprietary crawler identity.\n\n'''
+          marker = '\n## Capability Evaluation\n'
+          if '## Web Security and Edge Assurance' not in text and marker in text:
+              text = text.replace(marker, section + '## Capability Evaluation\n', 1)
+          readme.write_text(text, encoding='utf-8')
+
+          index = Path('docs/INDEX.md')
+          idx = index.read_text(encoding='utf-8')
+          anchor = '- [Technical Debt](technical-debt-guide.md)\n'
+          additions = '''- [Web Production Assurance](../framework/web-production-assurance-model.md)\n- [Web Security and Edge Assurance](../framework/web-security-edge-assurance-model.md)\n'''
+          if 'Web Security and Edge Assurance' not in idx:
+              idx = idx.replace(anchor, anchor + additions, 1)
+          index.write_text(idx, encoding='utf-8')
+          PY
+
+      - name: Commit documentation updates when needed
+        shell: bash
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add README.md docs/INDEX.md
+          if git diff --cached --quiet; then
+            echo "Documentation already current."
+            exit 0
+          fi
+          git commit -m "docs: document web security edge assurance"
+          git push origin HEAD:feat/web-security-edge-assurance

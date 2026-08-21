@@ -183,6 +183,7 @@
     "test-automation",
     "threat-modeling",
     "web-production-assurance",
+    "web-security-edge-assurance",
     "workstream-merge"
   ],
   "skills": [
@@ -224,6 +225,7 @@
     "control-design",
     "conversion-funnel-review",
     "core-contract-stabilization",
+    "crawler-edge-access-audit",
     "data-import-export-workflow",
     "database-migration-analysis",
     "database-schema-review",
@@ -315,6 +317,7 @@
     "version-transition-validation",
     "visual-regression-review",
     "web-performance-field-readiness",
+    "web-security-header-audit",
     "webhook-reliability-review",
     "workstream-decomposition"
   ],
@@ -394,7 +397,8 @@
     "threat-model-review",
     "universal-runtime-contract-review",
     "ux-review",
-    "web-production-assurance-review"
+    "web-production-assurance-review",
+    "web-security-edge-assurance-review"
   ],
   "commands": [
     "atlas-adapt-runtime",
@@ -526,7 +530,8 @@
     "production_product_quality_model": "framework/production-product-quality-model.md",
     "full_stack_delivery_model": "framework/full-stack-delivery-model.md",
     "reference_build_benchmark_model": "framework/reference-build-benchmark-model.md",
-    "live_reference_build_campaign_model": "framework/live-reference-build-campaign-model.md"
+    "live_reference_build_campaign_model": "framework/live-reference-build-campaign-model.md",
+    "web_security_edge_assurance_model": "framework/web-security-edge-assurance-model.md"
   },
   "stability": {
     "compatibility_model": "framework/compatibility-model.md",

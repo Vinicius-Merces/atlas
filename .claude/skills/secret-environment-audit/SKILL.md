@@ -7,11 +7,11 @@ description: "Audit secrets and environment configuration when credentials, API 
 
 ## Purpose
 
-Verify that secrets and environment configuration are correctly classified, scoped, stored, rotated, injected, logged, and separated across client/server and environment boundaries.
+Verify that secrets and environment configuration are correctly classified, scoped, stored, rotated, injected, logged, and separated across client/server, public-route, build-artifact, and environment boundaries.
 
 ## Trigger conditions
 
-Use when credentials, tokens, API keys, signing secrets, database URLs, service-role keys, OAuth secrets, webhook secrets, CI/CD variables, runtime environment variables, or configuration-loading behavior change.
+Use when credentials, tokens, API keys, signing secrets, database URLs, service-role keys, OAuth secrets, webhook secrets, CI/CD variables, runtime environment variables, configuration-loading behavior, or possible public configuration exposure changes.
 
 ## Inputs
 
@@ -20,6 +20,7 @@ Use when credentials, tokens, API keys, signing secrets, database URLs, service-
 - CI/CD and hosting configuration
 - Secret-store or platform configuration
 - Logs, error reporting, build output, and deployment manifests
+- Public deployment routes/artifacts when exposure is plausible
 - Rotation and incident procedures where available
 
 ## Dependencies
@@ -28,6 +29,7 @@ Use when credentials, tokens, API keys, signing secrets, database URLs, service-
 - Hosting, CI/CD, or secret-store metadata sufficient to inspect scope without revealing secret values
 - Deployment/environment ownership and rotation/revocation procedures when privileged credentials are present
 - Repository/build artifact inspection or secret-scanning capability where exposure is suspected
+- `web-security-header-audit` when the question includes public sensitive-path exposure or browser-facing configuration delivery
 
 ## Procedure
 
@@ -44,12 +46,15 @@ Use when credentials, tokens, API keys, signing secrets, database URLs, service-
 11. Review error/logging/telemetry paths for accidental secret leakage, including request headers and provider payloads.
 12. Check repository history or secret-scanning evidence when exposure is suspected; removing the current file is not sufficient if a live credential was committed.
 13. Treat `.env.example` and setup documentation as schema/placeholder surfaces, never as a home for usable secrets.
+14. When a public deployment exists and exposure is plausible, perform bounded passive GET/HEAD probes for stack-relevant sensitive paths such as `/.env`, environment variants, `/.npmrc`, `/.git/config`, `/.ssh/authorized_keys`, service-account JSON names, private-key/config files, or debug/server-status endpoints. Do not brute-force large wordlists.
+15. Treat HTTP 200 as a review trigger, not automatic proof of a breach. Inspect the response for secret/private-key markers without printing values. A 403/404 is normally acceptable evidence for that path but does not prove no other exposure exists.
+16. If any live credential may have been publicly returned, stop treating code deletion as sufficient remediation and require credential rotation/revocation, downstream impact review, and incident evidence appropriate to severity.
 
 ## Outputs
 
 - Configuration and secret inventory
 - Public/private boundary map
-- Exposure findings
+- Exposure findings including bounded public-path evidence when applicable
 - CI/CD and runtime scope findings
 - Rotation/revocation gaps
 - Required mitigations and residual risk
@@ -59,10 +64,12 @@ Use when credentials, tokens, API keys, signing secrets, database URLs, service-
 - Does not reveal or request secret values unnecessarily.
 - Does not consider environment-variable storage automatically secure; the host/process/access model still matters.
 - Does not treat key-name prefixes alone as proof of safety.
+- Passive public-path checks are not penetration tests and cannot prove the absence of hidden files or alternate exposure paths.
 
 ## Validation
 
 - Inspect built/client artifacts or framework exposure rules when relevant.
 - Run available secret scanners and repository checks without printing discovered secret values.
-- Verify server-only credentials cannot be obtained through public routes, source maps, client bundles, logs, or generated configuration.
+- Verify server-only credentials cannot be obtained through public routes, source maps, client bundles, logs, generated configuration, or representative stack-relevant sensitive paths.
+- For public-path probes, record path, status/body class, timestamp, and environment without storing secret values; inspect any successful response for secret-like markers.
 - If a credential may have been exposed, require revocation/rotation evidence rather than only code removal.

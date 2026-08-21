@@ -4,7 +4,7 @@ Canonical, generated inventory of every skill under `.claude/skills/<skill-name>
 
 Regenerate both capability catalogs with `python scripts/generate_capability_catalogs.py`. Use `--check` in validation and CI.
 
-Total: 131 skills.
+Total: 133 skills.
 
 ## Accessibility Audit
 
@@ -157,6 +157,10 @@ Total: 131 skills.
 ## Core Contract Stabilization
 
 `core-contract-stabilization`. Evaluate whether a contract is stable enough for a beta support commitment.
+
+## Crawler Edge Access Audit
+
+`crawler-edge-access-audit`. Audit CDN, WAF, bot, challenge, robots, and crawler-access behavior for search and AI discovery using external HTTP evidence without treating user-agent simulation as crawler proof.
 
 ## Data Import Export Workflow
 
@@ -521,6 +525,10 @@ Total: 131 skills.
 ## Web Performance Field Readiness
 
 `web-performance-field-readiness`. Assess user-facing performance before release when images, fonts, animation, WebGL, third-party scripts, or client JavaScript could threaten real-device experience.
+
+## Web Security Header Audit
+
+`web-security-header-audit`. Audit public web security headers and CSP using observed runtime origins, sensitive-path exposure checks, and browser validation without breaking trusted integrations.
 
 ## Webhook Reliability Review
 
