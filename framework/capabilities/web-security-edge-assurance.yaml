@@ -13,7 +13,7 @@ owners:
     - qa-engineer
   delivery:
     - frontend-engineer
-    - infrastructure-engineer
+    - platform-engineer
     - test-automation-engineer
   adjacent:
     - content-designer
