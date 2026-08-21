@@ -346,6 +346,15 @@
       "version": "0.1.1"
     },
     {
+      "canonical_name": "crawler-edge-access-audit",
+      "canonical_path": ".claude/skills/crawler-edge-access-audit/SKILL.md",
+      "adapter_path": ".agents/skills/crawler-edge-access-audit/SKILL.md",
+      "parity_type": "runtime-native",
+      "status": "native",
+      "notes": "Codex-native entry point.",
+      "version": "0.1.1"
+    },
+    {
       "canonical_name": "data-import-export-workflow",
       "canonical_path": ".claude/skills/data-import-export-workflow/SKILL.md",
       "adapter_path": ".agents/skills/data-import-export-workflow/SKILL.md",
@@ -1159,6 +1168,15 @@
       "canonical_name": "web-performance-field-readiness",
       "canonical_path": ".claude/skills/web-performance-field-readiness/SKILL.md",
       "adapter_path": ".agents/skills/web-performance-field-readiness/SKILL.md",
+      "parity_type": "runtime-native",
+      "status": "native",
+      "notes": "Codex-native entry point.",
+      "version": "0.1.1"
+    },
+    {
+      "canonical_name": "web-security-header-audit",
+      "canonical_path": ".claude/skills/web-security-header-audit/SKILL.md",
+      "adapter_path": ".agents/skills/web-security-header-audit/SKILL.md",
       "parity_type": "runtime-native",
       "status": "native",
       "notes": "Codex-native entry point.",
