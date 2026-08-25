@@ -49,7 +49,9 @@ ATLAS helps a project:
 - review authentication, authorization, tenant/data isolation, secrets, webhooks,
   payments, and external API failure behavior before production approval;
 - prove critical browser journeys, technical crawl/index behavior, structured-data
-  truth, and dependency/build supply-chain risk before public-web release claims.
+  truth, and dependency/build supply-chain risk before public-web release claims;
+- validate effective CSP/security headers, sensitive public-path exposure, and
+  CDN/WAF/bot/crawler interactions without weakening trusted integrations.
 
 ## What ATLAS is
 
@@ -80,10 +82,10 @@ frontmatter and validated in CI.
 | Component | Count | What it provides | Complete reference |
 | --- | ---: | --- | --- |
 | Agents | 88 | Orchestration plus focused product, engineering, architecture, governance, runtime, and assurance roles | [Agent Catalog](docs/agent-catalog.md) |
-| Skills | 131 | Bounded procedures for analysis, design, frontend craft, production trust, web assurance, validation, continuity, and delivery | [Skill Catalog](docs/skill-catalog.md) |
+| Skills | 133 | Bounded procedures for analysis, design, frontend craft, production trust, web assurance, validation, continuity, and delivery | [Skill Catalog](docs/skill-catalog.md) |
 | Commands | 71 | Explicit entry points for common ATLAS operations | `.claude/commands/` |
-| Workflows | 85 | Repeatable execution paths with responsibilities and gates | `.claude/workflows/` |
-| Reviews | 76 | Independent review procedures and acceptance checks | `.claude/reviews/` |
+| Workflows | 86 | Repeatable execution paths with responsibilities and gates | `.claude/workflows/` |
+| Reviews | 77 | Independent review procedures and acceptance checks | `.claude/reviews/` |
 | Contracts | 6 | Stable interfaces for agents, skills, workflows, memory, reviews, and commands | `.claude/contracts/` |
 
 ### Agent model
@@ -137,12 +139,16 @@ Examples:
   idempotency, entitlements, refunds, and provider reconciliation;
 - `browser-flow-validation` proves release-critical journeys in a rendered browser;
 - `seo-technical-audit` verifies deployed crawl/index/canonical/robots/sitemap behavior;
+- `web-security-header-audit` verifies effective CSP/security headers, trusted
+  browser integrations, and bounded sensitive-path exposure;
+- `crawler-edge-access-audit` verifies CDN/WAF/bot/challenge behavior without
+  treating simulated user agents as proprietary crawler proof;
 - `structured-data-validation` checks schema markup against authoritative page facts;
 - `supply-chain-risk-audit` reviews dependency/build deltas, advisories, executable
   scripts, source/provenance, and blast radius;
 - `dual-runtime-validation` checks Claude Code and Codex surfaces together.
 
-See the [Skill Catalog](docs/skill-catalog.md) for all 131 descriptions.
+See the [Skill Catalog](docs/skill-catalog.md) for all 133 descriptions.
 
 
 ## Full-Stack Delivery P2
@@ -366,6 +372,32 @@ Significant public-web releases follow `.claude/workflows/web-production-assuran
 and use the independent `.claude/reviews/web-production-assurance-review.md` gate.
 Critical or High findings, or missing mandatory release evidence, prevent an
 unconditional approval.
+
+## Web Security and Edge Assurance
+
+ATLAS treats browser security and crawler-access behavior as production evidence,
+not configuration trivia. The canonical model and capability overlay live at:
+
+```text
+framework/web-security-edge-assurance-model.md
+framework/capabilities/web-security-edge-assurance.yaml
+```
+
+The pack composes two focused capabilities:
+
+- `web-security-header-audit` for CSP, HSTS and browser security headers,
+  third-party origin inventory, `blocked:csp` browser regression, and bounded
+  sensitive-path checks;
+- `crawler-edge-access-audit` for CDN/WAF/bot/challenge ordering, search/AI
+  crawler access, authoritative response-body checks, and explicit separation
+  between user-agent simulation and verified proprietary crawler evidence.
+
+The model rejects broad bot, datacenter, or IP bypasses created only to make CI
+green. It also rejects security rules that silently block intended discovery or
+CSP changes that break analytics, conversion, chat, authentication, payments,
+APIs, fonts, images, or other trusted product behavior. A passive scan or
+simulated crawler does not prove vulnerability absence, indexing, AI citation,
+or proprietary crawler identity.
 
 ## Capability Evaluation
 

@@ -686,6 +686,15 @@
       "status": "mapped",
       "notes": "Resolved through the generated catalog to the canonical source.",
       "version": "0.1.1"
+    },
+    {
+      "canonical_name": "web-security-edge-assurance-review",
+      "canonical_path": ".claude/reviews/web-security-edge-assurance-review.md",
+      "adapter_path": "adapters/codex/catalogs/reviews.md",
+      "parity_type": "canonical-reference",
+      "status": "mapped",
+      "notes": "Resolved through the generated catalog to the canonical source.",
+      "version": "0.1.1"
     }
   ]
 }

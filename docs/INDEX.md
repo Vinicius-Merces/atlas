@@ -75,6 +75,8 @@
 - [Audit Bundles, Provenance, and Integrity](audit-bundle-guide.md)
 - [Project Health](project-health-guide.md)
 - [Technical Debt](technical-debt-guide.md)
+- [Web Production Assurance](../framework/web-production-assurance-model.md)
+- [Web Security and Edge Assurance](../framework/web-security-edge-assurance-model.md)
 - [Deprecation](deprecation-guide.md)
 
 ## Installation, upgrade, and release

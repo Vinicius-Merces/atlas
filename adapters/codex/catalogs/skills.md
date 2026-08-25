@@ -2,7 +2,7 @@
 
 > Generated from `.claude/registry.json`. Do not edit manually.
 
-Total: **131**
+Total: **133**
 
 - `accessibility-audit` → `.claude/skills/accessibility-audit/SKILL.md`
 - `adapter-drift-detection` → `.claude/skills/adapter-drift-detection/SKILL.md`
@@ -42,6 +42,7 @@ Total: **131**
 - `control-design` → `.claude/skills/control-design/SKILL.md`
 - `conversion-funnel-review` → `.claude/skills/conversion-funnel-review/SKILL.md`
 - `core-contract-stabilization` → `.claude/skills/core-contract-stabilization/SKILL.md`
+- `crawler-edge-access-audit` → `.claude/skills/crawler-edge-access-audit/SKILL.md`
 - `data-import-export-workflow` → `.claude/skills/data-import-export-workflow/SKILL.md`
 - `database-migration-analysis` → `.claude/skills/database-migration-analysis/SKILL.md`
 - `database-schema-review` → `.claude/skills/database-schema-review/SKILL.md`
@@ -133,5 +134,6 @@ Total: **131**
 - `version-transition-validation` → `.claude/skills/version-transition-validation/SKILL.md`
 - `visual-regression-review` → `.claude/skills/visual-regression-review/SKILL.md`
 - `web-performance-field-readiness` → `.claude/skills/web-performance-field-readiness/SKILL.md`
+- `web-security-header-audit` → `.claude/skills/web-security-header-audit/SKILL.md`
 - `webhook-reliability-review` → `.claude/skills/webhook-reliability-review/SKILL.md`
 - `workstream-decomposition` → `.claude/skills/workstream-decomposition/SKILL.md`
