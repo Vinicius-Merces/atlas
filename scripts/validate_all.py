@@ -157,6 +157,12 @@ def quick_steps(root: Path) -> list[ValidationStep]:
         ),
         _python_step(
             root,
+            "web-security-edge-assurance-pack",
+            "Validate web security and edge assurance capability pack",
+            "validate_web_security_edge_pack.py",
+        ),
+        _python_step(
+            root,
             "capability-evaluation-pack",
             "Validate capability evaluation pack",
             "validate_capability_evaluation_pack.py",

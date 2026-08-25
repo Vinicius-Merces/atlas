@@ -19,3 +19,12 @@ def test_web_security_edge_assurance_pack_contract() -> None:
 
     assert completed.returncode == 0, completed.stdout + completed.stderr
     assert "Web security and edge assurance pack valid:" in completed.stdout
+
+
+def test_web_security_edge_validator_is_in_global_validation() -> None:
+    validation_runner = (ROOT / "scripts" / "validate_all.py").read_text(
+        encoding="utf-8"
+    )
+
+    assert '"validate_web_security_edge_pack.py"' in validation_runner
+    assert '"web-security-edge-assurance-pack"' in validation_runner
