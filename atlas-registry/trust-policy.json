@@ -1,0 +1,17 @@
+{
+  "schema_version": 1,
+  "default_external_decision": "deny",
+  "levels": {
+    "internal": "allow",
+    "verified-external": "review",
+    "unverified-external": "deny",
+    "blocked": "deny"
+  },
+  "requirements": [
+    "origin",
+    "version",
+    "integrity",
+    "permissions",
+    "review_state"
+  ]
+}

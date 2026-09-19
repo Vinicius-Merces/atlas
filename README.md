@@ -79,6 +79,11 @@ ATLAS ships a broad engineering roster and a reusable capability library. Every
 registered agent and skill has canonical discovery metadata derived from YAML
 frontmatter and validated in CI.
 
+The generated [Capability Registry](atlas-registry/README.md) provides bounded,
+machine-readable discovery across agents, skills, workflows, reviews, and
+commands. Runtimes can rank a task against this compact index and load only the
+top matching canonical files instead of placing the full catalog in context.
+
 | Component | Count | What it provides | Complete reference |
 | --- | ---: | --- | --- |
 | Agents | 88 | Orchestration plus focused product, engineering, architecture, governance, runtime, and assurance roles | [Agent Catalog](docs/agent-catalog.md) |
@@ -438,8 +443,8 @@ python scripts/validate_all.py --profile quick
 
 The quick profile includes registry validation, agent taxonomy, discovery metadata,
 Frontend Craft Pack validation, SaaS Production Trust Pack validation, Web
-Production Assurance Pack validation, generated catalog checks, package checks,
-and contract validation.
+Production Assurance Pack validation, generated catalog and Capability Fabric
+checks, package checks, and contract validation.
 
 Use the full profile when changing runtime adapters, policies, generated catalogs,
 documentation, or release behavior:
@@ -553,6 +558,7 @@ See the [Installation Guide](docs/installation.md) and
 ├── .claude/           # Canonical Claude runtime, memory, agents, skills, workflows
 ├── .claude-plugin/    # Single plugin manifest and marketplace catalog
 ├── adapters/          # Codex and experimental runtime translations
+├── atlas-registry/    # Generated bounded capability discovery and trust policy
 ├── compatibility/     # Runtime matrix, support, and compatibility policy
 ├── docs/              # User, operator, architecture, research, and capability docs
 ├── framework/         # Runtime-neutral principles, capability overlays, and models
@@ -598,6 +604,8 @@ their human-readable descriptions from drifting from runtime routing metadata:
 python scripts/generate_capability_catalogs.py
 python scripts/generate_capability_catalogs.py --check
 python scripts/validate_discovery_metadata.py
+python scripts/generate_capability_fabric.py --check
+python scripts/discover_capabilities.py "browser security review"
 ```
 
 These checks are part of the portable validation runner.

@@ -1,0 +1,29 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "ATLAS Capability Catalog",
+  "type": "object",
+  "required": ["schema_version", "atlas_version", "generated_from", "capabilities"],
+  "properties": {
+    "schema_version": {"const": 1},
+    "atlas_version": {"type": "string", "minLength": 1},
+    "generated_from": {"const": ".claude/registry.json"},
+    "capabilities": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["id", "name", "kind", "description", "path", "trust"],
+        "properties": {
+          "id": {"type": "string", "pattern": "^(agent|skill|workflow|review|command):[a-z0-9]+(?:-[a-z0-9]+)*$"},
+          "name": {"type": "string", "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$"},
+          "kind": {"enum": ["agent", "skill", "workflow", "review", "command"]},
+          "description": {"type": "string", "minLength": 1},
+          "path": {"type": "string", "minLength": 1},
+          "keywords": {"type": "array", "uniqueItems": true, "items": {"type": "string", "minLength": 1}},
+          "trust": {"enum": ["internal", "verified-external", "unverified-external", "blocked"]}
+        },
+        "additionalProperties": false
+      }
+    }
+  },
+  "additionalProperties": false
+}
