@@ -204,6 +204,13 @@ def quick_steps(root: Path) -> list[ValidationStep]:
             "generate_capability_catalogs.py",
             "--check",
         ),
+        _python_step(
+            root,
+            "capability-fabric",
+            "Check bounded capability discovery artifacts",
+            "generate_capability_fabric.py",
+            "--check",
+        ),
         _python_step(root, "package", "Validate package source", "validate_package.py"),
         _python_step(root, "contracts", "Validate canonical contracts", "validate_contracts.py"),
     ]

@@ -1,0 +1,28 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "ATLAS Capability Trust Policy",
+  "type": "object",
+  "required": ["schema_version", "default_external_decision", "levels", "requirements"],
+  "properties": {
+    "schema_version": {"const": 1},
+    "default_external_decision": {"const": "deny"},
+    "levels": {
+      "type": "object",
+      "required": ["internal", "verified-external", "unverified-external", "blocked"],
+      "properties": {
+        "internal": {"enum": ["allow", "review", "deny"]},
+        "verified-external": {"enum": ["review", "deny"]},
+        "unverified-external": {"const": "deny"},
+        "blocked": {"const": "deny"}
+      },
+      "additionalProperties": false
+    },
+    "requirements": {
+      "type": "array",
+      "minItems": 5,
+      "uniqueItems": true,
+      "items": {"enum": ["origin", "version", "integrity", "permissions", "review_state"]}
+    }
+  },
+  "additionalProperties": false
+}

@@ -487,7 +487,9 @@
     "trust_model": "framework/trust-model.md",
     "testing_model": "framework/testing-model.md",
     "ai_engineering_model": "framework/ai-engineering-model.md",
-    "saas_production_trust_model": "framework/saas-production-trust-model.md"
+    "saas_production_trust_model": "framework/saas-production-trust-model.md",
+    "capability_fabric_model": "framework/capability-fabric-model.md",
+    "capability_trust_policy": "atlas-registry/trust-policy.json"
   },
   "experience": {
     "product_operating_model": "framework/product-operating-model.md",

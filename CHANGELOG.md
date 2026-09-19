@@ -1,5 +1,32 @@
 # Changelog
 
+## Unreleased
+
+### Fixed
+
+- Discovery enforces the validated trust policy and excludes review-required,
+  denied, unknown, and missing trust labels; unsafe external allow rules fail
+  schema validation
+- Capability Fabric includes the canonical orchestrator exactly once
+- Regression tests cover trust enforcement, invalid policies, and search limits
+
+### Added
+
+- Capability Fabric with generated discovery catalogs for all registered
+  agents, skills, workflows, reviews, and commands
+- Bounded deterministic capability search with a default top-three result set
+- Deny-by-default trust policy and JSON Schemas for capability provenance,
+  admission, and discovery artifacts
+- Full-profile contract tests for catalog drift, path resolution, trust labels,
+  bounded ranking, and exact-name discovery
+
+### Changed
+
+- Quick and full validation profiles now reject stale Capability Fabric
+  artifacts
+- Canonical registry and documentation now expose the Capability Fabric model
+  without creating a second hand-maintained source of truth
+
 ## 0.1.1
 
 ### Added
