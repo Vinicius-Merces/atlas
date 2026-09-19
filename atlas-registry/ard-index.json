@@ -967,6 +967,28 @@
       "trust": "internal"
     },
     {
+      "id": "agent:orchestrator",
+      "kind": "agent",
+      "description": "Coordinates complex tasks, selects specialist agents, enforces contracts, and owns delivery sequencing.",
+      "keywords": [
+        "agents",
+        "and",
+        "complex",
+        "contracts",
+        "coordinates",
+        "delivery",
+        "enforces",
+        "orchestrator",
+        "owns",
+        "selects",
+        "sequencing",
+        "specialist",
+        "tasks"
+      ],
+      "path": ".claude/agents/orchestrator.md",
+      "trust": "internal"
+    },
+    {
       "id": "agent:parallel-execution-architect",
       "kind": "agent",
       "description": "Designs safe parallel execution graphs across supported ATLAS runtimes.",

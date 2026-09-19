@@ -1011,6 +1011,29 @@
       "trust": "internal"
     },
     {
+      "id": "agent:orchestrator",
+      "name": "orchestrator",
+      "kind": "agent",
+      "description": "Coordinates complex tasks, selects specialist agents, enforces contracts, and owns delivery sequencing.",
+      "path": ".claude/agents/orchestrator.md",
+      "keywords": [
+        "agents",
+        "and",
+        "complex",
+        "contracts",
+        "coordinates",
+        "delivery",
+        "enforces",
+        "orchestrator",
+        "owns",
+        "selects",
+        "sequencing",
+        "specialist",
+        "tasks"
+      ],
+      "trust": "internal"
+    },
+    {
       "id": "agent:parallel-execution-architect",
       "name": "parallel-execution-architect",
       "kind": "agent",

@@ -8,9 +8,13 @@ import json
 import re
 from pathlib import Path
 
+from jsonschema import Draft202012Validator
+
 
 ROOT = Path(__file__).resolve().parents[1]
 INDEX = ROOT / "atlas-registry" / "ard-index.json"
+POLICY = ROOT / "atlas-registry" / "trust-policy.json"
+POLICY_SCHEMA = ROOT / "schemas" / "capability-trust-policy.schema.json"
 TOKEN = re.compile(r"[a-z0-9]+")
 
 
@@ -30,10 +34,15 @@ def score(query: str, item: dict[str, object]) -> int:
 
 
 def discover(query: str, *, limit: int, kinds: set[str]) -> list[dict[str, object]]:
+    if not 1 <= limit <= 10:
+        raise ValueError("limit must be between 1 and 10")
+    policy = json.loads(POLICY.read_text(encoding="utf-8"))
+    Draft202012Validator(json.loads(POLICY_SCHEMA.read_text(encoding="utf-8"))).validate(policy)
     index = json.loads(INDEX.read_text(encoding="utf-8"))
     candidates = [
         item for item in index["capabilities"]
-        if (not kinds or item["kind"] in kinds) and item["trust"] != "blocked"
+        if (not kinds or item["kind"] in kinds)
+        and policy["levels"].get(item.get("trust"), policy["default_external_decision"]) == "allow"
     ]
     ranked = sorted(
         ((score(query, item), item) for item in candidates),

@@ -2,6 +2,14 @@
 
 ## Unreleased
 
+### Fixed
+
+- Discovery enforces the validated trust policy and excludes review-required,
+  denied, unknown, and missing trust labels; unsafe external allow rules fail
+  schema validation
+- Capability Fabric includes the canonical orchestrator exactly once
+- Regression tests cover trust enforcement, invalid policies, and search limits
+
 ### Added
 
 - Capability Fabric with generated discovery catalogs for all registered

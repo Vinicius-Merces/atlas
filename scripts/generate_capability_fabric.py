@@ -58,7 +58,10 @@ def build() -> tuple[dict[str, object], dict[str, object]]:
     registry = json.loads(REGISTRY.read_text(encoding="utf-8"))
     capabilities: list[dict[str, object]] = []
     for collection, (kind, _, _) in COLLECTIONS.items():
-        for name in registry.get(collection, []):
+        names = list(registry.get(collection, []))
+        if collection == "agents" and registry["orchestrator"] not in names:
+            names.append(registry["orchestrator"])
+        for name in names:
             path = resolve_path(collection, name)
             metadata = frontmatter(path)
             description = metadata.get("description")

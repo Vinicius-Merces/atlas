@@ -16,7 +16,9 @@ artifacts and must never become a second hand-maintained catalog.
 ## Discovery flow
 
 1. Read `atlas-registry/ard-index.json`.
-2. Filter candidates by capability kind and trust decision when supplied.
+2. Validate the trust policy and return only candidates explicitly allowed by
+   it, optionally filtering by capability kind. Review-required, denied, unknown,
+   and missing trust labels are excluded. Invalid or missing policy fails closed.
 3. Rank candidates using exact name, token, description, and keyword matches.
 4. Return at most three candidates by default.
 5. Load the canonical source paths only for the selected candidates.
