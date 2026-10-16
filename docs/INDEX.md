@@ -132,3 +132,5 @@ support is defined by the support policy and runtime matrix.
 
 - [Project delivery feedback](project-delivery-feedback.md)
 - [Effectiveness review, 2026-10-16](../reports/atlas-effectiveness-2026-10-16.md)
+
+- [Context efficiency plan](context-efficiency-plan.md)

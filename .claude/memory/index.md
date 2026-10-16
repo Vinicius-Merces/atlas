@@ -19,3 +19,5 @@ placeholders as reviewed project memory.
 - [Live Reference Build Campaign](capabilities/live-reference-build-campaign.md) - P4 isolated live benchmark protocol.
 
 - [Delivery lessons](delivery-lessons.md)
+
+- [Context efficiency](context-efficiency.md)

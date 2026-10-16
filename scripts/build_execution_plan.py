@@ -4,6 +4,11 @@ import argparse
 import json
 from pathlib import Path
 
+if __package__:
+    from .validate_context_pack import verify
+else:
+    from validate_context_pack import verify
+
 ROOT = Path(__file__).resolve().parents[1]
 REGISTRY = ROOT / ".claude" / "registry.json"
 
@@ -37,6 +42,11 @@ def main() -> None:
         action="store_true",
         help="Build a draft plan even when the context pack is unavailable.",
     )
+    parser.add_argument(
+        "--allow-unverified-context",
+        action="store_true",
+        help="Explicit legacy draft without a manifest; never bypasses failed verification",
+    )
     args = parser.parse_args()
 
     envelope_path = Path(args.task_envelope).resolve()
@@ -58,6 +68,28 @@ def main() -> None:
             "Task envelope has no available context pack. Run "
             "build_context_pack.py first or pass --allow-missing-context."
         )
+
+    context_verified = False
+    context_limitations = []
+    if context_available:
+        manifest_reference = envelope.get("context_manifest")
+        manifest_path = Path(manifest_reference) if manifest_reference else context_path.with_suffix(".manifest.json")
+        if not manifest_path.is_absolute():
+            manifest_path = ROOT / manifest_path
+        if manifest_path.is_file():
+            try:
+                manifest = verify(manifest_path, context_path, task_id=envelope["id"], root=ROOT)
+            except Exception as exc:
+                raise SystemExit(f"Context verification failed: {exc}") from None
+            context_verified = True
+            for key in ("missing_sources", "deferred_sources", "truncated_sources"):
+                context_limitations.extend(f"{key}: {name}" for name in manifest.get(key, []))
+        elif args.allow_unverified_context:
+            context_limitations.append("Legacy context has no verified manifest; draft only")
+        else:
+            raise SystemExit("Context manifest is required; rebuild with build_context_pack.py or use --allow-unverified-context for a legacy draft")
+    else:
+        context_limitations.append("Context is unavailable; draft only")
 
     roles = [
         envelope["primary_role"],
@@ -104,6 +136,8 @@ def main() -> None:
         "affected_paths": envelope.get("affected_paths", []),
         "context_pack": context_reference,
         "context_available": context_available,
+        "context_verified": context_verified,
+        "context_limitations": context_limitations,
         "capability_sources": capability_sources,
         "steps": [
             "validate-task-envelope",

@@ -47,6 +47,7 @@ def test_execution_plan_resolves_capabilities_and_states_execution_boundary(
             str(task),
             "--runtime",
             "codex",
+            "--allow-unverified-context",
             "--output",
             str(output),
         ],
@@ -60,6 +61,8 @@ def test_execution_plan_resolves_capabilities_and_states_execution_boundary(
     assert plan["execution_mode"] == "ai-or-human-interpreted"
     assert plan["requires_external_execution"] is True
     assert plan["context_available"] is True
+    assert plan["context_verified"] is False
+    assert "draft only" in plan["context_limitations"][0]
     assert plan["capability_sources"]["workflow"] == (
         ".claude/workflows/feature-delivery.md"
     )

@@ -140,6 +140,15 @@
         "minLength": 1
       },
       "minItems": 1
+    },
+    "context_verified": {
+      "type": "boolean"
+    },
+    "context_limitations": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
     }
   },
   "required": [
