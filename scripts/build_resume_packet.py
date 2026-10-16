@@ -32,6 +32,7 @@ def main(argv: list[str] | None = None) -> None:
     continuity = ROOT / CONTINUITY_ROOT
     project_brief = continuity / "project-brief.json"
     latest_session = continuity / "latest-session.json"
+    session = json.loads(latest_session.read_text(encoding="utf-8")) if latest_session.exists() else {}
 
     packet = {
         "framework_version": version,
@@ -43,12 +44,14 @@ def main(argv: list[str] | None = None) -> None:
         "checkpoints": existing(CONTINUITY_ROOT, "checkpoint-*.json"),
         "handoffs": existing(CONTINUITY_ROOT, "handoff-*.json"),
         "workstreams": existing(CONTINUITY_ROOT, "ws-*.json"),
-        "risks": [],
+        "risks": session.get("risks", []),
         "next_actions": [
             "Read AGENTS.md.",
             "Read the project brief and latest session.",
             "Validate memory freshness.",
             "Inspect Git status and pending task artifacts.",
+            *([session["next_action"]] if session.get("next_action") else []),
+            *session.get("pending_work", []),
         ],
     }
 

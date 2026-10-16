@@ -70,6 +70,9 @@ validation and completion criteria.
 
 ### 4. Execute
 
+Apply [project delivery feedback](project-delivery-feedback.md) for checkpoint
+frequency, evidence by project type, and measurable completion criteria.
+
 Implement the smallest coherent change. Agent files define bounded
 responsibilities and native skills provide reusable prompts. Markdown workflows
 and review gates remain procedures that the AI runtime must interpret. None of
@@ -107,8 +110,9 @@ At a meaningful stopping point:
 2. Record changed files, validation, decisions, assumptions, and risks.
 3. Create a checkpoint or runtime handoff when work remains.
 4. Update the latest session brief.
-5. Rebuild the resume packet.
-6. Confirm the next action is safe and specific.
+5. Rebuild the resume packet, preserving session risks and pending work.
+6. Run `python scripts/validate_continuity_state.py`.
+7. Confirm the next action is safe and specific.
 
 Continuity builders write repository artifacts. Run them intentionally and
 review their diffs before committing.

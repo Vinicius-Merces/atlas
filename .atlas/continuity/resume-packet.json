@@ -1,28 +1,60 @@
 {
-  "framework_version": "0.1.0",
-  "generated_at": "2026-07-31T04:58:24.940421+00:00",
+  "framework_version": "0.1.1",
+  "generated_at": "2026-10-16T22:32:02.106964+00:00",
   "project_brief": ".atlas/continuity/project-brief.json",
   "latest_session": ".atlas/continuity/latest-session.json",
   "memory_sources": [
     ".claude/memory/README.md",
     ".claude/memory/architecture.md",
     ".claude/memory/business.md",
+    ".claude/memory/capabilities/capability-evaluation.md",
+    ".claude/memory/capabilities/domains/application-engineering.md",
+    ".claude/memory/capabilities/domains/architecture-migration-stability.md",
+    ".claude/memory/capabilities/domains/cloud-platform-operations.md",
+    ".claude/memory/capabilities/domains/data-ai-analytics.md",
+    ".claude/memory/capabilities/domains/experience-design.md",
+    ".claude/memory/capabilities/domains/governance-policy.md",
+    ".claude/memory/capabilities/domains/knowledge-continuity-documentation.md",
+    ".claude/memory/capabilities/domains/orchestration-delivery.md",
+    ".claude/memory/capabilities/domains/product-strategy.md",
+    ".claude/memory/capabilities/domains/quality-assurance-audit.md",
+    ".claude/memory/capabilities/domains/release-deployment-integrity.md",
+    ".claude/memory/capabilities/domains/runtime-portability.md",
+    ".claude/memory/capabilities/domains/security-privacy-compliance.md",
+    ".claude/memory/capabilities/frontend-craft.md",
+    ".claude/memory/capabilities/full-stack-delivery.md",
+    ".claude/memory/capabilities/live-reference-build-campaign.md",
+    ".claude/memory/capabilities/production-product-quality.md",
+    ".claude/memory/capabilities/reference-build-benchmark.md",
+    ".claude/memory/capabilities/relayops-live-saas-campaign.md",
+    ".claude/memory/capabilities/saas-production-trust.md",
+    ".claude/memory/capabilities/web-production-assurance.md",
+    ".claude/memory/capabilities/web-security-edge-assurance.md",
     ".claude/memory/contradictions.md",
+    ".claude/memory/delivery-lessons.md",
     ".claude/memory/index.md",
-    ".claude/memory/operations.md"
+    ".claude/memory/operations.md",
+    ".claude/memory/templates/architecture.md",
+    ".claude/memory/templates/brand.md",
+    ".claude/memory/templates/business.md",
+    ".claude/memory/templates/integrations.md",
+    ".claude/memory/templates/operations.md",
+    ".claude/memory/templates/security.md"
   ],
   "open_tasks": [],
   "checkpoints": [],
-  "handoffs": [
-    "schemas/handoff-manifest.schema.json",
-    "templates/handoff-manifest.json"
-  ],
+  "handoffs": [],
   "workstreams": [],
-  "risks": [],
+  "risks": [
+    "Production flows and Windows executable were not tested in this framework review.",
+    "Framework improvements require adoption in individual project repositories."
+  ],
   "next_actions": [
     "Read AGENTS.md.",
     "Read the project brief and latest session.",
     "Validate memory freshness.",
-    "Inspect Git status and pending task artifacts."
+    "Inspect Git status and pending task artifacts.",
+    "Apply delivery feedback to the next project task and record observed acceptance and remaining work.",
+    "Measure acceptance, rework and checkpoint persistence on subsequent project tasks."
   ]
 }

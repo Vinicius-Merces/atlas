@@ -25,6 +25,9 @@ This repository uses ATLAS as its engineering operating framework.
 5. Report execution evidence using `adapters/codex/instructions/execution-evidence.md`.
 6. Do not fork project knowledge by runtime.
 7. Record runtime limitations explicitly.
+8. Apply `docs/project-delivery-feedback.md`: save validated batches, track exact
+   remaining work, and distinguish implementation, validation, remote persistence,
+   and deployment in completion claims.
 
 ## Validation and evidence
 
