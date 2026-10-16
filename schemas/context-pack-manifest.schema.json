@@ -37,6 +37,45 @@
     "selection": {
       "type": "string",
       "minLength": 1
+    },
+    "deferred_sources": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      },
+      "uniqueItems": true
+    },
+    "truncated_sources": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      },
+      "uniqueItems": true
+    },
+    "context_sha256": {
+      "type": "string",
+      "pattern": "^[a-f0-9]{64}$"
+    },
+    "stable_prefix_sha256": {
+      "type": "string",
+      "pattern": "^[a-f0-9]{64}$"
+    },
+    "stable_prefix_chars": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "rendered_chars": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "max_total_chars": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "measurement_unit": {
+      "const": "characters"
     }
   },
   "required": [

@@ -1,10 +1,11 @@
 {
   "framework_version": "0.1.1",
-  "generated_at": "2026-10-16T22:31:10.905375+00:00",
+  "generated_at": "2026-10-16T22:47:47.657028+00:00",
   "sources_checked": [
     ".atlas/continuity/resume-packet.json",
     ".claude/memory/architecture.md",
     ".claude/memory/business.md",
+    ".claude/memory/context-efficiency.md",
     ".claude/memory/contradictions.md",
     ".claude/memory/delivery-lessons.md",
     ".claude/memory/operations.md",

@@ -1,6 +1,6 @@
 {
   "framework_version": "0.1.1",
-  "generated_at": "2026-10-16T22:32:02.106964+00:00",
+  "generated_at": "2026-10-16T22:49:04.624050+00:00",
   "project_brief": ".atlas/continuity/project-brief.json",
   "latest_session": ".atlas/continuity/latest-session.json",
   "memory_sources": [
@@ -30,6 +30,7 @@
     ".claude/memory/capabilities/saas-production-trust.md",
     ".claude/memory/capabilities/web-production-assurance.md",
     ".claude/memory/capabilities/web-security-edge-assurance.md",
+    ".claude/memory/context-efficiency.md",
     ".claude/memory/contradictions.md",
     ".claude/memory/delivery-lessons.md",
     ".claude/memory/index.md",
@@ -46,15 +47,18 @@
   "handoffs": [],
   "workstreams": [],
   "risks": [
-    "Production flows and Windows executable were not tested in this framework review.",
-    "Framework improvements require adoption in individual project repositories."
+    "No provider prompt caching was enabled and no cost saving has been measured.",
+    "Context verification detects drift, not semantic completeness or malicious manifests.",
+    "Existing packs require rebuilding or explicit legacy draft mode."
   ],
   "next_actions": [
     "Read AGENTS.md.",
     "Read the project brief and latest session.",
     "Validate memory freshness.",
     "Inspect Git status and pending task artifacts.",
-    "Apply delivery feedback to the next project task and record observed acceptance and remaining work.",
-    "Measure acceptance, rework and checkpoint persistence on subsequent project tasks."
+    "Begin stage 2 with retrieval tests for relevant information located beyond the start of source files.",
+    "Stage 2: select relevant sections and symbols instead of initial file excerpts.",
+    "Stage 3: add invalidated-by-content-hash local extraction reuse.",
+    "Stage 4: integrate runtime capabilities and measure actual tokens, cache usage, latency, cost and task acceptance."
   ]
 }

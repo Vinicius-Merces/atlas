@@ -65,7 +65,9 @@ envelope, but its routing policy is a starting point and must be reviewed.
 
 Load relevant memory, contracts, ADRs, code, tests, and prior evidence. A
 generated context pack is heuristic; add task-specific sources before
-execution. Select the closest canonical workflow and produce a plan with
+execution. Context packs use a global character budget and disclose omitted or
+truncated sources; the execution planner verifies manifest integrity and source
+freshness. See [Context Packs](context-pack-guide.md). Select the closest canonical workflow and produce a plan with
 validation and completion criteria.
 
 ### 4. Execute
