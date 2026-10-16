@@ -1,6 +1,6 @@
 {
   "framework_version": "0.1.1",
-  "generated_at": "2026-10-16T22:47:47.657028+00:00",
+  "generated_at": "2026-10-16T23:03:06.186221+00:00",
   "sources_checked": [
     ".atlas/continuity/resume-packet.json",
     ".claude/memory/architecture.md",
@@ -9,6 +9,7 @@
     ".claude/memory/contradictions.md",
     ".claude/memory/delivery-lessons.md",
     ".claude/memory/operations.md",
+    ".claude/memory/project-isolation.md",
     ".claude/registry.json",
     "VERSION",
     "adapters/claude/runtime-declaration.json",

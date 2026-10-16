@@ -29,6 +29,18 @@ This repository uses ATLAS as its engineering operating framework.
    remaining work, and distinguish implementation, validation, remote persistence,
    and deployment in completion claims.
 
+## Product memory isolation
+
+- Keep each product's memory and continuity in that product repository. Never
+  write a product session into the upstream ATLAS checkout.
+- For product work, use `scripts/project_memory.py init|start|close` with the
+  explicit product `--project-root`; see `docs/project-local-memory-guide.md`.
+- Initialize an unbound product before planning. If legacy state conflicts,
+  reconcile it locally while preserving evidence; never fall back to toolkit memory.
+- Run start before resuming an initialized product and close after a validated
+  checkpoint. Canonical facts belong in its `.claude/memory/`; Obsidian is a
+  generated project-local view. Do not copy upstream knowledge during adoption.
+
 ## Validation and evidence
 
 - Run the repository validators and `python -m pytest tests -q`.

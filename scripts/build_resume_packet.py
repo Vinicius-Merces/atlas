@@ -6,6 +6,11 @@ from datetime import datetime, timezone
 from fnmatch import fnmatchcase
 from pathlib import Path
 
+if __package__:
+    from .project_memory_utils import framework_version, identity
+else:
+    from project_memory_utils import framework_version, identity
+
 ROOT = Path(__file__).resolve().parents[1]
 CONTINUITY_ROOT = ".atlas/continuity"
 MEMORY_ROOT = ".claude/memory"
@@ -28,7 +33,7 @@ def main(argv: list[str] | None = None) -> None:
     )
     parser.parse_args(argv)
 
-    version = (ROOT / "VERSION").read_text(encoding="utf-8").strip()
+    version = framework_version(ROOT)
     continuity = ROOT / CONTINUITY_ROOT
     project_brief = continuity / "project-brief.json"
     latest_session = continuity / "latest-session.json"
@@ -54,6 +59,9 @@ def main(argv: list[str] | None = None) -> None:
             *session.get("pending_work", []),
         ],
     }
+
+    if identity(ROOT):
+        packet["project_id"] = identity(ROOT)["project_id"]
 
     output = continuity / "resume-packet.json"
     output.parent.mkdir(parents=True, exist_ok=True)

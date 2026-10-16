@@ -46,7 +46,9 @@ Review every operation before copying. Merge, rather than replace:
 
 - `README.md`, `LICENSE`, `AGENTS.md`, `CLAUDE.md`, `VERSION`, and `.gitignore`;
 - existing `.github/` workflows and configuration;
-- existing `.claude/memory/` project knowledge.
+- preserve existing `.claude/memory/` project knowledge; never replace it with
+  the upstream framework's memories. The planner excludes those source memories
+  and upstream Obsidian indexes.
 
 Review any other occupied path individually. Never copy the full cumulative
 tree over an existing project in one operation. After the merge, inspect the
@@ -74,7 +76,8 @@ project/
 └── VERSION
 ```
 
-Add validated project knowledge under `.claude/memory/`. Never store secrets,
+Initialize isolated memory with the [Project-local memory guide](project-local-memory-guide.md).
+Add validated project knowledge under the product's `.claude/memory/`. Never store secrets,
 temporary logs, or unconfirmed assumptions in durable memory.
 
 ## Dedicated repository

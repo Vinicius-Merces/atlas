@@ -46,6 +46,10 @@
     },
     "next_actions": {
       "$ref": "#/$defs/stringArray"
+    },
+    "project_id": {
+      "type": "string",
+      "pattern": "^project-[a-f0-9]{32}$"
     }
   },
   "required": [

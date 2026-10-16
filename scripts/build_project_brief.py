@@ -5,6 +5,11 @@ import json
 from fnmatch import fnmatchcase
 from pathlib import Path
 
+if __package__:
+    from .project_memory_utils import framework_version, identity
+else:
+    from project_memory_utils import framework_version, identity
+
 ROOT = Path(__file__).resolve().parents[1]
 CANONICAL_ADR_ROOTS = ("framework/adr",)
 
@@ -36,7 +41,7 @@ def main(argv: list[str] | None = None) -> None:
     )
     parser.parse_args(argv)
 
-    version = (ROOT / "VERSION").read_text(encoding="utf-8").strip()
+    version = framework_version(ROOT)
     brief = {
         "framework_version": version,
         "project_name": ROOT.name,
@@ -62,6 +67,11 @@ def main(argv: list[str] | None = None) -> None:
             "framework/",
         ],
     }
+    if identity(ROOT):
+        brief["project_id"] = identity(ROOT)["project_id"]
+        brief["project_name"] = identity(ROOT)["project_name"]
+        brief["sources"] = [name for name in brief["sources"] if (ROOT / name).exists()]
+
     output = ROOT / ".atlas" / "continuity" / "project-brief.json"
     output.parent.mkdir(parents=True, exist_ok=True)
     output.write_text(json.dumps(brief, indent=2) + "\n", encoding="utf-8")
