@@ -17,3 +17,7 @@
 4. Update durable memory when appropriate.
 5. Create a new session brief.
 6. Rebuild the resume packet.
+7. Validate active continuity with `python scripts/validate_continuity_state.py`.
+   Preserve session risks, next action and pending work; do not rewrite historical
+   evidence to conceal drift. Follow `docs/project-delivery-feedback.md` for
+   checkpoints after validated batches and product-specific acceptance evidence.

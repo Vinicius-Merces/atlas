@@ -227,6 +227,7 @@ def full_steps(root: Path, *, policy_output: str = "-") -> list[ValidationStep]:
         _python_step(root, "runtime-conformance", "Validate runtime conformance", "validate_conformance.py"),
         _python_step(root, "source-of-truth", "Validate canonical sources of truth", "validate_source_of_truth.py"),
         _python_step(root, "memory-freshness", "Validate memory freshness", "validate_memory_freshness.py", "--strict"),
+        _python_step(root, "continuity-state", "Validate active continuity state", "validate_continuity_state.py"),
         _python_step(root, "knowledge-links", "Validate memory and Obsidian links", "validate_knowledge_links.py"),
         _python_step(root, "documentation", "Validate documentation", "validate_documentation.py"),
         _python_step(root, "policy-exceptions", "Validate policy exceptions", "validate_policy_exceptions.py"),

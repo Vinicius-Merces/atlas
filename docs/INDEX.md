@@ -127,3 +127,8 @@ support is defined by the support policy and runtime matrix.
 - Schemas: `../schemas/`
 - Templates: `../templates/`
 - Blueprints: `../blueprints/`
+
+## Delivery feedback
+
+- [Project delivery feedback](project-delivery-feedback.md)
+- [Effectiveness review, 2026-10-16](../reports/atlas-effectiveness-2026-10-16.md)

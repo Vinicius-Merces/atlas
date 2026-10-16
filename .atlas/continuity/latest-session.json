@@ -1,57 +1,44 @@
 {
-  "session_id": "session-stable-0.1.0-published",
-  "framework_version": "0.1.0",
+  "session_id": "session-effectiveness-2026-10-16",
+  "framework_version": "0.1.1",
   "runtime": "codex",
-  "created_at": "2026-07-31T04:57:39.1760701+00:00",
-  "summary": "Published ATLAS 0.1.0 stable after the exact promotion source passed hosted CI, merged, was tagged, and all nine release assets matched their local SHA-256 digests.",
+  "created_at": "2026-10-16T22:31:10.736602+00:00",
+  "summary": "Reviewed ATLAS effectiveness, inspected repository Obsidian memory and corrected continuity loss.",
   "completed_work": [
-    "Created and merged pull request #3 after two hosted validation checks passed.",
-    "Tagged corrected commit 5671e55ace0dad2e6e3f1fe3995f4d5e8f595fc8 as v0.1.0-rc.1.",
-    "Recorded RC exercise evidence with no remaining blocker on the tagged source.",
-    "Promoted controlled version surfaces and core contract classification to stable 0.1.0.",
-    "Graduated Claude Code and Codex declarations from beta-supported to supported.",
-    "Completed stable notes, beta.11 migration, manifest, validation, checklist, deployment receipt, and audit evidence.",
-    "Passed all local validators, 14 policies, and 67 tests.",
-    "Built and simulated deterministic cumulative, beta.11 incremental, and recovery artifacts.",
-    "Merged pull request #4 as ce18265b0ece839a862240bb1a170e7532c7b7bd after two hosted validation checks passed.",
-    "Tagged the stable merge as v0.1.0 and published the GitHub Release with nine verified assets."
+    "Inspected ATLAS baseline and recent CloudPath audit evidence.",
+    "Added continuity validation and preservation of session risks, pending work and next action.",
+    "Recorded project delivery lessons and preserved historical July continuity."
   ],
   "changed_files": [
-    ".atlas/continuity/",
-    ".claude/memory/",
-    "CHANGELOG.md",
-    "README.md",
-    "VERSION",
-    "adapters/",
-    "compatibility/",
+    "scripts/build_resume_packet.py",
+    "scripts/validate_continuity_state.py",
+    "scripts/validate_all.py",
+    "tests/conformance/test_continuity_state.py",
     "docs/",
-    "framework/",
-    "release/",
-    "reports/post-release-validation.md",
-    "reports/stable-promotion-validation.md",
-    "scripts/",
-    "templates/",
-    "tests/"
+    "reports/",
+    ".claude/memory/",
+    "obsidian/",
+    ".atlas/continuity/",
+    "AGENTS.md",
+    "adapters/shared/session-continuity-protocol.md"
   ],
   "validation": [
-    "67 full-suite tests passed.",
-    "14 policies passed with no warning, approval, or block.",
-    "31 schemas and fixtures, 112 JSON files before the deployment receipt, and 5 YAML files passed.",
-    "All repository, registry, package, contract, Codex, runtime, conformance, source-of-truth, memory, link, documentation, and policy gates passed.",
-    "Cumulative, beta.11 incremental, and recovery artifacts reproduced identically.",
-    "Clean stable install, beta.11 upgrade with 157 additions, 74 replacements, and 84 explicit legacy-agent deletions, and recovery simulations passed.",
-    "Seven release evidence records passed integrity verification in source and all installed modes."
+    "Original full validation passed despite stale continuity.",
+    "New gate reproduced stale versions, false handoffs and lost context.",
+    "Four focused continuity regression tests passed.",
+    "Full validate_all profile passed all 40 gates, including 342 full-suite tests and 14 policies.",
+    "Documentation, Codex synchronization, runtime drift and git diff whitespace checks passed after entry-point updates."
   ],
   "decisions": [
-    "Promote core contracts from stable-rc to stable without changing semantic responsibility.",
-    "Graduate Claude Code and Codex support claims while keeping Gemini and Cursor experimental.",
-    "Use beta.11 as the stable incremental base and preserve the RC path through cumulative installation.",
-    "Keep every legacy-agent deletion explicit and paired with its canonical .claude replacement."
+    "Keep historical evidence unchanged; rebuild only active continuity.",
+    "Evaluate product effectiveness separately from framework conformance."
   ],
-  "pending_work": [],
+  "pending_work": [
+    "Measure acceptance, rework and checkpoint persistence on subsequent project tasks."
+  ],
   "risks": [
-    "Gemini and Cursor remain experimental.",
-    "Runtime tool names and invocation remain intentionally runtime-specific."
+    "Production flows and Windows executable were not tested in this framework review.",
+    "Framework improvements require adoption in individual project repositories."
   ],
-  "next_action": "Monitor stable 0.1.x feedback and apply the documented compatibility and deprecation policies to future changes."
+  "next_action": "Apply delivery feedback to the next project task and record observed acceptance and remaining work."
 }

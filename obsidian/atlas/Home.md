@@ -26,6 +26,10 @@ tags:
 - [[../../.claude/memory/operations|Operations memory]]
 - [[../../.claude/memory/contradictions|Contradiction register]]
 
+## Project feedback
+
+- [[Delivery Lessons]]
+
 ## Maintenance
 
 Use [[../templates/Knowledge Note]] for new stable knowledge.
