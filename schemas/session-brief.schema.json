@@ -53,6 +53,10 @@
     "next_action": {
       "type": "string",
       "minLength": 1
+    },
+    "project_id": {
+      "type": "string",
+      "pattern": "^project-[a-f0-9]{32}$"
     }
   },
   "required": [

@@ -134,3 +134,5 @@ support is defined by the support policy and runtime matrix.
 - [Effectiveness review, 2026-10-16](../reports/atlas-effectiveness-2026-10-16.md)
 
 - [Context efficiency plan](context-efficiency-plan.md)
+
+- [Project-local memory](project-local-memory-guide.md)

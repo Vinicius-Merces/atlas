@@ -15,3 +15,9 @@ ATLAS runtime architecture is maintained in the canonical
 - Gemini and Cursor: experimental adapters
 
 See [[Agents]], [[Skills]], and [[Workflows]] for capability indexes.
+
+## Product memory boundary
+
+Each product owns its memory and generated vault view. See
+[[../../.claude/memory/project-isolation|product memory isolation]] and
+[[../../docs/project-local-memory-guide|project-local memory lifecycle]].

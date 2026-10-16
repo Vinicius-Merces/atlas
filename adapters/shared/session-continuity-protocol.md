@@ -21,3 +21,11 @@
    Preserve session risks, next action and pending work; do not rewrite historical
    evidence to conceal drift. Follow `docs/project-delivery-feedback.md` for
    checkpoints after validated batches and product-specific acceptance evidence.
+
+## Product repositories
+
+Use `scripts/project_memory.py start --project-root <product-root>` before
+resuming product work, and its `close` action with a staged identity-bound session
+after a checkpoint. Initialize once with `init`. Product knowledge stays in that
+product; upstream ATLAS receives framework changes only. See
+`docs/project-local-memory-guide.md`.

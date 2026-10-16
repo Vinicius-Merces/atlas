@@ -1,51 +1,59 @@
 {
-  "session_id": "session-context-efficiency-2026-10-16",
+  "session_id": "session-project-memory-isolation-2026-10-16",
   "framework_version": "0.1.1",
   "runtime": "codex",
-  "created_at": "2026-10-16T22:47:47.528267+00:00",
-  "summary": "Implemented stage 1 of the context efficiency plan: hard global character budget, stable prefix and mandatory integrity/freshness verification before planning.",
+  "created_at": "2026-10-16T23:03:06.077139+00:00",
+  "summary": "Improved the framework to keep each product memory local and identity-bound; no real product repositories were migrated.",
   "completed_work": [
-    "Recorded a four-stage improvement plan with primary research references.",
-    "Implemented full canonical instructions, budgeted optional sources and disclosed limitations.",
-    "Added pack integrity, prefix and source-hash verification to execution planning.",
-    "Added regression coverage for budgets, stable prefixes, stale sources, tampering and legacy drafts."
+    "Added explicit init/start/close project-memory entry point with project identity and origin binding.",
+    "Reused canonical builders against explicit target roots and kept product/framework versions separate.",
+    "Added local Obsidian views with edit protection and freshness reporting.",
+    "Excluded upstream memory and product views from adoption plans; rejected product repositories as distribution sources.",
+    "Tested two independent Git projects and fresh-process resume without changing framework state."
   ],
   "changed_files": [
-    "scripts/build_context_pack.py",
-    "scripts/build_execution_plan.py",
-    "scripts/validate_context_pack.py",
-    "schemas/context-pack-manifest.schema.json",
-    "schemas/runtime-execution-plan.schema.json",
-    "tests/conformance/test_context_efficiency.py",
-    "tests/conformance/test_execution_planner.py",
-    "docs/context-efficiency-plan.md",
-    "docs/context-pack-guide.md",
-    "docs/operations-guide.md",
+    "scripts/project_memory.py",
+    "scripts/project_memory_utils.py",
+    "scripts/build_project_brief.py",
+    "scripts/build_resume_packet.py",
+    "scripts/validate_continuity_state.py",
+    "scripts/plan_project_adoption.py",
+    "schemas/project-brief.schema.json",
+    "schemas/session-brief.schema.json",
+    "schemas/resume-packet.schema.json",
+    "tests/conformance/test_project_memory_isolation.py",
+    "tests/conformance/test_project_adoption.py",
+    "AGENTS.md",
+    "adapters/codex/instructions/session-bootstrap.md",
+    "adapters/shared/session-continuity-protocol.md",
+    "docs/project-local-memory-guide.md",
+    "docs/installation.md",
     "docs/INDEX.md",
-    ".claude/memory/context-efficiency.md",
+    "obsidian/README.md",
+    "obsidian/atlas/Systems.md",
+    ".claude/memory/project-isolation.md",
     ".claude/memory/index.md",
-    "obsidian/atlas/Delivery Lessons.md",
     ".atlas/continuity/"
   ],
   "validation": [
-    "Fourteen targeted tests passed, including the complete runtime lifecycle.",
-    "Final release profile passed all 46 gates, including 352 tests, 14 policies and cumulative/recovery/incremental package validation.",
-    "Whitespace diff review passed; provider cache and cost measurements remain outside stage 1."
+    "Thirteen targeted isolation/adoption tests passed.",
+    "Final release validation passed all 46 gates, including 363 tests, 14 policies and cumulative/recovery/incremental package checks.",
+    "Fresh-process resume for two isolated projects preserved local pending work without modifying framework continuity.",
+    "Manual diff review completed; native Obsidian application and real product repositories were not exercised."
   ],
   "decisions": [
-    "Measure characters exactly; do not present them as token savings.",
-    "Keep canonical instructions whole and fail explicitly if the mandatory context cannot fit.",
-    "Require existing manifests to pass verification even when legacy draft mode is requested."
+    "Upstream receives framework maintenance only; product sessions stay in their own repositories.",
+    "Preserve unbound legacy state for reconciliation rather than importing or erasing it.",
+    "Keep Obsidian views generated from canonical project memory; protect user edits."
   ],
   "pending_work": [
-    "Stage 2: select relevant sections and symbols instead of initial file excerpts.",
-    "Stage 3: add invalidated-by-content-hash local extraction reuse.",
-    "Stage 4: integrate runtime capabilities and measure actual tokens, cache usage, latency, cost and task acceptance."
+    "Reconcile and adopt isolated memory in individual real product repositories when working on them.",
+    "Continue context-efficiency stage 2 after this project-memory boundary improvement."
   ],
   "risks": [
-    "No provider prompt caching was enabled and no cost saving has been measured.",
-    "Context verification detects drift, not semantic completeness or malicious manifests.",
-    "Existing packs require rebuilding or explicit legacy draft mode."
+    "No real product repository was migrated or tested in production.",
+    "Obsidian native application rendering was not tested; generated contents and isolation were verified.",
+    "Runtime instructions must invoke the lifecycle entry point; it is not a background recorder."
   ],
-  "next_action": "Begin stage 2 with retrieval tests for relevant information located beyond the start of source files."
+  "next_action": "On the next product task, inspect its existing memory and initialize or reconcile its project-local identity before resuming work."
 }

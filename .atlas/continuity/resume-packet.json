@@ -1,6 +1,6 @@
 {
   "framework_version": "0.1.1",
-  "generated_at": "2026-10-16T22:49:04.624050+00:00",
+  "generated_at": "2026-10-16T23:04:15.441524+00:00",
   "project_brief": ".atlas/continuity/project-brief.json",
   "latest_session": ".atlas/continuity/latest-session.json",
   "memory_sources": [
@@ -35,6 +35,7 @@
     ".claude/memory/delivery-lessons.md",
     ".claude/memory/index.md",
     ".claude/memory/operations.md",
+    ".claude/memory/project-isolation.md",
     ".claude/memory/templates/architecture.md",
     ".claude/memory/templates/brand.md",
     ".claude/memory/templates/business.md",
@@ -47,18 +48,17 @@
   "handoffs": [],
   "workstreams": [],
   "risks": [
-    "No provider prompt caching was enabled and no cost saving has been measured.",
-    "Context verification detects drift, not semantic completeness or malicious manifests.",
-    "Existing packs require rebuilding or explicit legacy draft mode."
+    "No real product repository was migrated or tested in production.",
+    "Obsidian native application rendering was not tested; generated contents and isolation were verified.",
+    "Runtime instructions must invoke the lifecycle entry point; it is not a background recorder."
   ],
   "next_actions": [
     "Read AGENTS.md.",
     "Read the project brief and latest session.",
     "Validate memory freshness.",
     "Inspect Git status and pending task artifacts.",
-    "Begin stage 2 with retrieval tests for relevant information located beyond the start of source files.",
-    "Stage 2: select relevant sections and symbols instead of initial file excerpts.",
-    "Stage 3: add invalidated-by-content-hash local extraction reuse.",
-    "Stage 4: integrate runtime capabilities and measure actual tokens, cache usage, latency, cost and task acceptance."
+    "On the next product task, inspect its existing memory and initialize or reconcile its project-local identity before resuming work.",
+    "Reconcile and adopt isolated memory in individual real product repositories when working on them.",
+    "Continue context-efficiency stage 2 after this project-memory boundary improvement."
   ]
 }

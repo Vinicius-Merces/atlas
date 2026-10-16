@@ -4,13 +4,18 @@ from __future__ import annotations
 import json
 from pathlib import Path
 
+if __package__:
+    from .project_memory_utils import framework_version, identity
+else:
+    from project_memory_utils import framework_version, identity
+
 ROOT = Path(__file__).resolve().parents[1]
 CONTINUITY = Path(".atlas/continuity")
 
 
 def validate(root: Path) -> list[str]:
     failures: list[str] = []
-    version = (root / "VERSION").read_text(encoding="utf-8").strip()
+    version = framework_version(root)
     documents = {}
     for name in ("project-brief.json", "latest-session.json", "resume-packet.json"):
         path = root / CONTINUITY / name
@@ -22,6 +27,8 @@ def validate(root: Path) -> list[str]:
             failures.append(f"{name}: {exc}")
             continue
         documents[name] = data
+        if identity(root) and data.get("project_id") != identity(root)["project_id"]:
+            failures.append(f"{name}: belongs to another project")
         if data.get("framework_version") != version:
             failures.append(f"{name}: expected framework_version {version}")
 

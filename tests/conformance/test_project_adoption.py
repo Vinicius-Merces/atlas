@@ -74,3 +74,38 @@ def test_adoption_plan_passes_for_identical_target(tmp_path: Path) -> None:
     assert report["summary"]["identical"] == 2
     assert report["summary"]["merge-required"] == 0
     assert report["summary"]["review-required"] == 0
+
+
+def test_adoption_excludes_upstream_knowledge_and_obsidian_state(tmp_path: Path) -> None:
+    framework, target = tmp_path / 'framework', tmp_path / 'product'
+    framework.mkdir()
+    target.mkdir()
+    (framework / 'VERSION').write_text('1.2.3\n')
+    for name in ['.claude/memory/business.md', 'obsidian/atlas/Home.md', '.claude/memory/templates/note.md']:
+        path = framework / name
+        path.parent.mkdir(parents=True, exist_ok=True)
+        path.write_text('Upstream framework content')
+    custom = target / '.claude/memory/business.md'
+    custom.parent.mkdir(parents=True)
+    custom.write_text('Product-owned facts')
+    result = run('--framework-root', str(framework), '--target-root', str(target))
+    assert result.returncode == 0, result.stderr
+    paths = {item['path'] for item in json.loads(result.stdout)['operations']}
+    assert '.claude/memory/business.md' not in paths
+    assert 'obsidian/atlas/Home.md' not in paths
+    assert '.claude/memory/templates/note.md' in paths
+    assert custom.read_text() == 'Product-owned facts'
+
+
+def test_product_repository_cannot_be_a_distribution_source(tmp_path: Path) -> None:
+    framework, target = tmp_path / 'bound-product', tmp_path / 'another-product'
+    framework.mkdir()
+    target.mkdir()
+    (framework / 'VERSION').write_text('1.2.3\n')
+    marker = framework / '.atlas/project-memory.json'
+    marker.parent.mkdir()
+    marker.write_text('{}')
+    result = run('--framework-root', str(framework), '--target-root', str(target))
+    assert result.returncode != 0
+    assert 'product repository' in result.stderr
+    assert list(target.iterdir()) == []

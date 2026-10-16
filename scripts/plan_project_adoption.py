@@ -37,6 +37,8 @@ def requires_merge(relative: str) -> bool:
 def classify(
     framework_root: Path, target_root: Path
 ) -> tuple[list[dict[str, object]], dict[str, int]]:
+    if (framework_root / ".atlas/project-memory.json").exists():
+        raise ValueError("Adoption source is a product repository; use a dedicated ATLAS toolkit")
     operations: list[dict[str, object]] = []
     counts = {
         "copy": 0,
@@ -45,6 +47,10 @@ def classify(
         "review-required": 0,
     }
     for relative, content in sorted(source_payload(framework_root).items()):
+        # Project knowledge is initialized locally, never inherited from ATLAS.
+        if (relative.startswith(".claude/memory/")
+                and not relative.startswith(".claude/memory/templates/")) or relative.startswith(("obsidian/atlas/", "obsidian/atlas-project/")):
+            continue
         target = target_root / Path(relative)
         if not target.exists():
             action = "copy"
