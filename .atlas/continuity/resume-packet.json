@@ -1,6 +1,6 @@
 {
   "framework_version": "0.1.1",
-  "generated_at": "2026-10-19T12:25:34.482875+00:00",
+  "generated_at": "2026-10-19T12:43:06.680506+00:00",
   "project_brief": ".atlas/continuity/project-brief.json",
   "latest_session": ".atlas/continuity/latest-session.json",
   "memory_sources": [
@@ -48,19 +48,19 @@
   "handoffs": [],
   "workstreams": [],
   "risks": [
-    "Gates validate receipt integrity and declarations, not scanner/sandbox execution or semantic correctness without independent evidence review.",
-    "Model inventory is operator-maintained; starter gateways need project-specific guard integration.",
-    "No provider token savings, native Obsidian UI, real product migration or production behavior was measured."
+    "Unsupported source formats and unmatched queries use a disclosed prefix; large symbols/sections may be partial.",
+    "Range cache is trusted local disposable state with corruption checks, not an authentication mechanism.",
+    "Real-product effectiveness, provider cache hits/token savings and native Obsidian UI remain unmeasured."
   ],
   "next_actions": [
     "Read AGENTS.md.",
     "Read the project brief and latest session.",
     "Validate memory freshness.",
     "Inspect Git status and pending task artifacts.",
-    "Confirm current remote publication/CI state, then continue context-efficiency stage 2 using the documented phase 2 acceptance criteria.",
-    "Reconcile publication, remote CI and merge status against the current remote commit before resuming; do not replay completed publishing work.",
-    "Continue context-efficiency stage 2: optional sections and project-local hash cache with invalidation tests.",
-    "Implement GenAI session telemetry, feature-detected AI/multimodal search measurement and router/Ollama evaluation.",
-    "Adopt isolation and admission in real product tasks with functional/browser evidence; never store product memories upstream."
+    "Confirm publication/CI state, then proceed to session-scoped GenAI telemetry and measured runtime integration using the October plan.",
+    "Reconcile current remote publication, CI and merge state before resuming; do not repeat already finished publishing.",
+    "Measure real-product retrieval and provider token/cache/latency/cost outcomes under comparable tasks before claiming savings.",
+    "Implement GenAI session telemetry, feature-detected AI/multimodal measurement and router/Ollama evaluation.",
+    "Adopt project-local memory and guards in real product tasks; no product session data belongs upstream."
   ]
 }

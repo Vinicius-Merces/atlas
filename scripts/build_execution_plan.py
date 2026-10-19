@@ -6,21 +6,23 @@ from pathlib import Path
 
 if __package__:
     from .validate_context_pack import verify
+    from .build_context_pack import canonical_sources
 else:
     from validate_context_pack import verify
+    from build_context_pack import canonical_sources
 
 ROOT = Path(__file__).resolve().parents[1]
 REGISTRY = ROOT / ".claude" / "registry.json"
 
 
-def capability_path(collection: str, name: str) -> str:
+def capability_path(collection: str, name: str, root: Path = ROOT) -> str:
     if collection == "skills":
-        path = ROOT / ".claude" / "skills" / name / "SKILL.md"
+        path = root / ".claude" / "skills" / name / "SKILL.md"
     else:
-        path = ROOT / ".claude" / collection / f"{name}.md"
+        path = root / ".claude" / collection / f"{name}.md"
     if not path.is_file():
         raise ValueError(f"Missing registered {collection} capability: {name}")
-    return path.relative_to(ROOT).as_posix()
+    return path.relative_to(root).as_posix()
 
 def main() -> None:
     parser = argparse.ArgumentParser(
@@ -37,6 +39,7 @@ def main() -> None:
         required=True,
     )
     parser.add_argument("--output")
+    parser.add_argument("--project-root", type=Path)
     parser.add_argument(
         "--allow-missing-context",
         action="store_true",
@@ -50,18 +53,23 @@ def main() -> None:
     args = parser.parse_args()
 
     envelope_path = Path(args.task_envelope).resolve()
+    root = args.project_root.resolve(strict=True) if args.project_root else ROOT
+    if args.project_root and (not envelope_path.is_relative_to(root) or (args.output and not Path(args.output).resolve().is_relative_to(root))):
+        raise SystemExit('Task and plan output must remain in the explicit project root')
+    if args.output and Path(args.output).resolve() == envelope_path:
+        raise SystemExit('Plan output cannot overwrite its task envelope')
     envelope = json.loads(envelope_path.read_text(encoding="utf-8"))
-    registry = json.loads(REGISTRY.read_text(encoding="utf-8"))
+    registry = json.loads((root / '.claude/registry.json').read_text(encoding="utf-8"))
     runtime_key = "claude" if args.runtime in {"claude", "claude-code"} else "codex"
     declaration = json.loads(
-        (ROOT / "adapters" / runtime_key / "runtime-declaration.json")
+        (root / "adapters" / runtime_key / "runtime-declaration.json")
         .read_text(encoding="utf-8")
     )
 
     context_reference = str(envelope.get("context_pack", ""))
     context_path = Path(context_reference)
     if context_reference and not context_path.is_absolute():
-        context_path = ROOT / context_path
+        context_path = root / context_path
     context_available = bool(context_reference and context_path.is_file())
     if not context_available and not args.allow_missing_context:
         raise SystemExit(
@@ -71,14 +79,15 @@ def main() -> None:
 
     context_verified = False
     context_limitations = []
+    manifest_path = None
     if context_available:
         manifest_reference = envelope.get("context_manifest")
         manifest_path = Path(manifest_reference) if manifest_reference else context_path.with_suffix(".manifest.json")
         if not manifest_path.is_absolute():
-            manifest_path = ROOT / manifest_path
+            manifest_path = root / manifest_path
         if manifest_path.is_file():
             try:
-                manifest = verify(manifest_path, context_path, task_id=envelope["id"], root=ROOT)
+                manifest = verify(manifest_path, context_path, task_id=envelope["id"], root=root, envelope=envelope)
             except Exception as exc:
                 raise SystemExit(f"Context verification failed: {exc}") from None
             context_verified = True
@@ -98,16 +107,16 @@ def main() -> None:
     try:
         capability_sources = {
             "agents": [
-                capability_path("agents", str(name))
+                capability_path("agents", str(name), root)
                 for name in dict.fromkeys(roles)
             ],
-            "workflow": capability_path("workflows", envelope["workflow"]),
+            "workflow": capability_path("workflows", envelope["workflow"], root),
             "skills": [
-                capability_path("skills", name)
+                capability_path("skills", name, root)
                 for name in envelope.get("skills", [])
             ],
             "reviews": [
-                capability_path("reviews", name)
+                capability_path("reviews", name, root)
                 for name in envelope["reviews"]
             ],
         }
@@ -152,6 +161,17 @@ def main() -> None:
     rendered = json.dumps(plan, indent=2) + "\n"
     if args.output:
         output = Path(args.output).resolve()
+        protected = {(root / name).resolve() for name in canonical_sources(envelope)}
+        protected.update({envelope_path, (root / '.claude/registry.json').resolve(),
+                          (root / 'adapters' / runtime_key / 'runtime-declaration.json').resolve()})
+        if context_reference:
+            protected.add(context_path.resolve())
+        if manifest_path is not None:
+            protected.add(manifest_path.resolve())
+        if context_verified:
+            protected.update((root / name).resolve() for name in manifest['sources'])
+        if output in protected:
+            raise SystemExit('Plan output cannot overwrite its context or source inputs')
         output.parent.mkdir(parents=True, exist_ok=True)
         output.write_text(rendered, encoding="utf-8")
         print(output)

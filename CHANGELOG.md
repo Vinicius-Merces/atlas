@@ -1,5 +1,17 @@
 # Changelog
 
+## Context selection and local cache follow-up (unreleased)
+
+- Select relevant Markdown sections and Python AST symbols in optional sources;
+  include source ranges/line maps while preserving whole mandatory instructions.
+- Reuse disposable project-local extraction ranges keyed by content/query/budget/
+  mode/extractor version and project identity; cache no source text or model output.
+- Verify excerpt reconstruction, project root, source freshness and full budget.
+- Support explicit product roots across context build, verification and planning,
+  without falling back to toolkit memory or overwriting input sources.
+- Document lexical/synthetic evidence separately from unmeasured provider token
+  savings, semantic completeness and real-product outcomes.
+
 ## October 2026 assurance follow-up (unreleased)
 
 - Add source-integrity, scoped-permission, sandbox and scan-evidence admission.

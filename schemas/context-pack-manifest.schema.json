@@ -3,6 +3,30 @@
   "title": "ATLAS Context Pack Manifest",
   "type": "object",
   "properties": {
+    "task_inputs_sha256": {"type": "string", "pattern": "^[a-f0-9]{64}$"},
+    "extraction_max_chars": {"type": "integer", "minimum": 200},
+    "project_root_sha256": {"type": "string", "pattern": "^[a-f0-9]{64}$"},
+    "extraction_cache": {
+      "type": "object", "required": ["hit", "miss", "bypassed"],
+      "properties": {"hit": {"type": "integer", "minimum": 0}, "miss": {"type": "integer", "minimum": 0}, "bypassed": {"type": "integer", "minimum": 0}},
+      "additionalProperties": false
+    },
+    "source_excerpts": {
+      "type": "object", "additionalProperties": {
+        "type": "object", "required": ["strategy", "ranges", "cache_key", "excerpt_sha256", "extractor_version"],
+        "properties": {
+          "strategy": {"enum": ["full", "prefix", "python-symbols", "markdown-sections"]},
+          "cache_key": {"type": "string", "pattern": "^[a-f0-9]{64}$"},
+          "excerpt_sha256": {"type": "string", "pattern": "^[a-f0-9]{64}$"},
+          "extractor_version": {"type": "string", "minLength": 1},
+          "ranges": {"type": "array", "items": {
+            "type": "object", "required": ["start", "end", "start_line", "end_line"],
+            "properties": {"start": {"type": "integer", "minimum": 0}, "end": {"type": "integer", "minimum": 1}, "start_line": {"type": "integer", "minimum": 1}, "end_line": {"type": "integer", "minimum": 1}},
+            "additionalProperties": false
+          }}
+        }, "additionalProperties": false
+      }
+    },
     "task_id": {
       "type": "string",
       "minLength": 1
@@ -83,5 +107,6 @@
     "context_pack",
     "sources"
   ],
-  "additionalProperties": false
+  "additionalProperties": false,
+  "dependentRequired": {"source_excerpts": ["extraction_max_chars", "project_root_sha256"]}
 }

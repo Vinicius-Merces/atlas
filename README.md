@@ -21,6 +21,11 @@ The [phased improvement plan](docs/october-2026-improvement-plan.md) preserves
 project-local memory and bounded context while distinguishing implemented gates
 from future measurement and product adoption.
 
+[Context packs](docs/context-pack-guide.md) now select optional Markdown sections
+and Python symbols, record source ranges, and reuse project-local extraction
+ranges by content hash. Mandatory instructions remain whole; provider token-cache
+savings and real-product effectiveness still require measurement.
+
 ## Who it is for
 
 AI coding sessions are productive, but projects lose quality when important
