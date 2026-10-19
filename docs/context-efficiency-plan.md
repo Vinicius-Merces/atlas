@@ -17,6 +17,11 @@ adapters compartilhados e resultados verificáveis.
 
 ## Etapa 2: seleção mais precisa
 
+Implementação entregue no incremento de 19/10: seleção lexical por seções Markdown
+e símbolos Python AST, intervalos/linhas no manifesto e verificação de trechos.
+Arquivos obrigatórios continuam integrais. Testes com informação além do prefixo
+cobrem recuperação sintética; qualidade em projetos reais permanece por medir.
+
 Substituir recortes iniciais por seleção de seções/símbolos relevantes. Acrescentar
 mapa compacto de código e prioridades de leitura sob demanda. Preservar restrições,
 interfaces e decisões completas; medir recuperação de informação em tarefas reais.
@@ -24,6 +29,11 @@ Aceite: localizar informação relevante fora do início do arquivo e manter a q
 em tarefas comparáveis, sem ampliar o orçamento global.
 
 ## Etapa 3: reuso incremental
+
+Implementação entregue no mesmo incremento: cache descartável de intervalos,
+isolado por raiz/identidade de projeto, conteúdo, consulta, orçamento, modo e versão
+do extrator. Testes cobrem frio/quente, adulteração, symlinks e invalidação.
+Não contém respostas nem ferramentas mutáveis; não comprova cache do provedor.
 
 Reaproveitar extrações locais por hash de conteúdo, versão do extrator e parâmetros.
 Invalidar dependências alteradas. Cache local é derivado, descartável e separado da

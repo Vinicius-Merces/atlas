@@ -22,6 +22,7 @@ dist/
 .atlas/audit/
 .atlas/evidence/
 .atlas/deployments/
+.atlas/cache/
 
 # `.atlas/continuity/` is intentionally not ignored: curated handoff artifacts
 # may be versioned when a project needs cross-session continuity.

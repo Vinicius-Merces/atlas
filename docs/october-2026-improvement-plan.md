@@ -55,7 +55,13 @@ commit if compatibility fails; preserve historical records and versioned evidenc
 
 ## Deferred work
 
-Phases 2 and 3 are planned, not completed by this phase. Live production checks,
+Context-efficiency stages 2/3 were implemented in the follow-up increment:
+lexical Markdown/Python range selection and a project-local disposable range
+cache, with synthetic retrieval/invalidation/equivalence checks. Real-product
+retrieval quality and provider token/cache metrics remain unmeasured.
+
+The remaining phase 2/3 items are planned, not completed by the P0 increment.
+Live production checks,
 model discovery, paid services, real token-cache savings and adoption across
 existing products require separate project evidence. This avoids conflating
 framework conformance with product results.
