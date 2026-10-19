@@ -74,6 +74,9 @@
   "evidence-record.schema.json": {
     "path": "templates/evidence-record.json"
   },
+  "execution-assurance.schema.json": {
+    "instance": {"kind": "models", "models": []}
+  },
   "execution-result.schema.json": {
     "path": "templates/execution-result.json"
   },

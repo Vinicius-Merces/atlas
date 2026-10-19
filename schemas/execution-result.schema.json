@@ -11,6 +11,12 @@
     }
   },
   "properties": {
+    "delivery_evidence": {
+      "type": "string", "minLength": 1
+    },
+    "delivery_sha256": {
+      "type": "string", "pattern": "^[0-9a-f]{64}$"
+    },
     "task_id": {
       "type": "string",
       "pattern": "^task-[A-Za-z0-9._-]+$"

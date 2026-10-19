@@ -1,0 +1,90 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "ATLAS Execution Assurance",
+  "$defs": {
+    "text": {"type": "string", "minLength": 1},
+    "digest": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "commit": {"type": "string", "pattern": "^[0-9a-f]{40}$"},
+    "strings": {"type": "array", "uniqueItems": true, "items": {"$ref": "#/$defs/text"}},
+    "artifact": {
+      "type": "object", "required": ["path", "sha256"],
+      "properties": {"path": {"$ref": "#/$defs/text"}, "sha256": {"$ref": "#/$defs/digest"}},
+      "additionalProperties": false
+    },
+    "security": {
+      "type": "object",
+      "required": ["kind", "source", "source_sha256", "origin", "version", "trust", "approved", "reviewer", "permissions", "approved_permissions", "sandbox", "checks"],
+      "properties": {
+        "kind": {"const": "security"},
+        "source": {"$ref": "#/$defs/text"},
+        "source_sha256": {"$ref": "#/$defs/digest"},
+        "origin": {"$ref": "#/$defs/text"},
+        "version": {"$ref": "#/$defs/text"},
+        "trust": {"enum": ["internal", "verified-external", "unverified-external", "blocked"]},
+        "approved": {"type": "boolean"},
+        "reviewer": {"$ref": "#/$defs/text"},
+        "permissions": {"$ref": "#/$defs/strings"},
+        "approved_permissions": {"$ref": "#/$defs/strings"},
+        "sandbox": {
+          "type": "object", "required": ["enforced", "receipt"],
+          "properties": {"enforced": {"type": "boolean"}, "receipt": {"$ref": "#/$defs/artifact"}},
+          "additionalProperties": false
+        },
+        "checks": {
+          "type": "array", "items": {
+            "type": "object", "required": ["type", "status", "source_sha256", "evidence"],
+            "properties": {
+              "type": {"enum": ["secrets", "dependencies"]}, "status": {"enum": ["passed", "failed", "unavailable"]},
+              "source_sha256": {"$ref": "#/$defs/digest"}, "evidence": {"$ref": "#/$defs/artifact"}
+            }, "additionalProperties": false
+          }
+        }
+      }, "additionalProperties": false
+    },
+    "delivery": {
+      "type": "object",
+      "required": ["kind", "task_id", "commit", "acceptance", "pending", "remote", "deployment"],
+      "properties": {
+        "kind": {"const": "delivery"}, "task_id": {"type": "string", "pattern": "^task-[A-Za-z0-9._-]+$"},
+        "commit": {"$ref": "#/$defs/commit"}, "pending": {"$ref": "#/$defs/strings"},
+        "deployment": {"enum": ["not-requested", "not-verified", "verified"]},
+        "deployment_evidence": {"$ref": "#/$defs/artifact"},
+        "acceptance": {
+          "type": "array", "minItems": 1, "items": {
+            "type": "object", "required": ["criterion", "status", "functional", "evidence"],
+            "properties": {
+              "criterion": {"$ref": "#/$defs/text"}, "status": {"enum": ["passed", "failed", "unavailable"]},
+              "functional": {"type": "boolean"}, "evidence": {"$ref": "#/$defs/artifact"}
+            }, "additionalProperties": false
+          }
+        },
+        "remote": {
+          "type": "object", "required": ["name", "ref"],
+          "properties": {
+            "name": {"type": "string", "pattern": "^[a-zA-Z0-9][a-zA-Z0-9_-]*$"},
+            "ref": {"type": "string", "pattern": "^refs/heads/[A-Za-z0-9._/-]+$"}
+          }, "additionalProperties": false
+        }
+      }, "additionalProperties": false
+    },
+    "models": {
+      "type": "object", "required": ["kind", "models"],
+      "properties": {
+        "kind": {"const": "models"},
+        "models": {"type": "array", "items": {
+          "type": "object", "required": ["provider", "model", "status", "verified_on", "valid_until", "source", "capabilities", "profiles", "max_data_class", "financial_class"],
+          "properties": {
+            "provider": {"$ref": "#/$defs/text"}, "model": {"$ref": "#/$defs/text"},
+            "status": {"enum": ["active", "deprecated", "retired", "unknown"]},
+            "verified_on": {"type": "string", "format": "date"}, "valid_until": {"type": "string", "format": "date"},
+            "retirement_on": {"type": "string", "format": "date"}, "source": {"type": "string", "format": "uri"},
+            "capabilities": {"$ref": "#/$defs/strings"}, "profiles": {"$ref": "#/$defs/strings"},
+            "max_data_class": {"enum": ["public", "internal", "confidential", "restricted"]},
+            "financial_class": {"enum": ["free-tier", "owned-compute", "paid"]}
+          }, "additionalProperties": false
+        }}
+      }, "additionalProperties": false
+    }
+  },
+  "oneOf": [{"$ref": "#/$defs/security"}, {"$ref": "#/$defs/delivery"}, {"$ref": "#/$defs/models"}]
+}

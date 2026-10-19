@@ -1,5 +1,11 @@
 # ATLAS AI Gateway Starter
 
+Before enabling lifecycle-guarded inference, connect the project routing boundary
+to the model inventory gate in `docs/execution-assurance-guide.md`. Revalidate
+every primary and fallback pair for lifecycle, evaluated profile, capability,
+privacy and financial constraints. These starter examples do not independently
+discover retirements or enforce the new preflight.
+
 This directory is a copyable starter for demos and low-volume products that need a provider-neutral AI boundary.
 
 It is intentionally small. It demonstrates routing, fallback, privacy/capability filtering, normalized errors, cooldown, and environment-only credentials without making ATLAS itself depend on an AI SDK.

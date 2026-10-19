@@ -1,59 +1,38 @@
 {
-  "session_id": "session-project-memory-isolation-2026-10-16",
+  "session_id": "session-october-assurance-2026-10-19",
   "framework_version": "0.1.1",
   "runtime": "codex",
-  "created_at": "2026-10-16T23:03:06.077139+00:00",
-  "summary": "Improved the framework to keep each product memory local and identity-bound; no real product repositories were migrated.",
+  "created_at": "2026-10-19T12:30:00+00:00",
+  "summary": "Implemented P0 admission gates after reconciling October audit with PRs 31–34; measurement/product phases remain planned.",
   "completed_work": [
-    "Added explicit init/start/close project-memory entry point with project identity and origin binding.",
-    "Reused canonical builders against explicit target roots and kept product/framework versions separate.",
-    "Added local Obsidian views with edit protection and freshness reporting.",
-    "Excluded upstream memory and product views from adoption plans; rejected product repositories as distribution sources.",
-    "Tested two independent Git projects and fresh-process resume without changing framework state."
+    "Recorded phased plan preserving project memory, Obsidian isolation and bounded context.",
+    "Added source-integrity, permission, sandbox and scan receipt admission.",
+    "Added dated model lifecycle/capability/profile/privacy/financial admission.",
+    "New execution results default to partial; completed requires functional criteria and remote checkpoint.",
+    "Corrected artifact-only golden-path completion claims."
   ],
-  "changed_files": [
-    "scripts/project_memory.py",
-    "scripts/project_memory_utils.py",
-    "scripts/build_project_brief.py",
-    "scripts/build_resume_packet.py",
-    "scripts/validate_continuity_state.py",
-    "scripts/plan_project_adoption.py",
-    "schemas/project-brief.schema.json",
-    "schemas/session-brief.schema.json",
-    "schemas/resume-packet.schema.json",
-    "tests/conformance/test_project_memory_isolation.py",
-    "tests/conformance/test_project_adoption.py",
-    "AGENTS.md",
-    "adapters/codex/instructions/session-bootstrap.md",
-    "adapters/shared/session-continuity-protocol.md",
-    "docs/project-local-memory-guide.md",
-    "docs/installation.md",
-    "docs/INDEX.md",
-    "obsidian/README.md",
-    "obsidian/atlas/Systems.md",
-    ".claude/memory/project-isolation.md",
-    ".claude/memory/index.md",
-    ".atlas/continuity/"
-  ],
+  "changed_files": ["scripts/execution_assurance.py", "scripts/record_execution_result.py", "scripts/build_golden_path.py", "schemas/execution-assurance.schema.json", "schemas/execution-result.schema.json", "tests/contract/test_execution_assurance.py", "docs/execution-assurance-guide.md", "docs/october-2026-improvement-plan.md", "AGENTS.md", ".atlas/continuity/"],
   "validation": [
-    "Thirteen targeted isolation/adoption tests passed.",
-    "Final release validation passed all 46 gates, including 363 tests, 14 policies and cumulative/recovery/incremental package checks.",
-    "Fresh-process resume for two isolated projects preserved local pending work without modifying framework continuity.",
-    "Manual diff review completed; native Obsidian application and real product repositories were not exercised."
+    "47 focused assurance and golden-path tests passed after independent review corrections.",
+    "First full run detected artifact-generator compatibility failure; corrected before final validation.",
+    "Final release profile passed, including 409 tests and cumulative/recovery/incremental package validation.",
+    "Independent rereview approved all three resolved completion blockers; remote publication/CI must be checked at the current branch head."
   ],
   "decisions": [
-    "Upstream receives framework maintenance only; product sessions stay in their own repositories.",
-    "Preserve unbound legacy state for reconciliation rather than importing or erasing it.",
-    "Keep Obsidian views generated from canonical project memory; protect user edits."
+    "ATLAS governs runtimes rather than implementing a sandbox or mandatory inference gateway.",
+    "Preserve historical evidence; new recorder applies stricter completion admission.",
+    "No real product memory migration or production effectiveness claim from framework tests."
   ],
   "pending_work": [
-    "Reconcile and adopt isolated memory in individual real product repositories when working on them.",
-    "Continue context-efficiency stage 2 after this project-memory boundary improvement."
+    "Reconcile publication, remote CI and merge status against the current remote commit before resuming; do not replay completed publishing work.",
+    "Continue context-efficiency stage 2: optional sections and project-local hash cache with invalidation tests.",
+    "Implement GenAI session telemetry, feature-detected AI/multimodal search measurement and router/Ollama evaluation.",
+    "Adopt isolation and admission in real product tasks with functional/browser evidence; never store product memories upstream."
   ],
   "risks": [
-    "No real product repository was migrated or tested in production.",
-    "Obsidian native application rendering was not tested; generated contents and isolation were verified.",
-    "Runtime instructions must invoke the lifecycle entry point; it is not a background recorder."
+    "Gates validate receipt integrity and declarations, not scanner/sandbox execution or semantic correctness without independent evidence review.",
+    "Model inventory is operator-maintained; starter gateways need project-specific guard integration.",
+    "No provider token savings, native Obsidian UI, real product migration or production behavior was measured."
   ],
-  "next_action": "On the next product task, inspect its existing memory and initialize or reconcile its project-local identity before resuming work."
+  "next_action": "Confirm current remote publication/CI state, then continue context-efficiency stage 2 using the documented phase 2 acceptance criteria."
 }

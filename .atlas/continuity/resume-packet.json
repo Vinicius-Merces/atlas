@@ -1,6 +1,6 @@
 {
   "framework_version": "0.1.1",
-  "generated_at": "2026-10-16T23:04:15.441524+00:00",
+  "generated_at": "2026-10-19T12:25:34.482875+00:00",
   "project_brief": ".atlas/continuity/project-brief.json",
   "latest_session": ".atlas/continuity/latest-session.json",
   "memory_sources": [
@@ -48,17 +48,19 @@
   "handoffs": [],
   "workstreams": [],
   "risks": [
-    "No real product repository was migrated or tested in production.",
-    "Obsidian native application rendering was not tested; generated contents and isolation were verified.",
-    "Runtime instructions must invoke the lifecycle entry point; it is not a background recorder."
+    "Gates validate receipt integrity and declarations, not scanner/sandbox execution or semantic correctness without independent evidence review.",
+    "Model inventory is operator-maintained; starter gateways need project-specific guard integration.",
+    "No provider token savings, native Obsidian UI, real product migration or production behavior was measured."
   ],
   "next_actions": [
     "Read AGENTS.md.",
     "Read the project brief and latest session.",
     "Validate memory freshness.",
     "Inspect Git status and pending task artifacts.",
-    "On the next product task, inspect its existing memory and initialize or reconcile its project-local identity before resuming work.",
-    "Reconcile and adopt isolated memory in individual real product repositories when working on them.",
-    "Continue context-efficiency stage 2 after this project-memory boundary improvement."
+    "Confirm current remote publication/CI state, then continue context-efficiency stage 2 using the documented phase 2 acceptance criteria.",
+    "Reconcile publication, remote CI and merge status against the current remote commit before resuming; do not replay completed publishing work.",
+    "Continue context-efficiency stage 2: optional sections and project-local hash cache with invalidation tests.",
+    "Implement GenAI session telemetry, feature-detected AI/multimodal search measurement and router/Ollama evaluation.",
+    "Adopt isolation and admission in real product tasks with functional/browser evidence; never store product memories upstream."
   ]
 }

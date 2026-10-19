@@ -55,6 +55,8 @@ def test_golden_path_generates_valid_portable_artifacts(tmp_path: Path) -> None:
     assert manifest["runtime"] == "codex"
     assert manifest["requires_external_execution"] is True
     assert len(manifest["artifacts"]) == 9
+    assert load(output / "execution-result.json")["status"] == "partial"
+    assert load(output / "evidence.json")["status"] == "partial"
 
     repeated = subprocess.run(
         command,

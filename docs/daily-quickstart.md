@@ -100,20 +100,22 @@ UX, data, or compatibility review when the impact requires them.
 Record the observed execution result and validate it:
 
 ```bash
-python scripts/record_execution_result.py --task-envelope .atlas/tasks/export.task.json --runtime codex --status completed --summary "Describe the observed result" --changed-file "path/actually-changed" --validation "command: observed outcome" --review "review gate: observed outcome" --output .atlas/tasks/export.execution-result.json
+python scripts/record_execution_result.py --task-envelope .atlas/tasks/export.task.json --runtime codex --status partial --summary "Describe the observed result and pending acceptance" --changed-file "path/actually-changed" --validation "command: observed outcome" --review "review gate: observed outcome" --output .atlas/tasks/export.execution-result.json
 python scripts/validate_execution_result.py .atlas/tasks/export.execution-result.json
 ```
 
 Repeat `--changed-file`, `--validation`, `--review`, `--finding`,
 `--assumption`, `--remaining-risk`, and `--knowledge-update` as needed. Use
 `partial`, `blocked`, or `failed` instead of `completed` when that is what
-occurred; the recorder stores supplied evidence but does not perform or verify
-the implementation.
+occurred. Completed requires `--project-root`, `--delivery-evidence` and
+`--verify-remote`, with functional evidence and exact acceptance criteria; see
+[Execution Assurance](execution-assurance-guide.md). The recorder does not perform
+implementation or establish that supplied test receipts are true.
 
 An evidence record can be initialized with:
 
 ```bash
-python scripts/create_evidence_record.py --task-id <task-id> --runtime codex --status completed
+python scripts/create_evidence_record.py --task-id <task-id> --runtime codex --status in-progress
 ```
 
 The generator creates empty evidence fields. Populate sources, decisions,

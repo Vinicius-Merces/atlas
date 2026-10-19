@@ -55,6 +55,9 @@
 
 ## Execution and continuity
 
+- [Execution Assurance Gates](execution-assurance-guide.md)
+- [October 2026 Improvement Plan](october-2026-improvement-plan.md)
+
 - [Task Routing](task-routing-guide.md)
 - [Context Packs](context-pack-guide.md)
 - [Runtime Execution and Golden Path](runtime-execution-guide.md)
