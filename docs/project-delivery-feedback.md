@@ -34,6 +34,11 @@ because its structural validator passed.
 
 ## Closeout
 
+Apply `docs/execution-assurance-guide.md` to new completion claims. The recorder
+defaults to partial and checks functional evidence, exact task criteria and a
+remote checkpoint before completed. Preserve historical evidence; structural
+schema validity alone is not admission.
+
 Report what changed, what was actually tested, the remote commit/PR, deployment
 status if applicable, and remaining work. Mark unavailable checks explicitly.
 Keep credentials and personal participant data out of public evidence.

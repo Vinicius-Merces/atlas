@@ -1,5 +1,17 @@
 # Changelog
 
+## October 2026 assurance follow-up (unreleased)
+
+- Add source-integrity, scoped-permission, sandbox and scan-evidence admission.
+- Require functional acceptance and verified remote checkpoints for newly
+  recorded completed execution results; default new records to partial.
+- Add dated model lifecycle admission with capability/profile/privacy/cost
+  filtering for each primary and fallback candidate.
+- Preserve project-local memory, Obsidian isolation, source freshness, context
+  budgets and historical evidence from PRs 31–34.
+- Record the phased October plan without claiming context-cache savings,
+  automatic sandbox creation or real-product effectiveness from framework tests.
+
 ## Unreleased
 
 ### Fixed

@@ -15,6 +15,12 @@
 [Operations Guide](docs/operations-guide.md) ·
 [Documentation Index](docs/INDEX.md)
 
+October follow-up: [Execution Assurance](docs/execution-assurance-guide.md) adds
+evidence admission for external code, completed deliveries and model candidates.
+The [phased improvement plan](docs/october-2026-improvement-plan.md) preserves
+project-local memory and bounded context while distinguishing implemented gates
+from future measurement and product adoption.
+
 ## Who it is for
 
 AI coding sessions are productive, but projects lose quality when important

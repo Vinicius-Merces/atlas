@@ -43,6 +43,15 @@ This repository uses ATLAS as its engineering operating framework.
 
 ## Validation and evidence
 
+- Follow `docs/execution-assurance-guide.md` before executing external skills,
+  claiming delivery complete, or admitting primary/fallback models. Use the
+  explicit product root; receipts and product sessions never go upstream.
+- New execution results default to partial. Completed requires functional
+  evidence, exact task criteria and verified remote checkpoint through
+  `scripts/execution_assurance.py`; unavailable checks remain pending.
+- Discovery trust does not grant execution authority. External code requires
+  reviewed full-bundle integrity, scoped tools, sandbox and scan receipts.
+
 - Run the repository validators and `python -m pytest tests -q`.
 - Record results with `adapters/codex/instructions/execution-evidence.md`.
 
